@@ -1,0 +1,34 @@
+{
+  "translation": {
+    "cocycleFM": {
+      "mse": 0.015374280512332916,
+      "psnr": 18.132051992208822,
+      "ssim": 0.611132025718689,
+      "clf_acc_vs_target": 0.96240234375,
+      "fid": 52.10587767315494
+    },
+    "latentFM": {
+      "mse": 0.058614544570446014,
+      "psnr": 12.319946050850811,
+      "ssim": 0.37524253129959106,
+      "clf_acc_vs_target": 0.269287109375,
+      "fid": 1052.6354094152184
+    }
+  },
+  "embedding": {
+    "cocycleFM": {
+      "linear_probe_acc": 0.3708984375,
+      "knn5_acc": 0.9630000591278076
+    },
+    "latentFM": {
+      "linear_probe_acc": 0.112109375,
+      "knn5_acc": 0.5265000462532043
+    }
+  },
+  "artifacts": {
+    "grid_cocycle": "runs_mnist/cocycle_translation_grid.png",
+    "grid_latentfm": "runs_mnist/latentfm_translation_grid.png",
+    "tsne_cocycle": "runs_mnist/tsne_cocycle_enc.png",
+    "tsne_latent": "runs_mnist/tsne_latent_enc.png"
+  }
+}
