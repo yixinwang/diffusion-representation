@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "mse_vs_source": {
+      "cocycle": 105.00556182861328,
+      "latent": 105.18585968017578
+    },
+    "mse_vs_target": {
+      "cocycle": 1.9246896505355835,
+      "latent": 2.013660192489624
+    }
+  },
+  "embedding": {
+    "linear_probe_acc": {
+      "cocycle": 0.992,
+      "latent": 0.991
+    },
+    "knn5_acc": {
+      "cocycle": 0.9959999918937683,
+      "latent": 0.9909999966621399
+    }
+  },
+  "artifacts": {
+    "translation_vectors": "runs_pinwheel/pinwheel_translation_vectors.png",
+    "generation_scatter": "runs_pinwheel/pinwheel_generations.png",
+    "latent_scatter": "runs_pinwheel/latent_scatter.png"
+  }
+}
