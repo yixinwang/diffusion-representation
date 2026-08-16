@@ -1,0 +1,22 @@
+{
+  "D": 18,
+  "batch": 384,
+  "d": 2,
+  "device": "cpu",
+  "hidden": 80,
+  "n_pairs": 30000,
+  "n_test": 2500,
+  "n_train": 5000,
+  "n_val": 1500,
+  "ode_steps": 20,
+  "sample_n": 2500,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "timing_repeats": 2,
+  "train_steps": 550
+}
