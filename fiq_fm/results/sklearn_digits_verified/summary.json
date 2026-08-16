@@ -1,0 +1,59 @@
+{
+  "n_seeds": 5,
+  "methods": {
+    "fiq_fm_block": {
+      "class_feature_frechet": {"mean": 11.0022646, "se": 0.646, "values": [10.4852408, 11.6941513, 13.2142697, 9.8705373, 9.7471239]},
+      "sliced_w2": {"mean": 0.3069122, "se": 0.006, "values": [0.3042069, 0.3054244, 0.3309125, 0.2940189, 0.2999982]},
+      "requested_label_accuracy": {"mean": 0.6577778, "se": 0.015, "values": [0.6527778, 0.6416667, 0.6111111, 0.7000000, 0.6833333]},
+      "feature_frechet": {"mean": 5.2389115, "se": 0.484, "values": [5.0716130, 5.6532970, 6.7707410, 4.4560467, 4.2428598]}
+    },
+    "fiq_fm_diagonal_ablation": {
+      "class_feature_frechet": {"mean": 11.2894423, "se": 0.800},
+      "sliced_w2": {"mean": 0.3176357, "se": 0.005},
+      "requested_label_accuracy": {"mean": 0.6277778, "se": 0.013},
+      "feature_frechet": {"mean": 5.3266274, "se": 0.606}
+    },
+    "full_fm_param_matched": {
+      "class_feature_frechet": {"mean": 33.8196717, "se": 1.359},
+      "sliced_w2": {"mean": 0.2856542, "se": 0.002},
+      "requested_label_accuracy": {"mean": 0.3416667, "se": 0.015},
+      "feature_frechet": {"mean": 18.9218808, "se": 0.822}
+    },
+    "vae_lfm_diagonal": {
+      "class_feature_frechet": {"mean": 11.9903697, "se": 0.850},
+      "sliced_w2": {"mean": 0.3456356, "se": 0.006},
+      "requested_label_accuracy": {"mean": 0.6072222, "se": 0.014},
+      "feature_frechet": {"mean": 6.1790689, "se": 0.678}
+    },
+    "rae_lfm_block": {
+      "class_feature_frechet": {"mean": 11.1307431, "se": 0.791},
+      "sliced_w2": {"mean": 0.3374424, "se": 0.005},
+      "requested_label_accuracy": {"mean": 0.6288889, "se": 0.015},
+      "feature_frechet": {"mean": 5.3417380, "se": 0.636}
+    }
+  },
+  "paired_fiq_improvement": {
+    "vae_lfm_diagonal": {
+      "sliced_w2": {"absolute": 0.0384, "ci95": [0.0374, 0.0394]},
+      "requested_label_accuracy": {"absolute": 0.0506, "ci95": [0.0399, 0.0589], "one_sided_p": 0.0012}
+    },
+    "rae_lfm_block": {
+      "sliced_w2": {"absolute": 0.0305, "ci95": [0.0273, 0.0335]},
+      "requested_label_accuracy": {"absolute": 0.0294, "ci95": [0.0122, 0.0455], "one_sided_p": 0.0153}
+    }
+  },
+  "representation": {
+    "fiq_reconstruction_mse": {"mean": 0.1900523, "se": 0.0045},
+    "vae_reconstruction_mse": {"mean": 0.4199530, "se": 0.0016},
+    "rae_reconstruction_mse": {"mean": 0.3725957, "se": 0.0032},
+    "fiq_linear_probe_accuracy": 0.9605556,
+    "vae_linear_probe_accuracy": 0.9538889,
+    "rae_linear_probe_accuracy": 0.9655556
+  },
+  "mean_full_over_fiq_cpu_time_ratio": 1.120938,
+  "notes": [
+    "Every seed-level generative metric is in metrics_long.csv; mechanism and representation values are in audit_long.csv.",
+    "The mean class-conditional feature Frechet advantage over VAE/RAE is not statistically established and is not promoted.",
+    "The full flow has lower raw sliced-W2 at this budget but substantially worse requested-label fidelity."
+  ]
+}
