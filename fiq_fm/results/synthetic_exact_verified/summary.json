@@ -1,0 +1,47 @@
+{
+  "n_seeds": 5,
+  "primary_metric": "held-out sliced_w2 (lower is better)",
+  "methods": {
+    "fiq_fm_block": {
+      "mean": 0.0399573062,
+      "se": 0.001590,
+      "values": [0.0432107603, 0.0375819143, 0.0360119044, 0.0409150535, 0.0420669006]
+    },
+    "fiq_fm_diagonal_ablation": {
+      "mean": 0.0642003221,
+      "se": 0.002922,
+      "values": [0.0681543127, 0.0658538338, 0.0534134020, 0.0625359727, 0.0710440893]
+    },
+    "full_fm_param_matched": {
+      "mean": 0.0613588237,
+      "se": 0.001617,
+      "values": [0.0622471044, 0.0569223036, 0.0586523531, 0.0654094901, 0.0635628675]
+    },
+    "vae_lfm_diagonal": {
+      "mean": 0.0707493352,
+      "se": 0.001558,
+      "values": [0.0742650110, 0.0667995339, 0.0678029268, 0.0742520364, 0.0706271678]
+    },
+    "rae_lfm_block": {
+      "mean": 0.0637510872,
+      "se": 0.001299,
+      "values": [0.0664783315, 0.0609004362, 0.0615970779, 0.0674867527, 0.0622928375]
+    }
+  },
+  "paired_fiq_improvement": {
+    "fiq_fm_diagonal_ablation": {"absolute": 0.0242430, "ci95": [0.0185, 0.0298], "one_sided_p": 0.0008},
+    "full_fm_param_matched": {"absolute": 0.0214015, "ci95": [0.0153, 0.0286], "one_sided_p": 0.0013},
+    "vae_lfm_diagonal": {"absolute": 0.0307920, "ci95": [0.0222, 0.0382], "one_sided_p": 0.0008},
+    "rae_lfm_block": {"absolute": 0.0237938, "ci95": [0.0193, 0.0286], "one_sided_p": 0.0004}
+  },
+  "mechanism": {
+    "mean_active_subspace_sine": 0.019895,
+    "mean_analytic_diagonal_fiber_kl_gap_nats": 1.291460,
+    "mean_fitted_diagonal_minus_block_nll_nats": 1.291597,
+    "mean_full_over_fiq_cpu_time_ratio": 1.299647
+  },
+  "notes": [
+    "Every value comes from a registered seed; see metrics_long.csv and audit_long.csv.",
+    "The parameter-matched full-flow comparison is finite-budget empirical, not universal dominance."
+  ]
+}
