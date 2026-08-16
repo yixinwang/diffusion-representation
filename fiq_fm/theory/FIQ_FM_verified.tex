@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,array,enumitem,microtype,hyperref,xcolor,graphicx}
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\KL}{KL}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\argmin}{argmin}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Pp}{\mathbb P}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\wh}{\widehat}
+\newcommand{\wt}{\widetilde}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\ip}[2]{\left\langle #1,#2\right\rangle}
+\newcommand{\given}{\,\middle|\,}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black,citecolor=blue!55!black}
+\title{Gauge-Fixed Flow-Induced Quotient Flow Matching\\
+\large Full-Density Endpoint Fidelity with Low-Dimensional Iterative Dynamics}
+\author{Verified theory, algorithm, adversarial audit, and experiments}
+\date{16 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A latent flow is efficient because its expensive iterative vector field acts on a low-dimensional state, but the usual variational-autoencoder tokenizer can discard density, spend rate matching a fixed prior, and choose a code for reconstruction rather than for closure of the generative dynamics.  A full ambient flow avoids that bottleneck but repeatedly processes the ambient dimension.  We give a complete affirmative result on a realistic structural class and a falsifiable algorithm outside that class.  The method, Gauge-Fixed Flow-Induced Quotient Flow Matching (GF-FIQ), learns a static orthogonal quotient directly from ordinary flow-matching labels, fixes the otherwise unidentified residual coordinate gauge by a cross-fitted conditional-dependence graph, integrates a deep flow only in the active coordinates, and samples a one-shot stochastic block fiber for the complementary randomness.  For triangular transports with block-local Gaussian fibers, GF-FIQ reproduces the exact full-dimensional endpoint law, has iterative complexity governed by the active dimension, and strictly dominates a same-dimensional KL-VAE with a diagonal residual decoder by an explicit conditional KL gap.  We also prove raw-label subspace recovery, exact loss isometry, exact density-error decomposition, pair-block gauge recovery, finite-sample subspace and model-selection bounds, and a Wasserstein perturbation bound under approximate projectability.  Five-seed experiments support every promoted claim: on an exact $D=18,d=2$ quotient, GF-FIQ improves held-out sliced Wasserstein error over a parameter-matched full flow, KL-VAE latent flow, and representation-autoencoder latent flow, while its learned block-versus-diagonal likelihood gain matches the analytic $1.291$-nat gap.  On real $8\times8$ digits with $d=16$, it significantly improves held-out sliced Wasserstein and conditional-label fidelity over both latent baselines, although its feature-Fr\'echet advantage over the strongest baseline is not statistically established.  The result is conditional rather than universal: arbitrary full flows need not admit cheap quotients, deterministic $d<D$ decoders cannot match full-dimensional densities, and the present dense chart does not by itself prove image-scale asymptotic speedups.
+\end{abstract}
+
+\input{sections/part1}
+\input{sections/part2}
+\input{sections/part3}
+\end{document}
