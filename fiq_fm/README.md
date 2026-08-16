@@ -6,7 +6,7 @@ The implemented algorithm learns a low-dimensional **iterative** quotient from o
 
 ## Verified status
 
-- Six theorem/leakage tests pass.
+- Five theorem/leakage tests pass.
 - Five-seed exact-quotient synthetic benchmark completed.
 - Five-seed sklearn digits benchmark completed.
 - Full configurations, per-seed JSON, long-form CSV, and paired summaries are committed; rerunning the scripts regenerates plots.
