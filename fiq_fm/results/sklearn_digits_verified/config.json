@@ -1,0 +1,18 @@
+{
+  "batch": 256,
+  "block": 4,
+  "d": 16,
+  "device": "cpu",
+  "hidden": 96,
+  "n_pairs": 20000,
+  "ode_steps": 20,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "timing_repeats": 2,
+  "train_steps": 500
+}
