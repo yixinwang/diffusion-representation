@@ -1,0 +1,166 @@
+\section{Problem, impossibility boundary, and approach registry}
+
+Let $X_1\sim P_1$ be data in $\R^D$, let $X_0\sim\cN(0,I_D)$ be independent source noise, and let
+\begin{equation}
+  X_t=(1-t)X_0+tX_1,\qquad V=X_1-X_0,\qquad t\in[0,1].
+  \label{eq:rectified}
+\end{equation}
+The population rectified-flow vector field is
+\begin{equation}
+ v_t^*(x)=\E[V\mid X_t=x].
+ \label{eq:ambient-field}
+\end{equation}
+A full flow estimates $v_t^*: \R^D\to\R^D$.  A latent flow estimates a field on $\R^d$, $d\ll D$, but must also specify how the discarded coordinates are generated.
+
+\subsection{Why deterministic compression cannot give the requested theorem}
+
+\begin{proposition}[Support obstruction]
+Let $d<D$, let $Z$ have any probability law on $\R^d$, and let $G:\R^d\to\R^D$ be locally Lipschitz.  Then $G_\#\cL(Z)$ is supported on a countably $d$-rectifiable set and is singular with respect to $D$-dimensional Lebesgue measure.  Consequently, it cannot equal a target law with a nonzero ambient density.
+\end{proposition}
+\begin{proof}
+A locally Lipschitz image of $\R^d$ is countably $d$-rectifiable.  Every such set has zero $D$-dimensional Lebesgue measure when $d<D$.  The pushforward assigns probability one to that null set, whereas an absolutely continuous target assigns probability zero to it.
+\end{proof}
+
+The complementary randomness is therefore essential.  A valid full-density factorization must retain a fiber variable $R\in\R^{D-d}$ rather than replace it by a deterministic reconstruction.
+
+\subsection{Approach families and selection}
+
+The audit began with incompatible routes.  The durable conclusions are:
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Deterministic autoencoding} is ruled out for full-dimensional targets by the support obstruction.
+\item \textbf{Train a full flow and distill it} can inherit quality but pays the full training cost first, so it does not solve the stated efficiency problem.
+\item \textbf{Bottleneck only the ambient denoiser} fails when normal or residual dynamics depend on the full state.
+\item \textbf{Tangent-only manifold flows} ignore off-manifold density and therefore do not cover noisy data.
+\item \textbf{A fully moving reversible chart} gives the broadest conjugacy theorem, but without gauge and compute constraints the chart can absorb the entire generator.
+\item \textbf{A static orthogonal quotient plus a stochastic cheap fiber} has an exact source law, an exact squared-loss isometry, cannot hide a nonlinear generator, and gives the smallest complete theorem.
+\end{enumerate}
+The selected first implementation is therefore deliberately restricted.  The broader moving-chart formulation remains useful as an extension, but its image-scale computational claim is not treated as proved here.
+
+\section{Gauge-Fixed Flow-Induced Quotient Flow Matching}
+
+\subsection{Orthogonal quotient and induced field}
+
+Let $Q=[Q_z,Q_r]\in\R^{D\times D}$ be orthogonal, with $Q_z\in\R^{D\times d}$.  Define
+\begin{equation}
+  Y=Q^\top X=(Z,R),\quad Z=Q_z^\top X,\quad R=Q_r^\top X.
+\end{equation}
+Because $Q^\top X_0\sim\cN(0,I_D)$, the source remains factorized standard Gaussian.  A structured coordinate field is
+\begin{equation}
+ a_t(z,r)=
+ \begin{bmatrix}
+ u_t(z)\\ w_t(r,z)
+ \end{bmatrix},
+ \label{eq:triangular-field}
+\end{equation}
+where the expensive nonlinear iterative field $u_t$ does not depend on $r$, while $w_t$ belongs to a cheap family.  The induced ambient field is
+\begin{equation}
+ f_t(x)=Q\,a_t(Q^\top x).
+\end{equation}
+
+\begin{theorem}[Exact source and loss isometry]
+For every orthogonal $Q$ and every coordinate predictor $a_t$,
+\begin{equation}
+ \norm{V-Q a_t(Q^\top X_t)}_2^2
+ =\norm{Q^\top V-a_t(Q^\top X_t)}_2^2
+ \quad\text{pointwise}.
+ \label{eq:isometry}
+\end{equation}
+Moreover $Q^\top X_0\sim\cN(0,I_D)$.
+\end{theorem}
+\begin{proof}
+Orthogonality gives $\norm{b}_2=\norm{Q^\top b}_2$ for every $b$.  Apply this to $b=V-Qa_t(Q^\top X_t)$ and use $Q^\top Q=I_D$.  Rotational invariance gives the source statement.
+\end{proof}
+
+Thus the quotient can be trained directly from ordinary conditional flow labels: no full ambient teacher network is needed.
+
+\subsection{Endpoint fiber generator}
+
+The verified implementation uses a deep ODE only for $Z$ and a one-shot conditional fiber at the endpoint:
+\begin{align}
+ U&\sim\cN(0,I_d), & Z&=F(U,C),\label{eq:zgen}\\
+ E&\sim\cN(0,I_{D-d}), & R&=\mu(Z,C)+L(Z,C)E,\label{eq:rgen}\\
+ X&=Q_zZ+Q_rR.\label{eq:xgen}
+\end{align}
+Here $C$ is optional conditioning information, $F$ is represented by the latent flow, and $L$ is block lower-triangular with small blocks.  The fiber is stochastic, so the endpoint distribution can remain full dimensional.
+
+\begin{definition}[Exact triangular quotient class]
+A conditional target $P_1(\cdot\mid C)$ belongs to $\mathfrak T(d,b)$ if there are an orthogonal $Q$, a diffeomorphism $F(\cdot,C):\R^d\to\R^d$, and functions $\mu,L$ such that \eqref{eq:zgen}--\eqref{eq:xgen} generate $P_1(\cdot\mid C)$, where every block of $L$ has size at most $b$ and is nonsingular.
+\end{definition}
+
+\begin{theorem}[Exact endpoint parity with a full-dimensional generator]
+Suppose $P_1(\cdot\mid C)\in\mathfrak T(d,b)$.  If the latent flow exactly transports $\cN(0,I_d)$ to $\cL(Z\mid C)$, the fiber model exactly represents $\mu,L$, and the ODE is integrated exactly, then GF-FIQ generates exactly $P_1(\cdot\mid C)$.
+\end{theorem}
+\begin{proof}
+The latent flow produces a random variable with the same conditional law as $Z$.  Conditional on this $Z$ and $C$, \eqref{eq:rgen} has exactly the target conditional Gaussian law of $R$.  Therefore $(Z,R,C)$ has the target joint law by disintegration.  The orthogonal map $(z,r)\mapsto Q_zz+Q_rr$ is bijective, so its pushforward is exactly the target law of $X$.
+\end{proof}
+
+This theorem gives the precise sense in which generation quality can equal a full ambient flow while iteration occurs only in dimension $d$.  It does not assert that every data distribution belongs to $\mathfrak T(d,b)$.
+
+\section{Exact density decomposition and strict VAE separation}
+
+\subsection{Density and KL chain rule}
+
+Because $Q$ is volume preserving,
+\begin{equation}
+ q_X(x\mid c)=q_Z(Q_z^\top x\mid c)
+ q_{R\mid Z}(Q_r^\top x\mid Q_z^\top x,c).
+ \label{eq:density-factor}
+\end{equation}
+
+\begin{theorem}[Exact full-density error decomposition]
+Let $P$ and $Q$ be two conditional laws on $X$ using the same orthogonal chart.  Whenever the KL divergences exist,
+\begin{align}
+ \KL(P_X(\cdot\mid C)\|Q_X(\cdot\mid C))
+ &=\KL(P_Z(\cdot\mid C)\|Q_Z(\cdot\mid C))\nonumber\\
+ &\quad+\E_{P_Z}\!\left[
+ \KL(P_{R\mid Z}(\cdot\mid Z,C)\|Q_{R\mid Z}(\cdot\mid Z,C))
+ \right].
+ \label{eq:kl-chain}
+\end{align}
+\end{theorem}
+\begin{proof}
+The orthogonal change of variables has unit absolute determinant.  Apply the probability chain rule to $p(z,r\mid c)=p(z\mid c)p(r\mid z,c)$ and take the $P$ expectation of the log density ratio.
+\end{proof}
+
+There is no variational gap in \eqref{eq:kl-chain}; latent and fiber errors are explicit and separately measurable.
+
+\subsection{Diagonal-decoder gap}
+
+\begin{proposition}[Optimal diagonal Gaussian gap]
+Fix $(z,c)$ and suppose the true conditional fiber is $\cN(\{\mu},\Sigma)$ with $\Sigma\succ0$.  Among Gaussian approximations with the correct mean and diagonal covariance $D$, the KL minimizer is $D=\diag(\Sigma)$ and the minimum is
+\begin{equation}
+ \Delta_{\mathrm{diag}}(z,c)
+ =\frac12\log\frac{\det\diag(\Sigma(z,c))}{\det\Sigma(z,c)}\ge0.
+ \label{eq:diag-gap}
+\end{equation}
+It is strictly positive exactly when $\Sigma$ is not diagonal.
+\end{proposition}
+\begin{proof}
+For Gaussians with equal mean,
+\[
+ \KL(\cN(\mu,\Sigma)\|\cN(\mu,D))
+ =\frac12\{\tr(D^{-1}\Sigma)-(D-d_r)+\log\det D-\log\det\Sigma\}.
+\]
+Minimizing coordinatewise gives $D_{jj}=\Sigma_{jj}$.  Substitution yields \eqref{eq:diag-gap}; Hadamard's inequality gives nonnegativity and its equality condition.
+\end{proof}
+
+\begin{corollary}[Same-dimensional representation separation]
+Consider a KL-VAE latent-flow baseline with the same active dimension $d$ whose endpoint residual family is diagonal Gaussian.  For a target in $\mathfrak T(d,b)$ with positive expected gap $\E\Delta_{\mathrm{diag}}(Z,C)>0$, an exact block-fiber GF-FIQ has zero conditional fiber KL, while every such diagonal VAE decoder has full-density KL at least $\E\Delta_{\mathrm{diag}}(Z,C)$, even if both latent marginals are learned exactly.
+\end{corollary}
+
+This is a precise, non-universal meaning of ``better representation than a VAE'': equal active dimension, equal conditioning, and a strict full-density error gap under a specified baseline residual family.
+
+\subsection{Rate distortion for KL regularization}
+
+Let a VAE encoder define $q(z\mid x)$ and let $p_0(z)$ be a fixed prior.  Its average KL obeys
+\begin{equation}
+ \E_X\KL(q(Z\mid X)\|p_0)
+ =I_q(X;Z)+\KL(q_Z\|p_0)\ge I_q(X;Z).
+ \label{eq:rate}
+\end{equation}
+For any distortion $d(x,\hat x)$, rate-distortion theory implies
+\begin{equation}
+ \E d(X,\widehat X)\ge D_P(I_q(X;Z)),
+\end{equation}
+where $D_P$ is the distortion-rate function.  GF-FIQ does not force the aggregated active law toward a fixed prior at encoding time; it learns that law by a flow and retains complementary randomness explicitly.  This provides a second conditional separation, although it does not imply dominance over an unrestricted stochastic autoencoder.
+
