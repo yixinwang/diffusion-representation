@@ -1,0 +1,116 @@
+\section{Learning the quotient from raw flow labels}
+
+\subsection{Population moment identity}
+
+Assume for this subsection that $\E X_1=0$, $\Cov(X_1)=\Sigma$, and $t\in(0,1)$ is fixed.  From \eqref{eq:rectified},
+\begin{align}
+ \E[VX_t^\top]
+ &=\E[(X_1-X_0)((1-t)X_0+tX_1)^\top]\nonumber\\
+ &=t\Sigma-(1-t)I_D.
+ \label{eq:moment}
+\end{align}
+Thus the raw flow-label moment has exactly the same eigenvectors as the data covariance.
+
+\begin{theorem}[Active-subspace recovery]
+Suppose
+\begin{equation}
+ \Sigma=Q_z\Lambda_zQ_z^\top+\lambda_r Q_rQ_r^\top,
+ \quad \min_j(\Lambda_{z,jj}-\lambda_r)=\delta>0.
+ \label{eq:spike}
+\end{equation}
+Then the leading $d$ eigenspace of $M_t=\E\operatorname{sym}(VX_t^\top)$ is $\operatorname{span}(Q_z)$, with eigengap $t\delta$.  If $\norm{\wh M_t-M_t}_{\mathrm{op}}\le\eta<t\delta/2$, then
+\begin{equation}
+ \norm{\sin\Theta(\wh Q_z,Q_z)}_{\mathrm{op}}
+ \le\frac{2\eta}{t\delta}.
+ \label{eq:dk}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Equation \eqref{eq:moment} is a scalar affine transformation of $\Sigma$, so it preserves eigenvectors and multiplies covariance eigengaps by $t$.  Apply the Davis--Kahan sine theorem.
+\end{proof}
+
+For sub-Gaussian samples, matrix Bernstein or standard covariance concentration gives $\eta=O_{\Pp}(K^2\sqrt{(D+\log(1/\alpha))/n})$ up to the usual lower-order term.  The moment needs one sampled path time and one outer product, or a randomized sketch, per observation; no ambient neural vector field is fitted.
+
+\subsection{The residual gauge failure}
+
+The active theorem does \emph{not} identify the basis of $\operatorname{span}(Q_r)$ when the residual eigenvalues are tied.  If $O\in\R^{(D-d)\times(D-d)}$ is orthogonal, then $[Q_z,Q_rO]$ recovers the same active quotient.  A cheap block covariance in one residual basis can become dense after rotation by $O$.
+
+This was a real failure in the first multi-seed experiment: the active subspace was recovered, but an arbitrary numerical eigenbasis split true correlated pairs across different blocks, eliminating the expected block-fiber advantage.  The repair is a second, conditional-dependence gauge criterion.
+
+\subsection{Cross-fitted conditional covariance graph}
+
+After fixing $Q_z$, define provisional residuals $R=Q_r^\top X$.  Centering can be included; in the exact benchmark the conditional means are zero.  For $i\ne j$, define the population edge weight
+\begin{equation}
+ S_{ij}=\Var\!\left(\E[R_iR_j\mid Z,C]\right).
+ \label{eq:edge}
+\end{equation}
+The implementation estimates $\E[R_iR_j\mid Z,C]$ on the training split using a fixed nonlinear feature dictionary and evaluates predictive $R^2$ on validation data.  Test data are never used for the graph.
+
+\begin{assumption}[Pair-block margin]
+The residual coordinates admit a true partition $\mathcal P^*=\{\{i_1,j_1\},\ldots,\{i_m,j_m\}\}$ such that
+\begin{equation}
+ \sum_{\{i,j\}\in\mathcal P^*}S_{ij}
+ \ge \sum_{\{i,j\}\in\mathcal P}S_{ij}+\gamma
+ \label{eq:matching-margin}
+\end{equation}
+for every other perfect matching $\mathcal P$, for some $\gamma>0$.
+\end{assumption}
+
+\begin{theorem}[Gauge recovery by maximum-weight matching]
+Let $\wh S$ satisfy $\max_{i<j}|\wh S_{ij}-S_{ij}|\le\varepsilon$.  If the pair-block margin holds and $2m\varepsilon<\gamma$, then maximum-weight perfect matching under $\wh S$ recovers $\mathcal P^*$.
+\end{theorem}
+\begin{proof}
+For any matching $\mathcal P$, its empirical total differs from its population total by at most $m\varepsilon$.  Hence the empirical gap between $\mathcal P^*$ and any competitor is at least $\gamma-2m\varepsilon>0$.
+\end{proof}
+
+For blocks larger than pairs, the code uses a greedy score grouping.  That is a practical heuristic, not covered by this exact theorem.
+
+\section{Algorithm}
+
+\paragraph{Stage A: quotient discovery.}
+\begin{enumerate}[leftmargin=*]
+\item Split data into train, validation, and test before model fitting.
+\item Sample raw rectified-flow triples $(T,X_T,V)$ from train data and Gaussian source noise.
+\item Estimate $\wh M=\frac1n\sum_i\operatorname{sym}(V_iX_{T_i,i}^\top)$ and take its leading $d$ eigenvectors as $\wh Q_z$.
+\item Choose an arbitrary orthogonal residual completion $\wh Q_r$.
+\item Estimate validation conditional-dependence weights $\wh S_{ij}$ and permute/group residual axes by maximum-weight pair matching or the declared block heuristic.
+\end{enumerate}
+
+\paragraph{Stage B: active flow.}
+Transform each observation to $(Z,R)=\wh Q^\top X$.  Train a rectified-flow field $u_\theta(t,z,c)$ from
+\begin{equation}
+ \min_\theta\E\norm{Q_z^\top V-u_\theta(T,Q_z^\top X_T,C)}^2.
+ \label{eq:active-loss}
+\end{equation}
+The population target is the active conditional velocity.  In the exact quotient class it closes in $(z,c)$.
+
+\paragraph{Stage C: one-shot fiber.}
+Train block-Cholesky functions $(\mu_\psi,L_\psi)$ by
+\begin{equation}
+ \min_\psi -\E\log\cN(R;\mu_\psi(Z,C),L_\psi(Z,C)L_\psi(Z,C)^\top).
+ \label{eq:fiber-loss}
+\end{equation}
+All axes are retained; only covariance interactions are restricted to the declared blocks.
+
+\paragraph{Stage D: generation.}
+Sample $U,E$ independently from standard Gaussian, integrate the $d$-dimensional active ODE to get $Z$, sample $R=\mu_\psi(Z,C)+L_\psi(Z,C)E$ once, and decode $X=Q_zZ+Q_rR$.
+
+\paragraph{Stage E: falsification.}
+On held-out validation data, report active closure error, block-versus-diagonal fiber NLL, dimension sweeps, and total inference cost.  Increase $d$ or fiber complexity when the approximation error is larger than the predeclared compute penalty; do not claim a quotient when the residual field remains complex.
+
+\section{Complexity}
+
+Let $C_u(d)$ be one evaluation cost of the active vector field, $K$ the number of ODE evaluations, $C_f(D,d,b)$ the one-shot block-fiber cost, and $C_Q(D)$ the chart cost.  Then
+\begin{align}
+ C_{\mathrm{FIQ}}&=K C_u(d)+C_f(D,d,b)+C_Q(D),\label{eq:cfiq}\\
+ C_{\mathrm{full}}&=K C_v(D),\label{eq:cfull}\\
+ C_{\mathrm{latent}}&=K C_u(d)+C_{\mathrm{decoder}}(D,d).\label{eq:clatent}
+\end{align}
+For fixed small $b$, the block fiber is linear in the number of residual coordinates up to the context network.  The current dense orthogonal chart has $C_Q(D)=O(D^2)$ once.  Therefore:
+\begin{itemize}[leftmargin=*]
+\item the \emph{iterative} complexity is exactly latent-dimensional;
+\item total complexity has the same form as latent flow plus a one-shot decoder/fiber;
+\item a proof of image-scale latent-order complexity additionally requires a structured chart with $C_Q(D)=O(D\log D)$ or $O(D)$, such as local lifting, wavelets, sparse couplings, or butterfly factors.
+\end{itemize}
+The experiments count the dense chart and fiber in wall-clock inference time; they do not claim orders-of-magnitude image speedups.
+
