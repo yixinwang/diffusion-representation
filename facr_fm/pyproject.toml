@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facr-fm"
+version = "0.1.0"
+description = "Flow-Aligned Conditional Reparameterization for latent flow matching and diffusion"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "scipy", "scikit-image", "torch", "matplotlib"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
