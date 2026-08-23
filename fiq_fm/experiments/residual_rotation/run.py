@@ -555,22 +555,34 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "results/residual_rotation_development")
     parser.add_argument("--seeds", type=int, nargs="+", default=None)
+    parser.add_argument("--n-train", type=int, default=None)
+    parser.add_argument("--n-validation", type=int, default=None)
+    parser.add_argument("--n-test", type=int, default=None)
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--confirmation", action="store_true")
     args = parser.parse_args()
-    if args.confirmation and (args.smoke or args.seeds is not None):
+    size_overridden = any(
+        value is not None for value in (args.n_train, args.n_validation, args.n_test)
+    )
+    if args.confirmation and (args.smoke or args.seeds is not None or size_overridden):
         raise SystemExit("confirmation uses only the frozen seeds and sizes")
     if args.confirmation:
         config = Config(seeds=tuple(range(100, 130)), confirmation=True)
     elif args.smoke:
         config = Config(
             seeds=tuple(args.seeds or (0,)),
-            n_train=2_000,
-            n_validation=1_000,
-            n_test=1_000,
+            n_train=args.n_train or 2_000,
+            n_validation=args.n_validation or 1_000,
+            n_test=args.n_test or 1_000,
         )
     else:
-        config = Config(seeds=tuple(args.seeds or Config().seeds))
+        defaults = Config()
+        config = Config(
+            seeds=tuple(args.seeds or defaults.seeds),
+            n_train=args.n_train or defaults.n_train,
+            n_validation=args.n_validation or defaults.n_validation,
+            n_test=args.n_test or defaults.n_test,
+        )
     args.output.mkdir(parents=True, exist_ok=True)
     started = time.perf_counter()
     write_json(args.output / "config.json", {**asdict(config), "provenance": provenance()})

@@ -1,0 +1,54 @@
+{
+  "commutant_relative_eigengap_minimum": 0.5,
+  "confirmation": false,
+  "contrast_rank": 4,
+  "covariance_ceiling": 20.0,
+  "covariance_floor": 0.05,
+  "equivalence_margin_nats_per_dim": 0.02,
+  "heldout_offblock_maximum": 0.05,
+  "n_random_features": 2,
+  "n_test": 8000,
+  "n_train": 48000,
+  "n_validation": 4000,
+  "provenance": {
+    "command": [
+      "fiq_fm/experiments/residual_rotation/run.py",
+      "--seeds",
+      "200",
+      "201",
+      "202",
+      "203",
+      "204",
+      "--n-train",
+      "48000",
+      "--output",
+      "fiq_fm/results/residual_rotation_scaling_n48000_development"
+    ],
+    "cpu_count": 128,
+    "git_commit": "03f80d1412dd1f26595fd04eb8f3e40abaf64995",
+    "numpy": "2.2.6",
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "processor": "x86_64",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "slurm_job_id": "44284215",
+    "source_manifest_sha256": "230c133899e33185d8129509921b2dd5664526e637a61e7acd2fe3c0a82ffe23",
+    "source_sha256": {
+      "experiments/residual_rotation/run.py": "b5d3bb580b5cba350f22f22c8a014c21765347e74afc498177b53b3ff33ca1be",
+      "src/fiqfm/inference.py": "24f989abe93e733b256663c03a448e56fe7e691bc064462a9b85770288476597",
+      "src/fiqfm/rotation.py": "6de85a6ce43344101b68342400b734dbd0dce4017f01e2ecd5d65eacd5bce516",
+      "tests/test_inference.py": "18f7cf830722d59f24911d2ab26170fd037012dc45f40fe53a0b84163f74e2d3",
+      "tests/test_rotation.py": "636293dabc8b1e0cb323fc8f731692c96a7d06ea75c532894e8ef0405fc0d9c1",
+      "theory/residual_rotation_protocol.md": "9cbbd644855166f1803941e7f2f0b0a379369db094b2cfe0efc31e16ba697a3d"
+    },
+    "tracked_worktree_dirty": true
+  },
+  "response_relative_eigengap_minimum": 0.1,
+  "ridge": 1.0,
+  "seeds": [
+    200,
+    201,
+    202,
+    203,
+    204
+  ]
+}
