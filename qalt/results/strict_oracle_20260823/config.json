@@ -1,0 +1,48 @@
+{
+  "active_dim": 4,
+  "confirmation_seed_manifest_sha256": "153516355158d52e18f4551a8e89fa4105b456921d65c3a5c1f1b4e7ef08994c",
+  "confirmation_seed_start": 10000,
+  "confirmation_units": 200,
+  "fiber_dim": 12,
+  "provenance": {
+    "command": [
+      "qalt/experiments/strict_oracle/run.py",
+      "--output",
+      "qalt/results/strict_oracle_20260823"
+    ],
+    "cpu_count": 128,
+    "git_commit": "983a7a758b9763afb294b8a143e1a0b956c7d813",
+    "numpy": "2.2.6",
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "processor": "x86_64",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "slurm_job_id": "44234187",
+    "source_manifest_sha256": "54b5ebdf725bd870529e5274708b80a94ef63d181236a7298cd5d1bd393f6e44",
+    "source_sha256": {
+      "experiments/strict_oracle/run.py": "255d1312dcf7bd4ff87a3fa58521812f3a9c83f9eec22b606dc3b5d7d5ad939b",
+      "src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+      "tests/test_qalt_core.py": "632ae1784bb701042f1ce5cb34f74205cd8ff6c123c282b84e64c386d8c18403",
+      "theory/QALT_repaired.tex": "9e5085e303fd602a61ba604999a0151c398e8ee7d0badab091db22d18feb89a5",
+      "theory/experimental_protocol.md": "08838c345d09bbbf0f6b04852fdd6a8c45a4d88631e4ddc2773ba8c93ceeef18"
+    },
+    "tracked_worktree_dirty": true
+  },
+  "sample_sizes": [
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    512
+  ],
+  "solver_steps": [
+    4,
+    10,
+    20,
+    50
+  ],
+  "target_scale": 2.0,
+  "tie_tolerance": 1e-12,
+  "transformer_width": 64
+}

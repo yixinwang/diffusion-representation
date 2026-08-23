@@ -97,8 +97,14 @@ If $h:\R^m\to\R^m$ is a fixed bijection, then $\sigma(h(Y))=\sigma(Y)$ and $I(X;
 
 For a non-injective nonlinear decoder $D$, observation-space KL is at most latent-space KL by data processing; equality is not guaranteed.  If $D$ is $L_D$-Lipschitz, then decoded $W_2$ is at most $L_D$ times latent $W_2$.  Neither fact converts a latent strict gap into a strict observation-space gap.
 
+\section{Registered oracle confirmation}
+
+The protocol was frozen at Git commit \texttt{983a7a7} before the full confirmation seeds were inspected.  The run used 200 independent Monte Carlo units at each registered sample size.  All five gates passed.  Exact exponential and structural-split controls tied QALT, while the finite-Euler KL gaps at $K=4,10,20,50$ were $0.0361648$, $0.00642798$, $0.00166719$, and $0.000272823$.
+
+Under exact variance sharing at $n=512$, coordinatewise-minus-pooled KL was $0.0106015$ with paired 95\% interval $[0.00999721,0.0112269]$; the same-information pooled full-latent control tied exactly.  Under alternating variances at $n=512$, the contrast reversed to $-1.32849$ with interval $[-1.32907,-1.32790]$, exposing the registered misspecification cost.  The operation-count proxy was approximately $0.213$ times the full-latent proxy, but no wall-clock or memory advantage was measured.  The nonlinear decoder round-trip error was $8.88\times10^{-16}$ and active excess kurtosis was $27.81$; these are sanity checks, not learned-quotient evidence.
+
 \section{Status and next falsification gate}
 
-The first confirmatory oracle study freezes the active sampler and tests four statements: exact controls tie; the finite-step Euler residual has positive error; a pooled same-information control ties; and misspecified pooling eventually loses.  Passing that gate validates the algebra and implementation only.  The next gate must learn a nonlinear quotient from held-out data and compare against optimized exact-solver and pooled baselines.  Image and video experiments are deferred until those mechanisms pass, with modern latent diffusion or flow baselines, identical conditioning and priors, frozen test evaluators, measured latency and memory, and no test-driven selection.
+The oracle confirmation validates the algebra and implementation only.  The next gate must learn a nonlinear quotient from held-out data and compare against optimized exact-solver and pooled baselines.  Image and video experiments are deferred until those mechanisms pass, with modern latent diffusion or flow baselines, identical conditioning and priors, frozen test evaluators, measured latency and memory, and no test-driven selection.
 
 \end{document}

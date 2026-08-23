@@ -15,6 +15,8 @@ Scope: `fiq_fm/theory/FIQ_FM_verified.tex` and `qalt/theory/QALT_repaired.tex`, 
 
 No hard failure remains in the audited scope.
 
+The scorecards were rerun after adding the registered QALT confirmation section. The section reports every registered tie, strict gap, misspecification reversal, and the operation proxy's measurement boundary; it does not promote the oracle result to learned, hardware, image, or video evidence. Scores are unchanged.
+
 ## Source-and-claims scorecard
 
 | Item | Score | Evidence |

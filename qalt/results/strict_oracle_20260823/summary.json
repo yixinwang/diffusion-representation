@@ -1,0 +1,140 @@
+{
+  "all_registered_checks_pass": true,
+  "checks": {
+    "euler_is_strictly_worse": true,
+    "exact_solver_controls_tie": true,
+    "misspecified_pooling_loses_at_largest_n": true,
+    "pooling_beats_coordinatewise_under_exact_sharing": true,
+    "same_information_pooled_control_ties": true
+  },
+  "estimation": {
+    "alternating_variances": {
+      "128": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": -1.2937507663565866,
+          "ci95_low": -1.2989886390684082,
+          "mean": -1.2964296980724013
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "16": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": -0.8696933719042677,
+          "ci95_low": -0.9423727759082143,
+          "mean": -0.9067965557766605
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "32": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": -1.127419641028805,
+          "ci95_low": -1.1552568595451862,
+          "mean": -1.1417337594352848
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "4": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 3.0658254185006277,
+          "ci95_low": 2.0409146015027217,
+          "mean": 2.523719103563543
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "512": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": -1.327903935824555,
+          "ci95_low": -1.3290744224451407,
+          "mean": -1.328491676587298
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "64": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": -1.2435441326765304,
+          "ci95_low": -1.2553226056510325,
+          "mean": -1.2495047013362008
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "8": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.013372290347237971,
+          "ci95_low": -0.27813230253611154,
+          "mean": -0.1450959317244717
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      }
+    },
+    "exact_sharing": {
+      "128": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.045528999822179006,
+          "ci95_low": 0.04011559142155594,
+          "mean": 0.042793270032971516
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "16": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.4841423511710509,
+          "ci95_low": 0.41148740954352586,
+          "mean": 0.4468781486928875
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "32": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.20071540691810683,
+          "ci95_low": 0.17496812647199705,
+          "mean": 0.1874868971677984
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "4": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 5.1253483657386365,
+          "ci95_low": 3.83158960240772,
+          "mean": 4.438407246035065
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "512": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.011226884978679205,
+          "ci95_low": 0.009997210978256383,
+          "mean": 0.010601541269341652
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "64": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 0.09820875556577485,
+          "ci95_low": 0.08643456501314013,
+          "mean": 0.09222124742416064
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      },
+      "8": {
+        "coordinatewise_minus_qalt": {
+          "ci95_high": 1.2658079661882446,
+          "ci95_low": 1.029120828027,
+          "mean": 1.1421589735035445
+        },
+        "full_pooled_minus_qalt_max_abs": 0.0
+      }
+    }
+  },
+  "maximum_claim": "Restricted oracle mechanisms reproduced. Optimized same-information controls tie QALT in quality; QALT may retain a compute advantage when measured overhead is below the saved repeated-token cost.",
+  "nonlinear_non_gaussian_sanity": {
+    "max_inverse_error": 8.881784197001252e-16,
+    "mean_active_excess_kurtosis": 27.813255512029073
+  },
+  "runtime_seconds": 3.198101515881717,
+  "solver_euler_kl_gaps": {
+    "10": 0.006427979950935053,
+    "20": 0.001667187240173687,
+    "4": 0.03616482012060532,
+    "50": 0.00027282303576362313
+  }
+}

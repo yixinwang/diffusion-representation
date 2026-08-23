@@ -1,0 +1,17 @@
+kl,method,qalt_full_operation_ratio,steps,study,w2_squared
+0.0,qalt_exact,0.212744140625,4,known_scale_solver,0.0
+0.03616482012060532,full_latent_euler,0.212744140625,4,known_scale_solver,0.1322173540572747
+0.0,full_latent_exponential,0.212744140625,4,known_scale_solver,0.0
+0.0,full_latent_structural_split,0.212744140625,4,known_scale_solver,0.0
+0.0,qalt_exact,0.21259765625,10,known_scale_solver,0.0
+0.006427979950935053,full_latent_euler,0.21259765625,10,known_scale_solver,0.024745933313612585
+0.0,full_latent_exponential,0.21259765625,10,known_scale_solver,0.0
+0.0,full_latent_structural_split,0.21259765625,10,known_scale_solver,0.0
+0.0,qalt_exact,0.212548828125,20,known_scale_solver,0.0
+0.001667187240173687,full_latent_euler,0.212548828125,20,known_scale_solver,0.006539497941395452
+0.0,full_latent_exponential,0.212548828125,20,known_scale_solver,0.0
+0.0,full_latent_structural_split,0.212548828125,20,known_scale_solver,0.0
+0.0,qalt_exact,0.21251953125,50,known_scale_solver,0.0
+0.00027282303576362313,full_latent_euler,0.21251953125,50,known_scale_solver,0.0010826670742843767
+0.0,full_latent_exponential,0.21251953125,50,known_scale_solver,0.0
+0.0,full_latent_structural_split,0.21251953125,50,known_scale_solver,0.0

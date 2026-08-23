@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "exact_solver_controls_tie": true,
+    "euler_is_strictly_worse": true,
+    "same_information_pooled_control_ties": true,
+    "pooling_beats_coordinatewise_under_exact_sharing": true,
+    "misspecified_pooling_loses_at_largest_n": true
+  }
+}

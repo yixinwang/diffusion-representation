@@ -14,6 +14,6 @@ PYTHONPATH=qalt/src python qalt/experiments/strict_oracle/run.py \
   --output qalt/results/strict_oracle
 ```
 
-The test split is generated from fixed, untouched confirmation seeds. The output records the complete configuration, seed-level metrics, analytic targets, and promotion decisions.
+The full 2026-08-23 confirmation is in `results/strict_oracle_20260823/`. All registered oracle gates passed, including the required exact ties and the misspecification reversal. The result validates the restricted algebra and implementation, not learned quotient, speed, image, or video claims.
 
 The canonical audited theory note is `theory/QALT_repaired.tex`. It proves a conditional cost separation and a strict finite-step gap only against the registered inexact Euler comparator; it also proves why an optimized same-information control can tie QALT.
