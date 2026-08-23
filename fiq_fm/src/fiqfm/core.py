@@ -444,26 +444,43 @@ def result_dict(x: Any) -> dict[str, Any]:
     return asdict(x) if hasattr(x,"__dataclass_fields__") else x
 
 
-def _nonlinear_features(z: torch.Tensor, n_random: int = 48, seed: int = 0) -> torch.Tensor:
+def _nonlinear_features(
+    z: torch.Tensor,
+    n_random: int = 48,
+    seed: int = 0,
+    location: torch.Tensor | None = None,
+    scale: torch.Tensor | None = None,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     z = z.detach().double().cpu()
-    z = (z - z.mean(0, keepdim=True)) / z.std(0, unbiased=True, keepdim=True).clamp_min(1e-6)
+    if location is None:
+        location = z.mean(0, keepdim=True)
+    if scale is None:
+        scale = z.std(0, unbiased=True, keepdim=True).clamp_min(1e-6)
+    z = (z - location) / scale
     g = torch.Generator().manual_seed(seed)
     w = torch.randn(z.shape[1], n_random, generator=g, dtype=torch.float64)
     w = w / torch.linalg.norm(w, dim=0, keepdim=True).clamp_min(1e-12)
     proj = z @ w
-    return torch.cat([torch.ones(len(z), 1, dtype=z.dtype), z, z.square(), torch.tanh(proj), torch.sin(proj)], 1)
+    features = torch.cat(
+        [torch.ones(len(z), 1, dtype=z.dtype), z, z.square(), torch.tanh(proj), torch.sin(proj)],
+        1,
+    )
+    return features, location, scale
 
 
 def fiber_dependence_scores(z_train,r_train,z_val,r_val,*,seed=0,n_random=48,ridge=1e-2):
-    """Cross-fitted validation R2 for conditional covariance edges."""
-    ptr=_nonlinear_features(z_train,n_random,seed); pva=_nonlinear_features(z_val,n_random,seed)
+    """Cross-fitted explained-variance scores for conditional covariance edges."""
+    ptr,z_location,z_scale=_nonlinear_features(z_train,n_random,seed)
+    pva,_,_=_nonlinear_features(z_val,n_random,seed,z_location,z_scale)
     mu=ptr[:,1:].mean(0,keepdim=True); sd=ptr[:,1:].std(0,unbiased=True,keepdim=True).clamp_min(1e-6)
     ptr=torch.cat([ptr[:,:1],(ptr[:,1:]-mu)/sd],1); pva=torch.cat([pva[:,:1],(pva[:,1:]-mu)/sd],1)
     m=r_train.shape[1]; pairs=[(i,j) for i in range(m) for j in range(i+1,m)]
     ytr=torch.stack([r_train[:,i].double().cpu()*r_train[:,j].double().cpu() for i,j in pairs],1)
     yva=torch.stack([r_val[:,i].double().cpu()*r_val[:,j].double().cpu() for i,j in pairs],1)
     gram=ptr.T@ptr+ridge*torch.eye(ptr.shape[1],dtype=ptr.dtype); coef=torch.linalg.solve(gram,ptr.T@ytr); pred=pva@coef; base=ytr.mean(0,keepdim=True)
-    score=(1-(yva-pred).square().mean(0)/(yva-base).square().mean(0).clamp_min(1e-12)).clamp_min(0)
+    baseline_error=(yva-base).square().mean(0)
+    fitted_error=(yva-pred).square().mean(0)
+    score=(baseline_error-fitted_error).clamp_min(0)
     out=torch.zeros(m,m,dtype=torch.float64)
     for k,(i,j) in enumerate(pairs): out[i,j]=out[j,i]=score[k]
     return out.float()

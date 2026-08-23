@@ -32,11 +32,11 @@ def test_digits_split_has_no_overlap():
     assert len(a|b|c)==1797
 
 
-def test_fiber_gauge_refinement_recovers_pair_blocks():
+def test_fixed_residual_axes_are_partitioned_into_pair_blocks():
     from fiqfm.core import refine_fiber_gauge
     d=ExactQuotientDistribution(D=18,d=2,seed=77)
     tr=d.sample(7000,21); va=d.sample(3500,22)
-    # Deliberately scramble the true residual axes while preserving the exact active quotient.
+    # Deliberately permute, but do not rotate, the true residual axes.
     perm=torch.tensor([7,0,13,2,8,3,12,5,1,11,6,15,4,9,14,10])
     q=torch.cat([d.q[:,:2],d.q[:,2:][:,perm]],1)
     chart=OrthogonalChart(q,2)

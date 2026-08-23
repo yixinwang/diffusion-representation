@@ -25,7 +25,7 @@ For a locally Lipschitz decoder `D:R^d->R^D`, the image is `d`-rectifiable and h
 
 **Verdict:** false, discovered empirically.
 
-The raw-label moment correctly recovered the two-dimensional active subspace on the synthetic benchmark. However, the repeated residual eigenvalue creates a gauge: any orthogonal rotation inside that eigenspace is equally valid for the active theorem. A random residual rotation turns an exactly block-local fiber into a dense conditional covariance. The cheap `2x2` fiber then fails despite perfect active recovery.
+The raw-label moment can recover the two-dimensional active subspace under its eigengap assumptions. A tied residual eigenspace would create an unresolved rotation gauge: a random rotation can turn a block-local fiber into a dense conditional covariance. The current graph only permutes fixed residual axes. Moreover, the synthetic benchmark uses unequal residual marginal variances, so it does not instantiate this tied-eigenspace failure mode.
 
 This failure appeared in full seeds 0 and 1. It was not averaged away.
 
@@ -91,4 +91,4 @@ The deep iterative field acts only in dimension `d`, and the fiber is one-shot. 
 
 ## Surviving result
 
-The complete verified result is the static orthogonal, gauge-fixed quotient theorem plus its pair-block residual theorem. It is exact for the stated triangular family, exposes a strict diagonal-decoder KL gap, and is supported by a five-seed exact-quotient benchmark. The digits benchmark supports improved held-out sliced Wasserstein and conditional-label fidelity over the implemented latent baselines, but not a statistically significant feature-Fréchet advantage over the strongest RAE baseline.
+The surviving theoretical result is the static orthogonal quotient theorem plus pair-partition recovery under its matching margin. It is exact for the stated triangular family and exposes a strict diagonal-decoder KL gap. The archived empirical tables are not promoted: their referenced seed-level JSON files are absent, and the original digits aggregation command failed. Fresh common-random-number confirmation is required.

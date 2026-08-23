@@ -1,6 +1,8 @@
-# Experimental protocol and promotion rules
+# Historical protocol and repaired-run requirements
 
-## Registered hypotheses
+The checked pre-audit result tables do not satisfy this protocol because their seed-level files are absent and their summary schemas do not match the current runners. No old table is promoted as verified evidence. Fresh runs must use new output directories and preserve every script-emitted artifact.
+
+## Historical hypotheses to be re-registered before confirmation
 
 1. On an exact quotient with correlated local fibers, gauge-fixed FIQ-FM should improve held-out distribution error over:
    - a diagonal-fiber ablation,
@@ -38,7 +40,7 @@ Uniform dequantization noise is generated independently for each split. The coor
 The following use train and validation data only:
 
 - flow-moment chart estimation,
-- residual gauge matching,
+- fixed-axis residual partitioning,
 - early stopping,
 - VAE/RAE encoder and decoder fitting,
 - flow and fiber fitting,
@@ -65,7 +67,7 @@ For each comparison:
 ### Distribution metrics
 
 - sliced 2-Wasserstein,
-- unbiased Gaussian-kernel MMD squared,
+- adaptive-bandwidth Gaussian-kernel MMD U-statistic, clipped at zero,
 - energy distance,
 - covariance error,
 - normalized mean error.
@@ -88,7 +90,7 @@ A classifier/feature network is trained only on the training split and early-sto
 
 ## Statistical reporting
 
-Every registered seed is retained. Reports contain mean, standard error, all five seed values, a paired bootstrap 95% interval for the mean improvement, and a one-sided paired t-test as a secondary diagnostic. No metric is called significant when the bootstrap interval includes zero.
+Every requested seed is retained. Synthetic seeds correspond to independent datasets. Digits seeds are overlapping resamples of one finite dataset, so their intervals quantify split sensitivity and are not treated as independent-replication significance. Any confirmatory real-data analysis needs a sampling unit and multiplicity rule fixed before inspecting results.
 
 ## Promotion criteria
 
@@ -111,9 +113,9 @@ Promote only the metrics whose paired intervals exclude zero against both latent
 python -m pip install -e .
 pytest -q
 python experiments/synthetic_exact/run.py --seeds 0 1 2 3 4 \
-  --output results/synthetic_exact_verified
+  --output results/synthetic_exact_confirmation
 python experiments/sklearn_digits/run.py --seeds 0 1 2 3 4 \
-  --output results/sklearn_digits_verified
+  --output results/sklearn_digits_confirmation
 ```
 
 The scripts persist configuration, all per-seed training/metric records, long-form metrics, paired summaries, and regenerated plots.

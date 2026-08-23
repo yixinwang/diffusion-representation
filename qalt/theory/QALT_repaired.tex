@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\KL}{\operatorname{KL}}
+\title{QALT after Adversarial Audit:\\A Conditional Latent Quotient Sampler, Not a Universal Strict Pareto Theorem}
+\author{Empirical audit draft}
+\date{August 23, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+QALT applies the quotient--fiber idea inside a fixed autoencoder latent space.  An iterative flow acts on an active subspace and a cheap one-shot sampler supplies complementary randomness.  This can be strictly cheaper than repeatedly updating every latent coordinate.  Exact quality parity holds on a declared latent factorization class.  A strict finite-step quality gap holds against a specified inexact residual integrator, but disappears against a same-information baseline that uses the exact residual update or the same pooled estimator.  Thus universal strict quality dominance is false.  The surviving result is a conditional compute theorem, a restricted finite-solver separation, and a falsifiable experimental program.  Because QALT starts after a fixed tokenizer, it is a latent specialization of the ambient FIQ construction rather than an independent universal representation theorem.
+\end{abstract}
+
+\section{Setup}
+
+Let a fixed encoder--decoder pair map observations to a latent variable $Y\in\R^m$ and back by $X=D(Y)$.  Fix an orthogonal matrix $Q=[Q_z,Q_r]$ with active dimension $d$ and residual dimension $q=m-d$.  Write
+\[
+  (Z,R)=Q^\top Y.
+\]
+QALT draws $U\sim\mathcal N(0,I_d)$ and $E\sim\mathcal N(0,I_q)$, integrates an active flow $F$ to obtain $Z=F(U,C)$, samples $R=G(Z,C,E)$ once, and returns $D(Q_zZ+Q_rR)$.  The conditioning variable $C$ and the total source noise $(U,E)$ are supplied equally to all compared samplers.
+
+\begin{theorem}[Exact latent reproduction on a declared class]
+Suppose the target latent law factorizes as
+\[
+ p(y\mid c)=p_Z(z\mid c)p_{R\mid Z}(r\mid z,c)
+\]
+under the fixed chart $Q$.  If $F$ exactly transports $\mathcal N(0,I_d)$ to $p_Z(\cdot\mid c)$ and $G$ exactly samples $p_{R\mid Z}(\cdot\mid z,c)$, then QALT exactly reproduces the target latent law and therefore its decoded pushforward.
+\end{theorem}
+\begin{proof}
+The two factors give the target joint law by disintegration.  The orthogonal inverse chart is bijective, and applying the fixed decoder gives the corresponding observation pushforward.
+\end{proof}
+
+This theorem assumes the factorization and its cheap implementation.  It neither discovers them nor proves that realistic image or video latents possess them.
+
+\section{What strict efficiency actually requires}
+
+Let $C_u(d)$ be one active-field evaluation, $C_v(m)$ one full-latent field evaluation, $C_f(q)$ the one-shot fiber cost, $C_Q(m)$ the chart cost, and $C_D$ the shared decoder cost.  With $K$ vector-field evaluations,
+\begin{align*}
+ C_{\rm QALT}&=K C_u(d)+C_f(q)+C_Q(m)+C_D,\\
+ C_{\rm full}&=K C_v(m)+C_D.
+\end{align*}
+
+\begin{proposition}[Conditional compute separation]
+QALT is strictly cheaper than the full-latent sampler if and only if
+\[
+ K\{C_v(m)-C_u(d)\}>C_f(q)+C_Q(m).
+\]
+Consequently, $d<m$ alone is insufficient; the chart, fiber, architecture, memory traffic, and decoder must all be counted.
+\end{proposition}
+\begin{proof}
+Subtract the two displayed costs.  The shared decoder cancels.
+\end{proof}
+
+The executable oracle study reports this declared operation proxy.  It is not a wall-clock, memory, or hardware-efficiency measurement.
+
+\section{Finite-solver separation and its boundary}
+
+Consider a residual target $R_1=e^aR_0$ with $R_0\sim\mathcal N(0,I_q)$ and $a\ne0$.  A full-latent comparator applies $K$ explicit-Euler steps to $\dot R_t=aR_t$, giving scale $s_K=(1+a/K)^K$, while QALT uses the exact one-shot scale $e^a$.  Assume $1+a/K>0$ and that both methods use the same realized active sampler.
+
+\begin{proposition}[Strict gap against the registered Euler comparator]
+For finite $K$ such that $s_K\ne e^a$, QALT has zero residual KL and Wasserstein error, while the Euler comparator has
+\begin{align*}
+ \KL\!\left(\mathcal N(0,e^{2a}I_q)\,\middle\|\,\mathcal N(0,s_K^2I_q)\right)
+ &=\frac q2\left(\frac{e^{2a}}{s_K^2}-1-\log\frac{e^{2a}}{s_K^2}\right)>0,\\
+ W_2^2\!\left(\mathcal N(0,e^{2a}I_q),\mathcal N(0,s_K^2I_q)\right)
+ &=q(e^a-s_K)^2>0.
+\end{align*}
+\end{proposition}
+\begin{proof}
+The formulas are the diagonal-Gaussian KL and Wasserstein identities.  Strict positivity follows from $x-1-\log x>0$ for $x\ne1$.
+\end{proof}
+
+\begin{corollary}[No universal strict-quality dominance]
+A same-information full-latent baseline that applies the exact exponential residual update ties QALT in residual quality.  More generally, an unrestricted full-latent model class contains a sampler that copies QALT.  Therefore QALT cannot strictly dominate every optimized latent flow or diffusion in generation quality.
+\end{corollary}
+
+The strict finite-$K$ theorem diagnoses wasted numerical integration on a solvable fiber.  It does not prove that QALT is statistically or computationally superior to a well-designed baseline.
+
+\section{Pooling and equal information}
+
+Suppose $R_{ij}\overset{\rm iid}{\sim}\mathcal N(0,\sigma^2)$ for $i=1,\ldots,n$ and $j=1,\ldots,q$, with known zero mean.  The pooled estimator
+\[
+ \widehat\sigma^2_{\rm pool}=\frac1{nq}\sum_{i,j}R_{ij}^2
+\]
+has mean-squared error $2\sigma^4/(nq)$.  A coordinatewise estimator $n^{-1}\sum_iR_{ij}^2$ has mean-squared error $2\sigma^4/n$ for each coordinate.  Pooling therefore gives a factor-$q$ gain against the coordinatewise restriction.  A same-information baseline is also allowed to pool and then ties QALT.  If the variances are not shared, pooling introduces bias; the preregistered misspecification arm must reveal that loss rather than hide it.
+
+\section{Representation statement}
+
+If $h:\R^m\to\R^m$ is a fixed bijection, then $\sigma(h(Y))=\sigma(Y)$ and $I(X;h(Y))=I(X;Y)$ whenever the mutual informations are defined.  Thus an equal-dimensional invertible reparameterization does not add information.  It can make a restricted downstream sampler cheaper or easier to estimate, which is an algorithmic alignment claim rather than a universal information-superiority claim.  A non-injective active projection can discard information and requires the stochastic fiber to reproduce the full latent law.
+
+For a non-injective nonlinear decoder $D$, observation-space KL is at most latent-space KL by data processing; equality is not guaranteed.  If $D$ is $L_D$-Lipschitz, then decoded $W_2$ is at most $L_D$ times latent $W_2$.  Neither fact converts a latent strict gap into a strict observation-space gap.
+
+\section{Status and next falsification gate}
+
+The first confirmatory oracle study freezes the active sampler and tests four statements: exact controls tie; the finite-step Euler residual has positive error; a pooled same-information control ties; and misspecified pooling eventually loses.  Passing that gate validates the algebra and implementation only.  The next gate must learn a nonlinear quotient from held-out data and compare against optimized exact-solver and pooled baselines.  Image and video experiments are deferred until those mechanisms pass, with modern latent diffusion or flow baselines, identical conditioning and priors, frozen test evaluators, measured latency and memory, and no test-driven selection.
+
+\end{document}

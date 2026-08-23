@@ -30,10 +30,12 @@ def copy_decoder(ae,dec):
             for a,b in zip(src,dst): b.weight.copy_(a.weight); b.bias.copy_(a.bias)
 
 def fit_flow(xtr,xv,dim,cfg,seed,ctr,cv,hidden=None):
+    torch.manual_seed(seed)
     m=VectorField(dim,hidden or cfg.hidden,2,10).to(cfg.device)
     return train_flow(m,xtr,xv,c_train=ctr,c_val=cv,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed,eval_every=max(10,cfg.train_steps//10),patience=8)
 
 def fit_fiber(ztr,rtr,zv,rv,block,cfg,seed,ctr,cv,initializer=None):
+    torch.manual_seed(seed)
     m=BlockGaussianFiber(ztr.shape[1],rtr.shape[1],cfg.hidden,2,condition_dim=10,block_size=block).to(cfg.device)
     if initializer: initializer(m)
     return train_fiber(m,ztr,rtr,zv,rv,ctr=ctr,cv=cv,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed,eval_every=max(10,cfg.train_steps//10),patience=8)
@@ -73,10 +75,12 @@ def class_frechet(real_f,gen_f,y):
     return float(np.mean(vals)),vals
 
 def latent_baseline(beta,block,split,cfg,seed):
+    torch.manual_seed(seed+1)
     ae=Autoencoder(64,cfg.d,cfg.hidden,2,10).to(cfg.device)
     ae,aeh=train_autoencoder(ae,split.x_train,split.x_val,ctr=split.c_train,cv=split.c_val,beta=beta,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed+1,eval_every=max(10,cfg.train_steps//10),patience=8)
     ztr,zv,zt=encode(ae,split.x_train,split.c_train),encode(ae,split.x_val,split.c_val),encode(ae,split.x_test,split.c_test)
     flow,fh=fit_flow(ztr,zv,cfg.d,cfg,seed+2,split.c_train,split.c_val)
+    torch.manual_seed(seed+3)
     dec=BlockGaussianFiber(cfg.d,64,cfg.hidden,2,condition_dim=10,block_size=block).to(cfg.device); copy_decoder(ae,dec)
     dec,dh=train_fiber(dec,ztr,split.x_train,zv,split.x_val,ctr=split.c_train,cv=split.c_val,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed+3,eval_every=max(10,cfg.train_steps//10),patience=8)
     zg=sample_flow(flow,len(split.x_test),condition=split.c_test,ode_steps=cfg.ode_steps,seed=seed+4).to(cfg.device); xg=dec.sample(zg,split.c_test.to(cfg.device),seed+5)
@@ -90,11 +94,11 @@ def run_seed(seed,cfg,out):
     block,bh=fit_fiber(ztr,rtr,zv,rv,cfg.block,cfg,seed+30,split.c_train,split.c_val); diag,dh=fit_fiber(ztr,rtr,zv,rv,1,cfg,seed+40,split.c_train,split.c_val)
     zg=sample_flow(zflow,len(split.x_test),condition=split.c_test,ode_steps=cfg.ode_steps,seed=seed+50).to(cfg.device); fiq=chart.inverse(zg.cpu(),block.sample(zg,split.c_test.to(cfg.device),seed+51)); fiqd=chart.inverse(zg.cpu(),diag.sample(zg,split.c_test.to(cfg.device),seed+52))
     with torch.no_grad(): rmean=block.conditional_mean(zt.to(cfg.device),split.c_test.to(cfg.device)).cpu(); fiq_recon=float(((chart.inverse(zt,rmean)-split.x_test)**2).mean())
-    budget=count_parameters(zflow)+count_parameters(block); full_hidden=parameter_matched_width(64,10,budget,2); full=VectorField(64,full_hidden,2,10).to(cfg.device); full,fullh=train_flow(full,split.x_train,split.x_val,c_train=split.c_train,c_val=split.c_val,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed+60,eval_every=max(10,cfg.train_steps//10),patience=8); fullg=sample_flow(full,len(split.x_test),condition=split.c_test,ode_steps=cfg.ode_steps,seed=seed+61)
+    budget=count_parameters(zflow)+count_parameters(block); full_hidden=parameter_matched_width(64,10,budget,2); torch.manual_seed(seed+60); full=VectorField(64,full_hidden,2,10).to(cfg.device); full,fullh=train_flow(full,split.x_train,split.x_val,c_train=split.c_train,c_val=split.c_val,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed+60,eval_every=max(10,cfg.train_steps//10),patience=8); fullg=sample_flow(full,len(split.x_test),condition=split.c_test,ode_steps=cfg.ode_steps,seed=seed+61)
     vaeg,vaeh,vaep=latent_baseline(1e-2,1,split,cfg,seed+100); raeg,raeh,raep=latent_baseline(0.,cfg.block,split,cfg,seed+200)
     samples={'fiq_fm_block':fiq,'fiq_fm_diagonal_ablation':fiqd,'full_fm_param_matched':fullg,'vae_lfm_diagonal':vaeg,'rae_lfm_block':raeg}; realf=features(evaluator,split.x_test); metrics={}
-    for i,(name,x) in enumerate(samples.items()):
-        f=features(evaluator,x); p,r=knn_pr(realf,f,seed=seed+1000+i); cf,cfl=class_frechet(realf,f,split.y_test); metrics[name]={**sample_metrics(split.x_test,x,seed+2000+i),'feature_frechet':frechet(realf,f),'class_feature_frechet':cf,'precision':p,'recall':r,'requested_label_accuracy':label_acc(evaluator,x,split.y_test)}
+    for name,x in samples.items():
+        f=features(evaluator,x); p,r=knn_pr(realf,f,seed=seed+1000); cf,cfl=class_frechet(realf,f,split.y_test); metrics[name]={**sample_metrics(split.x_test,x,seed+2000),'feature_frechet':frechet(realf,f),'class_feature_frechet':cf,'precision':p,'recall':r,'requested_label_accuracy':label_acc(evaluator,x,split.y_test)}
     timing_n=len(split.x_test)
     def gf():
         zz=sample_flow(zflow,timing_n,condition=split.c_test,ode_steps=cfg.ode_steps,seed=seed+700).to(cfg.device); return chart.inverse(zz.cpu(),block.sample(zz,split.c_test.to(cfg.device),seed+701))
@@ -116,7 +120,10 @@ def aggregate(results,out):
         for k in mets:
             v=[r['metrics'][m][k] for r in results]; s['methods'][m][k]={'mean':float(np.mean(v)),'se':float(np.std(v,ddof=1)/math.sqrt(len(v))) if len(v)>1 else 0.,'values':v}; rows += [{'seed':r['seed'],'method':m,'metric':k,'value':r['metrics'][m][k]} for r in results]
     for b in methods[1:]: s['paired_against'][b]={k:paired_stats([r['metrics']['fiq_fm_block'][k] for r in results],[r['metrics'][b][k] for r in results],lower=(k!='precision' and k!='recall' and k!='requested_label_accuracy'),seed=23) for k in mets}
-    s['representation']={m:{'linear_probe_test_mean':float(np.mean([r['representation'][m]['linear_probe']['test_accuracy'] for r in results]))} for m in ['fiq','vae','rae']}
+    s['representation']={
+        'fiq':{'linear_probe_test_mean':float(np.mean([r['representation']['fiq']['linear_probe']['test_accuracy'] for r in results]))},
+        **{m:{'linear_probe_test_mean':float(np.mean([r['representation'][m]['test_accuracy'] for r in results]))} for m in ['vae','rae']},
+    }
     dump(out/'summary.json',s); pd.DataFrame(rows).to_csv(out/'metrics_long.csv',index=False)
     fig,ax=plt.subplots(figsize=(9,4),constrained_layout=True); vals=[s['methods'][m]['class_feature_frechet']['mean'] for m in methods]; err=[s['methods'][m]['class_feature_frechet']['se'] for m in methods]; ax.bar(range(len(methods)),vals,yerr=err,capsize=3); ax.set_xticks(range(len(methods)),methods,rotation=25,ha='right'); ax.set_ylabel('class-conditional feature Fréchet'); fig.savefig(out/'summary_feature_frechet.png',dpi=170); plt.close(fig); return s
 

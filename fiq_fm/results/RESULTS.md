@@ -1,4 +1,6 @@
-# Verified results
+# Archived pre-audit results
+
+These tables preserve the result snapshot committed on 16 August 2026. They are **not currently promoted as verified evidence**: the referenced per-seed JSON files are absent, and the original digits reproduction command crashed during aggregation. The aggregation bug and method-dependent metric randomness were repaired on 23 August 2026. Fresh confirmation must write to a new result directory and reproduce every table from seed-level files before these claims are restored.
 
 All values below are from five registered seeds. Lower is better unless stated otherwise. `±` is one standard error.
 
@@ -57,15 +59,13 @@ Representation diagnostics:
 
 The class-conditional feature-Fréchet mean is best for FIQ, but its paired interval versus VAE/RAE includes zero. It is therefore not promoted as an established improvement. The full flow has lower raw sliced-W2 but poor conditional-label fidelity at this matched budget; no claim of full-flow quality parity on real images is made.
 
-## Files
+## Archived files
 
 - `synthetic_exact_verified/config.json`
-- `synthetic_exact_verified/seed_*.json`
 - `synthetic_exact_verified/metrics_long.csv`
 - `synthetic_exact_verified/summary.json`
 - `sklearn_digits_verified/config.json`
-- `sklearn_digits_verified/seed_*.json`
 - `sklearn_digits_verified/metrics_long.csv`
 - `sklearn_digits_verified/summary.json`
 
-The experiment scripts regenerate the PNG diagnostics, which are not required to reproduce any table entry.
+The archived CSV and JSON summaries alone are insufficient to reconstruct every reported statistic. They remain a historical snapshot rather than confirmation evidence.

@@ -36,7 +36,9 @@ The audit began with incompatible routes.  The durable conclusions are:
 \end{enumerate}
 The selected first implementation is therefore deliberately restricted.  The broader moving-chart formulation remains useful as an extension, but its image-scale computational claim is not treated as proved here.
 
-\section{Gauge-Fixed Flow-Induced Quotient Flow Matching}
+\section{Flow-Induced Quotient Flow Matching}
+
+The construction separates an expensive active transport from a stochastic residual fiber while keeping an invertible ambient chart.
 
 \subsection{Orthogonal quotient and induced field}
 
@@ -75,7 +77,7 @@ Thus the quotient can be trained directly from ordinary conditional flow labels:
 
 \subsection{Endpoint fiber generator}
 
-The verified implementation uses a deep ODE only for $Z$ and a one-shot conditional fiber at the endpoint:
+The audited implementation uses a deep ODE only for $Z$ and a one-shot conditional fiber at the endpoint:
 \begin{align}
  U&\sim\cN(0,I_d), & Z&=F(U,C),\label{eq:zgen}\\
  E&\sim\cN(0,I_{D-d}), & R&=\mu(Z,C)+L(Z,C)E,\label{eq:rgen}\\
@@ -87,16 +89,18 @@ Here $C$ is optional conditioning information, $F$ is represented by the latent 
 A conditional target $P_1(\cdot\mid C)$ belongs to $\mathfrak T(d,b)$ if there are an orthogonal $Q$, a diffeomorphism $F(\cdot,C):\R^d\to\R^d$, and functions $\mu,L$ such that \eqref{eq:zgen}--\eqref{eq:xgen} generate $P_1(\cdot\mid C)$, where every block of $L$ has size at most $b$ and is nonsingular.
 \end{definition}
 
-\begin{theorem}[Exact endpoint parity with a full-dimensional generator]
-Suppose $P_1(\cdot\mid C)\in\mathfrak T(d,b)$.  If the latent flow exactly transports $\cN(0,I_d)$ to $\cL(Z\mid C)$, the fiber model exactly represents $\mu,L$, and the ODE is integrated exactly, then GF-FIQ generates exactly $P_1(\cdot\mid C)$.
+\begin{theorem}[Exact reproduction on the declared factorization class]
+Suppose $P_1(\cdot\mid C)\in\mathfrak T(d,b)$.  If the latent flow exactly transports $\cN(0,I_d)$ to $\cL(Z\mid C)$, the fiber model exactly represents $\mu,L$, and the ODE is integrated exactly, then FIQ-FM generates exactly $P_1(\cdot\mid C)$.
 \end{theorem}
 \begin{proof}
 The latent flow produces a random variable with the same conditional law as $Z$.  Conditional on this $Z$ and $C$, \eqref{eq:rgen} has exactly the target conditional Gaussian law of $R$.  Therefore $(Z,R,C)$ has the target joint law by disintegration.  The orthogonal map $(z,r)\mapsto Q_zz+Q_rr$ is bijective, so its pushforward is exactly the target law of $X$.
 \end{proof}
 
-This theorem gives the precise sense in which generation quality can equal a full ambient flow while iteration occurs only in dimension $d$.  It does not assert that every data distribution belongs to $\mathfrak T(d,b)$.
+This representational theorem gives the precise sense in which generation quality can equal a full ambient flow while iteration occurs only in dimension $d$.  Membership in $\mathfrak T(d,b)$ is assumed rather than discovered, and the theorem does not assert that every data distribution belongs to this class.
 
-\section{Exact density decomposition and strict VAE separation}
+\section{Exact density decomposition and fixed-chart residual separation}
+
+The invertible chart exposes separate active and conditional-fiber errors, which permits a precise comparison to a restricted diagonal residual family.
 
 \subsection{Density and KL chain rule}
 
@@ -127,7 +131,7 @@ There is no variational gap in \eqref{eq:kl-chain}; latent and fiber errors are 
 \subsection{Diagonal-decoder gap}
 
 \begin{proposition}[Optimal diagonal Gaussian gap]
-Fix $(z,c)$ and suppose the true conditional fiber is $\cN(\{\mu},\Sigma)$ with $\Sigma\succ0$.  Among Gaussian approximations with the correct mean and diagonal covariance $D$, the KL minimizer is $D=\diag(\Sigma)$ and the minimum is
+Fix $(z,c)$ and suppose the true conditional fiber is $\cN(\mu,\Sigma)$ with $\Sigma\succ0$.  Among Gaussian approximations with the correct mean and diagonal covariance $D$, the KL minimizer is $D=\diag(\Sigma)$ and the minimum is
 \begin{equation}
  \Delta_{\mathrm{diag}}(z,c)
  =\frac12\log\frac{\det\diag(\Sigma(z,c))}{\det\Sigma(z,c)}\ge0.
@@ -144,11 +148,11 @@ For Gaussians with equal mean,
 Minimizing coordinatewise gives $D_{jj}=\Sigma_{jj}$.  Substitution yields \eqref{eq:diag-gap}; Hadamard's inequality gives nonnegativity and its equality condition.
 \end{proof}
 
-\begin{corollary}[Same-dimensional representation separation]
-Consider a KL-VAE latent-flow baseline with the same active dimension $d$ whose endpoint residual family is diagonal Gaussian.  For a target in $\mathfrak T(d,b)$ with positive expected gap $\E\Delta_{\mathrm{diag}}(Z,C)>0$, an exact block-fiber GF-FIQ has zero conditional fiber KL, while every such diagonal VAE decoder has full-density KL at least $\E\Delta_{\mathrm{diag}}(Z,C)$, even if both latent marginals are learned exactly.
+\begin{corollary}[Fixed-chart diagonal-residual separation]
+Fix the same chart $Q$, active variable $Z$, conditioning $C$, active marginal, and conditional residual mean for both methods.  If the baseline residual family is diagonal Gaussian, then for a target in $\mathfrak T(d,b)$ with positive expected gap $\E\Delta_{\mathrm{diag}}(Z,C)>0$, an exact block fiber has zero conditional fiber KL while every such diagonal residual model has full-density KL at least $\E\Delta_{\mathrm{diag}}(Z,C)$.
 \end{corollary}
 
-This is a precise, non-universal meaning of ``better representation than a VAE'': equal active dimension, equal conditioning, and a strict full-density error gap under a specified baseline residual family.
+This is a fixed-representation model-class separation, not a theorem that the learned latent representation is universally better than a VAE.  A baseline allowed to change the chart or use an unrestricted stochastic decoder can remove the gap.
 
 \subsection{Rate distortion for KL regularization}
 
@@ -162,5 +166,4 @@ For any distortion $d(x,\hat x)$, rate-distortion theory implies
 \begin{equation}
  \E d(X,\widehat X)\ge D_P(I_q(X;Z)),
 \end{equation}
-where $D_P$ is the distortion-rate function.  GF-FIQ does not force the aggregated active law toward a fixed prior at encoding time; it learns that law by a flow and retains complementary randomness explicitly.  This provides a second conditional separation, although it does not imply dominance over an unrestricted stochastic autoencoder.
-
+where $D_P$ is the distortion-rate function.  FIQ-FM does not force the aggregated active law toward a fixed prior at encoding time; it learns that law by a flow and retains complementary randomness explicitly.  This provides a second conditional separation, although it does not imply dominance over an unrestricted stochastic autoencoder.

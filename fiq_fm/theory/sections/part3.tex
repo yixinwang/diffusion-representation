@@ -1,5 +1,7 @@
 \section{Finite-sample and approximation bounds}
 
+The following results separate estimation error in the active field from endpoint error and model-selection uncertainty.
+
 \subsection{Active field oracle inequality}
 
 Let $\cU_d$ be a bounded active-field class, and let $B_z=Q_z^\top V$.  Define the approximation error
@@ -16,7 +18,7 @@ The scientific content is not the generic empirical-process inequality; it is th
 
 \subsection{Endpoint perturbation}
 
-Let $Y_t=(Z_t,R_t)$ follow the exact structured coordinate field $a_t^*$ and let $\wh Y_t$ follow $\wh a_t$.  Suppose both use the same source, $a_t^*$ is $L$-Lipschitz, and
+Let $Y_t=(Z_t,R_t)$ follow the exact structured coordinate field $a_t^*$ and let $\wh Y_t$ follow $\wh a_t$.  Suppose both use the same source, $\wh a_t$ is $L$-Lipschitz uniformly in time, both solutions have finite second moments, and
 \begin{equation}
  \int_0^1\E\norm{\wh a_t(Y_t)-a_t^*(Y_t)}^2dt\le\varepsilon^2.
  \label{eq:field-error}
@@ -32,9 +34,13 @@ Under the preceding assumptions and exact integration,
 where $X=QY$.
 \end{proposition}
 \begin{proof}
-Couple the solutions through the same source and write $\Delta_t=\wh Y_t-Y_t$.  Add and subtract $\wh a_t(Y_t)$, apply the Lipschitz inequality and Gr\"onwall, then Cauchy--Schwarz in time.  Orthogonality preserves Euclidean distance, and the coupling upper bounds $W_2$.
+Couple the solutions through the same source and write $\Delta_t=\wh Y_t-Y_t$.  The identity
+\[
+ \dot\Delta_t=\wh a_t(\wh Y_t)-\wh a_t(Y_t)+\wh a_t(Y_t)-a_t^*(Y_t)
+\]
+uses the Lipschitz assumption on $\wh a_t$.  Gr\"onwall and Cauchy--Schwarz in time give $\{\E\norm{\Delta_1}^2\}^{1/2}\le e^L\varepsilon$.  Orthogonality preserves Euclidean distance, and this coupling upper bounds $W_2$.
 \end{proof}
-A more realistic off-path bound needs regularity of $\wh a_t$ or a change-of-measure control.  Equation \eqref{eq:w2} is stated only for the true-path error in \eqref{eq:field-error}.
+Equation \eqref{eq:w2} uses regularity of $\wh a_t$ and the true-path error in \eqref{eq:field-error}.  A bound estimated under another path additionally needs a change-of-measure control.
 
 \subsection{Dimension and block selection}
 
@@ -48,17 +54,21 @@ A finite candidate-set union bound yields an oracle inequality against the best 
 
 \section{Experimental protocol}
 
+The protocol fixes information, held-out use, metrics, and cost accounting before any archived or fresh result is interpreted.
+
 \subsection{Fairness and leakage controls}
 
-Every seed is split before fitting.  Standardization, chart estimation, residual matching, early stopping, VAE/RAE encoders, decoders, linear-probe tuning, and evaluator selection use only train and validation data.  Test data are used once for final metrics.  All generative methods receive the same examples, labels, active dimension, sample count, and Heun NFE.  FIQ, VAE-LFM, and RAE-LFM use the same active vector-field architecture.  The full ambient width is chosen so its trainable generation parameters do not exceed the FIQ generation budget.  Endpoint decoder/fiber and chart time are included.
+Every seed is split before fitting.  Standardization, chart estimation, fixed-axis residual partitioning, early stopping, VAE/RAE encoders, decoders, linear-probe tuning, and evaluator selection use only train and validation data.  Test data are used once for final metrics.  All generative methods receive the same examples, labels, active dimension, sample count, and Heun NFE.  FIQ, VAE-LFM, and RAE-LFM use the same active vector-field architecture.  The full ambient width is chosen so its trainable generation parameters do not exceed the FIQ generation budget.  Endpoint decoder/fiber and chart time are included.
 
-The five registered distribution metrics are sliced $W_2$, unbiased Gaussian-kernel MMD squared, energy distance, covariance error, and normalized mean error.  Digits additionally use a train-only feature/classifier network to report feature Fr\'echet, class-conditional feature Fr\'echet, feature-space precision/recall, and requested-label accuracy.  Reports retain all five seeds and use paired bootstrap intervals; a lower mean is not promoted when its interval includes zero.
+The five recorded distribution metrics are sliced $W_2$, an adaptive-bandwidth Gaussian-kernel MMD U-statistic clipped at zero, energy distance, covariance error, and normalized mean error.  Digits additionally use a train-only feature/classifier network to report feature Fr\'echet, class-conditional feature Fr\'echet, feature-space precision/recall, and requested-label accuracy.  Because the old digits seeds reuse the same finite dataset, their resampling intervals describe split sensitivity rather than independent scientific replication.
 
-\subsection{Exact quotient benchmark}
+\subsection{Archived exact-quotient snapshot}
+
+The following table preserves a pre-audit snapshot.  The referenced seed-level files are absent, the checked summary schema was not emitted by the current script, and the old evaluator used method-dependent randomness.  The values are not promoted until a fresh registered run regenerates them from complete raw records.
 
 The target has $D=18$, $d=2$, a nonlinear active diffeomorphism, and eight conditionally correlated $2\times2$ Gaussian residual blocks, hidden by a random orthogonal chart.  Each seed uses 5,000 train, 1,500 validation, and 2,500 test examples.  The baselines are:
 \begin{enumerate}[leftmargin=*]
-\item GF-FIQ with block fiber;
+\item FIQ-FM with block fiber;
 \item the same model with diagonal fiber;
 \item a parameter-matched full ambient flow;
 \item KL-VAE latent flow with diagonal stochastic decoder;
@@ -67,13 +77,15 @@ The target has $D=18$, $d=2$, a nonlinear active diffeomorphism, and eight condi
 
 \begin{table}[h]
 \centering
-\caption{Exact quotient, five seeds. Lower is better. Mean $\pm$ standard error.}
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Archived exact quotient snapshot, five seeds. Lower is better. Mean $\pm$ standard error.}
 \begin{tabular}{lrrrr}
 \toprule
 Method & sliced $W_2$ & MMD$^2$ & energy & covariance error\\
 \midrule
-GF-FIQ block & $\mathbf{0.0400\pm0.0016}$ & $\mathbf{0.00044\pm0.00020}$ & $\mathbf{0.00245\pm0.00063}$ & $\mathbf{0.0433\pm0.0026}$\\
-GF-FIQ diagonal & $0.0642\pm0.0029$ & $0.00158\pm0.00053$ & $0.00769\pm0.00189$ & $0.1119\pm0.0048$\\
+FIQ-FM block & $\mathbf{0.0400\pm0.0016}$ & $\mathbf{0.00044\pm0.00020}$ & $\mathbf{0.00245\pm0.00063}$ & $\mathbf{0.0433\pm0.0026}$\\
+FIQ-FM diagonal & $0.0642\pm0.0029$ & $0.00158\pm0.00053$ & $0.00769\pm0.00189$ & $0.1119\pm0.0048$\\
 Full FM matched & $0.0614\pm0.0016$ & $0.00282\pm0.00055$ & $0.01265\pm0.00174$ & $0.0596\pm0.0061$\\
 KL-VAE LFM & $0.0708\pm0.0016$ & $0.00150\pm0.00031$ & $0.00889\pm0.00115$ & $0.1203\pm0.0047$\\
 RAE LFM block & $0.0638\pm0.0013$ & $0.00094\pm0.00037$ & $0.00575\pm0.00131$ & $0.0995\pm0.0080$\\
@@ -82,21 +94,23 @@ RAE LFM block & $0.0638\pm0.0013$ & $0.00094\pm0.00037$ & $0.00575\pm0.00131$ & 
 \label{tab:synth}
 \end{table}
 
-The paired sliced-$W_2$ improvement of GF-FIQ is $0.0242$ versus its diagonal ablation (95\% bootstrap interval $[0.0185,0.0298]$), $0.0214$ versus full FM ($[0.0153,0.0286]$), $0.0307$ versus KL-VAE ($[0.0222,0.0382]$), and $0.0237$ versus RAE ($[0.0193,0.0286]$).  The active-subspace sine error averages $0.020$.  Most importantly, the fitted held-out diagonal-minus-block NLL gain is $1.292$ nats, while the analytic gap from \eqref{eq:diag-gap} is $1.291$ nats.  This identifies the predicted mechanism rather than only an aggregate sample metric.  Median CPU generation is $1.30\times$ faster than the matched full flow in this small vector implementation.
+The archived report recorded a paired sliced-$W_2$ improvement of $0.0242$ versus the diagonal ablation, $0.0214$ versus the finite-recipe full FM, $0.0307$ versus KL-VAE, and $0.0237$ versus RAE.  It also recorded an active-subspace sine error of $0.020$, a fitted diagonal-minus-block NLL gain of $1.292$ nats, an analytic gap of $1.291$ nats, and median CPU generation $1.30\times$ faster than the matched full flow.  These are provenance-incomplete historical values, not current empirical evidence.
 
-\subsection{Real digits under misspecification}
+\subsection{Archived real-digits snapshot under misspecification}
+
+The following table preserves a pre-audit snapshot.  Its referenced seed-level files are absent, and the original aggregation command failed.  The values are not promoted until a fresh registered run regenerates them from complete seed-level records.
 
 The real-data experiment uses the 1,797 sklearn $8\times8$ digit images.  Each seed uses a stratified 60/20/20 split, train-only standardization, fixed split-specific uniform dequantization, active dimension $d=16$, 20 Heun steps, and equal label information.
 
 \begin{table}[h]
 \centering
-\caption{Sklearn digits, five seeds. Accuracy is higher better; distances are lower better.}
+\caption{Archived sklearn digits snapshot, five seeds. Higher accuracy and lower distances are better.}
 \begin{tabular}{lrrrr}
 \toprule
 Method & class feature Fr\'echet & sliced $W_2$ & label accuracy & feature Fr\'echet\\
 \midrule
-GF-FIQ block & $\mathbf{11.002\pm0.646}$ & $\mathbf{0.307\pm0.006}$ & $\mathbf{0.658\pm0.015}$ & $\mathbf{5.239\pm0.484}$\\
-GF-FIQ diagonal & $11.289\pm0.800$ & $0.318\pm0.005$ & $0.628\pm0.013$ & $5.327\pm0.606$\\
+FIQ-FM block & $\mathbf{11.002\pm0.646}$ & $\mathbf{0.307\pm0.006}$ & $\mathbf{0.658\pm0.015}$ & $\mathbf{5.239\pm0.484}$\\
+FIQ-FM diagonal & $11.289\pm0.800$ & $0.318\pm0.005$ & $0.628\pm0.013$ & $5.327\pm0.606$\\
 Full FM matched & $33.820\pm1.359$ & $0.286\pm0.002$ & $0.342\pm0.015$ & $18.922\pm0.822$\\
 KL-VAE LFM & $11.990\pm0.850$ & $0.345\pm0.006$ & $0.607\pm0.014$ & $6.179\pm0.678$\\
 RAE LFM block & $11.131\pm0.791$ & $0.337\pm0.005$ & $0.629\pm0.015$ & $5.342\pm0.636$\\
@@ -105,15 +119,15 @@ RAE LFM block & $11.131\pm0.791$ & $0.337\pm0.005$ & $0.629\pm0.015$ & $5.342\pm
 \label{tab:digits}
 \end{table}
 
-GF-FIQ improves sliced $W_2$ over KL-VAE by $0.0384$ (95\% interval $[0.0374,0.0394]$) and over RAE by $0.0305$ ($[0.0273,0.0335]$).  Requested-label accuracy improves by $0.0506$ over VAE ($[0.0399,0.0589]$, one-sided paired $p=0.0012$) and $0.0294$ over RAE ($[0.0122,0.0455]$, $p=0.0153$).  The mean class-conditional feature Fr\'echet is best, but its paired interval against VAE/RAE includes zero; it is not treated as established.
+The archived table reported a sliced-$W_2$ advantage of $0.0384$ over KL-VAE and $0.0305$ over RAE.  It reported requested-label accuracy advantages of $0.0506$ and $0.0294$, respectively.  Because the raw seed files are missing and the resamples overlap, neither the old intervals nor their significance labels are treated as current evidence.
 
-The conditional-mean reconstruction MSE using only the active code is $0.190\pm0.005$ for FIQ, $0.420\pm0.003$ for KL-VAE, and $0.373\pm0.003$ for RAE.  Linear-probe accuracies are $0.961$, $0.954$, and $0.965$, respectively.  Thus FIQ's code is far more reconstructive than both learned autoencoder codes at equal dimension, while the RAE has slightly better linear semantic probing.  This distinction prevents the vague claim that one representation is better on every axis.
+The archived table also recorded conditional-mean reconstruction MSEs of $0.190\pm0.005$ for FIQ, $0.420\pm0.003$ for KL-VAE, and $0.373\pm0.003$ for RAE, with linear-probe accuracies $0.961$, $0.954$, and $0.965$.  These descriptive values point in different directions and do not establish that one representation is better on every axis.
 
 \section{Failure trace and adversarial audit}
 
 \begin{enumerate}[leftmargin=*]
-\item \textbf{Initial failure:} active eigenspace recovery succeeded, but arbitrary residual rotations destroyed local fiber blocks.  This falsified the claim that active recovery alone was sufficient.
-\item \textbf{Repair:} the conditional-covariance graph and cross-fitted gauge matching restored the exact pair structure without test data.  The likelihood gain then matched theory.
+\item \textbf{Residual-basis boundary:} the active theorem leaves generic rotations inside a tied residual eigenspace unresolved.  The implemented graph only groups axes after that basis is fixed.
+\item \textbf{Benchmark limitation:} unequal residual marginal variances select the synthetic residual axes before grouping, so this benchmark tests pair partitioning but not residual-rotation recovery.
 \item \textbf{Support check:} every deterministic $d<D$ proposal was rejected for full-density parity.
 \item \textbf{Compute check:} the chart and fiber are included in timing.  The dense chart prevents an image-scale asymptotic claim.
 \item \textbf{Baseline check:} removing the VAE KL penalty and giving the RAE a block stochastic decoder produces a materially stronger baseline; it is retained.
@@ -126,7 +140,7 @@ The detailed registry and audit are stored with the code in \texttt{theory/appro
 \section{What is and is not established}
 
 \paragraph{Established.}
-On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Pair blocks are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  The synthetic experiment verifies all of these mechanisms.  The digits experiment establishes improvements in held-out sliced Wasserstein and requested-label accuracy over the implemented latent baselines.
+On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Pair partitions are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  Fresh synthetic and observed-data confirmation remains necessary before making empirical claims.
 
 \paragraph{Not established.}
 There is no universal cheap quotient, no universal dominance over an unrestricted VAE, no proof that the greedy block-four grouping is optimal, and no demonstrated parity with a converged full pixel flow on modern image benchmarks.  A structured reversible image chart, convolutional or tokenized block fiber, compute-matched DiT baselines, and image-scale FID/likelihood experiments are required for that next claim.
@@ -138,13 +152,12 @@ The package is self-contained:
 python -m pip install -e .
 pytest -q
 python experiments/synthetic_exact/run.py --seeds 0 1 2 3 4 \
-  --output results/synthetic_exact_verified
+  --output results/synthetic_exact_confirmation
 python experiments/sklearn_digits/run.py --seeds 0 1 2 3 4 \
-  --output results/sklearn_digits_verified
+  --output results/sklearn_digits_confirmation
 \end{verbatim}
 Five executable theorem and leakage checks cover orthogonal round-trip and loss isometry, moment subspace recovery, positivity of the analytic KL gap, split disjointness, and recovery of deliberately scrambled residual pairs.  Configurations, every seed-level metric, paired summaries, and training records are persisted by the scripts.
 
 \section{Conclusion}
 
-The mathematically coherent route is not to compress the endpoint and hope that a low-dimensional code happens to be generatively sufficient.  It is to identify a quotient of the full generative law, preserve complementary randomness, and spend iterative computation only where the transport is genuinely nonlinear.  The residual gauge is part of the problem: a correct active subspace can still yield an inefficient fiber in the wrong basis.  Once the gauge is learned from conditional dependence, a block-local stochastic fiber gives exact full-density parity on a nontrivial class and a measurable strict separation from diagonal VAE decoders.  The current evidence justifies this restricted theorem and algorithm.  It does not yet justify an image-scale universal claim, which is now reduced to explicit, testable obligations: structured chart cost, small held-out quotient defect, cheap fiber complexity, and compute-matched full-flow quality.
-
+The mathematically coherent route is not to compress the endpoint and hope that a low-dimensional code happens to be generatively sufficient.  It is to identify a quotient of the full generative law, preserve complementary randomness, and spend iterative computation only where the transport is genuinely nonlinear.  A correct active subspace can still yield an inefficient fiber in the wrong residual basis.  The present algorithm groups fixed axes but does not learn that basis under a generic rotation.  Conditional on an aligned block-local stochastic fiber, the model gives exact full-density parity on its declared class and a strict separation from diagonal VAE decoders.  Image-scale claims require a structured chart, a small held-out quotient defect, a cheap fiber, residual-basis discovery or a rotation-robust fiber, and compute-matched full-flow quality.

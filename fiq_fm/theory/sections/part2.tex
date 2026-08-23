@@ -1,5 +1,7 @@
 \section{Learning the quotient from raw flow labels}
 
+The first identification result treats a static linear chart; the residual-basis problem is then separated from active-subspace recovery.
+
 \subsection{Population moment identity}
 
 Assume for this subsection that $\E X_1=0$, $\Cov(X_1)=\Sigma$, and $t\in(0,1)$ is fixed.  From \eqref{eq:rectified},
@@ -31,11 +33,11 @@ Equation \eqref{eq:moment} is a scalar affine transformation of $\Sigma$, so it 
 
 For sub-Gaussian samples, matrix Bernstein or standard covariance concentration gives $\eta=O_{\Pp}(K^2\sqrt{(D+\log(1/\alpha))/n})$ up to the usual lower-order term.  The moment needs one sampled path time and one outer product, or a randomized sketch, per observation; no ambient neural vector field is fitted.
 
-\subsection{The residual gauge failure}
+\subsection{The unresolved residual gauge}
 
 The active theorem does \emph{not} identify the basis of $\operatorname{span}(Q_r)$ when the residual eigenvalues are tied.  If $O\in\R^{(D-d)\times(D-d)}$ is orthogonal, then $[Q_z,Q_rO]$ recovers the same active quotient.  A cheap block covariance in one residual basis can become dense after rotation by $O$.
 
-This was a real failure in the first multi-seed experiment: the active subspace was recovered, but an arbitrary numerical eigenbasis split true correlated pairs across different blocks, eliminating the expected block-fiber advantage.  The repair is a second, conditional-dependence gauge criterion.
+The present implementation does not solve this rotation problem.  It estimates conditional-dependence scores after a residual basis has been fixed and only permutes those axes into blocks.  The exact benchmark has unequal residual marginal variances, so its covariance eigenvectors already choose residual axes; it cannot validate recovery under a generic residual rotation.
 
 \subsection{Cross-fitted conditional covariance graph}
 
@@ -56,14 +58,14 @@ The residual coordinates admit a true partition $\mathcal P^*=\{\{i_1,j_1\},\ldo
 for every other perfect matching $\mathcal P$, for some $\gamma>0$.
 \end{assumption}
 
-\begin{theorem}[Gauge recovery by maximum-weight matching]
+\begin{theorem}[Pair-partition recovery on fixed residual axes]
 Let $\wh S$ satisfy $\max_{i<j}|\wh S_{ij}-S_{ij}|\le\varepsilon$.  If the pair-block margin holds and $2m\varepsilon<\gamma$, then maximum-weight perfect matching under $\wh S$ recovers $\mathcal P^*$.
 \end{theorem}
 \begin{proof}
 For any matching $\mathcal P$, its empirical total differs from its population total by at most $m\varepsilon$.  Hence the empirical gap between $\mathcal P^*$ and any competitor is at least $\gamma-2m\varepsilon>0$.
 \end{proof}
 
-For blocks larger than pairs, the code uses a greedy score grouping.  That is a practical heuristic, not covered by this exact theorem.
+The theorem recovers a partition, not an orthogonal residual basis.  For blocks larger than pairs, the code uses a greedy score grouping.  That is a practical heuristic, not covered by this result.
 
 \section{Algorithm}
 
@@ -113,4 +115,3 @@ For fixed small $b$, the block fiber is linear in the number of residual coordin
 \item a proof of image-scale latent-order complexity additionally requires a structured chart with $C_Q(D)=O(D\log D)$ or $O(D)$, such as local lifting, wavelets, sparse couplings, or butterfly factors.
 \end{itemize}
 The experiments count the dense chart and fiber in wall-clock inference time; they do not claim orders-of-magnitude image speedups.
-

@@ -40,22 +40,26 @@ def copy_decoder(ae,decoder):
 
 
 def fit_flow(xtr,xv,dim,cfg,seed,hidden=None):
+    torch.manual_seed(seed)
     m=VectorField(dim,hidden or cfg.hidden,2).to(cfg.device)
     return train_flow(m,xtr,xv,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed,eval_every=max(10,cfg.train_steps//10),patience=8)
 
 
 def fit_fiber(ztr,rtr,zv,rv,block,cfg,seed,initializer=None):
+    torch.manual_seed(seed)
     m=BlockGaussianFiber(ztr.shape[1],rtr.shape[1],cfg.hidden,2,block_size=block).to(cfg.device)
     if initializer: initializer(m)
     return train_fiber(m,ztr,rtr,zv,rv,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed,eval_every=max(10,cfg.train_steps//10),patience=8)
 
 
 def latent_baseline(name,beta,block,split,cfg,seed):
+    torch.manual_seed(seed+1)
     ae=Autoencoder(cfg.D,cfg.d,cfg.hidden,2).to(cfg.device)
     ae,aeh=train_autoencoder(ae,split.x_train,split.x_val,beta=beta,steps=cfg.train_steps,batch_size=cfg.batch,
                              seed=seed+1,eval_every=max(10,cfg.train_steps//10),patience=8)
     ztr,zv,zte=encode(ae,split.x_train),encode(ae,split.x_val),encode(ae,split.x_test)
     flow,fh=fit_flow(ztr,zv,cfg.d,cfg,seed+2)
+    torch.manual_seed(seed+3)
     dec=BlockGaussianFiber(cfg.d,cfg.D,cfg.hidden,2,block_size=block).to(cfg.device); copy_decoder(ae,dec)
     dec,dh=train_fiber(dec,ztr,split.x_train,zv,split.x_val,steps=cfg.train_steps,batch_size=cfg.batch,seed=seed+3,
                        eval_every=max(10,cfg.train_steps//10),patience=8)
@@ -91,7 +95,8 @@ def run_seed(seed,cfg,out):
 
     samples={'fiq_fm_block':fiq,'fiq_fm_diagonal_ablation':fiqd,'full_fm_param_matched':fullg,
              'vae_lfm_diagonal':vaeg,'rae_lfm_block':raeg}
-    metrics={m:sample_metrics(split.x_test,x,seed+301*i) for i,(m,x) in enumerate(samples.items())}
+    metric_seed=seed+301
+    metrics={m:sample_metrics(split.x_test,x,metric_seed) for m,x in samples.items()}
     timing_n=min(1000,cfg.sample_n)
     def gen_fiq():
         z=sample_flow(zflow,timing_n,ode_steps=cfg.ode_steps,seed=seed+700).to(cfg.device)
