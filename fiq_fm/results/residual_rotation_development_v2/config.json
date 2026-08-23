@@ -1,0 +1,41 @@
+{
+  "confirmation": false,
+  "contrast_rank": 4,
+  "covariance_ceiling": 20.0,
+  "covariance_floor": 0.05,
+  "equivalence_margin_nats_per_dim": 0.02,
+  "n_random_features": 2,
+  "n_test": 8000,
+  "n_train": 12000,
+  "n_validation": 4000,
+  "provenance": {
+    "command": [
+      "fiq_fm/experiments/residual_rotation/run.py",
+      "--output",
+      "fiq_fm/results/residual_rotation_development_v2"
+    ],
+    "cpu_count": 128,
+    "git_commit": "1bfce96161b1f828674b921e68bb48ab04568a2a",
+    "numpy": "2.2.6",
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "processor": "x86_64",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "slurm_job_id": "44280101",
+    "source_manifest_sha256": "8811dedcda85b8e8ec897484b935c8d2083a0c12a6cc7094b443dd87c5f65fbf",
+    "source_sha256": {
+      "experiments/residual_rotation/run.py": "57d404023b8cf23bcae9bcbc8d5277bcda10513f315f44ffd4491b3dd864b0d3",
+      "src/fiqfm/rotation.py": "6f5e5ad43c7154389019119421e08c8067890b610af884f7dbd637578aa87f77",
+      "tests/test_rotation.py": "a34aa45c0820497ab202dc3d5ff282a2164c95c3ee1d31e3e9d3432a5ed25296",
+      "theory/residual_rotation_protocol.md": "817b748200e88a7b11a711ab7739cb66c4ca61d56fa4c8b1767d6c1ea1f79742"
+    },
+    "tracked_worktree_dirty": true
+  },
+  "ridge": 1.0,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ]
+}

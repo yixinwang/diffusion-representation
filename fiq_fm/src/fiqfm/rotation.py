@@ -191,14 +191,18 @@ def fit_covariance_regression(
     return np.linalg.solve(gram, features.T @ targets)
 
 
-def covariance_contrasts(
+def predicted_covariance_contrasts(
+    features: np.ndarray,
     coefficients: np.ndarray,
     dimension: int = 4,
     rank: int = 4,
 ) -> tuple[np.ndarray, np.ndarray]:
-    _, singular_values, right = np.linalg.svd(coefficients[1:], full_matrices=False)
+    predicted = np.asarray(features) @ np.asarray(coefficients)
+    predicted -= predicted.mean(axis=0, keepdims=True)
+    _, singular_values, right = np.linalg.svd(predicted, full_matrices=False)
     retained = min(rank, len(singular_values))
-    vectors = singular_values[:retained, None] * right[:retained]
+    scale = np.sqrt(max(len(predicted) - 1, 1))
+    vectors = singular_values[:retained, None] * right[:retained] / scale
     contrasts = vector_to_symmetric(vectors, dimension)
     identity = np.eye(dimension)
     contrasts -= np.trace(contrasts, axis1=1, axis2=2)[:, None, None] * identity / dimension

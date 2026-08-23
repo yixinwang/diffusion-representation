@@ -22,7 +22,6 @@ sys.path.insert(0, str(ROOT / "src"))
 from fiqfm.rotation import (  # noqa: E402
     block_subspace_metrics,
     conditional_gaussian_nll,
-    covariance_contrasts,
     fit_covariance_regression,
     fit_feature_map,
     gaussian_w2_squared,
@@ -31,6 +30,7 @@ from fiqfm.rotation import (  # noqa: E402
     learn_commutant_blocks,
     learn_pair_partition,
     offblock_energy,
+    predicted_covariance_contrasts,
     predict_covariance,
     rotate_batch_covariance,
     rotate_covariance,
@@ -46,7 +46,7 @@ class Config:
     n_train: int = 12_000
     n_validation: int = 4_000
     n_test: int = 8_000
-    n_random_features: int = 16
+    n_random_features: int = 2
     contrast_rank: int = 4
     ridge: float = 1.0
     covariance_floor: float = 0.05
@@ -181,7 +181,6 @@ def run_arm(
     config: Config,
 ) -> dict[str, object]:
     train_residual = rotate_residual(train.residual, rotation)
-    validation_residual = rotate_residual(validation.residual, rotation)
     test_residual = rotate_residual(test.residual, rotation)
     train_features = feature_map.transform(train.active)
     validation_features = feature_map.transform(validation.active)
@@ -192,21 +191,18 @@ def run_arm(
         train_features, train_residual, ridge=config.ridge
     )
     fit_seconds = time.perf_counter() - fit_started
-    train_contrasts, singular_values = covariance_contrasts(
-        coefficients, rank=config.contrast_rank
+    chart_contrasts, singular_values = predicted_covariance_contrasts(
+        train_features, coefficients, rank=config.contrast_rank
     )
-    validation_coefficients = fit_covariance_regression(
-        validation_features, validation_residual, ridge=config.ridge
-    )
-    validation_contrasts, _ = covariance_contrasts(
-        validation_coefficients, rank=config.contrast_rank
+    audit_contrasts, audit_singular_values = predicted_covariance_contrasts(
+        validation_features, coefficients, rank=config.contrast_rank
     )
 
     permutation_started = time.perf_counter()
-    permutation_axes = learn_pair_partition(train_contrasts)
+    permutation_axes = learn_pair_partition(chart_contrasts)
     permutation_seconds = time.perf_counter() - permutation_started
     jbd_started = time.perf_counter()
-    jbd = learn_commutant_blocks(train_contrasts)
+    jbd = learn_commutant_blocks(chart_contrasts)
     jbd_seconds = time.perf_counter() - jbd_started
 
     predicted_test = predict_covariance(test_features, coefficients)
@@ -227,7 +223,7 @@ def run_arm(
             target_observed,
             predicted_test,
             rotation,
-            validation_contrasts,
+            audit_contrasts,
             config,
         )
         for name, family, axes in methods
@@ -237,10 +233,12 @@ def run_arm(
         float(row_lookup["permutation_block"]["test_nll"])
         - float(row_lookup["oracle_block"]["test_nll"])
     )
-    closed = (
-        float(row_lookup["permutation_block"]["test_nll"])
-        - float(row_lookup["jbd_block"]["test_nll"])
-    ) / max(denominator, 1e-12)
+    closed = None
+    if denominator > 1e-12:
+        closed = (
+            float(row_lookup["permutation_block"]["test_nll"])
+            - float(row_lookup["jbd_block"]["test_nll"])
+        ) / denominator
     for row in rows:
         row["arm"] = arm
     return {
@@ -248,12 +246,13 @@ def run_arm(
         "rows": rows,
         "diagnostics": {
             "contrast_singular_values": singular_values.tolist(),
+            "audit_contrast_singular_values": audit_singular_values.tolist(),
             "commutant_eigenvalues": jbd.commutant_eigenvalues.tolist(),
             "commutant_eigengap": float(
                 jbd.commutant_eigenvalues[1] - jbd.commutant_eigenvalues[0]
             ),
             "separator_eigenvalues": jbd.separator_eigenvalues.tolist(),
-            "jbd_oracle_gap_fraction_closed": float(closed),
+            "jbd_oracle_gap_fraction_closed": closed,
             "unconditional_covariance_eigenvalues": np.linalg.eigvalsh(
                 np.cov(train_residual, rowvar=False)
             ).tolist(),

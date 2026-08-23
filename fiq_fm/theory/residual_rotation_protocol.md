@@ -59,16 +59,18 @@ The permutation and JBD methods use the same train-fitted feature map and condit
 
 1. standardize active inputs using training statistics only;
 2. form a frozen generic polynomial/trigonometric/random-projection feature dictionary;
-3. center residual outer products and estimate feature--second-moment contrasts on training data;
-4. extract four leading centered symmetric contrast matrices by a frozen singular-value decomposition;
+3. fit feature--second-moment regression on training data only;
+4. predict conditional second moments on the training rows, center those fitted moments over observations, and extract four leading symmetric response-side contrasts by a frozen singular-value decomposition;
 5. form the commutator Gram operator on the nine-dimensional space of traceless symmetric `4x4` matrices;
 6. take its lowest eigenmatrix and split its two positive from two negative eigendirections;
-7. abstain when the train/validation feature rank or commutant eigengap falls below a frozen threshold;
+7. audit off-block contrast loss on the untouched validation set and abstain when the train/validation response rank or commutant eigengap falls below a frozen threshold;
 8. fit diagonal, block, or full conditional covariance from the same features and ridge penalty.
 
 The population separator is `H*=O diag(I_2,-I_2) O^T / 2`. It is the unique traceless symmetric commutant up to sign when each block's contrast family is irreducible and the two block representations are inequivalent. One contrast, a commuting contrast family, or two equivalent noncommuting blocks cannot identify the registered partition; executable counterexamples cover all three failures.
 
 Truth covariance, truth rotations, and test metrics are unavailable to every learned-chart and model-selection function. Evaluation matches block projectors rather than individual columns because within-block rotations and block swaps are unidentified.
+
+The predicted-moment SVD is a response-space construction: replacing the feature dictionary by any invertible reparameterization that leaves the fitted conditional-moment predictions unchanged leaves its contrast span unchanged. Direct SVD of the ridge coefficient rows is not invariant in this sense and is excluded after its logged seed-0 development failure. Chart estimation is part of training; validation may only score or trigger a frozen abstention and may not refit the covariance regressor or chart. Development fixed the feature dictionary at its nine base features plus two seeded random directions and retained ridge `1.0`; all five allowed seeds had Haar projector error below `0.081` under this configuration.
 
 ## Development and confirmation
 

@@ -4,9 +4,13 @@ from fiqfm.rotation import (
     block_subspace_metrics,
     commutant_gram,
     haar_orthogonal,
+    fit_covariance_regression,
+    fit_feature_map,
     learn_commutant_blocks,
     learn_pair_partition,
     population_contrasts,
+    predicted_covariance_contrasts,
+    rotate_residual,
     sample_rotation_unit,
     signed_permutation,
     true_covariances,
@@ -63,3 +67,33 @@ def test_covariance_formula_matches_sampler_dimension() -> None:
     expected = true_covariances(unit.active)
     assert unit.residual.shape == (12, 4)
     assert np.array_equal(unit.covariance, expected)
+
+
+def test_predicted_contrasts_ignore_feature_reparameterization() -> None:
+    rng = np.random.default_rng(23)
+    features = rng.normal(size=(200, 7))
+    coefficients = rng.normal(size=(7, 10))
+    change = rng.normal(size=(7, 7)) + 4.0 * np.eye(7)
+    original, original_values = predicted_covariance_contrasts(features, coefficients)
+    transformed, transformed_values = predicted_covariance_contrasts(
+        features @ change, np.linalg.solve(change, coefficients)
+    )
+    assert np.allclose(original_values, transformed_values)
+    assert np.allclose(commutant_gram(original)[0], commutant_gram(transformed)[0])
+
+
+def test_finite_predicted_contrasts_recover_haar_blocks() -> None:
+    train = sample_rotation_unit(12_000, 1)
+    rotation = haar_orthogonal(4, 6)
+    feature_map = fit_feature_map(train.active, n_random=2, seed=4)
+    coefficients = fit_covariance_regression(
+        feature_map.transform(train.active),
+        rotate_residual(train.residual, rotation),
+        ridge=1.0,
+    )
+    contrasts, _ = predicted_covariance_contrasts(
+        feature_map.transform(train.active), coefficients
+    )
+    estimate = learn_commutant_blocks(contrasts)
+    metrics = block_subspace_metrics(estimate.axes, rotation)
+    assert metrics["projector_error"] < 0.1
