@@ -1,0 +1,18 @@
+[rotation] seed=500 arm=signed_permutation
+[rotation] seed=500 arm=haar
+[rotation] seed=501 arm=signed_permutation
+[rotation] seed=501 arm=haar
+[rotation] seed=502 arm=signed_permutation
+[rotation] seed=502 arm=haar
+[rotation] seed=503 arm=signed_permutation
+[rotation] seed=503 arm=haar
+[rotation] seed=504 arm=signed_permutation
+[rotation] seed=504 arm=haar
+{
+  "permutation_arm_permutation_minus_oracle": 4.4408920985006264e-17,
+  "permutation_arm_jbd_minus_oracle": 0.0003020195993789887,
+  "haar_permutation_minus_jbd": 0.021957579572733234,
+  "haar_jbd_minus_oracle": 0.00030201959937916636,
+  "haar_full_minus_oracle": 0.0015218356524450804,
+  "haar_diagonal_minus_oracle": 0.02436398593881579
+}
