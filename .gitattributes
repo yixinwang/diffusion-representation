@@ -1,1 +1,2 @@
 qalt/results/**/*.csv whitespace=cr-at-eol
+fiq_fm/results/**/*.csv whitespace=cr-at-eol
