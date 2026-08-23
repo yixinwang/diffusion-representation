@@ -62,6 +62,33 @@ Every seed is split before fitting.  Standardization, chart estimation, fixed-ax
 
 The five recorded distribution metrics are sliced $W_2$, an adaptive-bandwidth Gaussian-kernel MMD U-statistic clipped at zero, energy distance, covariance error, and normalized mean error.  Digits additionally use a train-only feature/classifier network to report feature Fr\'echet, class-conditional feature Fr\'echet, feature-space precision/recall, and requested-label accuracy.  Because the old digits seeds reuse the same finite dataset, their resampling intervals describe split sensitivity rather than independent scientific replication.
 
+\clearpage
+\subsection{Registered tied-marginal residual-rotation confirmation}
+
+The fresh residual assay uses a nonlinear non-Gaussian active law, four residual coordinates with exactly tied marginal covariance, and paired signed-permutation and Haar charts.  Thirty independent units use 12,000 training, 4,000 validation, and 8,000 sealed test observations.  The method, response and commutant gates, TOST margin, 14-component Holm family, and all seeds were frozen at commit \texttt{c8ad680} before the first confirmation run.
+
+\begin{table}[h]
+\centering
+\small
+\caption{Residual-rotation confirmation. Differences and errors are nats per residual dimension or dimensionless as indicated; intervals are paired 95\% Student intervals.}
+\begin{tabular}{lrrl}
+\toprule
+Quantity & Mean & 95\% interval & Gate\\
+\midrule
+JBD $-$ oracle NLL & $0.000043$ & $[-0.000005,0.000091]$ & pass\\
+permutation $-$ JBD NLL & $0.01594$ & $[0.01355,0.01833]$ & pass\\
+diagonal $-$ oracle NLL & $0.02387$ & $[0.02338,0.02435]$ & pass\\
+full $-$ oracle NLL & $0.001251$ & $[0.001037,0.001466]$ & pass\\
+JBD true leakage & $0.001178$ & $[0.000756,0.001601]$ & pass\\
+JBD projector error & $0.09368$ & $[0.06553,0.12183]$ & fail\\
+\bottomrule
+\end{tabular}
+\label{tab:rotation-confirmation}
+\end{table}
+
+The confirmation fails overall.  The corrected projector test against $0.10$ has Holm $p=0.325$, and seed 119 fails the hard response-eigengap rule ($0.0556<0.10$).  All units and rows are retained.  The NLL equivalence, fixed-axis separation, diagonal separation, full-covariance control, and leakage gates pass, but they do not override the structural recovery failures.  Thus this experiment supports a useful approximate fiber chart on the declared law but does not confirm reliable recovery of the true residual representation.
+\clearpage
+
 \subsection{Archived exact-quotient snapshot}
 
 The following table preserves a pre-audit snapshot.  The referenced seed-level files are absent, the checked summary schema was not emitted by the current script, and the old evaluator used method-dependent randomness.  The values are not promoted until a fresh registered run regenerates them from complete raw records.
@@ -127,7 +154,7 @@ The archived table also recorded conditional-mean reconstruction MSEs of $0.190\
 
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Residual-basis boundary:} the fixed-axis graph does not recover a generic rotation.  The commutant-spectral route does so only under response-rank, irreducibility, inequivalence, and eigengap assumptions.
-\item \textbf{Benchmark limitation:} the archived synthetic benchmark has unequal residual marginal variances and tests pair partitioning, not rotation recovery.  The new tied-marginal Haar-rotation pilot remains development evidence until its frozen confirmation is complete.
+\item \textbf{Benchmark limitation:} the archived synthetic benchmark has unequal residual marginal variances and tests pair partitioning, not rotation recovery.  The new tied-marginal Haar confirmation passes NLL and leakage gates but fails projector and per-unit response-rank gates.
 \item \textbf{Support check:} every deterministic $d<D$ proposal was rejected for full-density parity.
 \item \textbf{Compute check:} the chart and fiber are included in timing.  The dense chart prevents an image-scale asymptotic claim.
 \item \textbf{Baseline check:} removing the VAE KL penalty and giving the RAE a block stochastic decoder produces a materially stronger baseline; it is retained.
@@ -140,7 +167,7 @@ The detailed registry and audit are stored with the code in \texttt{theory/appro
 \section{What is and is not established}
 
 \paragraph{Established.}
-On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Generic two-block residual rotations are identifiable under the response-rank and commutant assumptions above; pair partitions on fixed axes are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  Frozen residual-rotation and observed-data confirmation remains necessary before making new empirical claims.
+On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Generic two-block residual rotations are identifiable under the response-rank and commutant assumptions above; pair partitions on fixed axes are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  The first residual-rotation confirmation fails structural recovery, so the empirical rotation mechanism is not established.
 
 \paragraph{Not established.}
 There is no universal cheap quotient, no universal dominance over an unrestricted VAE, no proof that the greedy block-four grouping is optimal, and no demonstrated parity with a converged full pixel flow on modern image benchmarks.  A structured reversible image chart, convolutional or tokenized block fiber, compute-matched DiT baselines, and image-scale FID/likelihood experiments are required for that next claim.

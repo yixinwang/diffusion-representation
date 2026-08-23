@@ -47,7 +47,7 @@ Total: **19/20**, pass threshold met with no hard failure.
 | Mathematics | 2 | Symbols are named, displays are motivated, and compilation found no undefined notation after repair. |
 | Claims | 2 | Consequences and comparator restrictions replace novelty or optimality adjectives. |
 | Word choice | 2 | No priority formula, “former/latter,” or unsupported superlative remains. |
-| Evidence presentation | 1 | QALT confirmation and the FIQ rotation development artifact are reproducible; the old FIQ tables remain archived and no modern image/video evidence exists yet. |
+| Evidence presentation | 1 | QALT confirmation and the failed FIQ rotation confirmation are reproducible; the projector/rank failures are reported next to the passing quality gates, and no modern image/video evidence exists yet. |
 
 Total: **19/20**, pass threshold met with no hard failure.
 

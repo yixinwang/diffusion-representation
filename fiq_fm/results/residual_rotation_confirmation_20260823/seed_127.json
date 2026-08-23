@@ -1,0 +1,280 @@
+{
+  "active_excess_kurtosis": -0.13676700402856978,
+  "arms": {
+    "haar": {
+      "arm": "haar",
+      "diagnostics": {
+        "audit_contrast_singular_values": [
+          42.95566748969342,
+          34.85202917006724,
+          8.243177819273468,
+          5.066604422246282,
+          4.078835199674521,
+          3.161561401684448,
+          2.671814820916257,
+          2.008169868372791,
+          1.2508848862618251,
+          0.8087252985051173
+        ],
+        "chart_accepted": true,
+        "commutant_eigengap": 0.019281118098740387,
+        "commutant_eigenvalues": [
+          0.0017185668007510815,
+          0.02099968489949147,
+          0.2731261210157441,
+          0.2914025839584763,
+          0.31256517434983694,
+          0.4455749589856587,
+          0.472117048205132,
+          0.5094325418433145,
+          0.7598628427284346
+        ],
+        "commutant_relative_eigengap": 0.9181622577207005,
+        "fit_seconds": 0.0018223030492663383,
+        "heldout_offblock_loss": 0.0036823499339145847,
+        "jbd_oracle_gap_fraction_closed": 0.9953426249644312,
+        "jbd_seconds": 0.0004249592311680317,
+        "permutation_seconds": 0.000195446889847517,
+        "response_eigenvalues": [
+          0.46607972270565773,
+          0.288216101988247,
+          0.013954538502378174,
+          0.004347476567933805,
+          0.0032209748653296254,
+          0.0013780967738852637,
+          -0.0006464833860943482,
+          -0.0011782269046038294,
+          -0.002356178270898499,
+          -0.003096648826052223
+        ],
+        "response_relative_eigengap": 0.2591162217901417,
+        "separator_eigenvalues": [
+          -0.5012134149850483,
+          -0.49878437024469446,
+          0.49913883260778336,
+          0.5008589526219596
+        ],
+        "unconditional_covariance_eigenvalues": [
+          0.9687636554033751,
+          0.9866608694281548,
+          1.009386704078695,
+          1.0166105919418373
+        ]
+      },
+      "rows": [
+        {
+          "arm": "haar",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.001615312645271776,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.002161823814223629,
+          "family": "block",
+          "heldout_contrast_loss": 0.004467651359650547,
+          "maximum_principal_sine": 3.332000937312528e-08,
+          "method": "oracle_block",
+          "projector_error": 0.0,
+          "test_nll": 1.3657937631922983,
+          "true_crossblock_leakage": 1.3980665951113525e-30
+        },
+        {
+          "arm": "haar",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.021566612320229703,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.026243600518459715,
+          "family": "block",
+          "heldout_contrast_loss": 0.4092683631866413,
+          "maximum_principal_sine": 0.8471551924424616,
+          "method": "permutation_block",
+          "projector_error": 0.92863590993031,
+          "test_nll": 1.3898755398965346,
+          "true_crossblock_leakage": 0.38985441902801043
+        },
+        {
+          "arm": "haar",
+          "bayes_nll": 1.363631939378075,
+          "conditional_w2_squared": 0.0016845100547577209,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.002273981679858052,
+          "family": "block",
+          "heldout_contrast_loss": 0.0036823499339145847,
+          "maximum_principal_sine": 0.0772486845177618,
+          "method": "jbd_block",
+          "projector_error": 0.08968112510684602,
+          "test_nll": 1.3659059210579327,
+          "true_crossblock_leakage": 0.0010769966088992886
+        },
+        {
+          "arm": "haar",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.02306794967248923,
+          "covariance_head_outputs": 4,
+          "excess_nll": 0.02718804335849459,
+          "family": "diagonal",
+          "heldout_contrast_loss": 0.004467651359650547,
+          "maximum_principal_sine": 3.332000937312528e-08,
+          "method": "oracle_diagonal",
+          "projector_error": 0.0,
+          "test_nll": 1.3908199827365693,
+          "true_crossblock_leakage": 1.3980665951113525e-30
+        },
+        {
+          "arm": "haar",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.0023228778815869554,
+          "covariance_head_outputs": 10,
+          "excess_nll": 0.00367634535559555,
+          "family": "full",
+          "heldout_contrast_loss": 0.4092683631866413,
+          "maximum_principal_sine": 0.8471551924424616,
+          "method": "provisional_full",
+          "projector_error": 0.92863590993031,
+          "test_nll": 1.3673082847336704,
+          "true_crossblock_leakage": 0.38985441902801043
+        }
+      ]
+    },
+    "signed_permutation": {
+      "arm": "signed_permutation",
+      "diagnostics": {
+        "audit_contrast_singular_values": [
+          42.95566748969338,
+          34.8520291700673,
+          8.243177819273457,
+          5.066604422246385,
+          4.0788351996745025,
+          3.161561401684462,
+          2.671814820916259,
+          2.0081698683727423,
+          1.250884886261829,
+          0.8087252985051
+        ],
+        "chart_accepted": true,
+        "commutant_eigengap": 0.019281118098740935,
+        "commutant_eigenvalues": [
+          0.0017185668007506589,
+          0.020999684899491593,
+          0.27312612101574435,
+          0.2914025839584773,
+          0.31256517434983777,
+          0.44557495898565913,
+          0.472117048205133,
+          0.5094325418433142,
+          0.7598628427284351
+        ],
+        "commutant_relative_eigengap": 0.9181622577207211,
+        "fit_seconds": 0.0018964121118187904,
+        "heldout_offblock_loss": 0.003682349933914669,
+        "jbd_oracle_gap_fraction_closed": null,
+        "jbd_seconds": 0.0004175640642642975,
+        "permutation_seconds": 0.00018328381702303886,
+        "response_eigenvalues": [
+          0.46607972270565806,
+          0.2882161019882473,
+          0.01395453850237864,
+          0.004347476567933854,
+          0.003220974865329661,
+          0.0013780967738853272,
+          -0.0006464833860943045,
+          -0.0011782269046038236,
+          -0.0023561782708985206,
+          -0.0030966488260521594
+        ],
+        "response_relative_eigengap": 0.2591162217901418,
+        "separator_eigenvalues": [
+          -0.5012134149850487,
+          -0.4987843702446948,
+          0.4991388326077839,
+          0.5008589526219599
+        ],
+        "unconditional_covariance_eigenvalues": [
+          0.9687636554033751,
+          0.9866608694281559,
+          1.0093867040786952,
+          1.0166105919418382
+        ]
+      },
+      "rows": [
+        {
+          "arm": "signed_permutation",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.0016153126452717803,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.002161823814223683,
+          "family": "block",
+          "heldout_contrast_loss": 0.004467651359650659,
+          "maximum_principal_sine": 0.0,
+          "method": "oracle_block",
+          "projector_error": 0.0,
+          "test_nll": 1.3657937631922985,
+          "true_crossblock_leakage": 0.0
+        },
+        {
+          "arm": "signed_permutation",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.0016153126452717725,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.0021618238142236804,
+          "family": "block",
+          "heldout_contrast_loss": 0.004467651359650659,
+          "maximum_principal_sine": 0.0,
+          "method": "permutation_block",
+          "projector_error": 0.0,
+          "test_nll": 1.3657937631922985,
+          "true_crossblock_leakage": 0.0
+        },
+        {
+          "arm": "signed_permutation",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.0016845100547577254,
+          "covariance_head_outputs": 6,
+          "excess_nll": 0.0022739816798581147,
+          "family": "block",
+          "heldout_contrast_loss": 0.003682349933914669,
+          "maximum_principal_sine": 0.07724868451775749,
+          "method": "jbd_block",
+          "projector_error": 0.08968112510683492,
+          "test_nll": 1.365905921057933,
+          "true_crossblock_leakage": 0.0010769966088991826
+        },
+        {
+          "arm": "signed_permutation",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.023067949672489197,
+          "covariance_head_outputs": 4,
+          "excess_nll": 0.027188043358494663,
+          "family": "diagonal",
+          "heldout_contrast_loss": 0.004467651359650659,
+          "maximum_principal_sine": 0.0,
+          "method": "oracle_diagonal",
+          "projector_error": 0.0,
+          "test_nll": 1.3908199827365695,
+          "true_crossblock_leakage": 0.0
+        },
+        {
+          "arm": "signed_permutation",
+          "bayes_nll": 1.3636319393780747,
+          "conditional_w2_squared": 0.0023228778815870418,
+          "covariance_head_outputs": 10,
+          "excess_nll": 0.0036763453555955367,
+          "family": "full",
+          "heldout_contrast_loss": 0.4454479352320555,
+          "maximum_principal_sine": 1.0,
+          "method": "provisional_full",
+          "projector_error": 1.0,
+          "test_nll": 1.3673082847336702,
+          "true_crossblock_leakage": 0.432601068981538
+        }
+      ]
+    }
+  },
+  "data_seeds": {
+    "features": 12700004,
+    "haar": 12700006,
+    "signed_permutation": 12700005,
+    "test": 12700003,
+    "train": 12700001,
+    "validation": 12700002
+  },
+  "seed": 127
+}
