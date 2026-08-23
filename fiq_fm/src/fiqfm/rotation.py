@@ -38,6 +38,29 @@ class RotationEstimate:
     separator_eigenvalues: np.ndarray
 
 
+@dataclass(frozen=True)
+class BalancedCellPartition:
+    depth: int
+    active_dimension: int
+    thresholds: np.ndarray
+
+    @property
+    def n_cells(self) -> int:
+        return 2**self.depth
+
+    def transform(self, active: np.ndarray) -> np.ndarray:
+        active = np.asarray(active, dtype=float)
+        if active.ndim != 2 or active.shape[1] != self.active_dimension:
+            raise ValueError("active has the wrong dimension")
+        node = np.zeros(len(active), dtype=int)
+        rows = np.arange(len(active))
+        for level in range(self.depth):
+            dimension = level % self.active_dimension
+            go_right = active[rows, dimension] > self.thresholds[node]
+            node = 2 * node + 1 + go_right.astype(int)
+        return node - (self.n_cells - 1)
+
+
 def active_map(source: np.ndarray) -> np.ndarray:
     source = np.asarray(source, dtype=float)
     if source.ndim != 2 or source.shape[1] != 2:
@@ -189,6 +212,59 @@ def fit_covariance_regression(
     penalty[0, 0] = 0.0
     gram = features.T @ features + ridge * penalty
     return np.linalg.solve(gram, features.T @ targets)
+
+
+def fit_balanced_cell_partition(
+    active: np.ndarray, depth: int
+) -> BalancedCellPartition:
+    active = np.asarray(active, dtype=float)
+    if active.ndim != 2 or active.shape[1] == 0:
+        raise ValueError("active must be a nonempty matrix")
+    if depth <= 0 or len(active) < 2**depth:
+        raise ValueError("depth must be positive with at least one row per cell")
+    thresholds: list[float] = []
+    groups = [np.arange(len(active))]
+    for level in range(depth):
+        dimension = level % active.shape[1]
+        children: list[np.ndarray] = []
+        for indices in groups:
+            order = indices[np.argsort(active[indices, dimension], kind="stable")]
+            middle = len(order) // 2
+            if middle == 0:
+                raise ValueError("a balanced cell cannot be split")
+            left, right = order[:middle], order[middle:]
+            threshold = 0.5 * (
+                active[left[-1], dimension] + active[right[0], dimension]
+            )
+            thresholds.append(float(threshold))
+            children.extend((left, right))
+        groups = children
+    return BalancedCellPartition(
+        depth=depth,
+        active_dimension=active.shape[1],
+        thresholds=np.asarray(thresholds),
+    )
+
+
+def cell_covariance_contrasts(
+    active: np.ndarray, residual: np.ndarray, partition: BalancedCellPartition
+) -> tuple[np.ndarray, np.ndarray]:
+    active = np.asarray(active, dtype=float)
+    residual = np.asarray(residual, dtype=float)
+    if len(active) != len(residual) or residual.ndim != 2:
+        raise ValueError("active and residual must be paired matrices")
+    cells = partition.transform(active)
+    counts = np.bincount(cells, minlength=partition.n_cells)
+    if np.any(counts < 2):
+        raise ValueError("every cell needs at least two residual observations")
+    centered_global = residual - residual.mean(axis=0, keepdims=True)
+    global_covariance = centered_global.T @ centered_global / len(residual)
+    covariances = []
+    for cell in range(partition.n_cells):
+        selected = residual[cells == cell]
+        centered = selected - selected.mean(axis=0, keepdims=True)
+        covariances.append(centered.T @ centered / len(selected))
+    return np.stack(covariances) - global_covariance, counts
 
 
 def predicted_covariance_contrasts(

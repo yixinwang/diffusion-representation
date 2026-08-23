@@ -21,9 +21,11 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from fiqfm.rotation import (  # noqa: E402
     block_subspace_metrics,
+    cell_covariance_contrasts,
     conditional_gaussian_nll,
     cross_fitted_covariance_contrasts,
     fit_covariance_regression,
+    fit_balanced_cell_partition,
     fit_feature_map,
     gaussian_w2_squared,
     haar_orthogonal,
@@ -60,6 +62,10 @@ class Config:
     response_relative_eigengap_minimum: float = 0.10
     commutant_relative_eigengap_minimum: float = 0.50
     heldout_offblock_maximum: float = 0.05
+    chart_estimator: str = "cross_fitted_response"
+    cell_depth: int = 0
+    minimum_train_cell_count: int = 200
+    minimum_validation_cell_count: int = 50
     equivalence_margin_nats_per_dim: float = 0.02
     confirmation: bool = False
 
@@ -99,6 +105,7 @@ def provenance() -> dict[str, object]:
         ROOT / "tests/test_inference.py",
         ROOT / "tests/test_rotation.py",
         ROOT / "theory/residual_rotation_protocol.md",
+        ROOT / "theory/balanced_cell_rotation_protocol.md",
     ]
     hashes = {
         str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
@@ -186,6 +193,7 @@ def run_arm(
     config: Config,
 ) -> dict[str, object]:
     train_residual = rotate_residual(train.residual, rotation)
+    validation_residual = rotate_residual(validation.residual, rotation)
     test_residual = rotate_residual(test.residual, rotation)
     train_features = feature_map.transform(train.active)
     validation_features = feature_map.transform(validation.active)
@@ -196,15 +204,33 @@ def run_arm(
         train_features, train_residual, ridge=config.ridge
     )
     fit_seconds = time.perf_counter() - fit_started
-    chart_contrasts, response_eigenvalues = cross_fitted_covariance_contrasts(
-        train_features,
-        train_residual,
-        ridge=config.ridge,
-        rank=config.contrast_rank,
-    )
-    audit_contrasts, audit_singular_values = predicted_covariance_contrasts(
-        validation_features, coefficients, rank=config.contrast_rank
-    )
+    response_eigenvalues = None
+    train_cell_counts = None
+    validation_cell_counts = None
+    if config.chart_estimator == "cross_fitted_response":
+        chart_contrasts, response_eigenvalues = cross_fitted_covariance_contrasts(
+            train_features,
+            train_residual,
+            ridge=config.ridge,
+            rank=config.contrast_rank,
+        )
+        audit_contrasts, audit_singular_values = predicted_covariance_contrasts(
+            validation_features, coefficients, rank=config.contrast_rank
+        )
+    elif config.chart_estimator == "balanced_cells":
+        partition = fit_balanced_cell_partition(train.active, config.cell_depth)
+        chart_contrasts, train_cell_counts = cell_covariance_contrasts(
+            train.active, train_residual, partition
+        )
+        audit_contrasts, validation_cell_counts = cell_covariance_contrasts(
+            validation.active, validation_residual, partition
+        )
+        audit_singular_values = np.linalg.svd(
+            audit_contrasts.reshape(len(audit_contrasts), -1),
+            compute_uv=False,
+        )
+    else:
+        raise ValueError(f"unknown chart estimator: {config.chart_estimator}")
 
     permutation_started = time.perf_counter()
     permutation_axes = learn_pair_partition(chart_contrasts)
@@ -212,20 +238,30 @@ def run_arm(
     jbd_started = time.perf_counter()
     jbd = learn_commutant_blocks(chart_contrasts)
     jbd_seconds = time.perf_counter() - jbd_started
-    response_gap = (
-        response_eigenvalues[config.contrast_rank - 1]
-        - response_eigenvalues[config.contrast_rank]
-    ) / max(abs(response_eigenvalues[config.contrast_rank - 1]), 1e-15)
+    response_gap = None
+    if response_eigenvalues is not None:
+        response_gap = (
+            response_eigenvalues[config.contrast_rank - 1]
+            - response_eigenvalues[config.contrast_rank]
+        ) / max(abs(response_eigenvalues[config.contrast_rank - 1]), 1e-15)
     commutant_gap = (
         jbd.commutant_eigenvalues[1] - jbd.commutant_eigenvalues[0]
     ) / max(abs(jbd.commutant_eigenvalues[1]), 1e-15)
     heldout_loss = offblock_energy(audit_contrasts, jbd.axes)
-    chart_accepted = bool(
-        response_eigenvalues[config.contrast_rank - 1] > 0.0
-        and response_gap > config.response_relative_eigengap_minimum
-        and commutant_gap > config.commutant_relative_eigengap_minimum
-        and heldout_loss < config.heldout_offblock_maximum
-    )
+    if config.chart_estimator == "cross_fitted_response":
+        chart_accepted = bool(
+            response_eigenvalues[config.contrast_rank - 1] > 0.0
+            and response_gap > config.response_relative_eigengap_minimum
+            and commutant_gap > config.commutant_relative_eigengap_minimum
+            and heldout_loss < config.heldout_offblock_maximum
+        )
+    else:
+        chart_accepted = bool(
+            train_cell_counts.min() >= config.minimum_train_cell_count
+            and validation_cell_counts.min() >= config.minimum_validation_cell_count
+            and commutant_gap > config.commutant_relative_eigengap_minimum
+            and heldout_loss < config.heldout_offblock_maximum
+        )
 
     predicted_test = predict_covariance(test_features, coefficients)
     target_observed = rotate_covariance(test.covariance, rotation)
@@ -267,13 +303,26 @@ def run_arm(
         "arm": arm,
         "rows": rows,
         "diagnostics": {
-            "response_eigenvalues": response_eigenvalues.tolist(),
+            "chart_estimator": config.chart_estimator,
+            "response_eigenvalues": (
+                None if response_eigenvalues is None else response_eigenvalues.tolist()
+            ),
             "audit_contrast_singular_values": audit_singular_values.tolist(),
+            "train_cell_counts": (
+                None if train_cell_counts is None else train_cell_counts.tolist()
+            ),
+            "validation_cell_counts": (
+                None
+                if validation_cell_counts is None
+                else validation_cell_counts.tolist()
+            ),
             "commutant_eigenvalues": jbd.commutant_eigenvalues.tolist(),
             "commutant_eigengap": float(
                 jbd.commutant_eigenvalues[1] - jbd.commutant_eigenvalues[0]
             ),
-            "response_relative_eigengap": float(response_gap),
+            "response_relative_eigengap": (
+                None if response_gap is None else float(response_gap)
+            ),
             "commutant_relative_eigengap": float(commutant_gap),
             "heldout_offblock_loss": float(heldout_loss),
             "chart_accepted": chart_accepted,
@@ -558,13 +607,19 @@ def main() -> None:
     parser.add_argument("--n-train", type=int, default=None)
     parser.add_argument("--n-validation", type=int, default=None)
     parser.add_argument("--n-test", type=int, default=None)
+    parser.add_argument("--cell-depth", type=int, choices=(2, 3, 4), default=None)
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--confirmation", action="store_true")
     args = parser.parse_args()
     size_overridden = any(
         value is not None for value in (args.n_train, args.n_validation, args.n_test)
     )
-    if args.confirmation and (args.smoke or args.seeds is not None or size_overridden):
+    if args.confirmation and (
+        args.smoke
+        or args.seeds is not None
+        or size_overridden
+        or args.cell_depth is not None
+    ):
         raise SystemExit("confirmation uses only the frozen seeds and sizes")
     if args.confirmation:
         config = Config(seeds=tuple(range(100, 130)), confirmation=True)
@@ -574,6 +629,10 @@ def main() -> None:
             n_train=args.n_train or 2_000,
             n_validation=args.n_validation or 1_000,
             n_test=args.n_test or 1_000,
+            chart_estimator=(
+                "balanced_cells" if args.cell_depth is not None else "cross_fitted_response"
+            ),
+            cell_depth=args.cell_depth or 0,
         )
     else:
         defaults = Config()
@@ -582,6 +641,10 @@ def main() -> None:
             n_train=args.n_train or defaults.n_train,
             n_validation=args.n_validation or defaults.n_validation,
             n_test=args.n_test or defaults.n_test,
+            chart_estimator=(
+                "balanced_cells" if args.cell_depth is not None else "cross_fitted_response"
+            ),
+            cell_depth=args.cell_depth or 0,
         )
     args.output.mkdir(parents=True, exist_ok=True)
     started = time.perf_counter()

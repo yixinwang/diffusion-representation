@@ -1,0 +1,59 @@
+{
+  "cell_depth": 4,
+  "chart_estimator": "balanced_cells",
+  "commutant_relative_eigengap_minimum": 0.5,
+  "confirmation": false,
+  "contrast_rank": 4,
+  "covariance_ceiling": 20.0,
+  "covariance_floor": 0.05,
+  "equivalence_margin_nats_per_dim": 0.02,
+  "heldout_offblock_maximum": 0.05,
+  "minimum_train_cell_count": 200,
+  "minimum_validation_cell_count": 50,
+  "n_random_features": 2,
+  "n_test": 8000,
+  "n_train": 12000,
+  "n_validation": 4000,
+  "provenance": {
+    "command": [
+      "fiq_fm/experiments/residual_rotation/run.py",
+      "--seeds",
+      "500",
+      "501",
+      "502",
+      "503",
+      "504",
+      "--cell-depth",
+      "4",
+      "--output",
+      "fiq_fm/results/balanced_cell_depth_4_development"
+    ],
+    "cpu_count": 128,
+    "git_commit": "1790fcac52e0d1576ee8edbeeede9c233733613b",
+    "numpy": "2.2.6",
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "processor": "x86_64",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "slurm_job_id": "44286969",
+    "source_manifest_sha256": "3a472dc23f0e2ad09b22e4e15ebd2cd75fe046201c20ba37fe215ab06c8a11df",
+    "source_sha256": {
+      "experiments/residual_rotation/run.py": "1fa88692acf86d3978c3ed2baae1326510374b92ab7dfe2838e30a3961760ba1",
+      "src/fiqfm/inference.py": "24f989abe93e733b256663c03a448e56fe7e691bc064462a9b85770288476597",
+      "src/fiqfm/rotation.py": "8ff733aa97313a24cd51e115631a6e8e39c559b15e75b208da76f7bb4329f189",
+      "tests/test_inference.py": "18f7cf830722d59f24911d2ab26170fd037012dc45f40fe53a0b84163f74e2d3",
+      "tests/test_rotation.py": "ec855ccf68aad85a7d63626865ad9064a74fb8324891d2f53aa9de68b7dfcaee",
+      "theory/balanced_cell_rotation_protocol.md": "8b9b66bc54a623ef6b1b5614111346cbf117269a8f9ce13f595dd30c9f32b36e",
+      "theory/residual_rotation_protocol.md": "9cbbd644855166f1803941e7f2f0b0a379369db094b2cfe0efc31e16ba697a3d"
+    },
+    "tracked_worktree_dirty": true
+  },
+  "response_relative_eigengap_minimum": 0.1,
+  "ridge": 1.0,
+  "seeds": [
+    500,
+    501,
+    502,
+    503,
+    504
+  ]
+}

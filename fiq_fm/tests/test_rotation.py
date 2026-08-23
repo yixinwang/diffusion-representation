@@ -2,10 +2,12 @@ import numpy as np
 
 from fiqfm.rotation import (
     block_subspace_metrics,
+    cell_covariance_contrasts,
     commutant_gram,
     cross_fitted_covariance_contrasts,
     haar_orthogonal,
     fit_feature_map,
+    fit_balanced_cell_partition,
     learn_commutant_blocks,
     learn_pair_partition,
     population_contrasts,
@@ -103,3 +105,16 @@ def test_finite_predicted_contrasts_recover_haar_blocks() -> None:
     metrics = block_subspace_metrics(estimate.axes, rotation)
     assert metrics["projector_error"] < 0.1
     assert (eigenvalues[3] - eigenvalues[4]) / eigenvalues[3] > 0.1
+
+
+def test_balanced_cells_use_train_only_thresholds() -> None:
+    train = sample_rotation_unit(12_000, 43)
+    validation = sample_rotation_unit(4_000, 47)
+    partition = fit_balanced_cell_partition(train.active, depth=4)
+    train_cells = partition.transform(train.active)
+    assert np.ptp(np.bincount(train_cells)) <= 1
+    contrasts, counts = cell_covariance_contrasts(
+        validation.active, validation.residual, partition
+    )
+    assert contrasts.shape == (16, 4, 4)
+    assert counts.min() > 50
