@@ -39,6 +39,11 @@ from fiqfm.rotation import (  # noqa: E402
     sample_rotation_unit,
     signed_permutation,
 )
+from fiqfm.inference import (  # noqa: E402
+    holm_adjust,
+    one_sided_mean_test,
+    student_mean_interval,
+)
 
 
 @dataclass(frozen=True)
@@ -90,6 +95,8 @@ def provenance() -> dict[str, object]:
     source_paths = [
         Path(__file__).resolve(),
         ROOT / "src/fiqfm/rotation.py",
+        ROOT / "src/fiqfm/inference.py",
+        ROOT / "tests/test_inference.py",
         ROOT / "tests/test_rotation.py",
         ROOT / "theory/residual_rotation_protocol.md",
     ]
@@ -116,15 +123,9 @@ def provenance() -> dict[str, object]:
 
 def paired_interval(values: list[float], seed: int, alpha: float = 0.05) -> dict[str, float]:
     array = np.asarray(values, dtype=float)
-    rng = np.random.default_rng(seed)
-    indices = rng.integers(0, len(array), size=(20_000, len(array)))
-    means = array[indices].mean(axis=1)
-    return {
-        "mean": float(array.mean()),
-        "low": float(np.quantile(means, alpha / 2.0)),
-        "high": float(np.quantile(means, 1.0 - alpha / 2.0)),
-        "values": array.tolist(),
-    }
+    _ = seed
+    interval = student_mean_interval(array, confidence=1.0 - alpha)
+    return {**interval, "values": array.tolist()}
 
 
 def transform_covariance(covariance: np.ndarray, axes: np.ndarray) -> np.ndarray:
@@ -401,11 +402,152 @@ def summarize(results: list[dict[str, object]], config: Config) -> dict[str, obj
         summary["paired"][name] = paired_interval(
             differences(arm, left, right), seed=9000 + len(name)
         )
-    summary["maximum_claim"] = (
-        "Development diagnostics only; no residual-rotation claim is promoted."
-        if not config.confirmation
-        else "Confirmation gates must be evaluated exactly as preregistered."
-    )
+
+    if config.confirmation:
+        components: dict[str, dict[str, float | str | bool]] = {}
+
+        def add_component(
+            name: str, values: list[float], null: float, alternative: str
+        ) -> None:
+            components[name] = one_sided_mean_test(values, null, alternative)
+
+        def add_equivalence(name: str, values: list[float]) -> None:
+            add_component(
+                f"{name}_above_lower",
+                values,
+                -config.equivalence_margin_nats_per_dim,
+                "greater",
+            )
+            add_component(
+                f"{name}_below_upper",
+                values,
+                config.equivalence_margin_nats_per_dim,
+                "less",
+            )
+
+        add_equivalence(
+            "signed_permutation_equivalence",
+            differences("signed_permutation", "permutation_block", "oracle_block"),
+        )
+        add_equivalence(
+            "signed_jbd_equivalence",
+            differences("signed_permutation", "jbd_block", "oracle_block"),
+        )
+        add_equivalence(
+            "haar_jbd_equivalence",
+            differences("haar", "jbd_block", "oracle_block"),
+        )
+        add_equivalence(
+            "haar_full_equivalence",
+            differences("haar", "provisional_full", "oracle_block"),
+        )
+        add_component(
+            "haar_permutation_worse_than_jbd",
+            differences("haar", "permutation_block", "jbd_block"),
+            0.0,
+            "greater",
+        )
+        add_component(
+            "haar_diagonal_worse_than_oracle",
+            differences("haar", "oracle_diagonal", "oracle_block"),
+            0.0,
+            "greater",
+        )
+
+        def metric_values(arm: str, method: str, metric: str) -> list[float]:
+            return [
+                float(row[metric])
+                for row in rows
+                if row["arm"] == arm and row["method"] == method
+            ]
+
+        add_component(
+            "haar_jbd_leakage_below_limit",
+            metric_values("haar", "jbd_block", "true_crossblock_leakage"),
+            0.05,
+            "less",
+        )
+        add_component(
+            "haar_jbd_projector_below_limit",
+            metric_values("haar", "jbd_block", "projector_error"),
+            0.10,
+            "less",
+        )
+        add_component(
+            "haar_oracle_excess_below_limit",
+            metric_values("haar", "oracle_block", "excess_nll"),
+            0.01,
+            "less",
+        )
+        add_component(
+            "haar_full_excess_below_limit",
+            metric_values("haar", "provisional_full", "excess_nll"),
+            0.01,
+            "less",
+        )
+        adjusted = holm_adjust(
+            {name: float(test["raw_p"]) for name, test in components.items()}
+        )
+        for name, test in components.items():
+            test["holm_p"] = adjusted[name]
+            test["pass"] = adjusted[name] <= 0.05
+
+        def passed(*names: str) -> bool:
+            return all(bool(components[name]["pass"]) for name in names)
+
+        checks = {
+            "all_unit_charts_accepted": all(
+                bool(result["arms"][arm]["diagnostics"]["chart_accepted"])
+                for result in results
+                for arm in ("signed_permutation", "haar")
+            ),
+            "signed_permutation_equivalent_to_oracle": passed(
+                "signed_permutation_equivalence_above_lower",
+                "signed_permutation_equivalence_below_upper",
+            ),
+            "signed_jbd_equivalent_to_oracle": passed(
+                "signed_jbd_equivalence_above_lower",
+                "signed_jbd_equivalence_below_upper",
+            ),
+            "haar_jbd_equivalent_to_oracle": passed(
+                "haar_jbd_equivalence_above_lower",
+                "haar_jbd_equivalence_below_upper",
+            ),
+            "haar_jbd_beats_permutation": passed(
+                "haar_permutation_worse_than_jbd"
+            ),
+            "haar_full_equivalent_to_oracle": passed(
+                "haar_full_equivalence_above_lower",
+                "haar_full_equivalence_below_upper",
+            ),
+            "haar_diagonal_is_worse": passed("haar_diagonal_worse_than_oracle"),
+            "haar_jbd_leakage_below_limit": passed(
+                "haar_jbd_leakage_below_limit"
+            ),
+            "haar_jbd_projector_below_limit": passed(
+                "haar_jbd_projector_below_limit"
+            ),
+            "oracle_assay_is_adequate": passed("haar_oracle_excess_below_limit"),
+            "full_assay_is_adequate": passed("haar_full_excess_below_limit"),
+        }
+        summary["confirmation_inference"] = {
+            "familywise_alpha": 0.05,
+            "correction": "Holm across all 14 one-sided components",
+            "components": components,
+            "checks": checks,
+            "all_registered_gates_pass": all(checks.values()),
+        }
+        summary["maximum_claim"] = (
+            "The registered nonlinear, non-Gaussian tied-marginal residual assay passed; "
+            "the learned chart matches oracle block quality and beats the fixed-axis chart on "
+            "this declared model. This is not image/video or universal dominance evidence."
+            if all(checks.values())
+            else "Registered residual-rotation confirmation failed; no claim is promoted."
+        )
+    else:
+        summary["maximum_claim"] = (
+            "Development diagnostics only; no residual-rotation claim is promoted."
+        )
     return {"rows": rows, "summary": summary}
 
 
@@ -446,6 +588,10 @@ def main() -> None:
             indent=2,
         )
     )
+    if args.confirmation and not aggregate["summary"]["confirmation_inference"][
+        "all_registered_gates_pass"
+    ]:
+        raise SystemExit("one or more registered residual-rotation gates failed")
 
 
 if __name__ == "__main__":

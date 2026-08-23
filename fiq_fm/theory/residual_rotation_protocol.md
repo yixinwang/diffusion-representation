@@ -113,7 +113,7 @@ Synthetic truth is used only for the Bayes and diagnostic metrics after every le
 
 ## Inference and gates
 
-All 30 independent units enter paired intervals. Strict comparisons use Holm-corrected 95% intervals. Equivalence uses a two-one-sided-test margin of `0.02` nat per residual dimension, fixed before confirmation.
+All 30 independent units enter paired inference. Descriptive intervals are two-sided 95% Student intervals for the paired unit means. Confirmatory decisions use one-sample Student tests on paired unit differences, with Holm familywise correction at `0.05` across every directional component. Each equivalence claim contributes both one-sided components of a TOST with margin `0.02` nat per residual dimension. Leakage, projector error, and Bayes-adequacy gates use one-sided tests against their frozen upper limits. Oracle-block and provisional-full excess NLL must each be below `0.01` nat per residual dimension. In addition to the aggregate tests, every unit in both rotation arms must pass the frozen response-gap, commutant-gap, and held-out-loss rule; a failed chart is not filtered.
 
 Promote residual-gauge recovery only if every gate holds:
 
@@ -123,6 +123,6 @@ Promote residual-gauge recovery only if every gate holds:
 4. provisional full covariance is equivalent to oracle block;
 5. oracle diagonal has a positive NLL gap;
 6. the JBD upper confidence bound is below `0.05` for normalized leakage and below `0.10` for block-projector error;
-7. oracle/full validation NLL is close enough to Bayes NLL to show that the assay is not underfit.
+7. oracle/full sealed-test NLL is close enough to Bayes NLL to show that the final assay is not underfit; this is evaluation only and cannot alter the frozen model or chart.
 
 If JBD fails to close the Haar oracle gap, stop before learned active-quotient or image scaling and revise or reject the rotation mechanism. Passing this assay permits—but does not itself validate—the subsequent learned nonlinear quotient study.
