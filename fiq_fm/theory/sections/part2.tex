@@ -33,11 +33,89 @@ Equation \eqref{eq:moment} is a scalar affine transformation of $\Sigma$, so it 
 
 For sub-Gaussian samples, matrix Bernstein or standard covariance concentration gives $\eta=O_{\Pp}(K^2\sqrt{(D+\log(1/\alpha))/n})$ up to the usual lower-order term.  The moment needs one sampled path time and one outer product, or a randomized sketch, per observation; no ambient neural vector field is fitted.
 
-\subsection{The unresolved residual gauge}
+\subsection{The residual gauge}
 
 The active theorem does \emph{not} identify the basis of $\operatorname{span}(Q_r)$ when the residual eigenvalues are tied.  If $O\in\R^{(D-d)\times(D-d)}$ is orthogonal, then $[Q_z,Q_rO]$ recovers the same active quotient.  A cheap block covariance in one residual basis can become dense after rotation by $O$.
 
-The present implementation does not solve this rotation problem.  It estimates conditional-dependence scores after a residual basis has been fixed and only permutes those axes into blocks.  The exact benchmark has unequal residual marginal variances, so its covariance eigenvectors already choose residual axes; it cannot validate recovery under a generic residual rotation.
+The original conditional-dependence graph does not solve this rotation problem.  It scores a residual basis after it has been fixed and only permutes those axes into blocks.  A second registered route uses conditional covariance contrasts to recover an unordered block decomposition.  Matrix joint block diagonalization is prior work \cite{cai-li-2021}; the contribution needed here is the connection between cross-fitted conditional moments, a symmetric commutant, and the residual gauge.
+
+\subsection{Commutant-spectral block registration}
+
+Write $q=D-d$ and let $\mathbb S^q_0$ be the traceless symmetric $q\times q$ matrices.  Suppose centered conditional residual covariance has contrast span
+\begin{equation}
+ C_\ell=O\,\diag(C_\ell^{(1)},C_\ell^{(2)})O^\top,
+ \qquad \ell=1,\ldots,L,
+ \label{eq:rotation-contrasts}
+\end{equation}
+for an unknown orthogonal $O$ and two blocks of size two.  Define the commutant quadratic form
+\begin{equation}
+ \ip{H}{\mathcal G H}
+ =\sum_{\ell=1}^L\norm{C_\ell H-HC_\ell}_{F}^{2},
+ \qquad H\in\mathbb S^4_0.
+ \label{eq:commutant-gram}
+\end{equation}
+
+\begin{assumption}[Irreducible inequivalent residual blocks]
+Within each block, the only matrix commuting with every $C_\ell^{(j)}$ is a scalar multiple of $I_2$.  There is no nonzero $X\in\R^{2\times2}$ satisfying $C_\ell^{(1)}X=XC_\ell^{(2)}$ for every $\ell$.
+\end{assumption}
+
+\begin{theorem}[Residual block registration]
+Under the irreducible-inequivalent assumption, the kernel of $\mathcal G$ on $\mathbb S^4_0$ is one-dimensional and is spanned by
+\begin{equation}
+ H^*=\frac12 O\,\diag(I_2,-I_2)O^\top.
+ \label{eq:separator}
+\end{equation}
+Consequently the positive and negative eigenspaces of $H^*$ recover the two residual blocks up to within-block orthogonal transformations and a block swap.
+\end{theorem}
+\begin{proof}
+Conjugate a symmetric commutant by $O$.  Its diagonal blocks commute with every within-block contrast and hence are scalar by irreducibility.  Its off-diagonal block is an intertwiner and hence vanishes by inequivalence.  Tracelessness leaves only matrices proportional to $\diag(I_2,-I_2)$.  The two eigenspaces of \eqref{eq:separator} are precisely the registered blocks.
+\end{proof}
+
+The contrast span is estimated without applying an SVD to feature-regression coefficients.  Let $\operatorname{vec}_s$ be an isometry from symmetric matrices to Euclidean vectors.  Two regressions fitted on disjoint training halves give centered fitted moments $\wh m_1(Z)$ and $\wh m_2(Z)$.  The algorithm diagonalizes the symmetrized response operator
+\begin{equation}
+ \wh{\mathcal R}
+ =\frac12\wh\E\!\left[
+ \operatorname{vec}_s(\wh m_1)\operatorname{vec}_s(\wh m_2)^\top+
+ \operatorname{vec}_s(\wh m_2)\operatorname{vec}_s(\wh m_1)^\top
+ \right].
+ \label{eq:cross-response}
+\end{equation}
+
+\begin{lemma}[Population response-span recovery]
+If the population fitted moment can be written as
+$m_\phi(Z)=\sum_{\ell=1}^L g_\ell(Z)C_\ell$,
+the contrast vectors $\operatorname{vec}_s(C_\ell)$ are linearly independent, and
+$\E[g(Z)g(Z)^\top]$ is positive definite, then the range of the population version of \eqref{eq:cross-response} is exactly
+$\operatorname{span}\{\operatorname{vec}_s(C_\ell)\}_{\ell=1}^L$.
+\end{lemma}
+\begin{proof}
+Let $A$ have columns $\operatorname{vec}_s(C_\ell)$ and
+$\Gamma=\E[g(Z)g(Z)^\top]$.  The response operator is
+$A\Gamma A^\top$.  Full column rank of $A$ and positive definiteness of $\Gamma$ give
+$\operatorname{range}(A\Gamma A^\top)=\operatorname{range}(A)$.
+\end{proof}
+
+\begin{proposition}[Finite commutant perturbation]
+Let $\delta=\lambda_2(\mathcal G)>0$ be the commutant eigengap on $\mathbb S^4_0$ and suppose
+$\norm{\wh{\mathcal G}-\mathcal G}_{\mathrm{op}}\le\varepsilon\le\delta/32$.
+Let $\wh P$ be either matched rank-two spectral projector of the empirical separator and $P^*$ its population counterpart.  Then, after a possible block swap,
+\begin{equation}
+ \frac{\norm{\wh P-P^*}_{F}}{\sqrt2}
+ \le \frac{8\varepsilon}{\delta}.
+ \label{eq:commutant-perturbation}
+\end{equation}
+If $\max_\ell\norm{\wh C_\ell-C_\ell}_{\mathrm{op}}\le\eta$ and
+$\max_\ell\norm{C_\ell}_{\mathrm{op}}\le M$, one may take
+$\varepsilon\le L(8M\eta+4\eta^2)$.
+\end{proposition}
+\begin{proof}
+Davis--Kahan applied to the lowest eigenvector of the commutant Gram operator bounds the signed separator error by a constant times $\varepsilon/\delta$.  Applying it again to the two eigenvalue clusters of $H^*$, whose separation is one, gives \eqref{eq:commutant-perturbation}; the displayed constant is a conservative composition of the two bounds.  For the second statement, the commutator map satisfies
+$\norm{[C,\cdot]}_{\mathrm{op}}\le2\norm{C}_{\mathrm{op}}$.
+Expanding each empirical Gram term and summing gives
+$L(8M\eta+4\eta^2)$.
+\end{proof}
+
+One contrast, a commuting within-block family, or equivalent blocks can enlarge the commutant kernel and destroy identification.  The code contains executable counterexamples for these cases.  The registered pilot also requires a cross-response eigengap, a commutant eigengap, and held-out off-block closure; a failed threshold is retained as a failed unit.
 
 \subsection{Cross-fitted conditional covariance graph}
 
@@ -75,7 +153,7 @@ The theorem recovers a partition, not an orthogonal residual basis.  For blocks 
 \item Sample raw rectified-flow triples $(T,X_T,V)$ from train data and Gaussian source noise.
 \item Estimate $\wh M=\frac1n\sum_i\operatorname{sym}(V_iX_{T_i,i}^\top)$ and take its leading $d$ eigenvectors as $\wh Q_z$.
 \item Choose an arbitrary orthogonal residual completion $\wh Q_r$.
-\item Estimate validation conditional-dependence weights $\wh S_{ij}$ and permute/group residual axes by maximum-weight pair matching or the declared block heuristic.
+\item When conditional covariance contrasts satisfy the registered rank and commutant gates, recover an unordered residual block decomposition from \eqref{eq:cross-response}--\eqref{eq:commutant-gram}.  Otherwise, use fixed-axis matching only as a declared restricted model or retain a full residual covariance control.
 \end{enumerate}
 
 \paragraph{Stage B: active flow.}

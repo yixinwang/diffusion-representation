@@ -209,6 +209,43 @@ def predicted_covariance_contrasts(
     return contrasts, singular_values
 
 
+def cross_fitted_covariance_contrasts(
+    features: np.ndarray,
+    residual: np.ndarray,
+    ridge: float = 1e-3,
+    dimension: int = 4,
+    rank: int = 4,
+) -> tuple[np.ndarray, np.ndarray]:
+    features = np.asarray(features, dtype=float)
+    residual = np.asarray(residual, dtype=float)
+    if len(features) != len(residual) or len(features) < 4:
+        raise ValueError("features and residual need at least four paired rows")
+    first = np.arange(0, len(features), 2)
+    second = np.arange(1, len(features), 2)
+    left = fit_covariance_regression(features[first], residual[first], ridge)
+    right = fit_covariance_regression(features[second], residual[second], ridge)
+    left_prediction = features @ left
+    right_prediction = features @ right
+    left_prediction -= left_prediction.mean(axis=0, keepdims=True)
+    right_prediction -= right_prediction.mean(axis=0, keepdims=True)
+    cross = (
+        left_prediction.T @ right_prediction
+        + right_prediction.T @ left_prediction
+    ) / (2.0 * max(len(features) - 1, 1))
+    eigenvalues, eigenvectors = np.linalg.eigh(cross)
+    order = np.argsort(eigenvalues)[::-1]
+    eigenvalues = eigenvalues[order]
+    retained = min(rank, len(eigenvalues))
+    vectors = (
+        np.sqrt(np.maximum(eigenvalues[:retained], 0.0))[:, None]
+        * eigenvectors[:, order[:retained]].T
+    )
+    contrasts = vector_to_symmetric(vectors, dimension)
+    identity = np.eye(dimension)
+    contrasts -= np.trace(contrasts, axis1=1, axis2=2)[:, None, None] * identity / dimension
+    return contrasts, eigenvalues
+
+
 def _traceless_symmetric_basis(dimension: int) -> np.ndarray:
     basis: list[np.ndarray] = []
     for index in range(dimension - 1):

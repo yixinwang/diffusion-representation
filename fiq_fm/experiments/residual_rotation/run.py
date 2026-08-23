@@ -22,6 +22,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from fiqfm.rotation import (  # noqa: E402
     block_subspace_metrics,
     conditional_gaussian_nll,
+    cross_fitted_covariance_contrasts,
     fit_covariance_regression,
     fit_feature_map,
     gaussian_w2_squared,
@@ -51,6 +52,9 @@ class Config:
     ridge: float = 1.0
     covariance_floor: float = 0.05
     covariance_ceiling: float = 20.0
+    response_relative_eigengap_minimum: float = 0.10
+    commutant_relative_eigengap_minimum: float = 0.50
+    heldout_offblock_maximum: float = 0.05
     equivalence_margin_nats_per_dim: float = 0.02
     confirmation: bool = False
 
@@ -191,8 +195,11 @@ def run_arm(
         train_features, train_residual, ridge=config.ridge
     )
     fit_seconds = time.perf_counter() - fit_started
-    chart_contrasts, singular_values = predicted_covariance_contrasts(
-        train_features, coefficients, rank=config.contrast_rank
+    chart_contrasts, response_eigenvalues = cross_fitted_covariance_contrasts(
+        train_features,
+        train_residual,
+        ridge=config.ridge,
+        rank=config.contrast_rank,
     )
     audit_contrasts, audit_singular_values = predicted_covariance_contrasts(
         validation_features, coefficients, rank=config.contrast_rank
@@ -204,6 +211,20 @@ def run_arm(
     jbd_started = time.perf_counter()
     jbd = learn_commutant_blocks(chart_contrasts)
     jbd_seconds = time.perf_counter() - jbd_started
+    response_gap = (
+        response_eigenvalues[config.contrast_rank - 1]
+        - response_eigenvalues[config.contrast_rank]
+    ) / max(abs(response_eigenvalues[config.contrast_rank - 1]), 1e-15)
+    commutant_gap = (
+        jbd.commutant_eigenvalues[1] - jbd.commutant_eigenvalues[0]
+    ) / max(abs(jbd.commutant_eigenvalues[1]), 1e-15)
+    heldout_loss = offblock_energy(audit_contrasts, jbd.axes)
+    chart_accepted = bool(
+        response_eigenvalues[config.contrast_rank - 1] > 0.0
+        and response_gap > config.response_relative_eigengap_minimum
+        and commutant_gap > config.commutant_relative_eigengap_minimum
+        and heldout_loss < config.heldout_offblock_maximum
+    )
 
     predicted_test = predict_covariance(test_features, coefficients)
     target_observed = rotate_covariance(test.covariance, rotation)
@@ -245,12 +266,16 @@ def run_arm(
         "arm": arm,
         "rows": rows,
         "diagnostics": {
-            "contrast_singular_values": singular_values.tolist(),
+            "response_eigenvalues": response_eigenvalues.tolist(),
             "audit_contrast_singular_values": audit_singular_values.tolist(),
             "commutant_eigenvalues": jbd.commutant_eigenvalues.tolist(),
             "commutant_eigengap": float(
                 jbd.commutant_eigenvalues[1] - jbd.commutant_eigenvalues[0]
             ),
+            "response_relative_eigengap": float(response_gap),
+            "commutant_relative_eigengap": float(commutant_gap),
+            "heldout_offblock_loss": float(heldout_loss),
+            "chart_accepted": chart_accepted,
             "separator_eigenvalues": jbd.separator_eigenvalues.tolist(),
             "jbd_oracle_gap_fraction_closed": closed,
             "unconditional_covariance_eigenvalues": np.linalg.eigvalsh(

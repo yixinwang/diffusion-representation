@@ -126,8 +126,8 @@ The archived table also recorded conditional-mean reconstruction MSEs of $0.190\
 \section{Failure trace and adversarial audit}
 
 \begin{enumerate}[leftmargin=*]
-\item \textbf{Residual-basis boundary:} the active theorem leaves generic rotations inside a tied residual eigenspace unresolved.  The implemented graph only groups axes after that basis is fixed.
-\item \textbf{Benchmark limitation:} unequal residual marginal variances select the synthetic residual axes before grouping, so this benchmark tests pair partitioning but not residual-rotation recovery.
+\item \textbf{Residual-basis boundary:} the fixed-axis graph does not recover a generic rotation.  The commutant-spectral route does so only under response-rank, irreducibility, inequivalence, and eigengap assumptions.
+\item \textbf{Benchmark limitation:} the archived synthetic benchmark has unequal residual marginal variances and tests pair partitioning, not rotation recovery.  The new tied-marginal Haar-rotation pilot remains development evidence until its frozen confirmation is complete.
 \item \textbf{Support check:} every deterministic $d<D$ proposal was rejected for full-density parity.
 \item \textbf{Compute check:} the chart and fiber are included in timing.  The dense chart prevents an image-scale asymptotic claim.
 \item \textbf{Baseline check:} removing the VAE KL penalty and giving the RAE a block stochastic decoder produces a materially stronger baseline; it is retained.
@@ -140,7 +140,7 @@ The detailed registry and audit are stored with the code in \texttt{theory/appro
 \section{What is and is not established}
 
 \paragraph{Established.}
-On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Pair partitions are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  Fresh synthetic and observed-data confirmation remains necessary before making empirical claims.
+On $\mathfrak T(d,b)$, the algorithm has exact full-dimensional endpoint law under realizability and exact integration, exact latent/fiber KL decomposition, and iterative dynamics only in dimension $d$.  Raw flow labels recover the active subspace in the spiked linear-Gaussian regime.  Generic two-block residual rotations are identifiable under the response-rank and commutant assumptions above; pair partitions on fixed axes are identifiable under a matching margin.  A diagonal stochastic VAE decoder has the explicit strict gap \eqref{eq:diag-gap}.  Frozen residual-rotation and observed-data confirmation remains necessary before making new empirical claims.
 
 \paragraph{Not established.}
 There is no universal cheap quotient, no universal dominance over an unrestricted VAE, no proof that the greedy block-four grouping is optimal, and no demonstrated parity with a converged full pixel flow on modern image benchmarks.  A structured reversible image chart, convolutional or tokenized block fiber, compute-matched DiT baselines, and image-scale FID/likelihood experiments are required for that next claim.
@@ -156,8 +156,8 @@ python experiments/synthetic_exact/run.py --seeds 0 1 2 3 4 \
 python experiments/sklearn_digits/run.py --seeds 0 1 2 3 4 \
   --output results/sklearn_digits_confirmation
 \end{verbatim}
-Five executable theorem and leakage checks cover orthogonal round-trip and loss isometry, moment subspace recovery, positivity of the analytic KL gap, split disjointness, and recovery of deliberately scrambled residual pairs.  Configurations, every seed-level metric, paired summaries, and training records are persisted by the scripts.
+The executable checks cover orthogonal round-trip and loss isometry, moment subspace recovery, positivity of the analytic KL gap, split disjointness, fixed-axis pair recovery, commutant recovery under a Haar rotation, feature-reparameterization invariance of predicted contrasts, and three nonidentifiable counterexamples.  Configurations, every seed-level metric, paired summaries, and training records are persisted by the scripts.
 
 \section{Conclusion}
 
-The mathematically coherent route is not to compress the endpoint and hope that a low-dimensional code happens to be generatively sufficient.  It is to identify a quotient of the full generative law, preserve complementary randomness, and spend iterative computation only where the transport is genuinely nonlinear.  A correct active subspace can still yield an inefficient fiber in the wrong residual basis.  The present algorithm groups fixed axes but does not learn that basis under a generic rotation.  Conditional on an aligned block-local stochastic fiber, the model gives exact full-density parity on its declared class and a strict separation from diagonal VAE decoders.  Image-scale claims require a structured chart, a small held-out quotient defect, a cheap fiber, residual-basis discovery or a rotation-robust fiber, and compute-matched full-flow quality.
+The mathematically coherent route is not to compress the endpoint and hope that a low-dimensional code happens to be generatively sufficient.  It is to identify a quotient of the full generative law, preserve complementary randomness, and spend iterative computation only where the transport is genuinely nonlinear.  A correct active subspace can still yield an inefficient fiber in the wrong residual basis.  Conditional covariance contrasts can register that basis when their response span and commutant are identifiable; otherwise the algorithm must abstain or pay for a richer fiber.  Conditional on an aligned block-local stochastic fiber, the model gives exact full-density parity on its declared class and a strict separation from diagonal VAE decoders.  Image-scale claims require a structured chart, a small held-out quotient defect, a cheap fiber, successful registered residual-basis recovery, and compute-matched full-flow quality.

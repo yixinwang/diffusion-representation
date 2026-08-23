@@ -3,8 +3,8 @@ import numpy as np
 from fiqfm.rotation import (
     block_subspace_metrics,
     commutant_gram,
+    cross_fitted_covariance_contrasts,
     haar_orthogonal,
-    fit_covariance_regression,
     fit_feature_map,
     learn_commutant_blocks,
     learn_pair_partition,
@@ -49,6 +49,14 @@ def test_one_contrast_is_not_block_identifying() -> None:
     assert np.sum(eigenvalues < 1e-10) >= 3
 
 
+def test_commuting_contrasts_are_not_block_identifying() -> None:
+    contrasts = np.stack(
+        [np.diag([1.0, 2.0, 3.0, 4.0]), np.diag([4.0, 1.0, 2.0, 3.0])]
+    )
+    gram, _ = commutant_gram(contrasts)
+    assert np.sum(np.linalg.eigvalsh(gram) < 1e-10) >= 3
+
+
 def test_equivalent_noncommuting_blocks_are_not_identifying() -> None:
     diagonal = np.array([[1.0, 0.0], [0.0, -1.0]])
     exchange = np.array([[0.0, 1.0], [1.0, 0.0]])
@@ -86,14 +94,12 @@ def test_finite_predicted_contrasts_recover_haar_blocks() -> None:
     train = sample_rotation_unit(12_000, 1)
     rotation = haar_orthogonal(4, 6)
     feature_map = fit_feature_map(train.active, n_random=2, seed=4)
-    coefficients = fit_covariance_regression(
+    contrasts, eigenvalues = cross_fitted_covariance_contrasts(
         feature_map.transform(train.active),
         rotate_residual(train.residual, rotation),
         ridge=1.0,
     )
-    contrasts, _ = predicted_covariance_contrasts(
-        feature_map.transform(train.active), coefficients
-    )
     estimate = learn_commutant_blocks(contrasts)
     metrics = block_subspace_metrics(estimate.axes, rotation)
     assert metrics["projector_error"] < 0.1
+    assert (eigenvalues[3] - eigenvalues[4]) / eigenvalues[3] > 0.1
