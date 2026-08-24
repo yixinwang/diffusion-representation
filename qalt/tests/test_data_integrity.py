@@ -7,7 +7,9 @@ import pytest
 
 from qalt.data_integrity import (
     UCFRecord,
+    adaptive_cifar_repair_split,
     assert_group_disjoint,
+    cifar_training_batch_paths,
     inspect_ucf_archive,
     parse_ucf_member,
     require_test_confirmation,
@@ -74,8 +76,31 @@ def test_cifar_split_is_stratified_disjoint_and_deterministic() -> None:
         assert np.all(counts == expected)
 
 
+def test_adaptive_cifar_repair_split_excludes_discovery_and_is_stratified() -> None:
+    labels = np.repeat(np.arange(10), 5_000)
+    original = stratified_cifar_split(labels)
+    first = adaptive_cifar_repair_split(labels)
+    second = adaptive_cifar_repair_split(labels)
+    assert first == second
+    assert first["excluded_discovery"] == original["validation"]
+    expected_counts = {"fit": 4_000, "repair_holdout": 500, "excluded_discovery": 500}
+    partitions = []
+    for name, expected in expected_counts.items():
+        indices = np.asarray(first[name])
+        partitions.append(set(indices.tolist()))
+        assert np.all(np.bincount(labels[indices], minlength=10) == expected)
+    assert not any(partitions[left] & partitions[right] for left in range(3) for right in range(left + 1, 3))
+    assert set().union(*partitions) == set(range(50_000))
+
+
 def test_test_phase_guard_requires_exact_frozen_hash() -> None:
     for phase, candidate in (("development", "abc"), ("confirmation", "wrong")):
         with pytest.raises(PermissionError):
             require_test_confirmation(phase, candidate, "abc")
     require_test_confirmation("confirmation", "abc", "abc")
+
+
+def test_cifar_training_loader_allowlist_excludes_test_batch(tmp_path: Path) -> None:
+    paths = cifar_training_batch_paths(tmp_path)
+    assert [path.name for path in paths] == [f"data_batch_{index}" for index in range(1, 6)]
+    assert all(path.name != "test_batch" for path in paths)
