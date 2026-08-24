@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,hyperref}
+\usepackage[T1]{fontenc}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}[proposition]{Remark}
+\DeclareMathOperator{\KL}{KL}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\title{Joint-RGB Block Fibers\\\large A Theory-Led Repair for Scalar Multiscale Routing}
+\author{Derivation and independent adversarial-audit draft}
+\date{24 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A scalar one-shot fiber on CIFAR-10 captured non-Gaussian marginal tails but lost conditional log score only on the second and third RGB coordinates within each Haar band.  This note derives the smallest repair that preserves that signature: a three-dimensional dense-shape Gaussian scale mixture sampled jointly for each band.  The model exactly matches a declared block-elliptical endpoint class and strictly improves log score over a factorized Gaussian when residual correlation or nondegenerate scale mixing remains.  It has an exact scalar autoregressive factorization, so the valid efficiency statement is equality of density with one joint conditional stage rather than three scalar stages under a scalar-call restriction.  An optimized sampler can refactor the same law and tie.  The prospective study is adaptive development on recycled records and cannot itself promote a finite-sample routing certificate.
+\end{abstract}
+
+\section{Conditional block law}
+
+At one spatial site and Haar detail band, let $Y\in\R^3$ contain RGB coefficients and let $c$ contain permitted coarse features.  Write $R=Y-m(c)$.  The block fiber is
+\begin{equation}
+ q(y\mid c)=\sum_{k=1}^{K}\pi_k(c)\,
+ \mathcal N_3\!\left(y;m(c),s_k(c)^2\Omega(c)\right),
+ \label{eq:model}
+\end{equation}
+where $\pi_k>0$, $\sum_k\pi_k=1$, $s_k>0$, and $\Omega=LL^{\mathsf T}$ is positive definite.  The gauge $\det\Omega=1$ separates common shape from radial scales; the lower-triangular Cholesky factor has positive diagonal.
+
+For a fixed condition, define $Q=r^{\mathsf T}\Omega^{-1}r=\|L^{-1}r\|_2^2$.  Because $\det(s_k^2\Omega)=s_k^6$, a component log density is
+\begin{equation}
+ a_k=\log\pi_k-\frac32\log(2\pi)-3\log s_k-\log\det L-\frac{Q}{2s_k^2}.
+ \label{eq:component}
+\end{equation}
+The mixture log density is $a_{\max}+\log\sum_k\exp(a_k-a_{\max})$.  A change of variables $r=s_kLz$ gives $dr=s_k^3\det(L)\,dz$ and proves that each component, hence Equation~\eqref{eq:model}, is normalized.
+
+Sampling draws $J\sim\operatorname{Categorical}(\pi)$, $Z\sim\mathcal N_3(0,I)$, and returns $Y=m+s_JLZ$.  Exactly three Gaussian base coordinates suffice without auxiliary categorical noise.  Given $G\sim\mathcal N_3(0,I)$, let $U=\Phi(G_1)$, choose the component interval $(P_{J-1},P_J]$, and set
+\begin{equation}
+ V=\frac{U-P_{J-1}}{\pi_J},\qquad
+ Z=\{\Phi^{-1}(V),G_2,G_3\}^{\mathsf T}.
+ \label{eq:prior}
+\end{equation}
+For $v\in[0,1]$, $\Pr(J=k,V\le v)=\pi_kv$, so $V$ is uniform independently of $J$ and Equation~\eqref{eq:prior} has the declared law.  The construction is piecewise, not a smooth normalizing flow.
+
+\section{Endpoint closure and exact scalarization}
+
+Let the fixed orthonormal Haar chart satisfy $WX=(A,H)$ and partition $H$ into RGB band blocks $Y_g$.  Suppose the dequantized data law is
+\begin{equation}
+ p(a,h)=p_A(a)\prod_g q_g\{y_g\mid c_g(a)\},
+ \label{eq:closure}
+\end{equation}
+with every $q_g$ of the form in Equation~\eqref{eq:model}.
+
+\begin{proposition}[Exact block endpoint]
+An exact active sampler followed by parallel exact block samplers and $W^{\mathsf T}$ generates the law in Equation~\eqref{eq:closure}.  If only the active law is approximated by $q_A$, then endpoint forward KL equals $\KL(p_A\|q_A)$.
+\end{proposition}
+
+\begin{proof}
+Conditional sampling constructs the product in Equation~\eqref{eq:closure}; the orthonormal chart has unit absolute Jacobian.  With exact fibers, the fiber factors cancel inside the density ratio, leaving
+\[
+ \KL(P_X\|Q_X)=\E_P\log\frac{p_A(A)}{q_A(A)}=\KL(p_A\|q_A).
+\]
+Approximate conditionally factorized fibers instead add their expected conditional KL terms by the same log-product calculation.  Explicitly, if $p=p_A\prod_gp_g(\cdot\mid A)$ and $q=q_A\prod_gq_g(\cdot\mid A)$, then
+\[
+ \KL(p\|q)=\KL(p_A\|q_A)+
+ \E_{p_A}\sum_g\KL\{p_g(\cdot\mid A)\|q_g(\cdot\mid A)\}.
+\]
+\end{proof}
+
+The Haar chart maps $N$ endpoint coordinates to exactly $N$ coarse-plus-detail coordinates, and grouping detail colors into RGB blocks drops no coefficient.  The active coarse field is lower dimensional, but its generated fibers complete the $N$-dimensional state.  Equation~\eqref{eq:prior} gives equal three-dimensional base noise for each RGB block, but the map is piecewise and many-to-one rather than a smooth invertible flow.
+
+The block model also has an exact scalar representation.  For coordinate $j$, define
+\begin{equation}
+ \beta_j=\Omega_{j,<j}\Omega_{<j,<j}^{-1},\qquad
+ \nu_j=\Omega_{jj}-\Omega_{j,<j}\Omega_{<j,<j}^{-1}\Omega_{<j,j},
+ \label{eq:schur}
+\end{equation}
+and $Q_{j-1}=r_{<j}^{\mathsf T}\Omega_{<j,<j}^{-1}r_{<j}$.  Gaussian conditioning gives component conditional mean $\beta_jr_{<j}$ and variance $s_k^2\nu_j$.  Bayes' rule gives posterior component weights
+\begin{equation}
+ \rho_{jk}(r_{<j})=
+ \frac{\pi_ks_k^{-(j-1)}\exp\{-Q_{j-1}/(2s_k^2)\}}
+ {\sum_\ell\pi_\ell s_\ell^{-(j-1)}\exp\{-Q_{j-1}/(2s_\ell^2)\}}.
+ \label{eq:posterior}
+\end{equation}
+Therefore
+\begin{equation}
+ q(r_j\mid r_{<j},c)=\sum_k\rho_{jk}(r_{<j})
+ \mathcal N\!\left(r_j;\beta_jr_{<j},s_k^2\nu_j\right),
+ \label{eq:scalar}
+\end{equation}
+and $\log q(r\mid c)=\sum_{j=1}^{3}\log q(r_j\mid r_{<j},c)$ samplewise.  Equation~\eqref{eq:scalar} is a mandatory implementation tie control.  A scalar mixture whose weights depend only on coarse strata is a restricted comparator because it omits Equation~\eqref{eq:posterior}.
+For $j=1$, the empty-parent conventions are $Q_0=0$, $s_k^0=1$, $\rho_{1k}=\pi_k$, $\beta_1r_{<1}=0$, and $\nu_1=\Omega_{11}$.
+
+\section{Restricted Gaussian separation}
+
+Let $C=\bar s^2\Omega$ be the conditional covariance, where $\bar s^2=\sum_k\pi_ks_k^2$, and let $R_C$ be its correlation matrix.
+
+\begin{proposition}[Optimal diagonal-Gaussian gap]
+For the block law $P$ with conditional mean $m$,
+\begin{equation}
+ \inf_{D\ \mathrm{diagonal}}\KL\{P\|\mathcal N(m,D)\}
+ =-\frac12\log\det R_C+\KL\{P\|\mathcal N(m,C)\}.
+ \label{eq:gap}
+\end{equation}
+The gap is strict if $R_C\ne I$ or positive-weight components have unequal scales.
+\end{proposition}
+
+\begin{proof}
+Gaussian cross-entropy is minimized at the true mean and $D=\operatorname{diag}C$, by differentiating each term $\{\log d_j+C_{jj}/d_j\}/2$.  Adding and subtracting the entropy of $\mathcal N(m,C)$ gives Equation~\eqref{eq:gap}.  The determinant term is nonnegative.  If the shape is diagonal but the random variable $S^2=s_J^2$ is nondegenerate, distinct squared coordinates satisfy
+\[
+ \operatorname{Cov}(R_a^2,R_b^2)=\Omega_{aa}\Omega_{bb}\operatorname{Var}(S^2)>0,
+\]
+so the law is not Gaussian and the second KL term is strict.
+\end{proof}
+
+Pointwise in $c$, if some absolute correlation is at least $\rho_0$, a Schur-complement bound gives $\det R_C\le1-\rho_0^2$ and hence a margin $-\log(1-\rho_0^2)/2$ nats per affected block.  If that event has $P_C$-probability $\alpha$, the averaged margin is at least $-\alpha\log(1-\rho_0^2)/2$; strict average separation requires correlation or nondegenerate scale mixing on a set of positive probability.  No uniform significant margin exists because correlations and scale separations can approach zero.  The result concerns a factorized Gaussian conditional, not a complete variational autoencoder; an expressive decoder can implement Equation~\eqref{eq:model} and tie.
+
+\begin{proposition}[Identifiability under explicit restrictions]
+For known minimal $K$, positive weights, and distinct ordered scales $0<s_1<\cdots<s_K$, the conditional density identifies $(\pi_k,s_k,\Omega)$ under $\det\Omega=1$.
+\end{proposition}
+
+\begin{proof}
+The mean identifies $m$, and the covariance is $C=(\sum_k\pi_ks_k^2)\Omega$.  Since $\det\Omega=1$, the scalar multiplier is $(\det C)^{1/3}$, so $C$ identifies $\Omega$.  Along any ray normalized by $u^{\mathsf T}\Omega u=1$, the centered characteristic function is
+\[
+ \varphi_u(t)=\sum_k\pi_k\exp(-s_k^2t^2/2).
+\]
+Writing $x=t^2/2$ gives a finite sum of distinct real exponentials.  If two such sums agree, subtract them, multiply by the exponential corresponding to the smallest remaining rate, and let $x\to\infty$; that coefficient vanishes.  Induction identifies every ordered rate and weight.  The positive-diagonal Cholesky factor is then unique.  Without the determinant gauge, common shape and scale are confounded; zero weights, duplicate scales, overfitted $K$, or unrestricted neural parameterizations are not identifiable.  Conditional functions themselves are identified only $P_C$-almost surely.
+\end{proof}
+
+Two no-refit fitted-model ablations isolate dependence while retaining marginal laws.  Let $P_4=\prod_{j=1}^3q_{B4,j}$ be the product of the exact fitted marginals.  Under the declared $B4$ law,
+\[
+ \E_{B4}\{-\log P_4(R)+\log q_{B4}(R)\}
+ =\KL\!\left(q_{B4}\middle\|\prod_jq_{B4,j}\right),
+\]
+the conditional total correlation, which vanishes exactly under independence.  To remove only componentwise correlation, put $d=\{\det(\operatorname{diag}\Omega)\}^{1/3}$, $\Omega_0=\operatorname{diag}(\Omega)/d$, and $s_{0k}=s_k\sqrt d$.  Then $\det\Omega_0=1$ and $s_{0k}^2\Omega_0=s_k^2\operatorname{diag}(\Omega)$, preserving every component marginal and the shared radial label while removing off-diagonal covariance.  The derived scales are exempt from the fitting box and must not be clipped; equivalently evaluate $s_k^2\operatorname{diag}(\Omega)$ directly.  These ablations are not used in routing range bounds.
+
+\section{Fitting and diagnostics}
+
+After fitting a common coarse location, estimate the uncentered residual second moment in each band and stratum.  Shrink it toward its isotropic trace with weight $0.001$, project log eigenvalues onto the sum-zero box $[\log0.1,\log10]^3$, and recompose a determinant-one shape with condition number at most 100.  This shape is frozen across $K=1,4,8$.  For fixed shape and Mahalanobis radii $Q_i$, the E-step uses Equation~\eqref{eq:component}.  With responsibilities $\gamma_{ik}$ and masses $M_k$, the unconstrained scale update follows from differentiating the complete objective:
+\begin{equation}
+ s_k^2=\frac{\sum_i\gamma_{ik}Q_i}{3M_k}.
+\end{equation}
+For $\pi_k\ge\epsilon_w$ with $K\epsilon_w<1$, the exact KKT update is
+\[
+ \pi_k=\max\{\epsilon_w,M_k/\lambda\},\qquad
+ \sum_k\pi_k=1,
+\]
+where the unique $\lambda>0$ is found by water filling.  Writing $t=s_k^2$ and $A_k=\sum_i\gamma_{ik}Q_i$, the scale derivative is $(A_k-3M_kt)/(2t^2)$, so clamping $A_k/(3M_k)$ to the registered interval is the exact constrained update.  The shape is frozen before EM and scale sorting only relabels components; these updates preserve EM monotonicity.  The executable still fails on a realized likelihood decrease beyond numerical tolerance.
+
+The model makes three separate calibration predictions.  The radial probability integral transform is
+\begin{equation}
+ U_i=\sum_k\pi_kF_{\chi_3^2}(Q_i/s_k^2).
+\end{equation}
+For whitened direction $B_i=\Omega^{-1/2}R_i/\sqrt{Q_i}$, the second moment is $I_3/3$, diagonal fourth moments are $1/5$, and off-diagonal squared moments are $1/15$.  Residual-energy correlation across bands diagnoses failure of conditional band independence.  These failures imply different repairs and cannot be replaced by aggregate likelihood.
+
+\section{Efficiency and empirical boundary}
+
+Three conditionally independent RGB blocks can be sampled jointly in one stage.  Their exact scalar factorizations require three color stages with bands parallel; a global cross-band scalar order uses nine.  For joint-band set $S$, the unbatched block/within-band scalar call count is $9-2|S|$, but critical depth remains three unless all bands are joint.  An optimized comparator can refactor the same fitted GSM and tie one-stage depth.  Thus the theorem establishes one-versus-three depth only under scalar conditional calls; both routes have linear detail arithmetic, require linear output storage, and need measured latency.
+
+The v2 repair holdout was part of the earlier v1 fitting set.  Although v2 scores remain unopened and every model is refit without those records, the repair family depends on them through the prior fitted scalar models.  V2 is adaptive development, and any empirical Bernstein statistic on it is diagnostic without coverage.  A theorem-backed routing certificate requires untouched images after a separate freeze.  Even a successful conditional study supplies no learned active generator, endpoint FID/FVD, accelerator efficiency, full-flow comparison, or unrestricted VAE dominance.
+
+The boundary is witnessed by explicit counterexamples.  A one-component diagonal shape has zero factorized-Gaussian gap.  Component-dependent means, skewness, or nonelliptical angles can favor a richer scalar autoregression.  A scale shared across bands or sites preserves all block marginals while violating product closure.  Conditional NLL parity does not imply FID/FVD parity, and every density statement here concerns the frozen dequantized law rather than discrete pixel mass.
+
+\end{document}
