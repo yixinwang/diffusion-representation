@@ -1,0 +1,145 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,hyperref}
+\usepackage[T1]{fontenc}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}[proposition]{Remark}
+\DeclareMathOperator{\KL}{KL}
+\DeclareMathOperator{\TV}{TV}
+\newcommand{\E}{\mathbb E}
+\newcommand{\cR}{\mathcal R}
+\title{Certified Adaptive Transport-Depth Routing}
+\author{Theory and adversarial-audit draft}
+\date{23 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+An equal-dimensional multiscale generator need not apply iterative transport to every block.  This note gives a finite-sample rule that selects one-shot conditional kernels only when held-out source clusters certify their forward-Kullback--Leibler regret relative to a frozen full iterative comparator.  A minimum-cost certified route inherits the declared regret tolerance and, when a matched latent route is among the eligible candidates, a compute oracle inequality.  The result is relative: it neither bounds distance to the data without a separate full-comparator bound nor implies FID, FVD, universal latent-method dominance, or variational-autoencoder representation superiority.  The proposal was independently checked adversarially before observed-data fitting.
+\end{abstract}
+
+\section{Model and assumptions}
+
+Let $V=\{1,\ldots,B\}$ be blocks in a fixed topological order of a directed acyclic graph.  External conditions are suppressed.  The data law has proper conditional kernels
+\begin{equation}
+ P(dx)=\prod_{v=1}^{B}p_v(dx_v\mid x_{\operatorname{pa}(v)}).
+ \label{eq:p}
+\end{equation}
+Disjoint training data produce two frozen kernels per block: an iterative kernel $q_v^I$ and a one-shot kernel $q_v^O$.  A route $r\in\{I,O\}^B$ induces
+\begin{equation}
+ Q_r(dx)=\prod_{v=1}^{B}q_v^{r_v}(dx_v\mid x_{\operatorname{pa}(v)}),
+ \label{eq:qr}
+\end{equation}
+and $F=(I,\ldots,I)$ denotes the full route.
+
+Assume that all kernels share the graph and conditioning variables, $P\ll Q_r$, and all log ratios below are integrable.  Chart Jacobians, dequantization constants, priors, and decoder likelihoods enter every score identically.  Models, routes, transforms, hyperparameters, stopping rules, cluster definitions, and the tolerance $\epsilon$ are frozen before calibration.  Calibration clusters are independent; observations from one video source remain one cluster unless source-level independence is justified.
+
+\section{Relative conditional risk}
+
+\begin{proposition}[DAG Kullback--Leibler decomposition]
+For every route $r$,
+\begin{equation}
+ \KL(P\|Q_r)=\sum_{v=1}^{B}\E_{P_{\operatorname{pa}(v)}}
+ \KL\!\left(p_v(\cdot\mid X_{\operatorname{pa}(v)})\,
+ \middle\|\,q_v^{r_v}(\cdot\mid X_{\operatorname{pa}(v)})\right).
+ \label{eq:chain}
+\end{equation}
+Consequently, the relative regret satisfies
+\begin{equation}
+ \Delta_r:=\E_P\log\frac{q_F(X)}{q_r(X)}
+ =\KL(P\|Q_r)-\KL(P\|Q_F).
+ \label{eq:regret}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Start from $\KL(P\|Q_r)=\E_P\log\{dP(X)/dQ_r(X)\}$.  Inserting Equations~\eqref{eq:p} and~\eqref{eq:qr} makes the density ratio a ratio of two products.  The logarithm turns this ratio into the sum
+\[
+ \sum_v\E_P\log\frac{p_v(X_v\mid X_{\operatorname{pa}(v)})}
+ {q_v^{r_v}(X_v\mid X_{\operatorname{pa}(v)})}.
+\]
+Iterated expectation conditional on each parent tuple gives Equation~\eqref{eq:chain}.  Subtracting the same identity for $F$ gives Equation~\eqref{eq:regret}.
+\end{proof}
+
+Every conditional must be evaluated at held-out data parents.  Generated-parent evaluation changes the estimand and can hide errors at parent values avoided by an upstream model.  The inequality $\Delta_r\le\epsilon$ gives only relative forward-Kullback--Leibler regret.  If a separate theorem gives $\KL(P\|Q_F)\le\eta$, then $\KL(P\|Q_r)\le\eta+\epsilon$.  Exact parity needs $\eta=\epsilon=0$; strict improvement by $\gamma$ needs $\Delta_r\le-\gamma$.
+
+\section{Finite-sample certificate}
+
+Let $Z_1,\ldots,Z_n$ be independent calibration clusters and let $N_i$ be the declared normalization for cluster $i$.  For each route define
+\begin{equation}
+ D_{i,r}=\frac{-\log q_r(Z_i)+\log q_F(Z_i)}{N_i},
+ \qquad
+ \widehat\Delta_r=\frac{1}{n}\sum_{i=1}^{n}D_{i,r}.
+ \label{eq:paired}
+\end{equation}
+The normalization determines the estimand; equal-source and equal-frame targets cannot be exchanged silently.
+
+\begin{proposition}[Frozen finite-family certificate]
+Let the frozen family $\cR$ contain $M$ routes.  Conditional on training, suppose $D_{i,r}$ is independent across clusters and lies in an interval of known width $R_r$.  Define
+\begin{equation}
+ U_r=\widehat\Delta_r+R_r\sqrt{\frac{\log(M/\alpha)}{2n}}.
+ \label{eq:upper}
+\end{equation}
+Then, with probability at least $1-\alpha$, $\Delta_r\le U_r$ simultaneously for every $r\in\cR$.  Any selector
+\begin{equation}
+ \widehat r\in\arg\min_{r:U_r\le\epsilon}C(r)
+ \label{eq:selector}
+\end{equation}
+satisfies $\KL(P\|Q_{\widehat r})\le\KL(P\|Q_F)+\epsilon$ on that event.
+\end{proposition}
+
+\begin{proof}
+For one route, Hoeffding's inequality gives
+\[
+ \Pr\{\Delta_r>U_r\}
+ \le \exp\{-2n(U_r-\widehat\Delta_r)^2/R_r^2\}=\alpha/M.
+\]
+The union bound over the $M$ frozen routes proves simultaneous coverage.  The data-dependent selector in Equation~\eqref{eq:selector} is covered because the event holds for every candidate before selection.  Equation~\eqref{eq:regret} then proves the claimed relative risk bound.
+\end{proof}
+
+If the eligible set is empty, the algorithm abstains and uses $F$.  Gaussian negative-log-likelihood differences are unbounded, so the Hoeffding form does not apply automatically.  An executable must freeze a clipped-score estimand, justify a conditional sub-Gaussian or sub-exponential bound, use a valid confidence sequence, or supply another assumption-backed cluster bound.  Student and ordinary bootstrap intervals are not finite-sample proofs without corresponding assumptions.
+
+For blockwise routing, define
+\begin{equation}
+ d_{i,v}=\frac{1}{N_i}\log
+ \frac{q_v^I(X_{iv}\mid X_{i,\operatorname{pa}(v)})}
+ {q_v^O(X_{iv}\mid X_{i,\operatorname{pa}(v)})},
+ \qquad \delta_v=\E d_{i,v}.
+\end{equation}
+If $O(r)$ is the one-shot set, cancellation gives $\Delta_r=\sum_{v\in O(r)}\delta_v$.  Simultaneous bounds $\delta_v\le u_v$ imply $\Delta_r\le\sum_{v\in O(r)}u_v$ for an adaptive route.  This is conservative because it sums uncertainty radii; marginal intervals cannot simply be added.
+
+\section{Compute theorem and algorithm}
+
+Under an explicit additive work model, let
+\begin{equation}
+ C(r)=C_{\rm chart}+C_{\rm router}+C_{\rm shared}+C_{\rm decode}
+ +\sum_{v:r_v=I}K_vc_v^I+\sum_{v:r_v=O}c_v^O.
+ \label{eq:cost}
+\end{equation}
+Subtracting a routed cost from the full cost cancels the shared terms and yields
+\begin{equation}
+ C(F)-C(r)=\sum_{v:r_v=O}(K_vc_v^I-c_v^O).
+ \label{eq:saving}
+\end{equation}
+Thus the route is strictly cheaper when every routed block satisfies $c_v^O\le K_vc_v^I$ and at least one inequality is strict.  If a matched latent comparator is in $\cR$, passes the same quality certificate, and costs are known, minimum-cost selection gives $C(\widehat r)\le C(r_{\rm latent})$.  Empirical latency needs simultaneous cost bounds such as $U_C(\widehat r)\le L_C(r_{\rm latent})$ because critical-path latency need not be additive.
+
+The executable algorithm is as follows.  Fit every iterative and one-shot conditional on training clusters.  Freeze the graph, route family, score normalization, tolerance, cluster definition, costs, and stopping rules.  Score all candidates on calibration clusters at data parents and form paired regret estimates.  Construct simultaneous upper bounds, retain routes whose bounds do not exceed $\epsilon$, and choose the minimum-cost eligible route using a frozen tie rule.  If none is eligible, use the full route.  Freeze the implementation, generate in topological order, and open the final test set once.  Any further adaptive round needs fresh calibration data or a formally valid reusable-holdout method.
+
+\section{Consequences and boundaries}
+
+When $\KL(P\|Q_F)\le\eta$ and $\Delta_{\widehat r}\le\epsilon$, Pinsker's inequality gives
+\begin{equation}
+ \TV(P,Q_{\widehat r})\le\sqrt{\frac{\eta+\epsilon}{2}}.
+\end{equation}
+For any score $s\in[m,M]$, this implies
+\begin{equation}
+ \left|\E_Ps-\E_{Q_{\widehat r}}s\right|
+ \le(M-m)\sqrt{\frac{\eta+\epsilon}{2}}.
+\end{equation}
+FID, FVD, and unbounded feature moments do not follow without separate moment and continuity assumptions.
+
+A same-information baseline with the same chart, graph, kernels, base randomness, schedules, decoder, and operation accounting is the same measurable map and ties exactly.  The certificate can fail because no cheap route is eligible.  Other invalidating shortcuts include pseudo-replicating video frames, creating candidates after calibration, evaluating at generated parents, using cyclic conditionals, treating diffusion losses or ELBOs as joint likelihoods without proof, or omitting chart, routing, decoding, data movement, and variable solver evaluations from cost.
+
+The potential contribution is therefore narrow: a preregistered forward-Kullback--Leibler routing certificate coupled to an invertible equal-dimensional quotient--fiber generator, with a same-information tie control and an explicit compute oracle inequality.  The ingredients overlap with conditional Kullback--Leibler decompositions, selective prediction, adaptive computation, and multiscale generation, so novelty requires a separate primary-source audit and successful observed-data evidence.
+
+\end{document}

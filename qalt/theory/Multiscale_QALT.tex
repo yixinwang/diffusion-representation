@@ -111,12 +111,12 @@ Whenever $s\ne1$ and the stability factor is positive, $s_K\ne s$.  Applying thi
 
 \section{Registered evidence ladder}
 
-Stage A uses procedurally generated $32\times32$ images and $16\times32\times32$ videos.  Coarse coefficients have a nonlinear heavy-tailed mixture law, and detail coefficients follow Equation~\eqref{eq:mixture}.  Development seeds are 700--704; confirmation seeds 800--829 remain inaccessible until a separate freeze commit.  Every method receives identical observations, conditions, coefficient dimension, local parents, and base randomness.  Training alone fits fiber parameters; validation is diagnostic; test data are read once for frozen metrics.
+Stage A uses procedurally generated $32\times32$ image-shaped arrays and $16\times32\times32$ video-shaped arrays.  Coarse coefficients have a nonlinear heavy-tailed mixture law, and detail coefficients follow Equation~\eqref{eq:mixture}.  Development seeds are 700--704; confirmation seeds 800--829 remain inaccessible until a separate freeze commit.  Every method receives identical observations, conditions, coefficient dimension, local parents, and base randomness.  Training alone fits fiber parameters; the active law is sampled from the procedural truth.  Validation is diagnostic; test data are read once for frozen metrics.
 
 Mandatory controls are the oracle law, full-token exact and Euler samplers, a coarse-only decoder, Multiscale QALT, the exact split tie, and the fixed diagonal Gaussian decoder.  Passing Stage A would establish the theorem-to-implementation mechanism on the declared law.  It would not establish observed image or video superiority; that requires a separately frozen study against optimized latent, wavelet, and few-step baselines.
 
-\clearpage
 \begin{center}
+\begin{minipage}{0.96\textwidth}
 \centering
 \small
 \textbf{Table 1: The corrected development assay passes every frozen gate on five seeds.}\\
@@ -126,25 +126,27 @@ Differences are nats per full endpoint dimension; ratios include the matched loc
 \toprule
 Quantity & Image & Video\\
 \midrule
-QALT $-$ oracle NLL & $0.000015$ & $0.000044$\\
-Diagonal $-$ QALT NLL & $0.1030$ & $0.1073$\\
-Coarse-only $-$ QALT NLL & $0.1074$ & $0.1156$\\
-Finite Euler $-$ QALT NLL & $0.000204$ & $0.000129$\\
-Latency ratio & $0.328$ & $0.192$\\
-Peak live-array ratio & $0.750$ & $0.625$\\
+Fitted $-$ oracle conditional detail NLL & $0.000015$ & $0.000044$\\
+Diagonal $-$ mixture detail NLL & $0.1030$ & $0.1073$\\
+Unit-Gaussian $-$ mixture detail NLL & $0.1074$ & $0.1156$\\
+Finite Euler $-$ exact detail NLL & $0.000204$ & $0.000129$\\
+Local-kernel timing proxy ratio & $0.328$ & $0.192$\\
+Formula live-array ratio & $0.750$ & $0.625$\\
 \bottomrule
 \end{tabular}
+\end{minipage}
 \end{center}
 
 The exact full-token and same-information split controls tie QALT to numerical precision.  Thus the table supports the declared mechanism and restricted separations, not universal quality dominance.  The memory row counts explicit simultaneously live arrays rather than accelerator allocator telemetry, and the procedural endpoint law is not observed-data evidence.
 
-One subsequent confirmation used the frozen implementation and untouched seeds 800--829.  All 16 paired one-sided Student components passed Holm correction at familywise level 0.05, together with every deterministic hard check.  QALT-minus-oracle NLL was $0.000121$ for images and $0.000080$ for videos.  Diagonal-minus-QALT gaps were $0.10163$ and $0.10612$, while coarse-only gaps were $0.10541$ and $0.11406$.  Corrected latency ratios were $0.3274$ and $0.1894$; explicit live-array ratios remained $0.750$ and $0.625$.  Exact full-token and split controls again tied exactly.  This confirms the procedural mechanism and registered restricted separations, but it supplies no observed-data or production-accelerator evidence.
+One subsequent confirmation used the frozen implementation and untouched seeds 800--829.  All 16 paired one-sided Student components passed Holm correction at familywise level 0.05, together with every deterministic hard check.  Fitted-minus-oracle conditional detail NLL, normalized by full endpoint dimension, was $0.000121$ for image-shaped arrays and $0.000080$ for video-shaped arrays.  Diagonal-minus-mixture detail gaps were $0.10163$ and $0.10612$, while unit-Gaussian-detail gaps were $0.10541$ and $0.11406$.  Proxy local-kernel timing ratios were $0.3274$ and $0.1894$; formula live-array ratios remained $0.750$ and $0.625$.  Identical conditional code paths tied exactly.  This confirms fiber fitting and restricted procedural separations.  It does not fit an active law, train a full flow or diffusion, evaluate a complete VAE, measure full endpoint NLL, measure allocator memory or production timing, or supply observed-data evidence.
 
 \section{Discussion}
 
-The coherent claim is a structured Pareto statement.  An invertible local chart retains the entire endpoint, a low-dimensional coarse state receives repeated computation, and a realizable stochastic fiber restores the complementary randomness.  This matches full-dimensional quality and latent-order work on the declared multiscale class while strictly improving log score over a fixed diagonal VAE decoder.  The same structure also exposes the boundary: a latent method that adopts the exact fiber ties, and natural data may violate local conditional closure.  The registered assay tests those implementation-level premises before any observed-data claim is attempted.
+The coherent conditional claim is structural.  An invertible local chart retains the entire endpoint, a low-dimensional coarse state receives repeated computation, and a realizable stochastic fiber restores the complementary randomness.  On the declared factorization this matches the exact endpoint and has latent-order local token work, while a non-Gaussian fiber strictly improves log score over a fixed Gaussian detail conditional.  The comparator is not a complete variational autoencoder.  A latent method that adopts the exact fiber ties, and natural data may violate local conditional closure.  The next study therefore certifies which blocks can safely use one-shot fibers rather than assuming closure everywhere.
 
 \begin{thebibliography}{9}
+\small
 \bibitem{voleti2021}
 Vikram Voleti, Chris Finlay, Adam Oberman, and Christopher Pal.
 \newblock Multi-resolution continuous normalizing flows.
