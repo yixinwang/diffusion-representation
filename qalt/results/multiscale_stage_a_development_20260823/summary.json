@@ -1,0 +1,108 @@
+{
+  "all_registered_development_gates_pass": true,
+  "maximum_claim": "Development evidence only. Exact same-information controls tie; any strict quality gap is restricted to lossy, diagonal, or finite-Euler controls.",
+  "modalities": {
+    "image": {
+      "checks": {
+        "coarse_only_gap_positive": true,
+        "diagonal_gap_positive": true,
+        "exact_split_equivalent": true,
+        "finite_euler_gap_positive": true,
+        "full_exact_ties": true,
+        "haar_roundtrip": true,
+        "latency_strictly_lower": true,
+        "memory_strictly_lower": true,
+        "qalt_excess_nll_below_ceiling": true,
+        "update_accounting_within_ten_percent": true
+      },
+      "coarse_only_minus_qalt_nll": {
+        "high": 0.11607167125728944,
+        "low": 0.09865009457189085,
+        "mean": 0.10736088291459014
+      },
+      "diagonal_minus_qalt_nll": {
+        "high": 0.11045372517305113,
+        "low": 0.09555738380018597,
+        "mean": 0.10300555448661855
+      },
+      "euler_minus_qalt_nll": {
+        "high": 0.0003269923764663887,
+        "low": 8.173371619579298e-05,
+        "mean": 0.00020436304633109081
+      },
+      "exact_split_minus_qalt_nll": {
+        "high": 0.0,
+        "low": 0.0,
+        "mean": 0.0
+      },
+      "latency_ratio": {
+        "high": 0.3146746900802517,
+        "low": 0.2793242650853259,
+        "mean": 0.2969994775827888
+      },
+      "maximum_relative_update_accounting_error": 0.0,
+      "memory_ratio": {
+        "high": 0.75,
+        "low": 0.75,
+        "mean": 0.75
+      },
+      "qalt_minus_oracle_nll": {
+        "high": 5.284325035504868e-05,
+        "low": -2.357030855720656e-05,
+        "mean": 1.4636470898921062e-05
+      }
+    },
+    "video": {
+      "checks": {
+        "coarse_only_gap_positive": true,
+        "diagonal_gap_positive": true,
+        "exact_split_equivalent": true,
+        "finite_euler_gap_positive": true,
+        "full_exact_ties": true,
+        "haar_roundtrip": true,
+        "latency_strictly_lower": true,
+        "memory_strictly_lower": true,
+        "qalt_excess_nll_below_ceiling": true,
+        "update_accounting_within_ten_percent": true
+      },
+      "coarse_only_minus_qalt_nll": {
+        "high": 0.1288959530123029,
+        "low": 0.10226125167943023,
+        "mean": 0.11557860234586656
+      },
+      "diagonal_minus_qalt_nll": {
+        "high": 0.12296751735671092,
+        "low": 0.09156861100967993,
+        "mean": 0.10726806418319543
+      },
+      "euler_minus_qalt_nll": {
+        "high": 0.00019579184591184123,
+        "low": 6.184211967480431e-05,
+        "mean": 0.00012881698279332277
+      },
+      "exact_split_minus_qalt_nll": {
+        "high": 0.0,
+        "low": 0.0,
+        "mean": 0.0
+      },
+      "latency_ratio": {
+        "high": 0.17336457104251468,
+        "low": 0.1555112939207271,
+        "mean": 0.1644379324816209
+      },
+      "maximum_relative_update_accounting_error": 0.0,
+      "memory_ratio": {
+        "high": 0.625,
+        "low": 0.625,
+        "mean": 0.625
+      },
+      "qalt_minus_oracle_nll": {
+        "high": 9.654848209487026e-05,
+        "low": -8.837351793832208e-06,
+        "mean": 4.385556515051903e-05
+      }
+    }
+  },
+  "mode": "development",
+  "runtime_seconds": 17.040945597924292
+}

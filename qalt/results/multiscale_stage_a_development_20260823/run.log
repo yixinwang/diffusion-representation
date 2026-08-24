@@ -1,0 +1,112 @@
+[multiscale-qalt] seed=700 modality=image
+[multiscale-qalt] seed=700 modality=video
+[multiscale-qalt] seed=701 modality=image
+[multiscale-qalt] seed=701 modality=video
+[multiscale-qalt] seed=702 modality=image
+[multiscale-qalt] seed=702 modality=video
+[multiscale-qalt] seed=703 modality=image
+[multiscale-qalt] seed=703 modality=video
+[multiscale-qalt] seed=704 modality=image
+[multiscale-qalt] seed=704 modality=video
+{
+  "image": {
+    "qalt_minus_oracle_nll": {
+      "mean": 1.4636470898921062e-05,
+      "low": -2.357030855720656e-05,
+      "high": 5.284325035504868e-05
+    },
+    "exact_split_minus_qalt_nll": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    "diagonal_minus_qalt_nll": {
+      "mean": 0.10300555448661855,
+      "low": 0.09555738380018597,
+      "high": 0.11045372517305113
+    },
+    "coarse_only_minus_qalt_nll": {
+      "mean": 0.10736088291459014,
+      "low": 0.09865009457189085,
+      "high": 0.11607167125728944
+    },
+    "euler_minus_qalt_nll": {
+      "mean": 0.00020436304633109081,
+      "low": 8.173371619579298e-05,
+      "high": 0.0003269923764663887
+    },
+    "latency_ratio": {
+      "mean": 0.2969994775827888,
+      "low": 0.2793242650853259,
+      "high": 0.3146746900802517
+    },
+    "memory_ratio": {
+      "mean": 0.75,
+      "low": 0.75,
+      "high": 0.75
+    },
+    "maximum_relative_update_accounting_error": 0.0,
+    "checks": {
+      "exact_split_equivalent": true,
+      "qalt_excess_nll_below_ceiling": true,
+      "diagonal_gap_positive": true,
+      "coarse_only_gap_positive": true,
+      "latency_strictly_lower": true,
+      "memory_strictly_lower": true,
+      "update_accounting_within_ten_percent": true,
+      "full_exact_ties": true,
+      "finite_euler_gap_positive": true,
+      "haar_roundtrip": true
+    }
+  },
+  "video": {
+    "qalt_minus_oracle_nll": {
+      "mean": 4.385556515051903e-05,
+      "low": -8.837351793832208e-06,
+      "high": 9.654848209487026e-05
+    },
+    "exact_split_minus_qalt_nll": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    "diagonal_minus_qalt_nll": {
+      "mean": 0.10726806418319543,
+      "low": 0.09156861100967993,
+      "high": 0.12296751735671092
+    },
+    "coarse_only_minus_qalt_nll": {
+      "mean": 0.11557860234586656,
+      "low": 0.10226125167943023,
+      "high": 0.1288959530123029
+    },
+    "euler_minus_qalt_nll": {
+      "mean": 0.00012881698279332277,
+      "low": 6.184211967480431e-05,
+      "high": 0.00019579184591184123
+    },
+    "latency_ratio": {
+      "mean": 0.1644379324816209,
+      "low": 0.1555112939207271,
+      "high": 0.17336457104251468
+    },
+    "memory_ratio": {
+      "mean": 0.625,
+      "low": 0.625,
+      "high": 0.625
+    },
+    "maximum_relative_update_accounting_error": 0.0,
+    "checks": {
+      "exact_split_equivalent": true,
+      "qalt_excess_nll_below_ceiling": true,
+      "diagonal_gap_positive": true,
+      "coarse_only_gap_positive": true,
+      "latency_strictly_lower": true,
+      "memory_strictly_lower": true,
+      "update_accounting_within_ten_percent": true,
+      "full_exact_ties": true,
+      "finite_euler_gap_positive": true,
+      "haar_roundtrip": true
+    }
+  }
+}

@@ -32,6 +32,6 @@ def test_train_fitted_mixture_recovers_parent_gating() -> None:
 
 
 def test_token_accounting_and_memory_are_strict() -> None:
-    result = token_benchmark(total_tokens=1024, active_tokens=256, steps=20, repeats=3)
+    result = token_benchmark(shape=(32, 32), steps=20, repeats=3)
     assert result["qalt_token_updates"] < result["full_token_updates"]
     assert result["memory_ratio"] < 1.0

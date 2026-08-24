@@ -152,29 +152,41 @@ def euler_scale(scale: np.ndarray | float, steps: int) -> np.ndarray:
     return base**steps
 
 
-def token_benchmark(total_tokens: int, active_tokens: int, steps: int, repeats: int = 9) -> dict[str, float]:
-    """Measure matched local update kernels and report explicit live-array bytes."""
+def token_benchmark(shape: tuple[int, ...], steps: int, repeats: int = 9) -> dict[str, float]:
+    """Time matched local samplers through the shared inverse Haar decoder."""
+    total_tokens = int(np.prod(shape))
+    active_tokens = total_tokens // (2 ** len(shape))
     if not 0 < active_tokens < total_tokens:
         raise ValueError("active token count must be between zero and total tokens")
     rng = np.random.default_rng(91)
-    full_initial = rng.normal(size=(8, total_tokens))
-    active_initial = full_initial[:, :active_tokens].copy()
+    axes = tuple(range(1, len(shape) + 1))
+    full_initial = rng.normal(size=(8, *shape))
+    coarse_shape = (8, *(length // 2 for length in shape))
+    active_initial = rng.normal(size=coarse_shape)
 
-    def timed(width: int, iterative_steps: int, include_fiber: bool) -> float:
-        values = full_initial[:, :width].copy() if width == total_tokens else active_initial.copy()
+    def full_timed() -> float:
+        values = full_initial.copy()
         started = time.perf_counter()
-        for _ in range(iterative_steps):
+        for _ in range(steps):
             scratch = np.tanh(values)
             values += 0.01 * scratch
-        if include_fiber:
-            output = np.empty_like(full_initial)
-            output[:, :active_tokens] = values
-            output[:, active_tokens:] = np.tanh(full_initial[:, active_tokens:])
-            values = output
-        return time.perf_counter() - started + 0.0 * float(values[0, 0])
+        output = haar_inverse(values, axes)
+        return time.perf_counter() - started + 0.0 * float(output.reshape(-1)[0])
 
-    full_times = [timed(total_tokens, steps, False) for _ in range(repeats)]
-    qalt_times = [timed(active_tokens, steps, True) for _ in range(repeats)]
+    def qalt_timed() -> float:
+        active = active_initial.copy()
+        started = time.perf_counter()
+        for _ in range(steps):
+            scratch = np.tanh(active)
+            active += 0.01 * scratch
+        coefficients = np.tanh(full_initial)
+        coarse_index = band_slices(coefficients.shape, axes)[0]
+        coefficients[coarse_index] = active
+        output = haar_inverse(coefficients, axes)
+        return time.perf_counter() - started + 0.0 * float(output.reshape(-1)[0])
+
+    full_times = [full_timed() for _ in range(repeats)]
+    qalt_times = [qalt_timed() for _ in range(repeats)]
     item = full_initial.dtype.itemsize * len(full_initial)
     return {
         "full_seconds": float(np.median(full_times)),

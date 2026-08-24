@@ -201,9 +201,7 @@ def run_modality(config: Config, seed: int, modality: str) -> dict[str, object]:
     validation_nll = model_nll(validation.observations, fitted, "qalt")
     total_tokens = int(np.prod(shape))
     active_tokens = total_tokens // (2 ** len(shape))
-    benchmark = token_benchmark(
-        total_tokens, active_tokens, config.solver_steps, config.timing_repeats
-    )
+    benchmark = token_benchmark(shape, config.solver_steps, config.timing_repeats)
     expected_ratio = (config.solver_steps * active_tokens + total_tokens - active_tokens) / (
         config.solver_steps * total_tokens
     )
