@@ -27,7 +27,7 @@ For each spatial site, the shared coarse feature map contains an intercept, the 
 - `I8`: eight-component autoregressive overcapacity control.
 - Exact copy controls call the same fitted density path under two labels and must tie bitwise.
 
-Mixture weights are at least `1e-4`; scales are constrained to `[0.05,2]`. Expectation--maximization uses fixed initialization quantiles, at most 100 iterations, and relative tolerance `1e-7`. Fit the mixtures on a counter-based maximum of 1,000,000 fitting residuals per channel, shared across component-count comparisons. Report every parameter count and selected sample identity hash.
+Mixture weights are at least `1e-4`; scales are constrained to `[0.05,2]`. Expectation--maximization initializes scales on a fixed geometric grid from `0.5` to `1.8` times the residual root-mean-square, uses at most 100 iterations, and has relative tolerance `1e-7`. Fit every location, energy-stratum boundary, and mixture on the same counter-based sample of at most 250,000 fitting sites, shared across component-count and autoregressive comparisons. Report every parameter count and selected sample identity hash.
 
 ## Routing certificate and compute estimand
 
