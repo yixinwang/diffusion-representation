@@ -14,7 +14,7 @@ Use the canonical CIFAR-10 Python archive at `/ocean/datasets/community/cifar/ci
 
 ### Videos
 
-Use the public `sayakpaul/ucf101-subset` archive at immutable Hugging Face revision `6a9d381fc7f36bec5be5a2cd79c661efd5b97f63`, derived from UCF101. Preserve its train/validation/test directories. Parse UCF video group identifiers and reject any cross-split group overlap, because clips from one original group can share background and viewpoint. Decode one deterministic 16-frame, 64x64 center clip per source video using a committed temporal rule. No test clip is decoded before a separate confirmation freeze.
+Use the public `sayakpaul/ucf101-subset` archive at immutable Hugging Face revision `b9984b8d2a95e4a1879e1b071e9433858d0bc24a`, derived from UCF101. Preserve its train/validation/test directories. Parse UCF video group identifiers and reject any cross-split group overlap, because clips from one original group can share background and viewpoint. Decode one deterministic 16-frame, 64x64 center clip per source video using a committed temporal rule. No test clip is decoded before a separate confirmation freeze.
 
 Record archive hashes, decoded source paths, group identifiers, frame indices, software versions, and every rejected clip. Dataset download and decoding are data preparation, not evidence.
 
