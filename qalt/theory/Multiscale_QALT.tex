@@ -1,0 +1,141 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,hyperref}
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\KL}{KL}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\cN}{\mathcal N}
+\title{Multiscale QALT\\\large Exact Conditional Fibers with Latent-Order Iterative Work}
+\author{Theory and registered empirical audit draft}
+\date{23 August 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Full-dimensional diffusion preserves endpoint information but repeatedly processes every image or video coefficient.  Latent diffusion reduces that work through a learned tokenizer whose decoder can lose density or impose a restricted conditional family.  Multiscale QALT instead applies a fixed local orthonormal chart, iteratively generates only the coarse field, and samples every detail coefficient once from a parent-conditional fiber.  On a declared multiscale law, the construction exactly matches the full endpoint density with work $O(Kn_a+N)$, the same order as latent diffusion, while retaining all $N$ transformed coefficients.  A parent-gated Gaussian-mixture fiber has a strict log-score advantage over a fixed diagonal Gaussian decoder at the same coarse dimension when the mixture is not Gaussian.  The result is conditional: an optimized same-information latent baseline can use the identical fiber and tie both quality and order of work.  The registered image/video assay therefore tests finite recipes and restricted decoder families rather than universal dominance.
+\end{abstract}
+
+\section{Problem and construction}
+
+Let $x\in\R^N$ denote an image or video, and let $W$ be a one-level separable orthonormal Haar transform implemented by local pairwise lifting.  Write $Wx=(a,h)$, where $a\in\R^{n_a}$ is the all-low-pass field and $h\in\R^{N-n_a}$ contains every remaining band.  The representation is equal-dimensional because $W$ is bijective; only the state receiving repeated neural updates has dimension $n_a$.
+
+The declared conditional law factors as
+\begin{equation}
+p(x\mid c)=p_a(a\mid c)\prod_{\ell,i}p_{\ell}\bigl(h_{\ell i}\mid u_{\ell i},c\bigr),
+\qquad (a,h)=Wx,
+\label{eq:factorization}
+\end{equation}
+where $u_{\ell i}$ is a local parent formed from coarse or earlier-scale coefficients.  The executable first uses the nonlinear non-Gaussian fiber
+\begin{equation}
+p_{\ell}(h\mid u)
+=\{1-\pi_{\ell}(u)\}\cN(0,s_{\ell0}^2)
++\pi_{\ell}(u)\cN(0,s_{\ell1}^2),
+\quad
+\pi_{\ell}(u)=\operatorname{logit}^{-1}\{\beta_{\ell}^{\mathsf T}(1,\tanh u,\sin u)\}.
+\label{eq:mixture}
+\end{equation}
+All mixture parameters are fitted from training coefficients by expectation--maximization.  No component label or population parameter enters fitting.
+
+\section{Endpoint law and density}
+
+\begin{theorem}[Exact endpoint and likelihood]
+Assume that the active sampler returns $a\sim p_a(\cdot\mid c)$ and that each one-shot fiber sampler returns the conditional distribution in Equation~\eqref{eq:factorization} in an order consistent with its parents.  Then $x=W^{\mathsf T}(a,h)$ has density $p(x\mid c)$.  Moreover,
+\begin{equation}
+\log p(x\mid c)=\log p_a(a\mid c)+\sum_{\ell,i}\log p_{\ell}(h_{\ell i}\mid u_{\ell i},c),
+\label{eq:likelihood}
+\end{equation}
+with no chart log-Jacobian term.
+\end{theorem}
+
+\begin{proof}
+Sequential conditional sampling constructs the joint density on the right side of Equation~\eqref{eq:factorization}.  Orthonormality gives $W^{-1}=W^{\mathsf T}$ and $|\det W|=1$.  The change-of-variables formula therefore preserves the density value and yields Equation~\eqref{eq:likelihood}.
+\end{proof}
+
+This theorem gives equality with a realizable full-dimensional flow or diffusion at its exact endpoint.  It does not assert that arbitrary observed data satisfy the factorization or that a fitted finite model realizes every conditional.
+
+\section{Work, memory, and optimized controls}
+
+Let $K$ be the number of repeated sampler evaluations.  Count one local token update as constant work after fixing channel width and local receptive field.
+
+\begin{proposition}[Conditional complexity parity]
+A full-token local sampler uses $\Theta(KN)$ token updates and $\Omega(N)$ state memory.  Multiscale QALT uses
+\begin{equation}
+Kn_a+(N-n_a)
+\label{eq:updates}
+\end{equation}
+token updates, plus $\Theta(N)$ local chart work and $\Theta(N)$ output memory.  Thus its total work is $\Theta(Kn_a+N)$, the same asymptotic order as a latent sampler with an $n_a$-token state and a linear-time decoder.  For $K>1$ and $n_a<N$, Equation~\eqref{eq:updates} is strictly smaller than $KN$.
+\end{proposition}
+
+\begin{proof}
+The active state is updated $K$ times.  Each detail is sampled once, and the lifting chart touches each coefficient a constant number of times.  A generated endpoint itself requires $\Omega(N)$ memory.  Summing these terms proves the result.
+\end{proof}
+
+Constants remain empirical.  Dense attention would change the count, and few-step distillation can reduce $K$.  The registered study consequently reports latency, live working arrays, token updates, and sampler evaluations rather than inferring hardware speed from asymptotic notation alone.
+
+\begin{theorem}[Same-information tie]
+Consider a latent baseline with the same chart, active sampler, local parents, fitted fibers, base random variables, and exact one-shot conditional sampler.  It induces exactly the same distribution and has the same $\Theta(Kn_a+N)$ work as Multiscale QALT.
+\end{theorem}
+
+\begin{proof}
+The two algorithms are identical measurable maps of identically distributed base variables.  Their endpoint laws and operation counts coincide.
+\end{proof}
+
+The tie rules out universal quality or efficiency superiority over unrestricted latent diffusion.  A strict empirical claim must name the finite solver, lossy tokenizer, decoder restriction, or architecture that creates the gap.
+
+\section{Restricted quality separations}
+
+\begin{proposition}[Fixed diagonal-decoder gap]
+Fix the chart, coarse representation, active law, conditioning, and conditional mean.  Let the true fiber be Equation~\eqref{eq:mixture} with $0<\pi_{\ell}(u)<1$ on a set of positive probability and $s_{\ell0}\ne s_{\ell1}$.  For any fixed conditional diagonal Gaussian decoder $q(h\mid a,c)$,
+\begin{equation}
+\E_{a,c}\,\KL\{p(h\mid a,c)\,\|\,q(h\mid a,c)\}>0,
+\label{eq:vae-gap}
+\end{equation}
+unless the decoder family contains the true conditional fiber.  The excess expected negative log likelihood equals the left side of Equation~\eqref{eq:vae-gap}.
+\end{proposition}
+
+\begin{proof}
+The excess log score is the conditional forward Kullback--Leibler divergence.  A nondegenerate centered mixture with unequal component variances is not Gaussian, as follows, for example, from its fourth cumulant.  Gibbs' inequality is strict whenever the two conditional densities differ on a set of positive measure.  Summing conditionally independent detail terms preserves strict positivity.
+\end{proof}
+
+This is a representation result only relative to the fixed chart, equal coarse dimension, and declared decoder family.  It is not dominance over an unrestricted variational autoencoder, whose decoder could implement the same mixture.
+
+For a finite-Euler control, transporting a standard normal scale $s$ through $r'(t)=(\log s)r(t)$ for $K$ steps gives scale
+\begin{equation}
+s_K=\{1+(\log s)/K\}^{K}.
+\end{equation}
+Whenever $s\ne1$ and the stability factor is positive, $s_K\ne s$.  Applying this replacement to both identifiable unequal-scale mixture components changes the conditional distribution; hence its forward Kullback--Leibler divergence from the exact fiber is strictly positive.  An exponential or structural split integrator uses the exact scale and ties QALT.
+
+\section{Registered evidence ladder}
+
+Stage A uses procedurally generated $32\times32$ images and $16\times32\times32$ videos.  Coarse coefficients have a nonlinear heavy-tailed mixture law, and detail coefficients follow Equation~\eqref{eq:mixture}.  Development seeds are 700--704; confirmation seeds 800--829 remain inaccessible until a separate freeze commit.  Every method receives identical observations, conditions, coefficient dimension, local parents, and base randomness.  Training alone fits fiber parameters; validation is diagnostic; test data are read once for frozen metrics.
+
+Mandatory controls are the oracle law, full-token exact and Euler samplers, a coarse-only decoder, Multiscale QALT, the exact split tie, and the fixed diagonal Gaussian decoder.  Passing Stage A would establish the theorem-to-implementation mechanism on the declared law.  It would not establish observed image or video superiority; that requires a separately frozen study against optimized latent, wavelet, and few-step baselines.
+
+\section{Discussion}
+
+The coherent claim is a structured Pareto statement.  An invertible local chart retains the entire endpoint, a low-dimensional coarse state receives repeated computation, and a realizable stochastic fiber restores the complementary randomness.  This matches full-dimensional quality and latent-order work on the declared multiscale class while strictly improving log score over a fixed diagonal VAE decoder.  The same structure also exposes the boundary: a latent method that adopts the exact fiber ties, and natural data may violate local conditional closure.  The registered assay tests those implementation-level premises before any observed-data claim is attempted.
+
+\begin{thebibliography}{9}
+\bibitem{voleti2021}
+Vikram Voleti, Chris Finlay, Adam Oberman, and Christopher Pal.
+\newblock Multi-resolution continuous normalizing flows.
+\newblock \emph{arXiv:2106.08462}, 2021.
+\newblock \url{https://arxiv.org/abs/2106.08462}.
+
+\bibitem{phung2023}
+Hao Phung, Quan Dao, and Anh Tran.
+\newblock Wavelet diffusion models are fast and scalable image generators.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 2023.
+\newblock \url{https://openaccess.thecvf.com/content/CVPR2023/html/Phung_Wavelet_Diffusion_Models_Are_Fast_and_Scalable_Image_Generators_CVPR_2023_paper.html}.
+
+\bibitem{blattmann2023}
+Andreas Blattmann et al.
+\newblock Align your latents: High-resolution video synthesis with latent diffusion models.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition}, 2023.
+\newblock \url{https://openaccess.thecvf.com/content/CVPR2023/html/Blattmann_Align_Your_Latents_High-Resolution_Video_Synthesis_With_Latent_Diffusion_Models_CVPR_2023_paper.html}.
+\end{thebibliography}
+\end{document}
