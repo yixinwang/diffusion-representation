@@ -1,0 +1,84 @@
+{
+  "seed": 1103,
+  "protocol_origin_commit": "b8f585d",
+  "source_commit": "a2b86ad",
+  "split_hash": "1fa221bdb55176c64bf43eeb9746e55e62f68572634f8b1651237539708bedfb",
+  "fit_size": 45000,
+  "validation_size": 5000,
+  "fit_input_hash": "919c81fc36287d0dcc3c679ef9a8713c1eccf5e46dae95875e849696b981a4ef",
+  "validation_input_hash": "f2f73448b2cba47ad7c068ed7915cbb7a9eda5156e7aaaba0df32534c1c7892d",
+  "fit_dequant_hash": "85074800a8aaec5bc3ab03dc6ac5bb66117e95fb0fed5e942f94418006bb54fd",
+  "validation_dequant_hash": "7a880d3307ff1b984693ce378f4545731ae737796bc8f9cf3618d8151a842763",
+  "mixture_sample_hash": "72f4520ab2a67d2e2d3aab3dc37d79b28d222c9ceeace8d6acebde825ae936d2",
+  "model_parameters": {
+    "o1": 192,
+    "o4": 408,
+    "o4_unconditional": 192,
+    "o8": 696,
+    "i4": 444,
+    "i8": 732
+  },
+  "comparisons": {
+    "o1_minus_o4": {
+      "mean": 0.12591596263858365,
+      "bootstrap_95": [
+        0.12384133744564783,
+        0.12793557554399307
+      ]
+    },
+    "o4_unconditional_minus_o4": {
+      "mean": 0.0043852540725912445,
+      "bootstrap_95": [
+        0.004066341695679563,
+        0.004691306621421622
+      ]
+    },
+    "o4_minus_o8": {
+      "mean": -3.297723225991319e-06,
+      "bootstrap_95": [
+        -4.655610066193744e-06,
+        -1.934955649894066e-06
+      ]
+    },
+    "i4_minus_i8": {
+      "mean": 0.0024012142477577705,
+      "bootstrap_95": [
+        0.002012427623048622,
+        0.002846350669640941
+      ]
+    }
+  },
+  "channel_o4_regret_vs_i4": [
+    0.0,
+    0.08021969704389526,
+    0.07995234677395756,
+    -8.022664900088274e-06,
+    0.07150401559787747,
+    0.07086744830421392,
+    3.789742324964917e-07,
+    0.023276729287481906,
+    0.022756085331072522
+  ],
+  "selected_route": {
+    "mask": 0,
+    "one_shot_channels": [],
+    "mean_regret": 0.0,
+    "upper_certificate": 0.0,
+    "analytic_interval": [
+      0.0,
+      0.0
+    ],
+    "depth": 9,
+    "eligible": true
+  },
+  "gates": {
+    "o4_beats_o1": true,
+    "conditioning_helps": true,
+    "o4_equivalent_o8": true,
+    "certified_depth_reduction": false,
+    "roundtrip": true,
+    "finite": true
+  },
+  "roundtrip_max_error": 5.551115123125783e-16,
+  "test_access": false
+}

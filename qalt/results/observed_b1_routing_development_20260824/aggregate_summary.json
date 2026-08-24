@@ -1,0 +1,41 @@
+{
+  "status": "failed_registered_scalar_route; retained for mechanism revision",
+  "source_commit": "a2b86ad",
+  "slurm_array_job": 44306107,
+  "seeds": [1100, 1101, 1102, 1103, 1104],
+  "independent_data_units_per_seed": 5000,
+  "seed_role": "algorithmic and dequantization variability, not independent datasets",
+  "comparison_means_across_seeds": {
+    "o1_minus_o4": {"mean": 0.12595435058874477, "range": [0.12591596263858365, 0.1260040734769035]},
+    "o4_unconditional_minus_o4": {"mean": 0.004390502990168531, "range": [0.004382539828467866, 0.004404947858233903]},
+    "o4_minus_o8": {"mean": -0.0000011998690069116554, "range": [-0.000003297723225991319, 0.00000021096511795852761]},
+    "i4_minus_i8": {"mean": 0.002655427208027132, "range": [0.001428843800106408, 0.0035518596918989887]}
+  },
+  "mean_o4_regret_vs_i4_by_ordered_detail_channel": [
+    0.0,
+    0.07989928001468907,
+    0.07993865342557566,
+    -0.000001484856861526102,
+    0.07150463745322433,
+    0.07086191889956979,
+    -0.00000009454392158796328,
+    0.023275375727420992,
+    0.022755670012362325
+  ],
+  "selected_route_depths": [9, 9, 9, 9, 9],
+  "gates_passing_all_seeds": {
+    "o4_beats_o1": true,
+    "conditioning_helps": true,
+    "o4_equivalent_o8": true,
+    "certified_depth_reduction": false,
+    "roundtrip": true,
+    "finite": true
+  },
+  "provenance_checks": {
+    "unique_fit_input_hashes": 1,
+    "unique_fit_dequantization_hashes": 5,
+    "test_access": false
+  },
+  "interpretation": "The non-Gaussian marginal and conditioning mechanisms work, but scalar one-shot fibers omit within-band cross-color coupling. A joint RGB block conditional is the registered next repair. The distribution-free empirical Bernstein range is also too loose to certify empirically tied scalar channels.",
+  "evidence_boundary": "Conditional validation likelihood only; no active generator, full diffusion, VAE, FID, or endpoint claim. The registered PIT/angular/energy/spatial diagnostics were omitted by this first runner and require a corrected rerun."
+}

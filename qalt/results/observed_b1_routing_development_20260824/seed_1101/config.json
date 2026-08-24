@@ -1,0 +1,5 @@
+{
+  "seed": 1101,
+  "data_root": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py",
+  "source_commit": "a2b86ad"
+}
