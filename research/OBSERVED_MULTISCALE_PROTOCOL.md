@@ -26,7 +26,7 @@ The equal-dimensional claim refers to the complete invertible coefficient repres
 
 ## Stage B1: observed conditional-fiber bridge
 
-Development uses fitting and validation data only. The final B1 configuration is not frozen by this draft: the adaptive-routing theorem and its independent audit must first fix the estimand, simultaneous bound, and selection rule. Candidate closure families are:
+Development uses fitting and validation data only. The image-first executable configuration, estimand, simultaneous empirical Bernstein bound, and selection rule are frozen in `qalt/theory/OBSERVED_B1_ROUTING_PROTOCOL.md`. Candidate closure families in the broader ladder are:
 
 - parent-conditioned Gaussian scale mixture with 2 or 4 components and a shared small convolutional location/gating head;
 - conditional radial generalized Gaussian on 9-dimensional image or 21-dimensional video Haar-detail blocks;
@@ -37,7 +37,7 @@ Development uses fitting and validation data only. The final B1 configuration is
 - coarse-only unit Gaussian detail decoder;
 - unconditional per-band empirical mixture, which tests whether parent conditioning matters.
 
-These density families are closure estimators, not the claimed novelty. The proposed mechanism is certified adaptive transport-depth routing: form a frozen finite family of routed-block candidates, estimate each candidate's paired conditional log-score regret against the strongest same-information iterative control on held-out sources, construct simultaneous upper confidence bounds at the image or `(class,gNN)` video-group level, and choose the least predicted repeated-compute route whose upper bound is within a preregistered tolerance. The exact rule remains non-executable until its theorem and adversarial audit are committed.
+These density families are closure estimators, not the claimed novelty. The proposed mechanism is certified adaptive transport-depth routing: form a frozen finite family of routed-block candidates, estimate each candidate's paired conditional log-score regret against the strongest same-information iterative control on held-out sources, construct simultaneous upper confidence bounds at the image or `(class,gNN)` video-group level, and choose the least predicted repeated-compute route whose upper bound is within a preregistered tolerance.
 
 All heads have an explicit parameter count. If exact matching is impossible, report validation NLL versus parameter count, a capacity-matched width, a compute-matched model, and an overcapacity strong baseline. Report both fixed-example/update budgets and convergence diagnostics. Minibatches, augmentations, and dequantization draws are keyed by record and shared. Selection minimizes validation conditional NLL under the registered routing certificate; no FID/FVD or test metric selects a head. Diagnose radial probability-integral-transform calibration, angular residuals, cross-block energy dependence, and temporal phase dependence.
 
