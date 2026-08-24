@@ -1,4 +1,7 @@
 import numpy as np
+from pathlib import Path
+import json
+import runpy
 
 from qalt.multiscale import (
     MixtureFiber,
@@ -35,3 +38,14 @@ def test_token_accounting_and_memory_are_strict() -> None:
     result = token_benchmark(shape=(32, 32), steps=20, repeats=3)
     assert result["qalt_token_updates"] < result["full_token_updates"]
     assert result["memory_ratio"] < 1.0
+
+
+def test_confirmation_inference_wiring_on_development_fixture() -> None:
+    root = Path(__file__).resolve().parents[1]
+    namespace = runpy.run_path(str(root / "experiments/multiscale_stage_a/run.py"))
+    result_root = root / "results/multiscale_stage_a_corrected_development_20260823"
+    units = [json.loads(path.read_text()) for path in sorted(result_root.glob("seed_*.json"))]
+    config = namespace["Config"](seeds=tuple(range(700, 705)), confirmation=True)
+    summary = namespace["summarize"](config, units)
+    assert len(summary["confirmation_inference"]["components"]) == 16
+    assert summary["confirmation_inference"]["all_registered_gates_pass"]

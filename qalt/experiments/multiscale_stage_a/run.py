@@ -14,6 +14,7 @@ import sys
 import time
 
 import numpy as np
+from scipy import stats
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -44,6 +45,7 @@ class Config:
     equivalence_margin: float = 0.02
     excess_nll_maximum: float = 0.01
     timing_repeats: int = 9
+    confirmation: bool = False
 
 
 @dataclass(frozen=True)
@@ -230,14 +232,38 @@ def run_modality(config: Config, seed: int, modality: str) -> dict[str, object]:
 
 def student_interval(values: list[float]) -> dict[str, float]:
     array = np.asarray(values, dtype=float)
-    critical = 2.7764451051977987
+    critical = float(stats.t.ppf(0.975, len(array) - 1))
     half = critical * array.std(ddof=1) / np.sqrt(len(array))
     return {"mean": float(array.mean()), "low": float(array.mean() - half), "high": float(array.mean() + half)}
+
+
+def one_sided_test(values: list[float], null: float, alternative: str) -> dict[str, float | str]:
+    array = np.asarray(values, dtype=float)
+    standard_error = float(array.std(ddof=1) / np.sqrt(len(array)))
+    mean = float(array.mean())
+    if standard_error <= np.finfo(float).eps:
+        passes = mean > null if alternative == "greater" else mean < null
+        raw_p = 0.0 if passes else 1.0
+    else:
+        statistic = (mean - null) / standard_error
+        raw_p = float(stats.t.sf(statistic, len(array) - 1) if alternative == "greater" else stats.t.cdf(statistic, len(array) - 1))
+    return {"mean": mean, "null": null, "alternative": alternative, "standard_error": standard_error, "raw_p": raw_p}
+
+
+def holm_adjust(raw: dict[str, float]) -> dict[str, float]:
+    ordered = sorted(raw.items(), key=lambda item: (item[1], item[0]))
+    adjusted = {}
+    running = 0.0
+    for index, (name, value) in enumerate(ordered):
+        running = max(running, min(1.0, (len(ordered) - index) * value))
+        adjusted[name] = running
+    return adjusted
 
 
 def summarize(config: Config, units: list[dict[str, object]]) -> dict[str, object]:
     modalities: dict[str, object] = {}
     all_checks = []
+    confirmation_components: dict[str, dict[str, float | str]] = {}
     for modality in ("image", "video"):
         selected = [unit for unit in units if unit["modality"] == modality]
         def differences(left: str, right: str) -> list[float]:
@@ -281,11 +307,43 @@ def summarize(config: Config, units: list[dict[str, object]]) -> dict[str, objec
             "checks": checks,
         }
         all_checks.extend(checks.values())
+        if config.confirmation:
+            registered = {
+                "exact_lower": (differences("exact_split", "qalt"), -config.equivalence_margin, "greater"),
+                "exact_upper": (differences("exact_split", "qalt"), config.equivalence_margin, "less"),
+                "qalt_excess": (differences("qalt", "oracle"), config.excess_nll_maximum, "less"),
+                "diagonal_gap": (differences("diagonal_vae", "qalt"), 0.0, "greater"),
+                "coarse_gap": (differences("coarse_only", "qalt"), 0.0, "greater"),
+                "euler_gap": (differences("full_token_euler", "qalt"), 0.0, "greater"),
+                "latency_ratio": ([float(unit["benchmark"]["latency_ratio"]) for unit in selected], 1.0, "less"),
+                "memory_ratio": ([float(unit["benchmark"]["memory_ratio"]) for unit in selected], 1.0, "less"),
+            }
+            for name, (values, null, alternative) in registered.items():
+                confirmation_components[f"{modality}_{name}"] = one_sided_test(values, null, alternative)
+    inference = None
+    if config.confirmation:
+        adjusted = holm_adjust({name: float(value["raw_p"]) for name, value in confirmation_components.items()})
+        for name, value in confirmation_components.items():
+            value["holm_p"] = adjusted[name]
+            value["passes"] = adjusted[name] < 0.05
+        hard_checks = all(
+            modality["checks"][name]
+            for modality in modalities.values()
+            for name in ("update_accounting_within_ten_percent", "full_exact_ties", "haar_roundtrip")
+        )
+        inference = {
+            "family": "16 preregistered one-sided paired Student tests with Holm correction",
+            "components": confirmation_components,
+            "hard_checks_pass": hard_checks,
+            "all_registered_gates_pass": hard_checks and all(bool(value["passes"]) for value in confirmation_components.values()),
+        }
     return {
-        "mode": "development",
+        "mode": "confirmation" if config.confirmation else "development",
         "modalities": modalities,
-        "all_registered_development_gates_pass": all(all_checks),
-        "maximum_claim": "Development evidence only. Exact same-information controls tie; any strict quality gap is restricted to lossy, diagonal, or finite-Euler controls.",
+        "confirmation_inference": inference,
+        "all_registered_development_gates_pass": all(all_checks) if not config.confirmation else None,
+        "all_registered_confirmation_gates_pass": None if not config.confirmation else inference["all_registered_gates_pass"],
+        "maximum_claim": "Exact same-information controls tie; any strict quality gap is restricted to lossy, diagonal, or finite-Euler controls.",
     }
 
 
@@ -304,9 +362,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--seeds", type=int, nargs="+", default=None)
+    parser.add_argument("--confirmation", action="store_true")
     args = parser.parse_args()
-    config = Config(seeds=tuple(args.seeds)) if args.seeds is not None else Config()
-    if any(seed >= 800 for seed in config.seeds):
+    if args.confirmation and args.seeds is not None:
+        raise SystemExit("confirmation uses only frozen seeds 800..829")
+    if args.confirmation:
+        config = Config(seeds=tuple(range(800, 830)), confirmation=True)
+    else:
+        config = Config(seeds=tuple(args.seeds)) if args.seeds is not None else Config()
+    if not config.confirmation and any(seed >= 800 for seed in config.seeds):
         raise SystemExit("confirmation seeds are sealed until a separate freeze commit")
     args.output.mkdir(parents=True, exist_ok=True)
     started = time.perf_counter()
@@ -323,8 +387,9 @@ def main() -> None:
     summary["runtime_seconds"] = time.perf_counter() - started
     write_json(args.output / "summary.json", summary)
     print(json.dumps(summary["modalities"], indent=2), flush=True)
-    if not summary["all_registered_development_gates_pass"]:
-        raise SystemExit("one or more registered development gates failed")
+    passed = summary["all_registered_confirmation_gates_pass"] if config.confirmation else summary["all_registered_development_gates_pass"]
+    if not passed:
+        raise SystemExit("one or more registered gates failed")
 
 
 if __name__ == "__main__":
