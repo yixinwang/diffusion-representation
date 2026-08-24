@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "cifar10": {
+    "dataset_id": "cifar-10-python-extracted",
+    "allowed_development_batches": {
+      "batches.meta": "f962466ef690d46b226450fb9aadc74ba4bc64a76aa526b5827fe4bc5c7125cb",
+      "data_batch_1": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+      "data_batch_2": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+      "data_batch_3": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+      "data_batch_4": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+      "data_batch_5": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154"
+    },
+    "split_algorithm": "per-class numpy.default_rng(20260823) permutation; first 4500 fit, last 500 validation; globally sorted indices",
+    "fit_size": 45000,
+    "validation_size": 5000,
+    "split_index_hash": "1fa221bdb55176c64bf43eeb9746e55e62f68572634f8b1651237539708bedfb",
+    "test_policy": "test_batch deserialization is forbidden before a separately committed confirmation config hash"
+  },
+  "ucf101_subset": {
+    "dataset_id": "sayakpaul/ucf101-subset",
+    "upstream_revision": "b9984b8d2a95e4a1879e1b071e9433858d0bc24a",
+    "archive_sha256": "e9fcc76af48d320be88c5265f2e0576ecd615956976f6ce4742fdf2b042b71eb",
+    "archive_size_bytes": 171386880,
+    "archive_container": "tar",
+    "video_counts": {"train": 300, "val": 30, "test": 75},
+    "group_counts": {"train": 195, "val": 25, "test": 30},
+    "group_key": "(class_name, gNN)",
+    "cross_split_group_overlap": 0,
+    "test_policy": "test AVI payload extraction or decode is forbidden before a separately committed confirmation config hash"
+  }
+}
