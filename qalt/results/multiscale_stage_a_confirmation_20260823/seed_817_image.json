@@ -1,0 +1,32 @@
+{
+  "benchmark": {
+    "full_peak_working_bytes": 131072.0,
+    "full_seconds": 0.003218343947082758,
+    "full_token_updates": 20480.0,
+    "latency_ratio": 0.3265292509803814,
+    "memory_ratio": 0.75,
+    "qalt_peak_working_bytes": 98304.0,
+    "qalt_seconds": 0.0010508834384381771,
+    "qalt_token_updates": 5888.0
+  },
+  "empirical_update_ratio": 0.2875,
+  "expected_update_ratio": 0.2875,
+  "max_haar_roundtrip_error": 8.881784197001252e-16,
+  "modality": "image",
+  "nll_per_dimension": {
+    "coarse_only": 1.0008221866728975,
+    "diagonal_vae": 0.9941214159662299,
+    "exact_split": 0.8844122189190946,
+    "full_token_euler": 0.8846139802064152,
+    "full_token_exact": 0.8844122189190946,
+    "oracle": 0.8843034373305929,
+    "qalt": 0.8844122189190946
+  },
+  "seed": 817,
+  "sizes": {
+    "test": 32,
+    "train": 64,
+    "validation": 16
+  },
+  "validation_qalt_nll_per_dimension": 0.8990099672669034
+}

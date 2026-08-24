@@ -1,0 +1,80 @@
+{
+  "confirmation": true,
+  "equivalence_margin": 0.02,
+  "excess_nll_maximum": 0.01,
+  "image_shape": [
+    32,
+    32
+  ],
+  "image_sizes": [
+    64,
+    16,
+    32
+  ],
+  "provenance": {
+    "command": [
+      "qalt/experiments/multiscale_stage_a/run.py",
+      "--confirmation",
+      "--output",
+      "qalt/results/multiscale_stage_a_confirmation_20260823"
+    ],
+    "cpu_count": 128,
+    "git_commit": "8bd9c61c193033b1e7b7a1395468140ca064581a",
+    "numpy": "2.2.6",
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+    "slurm_job_id": "44295561",
+    "source_manifest_sha256": "1a60ff7c1f2a6a6d8359be58c2e8386d4f797fa160e4abefe6be708aa8d41732",
+    "source_sha256": {
+      "qalt/experiments/multiscale_stage_a/run.py": "51ff02413fe93d9710e90987bb6d898f0a9cc6e8c26f2e9967df48e04e8f7831",
+      "qalt/src/qalt/multiscale.py": "29ae0b8ed3c3e7ae36587b95402b1bc54c471dedbcaedaf61580349225529038",
+      "qalt/tests/test_multiscale.py": "4a70c9e1a3eeb34ba4bb60bc448850bcf80bc4f86631d3114c82197ec8daaf79",
+      "research/MULTISCALE_QALT_PROTOCOL.md": "34fcd7c81ea6142280e049770c8018e9d9b333c2b1a73a6b36130ad777a65f7a"
+    },
+    "tracked_worktree_dirty": true
+  },
+  "seeds": [
+    800,
+    801,
+    802,
+    803,
+    804,
+    805,
+    806,
+    807,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829
+  ],
+  "solver_steps": 20,
+  "timing_repeats": 9,
+  "video_shape": [
+    16,
+    32,
+    32
+  ],
+  "video_sizes": [
+    16,
+    4,
+    8
+  ]
+}

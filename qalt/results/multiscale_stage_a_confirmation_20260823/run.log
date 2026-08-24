@@ -1,0 +1,162 @@
+[multiscale-qalt] seed=800 modality=image
+[multiscale-qalt] seed=800 modality=video
+[multiscale-qalt] seed=801 modality=image
+[multiscale-qalt] seed=801 modality=video
+[multiscale-qalt] seed=802 modality=image
+[multiscale-qalt] seed=802 modality=video
+[multiscale-qalt] seed=803 modality=image
+[multiscale-qalt] seed=803 modality=video
+[multiscale-qalt] seed=804 modality=image
+[multiscale-qalt] seed=804 modality=video
+[multiscale-qalt] seed=805 modality=image
+[multiscale-qalt] seed=805 modality=video
+[multiscale-qalt] seed=806 modality=image
+[multiscale-qalt] seed=806 modality=video
+[multiscale-qalt] seed=807 modality=image
+[multiscale-qalt] seed=807 modality=video
+[multiscale-qalt] seed=808 modality=image
+[multiscale-qalt] seed=808 modality=video
+[multiscale-qalt] seed=809 modality=image
+[multiscale-qalt] seed=809 modality=video
+[multiscale-qalt] seed=810 modality=image
+[multiscale-qalt] seed=810 modality=video
+[multiscale-qalt] seed=811 modality=image
+[multiscale-qalt] seed=811 modality=video
+[multiscale-qalt] seed=812 modality=image
+[multiscale-qalt] seed=812 modality=video
+[multiscale-qalt] seed=813 modality=image
+[multiscale-qalt] seed=813 modality=video
+[multiscale-qalt] seed=814 modality=image
+[multiscale-qalt] seed=814 modality=video
+[multiscale-qalt] seed=815 modality=image
+[multiscale-qalt] seed=815 modality=video
+[multiscale-qalt] seed=816 modality=image
+[multiscale-qalt] seed=816 modality=video
+[multiscale-qalt] seed=817 modality=image
+[multiscale-qalt] seed=817 modality=video
+[multiscale-qalt] seed=818 modality=image
+[multiscale-qalt] seed=818 modality=video
+[multiscale-qalt] seed=819 modality=image
+[multiscale-qalt] seed=819 modality=video
+[multiscale-qalt] seed=820 modality=image
+[multiscale-qalt] seed=820 modality=video
+[multiscale-qalt] seed=821 modality=image
+[multiscale-qalt] seed=821 modality=video
+[multiscale-qalt] seed=822 modality=image
+[multiscale-qalt] seed=822 modality=video
+[multiscale-qalt] seed=823 modality=image
+[multiscale-qalt] seed=823 modality=video
+[multiscale-qalt] seed=824 modality=image
+[multiscale-qalt] seed=824 modality=video
+[multiscale-qalt] seed=825 modality=image
+[multiscale-qalt] seed=825 modality=video
+[multiscale-qalt] seed=826 modality=image
+[multiscale-qalt] seed=826 modality=video
+[multiscale-qalt] seed=827 modality=image
+[multiscale-qalt] seed=827 modality=video
+[multiscale-qalt] seed=828 modality=image
+[multiscale-qalt] seed=828 modality=video
+[multiscale-qalt] seed=829 modality=image
+[multiscale-qalt] seed=829 modality=video
+{
+  "image": {
+    "qalt_minus_oracle_nll": {
+      "mean": 0.00012131414243169437,
+      "low": 8.07836762206546e-05,
+      "high": 0.00016184460864273413
+    },
+    "exact_split_minus_qalt_nll": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    "diagonal_minus_qalt_nll": {
+      "mean": 0.10163260054940053,
+      "low": 0.09994989843909458,
+      "high": 0.10331530265970648
+    },
+    "coarse_only_minus_qalt_nll": {
+      "mean": 0.10540587277694238,
+      "low": 0.10325956412795122,
+      "high": 0.10755218142593355
+    },
+    "euler_minus_qalt_nll": {
+      "mean": 0.00014653625187308617,
+      "low": 0.0001174456466802523,
+      "high": 0.00017562685706592004
+    },
+    "latency_ratio": {
+      "mean": 0.3273620800671491,
+      "low": 0.3268346490938987,
+      "high": 0.32788951104039954
+    },
+    "memory_ratio": {
+      "mean": 0.75,
+      "low": 0.75,
+      "high": 0.75
+    },
+    "maximum_relative_update_accounting_error": 0.0,
+    "checks": {
+      "exact_split_equivalent": true,
+      "qalt_excess_nll_below_ceiling": true,
+      "diagonal_gap_positive": true,
+      "coarse_only_gap_positive": true,
+      "latency_strictly_lower": true,
+      "memory_strictly_lower": true,
+      "update_accounting_within_ten_percent": true,
+      "full_exact_ties": true,
+      "finite_euler_gap_positive": true,
+      "haar_roundtrip": true
+    }
+  },
+  "video": {
+    "qalt_minus_oracle_nll": {
+      "mean": 8.040548854676791e-05,
+      "low": 6.335331700199848e-05,
+      "high": 9.745766009153735e-05
+    },
+    "exact_split_minus_qalt_nll": {
+      "mean": 0.0,
+      "low": 0.0,
+      "high": 0.0
+    },
+    "diagonal_minus_qalt_nll": {
+      "mean": 0.10612419696724877,
+      "low": 0.10197685772289097,
+      "high": 0.11027153621160657
+    },
+    "coarse_only_minus_qalt_nll": {
+      "mean": 0.1140613198548442,
+      "low": 0.11049875205553392,
+      "high": 0.11762388765415449
+    },
+    "euler_minus_qalt_nll": {
+      "mean": 9.656512430059236e-05,
+      "low": 7.30820887458661e-05,
+      "high": 0.00012004815985531861
+    },
+    "latency_ratio": {
+      "mean": 0.18938743046246667,
+      "low": 0.18903656270552768,
+      "high": 0.18973829821940566
+    },
+    "memory_ratio": {
+      "mean": 0.625,
+      "low": 0.625,
+      "high": 0.625
+    },
+    "maximum_relative_update_accounting_error": 0.0,
+    "checks": {
+      "exact_split_equivalent": true,
+      "qalt_excess_nll_below_ceiling": true,
+      "diagonal_gap_positive": true,
+      "coarse_only_gap_positive": true,
+      "latency_strictly_lower": true,
+      "memory_strictly_lower": true,
+      "update_accounting_within_ten_percent": true,
+      "full_exact_ties": true,
+      "finite_euler_gap_positive": true,
+      "haar_roundtrip": true
+    }
+  }
+}

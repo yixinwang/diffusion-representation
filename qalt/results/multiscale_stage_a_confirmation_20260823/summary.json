@@ -1,0 +1,260 @@
+{
+  "all_registered_confirmation_gates_pass": true,
+  "all_registered_development_gates_pass": null,
+  "confirmation_inference": {
+    "all_registered_gates_pass": true,
+    "components": {
+      "image_coarse_gap": {
+        "alternative": "greater",
+        "holm_p": 4.973813270547725e-38,
+        "mean": 0.10540587277694238,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 9.94762654109545e-39,
+        "standard_error": 0.0010494218374192234
+      },
+      "image_diagonal_gap": {
+        "alternative": "greater",
+        "holm_p": 1.4998605648179594e-40,
+        "mean": 0.10163260054940053,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 2.499767608029932e-41,
+        "standard_error": 0.0008227448280826244
+      },
+      "image_euler_gap": {
+        "alternative": "greater",
+        "holm_p": 3.343645757142915e-11,
+        "mean": 0.00014653625187308617,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 1.6718228785714575e-11,
+        "standard_error": 1.4223637577684957e-05
+      },
+      "image_exact_lower": {
+        "alternative": "greater",
+        "holm_p": 0.0,
+        "mean": 0.0,
+        "null": -0.02,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "image_exact_upper": {
+        "alternative": "less",
+        "holm_p": 0.0,
+        "mean": 0.0,
+        "null": 0.02,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "image_latency_ratio": {
+        "alternative": "less",
+        "holm_p": 8.92440609794981e-79,
+        "mean": 0.3273620800671491,
+        "null": 1.0,
+        "passes": true,
+        "raw_p": 9.916006775499789e-80,
+        "standard_error": 0.00025788349747388477
+      },
+      "image_memory_ratio": {
+        "alternative": "less",
+        "holm_p": 0.0,
+        "mean": 0.75,
+        "null": 1.0,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "image_qalt_excess": {
+        "alternative": "less",
+        "holm_p": 4.819431046820131e-58,
+        "mean": 0.00012131414243169437,
+        "null": 0.01,
+        "passes": true,
+        "raw_p": 6.88490149545733e-59,
+        "standard_error": 1.981707353350102e-05
+      },
+      "video_coarse_gap": {
+        "alternative": "greater",
+        "holm_p": 9.21123349416551e-33,
+        "mean": 0.1140613198548442,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 2.3028083735413774e-33,
+        "standard_error": 0.00174189133871312
+      },
+      "video_diagonal_gap": {
+        "alternative": "greater",
+        "holm_p": 4.3536287275319236e-30,
+        "mean": 0.10612419696724877,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 1.4512095758439746e-30,
+        "standard_error": 0.00202781103838935
+      },
+      "video_euler_gap": {
+        "alternative": "greater",
+        "holm_p": 1.4343882057020146e-09,
+        "mean": 9.656512430059236e-05,
+        "null": 0.0,
+        "passes": true,
+        "raw_p": 1.4343882057020146e-09,
+        "standard_error": 1.1481857621738194e-05
+      },
+      "video_exact_lower": {
+        "alternative": "greater",
+        "holm_p": 0.0,
+        "mean": 0.0,
+        "null": -0.02,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "video_exact_upper": {
+        "alternative": "less",
+        "holm_p": 0.0,
+        "mean": 0.0,
+        "null": 0.02,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "video_latency_ratio": {
+        "alternative": "less",
+        "holm_p": 3.2567494168857806e-86,
+        "mean": 0.18938743046246667,
+        "null": 1.0,
+        "passes": true,
+        "raw_p": 3.25674941688578e-87,
+        "standard_error": 0.000171554210691526
+      },
+      "video_memory_ratio": {
+        "alternative": "less",
+        "holm_p": 0.0,
+        "mean": 0.625,
+        "null": 1.0,
+        "passes": true,
+        "raw_p": 0.0,
+        "standard_error": 0.0
+      },
+      "video_qalt_excess": {
+        "alternative": "less",
+        "holm_p": 6.101985164034609e-69,
+        "mean": 8.040548854676791e-05,
+        "null": 0.01,
+        "passes": true,
+        "raw_p": 7.627481455043262e-70,
+        "standard_error": 8.337533934325318e-06
+      }
+    },
+    "family": "16 preregistered one-sided paired Student tests with Holm correction",
+    "hard_checks_pass": true
+  },
+  "maximum_claim": "Exact same-information controls tie; any strict quality gap is restricted to lossy, diagonal, or finite-Euler controls.",
+  "modalities": {
+    "image": {
+      "checks": {
+        "coarse_only_gap_positive": true,
+        "diagonal_gap_positive": true,
+        "exact_split_equivalent": true,
+        "finite_euler_gap_positive": true,
+        "full_exact_ties": true,
+        "haar_roundtrip": true,
+        "latency_strictly_lower": true,
+        "memory_strictly_lower": true,
+        "qalt_excess_nll_below_ceiling": true,
+        "update_accounting_within_ten_percent": true
+      },
+      "coarse_only_minus_qalt_nll": {
+        "high": 0.10755218142593355,
+        "low": 0.10325956412795122,
+        "mean": 0.10540587277694238
+      },
+      "diagonal_minus_qalt_nll": {
+        "high": 0.10331530265970648,
+        "low": 0.09994989843909458,
+        "mean": 0.10163260054940053
+      },
+      "euler_minus_qalt_nll": {
+        "high": 0.00017562685706592004,
+        "low": 0.0001174456466802523,
+        "mean": 0.00014653625187308617
+      },
+      "exact_split_minus_qalt_nll": {
+        "high": 0.0,
+        "low": 0.0,
+        "mean": 0.0
+      },
+      "latency_ratio": {
+        "high": 0.32788951104039954,
+        "low": 0.3268346490938987,
+        "mean": 0.3273620800671491
+      },
+      "maximum_relative_update_accounting_error": 0.0,
+      "memory_ratio": {
+        "high": 0.75,
+        "low": 0.75,
+        "mean": 0.75
+      },
+      "qalt_minus_oracle_nll": {
+        "high": 0.00016184460864273413,
+        "low": 8.07836762206546e-05,
+        "mean": 0.00012131414243169437
+      }
+    },
+    "video": {
+      "checks": {
+        "coarse_only_gap_positive": true,
+        "diagonal_gap_positive": true,
+        "exact_split_equivalent": true,
+        "finite_euler_gap_positive": true,
+        "full_exact_ties": true,
+        "haar_roundtrip": true,
+        "latency_strictly_lower": true,
+        "memory_strictly_lower": true,
+        "qalt_excess_nll_below_ceiling": true,
+        "update_accounting_within_ten_percent": true
+      },
+      "coarse_only_minus_qalt_nll": {
+        "high": 0.11762388765415449,
+        "low": 0.11049875205553392,
+        "mean": 0.1140613198548442
+      },
+      "diagonal_minus_qalt_nll": {
+        "high": 0.11027153621160657,
+        "low": 0.10197685772289097,
+        "mean": 0.10612419696724877
+      },
+      "euler_minus_qalt_nll": {
+        "high": 0.00012004815985531861,
+        "low": 7.30820887458661e-05,
+        "mean": 9.656512430059236e-05
+      },
+      "exact_split_minus_qalt_nll": {
+        "high": 0.0,
+        "low": 0.0,
+        "mean": 0.0
+      },
+      "latency_ratio": {
+        "high": 0.18973829821940566,
+        "low": 0.18903656270552768,
+        "mean": 0.18938743046246667
+      },
+      "maximum_relative_update_accounting_error": 0.0,
+      "memory_ratio": {
+        "high": 0.625,
+        "low": 0.625,
+        "mean": 0.625
+      },
+      "qalt_minus_oracle_nll": {
+        "high": 9.745766009153735e-05,
+        "low": 6.335331700199848e-05,
+        "mean": 8.040548854676791e-05
+      }
+    }
+  },
+  "mode": "confirmation",
+  "runtime_seconds": 81.4145003343001
+}

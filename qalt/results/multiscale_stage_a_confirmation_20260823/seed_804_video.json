@@ -1,0 +1,32 @@
+{
+  "benchmark": {
+    "full_peak_working_bytes": 2097152.0,
+    "full_seconds": 0.05073825502768159,
+    "full_token_updates": 327680.0,
+    "latency_ratio": 0.19084801295981585,
+    "memory_ratio": 0.625,
+    "qalt_peak_working_bytes": 1310720.0,
+    "qalt_seconds": 0.009683295153081417,
+    "qalt_token_updates": 55296.0
+  },
+  "empirical_update_ratio": 0.16875,
+  "expected_update_ratio": 0.16875,
+  "max_haar_roundtrip_error": 2.6645352591003757e-15,
+  "modality": "video",
+  "nll_per_dimension": {
+    "coarse_only": 1.2722856240046152,
+    "diagonal_vae": 1.2637264229118348,
+    "exact_split": 1.1584530817205327,
+    "full_token_euler": 1.1585399728057415,
+    "full_token_exact": 1.1584530817205327,
+    "oracle": 1.158438671101388,
+    "qalt": 1.1584530817205327
+  },
+  "seed": 804,
+  "sizes": {
+    "test": 8,
+    "train": 16,
+    "validation": 4
+  },
+  "validation_qalt_nll_per_dimension": 1.2229021888039349
+}
