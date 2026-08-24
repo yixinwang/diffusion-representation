@@ -115,6 +115,29 @@ Stage A uses procedurally generated $32\times32$ images and $16\times32\times32$
 
 Mandatory controls are the oracle law, full-token exact and Euler samplers, a coarse-only decoder, Multiscale QALT, the exact split tie, and the fixed diagonal Gaussian decoder.  Passing Stage A would establish the theorem-to-implementation mechanism on the declared law.  It would not establish observed image or video superiority; that requires a separately frozen study against optimized latent, wavelet, and few-step baselines.
 
+\clearpage
+\begin{center}
+\centering
+\small
+\textbf{Table 1: The corrected development assay passes every frozen gate on five seeds.}\\
+\vspace{2pt}
+Differences are nats per full endpoint dimension; ratios include the matched local update kernel and shared inverse Haar decoder.  Intervals are paired 95\% Student intervals.\\[4pt]
+\begin{tabular}{lrr}
+\toprule
+Quantity & Image & Video\\
+\midrule
+QALT $-$ oracle NLL & $0.000015$ & $0.000044$\\
+Diagonal $-$ QALT NLL & $0.1030$ & $0.1073$\\
+Coarse-only $-$ QALT NLL & $0.1074$ & $0.1156$\\
+Finite Euler $-$ QALT NLL & $0.000204$ & $0.000129$\\
+Latency ratio & $0.328$ & $0.192$\\
+Peak live-array ratio & $0.750$ & $0.625$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The exact full-token and same-information split controls tie QALT to numerical precision.  Thus the table supports the declared mechanism and restricted separations, not universal quality dominance.  The memory row counts explicit simultaneously live arrays rather than accelerator allocator telemetry, and the procedural endpoint law is not observed-data evidence.
+
 \section{Discussion}
 
 The coherent claim is a structured Pareto statement.  An invertible local chart retains the entire endpoint, a low-dimensional coarse state receives repeated computation, and a realizable stochastic fiber restores the complementary randomness.  This matches full-dimensional quality and latent-order work on the declared multiscale class while strictly improving log score over a fixed diagonal VAE decoder.  The same structure also exposes the boundary: a latent method that adopts the exact fiber ties, and natural data may violate local conditional closure.  The registered assay tests those implementation-level premises before any observed-data claim is attempted.
