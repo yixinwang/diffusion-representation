@@ -1,0 +1,67 @@
+{
+  "all_confirmation_promotion_gates_pass": null,
+  "contrasts": {
+    "full_minus_lift_energy": {
+      "ci95": [
+        0.023920455041291283,
+        0.023920455041291283
+      ],
+      "mean": 0.023920455041291283,
+      "values": [
+        0.023920455041291283
+      ]
+    },
+    "full_minus_lift_swd": {
+      "ci95": [
+        0.012549712798610717,
+        0.012549712798610717
+      ],
+      "mean": 0.012549712798610717,
+      "values": [
+        0.012549712798610717
+      ]
+    },
+    "scalar_minus_joint_energy": {
+      "ci95": [
+        -0.00016358582783082554,
+        -0.00016358582783082554
+      ],
+      "mean": -0.00016358582783082554,
+      "values": [
+        -0.00016358582783082554
+      ]
+    },
+    "scalar_minus_joint_nll": {
+      "ci95": [
+        0.027200652759902133,
+        0.027200652759902133
+      ],
+      "mean": 0.027200652759902133,
+      "values": [
+        0.027200652759902133
+      ]
+    },
+    "time_ratio_lift_full": {
+      "ci95": [
+        0.27999426405603617,
+        0.27999426405603617
+      ],
+      "mean": 0.27999426405603617,
+      "values": [
+        0.27999426405603617
+      ]
+    }
+  },
+  "method_config_hash": "853c67da46ce29bdda5e180390625d7e7f92fc201ca8f3a9dc0320d726db2f99",
+  "phase": "development",
+  "promotion": {
+    "all_unit_hard_checks": true,
+    "energy_noninferior_full": null,
+    "joint_beats_scalar_nll": null,
+    "swd_noninferior_full": null,
+    "time_strictly_lower": null
+  },
+  "seeds": [
+    4099
+  ]
+}

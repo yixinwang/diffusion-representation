@@ -1,0 +1,69 @@
+{
+  "batch_size": 128,
+  "beta_grid": [
+    0.01,
+    0.1,
+    1.0
+  ],
+  "energy_margin": 0.02,
+  "fiber_components": 4,
+  "fiber_ridge": 0.01,
+  "flow_depth": 2,
+  "flow_heads": 4,
+  "flow_lr": 0.0015,
+  "flow_steps": 250,
+  "flow_width": 40,
+  "generated_samples": 500,
+  "main_nfe": 16,
+  "method_config_hash": "853c67da46ce29bdda5e180390625d7e7f92fc201ca8f3a9dc0320d726db2f99",
+  "nfe_grid": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "phase": "development",
+  "provenance": {
+    "command": [
+      "lift_fm/experiments/digits/run.py",
+      "--output",
+      "lift_fm/results/digits_development_sealed",
+      "--phase",
+      "development"
+    ],
+    "cpu_count": 5,
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "source_sha256": {
+      "lift_fm/experiments/digits/run.py": "febe779581190e0441263b97d9bd6553a4c1cf2047e067dd093faecd0151c9b7",
+      "lift_fm/src/liftfm/data.py": "a6e45a4cb948a50fbec9ae9314244125f63c25c2bfecf42ecb74f27437fc1b9d",
+      "lift_fm/src/liftfm/fiber.py": "40fe1614b1c01461638f35b82b480844dca52909dc2ebc21dfde581339012abc",
+      "lift_fm/src/liftfm/lifting.py": "ab0a994fd9cb4119dc3c56c525be142362c2f77a5d1b0a17a8c469a25d9c8d25",
+      "lift_fm/src/liftfm/metrics.py": "ed700c5979b2b7d42d67f197acae663f6265a154ec0a66f54348b8261cdf076f",
+      "lift_fm/src/liftfm/models.py": "f875f3059cf02463efbf493a39216628b28776cc8808e3dd721279b9b8d0160e",
+      "research/LIFT_FM_PREREGISTRATION.md": "a87999e217e6bca409e83ca6cdc4d78f6dc598376763339bbe13fa2fb3c6c84a"
+    }
+  },
+  "seeds": [
+    4099
+  ],
+  "split_manifest": {
+    "hashes": {
+      "test": "3478b61234720f133b8d436ea84b0d3b4d0a0557980fe61249f55060963f4349",
+      "train": "d4fb95fda2999dbb76684a576b4f5bc98b20938bf58c8f3c9f03b4ea2fb4adb3",
+      "validation": "074d9c2908b66de1a7e0bec2ccd347896e49b6249a47b5232398dda3c1c1d55e"
+    },
+    "pixel_access_contract": "labels are read to freeze the stratified split; pixel fields are parsed only for the requested partition, and test pixel parsing requires allow_test=True",
+    "sizes": {
+      "test": 360,
+      "train": 1078,
+      "validation": 359
+    },
+    "test_sealed_hash": "3478b61234720f133b8d436ea84b0d3b4d0a0557980fe61249f55060963f4349"
+  },
+  "swd_margin": 0.02,
+  "test_data_opened": false,
+  "vae_lr": 0.0015,
+  "vae_steps": 200
+}
