@@ -1,0 +1,72 @@
+name: build-weizmann-only
+on:
+  push:
+    branches: [agent/cifar-weizmann-data-20260827]
+    paths: [.github/workflows/build-weizmann-only.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install --upgrade numpy opencv-python-headless
+      - name: Download all ten action archives concurrently
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/raw build/out
+          printf '%s\n' walk run jump side bend wave1 wave2 pjump jack skip > build/actions.txt
+          cat build/actions.txt | xargs -P 5 -I{} sh -c 'curl -L --fail --retry 5 --connect-timeout 20 --max-time 1200 "https://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/{}.zip" -o "build/raw/{}.zip"'
+          for a in $(cat build/actions.txt); do mkdir -p "build/raw/$a"; unzip -q "build/raw/$a.zip" -d "build/raw/$a"; done
+          cat > build/make.py <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          import cv2,numpy as np
+          R=Path('build/raw');O=Path('build/out');O.mkdir(parents=True,exist_ok=True);SEED=20260827
+          A='walk run jump side bend wave1 wave2 pjump jack skip'.split();aid={a:i for i,a in enumerate(A)}
+          def sha(p):
+            h=hashlib.sha256();
+            with p.open('rb') as f:
+              for b in iter(lambda:f.read(1<<20),b''):h.update(b)
+            return h.hexdigest()
+          rec=[];subs=set()
+          def crop(fr):
+            g=fr.astype(np.float32).mean(-1);m=g.std(0);mask=m>=np.quantile(m,.72);rr,cc=np.where(mask);h,w=fr.shape[1:3]
+            if len(rr)<25:side=min(h,w);return (h-side)//2,(w-side)//2,side
+            t,b,l,r=rr.min(),rr.max()+1,cc.min(),cc.max()+1;cy,cx=(t+b)/2,(l+r)/2;side=int(max(b-t,r-l)*1.45);side=max(48,min(side,h,w));t=int(np.clip(round(cy-side/2),0,h-side));l=int(np.clip(round(cx-side/2),0,w-side));return t,l,side
+          for a in A:
+            for p in sorted((R/a).rglob('*.avi')):
+              cap=cv2.VideoCapture(str(p));frames=[]
+              while True:
+                ok,f=cap.read()
+                if not ok:break
+                frames.append(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
+              cap.release();arr=np.stack(frames);t,l,s=crop(arr);arr=arr[:,t:t+s,l:l+s];arr=np.stack([cv2.resize(f,(16,16),interpolation=cv2.INTER_AREA) for f in arr]).astype(np.uint8)
+              sub=p.stem.lower().replace('-','_').split('_')[0];subs.add(sub);span=21;starts=np.unique(np.linspace(0,len(arr)-span,num=min(10,len(arr)-span+1),dtype=int))
+              for st in starts:rec.append({'x':arr[st:st+span:4],'y':aid[a],'subject':sub,'video':a+'/'+p.name,'start':int(st)})
+          subs=sorted(subs)
+          if len(subs)!=9:raise RuntimeError(subs)
+          ss={'train':subs[:6],'validation':subs[6:7],'confirmation':subs[7:]};vr=sorted({r['video'] for r in rec if r['subject'] in ss['train']});dv=set(vr[::4])
+          parts={'train':[r for r in rec if r['subject'] in ss['train'] and r['video'] not in dv],'development':[r for r in rec if r['subject'] in ss['train'] and r['video'] in dv],'validation':[r for r in rec if r['subject'] in ss['validation']],'confirmation':[r for r in rec if r['subject'] in ss['confirmation']]}
+          videos=sorted({r['video'] for r in rec})
+          def pack(rows):return {'x':np.stack([r['x'] for r in rows]),'y':np.asarray([r['y'] for r in rows],np.int64),'subject_id':np.asarray([subs.index(r['subject']) for r in rows],np.int64),'video_id':np.asarray([videos.index(r['video']) for r in rows],np.int64),'start':np.asarray([r['start'] for r in rows],np.int64)}
+          pay={}
+          for k in ['train','validation','development']:
+            for n,v in pack(parts[k]).items():pay[k+'_'+n]=v
+          np.savez_compressed(O/'weizmann_6x16_train_dev.npz',**pay);np.savez_compressed(O/'weizmann_6x16_confirmation.npz',**{'confirmation_'+n:v for n,v in pack(parts['confirmation']).items()})
+          arts={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in O.glob('*.npz')};man={'dataset_version':'fiberlift-weizmann-v1','seed':SEED,'weizmann':{'actions':A,'subjects':subs,'subject_split':ss,'clip_shape':[6,16,16,3],'temporal_stride':4,'split_sizes':{k:len(v) for k,v in parts.items()},'source_urls':[f'official Weizmann {a}.zip' for a in A]},'source_sha256':{p.name:sha(p) for p in sorted(R.glob('*.zip'))},'artifacts':arts};(O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'));print(json.dumps(man,indent=2))
+          PY
+          python build/make.py
+          (cd build/out && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weizmann-fiberlift-v1
+          path: build/out/
+          retention-days: 3
+          compression-level: 6
+          if-no-files-found: error
