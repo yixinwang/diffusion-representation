@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install pinned preprocessing stack
-        run: python -m pip install 'datasets==4.0.0' 'huggingface_hub==0.34.4' 'opencv-python-headless==4.11.0.86' 'numpy==2.2.6'
+        run: python -m pip install 'datasets==4.0.0' 'huggingface_hub==0.34.4' 'opencv-python-headless==4.11.0.86' 'numpy==2.2.6' 'Pillow==11.3.0'
       - name: Build and verify fresh nonoverlapping data
         run: |
           python data_build/mcqf_v2/build_fresh_data.py
