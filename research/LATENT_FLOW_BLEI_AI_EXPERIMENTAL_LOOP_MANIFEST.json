@@ -1,0 +1,20 @@
+{
+  "added_at": "2026-08-27",
+  "operation": "append_standing_instruction_without_superseding_prior_record",
+  "repository": "yixinwang/diffusion-representation",
+  "base_branch": "agent/mcqf-v2-data-20260827",
+  "base_commit": "01f32bcbdd2cd5c834fbcbb9a2faf3a74a1e1d70",
+  "instruction_branch": "agent/latent-flow-blei-loop-20260827",
+  "protocol_path": "research/LATENT_FLOW_BLEI_AI_EXPERIMENTAL_LOOP.md",
+  "protocol_first_commit": "ef5bc4ab5ef3a07a0a4968a704938e0b2f9a1d93",
+  "local_project_source": {
+    "path": "/mnt/data/pasted-text.txt",
+    "before_bytes": 7604,
+    "after_bytes": 9356,
+    "before_sha256": "d3497d53c95002000d6b4d9c5aa2912c52af4c5fb75f7f5c5c22fea807c6a8d5",
+    "after_sha256": "853e0f59fb07fb38ba4f476fbe145fc9e92b0148f5fde16a711d62db2b286253",
+    "existing_content_preserved_as_prefix": true,
+    "instruction_occurrences": 1
+  },
+  "preservation_contract": "All previous objectives, evidence, splits, files, failures, disclosures, branches, commits, tags, manifests, and untouched-confirmation states remain cumulative and may not be silently replaced or omitted."
+}
