@@ -1,1 +1,15 @@
-{"placeholder":"will replace via tree upload"}
+{
+  "prior_dataset_version": "fiberlift-cifar10-v1-hf",
+  "prior_seed": 20260827,
+  "prior_split_algorithm": "For each CIFAR-10 class, permute official-train indices with NumPy default_rng(20260827), then take 1200 train, 200 validation, 200 fiber_fit, and 200 development; for official test, permute each class with default_rng(20260827+991+class) and take the first 200 confirmation records.",
+  "prior_train_used_count": 18000,
+  "prior_confirmation_count": 2000,
+  "prior_split_source_id_hashes": {
+    "train": "a42c106a79c54a15dd733c5e0c746f22791957d93b1b724e55507fcd12222df2",
+    "validation": "c9caa31ac0bad83f73af53a0a2d548f120ee6e1d0319233e00b7fcd4205c6955",
+    "fiber_fit": "a5a76435c2792352c86ef2c86a4216f0589cd4300fac0b4c81303b3a62d155b5",
+    "development": "ef2774a10d1cdf9d799f3688a476b2504655cd8be209465ef0624dc0d6938c8a",
+    "confirmation": "99c4c2c6517b5499dbb30d550e9f2e245246e66c4a182d70025f218789cdce79"
+  },
+  "contract": "MCQF-v2 regenerates these exact IDs from the pinned official dataset and excludes them before constructing fresh development and confirmation splits. The hashes are asserted before any v2 array is written."
+}
