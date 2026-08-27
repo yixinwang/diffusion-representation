@@ -1,0 +1,281 @@
+name: build-cifar-weizmann-data
+
+on:
+  push:
+    branches:
+      - agent/cifar-weizmann-data-20260827
+    paths:
+      - .github/workflows/build-cifar-weizmann-data.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install preprocessing dependencies
+        run: python -m pip install --upgrade numpy opencv-python-headless
+      - name: Download and build deterministic subsets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p _dataset_build/raw _dataset_build/out
+          curl -L --fail --retry 5 --retry-delay 4 \
+            https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz \
+            -o _dataset_build/raw/cifar-10-python.tar.gz
+          printf '%s  %s\n' 'c58f30108f718f92721af3b95e74349a' '_dataset_build/raw/cifar-10-python.tar.gz' | md5sum -c -
+          tar -xzf _dataset_build/raw/cifar-10-python.tar.gz -C _dataset_build/raw
+
+          for action in walk run jump side bend wave1 wave2 pjump jack skip; do
+            curl -L --fail --retry 5 --retry-delay 4 \
+              "https://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/${action}.zip" \
+              -o "_dataset_build/raw/${action}.zip"
+            mkdir -p "_dataset_build/raw/weizmann/${action}"
+            unzip -q "_dataset_build/raw/${action}.zip" -d "_dataset_build/raw/weizmann/${action}"
+          done
+
+          cat > _dataset_build/build.py <<'PY'
+          from __future__ import annotations
+
+          import hashlib
+          import json
+          import pickle
+          from pathlib import Path
+          import zipfile
+
+          import cv2
+          import numpy as np
+
+          ROOT = Path('_dataset_build')
+          RAW = ROOT / 'raw'
+          OUT = ROOT / 'out'
+          OUT.mkdir(parents=True, exist_ok=True)
+          SEED = 20260827
+
+          def sha256(path: Path) -> str:
+              h = hashlib.sha256()
+              with path.open('rb') as handle:
+                  for chunk in iter(lambda: handle.read(1 << 20), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def index_hash(values: np.ndarray) -> str:
+              arr = np.asarray(values, dtype='<i8')
+              return hashlib.sha256(arr.tobytes()).hexdigest()
+
+          # --------------------------- CIFAR-10 ---------------------------
+          xs, ys, source_ids = [], [], []
+          offset = 0
+          for name in [f'data_batch_{i}' for i in range(1, 6)]:
+              with (RAW / 'cifar-10-batches-py' / name).open('rb') as handle:
+                  batch = pickle.load(handle, encoding='bytes')
+              x = np.asarray(batch[b'data'], dtype=np.uint8).reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1)
+              y = np.asarray(batch[b'labels'], dtype=np.int64)
+              xs.append(x)
+              ys.append(y)
+              source_ids.append(np.arange(offset, offset + len(x), dtype=np.int64))
+              offset += len(x)
+          cifar_train = np.concatenate(xs)
+          cifar_train_y = np.concatenate(ys)
+          cifar_train_ids = np.concatenate(source_ids)
+          with (RAW / 'cifar-10-batches-py' / 'test_batch').open('rb') as handle:
+              batch = pickle.load(handle, encoding='bytes')
+          cifar_test = np.asarray(batch[b'data'], dtype=np.uint8).reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1)
+          cifar_test_y = np.asarray(batch[b'labels'], dtype=np.int64)
+          cifar_test_ids = np.arange(50_000, 60_000, dtype=np.int64)
+
+          # Exact 2x2 average pooling to 16x16; deterministic and dependency-free.
+          def downsample16(x: np.ndarray) -> np.ndarray:
+              y = x.astype(np.uint16).reshape(len(x), 16, 2, 16, 2, 3).sum(axis=(2, 4))
+              return ((y + 2) // 4).astype(np.uint8)
+
+          cifar_train = downsample16(cifar_train)
+          cifar_test = downsample16(cifar_test)
+          rng = np.random.default_rng(SEED)
+          split_indices: dict[str, list[int]] = {k: [] for k in ['train', 'validation', 'fiber_fit', 'development']}
+          per_class = {'train': 1200, 'validation': 200, 'fiber_fit': 200, 'development': 200}
+          for class_id in range(10):
+              idx = np.flatnonzero(cifar_train_y == class_id)
+              idx = rng.permutation(idx)
+              cursor = 0
+              for split, count in per_class.items():
+                  split_indices[split].extend(idx[cursor:cursor + count].tolist())
+                  cursor += count
+          for split in split_indices:
+              split_indices[split] = sorted(split_indices[split])
+
+          test_idx: list[int] = []
+          for class_id in range(10):
+              idx = np.flatnonzero(cifar_test_y == class_id)
+              idx = np.random.default_rng(SEED + 991 + class_id).permutation(idx)
+              test_idx.extend(idx[:200].tolist())
+          test_idx = sorted(test_idx)
+
+          train_dev_payload = {}
+          for split, idx_list in split_indices.items():
+              idx = np.asarray(idx_list, dtype=np.int64)
+              train_dev_payload[f'{split}_x'] = cifar_train[idx]
+              train_dev_payload[f'{split}_y'] = cifar_train_y[idx]
+              train_dev_payload[f'{split}_source_id'] = cifar_train_ids[idx]
+          np.savez_compressed(OUT / 'cifar10_16_train_dev.npz', **train_dev_payload)
+          test_idx_arr = np.asarray(test_idx, dtype=np.int64)
+          np.savez_compressed(
+              OUT / 'cifar10_16_confirmation.npz',
+              confirmation_x=cifar_test[test_idx_arr],
+              confirmation_y=cifar_test_y[test_idx_arr],
+              confirmation_source_id=cifar_test_ids[test_idx_arr],
+          )
+
+          # -------------------------- Weizmann ---------------------------
+          actions = ['walk', 'run', 'jump', 'side', 'bend', 'wave1', 'wave2', 'pjump', 'jack', 'skip']
+          action_to_id = {name: i for i, name in enumerate(actions)}
+          raw_records: list[dict] = []
+          all_subjects: set[str] = set()
+
+          def motion_crop(frames: np.ndarray) -> tuple[int, int, int, int]:
+              gray = np.mean(frames.astype(np.float32), axis=-1)
+              motion = np.std(gray, axis=0)
+              threshold = np.quantile(motion, 0.72)
+              mask = motion >= threshold
+              rows, cols = np.where(mask)
+              h, w = frames.shape[1:3]
+              if len(rows) < 25:
+                  side = min(h, w)
+                  top = (h - side) // 2
+                  left = (w - side) // 2
+                  return top, left, side, side
+              top, bottom = int(rows.min()), int(rows.max()) + 1
+              left, right = int(cols.min()), int(cols.max()) + 1
+              cy, cx = (top + bottom) / 2, (left + right) / 2
+              side = int(max(bottom - top, right - left) * 1.45)
+              side = max(48, min(side, h, w))
+              top = int(np.clip(round(cy - side / 2), 0, h - side))
+              left = int(np.clip(round(cx - side / 2), 0, w - side))
+              return top, left, side, side
+
+          for action in actions:
+              for path in sorted((RAW / 'weizmann' / action).rglob('*.avi')):
+                  cap = cv2.VideoCapture(str(path))
+                  frames = []
+                  while True:
+                      ok, frame = cap.read()
+                      if not ok:
+                          break
+                      frames.append(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                  cap.release()
+                  if len(frames) < 32:
+                      raise RuntimeError(f'could not decode enough frames from {path}: {len(frames)}')
+                  arr = np.stack(frames)
+                  top, left, height, width = motion_crop(arr)
+                  arr = arr[:, top:top + height, left:left + width]
+                  arr = np.stack([cv2.resize(frame, (16, 16), interpolation=cv2.INTER_AREA) for frame in arr]).astype(np.uint8)
+                  stem = path.stem.lower().replace('-', '_')
+                  subject = stem.split('_')[0]
+                  all_subjects.add(subject)
+                  span = 1 + (6 - 1) * 4
+                  max_start = len(arr) - span
+                  starts = np.unique(np.linspace(0, max_start, num=min(10, max_start + 1), dtype=int))
+                  for start in starts:
+                      clip = arr[start:start + span:4]
+                      if clip.shape[0] != 6:
+                          raise AssertionError((path, start, clip.shape))
+                      raw_records.append({
+                          'clip': clip,
+                          'action': action_to_id[action],
+                          'action_name': action,
+                          'subject': subject,
+                          'video': f'{action}/{path.name}',
+                          'start': int(start),
+                      })
+
+          subjects = sorted(all_subjects)
+          if len(subjects) != 9:
+              raise RuntimeError(f'expected 9 subjects, got {subjects}')
+          subject_split = {
+              'train': subjects[:6],
+              'validation': subjects[6:7],
+              'confirmation': subjects[7:],
+          }
+          split_records = {k: [r for r in raw_records if r['subject'] in v] for k, v in subject_split.items()}
+          # Development is a deterministic quarter of training videos, disjoint by source video.
+          train_videos = sorted({r['video'] for r in split_records['train']})
+          dev_videos = set(train_videos[::4])
+          development = [r for r in split_records['train'] if r['video'] in dev_videos]
+          train = [r for r in split_records['train'] if r['video'] not in dev_videos]
+          validation = split_records['validation']
+          confirmation = split_records['confirmation']
+
+          def pack(records: list[dict]) -> dict[str, np.ndarray]:
+              video_names = sorted({r['video'] for r in raw_records})
+              subject_names = subjects
+              return {
+                  'x': np.stack([r['clip'] for r in records]),
+                  'y': np.asarray([r['action'] for r in records], dtype=np.int64),
+                  'subject_id': np.asarray([subject_names.index(r['subject']) for r in records], dtype=np.int64),
+                  'video_id': np.asarray([video_names.index(r['video']) for r in records], dtype=np.int64),
+                  'start': np.asarray([r['start'] for r in records], dtype=np.int64),
+              }
+
+          video_train_dev = {}
+          for split, records in [('train', train), ('validation', validation), ('development', development)]:
+              packed = pack(records)
+              for key, value in packed.items():
+                  video_train_dev[f'{split}_{key}'] = value
+          np.savez_compressed(OUT / 'weizmann_6x16_train_dev.npz', **video_train_dev)
+          packed = pack(confirmation)
+          np.savez_compressed(OUT / 'weizmann_6x16_confirmation.npz', **{f'confirmation_{k}': v for k, v in packed.items()})
+
+          # --------------------------- Manifest ---------------------------
+          source_files = [RAW / 'cifar-10-python.tar.gz'] + [RAW / f'{a}.zip' for a in actions]
+          manifest = {
+              'dataset_version': 'fiberlift-cifar10-weizmann-v1',
+              'seed': SEED,
+              'cifar10': {
+                  'source': 'https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz',
+                  'source_md5': 'c58f30108f718f92721af3b95e74349a',
+                  'resolution': [16, 16, 3],
+                  'split_sizes': {k: len(v) for k, v in split_indices.items()} | {'confirmation': len(test_idx)},
+                  'split_source_id_hashes': {k: index_hash(cifar_train_ids[np.asarray(v, dtype=np.int64)]) for k, v in split_indices.items()} | {
+                      'confirmation': index_hash(cifar_test_ids[test_idx_arr])
+                  },
+                  'confirmation_file': 'cifar10_16_confirmation.npz',
+              },
+              'weizmann': {
+                  'homepage': 'https://www.wisdom.weizmann.ac.il/~vision/SpaceTimeActions.html',
+                  'source_urls': [f'https://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/{a}.zip' for a in actions],
+                  'actions': actions,
+                  'subjects': subjects,
+                  'subject_split': subject_split,
+                  'clip_shape': [6, 16, 16, 3],
+                  'temporal_stride': 4,
+                  'clips_per_video_max': 10,
+                  'split_sizes': {'train': len(train), 'validation': len(validation), 'development': len(development), 'confirmation': len(confirmation)},
+                  'confirmation_subjects': subject_split['confirmation'],
+                  'confirmation_file': 'weizmann_6x16_confirmation.npz',
+              },
+              'source_sha256': {path.name: sha256(path) for path in source_files},
+          }
+          for path in sorted(OUT.glob('*.npz')):
+              manifest.setdefault('artifacts', {})[path.name] = {'sha256': sha256(path), 'bytes': path.stat().st_size}
+          (OUT / 'dataset_manifest.json').write_text(json.dumps(manifest, indent=2, sort_keys=True) + '\n')
+          (OUT / 'SHA256SUMS').write_text(''.join(f"{sha256(path)}  {path.name}\n" for path in sorted(OUT.glob('*')) if path.is_file() and path.name != 'SHA256SUMS'))
+          print(json.dumps(manifest, indent=2, sort_keys=True))
+          PY
+
+          python _dataset_build/build.py
+          (cd _dataset_build/out && sha256sum -c SHA256SUMS)
+      - name: Upload processed dataset bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: cifar10-weizmann-fiberlift-v1
+          path: _dataset_build/out/
+          compression-level: 6
+          retention-days: 3
+          if-no-files-found: error
