@@ -1,0 +1,19 @@
+{
+  "promoted_to_realistic_development": true,
+  "gates": {
+    "all_finite": true,
+    "batch_latency_large_gain": true,
+    "beats_local_mcqf_adversary": true,
+    "copy_exact": true,
+    "energy_noninferior_full": true,
+    "flop_gain": true,
+    "global_bit_practical_gain": true,
+    "global_mixer_attributable": true,
+    "nll_practical_gain": true,
+    "peak_memory_gain": true,
+    "schedule_frozen": true,
+    "single_latency_gain": true,
+    "stored_bytes_gain": true,
+    "workspace_gain": true
+  }
+}
