@@ -1,0 +1,29 @@
+name: build-rmpf-cifar32-ucf32-development
+on:
+  push:
+    branches: [agent/rmpf-cifar32-ucf32-dev-20260827]
+    paths:
+      - data_build/rmpf32/build_development_data.py
+      - .github/workflows/build-rmpf-cifar32-ucf32-development.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install 'datasets==4.0.0' 'huggingface_hub==0.34.4' 'opencv-python-headless==4.11.0.86' 'numpy==2.2.6' 'Pillow==11.3.0'
+      - run: |
+          python data_build/rmpf32/build_development_data.py
+          cd build/rmpf32_out && sha256sum -c SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rmpf-cifar32-ucf32-development-v1
+          path: build/rmpf32_out/
+          retention-days: 5
+          compression-level: 6
+          if-no-files-found: error
