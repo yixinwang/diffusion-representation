@@ -19,7 +19,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p build/raw build/out
-          curl -L --fail --retry 5 --connect-timeout 20 --max-time 600 https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz -o build/raw/cifar.tar.gz
+          curl -L --fail --retry 5 --connect-timeout 20 --max-time 600 https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz -o build/raw/cifar.tar.gz
           printf '%s  %s\n' c58f30108f718f92721af3b95e74349a build/raw/cifar.tar.gz | md5sum -c -
           tar -xzf build/raw/cifar.tar.gz -C build/raw
           cat > build/make.py <<'PY'
@@ -49,9 +49,8 @@ jobs:
           for c in range(10):test+=np.random.default_rng(SEED+991+c).permutation(np.flatnonzero(yt==c))[:200].tolist()
           test=np.asarray(sorted(test));np.savez_compressed(O/'cifar10_16_confirmation.npz',confirmation_x=xt[test],confirmation_y=yt[test],confirmation_source_id=tid[test])
           arts={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in O.glob('*.npz')}
-          man={'dataset_version':'fiberlift-cifar10-v1','seed':SEED,'cifar10':{'source':'official CIFAR-10 Python archive','source_md5':'c58f30108f718f92721af3b95e74349a','resolution':[16,16,3],'split_sizes':{**{k:len(v) for k,v in splits.items()},'confirmation':len(test)},'split_source_id_hashes':{**{k:ih(sid[np.asarray(sorted(v))]) for k,v in splits.items()},'confirmation':ih(tid[test])}},'artifacts':arts}
-          (O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');arts['dataset_manifest.json']={'sha256':sha(O/'dataset_manifest.json'),'bytes':(O/'dataset_manifest.json').stat().st_size};(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'))
-          print(json.dumps(man,indent=2))
+          man={'dataset_version':'fiberlift-cifar10-v1','seed':SEED,'cifar10':{'source':'https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz','source_md5':'c58f30108f718f92721af3b95e74349a','resolution':[16,16,3],'split_sizes':{**{k:len(v) for k,v in splits.items()},'confirmation':len(test)},'split_source_id_hashes':{**{k:ih(sid[np.asarray(sorted(v))]) for k,v in splits.items()},'confirmation':ih(tid[test])}},'artifacts':arts}
+          (O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'));print(json.dumps(man,indent=2))
           PY
           python build/make.py
           (cd build/out && sha256sum -c SHA256SUMS)
