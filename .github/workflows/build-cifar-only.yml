@@ -1,0 +1,64 @@
+name: build-cifar-only
+on:
+  push:
+    branches: [agent/cifar-weizmann-data-20260827]
+    paths: [.github/workflows/build-cifar-only.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Build deterministic CIFAR subset
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/raw build/out
+          curl -L --fail --retry 5 --connect-timeout 20 --max-time 600 https://cave.cs.toronto.edu/kriz/cifar-10-python.tar.gz -o build/raw/cifar.tar.gz
+          printf '%s  %s\n' c58f30108f718f92721af3b95e74349a build/raw/cifar.tar.gz | md5sum -c -
+          tar -xzf build/raw/cifar.tar.gz -C build/raw
+          cat > build/make.py <<'PY'
+          import hashlib,json,pickle
+          from pathlib import Path
+          import numpy as np
+          R=Path('build/raw/cifar-10-batches-py');O=Path('build/out');O.mkdir(parents=True,exist_ok=True);SEED=20260827
+          def sha(p):
+            h=hashlib.sha256();h.update(p.read_bytes());return h.hexdigest()
+          def ih(a):return hashlib.sha256(np.asarray(a,dtype='<i8').tobytes()).hexdigest()
+          xs=[];ys=[];ids=[];off=0
+          for i in range(1,6):
+            b=pickle.load(open(R/f'data_batch_{i}','rb'),encoding='bytes');x=np.asarray(b[b'data'],np.uint8).reshape(-1,3,32,32).transpose(0,2,3,1);y=np.asarray(b[b'labels'],np.int64);xs.append(x);ys.append(y);ids.append(np.arange(off,off+len(x)));off+=len(x)
+          x=np.concatenate(xs);y=np.concatenate(ys);sid=np.concatenate(ids)
+          b=pickle.load(open(R/'test_batch','rb'),encoding='bytes');xt=np.asarray(b[b'data'],np.uint8).reshape(-1,3,32,32).transpose(0,2,3,1);yt=np.asarray(b[b'labels'],np.int64);tid=np.arange(50000,60000)
+          def ds(a):
+            s=a.astype(np.uint16).reshape(len(a),16,2,16,2,3).sum((2,4));return ((s+2)//4).astype(np.uint8)
+          x=ds(x);xt=ds(xt);rng=np.random.default_rng(SEED);counts={'train':1200,'validation':200,'fiber_fit':200,'development':200};splits={k:[] for k in counts}
+          for c in range(10):
+            idx=rng.permutation(np.flatnonzero(y==c));cur=0
+            for k,n in counts.items():splits[k]+=idx[cur:cur+n].tolist();cur+=n
+          payload={}
+          for k,v in splits.items():
+            a=np.asarray(sorted(v));payload[k+'_x']=x[a];payload[k+'_y']=y[a];payload[k+'_source_id']=sid[a]
+          np.savez_compressed(O/'cifar10_16_train_dev.npz',**payload)
+          test=[]
+          for c in range(10):test+=np.random.default_rng(SEED+991+c).permutation(np.flatnonzero(yt==c))[:200].tolist()
+          test=np.asarray(sorted(test));np.savez_compressed(O/'cifar10_16_confirmation.npz',confirmation_x=xt[test],confirmation_y=yt[test],confirmation_source_id=tid[test])
+          arts={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in O.glob('*.npz')}
+          man={'dataset_version':'fiberlift-cifar10-v1','seed':SEED,'cifar10':{'source':'official CIFAR-10 Python archive','source_md5':'c58f30108f718f92721af3b95e74349a','resolution':[16,16,3],'split_sizes':{**{k:len(v) for k,v in splits.items()},'confirmation':len(test)},'split_source_id_hashes':{**{k:ih(sid[np.asarray(sorted(v))]) for k,v in splits.items()},'confirmation':ih(tid[test])}},'artifacts':arts}
+          (O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');arts['dataset_manifest.json']={'sha256':sha(O/'dataset_manifest.json'),'bytes':(O/'dataset_manifest.json').stat().st_size};(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'))
+          print(json.dumps(man,indent=2))
+          PY
+          python build/make.py
+          (cd build/out && sha256sum -c SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cifar10-fiberlift-v1
+          path: build/out/
+          retention-days: 3
+          compression-level: 6
+          if-no-files-found: error
