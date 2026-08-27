@@ -5,11 +5,12 @@
   "prior_train_used_count": 18000,
   "prior_confirmation_count": 2000,
   "prior_split_source_id_hashes": {
-    "train": "a42c106a79c54a15dd733c5e0c746f22791957d93b1b724e55507fcd12222df2",
-    "validation": "c9caa31ac0bad83f73af53a0a2d548f120ee6e1d0319233e00b7fcd4205c6955",
-    "fiber_fit": "a5a76435c2792352c86ef2c86a4216f0589cd4300fac0b4c81303b3a62d155b5",
-    "development": "ef2774a10d1cdf9d799f3688a476b2504655cd8be209465ef0624dc0d6938c8a",
-    "confirmation": "99c4c2c6517b5499dbb30d550e9f2e245246e66c4a182d70025f218789cdce79"
+    "train": "a42c106aafd56dcf85349d9282f38451188d0e755fa1a59471a9a2898527f4d2",
+    "validation": "c9caa31ae15d4e74a0eec0c93d8f39b7f5a7a084483a5667db4ca35af5ccdc89",
+    "fiber_fit": "a5a7643505d90cbb51204e17595acd67fb1b515080874b819b79e13eb51506d2",
+    "development": "ef2774a95c4f35bd5ccf6db97dfdf3390287e7b9171e6baab4d7fd3dd4fb8634",
+    "confirmation": "99c4c2c629769dacd83d237b7e0acc42ee2787c47419c9b6fb9d189a97543acd"
   },
+  "source_artifact_manifest_sha256": "06ce7ecbb7357405056f8145b067e13ef987e938cba6c42033c118754a77546e",
   "contract": "MCQF-v2 regenerates these exact IDs from the pinned official dataset and excludes them before constructing fresh development and confirmation splits. The hashes are asserted before any v2 array is written."
 }
