@@ -15,14 +15,19 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: python -m pip install --upgrade numpy opencv-python-headless
-      - name: Download all ten action archives concurrently
+      - name: Download all ten action archives from original HTTP endpoint
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p build/raw build/out
           printf '%s\n' walk run jump side bend wave1 wave2 pjump jack skip > build/actions.txt
-          cat build/actions.txt | xargs -P 5 -I{} sh -c 'curl -L --fail --retry 5 --connect-timeout 20 --max-time 1200 "https://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/{}.zip" -o "build/raw/{}.zip"'
-          for a in $(cat build/actions.txt); do mkdir -p "build/raw/$a"; unzip -q "build/raw/$a.zip" -d "build/raw/$a"; done
+          for a in $(cat build/actions.txt); do
+            curl --http1.1 -A 'Mozilla/5.0' -L --fail --retry 10 --retry-all-errors --retry-delay 3 --connect-timeout 30 --max-time 1200 \
+              "http://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/${a}.zip" \
+              -o "build/raw/${a}.zip"
+            mkdir -p "build/raw/${a}"
+            unzip -q "build/raw/${a}.zip" -d "build/raw/${a}"
+          done
           cat > build/make.py <<'PY'
           import hashlib,json
           from pathlib import Path
@@ -46,7 +51,9 @@ jobs:
                 ok,f=cap.read()
                 if not ok:break
                 frames.append(cv2.cvtColor(f,cv2.COLOR_BGR2RGB))
-              cap.release();arr=np.stack(frames);t,l,s=crop(arr);arr=arr[:,t:t+s,l:l+s];arr=np.stack([cv2.resize(f,(16,16),interpolation=cv2.INTER_AREA) for f in arr]).astype(np.uint8)
+              cap.release()
+              if len(frames)<21:raise RuntimeError(f'failed to decode {p}: {len(frames)} frames')
+              arr=np.stack(frames);t,l,s=crop(arr);arr=arr[:,t:t+s,l:l+s];arr=np.stack([cv2.resize(f,(16,16),interpolation=cv2.INTER_AREA) for f in arr]).astype(np.uint8)
               sub=p.stem.lower().replace('-','_').split('_')[0];subs.add(sub);span=21;starts=np.unique(np.linspace(0,len(arr)-span,num=min(10,len(arr)-span+1),dtype=int))
               for st in starts:rec.append({'x':arr[st:st+span:4],'y':aid[a],'subject':sub,'video':a+'/'+p.name,'start':int(st)})
           subs=sorted(subs)
@@ -59,7 +66,7 @@ jobs:
           for k in ['train','validation','development']:
             for n,v in pack(parts[k]).items():pay[k+'_'+n]=v
           np.savez_compressed(O/'weizmann_6x16_train_dev.npz',**pay);np.savez_compressed(O/'weizmann_6x16_confirmation.npz',**{'confirmation_'+n:v for n,v in pack(parts['confirmation']).items()})
-          arts={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in O.glob('*.npz')};man={'dataset_version':'fiberlift-weizmann-v1','seed':SEED,'weizmann':{'actions':A,'subjects':subs,'subject_split':ss,'clip_shape':[6,16,16,3],'temporal_stride':4,'split_sizes':{k:len(v) for k,v in parts.items()},'source_urls':[f'official Weizmann {a}.zip' for a in A]},'source_sha256':{p.name:sha(p) for p in sorted(R.glob('*.zip'))},'artifacts':arts};(O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'));print(json.dumps(man,indent=2))
+          arts={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in O.glob('*.npz')};man={'dataset_version':'fiberlift-weizmann-v1','seed':SEED,'weizmann':{'actions':A,'subjects':subs,'subject_split':ss,'clip_shape':[6,16,16,3],'temporal_stride':4,'split_sizes':{k:len(v) for k,v in parts.items()},'source_urls':[f'http://www.wisdom.weizmann.ac.il/~vision/VideoAnalysis/Demos/SpaceTimeActions/DB/{a}.zip' for a in A]},'source_sha256':{p.name:sha(p) for p in sorted(R.glob('*.zip'))},'artifacts':arts};(O/'dataset_manifest.json').write_text(json.dumps(man,indent=2,sort_keys=True)+'\n');(O/'SHA256SUMS').write_text(''.join(f'{sha(p)}  {p.name}\n' for p in sorted(O.glob('*')) if p.name!='SHA256SUMS'));print(json.dumps(man,indent=2))
           PY
           python build/make.py
           (cd build/out && sha256sum -c SHA256SUMS)
