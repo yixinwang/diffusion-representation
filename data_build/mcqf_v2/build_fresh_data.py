@@ -130,7 +130,8 @@ if sha(archive) != expected_archive_sha:
     raise RuntimeError(("UCF archive hash", sha(archive)))
 extract_root = RAW / "ucf"
 extract_root.mkdir(exist_ok=True)
-with tarfile.open(archive, "r:gz") as handle:
+# The pinned file is an uncompressed POSIX tar despite its historical .tar.gz suffix.
+with tarfile.open(archive, "r:*") as handle:
     for member in handle.getmembers():
         if not member.isfile() or not member.name.lower().endswith(".avi"):
             continue
