@@ -1,0 +1,62 @@
+{
+  "advance_to_r7_realistic_development": false,
+  "confirmation_opened": false,
+  "first_failed_layer": "unchanged exact B+S trunk systems realization; endpoint itself passes hidden-copula and incremental-cost gates",
+  "known_truth": {
+    "known_truth_pass": true,
+    "identity_minus_r7_nll": {
+      "mean": 0.5694992606902798,
+      "lower95": 0.5685189763625925,
+      "upper95": 0.570479545017967
+    },
+    "r6_minus_r7_nll": {
+      "mean": 0.0924660771786329,
+      "lower95": 0.09227312776099665,
+      "upper95": 0.09265902659626914
+    },
+    "r7_transformed_parity_gap": {
+      "mean": 0.010977428211461745,
+      "lower95": 0.006726240313647787,
+      "upper95": 0.015228616109275703
+    },
+    "r6_parity_gap": {
+      "mean": 1.6409007335046237,
+      "lower95": 1.6368121242990537,
+      "upper95": 1.6449893427101938
+    },
+    "max_roundtrip": 5.329070518200751e-15,
+    "max_fd_logdet_error": 3.356447342284241e-09,
+    "max_copy_mismatch": 0.0,
+    "seeds": [9500, 9501, 9502, 9503, 9504]
+  },
+  "cost_oracle_after_one_systems_child": {
+    "cost_oracle_pass": false,
+    "image": {
+      "endpoint_latency_seconds": 0.00666714600083651,
+      "endpoint_full_latency_ratio": 0.0616,
+      "incremental_flop_ratio": 0.029337565104166668,
+      "incremental_stored_ratio": 0.0001809092721540018,
+      "incremental_workspace_ratio": 0.03950777202072539,
+      "total_candidate_full_latency_ratio": 5.2379792836357195
+    },
+    "video": {
+      "endpoint_latency_seconds": 0.0053277129991329275,
+      "endpoint_full_latency_ratio": 0.0576,
+      "incremental_flop_ratio": 0.014651404486762153,
+      "incremental_stored_ratio": 1.5074654921151863e-05,
+      "incremental_workspace_ratio": 0.11795316565481354,
+      "total_candidate_full_latency_ratio": 3.5311001574232783
+    }
+  },
+  "parent_hashes": {
+    "data_manifest": "c2098659a835b3c6d3e6d9f03e34611ded2990ade16ed7438f7c09220be80c31",
+    "r5_machine_verdict": "dd6ef75d8fdf75680442faa4889958072d081e7f585a320a74f0433ae693dd2d",
+    "r5_paired": "2b8e1e70106a3b20d996e62d55dddc23da634403e4986bb8d66e69a01807e84a",
+    "r5_raw_rows": "c5c10e55c4957f61949fc2ac3381e4748a2633b905e851cc9c3eec6695d18224",
+    "r6_machine_verdict": "de0bfe29bce07c58397eb5f839e582c6680580ded3d5b013d7314c720e21b566",
+    "r6_raw_rows": "1f56567a28010f088fe5dbf061b441a28604164ca5dff9d3e42ee9999458e408"
+  },
+  "r7_realistic_development_opened": false,
+  "scientific_status": "KNOWN_TRUTH_PASS_COST_ORACLE_FAIL_REALISTIC_R7_NOT_OPENED_CONFIRMATION_SEALED",
+  "stop_reason": "total candidate/full latency ratios 5.238 image and 3.531 video; video incremental workspace 0.118 exceeds 0.10"
+}
