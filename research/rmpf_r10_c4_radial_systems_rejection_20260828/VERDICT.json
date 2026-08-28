@@ -1,0 +1,17 @@
+{
+  "scientific_decision": "R10_C4_KNOWN_TRUTH_PASS_SYSTEMS_FAIL_QUALITY_NOT_OPENED_CONFIRMATION_SEALED",
+  "immutable_parent_head": "3baae18226f1b19e9b9aa6392439ddad42595126",
+  "known_truth_seeds": [9700, 9701, 9702, 9703, 9704],
+  "systems_seed": 9400,
+  "known_truth_pass": true,
+  "systems_pass": false,
+  "development_quality_opened": false,
+  "confirmation_opened": false,
+  "known_truth_identity_nll_gain": {"mean": 0.13828804580391715, "ci95": [0.13569252975444324, 0.14088356185339107]},
+  "known_truth_rcc_nll_gain": {"mean": 0.10236219794696066, "ci95": [0.10078539157577564, 0.10393900431814569]},
+  "known_truth_identity_energy_gain": {"mean": 0.012961896013465113, "ci95": [0.011111463739899007, 0.01481232828703122]},
+  "image": {"fit_seconds": 2.8798412249961984, "batch_seconds": 0.1487974999981816, "single_seconds": 0.0031360529974335805, "systems_pass": false},
+  "video": {"fit_seconds": 3.0691280379978707, "batch_seconds": 0.11134247299924027, "single_seconds": 0.007513385993661359, "systems_pass": false},
+  "first_failed_layer": "complete fitting and evaluation realization of the inherited parent/color passes plus per-cell radial splines and R7 refitting",
+  "next_boundary": "angular/cross-site or stage-aligned multivariate dependence with a fused training realization"
+}
