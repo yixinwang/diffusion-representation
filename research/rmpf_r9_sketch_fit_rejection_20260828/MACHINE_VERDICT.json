@@ -1,0 +1,34 @@
+{
+  "accuracy_pass": false,
+  "changed_layer": "R8 exact full-row sufficient-statistic fitter to source-frozen row sketch; one balanced-block sketch child",
+  "confirmation_opened": false,
+  "cost_pass": false,
+  "decision": "R9_SKETCH_PARAMETER_AND_ROBUST_COST_FAIL_QUALITY_NOT_OPENED_CONFIRMATION_SEALED",
+  "evidence_commit": "69544fc62350976cf8c7a487c9db538aae916ce8",
+  "failure_reasons": [
+    "local relative-parameter gates failed in images and video despite near-unit full-row objectives and tiny validation-NLL deviations",
+    "image fit median 1.677744063999853 and bootstrap upper endpoint 1.8513895530013542 exceeded the 1.447782133502187 latent-flow limit",
+    "video passed the point fit limit but only 5 of 7 repetitions passed and the interval upper endpoint 2.262751431000652 exceeded 2.2149451499999486",
+    "no sampled sketch dimension reached the 0.08 local-parameter gate before losing the fit-time margin"
+  ],
+  "full_row_recovery_exact": true,
+  "local_parameter_max_relative_error": {
+    "image": 1.4912218810003333,
+    "video": 1.148169810293981
+  },
+  "objective_ratio_max": {
+    "image": 1.0000331424042384,
+    "video": 1.0000299213212942
+  },
+  "parent_r8": "8d21f7d9f4ee82ffd038572e191bb336b79db3ea",
+  "portable_handoff_commit": "466cf4604104080ae1e6c51bc69304db3ef6c8c6",
+  "quality_opened": false,
+  "roundtrip_max_abs": {
+    "image": 8.526512829121202e-14,
+    "video": 8.526512829121202e-14
+  },
+  "validation_nll_abs_deviation": {
+    "image": 5.5739745333127644e-05,
+    "video": 6.851520129025346e-05
+  }
+}
