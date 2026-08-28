@@ -1,0 +1,42 @@
+{
+  "confirmation_opened": false,
+  "family_retired": true,
+  "scientific_promotion": false,
+  "rounds": {
+    "R1_full_output": {
+      "seeds": [7600, 7601, 7602],
+      "candidate_nll_mean": 1.4545262257258098,
+      "global_error_mean": 0.0262079917884139,
+      "local_minus_candidate_nll_mean": 0.001391847928365,
+      "zero_minus_candidate_nll_mean": -0.002460241317749,
+      "passed": false,
+      "failure": "full-output finite estimation cost and frozen 0.02 margin"
+    },
+    "R2_reduced_rank": {
+      "seeds": [7610, 7611, 7612],
+      "candidate_nll_mean": 1.4517369270324707,
+      "global_error_mean": 0.0229333416691726,
+      "zero_minus_candidate_nll_mean": 0.0029890139897663,
+      "local_minus_candidate_nll_mean": 0.0014067093531291,
+      "positive_rate_minus_candidate_nll_mean": -0.004883090655009,
+      "selected_output_rank": 4,
+      "passed": false,
+      "failure": "local margin and one-seed global-error gate"
+    },
+    "R3_conditional_scale": {
+      "seeds": [7620],
+      "candidate_nll": 1.448278307914734,
+      "mean_only_nll": 1.448276162147522,
+      "mean_only_minus_affine_nll": -0.000002145767212,
+      "global_error": 0.0102565348120854,
+      "passed": false,
+      "failure": "no held-out conditional-scale headroom"
+    }
+  },
+  "deterministic_checks": {
+    "tests_passed": 26,
+    "roundtrip_max_error": 1.11e-15,
+    "jacobian_logdet_max_error": 6.99e-15,
+    "equivalence_copy_mismatch": 0.0
+  }
+}
