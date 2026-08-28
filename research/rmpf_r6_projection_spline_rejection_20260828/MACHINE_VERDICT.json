@@ -1,0 +1,46 @@
+{
+  "scientific_decision": "KNOWN_TRUTH_PASS_OPENED_CIFAR_UCF_FAIL_C4_C5_C6_FAIL_CONFIRMATION_SEALED",
+  "project_promotion": false,
+  "advance_to_confirmation": false,
+  "confirmation_opened": false,
+  "preserved_r5": {
+    "cifar_rcc_nll_gain": [0.0465464, 0.0461535, 0.0469394],
+    "cifar_rcc_energy_change": [-0.0036067, -0.0041096, -0.0031039],
+    "video_rank_zero": true,
+    "resource_losses_preserved": true,
+    "r5_machine_verdict_sha256": "dd6ef75d8fdf75680442faa4889958072d081e7f585a320a74f0433ae693dd2d",
+    "r5_raw_rows_sha256": "c5c10e55c4957f61949fc2ac3381e4748a2633b905e851cc9c3eec6695d18224",
+    "r5_dataset_manifest_sha256": "c2098659a835b3c6d3e6d9f03e34611ded2990ade16ed7438f7c09220be80c31"
+  },
+  "known_truth": {
+    "seeds": [9350, 9351, 9352, 9353, 9354],
+    "selected_ranks": [4, 4, 4, 4, 4],
+    "identity_minus_candidate_nll": [0.09441616534262343, 0.08748518104355942, 0.10134714964168744],
+    "rcc_minus_candidate_nll": [0.07396643950517116, 0.06685577829358309, 0.08107710071675923],
+    "hidden_copula_marginal_gain": 0.000047331102452043456,
+    "hidden_copula_triple_sign_after": 0.9862933333333335,
+    "copy_mismatch_max": 0.0
+  },
+  "opened_development": {
+    "seeds": [9400, 9401, 9402, 9403, 9404],
+    "image_selected_ranks": [0, 0, 0, 0, 0],
+    "video_selected_ranks": [0, 0, 0, 0, 0],
+    "image_candidate_energy": 22.607057,
+    "image_full_flow_energy": 19.236860,
+    "image_positive_rate_latent_flow_energy": 19.189981,
+    "video_candidate_energy": 63.605779,
+    "video_full_flow_energy": 48.637532,
+    "video_positive_rate_latent_flow_energy": 47.494019,
+    "image_support": {"clipping_fraction": 0.919768, "variance_ratio": 3.806295},
+    "video_support": {"clipping_fraction": 0.923595, "variance_ratio": 4.318976},
+    "image_candidate_over_full": {"fit_time": 31.411, "batch_latency": 5.550, "single_latency": 6.824, "stored_bytes": 1.123, "traced_peak": 2.180, "training_peak": 42.411},
+    "video_candidate_over_full": {"fit_time": 5.171, "batch_latency": 4.208, "single_latency": 4.836, "stored_bytes": 1.118, "traced_peak": 1.380, "training_peak": 2.378}
+  },
+  "one_layer_children": {
+    "C4_atanh_support": "finite-precision support saturation; rank zero; exact generated-sample round trip failed",
+    "C5_rational_support": {"image_rank": 0, "video_rank": 0, "image_clipping": 0.0, "video_clipping": 0.0, "image_variance_ratio": 3.552645, "video_variance_ratio": 4.294168},
+    "C6_support_temperature": {"image_tau": 1.0, "video_tau": 0.25, "image_rank": 0, "video_rank": 0, "image_variance_ratio": 3.973127, "video_variance_ratio": 4.434714}
+  },
+  "first_failed_layer": "realistic projection-factorized conditional marginal headroom is absent; support maps remove clipping but do not repair the inner B+S scale or multivariate dependence",
+  "stop_boundary": "a reopening requires multivariate/radial or stage-aligned transport plus a fused systems realization, not another rank, knot count, support scalar, or selection threshold"
+}
