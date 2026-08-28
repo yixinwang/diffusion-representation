@@ -1,0 +1,83 @@
+{
+  "scientific_decision": "R10_KNOWN_TRUTH_PASS_SYSTEMS_PASS_OPENED_QUALITY_FAIL_C3_FAIL_C4_ACTIVE_CONFIRMATION_SEALED",
+  "scientific_promotion": false,
+  "development_quality_opened": true,
+  "confirmation_opened": false,
+  "preserved_parent_head": "0418b2576863133133ebda1f8895538913f916fd",
+  "local_final_branch": "pro/rmpf-r10-fused-multirate-lifting",
+  "local_final_head": "3baae18226f1b19e9b9aa6392439ddad42595126",
+  "local_final_tree": "4fd3fd999b8769f335fc235c345c5b9cf41f4136",
+  "known_truth": {
+    "seeds": [9600, 9601, 9602, 9603, 9604],
+    "pass": true,
+    "coordinate_minus_candidate_nll_mean": 0.010792275319256773,
+    "paired_95_ci": [0.01070169852044532, 0.010882852118068225],
+    "copy_mismatch": 0.0
+  },
+  "systems_pass": true,
+  "systems": {
+    "image": {
+      "fit_seconds": 1.2691156289984065,
+      "batch_latency_seconds": 0.058734920999995666,
+      "single_latency_seconds": 0.002004302998102503,
+      "stored_file_bytes": 22185,
+      "flop_proxy_batch": 42205184
+    },
+    "video": {
+      "fit_seconds": 1.288508,
+      "batch_latency_seconds": 0.0265864,
+      "single_latency_seconds": 0.003625,
+      "stored_file_bytes": 102245,
+      "flop_proxy_batch": 22783744
+    }
+  },
+  "opened_quality": {
+    "seeds": [9400, 9401, 9402, 9403, 9404],
+    "pass": false,
+    "image": {
+      "candidate_energy": 20.277076556449945,
+      "full_flow_energy": 19.23685961114323,
+      "positive_rate_latent_flow_energy": 19.189981146881447,
+      "local_minus_candidate_energy_mean": -0.000006133557442922211,
+      "local_minus_candidate_energy_ci95": [-0.000019570120832274437, 0.00000730300594643001],
+      "local_minus_candidate_dependence_mean": 0.0023176281712838,
+      "candidate_minus_full_energy_mean": 1.0402169453067138,
+      "candidate_minus_latent_energy_mean": 1.087095409568498,
+      "catastrophe_rate": 0.4
+    },
+    "video": {
+      "candidate_energy": 48.97878472495408,
+      "full_flow_energy": 48.63753170440833,
+      "positive_rate_latent_flow_energy": 47.4940191446803,
+      "local_minus_candidate_energy_mean": 0.0,
+      "local_minus_candidate_dependence_mean": 0.0,
+      "candidate_minus_latent_energy_mean": 1.484765580273762,
+      "catastrophe_rate": 0.4
+    },
+    "per_seed_rows_sha256": "1fbcee4ec891c5aa9284d2b864a467aa91a0d53d793782e5d926460f43f75a9a",
+    "paired_contrasts_sha256": "a5f42a1ab73bc7aa66b18200a1e4068cb3a279c6cca218ef1d79ffc1550edf72",
+    "machine_verdict_sha256": "d1fbfaa0fa85605291e3de3703364820376bd8d25c879358cd0ac69031459d1c",
+    "aggregate_reproduction_byte_identical": true
+  },
+  "c3_color_child": {
+    "known_truth_pass": true,
+    "predicted_nll_gain": 0.35549076872478036,
+    "observed_nll_gain": 0.35707481802617264,
+    "observed_95_ci": [0.3539311375832872, 0.36021849846905807],
+    "real_smoke_pass": false,
+    "image_nll_gain": 0.687028511835698,
+    "image_energy_gain": -0.01152941900133797,
+    "video_nll_gain": 0.6639308491408364,
+    "video_energy_gain": -0.000680688856206757,
+    "reproduction_exact": true
+  },
+  "active_child": "R10_C4 exact radial shared-scale residual transport, frozen but not executed",
+  "first_failed_layer": "Non-Gaussian semantic, multimodal, cross-site, angular, or stage-aligned dependence; systems and second-order RGB covariance are no longer the first blockers.",
+  "verification": {
+    "status": "PASS",
+    "tests": "7 passed",
+    "verified_input_head": "f983ffb4a17f6939597f1405e656279e68b0dd79",
+    "verified_input_tree": "d45cbe581315352fe3a94f1dbe13c21dbedd2a39",
+    "confirmation_file_present": false
+  }
+}
