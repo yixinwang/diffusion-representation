@@ -4,7 +4,8 @@ on:
     branches: [agent/rmpf-genuine-data-20260828]
     paths:
       - .github/workflows/build-rmpf-genuine-data.yml
-      - data_build/rmpf_genuine/build_data.py
+      - data_build/rmpf_genuine/build_cifar_v3.py
+      - data_build/rmpf_genuine/build_vcd_subset.py
   workflow_dispatch:
 permissions:
   contents: read
@@ -21,12 +22,14 @@ jobs:
         run: python -m pip install 'datasets==4.0.0' 'huggingface_hub==0.34.4' 'opencv-python-headless==4.11.0.86' 'numpy==2.2.6' 'Pillow==11.3.0'
       - name: Build and verify data
         run: |
-          python data_build/rmpf_genuine/build_data.py
+          python data_build/rmpf_genuine/build_cifar_v3.py
+          python data_build/rmpf_genuine/build_vcd_subset.py
           cd build/out
+          sha256sum * > SHA256SUMS
           sha256sum -c SHA256SUMS
       - uses: actions/upload-artifact@v4
         with:
-          name: rmpf-genuine-cifar32-hmdb32
+          name: rmpf-genuine-cifar32-vcd32
           path: build/out/
           retention-days: 5
           compression-level: 6
