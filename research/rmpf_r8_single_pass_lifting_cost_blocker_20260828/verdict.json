@@ -1,0 +1,41 @@
+{
+  "decision": "R8_COST_ORACLE_FAIL_DEVELOPMENT_NOT_OPENED_CONFIRMATION_SEALED",
+  "cost_oracle_pass": false,
+  "development_opened": false,
+  "confirmation_opened": false,
+  "changed_layer": "recurrent B+S trunk to single-pass sparse reversible lifting trunk",
+  "r7_endpoint_unchanged": true,
+  "copy_equivalence_preserved": true,
+  "max_roundtrip_error": 1.1368683772161603e-13,
+  "max_logdet_cancel_error": 0.0,
+  "collapsed_r7_compatibility": {
+    "image_max_abs_error": 7.993605777301127e-15,
+    "video_max_abs_error": 1.9539925233402755e-14
+  },
+  "canonical_c3": {
+    "image": {
+      "fit_seconds": 1.6417660740007705,
+      "fit_peak_rss_delta_bytes": 104099840,
+      "batch_latency_seconds": 0.06845050699848798,
+      "single_latency_seconds": 0.003562885998690035,
+      "stored_file_bytes": 18692,
+      "flop_proxy_batch": 87916544
+    },
+    "video": {
+      "fit_seconds": 2.0797982000003685,
+      "fit_peak_rss_delta_bytes": 170745856,
+      "batch_latency_seconds": 0.031424874996446306,
+      "single_latency_seconds": 0.004186058999039233,
+      "stored_file_bytes": 65399,
+      "flop_proxy_batch": 50488841
+    }
+  },
+  "blocking_gate": {
+    "field": "image fit time versus positive-rate latent flow",
+    "allowed_seconds": 1.447782133502187,
+    "candidate_seconds": 1.6417660740007705,
+    "reproduction_seconds": 1.695428693001304
+  },
+  "new_real_quality_metrics_opened": false,
+  "project_promotion": false
+}
