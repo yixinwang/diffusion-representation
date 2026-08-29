@@ -1,0 +1,42 @@
+{
+  "round": "RMPF-R12-stage-angular-cumulative",
+  "decision": "KNOWN_TRUTH_AND_SYSTEMS_PASS__REAL_IMAGE_VIDEO_SMOKE_FAIL__LEARNED_PATTERN_IMAGE_HEADROOM__HIERARCHICAL_VIDEO_NLL_TARGET_MISMATCH__REPLICATION_CONFIRMATION_SEALED",
+  "exact_normalized_no_vae_all_coordinate": true,
+  "project_promotion": false,
+  "confirmation_opened": false,
+  "replication_seeds_opened": [],
+  "main_mobius": {
+    "known_truth_pass": true,
+    "systems_pass": true,
+    "quality_smoke_pass": false
+  },
+  "known_truth": {
+    "identity_minus_r12_nll_per_dim": 0.02390293375780219,
+    "identity_minus_r12_nll_ci": [0.023209636009534053, 0.024596231506070328],
+    "identity_minus_r12_energy": 0.15207992740027282,
+    "identity_minus_r12_energy_ci": [0.14767645180419028, 0.15648340299635535],
+    "hidden_parity_after": 0.96932
+  },
+  "real_smoke": {
+    "image_parent_minus_child_energy": 0.0001056395291385,
+    "image_stage_direction_gain": 0.0166210981011512,
+    "video_parent_minus_child_energy": 4.849312063015532e-10,
+    "video_stage_direction_gain": -3.3306690738754696e-16
+  },
+  "hierarchical_strength_diagnostic": {
+    "image_nll_gain": 0.010278434320068997,
+    "image_pattern_error_gain": 0.15934925000381756,
+    "video_nll_gain": 0.22569099568344297,
+    "video_pattern_error_gain": -1.3065457147510808,
+    "joint_pass": false
+  },
+  "first_failed_layer": [
+    "real_headroom_support",
+    "target_mismatch",
+    "approximation_representation"
+  ],
+  "finite_family_boundary": "First-moment, ACG covariance, axial, projective scatter, extensive trace-zero, fixed-pattern, learned-pattern, and hierarchical scalar-strength stage-angular families fail the joint image-video downstream criterion; this is not a universal impossibility theorem.",
+  "next_one_layer_diagnosis": "joint cross-level/site semantic or multimodal stage-feedback transport inside the lifting conditioners",
+  "local_scientific_head": "5b481cf053af3222da0593c385c8d0006cd4f842",
+  "local_tree": "80ed112764086371fde22d91ab99ace684d28ad7"
+}
