@@ -1,0 +1,13 @@
+domain,contrast,mean,ci95_low,ci95_high,margin,decision
+image,radial_only_minus_complete_energy,0.00001356935679552862,-0.00004745531390720486,0.0000745940274982621,0.001,fail_attribution
+image,radial_only_minus_complete_dependence,-0.01988130855715488,-0.0707888051198271,0.031026188005517336,0.01,fail_attribution
+image,complete_minus_full_flow_energy,0.026282018649767026,-0.01636955639965471,0.06893359369918876,0.02,fail_noninferiority
+image,complete_minus_positive_rate_latent_flow_energy,0.04356465843116055,-0.015417571214608329,0.10254688807692944,0.02,fail_noninferiority
+video,radial_only_minus_complete_energy,0.00000922275495724989,-0.000016383717900245255,0.000034829227814745036,0.01,fail_attribution
+video,radial_only_minus_complete_dependence,-0.005403608863231324,-0.020406432241953345,0.009599214515490697,0.01,fail_attribution
+video,complete_minus_full_flow_energy,-0.9064527924295703,-1.5972209812296125,-0.21568460362952813,0.10,pass_superiority
+video,complete_minus_positive_rate_latent_flow_energy,0.3019289017680748,-0.2847411276010408,0.8885989311371905,0.10,fail_noninferiority
+image,C3_color_only_minus_complete_exact_nll,0.235696,0.233330,0.238063,,large_radial_nll_gain_not_quality_gain
+video,C3_color_only_minus_complete_exact_nll,0.343803,0.342080,0.345526,,large_radial_nll_gain_not_quality_gain
+image,oracle_selection_passing_vectors,0,0,0,,no_headroom
+video,oracle_selection_passing_vectors,0,0,0,,no_headroom
