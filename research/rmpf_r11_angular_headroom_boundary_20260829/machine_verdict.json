@@ -1,0 +1,22 @@
+{
+  "confirmation_opened": false,
+  "current_family_headroom": false,
+  "diagnosis_children": {
+    "C4H_rank4": "known_truth_proper_energy_fail",
+    "C4H_rank8": "known_truth_proper_energy_fail_despite_nll_gain",
+    "SAXC_C3": "known_truth_nll_margin_and_stage_stability_fail"
+  },
+  "failure_reason": "state-conditioned determinant-one angular covariance improves the registered dependence observable but worsens proper energy; a richer plane-angle child improves NLL/dependence but not proper energy",
+  "first_failed_layer": "target_mismatch_then_approximation_representation",
+  "image_smoke_pass": false,
+  "known_truth_pass": true,
+  "next_legitimate_layer": "joint_cross_site_or_stage_aligned_angular_transport",
+  "parent_head": "37105959db1b1b3a0faa294a4e2623cb22f07bf1",
+  "parent_reproduced": true,
+  "real_smoke_seed": 9400,
+  "replication_authorized": false,
+  "replication_seeds_unopened": [9401, 9402, 9403, 9404],
+  "round": "RMPF-R11-coarse-state-angular-coupling",
+  "systems_pass": true,
+  "video_smoke_pass": false
+}
