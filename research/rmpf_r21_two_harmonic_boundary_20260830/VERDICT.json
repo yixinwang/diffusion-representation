@@ -1,0 +1,59 @@
+{
+  "round": "RMPF-R21-two-harmonic-conditioner",
+  "scientific_decision": "INCREMENTAL_KNOWN_TRUTH_FAIL_NO_DEVELOPMENT",
+  "changed_layer": "source-fit first-harmonic phase conditioner to direct two-harmonic conditioner",
+  "preserved_parent_r20": "052d419b2306d4052d136afa27c96a8570a046e3",
+  "local_verified_head": "9fa16d0fefa9cc1024f394b256c8cac144a60e6c",
+  "local_verified_tree": "db3d6305bad8f4b2c4e88216e34d47f4c1165835",
+  "tag": "rmpf-r21-two-harmonic-final-verified-20260830",
+  "known_truth_seeds": [10030, 10031, 10032, 10033, 10034],
+  "known_truth": {
+    "identity_energy_gain": 0.00970102000015025,
+    "identity_energy_ci": [0.006872166829376979, 0.012529873170923522],
+    "identity_nll_gain": 0.06533772327524297,
+    "identity_dependence_gain": 0.931982449779657,
+    "padded_parent_energy_gain": 0.00027567984730572095,
+    "padded_parent_energy_ci": [-0.00028881158062286374, 0.0008401712752343056],
+    "padded_parent_nll_gain": 0.053941270222289714,
+    "padded_parent_dependence_gain": 0.7090909312173312,
+    "absolute_identity_gate_pass": true,
+    "incremental_parent_energy_gate_pass": false
+  },
+  "deterministic": {
+    "tests_passed": 3,
+    "roundtrip_max_abs": 3.2474e-15,
+    "logdet_cancel_max_abs": 1.1124e-13,
+    "finite_difference_logdet_error": 5.9959e-10,
+    "copied_mechanism_mismatch": 0.0,
+    "learned_degrees": 18,
+    "compact_bytes": 314
+  },
+  "cifar_source_diagnostic": {
+    "nonpromotable": true,
+    "state0_count": 1495,
+    "state0_identity_energy_gain": 0.012206077575683594,
+    "state0_identity_energy_ci": [0.005765092372894287, 0.018833860754966736],
+    "state0_padded_parent_energy_gain": 0.0005244016647338867,
+    "state0_padded_parent_energy_ci": [-0.00011947453022003174, 0.001196411252021788],
+    "state0_incremental_logdet_minus_bic": -0.006181043950285812,
+    "state0_second_harmonic_score_gain": -0.0075228880500000025,
+    "authorized_state": null
+  },
+  "ucf_source_diagnostic": {
+    "state_counts": [39, 27],
+    "support_minimum": 128,
+    "authorized_state": null
+  },
+  "compute": {
+    "tests_seconds": 3.41,
+    "known_truth_seconds": 16.83,
+    "cifar_source_seconds": 4.88,
+    "ucf_source_seconds": 2.40,
+    "principal_total_seconds": 27.52
+  },
+  "development_opened": false,
+  "replication_opened": false,
+  "confirmation_opened": false,
+  "failed_layer": "incremental proper-score headroom and conditioner target alignment",
+  "blocked_revisions": ["higher harmonic order", "knot count", "state", "rank", "threshold", "likelihood-only selector"]
+}
