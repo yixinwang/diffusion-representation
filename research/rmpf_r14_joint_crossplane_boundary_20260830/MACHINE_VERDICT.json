@@ -1,0 +1,67 @@
+{
+  "round": "RMPF-R14-joint-crossplane-site-coupling",
+  "decision": "KNOWN_TRUTH_PASS_SYSTEMS_PASS_REAL_SOURCE_IDENTITY_FALLBACK_SMOKE_FAIL_REPLICATION_CONFIRMATION_SEALED",
+  "scientific_change": "replace the rank-eight single-sphere angular map by a triangular four-conditioner/four-target cross-plane Mobius coupling within each unchanged R13 state",
+  "parent_head": "ec22561472577350263c27b9737d2877e8a9ba05",
+  "local_head": "76d518519a1a3f8fd6a088a651214b8afd8738e2",
+  "local_tree": "9537b4b39ba364f251d8b39f756483e59f3b74ef",
+  "tag": "rmpf-r14-joint-crossplane-boundary-20260830",
+  "known_truth_pass": true,
+  "systems_pass": true,
+  "image_smoke_pass": false,
+  "video_smoke_pass": false,
+  "replication_opened": false,
+  "confirmation_opened": false,
+  "copy_mismatch": 0.0,
+  "known_truth": {
+    "seeds": [10020, 10021, 10022, 10023, 10024],
+    "identity_minus_R14_nll_per_dim": [0.17846921692885834, 0.1755526645554448, 0.18138576930227188],
+    "identity_minus_R14_energy": [0.019438484870756677, 0.017997607881062454, 0.0208793618604509],
+    "identity_minus_R14_dependence_error": [0.28499744796193205, 0.2644878779794221, 0.305507017944442],
+    "max_roundtrip": 2.220446049250313e-15,
+    "max_logdet_cancel": 1.7763568394002505e-15
+  },
+  "systems": {
+    "image": {
+      "fit_seconds": 1.0701183789999973,
+      "batch_seconds": 0.030205993999970815,
+      "single_seconds": 0.000712149999912981,
+      "stored_bytes": 43550,
+      "flops_per_batch": 64692224,
+      "roundtrip": 2.506328478091291e-14,
+      "logdet_cancel": 0.0
+    },
+    "video": {
+      "fit_seconds": 0.4363173179999772,
+      "batch_seconds": 0.02273816700005682,
+      "single_seconds": 0.0013263130000495948,
+      "stored_bytes": 132302,
+      "flops_per_batch": 39418624,
+      "roundtrip": 1.96698213272839e-12,
+      "logdet_cancel": 0.0
+    }
+  },
+  "smoke": {
+    "seed": 9400,
+    "image": {
+      "energy_gain_C4G_minus_R14": -2.41087150243402e-11,
+      "dependence_gain_C4G_minus_R14": -1.1102230246251565e-16,
+      "R14_energy": 20.27977435288208,
+      "full_flow_energy": 20.24468811791227,
+      "positive_rate_latent_flow_energy": 20.189145947832166,
+      "fallback": "identity in both unchanged states",
+      "failure_reason": "heldout gains below frozen BIC charges"
+    },
+    "video": {
+      "energy_gain_C4G_minus_R14": 4.849383117289108e-10,
+      "dependence_gain_C4G_minus_R14": 1.6653345369377348e-15,
+      "R14_energy": 48.953889891695646,
+      "full_flow_energy": 49.09648151464254,
+      "positive_rate_latent_flow_energy": 49.21861515856158,
+      "fallback": "identity in both unchanged states",
+      "failure_reason": "state counts 39 and 27 below frozen minimum"
+    }
+  },
+  "first_failed_layer": "identification/headroom for the frozen within-state joint cross-plane family; video finite-sample support first, image heldout likelihood below frozen complexity charge",
+  "next_one_layer_diagnosis": "source-shared hierarchical estimation of a genuinely multimodal joint cross-site law with a finite proper-energy lower bound; no rank, threshold, state, or scalar-strength retuning"
+}
