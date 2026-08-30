@@ -1,0 +1,19 @@
+{
+  "candidate_set": [0.0, 0.5, 1.0, 1.5, 2.0, 3.0],
+  "changed_layer": "scalar_coupling_amplitude_only",
+  "confirmation_opened": false,
+  "decision": "AMPLITUDE_RETIRED_TARGET_MISMATCH_AND_REAL_HEADROOM_BOUNDARY",
+  "evidence_head": "645e9d6e3030f7ce07dd4152c3651a4300febba7",
+  "first_failed_layer": "source_log_score_target_mismatch_then_real_headroom_support",
+  "image_selected_gamma": 0.0,
+  "image_smoke_pass": false,
+  "known_truth_selected_gammas": [1.0, 1.0, 1.0, 1.0, 1.0],
+  "known_truth_source_gate_pass": false,
+  "parent_head": "70702985f4834a08cab60af4a190877e76c67c56",
+  "practical_energy_lcb": 0.00011570810206027512,
+  "replication_opened": false,
+  "scientific_promotion": false,
+  "systems_pass": true,
+  "video_selected_gamma": 0.0,
+  "video_smoke_pass": false
+}
