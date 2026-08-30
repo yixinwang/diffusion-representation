@@ -1,0 +1,37 @@
+{
+  "changed_layer": "source_fit_coupling_direction_only",
+  "confirmation_opened": false,
+  "decision": "SOURCE_PROPER_ENERGY_AND_FINITE_ORACLE_GATE_FAIL_REAL_DEVELOPMENT_NOT_OPENED",
+  "failed_gates": [
+    "identity_energy",
+    "r16_energy_attribution",
+    "oracle_energy_headroom"
+  ],
+  "failed_premise": "After removing copied-local score components, the residual global direction would have at least 0.005 proper-energy headroom and improve over R16 direct likelihood.",
+  "first_failed_layer": "headroom_and_target_alignment_on_the_frozen_source_teacher",
+  "frozen_finite_0p005_margin_certified": false,
+  "head": "e338a6608aa1ccc5adfa7ad0d4257b2967b3baf9",
+  "next_distinct_layer": "A new mechanism with source-identifiable residual dependence and a finite proper-energy oracle margin; direction, amplitude, rank and state retuning within the frozen R16 family are exhausted.",
+  "parent_head": "645e9d6e3030f7ce07dd4152c3651a4300febba7",
+  "parent_reproduced_exactly": true,
+  "population_oracle_diagnostic": {
+    "blocks": 20,
+    "lower": 0.004765961352963893,
+    "margin": 0.005,
+    "margin_lcb_pass": false,
+    "mean": 0.006363271945286185,
+    "samples_per_block": 100000,
+    "seed": 170017,
+    "upper": 0.007960582537608476
+  },
+  "real_development_authorized": false,
+  "real_development_opened": false,
+  "replication_seeds_opened": [],
+  "round": "RMPF-R17-orthogonalized-dependence-score-direction",
+  "selected_gammas": [1.5, 1.5, 1.5, 1.5, 1.5],
+  "source_gate_pass": false,
+  "tag": "rmpf-r17-residual-score-final-20260830",
+  "tests": "9 passed",
+  "tree": "42eda8f6d21b4f3bf4b2c9e40ea246ff073d0af5",
+  "verification": "PASS, 17 checks"
+}
