@@ -1,0 +1,20 @@
+{
+  "round": "RMPF-R13-cross-level-site-angular-feedback",
+  "exact_normalized_no_vae": true,
+  "parent_r12": "5b481cf053af3222da0593c385c8d0006cd4f842",
+  "local_scientific_head": "ec22561472577350263c27b9737d2877e8a9ba05",
+  "known_truth_C6_pass": true,
+  "systems_C6_pass": true,
+  "real_smoke_C6_both_pass": false,
+  "C7_four_state_pass": false,
+  "C8_cluster_state_all_seed_pass": false,
+  "C9_exact_state_oracle_all_seed_headroom": false,
+  "independent_projective_real_smoke_pass": false,
+  "independent_harmonic_oracle_upper_below_margin": true,
+  "first_failed_layer": "target mismatch followed by within-state approximation/representation",
+  "failed_premise": "An identifiable low-rank state-conditioned angular feedback law transfers its conditional likelihood and dependence advantage into practical whole-image/video proper-energy gain.",
+  "next_distinct_layer": "joint within-state multimodal cross-plane/site transport with a theorem directly lower-bounding the registered proper score",
+  "replication_seeds_opened": false,
+  "confirmation_opened": false,
+  "project_promotion": false
+}
