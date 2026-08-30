@@ -1,0 +1,31 @@
+{
+  "round": "RMPF-R15-source-fit-global-coarse-context",
+  "single_changed_layer": "conditioner statistic only",
+  "known_truth": {
+    "seeds": [10030,10031,10032,10033,10034],
+    "identity_minus_r15_nll_per_dim": [0.08802029787359245,0.08596898195425033,0.09007161379293456],
+    "identity_minus_r15_energy": [0.0021059939376348426,0.00011570810206027512,0.00409627977320941],
+    "identity_minus_r15_dependence_error": [0.2902713470181893,0.27678586835310526,0.30375682568327333],
+    "source_gate_pass": false,
+    "failed_gate": "practical proper-energy lower bound"
+  },
+  "systems": {
+    "image_batch_seconds": 0.031651591999889206,
+    "image_full_ratio": 0.753948807,
+    "image_systems_pass": false,
+    "video_batch_seconds": 0.023345093999978417,
+    "video_systems_pass": true
+  },
+  "real_smoke": {
+    "image_identity_fallback": true,
+    "video_identity_fallback": true,
+    "image_energy_gain": -2.41087150243402e-11,
+    "video_energy_gain": 4.849383117289108e-10,
+    "image_dependence_gain": -1.942890293094024e-16,
+    "video_dependence_gain": -5.551115123125783e-16,
+    "promotable": false
+  },
+  "replication_opened": false,
+  "confirmation_opened": false,
+  "local_head": "70702985f4834a08cab60af4a190877e76c67c56"
+}
