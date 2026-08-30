@@ -1,0 +1,27 @@
+{
+  "round": "R18-source-only-high-dependence-stratum",
+  "parent_head": "e338a6608aa1ccc5adfa7ad0d4257b2967b3baf9",
+  "seeds": [10030, 10031, 10032, 10033, 10034],
+  "candidate_tail_masses": [0.125, 0.25, 0.5],
+  "minimum_evaluation_count": 96,
+  "selected_tail_mass": null,
+  "oracle_headroom": [
+    {"tail_mass": 0.125, "estimate": 0.004019040978605304, "lower": -0.001617008348177555, "upper": 0.009655090305388164, "min_reference_count": 114, "min_generated_count": 110, "passed": false},
+    {"tail_mass": 0.25, "estimate": 0.00404555659510839, "lower": -0.005572840210070231, "upper": 0.013663953400287011, "min_reference_count": 233, "min_generated_count": 232, "passed": false},
+    {"tail_mass": 0.5, "estimate": 0.0027055600589188876, "lower": -0.0036015561205367205, "upper": 0.009012676238374496, "min_reference_count": 506, "min_generated_count": 468, "passed": false}
+  ],
+  "full_population_oracle": {"estimate": 0.002091997955587195, "lower": 0.000032591361659277, "upper": 0.004151404549515113},
+  "max_roundtrip_error": 1.7763568394002505e-15,
+  "max_logdet_cancellation_error": 2.220446049250313e-15,
+  "target_invariance_exact": true,
+  "nested_masks": true,
+  "copied_mechanism_mismatch": 0.0,
+  "parent_replay_byte_identical": true,
+  "child_replay_byte_identical": true,
+  "known_truth_wall_seconds": 13.41,
+  "known_truth_max_rss_kib": 224164,
+  "coupling_family_retired": true,
+  "real_development_opened": false,
+  "replication_opened": false,
+  "confirmation_opened": false
+}
