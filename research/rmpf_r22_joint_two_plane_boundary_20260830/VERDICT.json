@@ -1,0 +1,42 @@
+{
+  "round": "RMPF-R22-joint-two-plane-angular-copula",
+  "changed_layer": "angular coupling object only: two independent target-plane conditioners to a matched-budget rank-two joint Fourier shear conjugated around unchanged periodic RQ marginals",
+  "parent_head": "9fa16d0fefa9cc1024f394b256c8cac144a60e6c",
+  "freeze_commit": "6600379e5364a8c4c31049852846e1fe6476f400",
+  "local_scientific_head": "78228c4f214ece2676fe2c5f01cd110de4b210a1",
+  "decision": "KNOWN_TRUTH_INCREMENTAL_ENERGY_FAIL_SOURCE_FAIL_DEVELOPMENT_REPLICATION_CONFIRMATION_SEALED",
+  "deterministic": {
+    "roundtrip_max_abs": 1.84297022087776e-14,
+    "logdet_cancel_max_abs": 4.758415883543421e-13,
+    "finite_difference_logdet_max_abs": 2.199029403016084e-09,
+    "parent_fallback_mismatch": 0.0,
+    "copied_mechanism_mismatch": 0.0,
+    "learned_degrees": 18,
+    "compact_bytes": 314
+  },
+  "known_truth": {
+    "seeds": [10030,10031,10032,10033,10034],
+    "identity_energy_gain": 0.0073632607425063055,
+    "identity_energy_interval": [0.0043397376755689825,0.010386783809443629],
+    "padded_R19_energy_gain": 0.003924842024225228,
+    "padded_R19_energy_interval": [0.00023261453482156975,0.007617069513628887],
+    "padded_R19_nll_gain": 0.06427436936818438,
+    "padded_R19_dependence_gain": 0.9488855095076693,
+    "generic_nonlinear_energy_gain": 0.00014912043575945332,
+    "generic_nonlinear_energy_interval": [-0.00042798246687887403,0.0007262233383977807],
+    "pass": false
+  },
+  "source_gate": {
+    "cifar_pass": false,
+    "cifar_state0_incremental_logdet": -0.009256034728643135,
+    "cifar_state1_incremental_logdet": -0.013520369748424698,
+    "cifar_state0_pixel_energy": -9.5367431640625e-06,
+    "cifar_state1_pixel_energy": -1.9073486328125e-06,
+    "ucf_state_counts": [39,27],
+    "ucf_pass": false
+  },
+  "development_opened": false,
+  "replication_opened": false,
+  "confirmation_opened": false,
+  "next_diagnosis": "finite headroom and alias for the fixed one-direction joint shear; a distinct successor would require a symmetric or multimodal observation-aligned cross-plane copula"
+}
