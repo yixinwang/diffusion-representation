@@ -1,0 +1,42 @@
+{
+  "round": "R19-global-periodic-RQ-known-truth",
+  "parent": "ff9f95164a8fa3cac2be568857d1d01df920b9f7",
+  "seeds": [10030, 10031, 10032, 10033, 10034],
+  "decision": "ORACLE_AND_IMPLEMENTED_KNOWN_TRUTH_PASS_REALISTIC_SEPARATE_FREEZE_AUTHORIZED",
+  "oracle_identity_minus_oracle_energy": {
+    "estimate": 0.013406343042516155,
+    "lower": 0.010670396555763644,
+    "upper": 0.016142289529268668
+  },
+  "fitted_identity_minus_R19_energy": {
+    "estimate": 0.012720388709308583,
+    "lower": 0.010410515629271847,
+    "upper": 0.01503026178934532
+  },
+  "identity_minus_R19_nll_per_dim": {
+    "estimate": 0.069769,
+    "lower": 0.059745,
+    "upper": 0.079793
+  },
+  "R16_minus_R19_energy": {
+    "estimate": 0.0006374930380320442,
+    "lower": -0.00037599402020562,
+    "upper": 0.0016509800962697086
+  },
+  "R16_minus_R19_nll_per_dim": {
+    "estimate": 0.065979,
+    "lower": 0.056108,
+    "upper": 0.075850
+  },
+  "max_roundtrip": 2.9976021664879227e-15,
+  "max_logdet_cancel": 3.1041835768519377e-13,
+  "max_finite_difference_logdet_error": 8.914201599097282e-10,
+  "copy_mismatch": 0.0,
+  "learned_degrees": 14,
+  "compact_parameter_bytes": 282,
+  "R16_parameter_bytes": 392,
+  "known_truth_pass": true,
+  "realistic_development_opened": false,
+  "replication_opened": false,
+  "confirmation_opened": false
+}
