@@ -1,0 +1,41 @@
+{
+  "round": "RMPF-R20 source-known high-dependence realistic stratum",
+  "parent_head": "529da65858dc3e48da0be5b96e459c1188803202",
+  "local_head": "abc36a1b99160126271b48e5e2ee408808cadce8",
+  "changed_layer": "evidence/development regime only",
+  "source_image_gate_pass": true,
+  "source_video_gate_pass": false,
+  "image_quality_opened": true,
+  "video_quality_opened": false,
+  "image_development_pass": false,
+  "proper_energy_gain": {
+    "estimate": 0.00010104602979055244,
+    "lower": 0.000029835226748353703,
+    "upper": 0.0001816783655263165,
+    "required_lower": 0.005
+  },
+  "nll_gain": {
+    "estimate": 0.000004896257640538138,
+    "lower": -0.000011935276403837969,
+    "upper": 0.000020849947645099273
+  },
+  "dependence_gain": {
+    "estimate": 0.0409057926803425,
+    "lower": -0.0513621703920236,
+    "upper": 0.10881366849120094
+  },
+  "R19_minus_full_energy": {
+    "estimate": -0.1094365453975712,
+    "lower": -0.43519643257104634,
+    "upper": 0.13494235769376908
+  },
+  "R19_minus_latent_energy": {
+    "estimate": 0.43996286977941423,
+    "lower": 0.07779699486142927,
+    "upper": 0.801847913942097
+  },
+  "diagnosed_next_layer": "source-to-development target/headroom alignment of the source-only gate",
+  "replication_opened": false,
+  "confirmation_opened": false,
+  "decision": "SOURCE_IMAGE_PASS_REALISTIC_IMAGE_FAIL_VIDEO_UNOPENED_REPLICATION_CONFIRMATION_SEALED"
+}
