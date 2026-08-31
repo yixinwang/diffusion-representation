@@ -15,6 +15,7 @@ from qalt.observed_block import (
     declared_parent_masks,
     detail_to_blocks,
     diagnostic_sufficient_statistics,
+    fit_observed_b4_model,
     fit_observed_block_models,
     fit_scalar_gsm,
     image_haar_inverse,
@@ -177,6 +178,51 @@ def test_all_registered_scores_have_image_band_shape_and_exact_ties(synthetic_fi
     assert site_scores["b4"].shape[1] * site_scores["b4"].shape[2] == 256
     for name in ARM_NAMES:
         np.testing.assert_array_equal(image_scores[name], np.sum(site_scores[name], axis=(1, 2)))
+
+
+def test_b4_only_fitter_is_bitwise_identical_to_full_fitter(synthetic_fit) -> None:
+    coarse, blocks, models = synthetic_fit
+    progress = []
+    fitted = fit_observed_b4_model(
+        coarse,
+        blocks,
+        sample=models.sample[::-1],
+        max_iterations=80,
+        tolerance=1e-7,
+        progress=progress.append,
+    )
+
+    expected_progress = [
+        f"sample:sites={len(models.sample)}:done",
+        "b_location:done",
+        *[
+            f"b4:band={band}:stratum={stratum}:done"
+            for band in range(BAND_COUNT)
+            for stratum in range(4)
+        ],
+        "b4_only:done",
+    ]
+    assert progress == expected_progress
+    np.testing.assert_array_equal(fitted.sample, models.sample)
+    assert fitted.sample_hash == models.sample_hash
+    np.testing.assert_array_equal(fitted.boundaries, models.boundaries)
+    assert fitted.b4.location.parent_masks == models.b4.location.parent_masks
+    assert fitted.b4.location.ridge == models.b4.location.ridge
+    for candidate, reference in zip(
+        fitted.b4.location.coefficients,
+        models.b4.location.coefficients,
+    ):
+        np.testing.assert_array_equal(candidate, reference)
+    for band in range(BAND_COUNT):
+        for stratum in range(4):
+            candidate = fitted.b4.mixtures[band][stratum]
+            reference = models.b4.mixtures[band][stratum]
+            np.testing.assert_array_equal(candidate.weights, reference.weights)
+            np.testing.assert_array_equal(candidate.scales, reference.scales)
+            np.testing.assert_array_equal(candidate.shape, reference.shape)
+
+    assert fitted.parameter_counts() == {"b4": models.b4.parameter_count()}
+    assert fitted.fit_trace_export() == {"b4": models.b4.fit_trace_export()}
 
 
 def test_scoring_is_bitwise_invariant_to_image_chunking(synthetic_fit) -> None:

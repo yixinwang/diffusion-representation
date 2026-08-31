@@ -647,6 +647,91 @@ def _fit_shapes(
     return tuple(output)
 
 
+def _prepare_dense_b_fit(
+    coarse: np.ndarray,
+    blocks: np.ndarray,
+    sample: np.ndarray | None,
+    rng: np.random.Generator | None,
+    maximum_sites: int,
+    ridge: float,
+    progress: Callable[[str], None] | None,
+) -> tuple[
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    np.ndarray,
+    RidgeLocation,
+    np.ndarray,
+    tuple[tuple[np.ndarray, ...], ...],
+]:
+    """Prepare the common sample, location, residual, and shapes for B arms."""
+
+    coarse_values, block_values = _validate_inputs(coarse, blocks)
+    total_sites = len(coarse_values) * block_values.shape[1] * block_values.shape[2]
+    chosen = canonical_site_sample(total_sites, sample, rng, maximum_sites)
+    if progress is not None:
+        progress(f"sample:sites={len(chosen)}:done")
+    _, boundaries = coarse_energy_strata(coarse_values, sample=chosen)
+    strata, _ = coarse_energy_strata(coarse_values, boundaries, chosen)
+
+    b_location = fit_ridge_location(
+        coarse_values,
+        block_values,
+        declared_parent_masks("coarse"),
+        chosen,
+        ridge,
+    )
+    if progress is not None:
+        progress("b_location:done")
+    sampled_targets = block_values.reshape(-1, BAND_COUNT, COLOR_COUNT)[chosen]
+    b_residual = sampled_targets - b_location.predict_flat(coarse_values, block_values, chosen)
+    dense_shapes = _fit_shapes(b_residual, strata, True, False)
+    return (
+        coarse_values,
+        block_values,
+        chosen,
+        boundaries,
+        strata,
+        b_location,
+        b_residual,
+        dense_shapes,
+    )
+
+
+def _fit_dense_b_model(
+    location: RidgeLocation,
+    residual: np.ndarray,
+    strata: np.ndarray,
+    shapes: tuple[tuple[np.ndarray, ...], ...],
+    boundaries: np.ndarray,
+    components: int,
+    max_iterations: int,
+    tolerance: float,
+    progress: Callable[[str], None] | None,
+) -> BlockConditionalModel:
+    """Fit one dense-shape B arm from its common prepared quantities."""
+
+    mixtures, convergence = _fit_block_cells(
+        residual,
+        strata,
+        shapes,
+        components,
+        True,
+        max_iterations,
+        tolerance,
+        progress,
+        f"b{components}",
+    )
+    return BlockConditionalModel(
+        location,
+        mixtures,
+        boundaries,
+        True,
+        fit_diagnostics=convergence,
+    )
+
+
 def _fit_scalar_model(
     coarse: np.ndarray,
     blocks: np.ndarray,
@@ -728,6 +813,33 @@ class ObservedBlockModels:
         return {name: model.fit_trace_export() for name, model in self.arms().items()}
 
 
+@dataclass(frozen=True)
+class ObservedB4Fit:
+    """B4 model and the common fitting-site metadata needed to reproduce it."""
+
+    b4: BlockConditionalModel
+    boundaries: np.ndarray
+    sample: np.ndarray
+    sample_hash: str
+
+    def __post_init__(self) -> None:
+        boundaries = np.asarray(self.boundaries, dtype=np.float64).copy()
+        sample = np.asarray(self.sample, dtype=np.int64).copy()
+        boundaries.setflags(write=False)
+        sample.setflags(write=False)
+        object.__setattr__(self, "boundaries", boundaries)
+        object.__setattr__(self, "sample", sample)
+
+    def arms(self) -> dict[str, BlockConditionalModel]:
+        return {"b4": self.b4}
+
+    def parameter_counts(self) -> dict[str, dict[str, int]]:
+        return {"b4": self.b4.parameter_count()}
+
+    def fit_trace_export(self) -> dict[str, dict[str, object]]:
+        return {"b4": self.b4.fit_trace_export()}
+
+
 def _fit_diagnostic_export(
     diagnostics: GSMFitDiagnostics | ScalarFitDiagnostics,
 ) -> dict[str, object]:
@@ -737,6 +849,53 @@ def _fit_diagnostic_export(
         "initialization": int(diagnostics.initialization),
         "final_log_likelihoods": [float(value) for value in diagnostics.final_log_likelihoods],
     }
+
+
+def fit_observed_b4_model(
+    coarse: np.ndarray,
+    blocks: np.ndarray,
+    sample: np.ndarray | None = None,
+    rng: np.random.Generator | None = None,
+    maximum_sites: int = 250_000,
+    ridge: float = 1e-3,
+    max_iterations: int = 200,
+    tolerance: float = 1e-8,
+    progress: Callable[[str], None] | None = None,
+) -> ObservedB4Fit:
+    """Fit only B4, using the exact common B-arm preparation and cell order."""
+
+    (
+        _,
+        _,
+        chosen,
+        boundaries,
+        strata,
+        b_location,
+        b_residual,
+        dense_shapes,
+    ) = _prepare_dense_b_fit(
+        coarse,
+        blocks,
+        sample,
+        rng,
+        maximum_sites,
+        ridge,
+        progress,
+    )
+    b4 = _fit_dense_b_model(
+        b_location,
+        b_residual,
+        strata,
+        dense_shapes,
+        boundaries,
+        4,
+        max_iterations,
+        tolerance,
+        progress,
+    )
+    if progress is not None:
+        progress("b4_only:done")
+    return ObservedB4Fit(b4, boundaries, chosen, sample_sha256(chosen))
 
 
 def fit_observed_block_models(
@@ -752,35 +911,39 @@ def fit_observed_block_models(
 ) -> ObservedBlockModels:
     """Fit all frozen B/O/A/I arms from one canonical fitting-site sample."""
 
-    coarse_values, block_values = _validate_inputs(coarse, blocks)
-    total_sites = len(coarse_values) * block_values.shape[1] * block_values.shape[2]
-    chosen = canonical_site_sample(total_sites, sample, rng, maximum_sites)
-    if progress is not None:
-        progress(f"sample:sites={len(chosen)}:done")
-    _, boundaries = coarse_energy_strata(coarse_values, sample=chosen)
-    strata, _ = coarse_energy_strata(coarse_values, boundaries, chosen)
-
-    coarse_masks = declared_parent_masks("coarse")
-    b_location = fit_ridge_location(coarse_values, block_values, coarse_masks, chosen, ridge)
-    if progress is not None:
-        progress("b_location:done")
+    (
+        coarse_values,
+        block_values,
+        chosen,
+        boundaries,
+        strata,
+        b_location,
+        b_residual,
+        dense_shapes,
+    ) = _prepare_dense_b_fit(
+        coarse,
+        blocks,
+        sample,
+        rng,
+        maximum_sites,
+        ridge,
+        progress,
+    )
     sampled_targets = block_values.reshape(-1, BAND_COUNT, COLOR_COUNT)[chosen]
-    b_residual = sampled_targets - b_location.predict_flat(coarse_values, block_values, chosen)
-    dense_shapes = _fit_shapes(b_residual, strata, True, False)
+    coarse_masks = declared_parent_masks("coarse")
 
     def dense_model(components: int) -> BlockConditionalModel:
-        mixtures, convergence = _fit_block_cells(
+        return _fit_dense_b_model(
+            b_location,
             b_residual,
             strata,
             dense_shapes,
+            boundaries,
             components,
-            True,
             max_iterations,
             tolerance,
             progress,
-            f"b{components}",
         )
-        return BlockConditionalModel(b_location, mixtures, boundaries, True, fit_diagnostics=convergence)
 
     b1 = dense_model(1)
     b4 = dense_model(4)
