@@ -1,0 +1,11 @@
+{
+  "data_root": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py",
+  "float64_roundtrip_tolerance": 1e-10,
+  "haar_roundtrip_tolerance": 1e-06,
+  "max_iterations": 200,
+  "maximum_sites": 250000,
+  "protocol_hash": "b74b9e0187e4c68a2413fe4864797fec2b3ae1b35237785a00776f763bc1edbd",
+  "radial_invariance_tolerance": 1e-12,
+  "seed": 2100,
+  "source_commit": "a05c4ebb57d99e7e1420e17b36e761d5f7b41a5d"
+}

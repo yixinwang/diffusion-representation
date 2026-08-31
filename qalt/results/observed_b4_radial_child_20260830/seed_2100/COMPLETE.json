@@ -1,0 +1,14 @@
+{
+  "all_checks_pass": false,
+  "first_failed_layer": "fit_boundary",
+  "payload_hashes": {
+    "config.json": "148c7a898ba6f7d3391a2eb49497cfd523937b47ea1ed8faa1f8e0d6c6e5cde9",
+    "diagnostics.npz": "c1707500aacb9b8f5c317d7339e875f8f8190995a4329967d6c794f9fb52cc0b",
+    "scores.npz": "092c8036d298ae56f2b8723427e84a77abe1e084a5f0655708954b3cfd9102d8",
+    "summary.json": "9f83e2e8a2cdad2ef7f1409a651e51694ee22be45513bfcf96ae5de644ccc2fa"
+  },
+  "protocol_hash": "b74b9e0187e4c68a2413fe4864797fec2b3ae1b35237785a00776f763bc1edbd",
+  "sha256sums_hash": "9a9900d64e5a1004a59a7009faf7ee29684e845940ce1459d838e4c7bb6301ad",
+  "source_commit": "a05c4ebb57d99e7e1420e17b36e761d5f7b41a5d",
+  "status": "complete"
+}
