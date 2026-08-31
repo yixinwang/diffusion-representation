@@ -34,3 +34,13 @@ export PYTHONPATH="$PWD/qalt/src"
 ```
 
 The registered distribution-free pseudo-bound is expected to abstain because its analytic range term is much larger than `0.01`; do not change that threshold. Advancement is decided only by the frozen Welch/TOST/Holm development gates, followed by a separate untouched confirmation freeze.
+
+The exploratory optimization child is frozen in
+`qalt/theory/OBSERVED_B1_RGB_BLOCK_OPTIMIZATION_CHILD_PROTOCOL.md`. It changes
+only the common maximum EM iterations from 200 to 1,000 and reuses development
+data, so it has no confirmation coverage. Submit it to a new result directory:
+
+```bash
+MAX_ITERATIONS=1000 bash qalt/experiments/observed_b1_rgb_block/submit.sh \
+  qalt/results/observed_b1_rgb_block_optimization_child_20260830
+```

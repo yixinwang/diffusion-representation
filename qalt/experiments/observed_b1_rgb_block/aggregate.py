@@ -44,10 +44,13 @@ ARM_NAMES = (
 SCORE_KEYS = ("record_ids", "labels", *ARM_NAMES)
 SUMMARY_FIELDS = (
     "schema_version",
+    "status",
     "sites_per_band",
     "seed",
     "source_commit",
     "protocol_hash",
+    "execution_protocol_hash",
+    "max_iterations",
     "split_hash",
     "fit_input_hash",
     "holdout_input_hash",
@@ -58,9 +61,12 @@ SUMMARY_FIELDS = (
 )
 COMMON_METADATA_FIELDS = (
     "schema_version",
+    "status",
     "sites_per_band",
     "source_commit",
     "protocol_hash",
+    "execution_protocol_hash",
+    "max_iterations",
     "split_hash",
     "fit_input_hash",
     "holdout_input_hash",
@@ -95,10 +101,17 @@ def _read_summary(path: Path, expected_seed: int) -> dict[str, Any]:
         raise ValueError(f"{path} declares seed {value['seed']!r}, expected {expected_seed}")
     if value["schema_version"] != SCHEMA_VERSION:
         raise ValueError(f"{path} must declare schema_version={SCHEMA_VERSION}")
+    if value["status"] not in {
+        "adaptive_development_no_coverage",
+        "exploratory_optimization_child_no_coverage",
+    }:
+        raise ValueError(f"{path} declares an unknown study status")
     if value["sites_per_band"] != SITES_PER_BAND:
         raise ValueError(f"{path} must declare sites_per_band={SITES_PER_BAND}")
+    if value["max_iterations"] not in {200, 1_000}:
+        raise ValueError(f"{path} must declare a frozen max_iterations value")
     for field in (*COMMON_METADATA_FIELDS, "site_sample_hash"):
-        if field in {"schema_version", "sites_per_band"}:
+        if field in {"schema_version", "sites_per_band", "max_iterations"}:
             continue
         if not isinstance(value[field], str) or not value[field]:
             raise ValueError(f"{path} field {field} must be a nonempty string")
@@ -255,7 +268,7 @@ def aggregate(input_root: Path, output_dir: Path) -> dict[str, Any]:
     routes = evaluate_registered_routes(scores, labels, expected_per_class=EXPECTED_IMAGES_PER_CLASS)
     summary = {
         "schema_version": SCHEMA_VERSION,
-        "status": "adaptive_development_no_coverage",
+        "status": provenance["common"]["status"],
         "registered_seeds": list(REGISTERED_SEEDS),
         "image_count": int(len(labels)),
         "images_per_class": EXPECTED_IMAGES_PER_CLASS,

@@ -22,6 +22,14 @@ def test_frozen_protocol_hash_matches_runner_contract() -> None:
     protocol = RUNNER.PROJECT_ROOT / "qalt" / "theory" / "OBSERVED_B1_RGB_BLOCK_PROTOCOL.md"
     digest = hashlib.sha256(protocol.read_bytes()).hexdigest()
     assert digest == RUNNER.PROTOCOL_HASH
+    child = (
+        RUNNER.PROJECT_ROOT
+        / "qalt"
+        / "theory"
+        / "OBSERVED_B1_RGB_BLOCK_OPTIMIZATION_CHILD_PROTOCOL.md"
+    )
+    child_digest = hashlib.sha256(child.read_bytes()).hexdigest()
+    assert child_digest == RUNNER.OPTIMIZATION_CHILD_PROTOCOL_HASH
 
 
 def test_coefficient_build_is_chunk_invariant_and_explicit() -> None:
@@ -44,3 +52,5 @@ def test_runner_refuses_unregistered_seed_and_existing_output(tmp_path: Path) ->
     existing.mkdir()
     with pytest.raises(FileExistsError, match="refusing to overwrite"):
         RUNNER.run(2100, existing, tmp_path, "wrong")
+    with pytest.raises(ValueError, match="max_iterations must select"):
+        RUNNER.run(2100, tmp_path / "new", tmp_path, "wrong", max_iterations=201)

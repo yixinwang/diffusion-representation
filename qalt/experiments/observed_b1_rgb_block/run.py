@@ -37,6 +37,9 @@ DEFAULT_DATA = Path("/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-p
 DEVELOPMENT_SEEDS = tuple(range(2100, 2105))
 PROTOCOL_ORIGIN_COMMIT = "56ae6e0"
 PROTOCOL_HASH = "7bb11e4174c485b85a5f7f18c54acdc756494e4cf3eb93a73a042248a6fb9a7c"
+OPTIMIZATION_CHILD_PROTOCOL_HASH = "9906bb5d395e91b61065a8d5cf59b3ceb63b86c6a5090a0685411b53bc83c8fa"
+DEFAULT_MAX_ITERATIONS = 200
+OPTIMIZATION_CHILD_MAX_ITERATIONS = 1_000
 SEED_SCHEMA_VERSION = "observed_b1_rgb_block_seed_v1"
 
 
@@ -139,18 +142,42 @@ def _same_prior_check(models, seed: int, draws: int = 100_000) -> dict[str, obje
     }
 
 
-def run(seed: int, output: Path, data_root: Path, source_commit: str) -> dict[str, object]:
+def run(
+    seed: int,
+    output: Path,
+    data_root: Path,
+    source_commit: str,
+    max_iterations: int = DEFAULT_MAX_ITERATIONS,
+) -> dict[str, object]:
     started = time.perf_counter()
     if seed not in DEVELOPMENT_SEEDS:
         raise ValueError(f"seed {seed} is outside frozen development seeds {DEVELOPMENT_SEEDS}")
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing output: {output}")
+    if max_iterations not in {DEFAULT_MAX_ITERATIONS, OPTIMIZATION_CHILD_MAX_ITERATIONS}:
+        raise ValueError(
+            "max_iterations must select the frozen parent (200) or optimization child (1000)"
+        )
     actual_commit = _current_commit()
     if source_commit != actual_commit:
         raise ValueError(f"declared source commit {source_commit} != checked-out {actual_commit}")
     protocol_path = PROJECT_ROOT / "qalt" / "theory" / "OBSERVED_B1_RGB_BLOCK_PROTOCOL.md"
     if sha256_file(protocol_path) != PROTOCOL_HASH:
         raise ValueError("frozen RGB-block protocol hash mismatch")
+    if max_iterations == OPTIMIZATION_CHILD_MAX_ITERATIONS:
+        child_protocol_path = (
+            PROJECT_ROOT
+            / "qalt"
+            / "theory"
+            / "OBSERVED_B1_RGB_BLOCK_OPTIMIZATION_CHILD_PROTOCOL.md"
+        )
+        if sha256_file(child_protocol_path) != OPTIMIZATION_CHILD_PROTOCOL_HASH:
+            raise ValueError("frozen optimization-child protocol hash mismatch")
+        execution_protocol_hash = OPTIMIZATION_CHILD_PROTOCOL_HASH
+        study_status = "exploratory_optimization_child_no_coverage"
+    else:
+        execution_protocol_hash = PROTOCOL_HASH
+        study_status = "adaptive_development_no_coverage"
 
     opened_files: list[str] = []
     print("load five allowlisted CIFAR training batches", flush=True)
@@ -186,6 +213,7 @@ def run(seed: int, output: Path, data_root: Path, source_commit: str) -> dict[st
         fit_blocks,
         rng=np.random.default_rng(seed),
         maximum_sites=250_000,
+        max_iterations=max_iterations,
         progress=lambda message: print(f"model {message}", flush=True),
     )
     print("score repair holdout", flush=True)
@@ -216,12 +244,14 @@ def run(seed: int, output: Path, data_root: Path, source_commit: str) -> dict[st
         raise AssertionError("registered CIFAR detail grid must be exactly 16x16")
     summary: dict[str, object] = {
         "schema_version": SEED_SCHEMA_VERSION,
-        "status": "adaptive_development_no_coverage",
+        "status": study_status,
         "seed": seed,
         "sites_per_band": sites_per_band,
         "detail_spatial_shape": detail_spatial_shape,
         "protocol_origin_commit": PROTOCOL_ORIGIN_COMMIT,
         "protocol_hash": PROTOCOL_HASH,
+        "execution_protocol_hash": execution_protocol_hash,
+        "max_iterations": max_iterations,
         "source_commit": source_commit,
         "split_hash": stable_json_hash(split),
         "fit_size": int(len(fit_ids)),
@@ -300,6 +330,8 @@ def run(seed: int, output: Path, data_root: Path, source_commit: str) -> dict[st
                 "data_root": str(data_root),
                 "source_commit": source_commit,
                 "protocol_hash": PROTOCOL_HASH,
+                "execution_protocol_hash": execution_protocol_hash,
+                "max_iterations": max_iterations,
             },
             indent=2,
             sort_keys=True,
@@ -315,8 +347,15 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--data-root", type=Path, default=DEFAULT_DATA)
     parser.add_argument("--source-commit", required=True)
+    parser.add_argument("--max-iterations", type=int, default=DEFAULT_MAX_ITERATIONS)
     args = parser.parse_args()
-    summary = run(args.seed, args.output, args.data_root, args.source_commit)
+    summary = run(
+        args.seed,
+        args.output,
+        args.data_root,
+        args.source_commit,
+        max_iterations=args.max_iterations,
+    )
     print(json.dumps(summary, indent=2, sort_keys=True), flush=True)
 
 

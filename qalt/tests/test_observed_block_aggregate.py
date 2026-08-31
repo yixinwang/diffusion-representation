@@ -57,10 +57,13 @@ def _write_seed_artifacts(root: Path) -> dict[int, dict[str, np.ndarray]]:
         np.savez_compressed(directory / "scores.npz", **arrays)
         summary = {
             "schema_version": AGGREGATE.SCHEMA_VERSION,
+            "status": "adaptive_development_no_coverage",
             "sites_per_band": 256,
             "seed": seed,
             "source_commit": "a" * 40,
             "protocol_hash": "protocol",
+            "execution_protocol_hash": "execution-protocol",
+            "max_iterations": 200,
             "split_hash": "split",
             "fit_input_hash": "fit",
             "holdout_input_hash": "holdout",
@@ -111,6 +114,22 @@ def test_aggregate_preserves_raw_seed_scores_and_runs_frozen_statistics(tmp_path
             assert np.array_equal(archive["b4"][index], written[seed]["b4"])
 
 
+def test_aggregate_preserves_optimization_child_status(tmp_path: Path) -> None:
+    input_root = tmp_path / "child-seeds"
+    _write_seed_artifacts(input_root)
+    for seed in AGGREGATE.REGISTERED_SEEDS:
+        _rewrite_summary(
+            input_root,
+            seed,
+            status="exploratory_optimization_child_no_coverage",
+            max_iterations=1_000,
+            execution_protocol_hash="optimization-child",
+        )
+    summary = AGGREGATE.aggregate(input_root, tmp_path / "child-ensemble")
+    assert summary["status"] == "exploratory_optimization_child_no_coverage"
+    assert summary["provenance"]["common"]["max_iterations"] == 1_000
+
+
 def test_rejects_missing_or_extra_registered_seed_directory(tmp_path: Path) -> None:
     root = tmp_path / "seeds"
     _write_seed_artifacts(root)
@@ -130,6 +149,11 @@ def test_rejects_cross_seed_identity_and_common_hash_mismatches(tmp_path: Path) 
     _rewrite_summary(tmp_path / "hashes", 2102, split_hash="changed")
     with pytest.raises(ValueError, match="metadata mismatch for split_hash"):
         AGGREGATE.load_registered_artifacts(tmp_path / "hashes")
+
+    _write_seed_artifacts(tmp_path / "iterations")
+    _rewrite_summary(tmp_path / "iterations", 2102, max_iterations=1_000)
+    with pytest.raises(ValueError, match="metadata mismatch for max_iterations"):
+        AGGREGATE.load_registered_artifacts(tmp_path / "iterations")
 
 
 @pytest.mark.parametrize(

@@ -25,4 +25,5 @@ cd "$repo_root"
   --seed "$seed" \
   --output "$RESULT_ROOT/seed_$seed" \
   --data-root "$data_root" \
-  --source-commit "$SOURCE_COMMIT"
+  --source-commit "$SOURCE_COMMIT" \
+  --max-iterations "${MAX_ITERATIONS:-200}"
