@@ -8,6 +8,7 @@
 \title{Normalized Conditional Transports: Learning and Execution Checks}
 \author{Research note with independent mathematical checks}
 \date{8 September 2026}
+\hypersetup{hidelinks}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -145,12 +146,62 @@ any local predecessor graph that omits $y_1$ from the final conditional has unif
 
 A stochastic latent decoder can use the same fitted tables, graph, and Gaussian inputs and produce exactly the same distribution and computation. The implementation tests this equality. A strict advantage against every such decoder is impossible. Invertibility also gives no general semantic or equal-dimensional representation advantage over a VAE.
 
+\section{Smooth convex heads and sharper estimation error}
+A second estimator uses positive continuous response densities and continuously differentiable context features. This is the current convex implementation; its fitting guarantee is distinct from the histogram theorem and from neural flow optimization. Let fixed causal feature weights satisfy
+\begin{equation}
+ w_{jr}(y_{<j})\ge0,\qquad \sum_{r=1}^{R_j}w_{jr}(y_{<j})=1.
+\end{equation}
+Let $H_k$ be linear response hats at $k/b$, with integral weights $v_0=v_b=1/(2b)$ and $v_k=1/b$ otherwise. Define
+\begin{equation}
+ q_{a,j}(t\mid y_{<j})=\sum_r w_{jr}(y_{<j})\sum_{k=0}^b a_{g(j),r,k}H_k(t),
+ \quad \ell\le a_{g,r,k}\le U,\quad \sum_k v_k a_{g,r,k}=1.
+\end{equation}
+Here $0<\ell<1<U$. The feasible coefficient set is convex, every conditional density is positive and normalized, and the complete map $Y_j=F_{a,j}^{-1}(\Phi(Z_j)\mid Y_{<j})$ retains all $D$ Gaussian inputs. Within a response interval the density is linear, so its CDF is quadratic and has a stable scalar inverse. With continuously differentiable causal weights the exact transport is continuously differentiable. The implemented weights are quadratic tensor-product B-splines of zero to two preceding coordinates. Neural feature weights are a prospective extension, with their learning cost and approximation error unresolved.
+
+Fit the coefficient vector by normalized full-array negative log likelihood. Independent arrays are the sampling units even when sites share parameters. The Frank--Wolfe gap at a feasible returned vector bounds its empirical optimization error. Failure to reach a requested gap is recorded explicitly.
+
+\begin{proposition}
+Fix the features, graph, groups, and observation chart independently of $n$ fitting arrays. Assume the target has finite KL to one class member. Let $P_a$ count all separately fitted coefficients, let $a_*$ minimize population loss over the actual convex class, and let $\widehat a$ have empirical suboptimality bounded by $\tau$. Put
+\begin{equation}
+ B=\log(U/\ell),\qquad V_B=\frac{B^2}{B-1+e^{-B}},\qquad
+ t_n=P_a\log\!\left(1+\frac{8(U-\ell)n}{\ell}\right)+\log(1/\delta).
+\end{equation}
+With probability at least $1-\delta$,
+\begin{equation}
+ \frac{\operatorname{KL}(P\|Q_{\widehat a})-\operatorname{KL}(P\|Q_{a_*})}{D}
+ \le\left(2V_B+\frac{4B}{3}\right)\frac{t_n}{n}+2\tau+\frac1n.
+\end{equation}
+The claim holds under misspecification.
+\end{proposition}
+This bound controls additional loss incurred by fitting coefficients. The remaining approximation loss depends on frozen features and selected contexts.
+\begin{proof}
+Write
+\[
+ r_a(X)=D^{-1}\sum_j\log(q_{a_*,j}/q_{a,j}).
+\]
+Population first-order optimality implies
+\[
+ \E\left[D^{-1}\sum_j q_{a,j}/q_{a_*,j}\right]\le1.
+\]
+The arithmetic--geometric mean inequality within each array gives $\E e^{-r_a}\le1$, without coordinate independence. For $|r|\le B$, Taylor's integral identity gives
+\begin{equation}
+ e^{-r}-1+r=r^2\int_0^1(1-u)e^{-ur}\,du
+ \ge \frac{B-1+e^{-B}}{B^2}r^2.
+\end{equation}
+The resulting moment bound is $\E r_a^2\le V_B\E r_a$. One-sided Bernstein concentration and Young's inequality yield, for each fixed feasible net point,
+$\E r_a\le2P_n r_a+(2V_B+4B/3)t_n/n$ on the simultaneous net event. A feasible coefficient net of radius $\ell/(4n)$ has the stated logarithmic size; the partition of unity transfers this radius to density, and log-loss discrepancy is bounded by $1/(4n)$. Lift the empirical $\tau$-optimizer to that net and transfer back. The resulting remainder $3/(4n)$ is bounded by $1/n$.
+\end{proof}
+The theorem derives estimation error for frozen features. It does not prove that a learned neural analysis discovers sufficient image context. If discovery arrays learn a chart or features, freeze them before independent head fitting; the conditional theorem then applies to the heads alone. Neither reused development data nor a new split of previously studied data supplies fresh campaign-level confirmation.
+
+For the cosine example with parameter $0.65$, the sharper coefficient is $12.5849$, compared with $5697.3011$ from the earlier curvature bound. Even with zero optimization error, the headwise bound with simultaneous coverage is $2.8587$ nats per coordinate at 40,000 arrays after integer mesh search. The restricted independent-coordinate lower bound is $0.01600$. These sufficient bounds do not establish a practical separation. A global stochastic latent decoder can still copy the full construction exactly.
+
 \section{Executed checks and remaining work}
-The full QALT suite passed 147 tests after adding the complete neural spline generator and two flow-matching baselines. Eighteen additional conditional-CDF tests passed, including known-world inversion, conditional normalization, and an independent numerical Jacobian. The earlier PSC numerical fixture had nonlinear six-dimensional inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound $0.000185$, below the declared margin $0.005$. The radial inverse used 44 CDF iterations and was substantially slower than the legacy mixture sampler.
+The full QALT suite passed 193 tests after adding complete generators, the learned-analysis latent baseline, and strict observed-data preparation. Six additional accelerated-optimizer tests passed. Sixteen separate deterministic checks of the sharper proof and resource calculations passed. These checks include normalization, dense numerical Jacobians, frozen-analysis gradients, causal generation, and independent constrained optimization references. The earlier PSC numerical fixture had nonlinear six-dimensional inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound $0.000185$, below the declared margin $0.005$. The radial inverse used 44 CDF iterations and was substantially slower than the legacy mixture sampler.
 
 PSC job 45550810 completed the frozen covariance experiment on 5,000 reused CIFAR development images. Every fitted arm used the same training coordinates, and the official test batch remained unopened. Positive values in Table~\ref{tab:covariance} favor full covariance. The block and Student requirements failed. The descriptive intervals do not account for the earlier adaptive model search.
 
-\begin{table}[h]
+\clearpage
+\begin{table}[ht]
 \centering
 \small
 \begin{tabular}{lrrl}
@@ -170,5 +221,7 @@ The global Gaussian optimum on the same development arrays gains only $0.0000978
 
 PSC job 45552606 completed all 36 prescribed conditional-CDF cells. For the nonlinear tree with $D=8$, mean estimated KL per coordinate across three fits decreased from $0.03028$ to $0.01525$ to $0.00744$ at training sizes 256, 1,024, and 4,096; the corresponding $D=32$ values were $0.03041$, $0.01567$, and $0.00762$. These are descriptive estimates, with no empirical asymptotic-rate claim. The distant-dependence study remained above its joint lower bound $0.03201$; no plateau was established. All 38 result hashes and seven source hashes were independently checked. Source round-trip error was below $1.1\times10^{-12}$, and all 36 copied stochastic decoders returned bitwise-identical outputs. Runner time was 9.74 seconds, with no competing-method timing claim.
 
-PSC job 45552255 remains queued for the capped complete-generator synthetic pilot as of 8 September 2026, 20:18 UTC. Neither uses real-data loaders. The neural spline model's optimization is not covered by the histogram theorem. Real-image and real-video quality, matched strong latent baselines, representation probes, and untouched confirmation remain necessary for the original research goal.
+PSC job 45554441 completed 36 positive-spline cases, but only 14 reached the required $10^{-4}$ optimization gap. All 18 favorable local fits and four distant fits exhausted 500 updates. Local $D=32$ mean KL per coordinate decreased from $0.001397$ at 256 arrays to $0.000547$ at 4,096 arrays. The distant generated first/last cosine moment remained near zero, against the target $0.1625$. All numerical and copied-decoder checks passed. Independent reconstruction of saved coefficients and the published evaluation streams reproduced KL, energy, and moments within $3.4\times10^{-16}$, without refitting. It leaves all optimization and dependence failures intact.
+
+The L40S job 45552255 was canceled before execution after its estimated wait reached five days. Replacement GPU job 45554440 failed before training with a CUDA driver/runtime mismatch. A separate diagnostic is pending, and a separate unchanged one-case CPU execution is being prepared. These are execution statuses, with no neural-generator quality result. The neural model's optimization is not covered by either convex theorem. Real-image and real-video quality, matched strong latent baselines, representation probes, and untouched confirmation remain necessary for the original research goal.
 \end{document}

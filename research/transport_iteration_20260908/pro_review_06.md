@@ -1,0 +1,15 @@
+# Sixth fresh Pro review: global residual transport
+
+Conversation: https://chatgpt.com/c/6aa0722b-0694-83e9-b84b-b111717e5284
+
+The completed response reports 15 minutes 30 seconds of work. It inspected repository revision9284ebf and used the supplied PSC results; it did not run experiments. Its prompt described the GPU pilot as running, before the CUDA failure was known. The execution record gives the later failure and successful runtime diagnostic.
+
+The review agrees with the independently implemented feasible accelerated optimizer: its gradient points stay in the original positive convex class; the normalized row projection has the form clip(v-lambda*w,ell,U). The column-sum curvature bound applies because the nonnegative feature rows sum to one. The objective convergence rate does not establish the requested FW gap after500 updates. The previous36-cell outcomes remain unchanged.
+
+The nearest-neighbor conditional graph omits the distant cosine relationship. The chain-rule KL decomposition separates missing conditional mutual information from conditional fitting error. Reducing the latter cannot recover the former. The review independently obtained the pair divergence0.05520448, agreeing with the saved numerical quadrature; this value is not claimed as interval arithmetic.
+
+The proposed next mechanism is a learned invertible analysis followed by a few global conditional residual couplings, compared with a globally attending iterative residual FM on exactly the same coordinates. Both retain every residual source coordinate, use generated coarse codes, and charge the analysis. Four coupling layers can produce nonlinear global dependence, but their sufficient depth for image data is unknown. An exact stochastic latent wrapper can still copy the model and tie its quality and computation.
+
+The new component will use the existing learned pre-Haar analysis and lossless residual packing, with a global conditional rational-quadratic coupling decoder. This implementation choice reuses the existing learned analysis rather than silently introducing the proposed separate lifting implementation. Its invertibility, fine-to-code influence and packed residual interfaces have local tests. Shared-analysis comparisons isolate decoding; independent representation training would be required for a broader full-system comparison. The existing analysis is itself a full Gaussian likelihood flow, so an analysis-only Gaussian generator is an essential additional control.
+
+No scalar conditional-density theorem establishes useful approximation, learning or optimization rates for this learned neural analysis or decoder. The missing result is an implementable, finite-cost learning theorem for sufficiently simple global residual structure after learned analysis. The real-image study is a prospective mechanism check. Native CIFAR input validation, synthetic generator pilots and the completed scalar density studies supply different evidence and are not combined into a real-image superiority claim.
