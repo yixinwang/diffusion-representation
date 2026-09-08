@@ -1,0 +1,154 @@
+{
+  "config": {
+    "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-complete-cpu/local_image",
+    "seed": 3100,
+    "steps": 100000,
+    "seconds": 90.0,
+    "size": 8,
+    "channels": 1,
+    "train_size": 2048,
+    "audit_size": 256,
+    "batch": 64,
+    "width": 24,
+    "world": "local",
+    "device": "cpu"
+  },
+  "commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/tests/test_spline.py": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+    "qalt/tests/test_multiscale_flow.py": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+    "qalt/tests/test_flow_matching.py": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+    "qalt/experiments/complete_flow_pilot/run.py": "fdbf0695e5f7e42095042d8d19f0d17707cefcf3493b9fee0bc3111fd650f149",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "41f0aa81035f8aec908d8af52f7dc6bf0ab6e83c1ff8f48148fe0836b65efe35",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "4147675bb42507090e64424fa0394c58a1052eb8dcc5a1187c3bd087c6690c44",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "dbe502f46cd6fc5cb1b72fc438c2b8f7418774c6df00ea0f0810f3efbd5cce69"
+  },
+  "source_git_blobs": {
+    "qalt/src/qalt/__init__.py": "1d5ab32b96e9bbc896ccb8613d39200774a731f9",
+    "qalt/src/qalt/core.py": "d197533be24cbb0295e6f6ebdae9ba10063f5cd9",
+    "qalt/src/qalt/spline.py": "1d2f6ff0657dbdde80e19b2b83c58db5c232d0ec",
+    "qalt/src/qalt/multiscale_flow.py": "9f51ba394476fda6cd6e45387308597428252861",
+    "qalt/src/qalt/flow_matching.py": "4f8bd73587dfc2c10f65b8b26b599161ca4f6857",
+    "qalt/tests/test_spline.py": "c890c78a143efb6368aa6ef5cfabd8b44e2a2b9f",
+    "qalt/tests/test_multiscale_flow.py": "277a7021731a87470bcde1b355afdbf7ec2d5670",
+    "qalt/tests/test_flow_matching.py": "efdcb2f4b4c1f7b9f0eeea37c69c5fe76dab4ebd",
+    "qalt/experiments/complete_flow_pilot/run.py": "e411e52bca6d628108f41e123c26a67e88825370",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "6c897b85e74d4afcf529f80a69a56c0dee7d5538",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "ff771d274eb07136864a10d430b3841acffbafa1",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "482ee00bec52169aa380ef65a4350ddaafa57bbc"
+  },
+  "torch": "2.10.0+cu128",
+  "python": "3.10.9",
+  "slurm_job_id": "45558401",
+  "real_data_accessed": false,
+  "status": "synthetic_development_only",
+  "quality_advantage_established": false,
+  "cost_advantage_established": false,
+  "representation_advantage_established": false,
+  "shared_train_hash": "9a88780d7425f81900c0732008c086387f9be534cf0ce716a69a0abda0b8794f",
+  "training": {
+    "spline": {
+      "seconds": 89.98509703599848,
+      "steps": 1164,
+      "training_objective_first": 0.9564638733863831,
+      "training_objective_last": -0.4137318432331085,
+      "objective": "nats_per_coordinate",
+      "parameters": 55390,
+      "initialization_seconds": 0.026353982044383883,
+      "peak_training_allocated_bytes": null
+    },
+    "full_fm": {
+      "seconds": 90.00217243999941,
+      "steps": 15717,
+      "training_objective_first": 1.096235752105713,
+      "training_objective_last": 0.2418522834777832,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 5689,
+      "initialization_seconds": 0.0016664429567754269,
+      "peak_training_allocated_bytes": null
+    },
+    "hierarchical_fm": {
+      "seconds": 90.00006246200064,
+      "steps": 12777,
+      "training_objective_first": 1.093833088874817,
+      "training_objective_last": 0.30503958463668823,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 18463,
+      "initialization_seconds": 0.0020839970093220472,
+      "peak_training_allocated_bytes": null
+    }
+  },
+  "completed_training_arms": [
+    "spline",
+    "full_fm",
+    "hierarchical_fm"
+  ],
+  "all_fits_frozen": true,
+  "all_numerical_checks_pass": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "evaluation": {
+    "spline": {
+      "energy_score": 0.17893780758095987,
+      "mean_rms_gap": 0.0247796680778265,
+      "second_moment_gap": 0.024009879678487778,
+      "mmd2_unbiased_scale_0.1": 0.0007346117323767977,
+      "mmd2_unbiased_scale_0.3": 0.004121045007343782,
+      "mmd2_unbiased_scale_1.0": 0.0001050079105959778,
+      "generation_seconds": 0.03963139699772,
+      "velocity_evaluations": 0
+    },
+    "full_fm_heun_8": {
+      "energy_score": 0.17928872313692296,
+      "mean_rms_gap": 0.02128281071782112,
+      "second_moment_gap": 0.033291079103946686,
+      "mmd2_unbiased_scale_0.1": 0.0030137161374845164,
+      "mmd2_unbiased_scale_0.3": 0.005586068718141934,
+      "mmd2_unbiased_scale_1.0": 8.1994683890807e-05,
+      "generation_seconds": 0.09297254402190447,
+      "velocity_evaluations": 16
+    },
+    "full_fm_heun_32": {
+      "energy_score": 0.1793672345583528,
+      "mean_rms_gap": 0.021128149703145027,
+      "second_moment_gap": 0.0333586186170578,
+      "mmd2_unbiased_scale_0.1": 0.0033262955582938347,
+      "mmd2_unbiased_scale_0.3": 0.005990723978022583,
+      "mmd2_unbiased_scale_1.0": 8.813894292813984e-05,
+      "generation_seconds": 0.35369215096579865,
+      "velocity_evaluations": 64
+    },
+    "hierarchical_fm_heun_8": {
+      "energy_score": 0.17889944095002341,
+      "mean_rms_gap": 0.031952183693647385,
+      "second_moment_gap": 0.00647943839430809,
+      "mmd2_unbiased_scale_0.1": 0.00016086973600025825,
+      "mmd2_unbiased_scale_0.3": 0.0019590442166674826,
+      "mmd2_unbiased_scale_1.0": 0.000455613350673012,
+      "generation_seconds": 0.05719278799369931,
+      "velocity_evaluations": 48
+    },
+    "hierarchical_fm_heun_32": {
+      "energy_score": 0.17891991014097283,
+      "mean_rms_gap": 0.031897157430648804,
+      "second_moment_gap": 0.006994882598519325,
+      "mmd2_unbiased_scale_0.1": 0.00021903169848393536,
+      "mmd2_unbiased_scale_0.3": 0.002068224452817624,
+      "mmd2_unbiased_scale_1.0": 0.00045893319362910745,
+      "generation_seconds": 0.21520533098373562,
+      "velocity_evaluations": 192
+    }
+  },
+  "exact_stochastic_latent_copy": true,
+  "copy_training_cost": "inherits full spline training cost; no free decoder",
+  "source_roundtrip_max": 5.125999450683594e-06,
+  "logdet_cancellation_max": 3.814697265625e-05,
+  "runtime_seconds": 274.1420499359956,
+  "audit_units": "independent synthetic full tensors; no site-iid assumption",
+  "inference_timing": "single full batch, no speed superiority inference; compilation/cache and variance unresolved"
+}
