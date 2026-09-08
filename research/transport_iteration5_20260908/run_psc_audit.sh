@@ -17,7 +17,8 @@ export PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NU
 trap 'code=$?; if ((code)); then printf "failed_exit_code=%s\n" "$code" > "$OUTPUT_DIR/FAILED"; fi' EXIT
 printf 'commit=%s\nslurm_job_id=%s\n' "$EXPECTED_COMMIT" "$SLURM_JOB_ID" > "$OUTPUT_DIR/provenance.txt"
 "$PYTHON" --version >> "$OUTPUT_DIR/provenance.txt"
-sha256sum audit_checks.py test_audit_checks.py AUDIT_AND_DECISION.md DEVELOPMENT_PROTOCOL.json run_psc_audit.sh > "$OUTPUT_DIR/SOURCE_SHA256SUMS"
-"$PYTHON" -m unittest -v test_audit_checks > "$OUTPUT_DIR/tests.log" 2>&1
+sha256sum audit_checks.py test_audit_checks.py logloss_sharpening.py test_logloss_sharpening.py AUDIT_AND_DECISION.md LOGLOSS_SHARPENING.md DEVELOPMENT_PROTOCOL.json run_psc_audit.sh > "$OUTPUT_DIR/SOURCE_SHA256SUMS"
+"$PYTHON" -m unittest -v test_audit_checks test_logloss_sharpening > "$OUTPUT_DIR/tests.log" 2>&1
 "$PYTHON" audit_checks.py > "$OUTPUT_DIR/deterministic_bound_report.json"
+"$PYTHON" logloss_sharpening.py > "$OUTPUT_DIR/sharpened_bound_report.json"
 printf 'complete_deterministic_audit_only_no_training_or_data_access\n' > "$OUTPUT_DIR/COMPLETE"
