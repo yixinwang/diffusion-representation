@@ -60,3 +60,22 @@ def test_boundaries_and_causal_validation():
         PositiveSplineFlow(((), (0,)), (0, 0), (model.models[0],))
     with pytest.raises(ValueError, match='distinct'):
         PositiveSplineFlow(((), (0, 0)), (0, 1), (model.models[0], model.models[2]))
+
+
+def test_depth_batches_cross_workspace_limit_without_changing_conditional_map():
+    from scipy.special import ndtr
+    base = nonidentity_model()
+    dimension = 512
+    parents = tuple(() if i % 2 == 0 else (i-1,) for i in range(dimension))
+    model = PositiveSplineFlow(parents, tuple(i % 2 for i in range(dimension)), base.models[:2])
+    source = np.random.default_rng(811).normal(size=(257, dimension))
+    uniforms = ndtr(source)
+    expected = np.empty_like(source)
+    expected[:, ::2] = base.models[0].icdf(None, uniforms[:, ::2])
+    expected[:, 1::2] = base.models[1].icdf(expected[:, ::2, None], uniforms[:, 1::2])
+    actual, ld = model.decode(source)
+    np.testing.assert_allclose(actual, expected, atol=2e-15)
+    log_density = (base.models[0].log_prob(None, expected[:, ::2]).sum(axis=1)
+                   + base.models[1].log_prob(expected[:, ::2, None], expected[:, 1::2]).sum(axis=1))
+    log_base = -.5*(dimension*np.log(2*np.pi)+np.sum(source**2,axis=1))
+    np.testing.assert_allclose(ld, log_base-log_density, atol=2e-12)

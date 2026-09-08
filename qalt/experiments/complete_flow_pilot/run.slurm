@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=cis260243p
 #SBATCH --partition=GPU-shared
-#SBATCH --gres=gpu:l40s-48:1
+#SBATCH --gres=gpu:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4

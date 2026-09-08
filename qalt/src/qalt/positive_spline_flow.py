@@ -7,7 +7,7 @@ including roots, have fitted densities. No teacher, chart, or VAE is supplied.
 """
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import numpy as np
 from scipy.special import ndtr, ndtri
 
@@ -69,6 +69,7 @@ class PositiveSplineFlow:
     parents: tuple[tuple[int, ...], ...]
     groups: tuple[int, ...]
     models: tuple[PositiveDensitySpline, ...]
+    _decode_blocks: tuple[tuple[int, tuple[int, ...]], ...] = field(init=False, repr=False)
 
     def __post_init__(self):
         parents, groups = _graph(self.parents, self.groups)
@@ -81,6 +82,14 @@ class PositiveSplineFlow:
         object.__setattr__(self, 'parents', parents)
         object.__setattr__(self, 'groups', groups)
         object.__setattr__(self, 'models', models)
+        depths = []
+        for entry in parents:
+            depths.append(0 if not entry else 1 + max(depths[p] for p in entry))
+        blocks = {}
+        for i, (depth, group) in enumerate(zip(depths, groups)):
+            blocks.setdefault((depth, group), []).append(i)
+        object.__setattr__(self, '_decode_blocks', tuple(
+            (group, tuple(sites)) for (depth, group), sites in sorted(blocks.items())))
 
     @property
     def dimension(self):
@@ -159,10 +168,23 @@ class PositiveSplineFlow:
             raise FloatingPointError("Gaussian CDF reached a finite-precision boundary")
         rows = np.empty_like(gaussian)
         log_density = np.zeros(len(rows))
-        for i, group in enumerate(self.groups):
-            context = self._context(rows, i)
-            rows[:, i] = self.models[group].icdf(context, uniforms[:, i])
-            log_density += self.models[group].log_prob(context, rows[:, i])
+        # Coordinates at the same graph depth have no mutual dependency.
+        # Batch them within each shared model. The 65,536-row cap bounds spline
+        # query workspace; it does not alter the graph, densities, or uniforms.
+        for group, sites in self._decode_blocks:
+            count = len(sites)
+            total = len(rows) * count
+            parent_indices = np.asarray([self.parents[i] for i in sites], dtype=int)
+            for begin in range(0, total, 65536):
+                flat = np.arange(begin, min(total, begin + 65536))
+                batch, site_offset = np.divmod(flat, count)
+                coordinate = np.asarray(sites)[site_offset]
+                context = (rows[batch[:, None], parent_indices[site_offset]]
+                           if parent_indices.shape[1] else None)
+                response = self.models[group].icdf(context, uniforms[batch, coordinate])
+                rows[batch, coordinate] = response
+                contribution = self.models[group].log_prob(context, response)
+                np.add.at(log_density, batch, contribution)
         if np.any((rows <= 0) | (rows >= 1)):
             raise FloatingPointError("generated coordinates reached a finite-precision boundary")
         log_base = -.5 * (self.dimension * _LOG_2PI + np.sum(gaussian**2, axis=1))
