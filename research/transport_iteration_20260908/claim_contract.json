@@ -17,6 +17,12 @@
       "claim": "radial transport bijection with the existing GSM endpoint",
       "status": "derived_and_numerically_checked",
       "assumptions": "positive finite weights/scales; positive definite shape; exact CDF inverses for mathematical claim"
+    },
+    {
+      "claim": "continuous conditional-CDF estimator has explicit finite expected KL rate per coordinate n^(-2 beta/(2 beta+k+1))",
+      "status": "independently_checked",
+      "assumptions": "independent whole clusters; fixed observed graph; bounded positive Holder conditional densities; no omitted context; fixed C1 observation chart; constants and graph depth charged",
+      "implementation_scope": "ConditionalCDFFlow has at most one observed parent; neural spline training not covered"
     }
   ],
   "empirical_claims": {
@@ -30,5 +36,11 @@
   "confirmation": "sealed",
   "stop_rule": "preserve first failed registered criterion; do not tune on confirmation",
   "numeric_psc_job": "45551078 completed; fourteen focused tests pass",
-  "new_tests_scope": "the fourteen transport/screen tests and numerical fixture only; covariance reproduction separately uses real development data"
+  "new_tests_scope": "the fourteen transport/screen tests and numerical fixture only; covariance reproduction separately uses real development data",
+  "complete_spline_pilot": {
+    "source_commit": "adc1699357676c3d5015c5258ff3edd226a5c95c",
+    "psc_job": "45552255",
+    "status": "queued",
+    "scope": "four synthetic cases; no real data; 90 seconds per model per case"
+  }
 }
