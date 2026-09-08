@@ -56,3 +56,31 @@ The source uses separate SeedSequence purpose IDs 1/2/3 for fitting/evaluation/G
 The implementation reports the first disjoint adjacent pairs (0,1),(2,3),... rather than every sliding adjacent pair. The protocol wording “every adjacent-pair” could be read more broadly; the recorded source and outputs make this precise. This does not affect the primary joint KL or endpoint failure diagnostic.
 
 Conclusion: retain the positive local learning trend as bounded synthetic development evidence, retain all 22 optimization failures, and retain the distant-context representational failure. Neither complete execution nor low finite KL establishes image/video performance, an optimized latent-model advantage, or statistical confirmation.
+
+## Reproducibility addendum: frozen arrays and saved coefficients
+
+All 36 saved coefficient models were reconstructed locally from the frozen source primitives at `dc0169f50eb0eddfbd5bff6ace6dc2fb384347a2`. Only the already registered development and Gaussian-source streams were regenerated. No fitting, training-array regeneration, new seed/cell, PSC job, real-data access or adaptive model choice occurred.
+
+Audit environment: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1, macOS-26.6.2-arm64-arm-64bit. The original PSC environment used NumPy 2.2.6 and SciPy 1.15.3.
+
+The analytic cosine-pair joint density was evaluated independently. Fitted density was separately computed from dense quadratic context B-spline bases and linear response hats, then cross-checked against the frozen wrapper. Energy used blockwise raw Euclidean differences and upper-triangular self pairs. Whole-array KL/MCSE, all saved moment means/MCSEs, numerical checks and exact decoder copies were recomputed. Maximum wrapper-versus-independent joint log-density discrepancy: `0`.
+
+Maximum absolute discrepancies from original recorded metrics:
+
+- joint_kl: `2.77556e-17`.
+- per_coordinate_kl: `1.73472e-18`.
+- energy_score: `3.33067e-16`.
+- observed_moments: `2.77556e-17`.
+- generated_moments: `6.245e-17`.
+
+Recomputed numerical-check maxima (and maximum differences from recorded check values):
+
+- source_roundtrip_max: `1.78986e-11`; check-value discrepancy `1.07224e-10`.
+- logdet_cancellation_max: `9.1628e-11`; check-value discrepancy `5.48006e-10`.
+- normalized_density_identity_max: `7.10543e-15`; check-value discrepancy `7.10543e-15`.
+
+All 36 copied decoders remained bitwise identical within this reconstruction, and all numerical maxima remain below the frozen 1e-8 tolerance. Exact byte-hash matches against PSC: development_arrays 0/36, gaussian_source 36/36, generated_arrays 0/36. Byte-hash differences, if any, are preserved in the audit JSON and are not relabeled exact reproduction; the small metric discrepancies above quantify cross-platform numerical reproducibility.
+
+The earlier audit's inability to recompute these metrics from raw observations is resolved by this deterministic-stream reconstruction, within the documented numerical tolerances. Training traces/gaps were not recomputed because doing so would require a new fit. These checks do not cure the original 22 optimization failures, remove the distant-dependence failure, or establish real-data quality.
+
+Audit script: `work/recompute-positive-spline-results.py`. Full scalar comparisons, regenerated-array hashes and metrics: `work/psc-positive-spline-recomputed.json`.
