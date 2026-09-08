@@ -1,0 +1,12 @@
+{
+  "data_root": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py",
+  "float64_tolerance": 1e-10,
+  "haar_tolerance": 1e-06,
+  "max_iterations": 200,
+  "maximum_sites": 250000,
+  "parent_result": "/ocean/projects/mth250006p/ywang26/diffusion-transport-20260908/qalt/results/observed_b4_radial_child_20260830/seed_2100",
+  "protocol_hash": "9657fef19cd6e414f1fc19bd048b6a6934b4fddd168fc197941e385a6a2875a0",
+  "seed": 2100,
+  "source_commit": "4553e04f71c545e401409d18d82731589974760b",
+  "student_tau": 0.4722205736227421
+}

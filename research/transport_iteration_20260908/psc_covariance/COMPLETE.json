@@ -1,0 +1,15 @@
+{
+  "all_checks_pass": false,
+  "first_failed_layer": "paired_nll",
+  "payload_hashes": {
+    "config.json": "3d63073e48c88ad74bdd7f35863c7e705a2303960a86c26cec7b4b1c5caf6149",
+    "covariance_flows.npz": "9b215c023791776c6a71444faa36712731a50192a9b821624bce0a79e2472bcd",
+    "diagnostics.npz": "1fbeef5befc3921c51b416d1b9ea8fb1cfb82a94539c4a2eabb174defce6e580",
+    "scores.npz": "2b55c768d78f03fefd98dd2dfb5c5db6b14879fcc11c6090420ffe40fc4cdf5c",
+    "summary.json": "4d6d94e594ba3267aca22602048dc680a6fb9433890aa3c52059ef6755d6bb30"
+  },
+  "protocol_hash": "9657fef19cd6e414f1fc19bd048b6a6934b4fddd168fc197941e385a6a2875a0",
+  "sha256sums_hash": "be4c3c77b50cb23356206adbaf83f6919619626e77e4e0c39ae3b20a997636dc",
+  "source_commit": "4553e04f71c545e401409d18d82731589974760b",
+  "status": "complete"
+}

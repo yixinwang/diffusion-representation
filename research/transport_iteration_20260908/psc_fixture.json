@@ -1,0 +1,54 @@
+{
+  "status": "numerical_fixture_only",
+  "real_data_accessed": false,
+  "test_data_accessed": false,
+  "seed": 20260908,
+  "source_commit": "db4429e9f43e837fa808385a3e4d57bbd23ec6ce",
+  "git_status": "",
+  "source_sha256": {
+    "qalt/src/qalt/radial_transport.py": "48b19fe803d4739d6c65c4bda38c91bc5822c8a2a4868269f72b0b1066100800",
+    "qalt/src/qalt/rgb_block.py": "7df1b3627a4b0f858846aa51173c588f7f89150034561f434d98f650b2bb8880",
+    "qalt/src/qalt/output_screen.py": "d397f885f74e33e877a3d7bfed480978e980d488ab8d8d7839cd9fdc0122117e",
+    "qalt/experiments/transport_validation/run.py": "1056fcb04b4e8f0c5f8c03f8325498833e785d418bb4269a9bb9de347c640bea"
+  },
+  "python": "3.10.9",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "platform": "Linux-4.18.0-553.111.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "slurm_job_id": "45551078",
+  "base_vectors": 4096,
+  "base_dimension": 3,
+  "timing_seconds": {
+    "radial": [
+      0.1784428940154612,
+      0.17389974294928834,
+      0.1775141759426333
+    ],
+    "legacy": [
+      0.020039185998030007,
+      0.0006201969808898866,
+      0.00053421501070261
+    ]
+  },
+  "radial_iterations": 44,
+  "relative_root_bracket": 9.999371552239978e-13,
+  "roundtrip_max": 1.660005466419534e-12,
+  "logdet_cancellation_max": 9.15356679342949e-12,
+  "nonlinear_six_dimensional_roundtrip_max": 2.1671553440683056e-12,
+  "screen": {
+    "n_source_pairs": 2048,
+    "mean_displacement": 8.680914120861606e-05,
+    "declared_displacement_bound": 0.00021650635094610965,
+    "distance_scale": 8.0,
+    "alpha": 0.05,
+    "family_size": 1,
+    "mean_displacement_upper": 9.266434702373588e-05,
+    "absolute_energy_score_change_upper": 0.00018532869404747177,
+    "requested_margin": 0.005,
+    "reject_margin": true,
+    "quality_established": false,
+    "assumptions": "finite first moments; frozen generators; iid paired sources; a priori almost-sure bound; prespecified family"
+  },
+  "quality_advantage_established": false,
+  "cost_advantage_established": false
+}

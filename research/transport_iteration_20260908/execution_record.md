@@ -15,3 +15,11 @@ The source-only numerical runner initially failed on JSON serialization of a Num
 ChatGPT launched three separate Pro conversations before displaying a temporary request limit. The saved conversation links identify the work; complete Pro reviews remain pending retrieval.
 
 The GitHub research branch was published at `5b58f34`, including the seven earlier PSC commits. Job `45550810` was verified running on node `r277`.
+
+Completed runs:
+
+PSC job 45550810 completed the frozen covariance experiment in 182.68 seconds of runner time. First failed criterion: paired_nll. The full layer beats B4 but fails its block and Student requirements. All result files were retrieved through an SSH archive after the SFTP transfer service closed its connection. The archive checksums were independently verified; no result content changed. The large diagnostics array remains on PSC, with its hash in the published manifest.
+
+PSC job 45551078 completed at db4429e with fourteen focused tests passing and numerical round-trip errors below 2.2e-12. Source-only fixture output is published verbatim in psc_fixture.json. Both jobs have finished; neither accessed the official CIFAR test batch.
+
+The covariance source review identified one unused failure-reporting defect: an exception during later diagnostics could retain an earlier stage name. This completed run raised no such exception; its ordered summary correctly records paired_nll as the first failure. The frozen runner was not changed.

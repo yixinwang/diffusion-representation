@@ -1,6 +1,6 @@
 # September 8 transport and observation-score iteration
 
-The requested joint quality, speed, and representation advantage remains unestablished. This iteration repairs a sampler's invertibility, supplies a way to reject output corrections too small for an energy-score target, and resumes the previously frozen covariance experiment on PSC.
+The requested joint quality, speed, and representation advantage remains unestablished. This iteration repairs a sampler's invertibility, supplies a way to reject output corrections too small for an energy-score target, and evaluates the previously frozen covariance experiment on PSC.
 
 ## Existing evidence and scope
 
@@ -37,12 +37,18 @@ The algorithmic-method writing comparison used hash-verified ranges from Rangana
 
 The novelty review remains conservative. Conditional multiscale factorization is established prior work; Guth et al. (2023), *Conditionally Strongly Log-Concave Generative Models*, Section 2, provides a closely related factorization and conditional learning/sampling analysis ([primary paper](https://proceedings.mlr.press/v202/guth23a/guth23a.pdf)). The present repair uses elementary radial probability transforms and energy-score inequalities. No priority claim is made. An unrestricted stochastic latent decoder can implement the same conditional law and tie it.
 
-## Next decision
+## Completed PSC results and next decision
 
-Inspect the frozen PSC covariance result and its first failed criterion. Conditional means, conditional covariance, and higher-order direction errors require different interventions. Any new intervention requires a fresh Pro conversation, a checked quantitative model result, a prospective development specification, and fair controls. Untouched confirmation stays closed until the required development comparisons pass.
+The covariance child completed as job `45550810` at source `4553e04`, with first failed criterion `paired_nll`. It gained 0.3184877 nats/detail over B4, gained -0.00000284 over block covariance, and gained -0.1834003 over Student. The block and Student comparisons failed. The local runtime ratios passed. The model still failed second-moment, band-share, band-correlation, and radial-PIT checks. The independent score recomputation reproduces all per-image contrasts and statistical decisions and verifies all payload hashes.
 
-## PSC execution record
+The holdout Gaussian optimum offers only 0.00009782 nats/detail above fitted full covariance on these same development arrays. This excludes closing the observed Student gap by another global zero-mean covariance fit on this chart. It is a same-array diagnostic, with no population coverage claim.
 
-The frozen covariance child was submitted as job `45550358`, at source `4553e04f71c545e401409d18d82731589974760b`, from an isolated worktree. The first submission was rejected before allocation because 8 GiB exceeded the 2,000 MiB-per-core limit for four CPUs. Resubmission requests 8,000 MiB, below the frozen 8 GiB ceiling. No code, data, threshold, or method changed.
+The numerical fixture completed as PSC job `45551078` at source `db4429e`. All 14 focused tests passed. The nonlinear six-dimensional round-trip error was 2.17e-12. The radial inverse remains substantially slower than the legacy sampler. The exact fixture and source hashes are in `psc_fixture.json`.
 
-ChatGPT subsequently displayed a temporary too-many-requests restriction on all three launched conversations. Their final reviews have not yet been retrieved. No Pro conclusion is credited before it can be read and checked.
+All three Pro responses have now been read. Their mathematical conclusions agree with the limited interpretation above. Pro 1 proposes a complete learned multiscale conditional spline flow; its coarse distribution must also be learned. The proposed construction uses the conditional factorization of Wavelet Flow, and a stochastic latent decoder can copy it exactly. Pro 2 derives a directional output-energy exclusion bound. Pro 3 verifies the covariance algebra and predicts failure if full covariance does not surpass block covariance and the fixed Student rival. None ran our PSC jobs or verified source that was not yet published at their review time.
+
+A fresh fourth Pro iteration is developing a complete observation-only generative experiment after this failed covariance result. It must quantify learning and approximation under local conditional structure, include a distant-dependence failure case, learn the coarse law, and include the exact stochastic-latent copy. No previously used image split will be relabeled as untouched confirmation.
+
+## Execution record
+
+The initial eight-GiB submission exceeded the PSC four-core memory limit and was rejected before allocation. Job `45550358` then exited before data access because the batch environment omitted the result path. Explicit environment export corrected that launch issue for `45550810`; the method, thresholds, and data rules were unchanged. See `execution_record.md` for the complete startup record. The original dirty PSC checkout remains untouched; separate worktrees isolate both completed jobs.
