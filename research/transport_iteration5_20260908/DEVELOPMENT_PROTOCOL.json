@@ -1,0 +1,102 @@
+{
+  "status": "prospective_specification_no_real_data_runner_or_results",
+  "reviewed_pin": "ffec36e35c325d36bc9cdfc73b04305f6f485205",
+  "frozen_pilots_unchanged": ["adc1699357676c3d5015c5258ff3edd226a5c95c", "ffec36e35c325d36bc9cdfc73b04305f6f485205"],
+  "candidate": "learned_invertible_analysis_plus_frozen_neural_gate_conditional_CDF_heads",
+  "proof_scope": "independent_array_convex_head_oracle_bound_conditional_on_discovery; unknown_context_approximation_not_certified",
+  "execution_gate": {
+    "require_completed_registered_synthetic_correctness": true,
+    "require_implemented_reviewed_strong_latent_control": true,
+    "require_frozen_realdata_runner_commit_and_manifest_hashes": true,
+    "permit_official_test_access": false,
+    "permit_additional_toy_world_search": false
+  },
+  "data": {
+    "first_dataset": "CIFAR_original_32x32_RGB",
+    "fit_count": 40000,
+    "repair_count": 5000,
+    "excluded_discovery_count": 5000,
+    "preserve_existing_manifest_IDs": true,
+    "internal_fit_split": {"discovery": 20000, "head_fit": 20000},
+    "internal_split_rule": "sort existing fit IDs by SHA256('diffrep5-inner:' + ID), first 20000 discovery; do not change any outer role",
+    "repair_status": "already_seen_reused_exploratory_development_not_fresh_validation",
+    "excluded_discovery_access": false,
+    "official_CIFAR_test_access": false,
+    "UCF_before_CIFAR_development_pass": false,
+    "UCF_preserved_counts": {"train_clips": 300, "val_clips": 30, "sealed_test_clips": 75},
+    "UCF_independence": "original_source_groups; clip_count_is_not_independence_when_groups_repeat",
+    "UCF_sealed_test_access": false,
+    "discovery_independence_guard": "Do not reuse an analysis/gate checkpoint trained on the head-fit arrays. Prior adaptive research use is not erased by this internal split; no fresh-sample confirmation claim."
+  },
+  "candidate_head": {
+    "shared_feature_gates_per_group": 32,
+    "response_intervals": 64,
+    "lower_density_floor": 0.05,
+    "upper_density_ceiling": 64.0,
+    "context_gate_constraint": "nonnegative_sum_one_and_strictly_preceding_coordinates_only",
+    "architecture_and_group_graph": "must_be_explicitly_frozen_in_runner_before_data_access; not implemented by this audit",
+    "head_optimizer": "convex_NLL_with_feasible_Frank_Wolfe_certificate",
+    "max_empirical_gap_nats_per_coordinate": 0.0001,
+    "identity_head_included": true,
+    "claim_target_meets_density_bounds": false,
+    "claim_neural_dictionary_inherits_Holder_sieve_rate": false
+  },
+  "controls": [
+    "same_learned_analysis_plus_globally_dependent_stochastic_latent_FM",
+    "analysis_only_identity_prior_zero_velocity_FM",
+    "competent_full_image_UNet_or_attention_FM_same_training_observations",
+    "exact_copied_stochastic_latent_decoder_equality_control",
+    "independently_optimized_invertible_analysis_latent_FM_before_positive_promotion"
+  ],
+  "baseline_requirements": {
+    "globally_dependent_nonlinear_decoder": true,
+    "no_independent_detail_restriction": true,
+    "full_D_Gaussian_prior_including_decoder_noise": true,
+    "same_permitted_observations_and_features": true,
+    "no_unmatched_external_pretraining": true,
+    "Heun_actual_NFE_grid": [16, 32, 64, 128],
+    "hierarchical_cost": "sum all field calls at their actual tensor sizes; do not report steps as NFE",
+    "small_pilot_three_convolution_baseline_sufficient": false
+  },
+  "budget": {
+    "screen_training_seeds": [77101],
+    "additional_seeds_only_after_screen_pass": [77102, 77103],
+    "accelerator": "same_L40S_or_same_single_declared_GPU_for_every_arm",
+    "training_cap_seconds_per_deployable_pipeline": 7200,
+    "budget_is_prospective_not_a_runtime_prediction": true,
+    "charge": ["analysis_learning", "context_learning", "head_or_FM_training", "all_failed_fits", "hyperparameter_search", "preprocessing", "latent_feature_cache_construction"],
+    "shared_analysis_cost": "count fully in each deployable pipeline even if physically trained once for attribution",
+    "common_checkpoints_budget_fractions": [0.25, 0.5, 1.0],
+    "inference_report_batches": [1, 64],
+    "inference_repetitions": 20,
+    "timing": "synchronize; separate cold and warm; include all transforms, decoder, prior generation and transfers",
+    "memory": "peak allocated and reserved plus serialized model/cache bytes; remove unrelated resident models"
+  },
+  "evaluation": {
+    "generation": "complete_unconditional_observation_arrays_from_shared_D_dimensional_Gaussian_inputs",
+    "reference": "same_existing_5000_seen_repair_images",
+    "generated_count_per_bank": 5000,
+    "independent_generation_banks_per_fitted_model": 2,
+    "primary_quality": "raw_unscaled_KID_with_identical_fixed_features_and_unbiased_estimator",
+    "secondary_quality": ["FID_at_5000_not_published_50000_FID", "feature_precision_and_recall", "memorization_nearest_neighbor_audit", "multiscale_dependence_checks"],
+    "model_diagnostics": ["per_complete_array_head_NLL", "floor_ceiling_saturation", "CDF_inverse_residual", "tail_rejections", "complete_pipeline_roundtrip", "context_ablation"],
+    "training_randomness": "retain_each_training_seed; generation_banks_do_not_create_independent_training_replicates",
+    "uncertainty_status": "paired_image_bank_and_training_seed_descriptives_on_reused_development; not_fresh_confirmation"
+  },
+  "proposed_development_go_rule": {
+    "rule_status": "new_prospective_practical_margins_not_existing_registered_thresholds",
+    "quality": "against both competent full-image FM and strongest independently fitted latent control: KID gain >= max(0.001, 0.10 * control_raw_KID) on each seed and generation bank",
+    "headroom": "a nonpositive/noise-dominated control KID cannot support a relative-gain claim; mark that component inconclusive, not passed",
+    "latency": "candidate warm batch1 median <= 0.75 times the best-quality qualifying latent control at its declared solver setting",
+    "throughput": "candidate warm batch64 throughput not lower than that control",
+    "training": "all stages inside equal 7200-second pipeline budget; no cheap-head-only accounting",
+    "memory": "candidate peak at same batch <= 1.05 times latent control",
+    "recall": "feature recall drop no more than 0.02 absolute",
+    "identity_control": "must also compare to analysis-only; an unnecessary correction is not a win",
+    "baseline_competence": "active implementation or unresolved solver/training-budget failures make positive comparisons inconclusive",
+    "copy": "bitwise equal samples and density by identical computation; do not demand a strict win over the copy",
+    "required_replication": "screen plus both additional predeclared training seeds and independent-analysis control",
+    "pass_authorizes": "UCF_development_design_only_not_sealed_tests",
+    "failure_action": "retain_failure_and_stop_this_candidate; no_relaxed_margin_or_new_toy_substitute"
+  }
+}
