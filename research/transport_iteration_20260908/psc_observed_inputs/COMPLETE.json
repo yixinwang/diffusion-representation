@@ -1,0 +1,12 @@
+{
+  "payload_hashes": {
+    "data_ledger.json": "381a6526fd29008917b6ae7752965d60d6aea19a95bc3917c08d0678b44ec533",
+    "fit_numerical_checks.json": "747ff93fd3bbccf9d86b6ef38335f34923a73784f26b29c6169ec8f9d55fa89e",
+    "provenance.json": "054e615c9fbd2b1c6a1d723bfa2d982b35fee022d84b90f1fa9f5ef9090f351d",
+    "record_ids.json": "29225d3081455bb4e7f97e7c731dda08c08f498a5c9debafc03d348fe62ae359",
+    "seen_repair_numerical_checks.json": "ac7bc0a245057f369fe82851597d267f24172d918018c9fce86ded5c8fab57cf",
+    "summary.json": "935d329792e9ad79642b3ba8a0b363ce4795bff3d16adc51211adbd988cbc68b"
+  },
+  "source_commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "status": "input_readiness_checks_passed"
+}

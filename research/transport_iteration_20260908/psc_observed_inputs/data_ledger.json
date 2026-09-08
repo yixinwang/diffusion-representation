@@ -1,0 +1,92 @@
+{
+  "adaptive_history": "repair split is recycled development; original discovery remains excluded",
+  "allow_noncanonical_fixture": false,
+  "canonical_dataset_verified": true,
+  "dataset": "cifar10-training",
+  "dequantization": "PCG64(int.from_bytes(digest,'little')); U=(uint32_integer+0.5)/2**32; X=(pixel+U)/256",
+  "dequantization_salt": "observed-flow-cifar-dequantization-v1",
+  "dequantization_variability": "one fixed draw per role and record, shared by all methods and training seeds",
+  "dtype": "float64",
+  "file_allowlist": [
+    "data_batch_1",
+    "data_batch_2",
+    "data_batch_3",
+    "data_batch_4",
+    "data_batch_5"
+  ],
+  "files": [
+    {
+      "name": "data_batch_1",
+      "path": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_1",
+      "sha256": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+      "size_bytes": 31035704
+    },
+    {
+      "name": "data_batch_2",
+      "path": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_2",
+      "sha256": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+      "size_bytes": 31035320
+    },
+    {
+      "name": "data_batch_3",
+      "path": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_3",
+      "sha256": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+      "size_bytes": 31035999
+    },
+    {
+      "name": "data_batch_4",
+      "path": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_4",
+      "sha256": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+      "size_bytes": 31035696
+    },
+    {
+      "name": "data_batch_5",
+      "path": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_5",
+      "sha256": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+      "size_bytes": 31035623
+    }
+  ],
+  "fit_dequantized_sha256": "0a7fd8e9749781bb8d97db29ad55e4e98efd0d062b076a9182edc1bfcadb2523",
+  "fit_ids_sha256": "88ea4c565f898f8ed6722f0140ef7ccf69003126d7a070e79b42e472c7a197f4",
+  "fit_per_class": 400,
+  "fit_repair_intersection": 0,
+  "fit_selected_uint8_sha256": "9a2720979e142c651a5ba32b6f0428eb0b9cf484047e9d192ea2d2ffa510e7a3",
+  "fit_size": 4000,
+  "full_partition_id_sha256": {
+    "excluded_discovery": "fdae72b0fe8edff6fc12a1ee6f23e9dfc5d0f2cdb37b20399aa3b5d33ab6c360",
+    "fit": "4f002c7cfe2e3d1ca54a7c8847982941d655060e6989a66f87094e4d632be457",
+    "repair_holdout": "ced1fb315bba0eeb81c03b6f2fb296afd3208cb02a7cff6dc513327708ea8939"
+  },
+  "full_split_counts": {
+    "excluded_discovery": 5000,
+    "fit": 40000,
+    "repair_holdout": 5000
+  },
+  "full_split_sha256": "814c2280cea33403d9370b02ea12c83df3a5f89bbbf593567fed6e960ef321e7",
+  "label_usage": "split and class quotas only; no labels returned to models",
+  "ledger_sha256": "c34ed6d7c13d1d1af1bedaacc5aa193559aa34931d067131022a9501d81d0dcc",
+  "numpy_version": "2.2.6",
+  "opened_files": [
+    "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_1",
+    "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_2",
+    "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_3",
+    "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_4",
+    "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py/data_batch_5"
+  ],
+  "record_id_convention": "zero-based ordered concat data_batch_1 through data_batch_5",
+  "record_key_encoding": "ASCII salt|role|five-digit-zero-padded-record-id; SHA256",
+  "repair_dequantized_sha256": "587a5fd9b63fa694599d615993b1c69e1da0c29ed6ad555239da7ba0b45d64a9",
+  "repair_ids_sha256": "da0870e250bc25661e566a4cdf460f64e2e58765d217f7f4490b4f88d3e8d082",
+  "repair_per_class": 100,
+  "repair_selected_uint8_sha256": "0943ad6454823a4693f7094089c50473b367143aca6ac2b34398f60257ef32eb",
+  "repair_size": 1000,
+  "schema_version": 1,
+  "selected_discovery_intersection": 0,
+  "selection_salt": "observed-flow-cifar-selection-v1",
+  "shape_per_record": [
+    3,
+    32,
+    32
+  ],
+  "test_data_accessed": false
+}

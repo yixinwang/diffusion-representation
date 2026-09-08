@@ -1,0 +1,18 @@
+{
+  "all_checked_tensors_finite": true,
+  "coordinates_per_record": 3072,
+  "float32_boundary_interpretation": "count is a precision diagnostic; outputs are not reused as strict-unit-cube inputs or clipped",
+  "float32_logit_cast_error_max": 5.910226619221248e-07,
+  "float32_logit_roundtrip_limit": 1e-06,
+  "float32_logit_sigmoid_roundtrip_max": 9.198038242175244e-08,
+  "float32_logits_raw_bytes_sha256": "dfdec82891d7f2ee176bcc28fd2262d149fbea975e80263dd520fe39ab82a828",
+  "float32_sigmoid_rounded_boundary_count": 3,
+  "float64_log_jacobian_cancellation_max": 1.8189894035458565e-12,
+  "float64_logit_sigmoid_roundtrip_max": 1.1102230246251565e-16,
+  "float64_logits_raw_bytes_sha256": "6813cbd5322a33c3d638462fc79d6426ab9687ca586a3cd6f791a2d7e076a346",
+  "float64_per_image_log_jacobian_raw_bytes_sha256": "5ee937c8bd7c7bdf23c7707d9f627742b06a44cea0243ae2b7af80a3ad8a0949",
+  "float64_roundtrip_limit": 1e-12,
+  "passed": true,
+  "record_count": 4000,
+  "unit_cube_input_strictly_interior": true
+}

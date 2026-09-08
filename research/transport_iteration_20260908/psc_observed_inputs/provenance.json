@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "chunk_size": 64,
+    "coordinate_count": 3072,
+    "fit_count": 4000,
+    "float32_logit_roundtrip_limit": 1e-06,
+    "float64_roundtrip_limit": 1e-12,
+    "repair_count": 1000,
+    "soft_deadline_seconds": 270
+  },
+  "data_root": "/ocean/datasets/community/cifar/cifar-10/cifar-10-batches-py",
+  "generation_performed": false,
+  "hostname": "r227.ib.bridges2.psc.edu",
+  "jacobian": "per-image sum[-log(X)-log1p(-X)] in float64; retained explicitly by future likelihood code",
+  "kind": "input_readiness_only_no_generative_results",
+  "numpy": "2.2.6",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "pro5_twenty_thousand_split_executed": false,
+  "python": "3.10.9",
+  "quality_statistics_computed": false,
+  "scipy": "1.15.3",
+  "slurm_job_id": "45558402",
+  "source_commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/data/observed_manifest_v1.json": "8c0ae7a0c11a61876bf1be39ebe85c800afabe19969bfec770a6181a205b9995",
+    "qalt/experiments/observed_flow_pilot/PROTOCOL.md": "5c11e41ebca58093e7e26bca915f6b69f95422eb7427e14ea439fb4d5b1e3239",
+    "qalt/experiments/observed_flow_pilot/check_data.py": "9f1bb550c3ebeed90f20db9bd3563e765117d7e41d42ed924badf0c8542e9f46",
+    "qalt/experiments/observed_flow_pilot/run_data_check.slurm": "78400b0f4f7e5ecf8717cd95169ba69eedbbc6338fa4bf381e7d1b96df524ac3",
+    "qalt/src/qalt/data_integrity.py": "8e950adfc29135dd1dedf60bb4a9b1886c8e4f88383c3bca14aa9e795ab1eabf",
+    "qalt/src/qalt/observed_flow_data.py": "6b97cef92d50cd24b288706c9121f3f1341416fd3f06ffd1d2bafeaac92273c3"
+  },
+  "test_data_accessed": false,
+  "training_performed": false,
+  "transformation": "float64 X -> log(X)-log1p(-X) in float64 -> cast logits to float32, identically for all methods"
+}
