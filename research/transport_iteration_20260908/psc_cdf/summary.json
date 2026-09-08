@@ -1,0 +1,8 @@
+{
+  "all_numerical_checks_pass": true,
+  "cells_completed": 36,
+  "interpretation": "Development-only MC density errors; no rate fit or latent superiority claim.",
+  "peak_rss_native": 53940,
+  "peak_rss_units": "KiB",
+  "wall_seconds": 9.738017032039352
+}

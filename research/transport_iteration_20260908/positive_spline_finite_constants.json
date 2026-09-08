@@ -1,0 +1,80 @@
+{
+  "rho": 0.65,
+  "m": 0.35,
+  "M": 1.65,
+  "H": 25.66097144283233,
+  "ell": 0.175,
+  "U": 3.3,
+  "A": 135.36162436094054,
+  "K": 5697.301099151185,
+  "delta": 0.05,
+  "groups": 2,
+  "optimization_gap_assumed_zero": true,
+  "independent_model_per_coordinate_floor": 0.01600378787878788,
+  "results": [
+    {
+      "n": 256,
+      "best_integer_bins_up_to_20000": 3,
+      "upper_bound": 6051.417054787113,
+      "approximation_term": 1292.611594330326,
+      "estimation_term": 4758.801554206787,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1024,
+      "best_integer_bins_up_to_20000": 4,
+      "upper_bound": 2414.6671986320666,
+      "approximation_term": 408.9903872685797,
+      "estimation_term": 2005.675834800987,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 4096,
+      "best_integer_bins_up_to_20000": 5,
+      "upper_bound": 948.4432915915244,
+      "approximation_term": 167.52246262521024,
+      "estimation_term": 780.9205848256892,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 40000,
+      "best_integer_bins_up_to_20000": 7,
+      "upper_bound": 203.68733471220796,
+      "approximation_term": 43.60747152884482,
+      "estimation_term": 160.07983818336314,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1000000,
+      "best_integer_bins_up_to_20000": 11,
+      "upper_bound": 23.861192541411793,
+      "approximation_term": 7.151256003056923,
+      "estimation_term": 16.70993553835487,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1000000000,
+      "best_integer_bins_up_to_20000": 33,
+      "upper_bound": 0.2624477438284975,
+      "approximation_term": 0.08828711114885089,
+      "estimation_term": 0.1741606316796466,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1000000000000,
+      "best_integer_bins_up_to_20000": 102,
+      "upper_bound": 0.0029564273822113444,
+      "approximation_term": 0.0009672803803312387,
+      "estimation_term": 0.0019891470008801056,
+      "below_restricted_independent_floor": true
+    },
+    {
+      "n": 10000000000000,
+      "best_integer_bins_up_to_20000": 148,
+      "upper_bound": 0.0006625680685594434,
+      "approximation_term": 0.00021822585533931167,
+      "estimation_term": 0.0004443422131201317,
+      "below_restricted_independent_floor": true
+    }
+  ]
+}

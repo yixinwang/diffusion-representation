@@ -1,0 +1,52 @@
+{
+  "config": {
+    "bins_rule": "ceil(n**0.25)",
+    "bisection_steps": 52,
+    "dimensions": [
+      8,
+      32
+    ],
+    "evaluation_size": 4096,
+    "sample_size": 256,
+    "seeds": [
+      7101,
+      7102,
+      7103
+    ],
+    "theta": 0.65,
+    "train_sizes": [
+      256,
+      1024,
+      4096
+    ],
+    "wall_budget_seconds": 570,
+    "worlds": [
+      "tree",
+      "distant"
+    ]
+  },
+  "cost_advantage_established": false,
+  "numpy": "2.2.6",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9",
+  "quality_advantage_established": false,
+  "real_data_accessed": false,
+  "scipy": "1.15.3",
+  "slurm_job_id": "45552606",
+  "source_commit": "ffec36e35c325d36bc9cdfc73b04305f6f485205",
+  "source_hashes": {
+    "qalt/experiments/conditional_cdf_validation/PROTOCOL.md": "d9034dd9e939dc5a1e9c4d2500fb5a7a56a7afcb57738df5f5b6a3ddb47dfa03",
+    "qalt/experiments/conditional_cdf_validation/run.py": "722a4f28b358c9f9b20a87396782f42ed844b301f3d6d566ed012e028fd8ad85",
+    "qalt/experiments/conditional_cdf_validation/run.slurm": "373eff70057c6296c0c31c99d6ca8fd078d93a77b9690e91a8ae12c7a1e206a9",
+    "qalt/src/qalt/conditional_cdf.py": "14e0f5c1e36f0c5262f542886b115a0c827e5661626b16b8839e0c70f5947ada",
+    "qalt/tests/test_conditional_cdf.py": "af3b616aefbd69812f28b16231022ccbb84145ec3039dd5c2b8f3075bc5dcf30",
+    "qalt/tests/test_conditional_cdf_validation.py": "018431f7abd69b9a8a3d4feab064ec8aac42262a42ff42a14b62055a5fea4a52",
+    "research/transport_iteration_20260908/conditional_learnability.md": "4d0ecda660a621bbef9e1601b820828cdd3c5c09e519ede7fbd965bdd71913be"
+  },
+  "test_data_accessed": false,
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

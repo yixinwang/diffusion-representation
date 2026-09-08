@@ -5,13 +5,13 @@
 \newtheorem{proposition}{Proposition}
 \newcommand{\E}{\mathbb E}
 \newcommand{\R}{\mathbb R}
-\title{Invertible Mixture Transport and Output-Score Checks}
+\title{Normalized Conditional Transports: Learning and Execution Checks}
 \author{Research note with independent mathematical checks}
 \date{8 September 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-A normalized mixture sampler can discard source information, and an improvement in a few latent coordinates can have negligible effect on an image-level score. We give an invertible radial realization of an existing Gaussian scale mixture and a source-only upper bound on energy-score change. A smooth, non-Gaussian example shows that normalized output-score gain can decay as the fourth inverse power of dimension despite a fixed active-coordinate discrepancy. Numerical checks verify inversion and reject a deliberately small synthetic correction. These results support correctness and early rejection. They establish no improvement over latent diffusion in image quality, runtime, or representation.
+We give an invertible realization of an existing scale mixture, an output-energy exclusion bound, and a learned conditional-CDF transport with explicit finite-sample KL risk under bounded local conditional complexity. All constructions retain a full-dimensional Gaussian source. Independent checks cover inverse maps, Jacobians, and the statistical unit of observation. A real-data covariance experiment improves its parent but fails against block and Student controls. These results establish restricted mathematical and numerical properties. They do not establish superior image generation, video generation, efficiency, or representation relative to latent diffusion.
 \end{abstract}
 
 \section{An invertible realization of the existing mixture}
@@ -75,8 +75,100 @@ Normalization by $\sqrt{m+2}$ gives order $(m+2)^{-4}$. To verify the coefficien
 
 This example explains how a real active-coordinate improvement can become small in a global score. It does not establish that the previous image experiments have its symmetry or decay rate. It motivates measuring output effects directly before promoting a latent dependence result.
 
-\section{Executed checks and remaining work}
-Fourteen transport and displacement tests passed locally, including extreme-tail inversion, an independent finite-difference Jacobian, and source-only score bounds. Twenty-three existing covariance tests also passed. A nonlinear six-dimensional numerical fixture had maximum inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound of $0.000185$, below the predeclared margin $0.005$.
+\section{A learned conditional transport with a finite risk bound}
+The radial construction fixes an endpoint law. We now give a different estimator whose endpoint is learned from observations. This estimator supplies a checked learning guarantee; it does not justify the optimization of the separate neural spline model.
 
-The radial transport used 44 inverse-CDF iterations and was much slower than the legacy mixture sampler in the local timing check. No efficiency claim follows. The unchanged, previously frozen covariance experiment on PSC uses adaptive CIFAR development data and a held-fixed Student control. It addresses residual cross-band dependence. Full-image generation, video generation, matched latent-model comparisons, and untouched confirmation remain necessary for the original goal.
+Let $X^{(1)},\ldots,X^{(n)}$ be independent complete observations. Each image or video clip is one statistical unit. A fixed $C^1$ diffeomorphism maps observations to $Y\in(0,1)^D$. Fix an ordered observed-coordinate graph, with context $C_j$ containing $k_j\leq k$ predecessors of coordinate $j$. Assume
+\begin{equation}
+ p(y)=\prod_{j=1}^D p_j(y_j\mid c_j),\qquad
+ a\leq p_j(t\mid c)\leq A,
+\end{equation}
+where $0<a\leq1\leq A<\infty$. For $0<\beta\leq1$, assume
+\begin{equation}
+ |p_j(t\mid c)-p_j(t'\mid c')|
+ \leq L\|(t,c)-(t',c')\|^\beta.
+\end{equation}
+The chart and graph must be fixed independently of these observations, or their learning requires a separate argument. No independence among coordinates is assumed.
+
+Divide each response and context axis into $b$ equal bins. For a context cell $l$, let $N_l$ count its observed clusters and $N_{lr}$ count responses in bin $r$. Fit
+\begin{equation}
+ \widehat\pi_{lr}=\frac{N_{lr}+1}{N_l+b}.
+\end{equation}
+At an observed context $c$, interpolate the response densities at neighboring context-cell centers with nonnegative multilinear weights summing to one. Clamp contexts to the nearest center at the boundary. The resulting density $\widetilde q_j(t\mid c)$ is positive and normalized, continuous in $c$, and constant within each response bin.
+
+\begin{proposition}
+Suppose the marginal density of $C_j$ is bounded below by $a_{c,j}>0$. The interpolated estimator $\widetilde Q=\prod_j\widetilde q_j$ satisfies
+\begin{equation}
+ \E_{\mathrm{train}}\operatorname{KL}(P\|\widetilde Q)
+ \leq \sum_{j=1}^D\left\{
+ \frac{L^2(1+9k_j/4)^\beta}{a}b^{-2\beta}
+ +\frac{b^{k_j}(b-1)}{(n+1)a_{c,j}}\right\}.
+\end{equation}
+Under the factorization and lower conditional bound above, $a_{c,j}=a^{k_j}$ is valid. For bounded constants and fixed $k$, choosing $b$ of order $n^{1/(2\beta+k+1)}$ gives expected KL per coordinate of order $n^{-2\beta/(2\beta+k+1)}$.
+\end{proposition}
+This bound derives fitting and approximation error from observed sample size and regularity. Total joint KL retains its factor $D$. A small per-coordinate error alone does not establish a small full-image error.
+
+\begin{proof}
+For a fixed context cell with $s$ observations and true response-bin probabilities $\pi_r$, the binomial reciprocal identity gives
+\begin{equation}
+ \E\frac1{N_r+1}\leq\frac1{(s+1)\pi_r}.
+\end{equation}
+Jensen's inequality bounds each category's expected log ratio by
+$\log((s+b)/(s+1))\leq(b-1)/(s+1)$. The bound is independent of the category, so it also holds when weighted by the response probabilities at a neighboring query context. If a cell has target probability $w_l$, then
+\begin{equation}
+ \E\frac1{N_l+1}\leq\frac1{(n+1)w_l}
+ \leq\frac{b^{k_j}}{(n+1)a_{c,j}}.
+\end{equation}
+Every point of an interpolating context cell lies within $3/(2b)$ per context axis of the query. Response-bin distance is bounded by $1/b$. The H\"older condition and $\operatorname{KL}(p\|q)\leq\int(p-q)^2/q$ bound approximation error by the first term. Convexity of KL in its second density permits averaging over interpolation weights. Sum the conditional bounds by the joint KL chain rule. Finally, each selected-coordinate density conditional on earlier selected coordinates averages a full preceding-coordinate conditional bounded below by $a$, giving the context lower bound $a^{k_j}$.
+\end{proof}
+
+The complete sampling algorithm takes $Z\sim\mathcal N_D(0,I)$ and, in graph order, sets
+\begin{equation}
+ Y_j=\widetilde F_j^{-1}(\Phi(Z_j)\mid C_j),
+\end{equation}
+where $\Phi$ is the standard Gaussian CDF and $\widetilde F_j$ integrates the fitted conditional density. Each CDF is continuous and strictly increasing. Its inverse is piecewise linear in the response probability. The complete triangular map is continuous and invertible, with the change-of-variables density almost everywhere. It is not generally globally $C^1$ at knots. All $D$ source coordinates are retained.
+
+Tables require order $Db^{k+1}$ storage. Counting costs order $nD(k+1)$ plus table construction. Generation by interpolated-CDF binary search costs order $D2^k(k+\log b)$, plus the observation chart. Graph depth controls sequential sampling: a chain has depth $D$, while a balanced bounded-branching tree has depth of order $\log D$. These operation counts include no measured advantage over a neural decoder.
+
+For a concrete nonlinear, non-Gaussian example, take a uniform root and tree conditionals
+\begin{equation}
+ p_j(t\mid c)=1+\theta\cos(2\pi c)\cos(2\pi t),\qquad |\theta|<1.
+\end{equation}
+Their strictly increasing conditional CDFs are
+$t+\theta\cos(2\pi c)\sin(2\pi t)/(2\pi)$. The theorem gives expected KL per coordinate of order $n^{-1/2}$ for this one-parent Lipschitz model. The implementation supports zero or one parent, matching this example.
+
+The omitted-context failure is equally explicit. For
+\begin{equation}
+ p_\theta(y)=1+\theta\cos(2\pi y_1)\cos(2\pi y_D),
+\end{equation}
+any local predecessor graph that omits $y_1$ from the final conditional has uniform true local conditionals and an irreducible joint KL of at least $\theta^2/[8(1+|\theta|)]$. The complete derivation and finite histogram-comparison constants are in the accompanying mathematical note. Those comparisons concern a specified estimator; they do not prove a separation from trained latent diffusion.
+
+A stochastic latent decoder can use the same fitted tables, graph, and Gaussian inputs and produce exactly the same distribution and computation. The implementation tests this equality. A strict advantage against every such decoder is impossible. Invertibility also gives no general semantic or equal-dimensional representation advantage over a VAE.
+
+\section{Executed checks and remaining work}
+The full QALT suite passed 147 tests after adding the complete neural spline generator and two flow-matching baselines. Eighteen additional conditional-CDF tests passed, including known-world inversion, conditional normalization, and an independent numerical Jacobian. The earlier PSC numerical fixture had nonlinear six-dimensional inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound $0.000185$, below the declared margin $0.005$. The radial inverse used 44 CDF iterations and was substantially slower than the legacy mixture sampler.
+
+PSC job 45550810 completed the frozen covariance experiment on 5,000 reused CIFAR development images. Every fitted arm used the same training coordinates, and the official test batch remained unopened. Positive values in Table~\ref{tab:covariance} favor full covariance. The block and Student requirements failed. The descriptive intervals do not account for the earlier adaptive model search.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lrrl}
+\toprule
+Comparator & Gain (nats/detail) & Required gain & Decision\\
+\midrule
+B4 parent & $0.3184877$ & $>0.01$ & Pass\\
+Block covariance & $-0.0000028$ & $>0.01$ & Fail\\
+Fixed Student & $-0.1834003$ & $>-0.01$ & Fail\\
+\bottomrule
+\end{tabular}
+\caption{Completed adaptive-development covariance comparison. Full covariance adds no material benefit over block covariance and remains below Student.}
+\label{tab:covariance}
+\end{table}
+
+The global Gaussian optimum on the same development arrays gains only $0.00009782$ nats/detail above fitted full covariance. It cannot close the observed Student deficit within that model class on these arrays. Its calculation supplies no population coverage and selects no fitted model. Source, score, and result hashes were verified independently.
+
+PSC job 45552606 completed all 36 prescribed conditional-CDF cells. For the nonlinear tree with $D=8$, mean estimated KL per coordinate across three fits decreased from $0.03028$ to $0.01525$ to $0.00744$ at training sizes 256, 1,024, and 4,096; the corresponding $D=32$ values were $0.03041$, $0.01567$, and $0.00762$. These are descriptive estimates, with no empirical asymptotic-rate claim. The distant-dependence study remained above its joint lower bound $0.03201$; no plateau was established. All 38 result hashes and seven source hashes were independently checked. Source round-trip error was below $1.1\times10^{-12}$, and all 36 copied stochastic decoders returned bitwise-identical outputs. Runner time was 9.74 seconds, with no competing-method timing claim.
+
+PSC job 45552255 remains queued for the capped complete-generator synthetic pilot as of 8 September 2026, 20:18 UTC. Neither uses real-data loaders. The neural spline model's optimization is not covered by the histogram theorem. Real-image and real-video quality, matched strong latent baselines, representation probes, and untouched confirmation remain necessary for the original research goal.
 \end{document}

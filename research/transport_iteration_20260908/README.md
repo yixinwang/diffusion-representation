@@ -21,7 +21,7 @@ The initial numerical runner failed while serializing a NumPy Boolean. The scree
 
 ## Fresh ChatGPT Pro conversations
 
-All three were launched through the signed-in ChatGPT page with the visible `6 Pro` selection. Each is a distinct conversation.
+The first three were launched through the signed-in ChatGPT page with the visible `6 Pro` selection. Each is a distinct conversation.
 
 1. [Conditional flow construction and strongest baselines](https://chatgpt.com/c/6aa05d00-b5a8-83e9-b027-551012e78bcc).
 2. [Observation-space mechanism after R20--R22 failures](https://chatgpt.com/c/6aa05d79-8a20-83e9-9e12-b6e9c4e52a25).
@@ -52,3 +52,13 @@ A [fresh fourth Pro iteration](https://chatgpt.com/c/6aa0633a-e1f8-83e9-812d-73b
 ## Execution record
 
 The initial eight-GiB submission exceeded the PSC four-core memory limit and was rejected before allocation. Job `45550358` then exited before data access because the batch environment omitted the result path. Explicit environment export corrected that launch issue for `45550810`; the method, thresholds, and data rules were unchanged. See `execution_record.md` for the complete startup record. The original dirty PSC checkout remains untouched; separate worktrees isolate both completed jobs.
+
+## Completed conditional learning and the next implementation
+
+PSC job `45552606` completed all 36 frozen conditional-CDF cells at revision `ffec36e`; all result and source hashes were independently checked. Tree density error per coordinate decreased from approximately 0.0303 to 0.0075 across training sizes 256 to 4,096. This descriptive trend does not establish an asymptotic rate. The distant-context study remains subject to a positive joint information-loss floor. Every stochastic latent copy tied bitwise. Raw records and the independent review are in `psc_cdf/` and `psc_cdf_review.md`.
+
+The fourth Pro response is complete. It suggests positive spline densities with a convex likelihood objective, supplying an explicit optimization gap. The reviewed theorem is in `positive_spline_learning.md`. Its large finite constants fail to certify a practical separation at ordinary dataset sizes, as shown in `positive_spline_finite_constants.md` and its companion JSON. The theorem does not apply to the neural model simply because both use splines.
+
+`positive_density_spline.py` implements quadratic context bases and positive linear response densities; `positive_spline_flow.py` supplies the complete Gaussian-to-observed-coordinate transport, including fitted root densities and shared conditional groups. Fitting counts independent arrays separately from correlated pooled sites. Independent numerical references verify inversion, Jacobians, normalization, constrained minimization, and optimization gaps. The full QALT suite passes 175 tests. A test invocation initially omitted the local package path and failed collection; the corrected environment passed.
+
+A [fresh fifth Pro conversation](https://chatgpt.com/c/6aa06c18-b268-83ea-8f3b-e5f7890bb8db) is reviewing finite practical guarantees and a strong real-data comparison. PSC GPU job `45552255` remains queued at this update. No real-image or video generation advantage has been established.
