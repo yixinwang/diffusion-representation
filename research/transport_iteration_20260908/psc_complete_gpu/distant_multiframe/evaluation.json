@@ -1,0 +1,52 @@
+{
+  "spline": {
+    "energy_score": 0.1884034443079412,
+    "mean_rms_gap": 0.024891968816518784,
+    "second_moment_gap": 0.018452726304531097,
+    "mmd2_unbiased_scale_0.1": 0.0002633178423392421,
+    "mmd2_unbiased_scale_0.3": 0.0027824799130722333,
+    "mmd2_unbiased_scale_1.0": 5.395829034782196e-05,
+    "generation_seconds": 0.031433049007318914,
+    "velocity_evaluations": 0
+  },
+  "full_fm_heun_8": {
+    "energy_score": 0.18853754782667403,
+    "mean_rms_gap": 0.02653057873249054,
+    "second_moment_gap": 0.035134654492139816,
+    "mmd2_unbiased_scale_0.1": 0.00043268917565636184,
+    "mmd2_unbiased_scale_0.3": 0.0028518319432417893,
+    "mmd2_unbiased_scale_1.0": 0.00019445383630034563,
+    "generation_seconds": 0.01555718999588862,
+    "velocity_evaluations": 16
+  },
+  "full_fm_heun_32": {
+    "energy_score": 0.1885558236602016,
+    "mean_rms_gap": 0.02593335136771202,
+    "second_moment_gap": 0.03498882055282593,
+    "mmd2_unbiased_scale_0.1": 0.0005012716471622918,
+    "mmd2_unbiased_scale_0.3": 0.003028561618208969,
+    "mmd2_unbiased_scale_1.0": 0.00017582559556594823,
+    "generation_seconds": 0.01618933695135638,
+    "velocity_evaluations": 64
+  },
+  "hierarchical_fm_heun_8": {
+    "energy_score": 0.18905605809351467,
+    "mean_rms_gap": 0.03200738877058029,
+    "second_moment_gap": 0.014636389911174774,
+    "mmd2_unbiased_scale_0.1": 0.0005989583386495703,
+    "mmd2_unbiased_scale_0.3": 0.004922476001147369,
+    "mmd2_unbiased_scale_1.0": 0.0005186428714361035,
+    "generation_seconds": 0.015879796002991498,
+    "velocity_evaluations": 48
+  },
+  "hierarchical_fm_heun_32": {
+    "energy_score": 0.18913493687929803,
+    "mean_rms_gap": 0.03190692514181137,
+    "second_moment_gap": 0.015094956383109093,
+    "mmd2_unbiased_scale_0.1": 0.0007752023486500299,
+    "mmd2_unbiased_scale_0.3": 0.005357864061935391,
+    "mmd2_unbiased_scale_1.0": 0.0005239227068742913,
+    "generation_seconds": 0.04113018698990345,
+    "velocity_evaluations": 192
+  }
+}

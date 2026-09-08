@@ -1,0 +1,32 @@
+{
+  "spline": {
+    "seconds": 90.01044144300977,
+    "steps": 1959,
+    "training_objective_first": 0.957339346408844,
+    "training_objective_last": -0.36708998680114746,
+    "objective": "nats_per_coordinate",
+    "parameters": 55390,
+    "initialization_seconds": 0.005380279966630042,
+    "peak_training_allocated_bytes": 6535168
+  },
+  "full_fm": {
+    "seconds": 89.99958484998206,
+    "steps": 51706,
+    "training_objective_first": 1.046339988708496,
+    "training_objective_last": 0.39799559116363525,
+    "objective": "velocity_mse_per_coordinate",
+    "parameters": 5689,
+    "initialization_seconds": 0.0016147650312632322,
+    "peak_training_allocated_bytes": 2639360
+  },
+  "hierarchical_fm": {
+    "seconds": 89.99821290897671,
+    "steps": 24800,
+    "training_objective_first": 1.0490024089813232,
+    "training_objective_last": 0.23755107820034027,
+    "objective": "velocity_mse_per_coordinate",
+    "parameters": 18463,
+    "initialization_seconds": 0.002957831951789558,
+    "peak_training_allocated_bytes": 1534976
+  }
+}

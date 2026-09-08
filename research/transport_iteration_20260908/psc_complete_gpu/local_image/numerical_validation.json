@@ -1,0 +1,7 @@
+{
+  "exact_stochastic_latent_copy": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "source_roundtrip_max": 4.887580871582031e-06,
+  "logdet_cancellation_max": 3.0517578125e-05
+}

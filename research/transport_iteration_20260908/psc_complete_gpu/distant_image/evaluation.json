@@ -1,0 +1,52 @@
+{
+  "spline": {
+    "energy_score": 0.18889642943638715,
+    "mean_rms_gap": 0.032954972237348557,
+    "second_moment_gap": 0.017400488257408142,
+    "mmd2_unbiased_scale_0.1": 0.0005452829912992625,
+    "mmd2_unbiased_scale_0.3": 0.0038070551268241104,
+    "mmd2_unbiased_scale_1.0": 0.0004513460803747815,
+    "generation_seconds": 0.03073290002066642,
+    "velocity_evaluations": 0
+  },
+  "full_fm_heun_8": {
+    "energy_score": 0.18964665960236538,
+    "mean_rms_gap": 0.03554308041930199,
+    "second_moment_gap": 0.03533904626965523,
+    "mmd2_unbiased_scale_0.1": 0.0022761681739108287,
+    "mmd2_unbiased_scale_0.3": 0.007077180588905163,
+    "mmd2_unbiased_scale_1.0": 0.0007169568657521275,
+    "generation_seconds": 0.019100538978818804,
+    "velocity_evaluations": 16
+  },
+  "full_fm_heun_32": {
+    "energy_score": 0.1896699253908445,
+    "mean_rms_gap": 0.0355340950191021,
+    "second_moment_gap": 0.035374224185943604,
+    "mmd2_unbiased_scale_0.1": 0.0022767176298793355,
+    "mmd2_unbiased_scale_0.3": 0.007219903001821071,
+    "mmd2_unbiased_scale_1.0": 0.0007237309192786867,
+    "generation_seconds": 0.016699161962606013,
+    "velocity_evaluations": 64
+  },
+  "hierarchical_fm_heun_8": {
+    "energy_score": 0.18872941690133854,
+    "mean_rms_gap": 0.03315555304288864,
+    "second_moment_gap": 0.012294910848140717,
+    "mmd2_unbiased_scale_0.1": 0.00034887377880339285,
+    "mmd2_unbiased_scale_0.3": 0.0024427922231605725,
+    "mmd2_unbiased_scale_1.0": 0.0004690029476774882,
+    "generation_seconds": 0.016238973999861628,
+    "velocity_evaluations": 48
+  },
+  "hierarchical_fm_heun_32": {
+    "energy_score": 0.18872028867818214,
+    "mean_rms_gap": 0.03296070173382759,
+    "second_moment_gap": 0.012315581552684307,
+    "mmd2_unbiased_scale_0.1": 0.00033094913208095433,
+    "mmd2_unbiased_scale_0.3": 0.0024194899612244303,
+    "mmd2_unbiased_scale_1.0": 0.0004624169414197965,
+    "generation_seconds": 0.043161384004633874,
+    "velocity_evaluations": 192
+  }
+}

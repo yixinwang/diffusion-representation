@@ -1,0 +1,631 @@
+2.10.0+cu128 Tesla V100-SXM2-32GB
+..................                                                       [100%]
+18 passed in 10.67s
+spline {'seconds': 90.00383377104299, 'steps': 1364, 'training_objective_first': 0.9516128301620483, 'training_objective_last': -0.38365474343299866, 'objective': 'nats_per_coordinate', 'parameters': 55390, 'initialization_seconds': 0.00664227397646755, 'peak_training_allocated_bytes': 6535168}
+full_fm {'seconds': 89.99985906103393, 'steps': 51662, 'training_objective_first': 1.0890130996704102, 'training_objective_last': 0.33134225010871887, 'objective': 'velocity_mse_per_coordinate', 'parameters': 5689, 'initialization_seconds': 0.001261978002730757, 'peak_training_allocated_bytes': 2639360}
+hierarchical_fm {'seconds': 90.0002261089976, 'steps': 25389, 'training_objective_first': 1.0851836204528809, 'training_objective_last': 0.2857649624347687, 'objective': 'velocity_mse_per_coordinate', 'parameters': 18463, 'initialization_seconds': 0.002194811007939279, 'peak_training_allocated_bytes': 1534976}
+{
+  "config": {
+    "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-complete-gpu-retry/local_image",
+    "seed": 3100,
+    "steps": 100000,
+    "seconds": 90.0,
+    "size": 8,
+    "channels": 1,
+    "train_size": 2048,
+    "audit_size": 256,
+    "batch": 64,
+    "width": 24,
+    "world": "local",
+    "device": "cuda"
+  },
+  "commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/tests/test_spline.py": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+    "qalt/tests/test_multiscale_flow.py": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+    "qalt/tests/test_flow_matching.py": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+    "qalt/experiments/complete_flow_pilot/run.py": "fdbf0695e5f7e42095042d8d19f0d17707cefcf3493b9fee0bc3111fd650f149",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "41f0aa81035f8aec908d8af52f7dc6bf0ab6e83c1ff8f48148fe0836b65efe35",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "4147675bb42507090e64424fa0394c58a1052eb8dcc5a1187c3bd087c6690c44",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "dbe502f46cd6fc5cb1b72fc438c2b8f7418774c6df00ea0f0810f3efbd5cce69"
+  },
+  "source_git_blobs": {
+    "qalt/src/qalt/__init__.py": "1d5ab32b96e9bbc896ccb8613d39200774a731f9",
+    "qalt/src/qalt/core.py": "d197533be24cbb0295e6f6ebdae9ba10063f5cd9",
+    "qalt/src/qalt/spline.py": "1d2f6ff0657dbdde80e19b2b83c58db5c232d0ec",
+    "qalt/src/qalt/multiscale_flow.py": "9f51ba394476fda6cd6e45387308597428252861",
+    "qalt/src/qalt/flow_matching.py": "4f8bd73587dfc2c10f65b8b26b599161ca4f6857",
+    "qalt/tests/test_spline.py": "c890c78a143efb6368aa6ef5cfabd8b44e2a2b9f",
+    "qalt/tests/test_multiscale_flow.py": "277a7021731a87470bcde1b355afdbf7ec2d5670",
+    "qalt/tests/test_flow_matching.py": "efdcb2f4b4c1f7b9f0eeea37c69c5fe76dab4ebd",
+    "qalt/experiments/complete_flow_pilot/run.py": "e411e52bca6d628108f41e123c26a67e88825370",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "6c897b85e74d4afcf529f80a69a56c0dee7d5538",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "ff771d274eb07136864a10d430b3841acffbafa1",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "482ee00bec52169aa380ef65a4350ddaafa57bbc"
+  },
+  "torch": "2.10.0+cu128",
+  "python": "3.10.9",
+  "slurm_job_id": "45558567",
+  "real_data_accessed": false,
+  "status": "synthetic_development_only",
+  "quality_advantage_established": false,
+  "cost_advantage_established": false,
+  "representation_advantage_established": false,
+  "shared_train_hash": "9a88780d7425f81900c0732008c086387f9be534cf0ce716a69a0abda0b8794f",
+  "training": {
+    "spline": {
+      "seconds": 90.00383377104299,
+      "steps": 1364,
+      "training_objective_first": 0.9516128301620483,
+      "training_objective_last": -0.38365474343299866,
+      "objective": "nats_per_coordinate",
+      "parameters": 55390,
+      "initialization_seconds": 0.00664227397646755,
+      "peak_training_allocated_bytes": 6535168
+    },
+    "full_fm": {
+      "seconds": 89.99985906103393,
+      "steps": 51662,
+      "training_objective_first": 1.0890130996704102,
+      "training_objective_last": 0.33134225010871887,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 5689,
+      "initialization_seconds": 0.001261978002730757,
+      "peak_training_allocated_bytes": 2639360
+    },
+    "hierarchical_fm": {
+      "seconds": 90.0002261089976,
+      "steps": 25389,
+      "training_objective_first": 1.0851836204528809,
+      "training_objective_last": 0.2857649624347687,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 18463,
+      "initialization_seconds": 0.002194811007939279,
+      "peak_training_allocated_bytes": 1534976
+    }
+  },
+  "completed_training_arms": [
+    "spline",
+    "full_fm",
+    "hierarchical_fm"
+  ],
+  "all_fits_frozen": true,
+  "all_numerical_checks_pass": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "evaluation": {
+    "spline": {
+      "energy_score": 0.1789485846233199,
+      "mean_rms_gap": 0.028162216767668724,
+      "second_moment_gap": 0.019114026799798012,
+      "mmd2_unbiased_scale_0.1": 0.00045249495064512285,
+      "mmd2_unbiased_scale_0.3": 0.003463131028077715,
+      "mmd2_unbiased_scale_1.0": 0.00025002298839726933,
+      "generation_seconds": 0.04061017098138109,
+      "velocity_evaluations": 0
+    },
+    "full_fm_heun_8": {
+      "energy_score": 0.17964212476218971,
+      "mean_rms_gap": 0.025659659877419472,
+      "second_moment_gap": 0.03391556814312935,
+      "mmd2_unbiased_scale_0.1": 0.003631051490444036,
+      "mmd2_unbiased_scale_0.3": 0.006884914631930084,
+      "mmd2_unbiased_scale_1.0": 0.0002776400485928754,
+      "generation_seconds": 0.6968602080014534,
+      "velocity_evaluations": 16
+    },
+    "full_fm_heun_32": {
+      "energy_score": 0.17976137315972915,
+      "mean_rms_gap": 0.025582656264305115,
+      "second_moment_gap": 0.033781763166189194,
+      "mmd2_unbiased_scale_0.1": 0.0042287415122593715,
+      "mmd2_unbiased_scale_0.3": 0.007447438714819343,
+      "mmd2_unbiased_scale_1.0": 0.0002885033011577054,
+      "generation_seconds": 0.015874909004196525,
+      "velocity_evaluations": 64
+    },
+    "hierarchical_fm_heun_8": {
+      "energy_score": 0.17888330026680882,
+      "mean_rms_gap": 0.02883368916809559,
+      "second_moment_gap": 0.006847578566521406,
+      "mmd2_unbiased_scale_0.1": 0.0005330797449385923,
+      "mmd2_unbiased_scale_0.3": 0.0024313219945468756,
+      "mmd2_unbiased_scale_1.0": 0.00031428921417142597,
+      "generation_seconds": 0.01593459100695327,
+      "velocity_evaluations": 48
+    },
+    "hierarchical_fm_heun_32": {
+      "energy_score": 0.17893478520353756,
+      "mean_rms_gap": 0.028714625164866447,
+      "second_moment_gap": 0.0073136864230036736,
+      "mmd2_unbiased_scale_0.1": 0.0008065108757612412,
+      "mmd2_unbiased_scale_0.3": 0.0026777466846625853,
+      "mmd2_unbiased_scale_1.0": 0.00031653725922953235,
+      "generation_seconds": 0.04151926899794489,
+      "velocity_evaluations": 192
+    }
+  },
+  "exact_stochastic_latent_copy": true,
+  "copy_training_cost": "inherits full spline training cost; no free decoder",
+  "source_roundtrip_max": 4.887580871582031e-06,
+  "logdet_cancellation_max": 3.0517578125e-05,
+  "runtime_seconds": 277.04698815598385,
+  "audit_units": "independent synthetic full tensors; no site-iid assumption",
+  "inference_timing": "single full batch, no speed superiority inference; compilation/cache and variance unresolved"
+}
+spline {'seconds': 90.01044144300977, 'steps': 1959, 'training_objective_first': 0.957339346408844, 'training_objective_last': -0.36708998680114746, 'objective': 'nats_per_coordinate', 'parameters': 55390, 'initialization_seconds': 0.005380279966630042, 'peak_training_allocated_bytes': 6535168}
+full_fm {'seconds': 89.99958484998206, 'steps': 51706, 'training_objective_first': 1.046339988708496, 'training_objective_last': 0.39799559116363525, 'objective': 'velocity_mse_per_coordinate', 'parameters': 5689, 'initialization_seconds': 0.0016147650312632322, 'peak_training_allocated_bytes': 2639360}
+hierarchical_fm {'seconds': 89.99821290897671, 'steps': 24800, 'training_objective_first': 1.0490024089813232, 'training_objective_last': 0.23755107820034027, 'objective': 'velocity_mse_per_coordinate', 'parameters': 18463, 'initialization_seconds': 0.002957831951789558, 'peak_training_allocated_bytes': 1534976}
+{
+  "config": {
+    "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-complete-gpu-retry/distant_image",
+    "seed": 3101,
+    "steps": 100000,
+    "seconds": 90.0,
+    "size": 8,
+    "channels": 1,
+    "train_size": 2048,
+    "audit_size": 256,
+    "batch": 64,
+    "width": 24,
+    "world": "distant",
+    "device": "cuda"
+  },
+  "commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/tests/test_spline.py": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+    "qalt/tests/test_multiscale_flow.py": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+    "qalt/tests/test_flow_matching.py": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+    "qalt/experiments/complete_flow_pilot/run.py": "fdbf0695e5f7e42095042d8d19f0d17707cefcf3493b9fee0bc3111fd650f149",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "41f0aa81035f8aec908d8af52f7dc6bf0ab6e83c1ff8f48148fe0836b65efe35",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "4147675bb42507090e64424fa0394c58a1052eb8dcc5a1187c3bd087c6690c44",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "dbe502f46cd6fc5cb1b72fc438c2b8f7418774c6df00ea0f0810f3efbd5cce69"
+  },
+  "source_git_blobs": {
+    "qalt/src/qalt/__init__.py": "1d5ab32b96e9bbc896ccb8613d39200774a731f9",
+    "qalt/src/qalt/core.py": "d197533be24cbb0295e6f6ebdae9ba10063f5cd9",
+    "qalt/src/qalt/spline.py": "1d2f6ff0657dbdde80e19b2b83c58db5c232d0ec",
+    "qalt/src/qalt/multiscale_flow.py": "9f51ba394476fda6cd6e45387308597428252861",
+    "qalt/src/qalt/flow_matching.py": "4f8bd73587dfc2c10f65b8b26b599161ca4f6857",
+    "qalt/tests/test_spline.py": "c890c78a143efb6368aa6ef5cfabd8b44e2a2b9f",
+    "qalt/tests/test_multiscale_flow.py": "277a7021731a87470bcde1b355afdbf7ec2d5670",
+    "qalt/tests/test_flow_matching.py": "efdcb2f4b4c1f7b9f0eeea37c69c5fe76dab4ebd",
+    "qalt/experiments/complete_flow_pilot/run.py": "e411e52bca6d628108f41e123c26a67e88825370",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "6c897b85e74d4afcf529f80a69a56c0dee7d5538",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "ff771d274eb07136864a10d430b3841acffbafa1",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "482ee00bec52169aa380ef65a4350ddaafa57bbc"
+  },
+  "torch": "2.10.0+cu128",
+  "python": "3.10.9",
+  "slurm_job_id": "45558567",
+  "real_data_accessed": false,
+  "status": "synthetic_development_only",
+  "quality_advantage_established": false,
+  "cost_advantage_established": false,
+  "representation_advantage_established": false,
+  "shared_train_hash": "da4e650cb97bce836bb7951a89c607134aee6d8acae31c4dc20a8ec3cc0522b5",
+  "training": {
+    "spline": {
+      "seconds": 90.01044144300977,
+      "steps": 1959,
+      "training_objective_first": 0.957339346408844,
+      "training_objective_last": -0.36708998680114746,
+      "objective": "nats_per_coordinate",
+      "parameters": 55390,
+      "initialization_seconds": 0.005380279966630042,
+      "peak_training_allocated_bytes": 6535168
+    },
+    "full_fm": {
+      "seconds": 89.99958484998206,
+      "steps": 51706,
+      "training_objective_first": 1.046339988708496,
+      "training_objective_last": 0.39799559116363525,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 5689,
+      "initialization_seconds": 0.0016147650312632322,
+      "peak_training_allocated_bytes": 2639360
+    },
+    "hierarchical_fm": {
+      "seconds": 89.99821290897671,
+      "steps": 24800,
+      "training_objective_first": 1.0490024089813232,
+      "training_objective_last": 0.23755107820034027,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 18463,
+      "initialization_seconds": 0.002957831951789558,
+      "peak_training_allocated_bytes": 1534976
+    }
+  },
+  "completed_training_arms": [
+    "spline",
+    "full_fm",
+    "hierarchical_fm"
+  ],
+  "all_fits_frozen": true,
+  "all_numerical_checks_pass": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "evaluation": {
+    "spline": {
+      "energy_score": 0.18889642943638715,
+      "mean_rms_gap": 0.032954972237348557,
+      "second_moment_gap": 0.017400488257408142,
+      "mmd2_unbiased_scale_0.1": 0.0005452829912992625,
+      "mmd2_unbiased_scale_0.3": 0.0038070551268241104,
+      "mmd2_unbiased_scale_1.0": 0.0004513460803747815,
+      "generation_seconds": 0.03073290002066642,
+      "velocity_evaluations": 0
+    },
+    "full_fm_heun_8": {
+      "energy_score": 0.18964665960236538,
+      "mean_rms_gap": 0.03554308041930199,
+      "second_moment_gap": 0.03533904626965523,
+      "mmd2_unbiased_scale_0.1": 0.0022761681739108287,
+      "mmd2_unbiased_scale_0.3": 0.007077180588905163,
+      "mmd2_unbiased_scale_1.0": 0.0007169568657521275,
+      "generation_seconds": 0.019100538978818804,
+      "velocity_evaluations": 16
+    },
+    "full_fm_heun_32": {
+      "energy_score": 0.1896699253908445,
+      "mean_rms_gap": 0.0355340950191021,
+      "second_moment_gap": 0.035374224185943604,
+      "mmd2_unbiased_scale_0.1": 0.0022767176298793355,
+      "mmd2_unbiased_scale_0.3": 0.007219903001821071,
+      "mmd2_unbiased_scale_1.0": 0.0007237309192786867,
+      "generation_seconds": 0.016699161962606013,
+      "velocity_evaluations": 64
+    },
+    "hierarchical_fm_heun_8": {
+      "energy_score": 0.18872941690133854,
+      "mean_rms_gap": 0.03315555304288864,
+      "second_moment_gap": 0.012294910848140717,
+      "mmd2_unbiased_scale_0.1": 0.00034887377880339285,
+      "mmd2_unbiased_scale_0.3": 0.0024427922231605725,
+      "mmd2_unbiased_scale_1.0": 0.0004690029476774882,
+      "generation_seconds": 0.016238973999861628,
+      "velocity_evaluations": 48
+    },
+    "hierarchical_fm_heun_32": {
+      "energy_score": 0.18872028867818214,
+      "mean_rms_gap": 0.03296070173382759,
+      "second_moment_gap": 0.012315581552684307,
+      "mmd2_unbiased_scale_0.1": 0.00033094913208095433,
+      "mmd2_unbiased_scale_0.3": 0.0024194899612244303,
+      "mmd2_unbiased_scale_1.0": 0.0004624169414197965,
+      "generation_seconds": 0.043161384004633874,
+      "velocity_evaluations": 192
+    }
+  },
+  "exact_stochastic_latent_copy": true,
+  "copy_training_cost": "inherits full spline training cost; no free decoder",
+  "source_roundtrip_max": 5.185604095458984e-06,
+  "logdet_cancellation_max": 2.288818359375e-05,
+  "runtime_seconds": 274.4909832229605,
+  "audit_units": "independent synthetic full tensors; no site-iid assumption",
+  "inference_timing": "single full batch, no speed superiority inference; compilation/cache and variance unresolved"
+}
+spline {'seconds': 90.00496878399281, 'steps': 1961, 'training_objective_first': 0.9498066306114197, 'training_objective_last': -0.41313284635543823, 'objective': 'nats_per_coordinate', 'parameters': 95992, 'initialization_seconds': 0.006274729035794735, 'peak_training_allocated_bytes': 20300800}
+full_fm {'seconds': 89.9996138580027, 'steps': 51613, 'training_objective_first': 1.0643723011016846, 'training_objective_last': 0.35163718461990356, 'objective': 'velocity_mse_per_coordinate', 'parameters': 6412, 'initialization_seconds': 0.001952862017787993, 'peak_training_allocated_bytes': 4385792}
+hierarchical_fm {'seconds': 89.99948143295478, 'steps': 24753, 'training_objective_first': 1.0687153339385986, 'training_objective_last': 0.3324921727180481, 'objective': 'velocity_mse_per_coordinate', 'parameters': 24820, 'initialization_seconds': 0.0024012799840420485, 'peak_training_allocated_bytes': 3524096}
+{
+  "config": {
+    "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-complete-gpu-retry/local_multiframe",
+    "seed": 3110,
+    "steps": 100000,
+    "seconds": 90.0,
+    "size": 8,
+    "channels": 4,
+    "train_size": 2048,
+    "audit_size": 256,
+    "batch": 64,
+    "width": 24,
+    "world": "local",
+    "device": "cuda"
+  },
+  "commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/tests/test_spline.py": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+    "qalt/tests/test_multiscale_flow.py": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+    "qalt/tests/test_flow_matching.py": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+    "qalt/experiments/complete_flow_pilot/run.py": "fdbf0695e5f7e42095042d8d19f0d17707cefcf3493b9fee0bc3111fd650f149",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "41f0aa81035f8aec908d8af52f7dc6bf0ab6e83c1ff8f48148fe0836b65efe35",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "4147675bb42507090e64424fa0394c58a1052eb8dcc5a1187c3bd087c6690c44",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "dbe502f46cd6fc5cb1b72fc438c2b8f7418774c6df00ea0f0810f3efbd5cce69"
+  },
+  "source_git_blobs": {
+    "qalt/src/qalt/__init__.py": "1d5ab32b96e9bbc896ccb8613d39200774a731f9",
+    "qalt/src/qalt/core.py": "d197533be24cbb0295e6f6ebdae9ba10063f5cd9",
+    "qalt/src/qalt/spline.py": "1d2f6ff0657dbdde80e19b2b83c58db5c232d0ec",
+    "qalt/src/qalt/multiscale_flow.py": "9f51ba394476fda6cd6e45387308597428252861",
+    "qalt/src/qalt/flow_matching.py": "4f8bd73587dfc2c10f65b8b26b599161ca4f6857",
+    "qalt/tests/test_spline.py": "c890c78a143efb6368aa6ef5cfabd8b44e2a2b9f",
+    "qalt/tests/test_multiscale_flow.py": "277a7021731a87470bcde1b355afdbf7ec2d5670",
+    "qalt/tests/test_flow_matching.py": "efdcb2f4b4c1f7b9f0eeea37c69c5fe76dab4ebd",
+    "qalt/experiments/complete_flow_pilot/run.py": "e411e52bca6d628108f41e123c26a67e88825370",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "6c897b85e74d4afcf529f80a69a56c0dee7d5538",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "ff771d274eb07136864a10d430b3841acffbafa1",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "482ee00bec52169aa380ef65a4350ddaafa57bbc"
+  },
+  "torch": "2.10.0+cu128",
+  "python": "3.10.9",
+  "slurm_job_id": "45558567",
+  "real_data_accessed": false,
+  "status": "synthetic_development_only",
+  "quality_advantage_established": false,
+  "cost_advantage_established": false,
+  "representation_advantage_established": false,
+  "shared_train_hash": "67851dec82275daf7666ecb64b57253062c62e7ad11ea9ed155473017602a668",
+  "training": {
+    "spline": {
+      "seconds": 90.00496878399281,
+      "steps": 1961,
+      "training_objective_first": 0.9498066306114197,
+      "training_objective_last": -0.41313284635543823,
+      "objective": "nats_per_coordinate",
+      "parameters": 95992,
+      "initialization_seconds": 0.006274729035794735,
+      "peak_training_allocated_bytes": 20300800
+    },
+    "full_fm": {
+      "seconds": 89.9996138580027,
+      "steps": 51613,
+      "training_objective_first": 1.0643723011016846,
+      "training_objective_last": 0.35163718461990356,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 6412,
+      "initialization_seconds": 0.001952862017787993,
+      "peak_training_allocated_bytes": 4385792
+    },
+    "hierarchical_fm": {
+      "seconds": 89.99948143295478,
+      "steps": 24753,
+      "training_objective_first": 1.0687153339385986,
+      "training_objective_last": 0.3324921727180481,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 24820,
+      "initialization_seconds": 0.0024012799840420485,
+      "peak_training_allocated_bytes": 3524096
+    }
+  },
+  "completed_training_arms": [
+    "spline",
+    "full_fm",
+    "hierarchical_fm"
+  ],
+  "all_fits_frozen": true,
+  "all_numerical_checks_pass": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "evaluation": {
+    "spline": {
+      "energy_score": 0.17929205398242798,
+      "mean_rms_gap": 0.026805443689227104,
+      "second_moment_gap": 0.015681255608797073,
+      "mmd2_unbiased_scale_0.1": 0.0005550955209137221,
+      "mmd2_unbiased_scale_0.3": 0.003170085015099189,
+      "mmd2_unbiased_scale_1.0": 0.00019082697123162795,
+      "generation_seconds": 0.03156546101672575,
+      "velocity_evaluations": 0
+    },
+    "full_fm_heun_8": {
+      "energy_score": 0.17967746843645824,
+      "mean_rms_gap": 0.03203820437192917,
+      "second_moment_gap": 0.03322558477520943,
+      "mmd2_unbiased_scale_0.1": 0.0006457066182081438,
+      "mmd2_unbiased_scale_0.3": 0.004232341209059687,
+      "mmd2_unbiased_scale_1.0": 0.0005232748637586937,
+      "generation_seconds": 0.01623960497090593,
+      "velocity_evaluations": 16
+    },
+    "full_fm_heun_32": {
+      "energy_score": 0.17969925756326002,
+      "mean_rms_gap": 0.032084859907627106,
+      "second_moment_gap": 0.033201463520526886,
+      "mmd2_unbiased_scale_0.1": 0.0006841840838624968,
+      "mmd2_unbiased_scale_0.3": 0.00433447468235304,
+      "mmd2_unbiased_scale_1.0": 0.0005290752680842115,
+      "generation_seconds": 0.016211762034799904,
+      "velocity_evaluations": 64
+    },
+    "hierarchical_fm_heun_8": {
+      "energy_score": 0.18027461358811875,
+      "mean_rms_gap": 0.03837670385837555,
+      "second_moment_gap": 0.010618320666253567,
+      "mmd2_unbiased_scale_0.1": 0.0006190914190248049,
+      "mmd2_unbiased_scale_0.3": 0.006493722607849417,
+      "mmd2_unbiased_scale_1.0": 0.0009529007861777128,
+      "generation_seconds": 0.016197378979995847,
+      "velocity_evaluations": 48
+    },
+    "hierarchical_fm_heun_32": {
+      "energy_score": 0.18033639464664414,
+      "mean_rms_gap": 0.03832642361521721,
+      "second_moment_gap": 0.010968482121825218,
+      "mmd2_unbiased_scale_0.1": 0.0007755653479359758,
+      "mmd2_unbiased_scale_0.3": 0.006819263354756133,
+      "mmd2_unbiased_scale_1.0": 0.0009584249693683766,
+      "generation_seconds": 0.0431712880381383,
+      "velocity_evaluations": 192
+    }
+  },
+  "exact_stochastic_latent_copy": true,
+  "copy_training_cost": "inherits full spline training cost; no free decoder",
+  "source_roundtrip_max": 5.632638931274414e-06,
+  "logdet_cancellation_max": 9.1552734375e-05,
+  "runtime_seconds": 271.41272582497913,
+  "audit_units": "independent synthetic full tensors; no site-iid assumption",
+  "inference_timing": "single full batch, no speed superiority inference; compilation/cache and variance unresolved"
+}
+spline {'seconds': 90.01146537798923, 'steps': 2081, 'training_objective_first': 0.9578324556350708, 'training_objective_last': -0.3372657597064972, 'objective': 'nats_per_coordinate', 'parameters': 95992, 'initialization_seconds': 0.006055375037249178, 'peak_training_allocated_bytes': 20300800}
+full_fm {'seconds': 89.99906172201736, 'steps': 52714, 'training_objective_first': 1.0757981538772583, 'training_objective_last': 0.3808352053165436, 'objective': 'velocity_mse_per_coordinate', 'parameters': 6412, 'initialization_seconds': 0.0012684559915214777, 'peak_training_allocated_bytes': 4385792}
+hierarchical_fm {'seconds': 89.9987299789791, 'steps': 25221, 'training_objective_first': 1.079512596130371, 'training_objective_last': 0.3785848617553711, 'objective': 'velocity_mse_per_coordinate', 'parameters': 24820, 'initialization_seconds': 0.002217887027654797, 'peak_training_allocated_bytes': 3524096}
+{
+  "config": {
+    "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-complete-gpu-retry/distant_multiframe",
+    "seed": 3111,
+    "steps": 100000,
+    "seconds": 90.0,
+    "size": 8,
+    "channels": 4,
+    "train_size": 2048,
+    "audit_size": 256,
+    "batch": 64,
+    "width": 24,
+    "world": "distant",
+    "device": "cuda"
+  },
+  "commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_hashes": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/tests/test_spline.py": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+    "qalt/tests/test_multiscale_flow.py": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+    "qalt/tests/test_flow_matching.py": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+    "qalt/experiments/complete_flow_pilot/run.py": "fdbf0695e5f7e42095042d8d19f0d17707cefcf3493b9fee0bc3111fd650f149",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "41f0aa81035f8aec908d8af52f7dc6bf0ab6e83c1ff8f48148fe0836b65efe35",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "4147675bb42507090e64424fa0394c58a1052eb8dcc5a1187c3bd087c6690c44",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "dbe502f46cd6fc5cb1b72fc438c2b8f7418774c6df00ea0f0810f3efbd5cce69"
+  },
+  "source_git_blobs": {
+    "qalt/src/qalt/__init__.py": "1d5ab32b96e9bbc896ccb8613d39200774a731f9",
+    "qalt/src/qalt/core.py": "d197533be24cbb0295e6f6ebdae9ba10063f5cd9",
+    "qalt/src/qalt/spline.py": "1d2f6ff0657dbdde80e19b2b83c58db5c232d0ec",
+    "qalt/src/qalt/multiscale_flow.py": "9f51ba394476fda6cd6e45387308597428252861",
+    "qalt/src/qalt/flow_matching.py": "4f8bd73587dfc2c10f65b8b26b599161ca4f6857",
+    "qalt/tests/test_spline.py": "c890c78a143efb6368aa6ef5cfabd8b44e2a2b9f",
+    "qalt/tests/test_multiscale_flow.py": "277a7021731a87470bcde1b355afdbf7ec2d5670",
+    "qalt/tests/test_flow_matching.py": "efdcb2f4b4c1f7b9f0eeea37c69c5fe76dab4ebd",
+    "qalt/experiments/complete_flow_pilot/run.py": "e411e52bca6d628108f41e123c26a67e88825370",
+    "qalt/experiments/complete_flow_pilot/PROTOCOL.md": "6c897b85e74d4afcf529f80a69a56c0dee7d5538",
+    "qalt/experiments/complete_flow_pilot/run.slurm": "ff771d274eb07136864a10d430b3841acffbafa1",
+    "qalt/experiments/complete_flow_pilot/run_cpu.slurm": "482ee00bec52169aa380ef65a4350ddaafa57bbc"
+  },
+  "torch": "2.10.0+cu128",
+  "python": "3.10.9",
+  "slurm_job_id": "45558567",
+  "real_data_accessed": false,
+  "status": "synthetic_development_only",
+  "quality_advantage_established": false,
+  "cost_advantage_established": false,
+  "representation_advantage_established": false,
+  "shared_train_hash": "7fa260aaa634e72b839e691f0fc2a8ace46a11289877481fed683153038bca23",
+  "training": {
+    "spline": {
+      "seconds": 90.01146537798923,
+      "steps": 2081,
+      "training_objective_first": 0.9578324556350708,
+      "training_objective_last": -0.3372657597064972,
+      "objective": "nats_per_coordinate",
+      "parameters": 95992,
+      "initialization_seconds": 0.006055375037249178,
+      "peak_training_allocated_bytes": 20300800
+    },
+    "full_fm": {
+      "seconds": 89.99906172201736,
+      "steps": 52714,
+      "training_objective_first": 1.0757981538772583,
+      "training_objective_last": 0.3808352053165436,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 6412,
+      "initialization_seconds": 0.0012684559915214777,
+      "peak_training_allocated_bytes": 4385792
+    },
+    "hierarchical_fm": {
+      "seconds": 89.9987299789791,
+      "steps": 25221,
+      "training_objective_first": 1.079512596130371,
+      "training_objective_last": 0.3785848617553711,
+      "objective": "velocity_mse_per_coordinate",
+      "parameters": 24820,
+      "initialization_seconds": 0.002217887027654797,
+      "peak_training_allocated_bytes": 3524096
+    }
+  },
+  "completed_training_arms": [
+    "spline",
+    "full_fm",
+    "hierarchical_fm"
+  ],
+  "all_fits_frozen": true,
+  "all_numerical_checks_pass": true,
+  "source_roundtrip_tolerance": 0.001,
+  "logdet_cancellation_tolerance": 0.01,
+  "evaluation": {
+    "spline": {
+      "energy_score": 0.1884034443079412,
+      "mean_rms_gap": 0.024891968816518784,
+      "second_moment_gap": 0.018452726304531097,
+      "mmd2_unbiased_scale_0.1": 0.0002633178423392421,
+      "mmd2_unbiased_scale_0.3": 0.0027824799130722333,
+      "mmd2_unbiased_scale_1.0": 5.395829034782196e-05,
+      "generation_seconds": 0.031433049007318914,
+      "velocity_evaluations": 0
+    },
+    "full_fm_heun_8": {
+      "energy_score": 0.18853754782667403,
+      "mean_rms_gap": 0.02653057873249054,
+      "second_moment_gap": 0.035134654492139816,
+      "mmd2_unbiased_scale_0.1": 0.00043268917565636184,
+      "mmd2_unbiased_scale_0.3": 0.0028518319432417893,
+      "mmd2_unbiased_scale_1.0": 0.00019445383630034563,
+      "generation_seconds": 0.01555718999588862,
+      "velocity_evaluations": 16
+    },
+    "full_fm_heun_32": {
+      "energy_score": 0.1885558236602016,
+      "mean_rms_gap": 0.02593335136771202,
+      "second_moment_gap": 0.03498882055282593,
+      "mmd2_unbiased_scale_0.1": 0.0005012716471622918,
+      "mmd2_unbiased_scale_0.3": 0.003028561618208969,
+      "mmd2_unbiased_scale_1.0": 0.00017582559556594823,
+      "generation_seconds": 0.01618933695135638,
+      "velocity_evaluations": 64
+    },
+    "hierarchical_fm_heun_8": {
+      "energy_score": 0.18905605809351467,
+      "mean_rms_gap": 0.03200738877058029,
+      "second_moment_gap": 0.014636389911174774,
+      "mmd2_unbiased_scale_0.1": 0.0005989583386495703,
+      "mmd2_unbiased_scale_0.3": 0.004922476001147369,
+      "mmd2_unbiased_scale_1.0": 0.0005186428714361035,
+      "generation_seconds": 0.015879796002991498,
+      "velocity_evaluations": 48
+    },
+    "hierarchical_fm_heun_32": {
+      "energy_score": 0.18913493687929803,
+      "mean_rms_gap": 0.03190692514181137,
+      "second_moment_gap": 0.015094956383109093,
+      "mmd2_unbiased_scale_0.1": 0.0007752023486500299,
+      "mmd2_unbiased_scale_0.3": 0.005357864061935391,
+      "mmd2_unbiased_scale_1.0": 0.0005239227068742913,
+      "generation_seconds": 0.04113018698990345,
+      "velocity_evaluations": 192
+    }
+  },
+  "exact_stochastic_latent_copy": true,
+  "copy_training_cost": "inherits full spline training cost; no free decoder",
+  "source_roundtrip_max": 6.139278411865234e-06,
+  "logdet_cancellation_max": 9.1552734375e-05,
+  "runtime_seconds": 274.02272114594234,
+  "audit_units": "independent synthetic full tensors; no site-iid assumption",
+  "inference_timing": "single full batch, no speed superiority inference; compilation/cache and variance unresolved"
+}

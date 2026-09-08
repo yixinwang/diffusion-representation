@@ -196,7 +196,7 @@ The theorem derives estimation error for frozen features. It does not prove that
 For the cosine example with parameter $0.65$, the sharper coefficient is $12.5849$, compared with $5697.3011$ from the earlier curvature bound. Even with zero optimization error, the headwise bound with simultaneous coverage is $2.8587$ nats per coordinate at 40,000 arrays after integer mesh search. The restricted independent-coordinate lower bound is $0.01600$. These sufficient bounds do not establish a practical separation. A global stochastic latent decoder can still copy the full construction exactly.
 
 \section{Executed checks and remaining work}
-The full QALT suite passed 193 tests after adding complete generators, the learned-analysis latent baseline, and strict observed-data preparation. Six additional accelerated-optimizer tests passed. Sixteen separate deterministic checks of the sharper proof and resource calculations passed. These checks include normalization, dense numerical Jacobians, frozen-analysis gradients, causal generation, and independent constrained optimization references. The earlier PSC numerical fixture had nonlinear six-dimensional inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound $0.000185$, below the declared margin $0.005$. The radial inverse used 44 CDF iterations and was substantially slower than the legacy mixture sampler.
+The full QALT suite passed 208 tests after adding complete generators, the learned-analysis latent baseline, global conditional residual couplings, strict observed-data preparation, and feasible acceleration. Sixteen separate deterministic checks of the sharper proof and resource calculations passed. These checks include normalization, dense numerical Jacobians, frozen-analysis gradients, causal generation, and independent constrained optimization references. The earlier PSC numerical fixture had nonlinear six-dimensional inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound $0.000185$, below the declared margin $0.005$. The radial inverse used 44 CDF iterations and was substantially slower than the legacy mixture sampler.
 
 PSC job 45550810 completed the frozen covariance experiment on 5,000 reused CIFAR development images. Every fitted arm used the same training coordinates, and the official test batch remained unopened. Positive values in Table~\ref{tab:covariance} favor full covariance. The block and Student requirements failed. The descriptive intervals do not account for the earlier adaptive model search.
 
@@ -223,5 +223,33 @@ PSC job 45552606 completed all 36 prescribed conditional-CDF cells. For the nonl
 
 PSC job 45554441 completed 36 positive-spline cases, but only 14 reached the required $10^{-4}$ optimization gap. All 18 favorable local fits and four distant fits exhausted 500 updates. Local $D=32$ mean KL per coordinate decreased from $0.001397$ at 256 arrays to $0.000547$ at 4,096 arrays. The distant generated first/last cosine moment remained near zero, against the target $0.1625$. All numerical and copied-decoder checks passed. Independent reconstruction of saved coefficients and the published evaluation streams reproduced KL, energy, and moments within $3.4\times10^{-16}$, without refitting. It leaves all optimization and dependence failures intact.
 
-The L40S job 45552255 was canceled before execution after its estimated wait reached five days. Replacement GPU job 45554440 failed before training with a CUDA driver/runtime mismatch. A separate diagnostic is pending, and a separate unchanged one-case CPU execution is being prepared. These are execution statuses, with no neural-generator quality result. The neural model's optimization is not covered by either convex theorem. Real-image and real-video quality, matched strong latent baselines, representation probes, and untouched confirmation remain necessary for the original research goal.
+The L40S job 45552255 was canceled before execution after its estimated wait reached five days. Replacement GPU job 45554440 failed before training with a CUDA driver/runtime mismatch. A separate diagnostic passed on another node using the unchanged runtime. The one-case CPU pilot 45558401 and four-case GPU pilot 45558567 then completed. Independent recomputation reproduced all 150 saved metrics within $8.4\times10^{-9}$. All recorded numerical checks and exact copied-decoder equalities passed. Quality rankings varied by case. In the GPU records, the spline used more allocated training memory than both FM controls and was slower than several FM configurations. First-call timing effects prevent a reliable speed frontier. The four-channel cases contain synthetic tensors. They provide no real-video evidence.
+
+\clearpage
+\section{Current candidate: learned analysis and global residual transport}
+For native RGB $32\times32$ arrays, retain all $D=3072$ coordinates. Apply the same logit in float64 before conversion to float32. A learned invertible pre-Haar map followed by a multiscale spline analysis gives $A(y)=(c,r)$, with $d=192$ coarse coordinates and $D-d=2880$ residual coordinates. Lossless packing places the residuals on the $8\times8$ coarse grid with 45 channels. The learned pre-Haar map permits fine input information to change the retained code. Invertibility alone does not establish a representation with improved semantic prediction.
+
+Train $A$ by full Gaussian likelihood, then freeze it. Fit a shared coarse FM and compare a four-layer global conditional coupling decoder with a globally attending conditional residual FM. For a fixed subset $J$ in one coupling layer,
+\begin{align}
+ r'_J &= r_J, & v_{J^c}&=e^{s(r_J,c)}\odot r_{J^c}+t(r_J,c),\\
+ r'_{J^c}&=\operatorname{RQS}\{v_{J^c};h(r_J,c)\}.&&
+\end{align}
+The attention conditioner sees the entire fixed residual subset and coarse grid. Bounded log scales, positive spline derivatives and linear tails make each conditional coordinate map a real-line bijection. Alternating masks permit nonlinear dependence across scales and distant positions.
+
+\begin{proposition}
+For any fixed coarse vector $c$, the composed residual map $T_c$ is invertible with normalized conditional density
+\begin{equation}
+ q_R(r\mid c)=\phi_{D-d}(T_c^{-1}(r))\,|\det D_rT_c^{-1}(r)|.
+\end{equation}
+For any coarse law, independent residual Gaussian noise and inverse analysis define a normalized observation law. A coarse density yields a $D$-dimensional observation density.
+\end{proposition}
+This retains every source coordinate and gives an explicit conditional density. The proposition imposes no conditional independence among residual coordinates.
+\begin{proof}
+Order fixed coordinates before transformed coordinates. Each layer Jacobian is triangular, with positive diagonal entries equal to the affine scale times the spline derivative. The fixed coordinates recover the conditioner parameters in the inverse. Reverse layer order to invert the composition. Conditional change of variables gives integral one. Integrating this conditional law against the coarse law, then applying inverse analysis and sigmoid, preserves total mass.
+\end{proof}
+A density formula for the complete model additionally requires a coarse density. The implemented finite-step FM law is evaluated using its actual samples. Its training MSE and the separate analysis likelihood are not reported as complete-model NLL. A stochastic latent decoder copying every map, weight and source draw ties the candidate exactly.
+
+The native CIFAR input check 45558402 passed source and numerical checks for 4,000 fitting and 1,000 reused development arrays; the official test remained unopened. Pilot 45567461 allocates 90 seconds to analysis, 90 to shared coarse fitting, and 180 per residual arm. Residual parameter counts are 261,524 for the spline and 263,421 for FM, fixed by shape before fitting. The full Gaussian source and residual-coordinate ordering are identical. Residual FM uses 4, 8, 16, 32 and 64 velocity evaluations. An analysis-only Gaussian control tests whether additional modeling improves the fitted analysis.
+
+The study saves generated pairs, checks actual sources and record identities, and charges full fitting and generation costs. Reused development data provide no fresh confirmation. Fewer flow layers do not ensure lower cost. Neither proposition bounds learned-analysis approximation, estimation, optimization or numerical error at practical budgets. Real-image and real-video superiority, representation probes, stronger budget-matched controls and untouched confirmation remain unresolved.
 \end{document}

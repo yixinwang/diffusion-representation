@@ -2,6 +2,16 @@
 
 The requested joint quality, speed, and representation advantage remains unestablished. This iteration repairs a sampler's invertibility, supplies a way to reject output corrections too small for an energy-score target, and evaluates the previously frozen covariance experiment on PSC.
 
+## Current result and active native-image study
+
+The complete CPU generator pilot and four-case GPU pilot have now finished. Independent recomputation reproduced all150 saved metrics within8.4e-9. Quality rankings vary across cases. On the GPU, the spline used more training memory than both FM controls and was slower than several measured FM configurations; first-call timing effects prevent a clean speed frontier. These are synthetic tensors, including synthetic multichannel arrays, not real video. The exact copied stochastic latent decoder ties every case. Read `psc_complete_cpu_review.md` and `psc_complete_gpu_review.md` for the full negative and mixed findings.
+
+Strict native CIFAR input validation completed at source2b58285:4,000 fitting and1,000 reused development images, all3,072 coordinates, canonical hashes and numerical checks passed. No official test data were opened. `psc_observed_inputs_review.md` states the independent membership-check scope explicitly.
+
+The new shared-analysis native-image operational pilot is frozen at8b007b6. Its complete protocol and source are in `qalt/experiments/observed_flow_pilot/SHARED_PROTOCOL.md`. It compares four global conditional spline couplings with a parameter-matched globally attending residual FM at five fixed solver budgets, using exactly the same learned invertible analysis, coarse generator and full Gaussian draws. An analysis-only control checks whether the extra models improve the already fitted Gaussian analysis. Each stage's fitting, memory and full-pipeline timing is charged; actual sources and generated pairs are saved for independent checking. This short reused-development study is not a practical superiority or state-of-the-art claim. The local suite passes208 tests.
+
+The sixth fresh Pro review is complete: `pro_review_06.md` records its recommendations and limits. A seventh fresh Pro conversation has been launched to challenge the missing practical approximation, learning and cost theorem. Its pending response is not credited as a proved result. The joint theoretical and empirical superiority requested by the user remains unresolved.
+
 ## Existing evidence and scope
 
 The default GitHub branch was `e00a034`. PSC had seven additional committed development steps through `4553e04`, which this branch preserves. The existing user checkout on PSC has unrelated changes; execution uses an isolated worktree. Historical R20--R22 branches remain separate. Their image-quality failures are retained as constraints on further angular repairs.

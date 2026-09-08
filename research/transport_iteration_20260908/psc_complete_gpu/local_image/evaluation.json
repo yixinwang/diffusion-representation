@@ -1,0 +1,52 @@
+{
+  "spline": {
+    "energy_score": 0.1789485846233199,
+    "mean_rms_gap": 0.028162216767668724,
+    "second_moment_gap": 0.019114026799798012,
+    "mmd2_unbiased_scale_0.1": 0.00045249495064512285,
+    "mmd2_unbiased_scale_0.3": 0.003463131028077715,
+    "mmd2_unbiased_scale_1.0": 0.00025002298839726933,
+    "generation_seconds": 0.04061017098138109,
+    "velocity_evaluations": 0
+  },
+  "full_fm_heun_8": {
+    "energy_score": 0.17964212476218971,
+    "mean_rms_gap": 0.025659659877419472,
+    "second_moment_gap": 0.03391556814312935,
+    "mmd2_unbiased_scale_0.1": 0.003631051490444036,
+    "mmd2_unbiased_scale_0.3": 0.006884914631930084,
+    "mmd2_unbiased_scale_1.0": 0.0002776400485928754,
+    "generation_seconds": 0.6968602080014534,
+    "velocity_evaluations": 16
+  },
+  "full_fm_heun_32": {
+    "energy_score": 0.17976137315972915,
+    "mean_rms_gap": 0.025582656264305115,
+    "second_moment_gap": 0.033781763166189194,
+    "mmd2_unbiased_scale_0.1": 0.0042287415122593715,
+    "mmd2_unbiased_scale_0.3": 0.007447438714819343,
+    "mmd2_unbiased_scale_1.0": 0.0002885033011577054,
+    "generation_seconds": 0.015874909004196525,
+    "velocity_evaluations": 64
+  },
+  "hierarchical_fm_heun_8": {
+    "energy_score": 0.17888330026680882,
+    "mean_rms_gap": 0.02883368916809559,
+    "second_moment_gap": 0.006847578566521406,
+    "mmd2_unbiased_scale_0.1": 0.0005330797449385923,
+    "mmd2_unbiased_scale_0.3": 0.0024313219945468756,
+    "mmd2_unbiased_scale_1.0": 0.00031428921417142597,
+    "generation_seconds": 0.01593459100695327,
+    "velocity_evaluations": 48
+  },
+  "hierarchical_fm_heun_32": {
+    "energy_score": 0.17893478520353756,
+    "mean_rms_gap": 0.028714625164866447,
+    "second_moment_gap": 0.0073136864230036736,
+    "mmd2_unbiased_scale_0.1": 0.0008065108757612412,
+    "mmd2_unbiased_scale_0.3": 0.0026777466846625853,
+    "mmd2_unbiased_scale_1.0": 0.00031653725922953235,
+    "generation_seconds": 0.04151926899794489,
+    "velocity_evaluations": 192
+  }
+}

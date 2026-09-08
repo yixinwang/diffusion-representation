@@ -1,0 +1,52 @@
+{
+  "spline": {
+    "energy_score": 0.17929205398242798,
+    "mean_rms_gap": 0.026805443689227104,
+    "second_moment_gap": 0.015681255608797073,
+    "mmd2_unbiased_scale_0.1": 0.0005550955209137221,
+    "mmd2_unbiased_scale_0.3": 0.003170085015099189,
+    "mmd2_unbiased_scale_1.0": 0.00019082697123162795,
+    "generation_seconds": 0.03156546101672575,
+    "velocity_evaluations": 0
+  },
+  "full_fm_heun_8": {
+    "energy_score": 0.17967746843645824,
+    "mean_rms_gap": 0.03203820437192917,
+    "second_moment_gap": 0.03322558477520943,
+    "mmd2_unbiased_scale_0.1": 0.0006457066182081438,
+    "mmd2_unbiased_scale_0.3": 0.004232341209059687,
+    "mmd2_unbiased_scale_1.0": 0.0005232748637586937,
+    "generation_seconds": 0.01623960497090593,
+    "velocity_evaluations": 16
+  },
+  "full_fm_heun_32": {
+    "energy_score": 0.17969925756326002,
+    "mean_rms_gap": 0.032084859907627106,
+    "second_moment_gap": 0.033201463520526886,
+    "mmd2_unbiased_scale_0.1": 0.0006841840838624968,
+    "mmd2_unbiased_scale_0.3": 0.00433447468235304,
+    "mmd2_unbiased_scale_1.0": 0.0005290752680842115,
+    "generation_seconds": 0.016211762034799904,
+    "velocity_evaluations": 64
+  },
+  "hierarchical_fm_heun_8": {
+    "energy_score": 0.18027461358811875,
+    "mean_rms_gap": 0.03837670385837555,
+    "second_moment_gap": 0.010618320666253567,
+    "mmd2_unbiased_scale_0.1": 0.0006190914190248049,
+    "mmd2_unbiased_scale_0.3": 0.006493722607849417,
+    "mmd2_unbiased_scale_1.0": 0.0009529007861777128,
+    "generation_seconds": 0.016197378979995847,
+    "velocity_evaluations": 48
+  },
+  "hierarchical_fm_heun_32": {
+    "energy_score": 0.18033639464664414,
+    "mean_rms_gap": 0.03832642361521721,
+    "second_moment_gap": 0.010968482121825218,
+    "mmd2_unbiased_scale_0.1": 0.0007755653479359758,
+    "mmd2_unbiased_scale_0.3": 0.006819263354756133,
+    "mmd2_unbiased_scale_1.0": 0.0009584249693683766,
+    "generation_seconds": 0.0431712880381383,
+    "velocity_evaluations": 192
+  }
+}
