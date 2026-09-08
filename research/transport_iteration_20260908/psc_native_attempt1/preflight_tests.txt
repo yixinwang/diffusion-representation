@@ -1,0 +1,76 @@
+..........................................F.                             [100%]
+=================================== FAILURES ===================================
+________ test_failed_training_preserves_report_without_parameter_update ________
+
+tmp_path = PosixPath('/var/tmp/pytest-of-ywang26/pytest-0/test_failed_training_preserves0')
+
+    def test_failed_training_preserves_report_without_parameter_update(tmp_path):
+        p=torch.nn.Parameter(torch.tensor(1.))
+        report=tmp_path/'failure.json'
+        with pytest.raises(FloatingPointError,match='loss'):
+>           pilot.train_stage([p],lambda i,g:p*float('nan'),sample_count=3,
+                record_ids=np.arange(3),device='cpu',seconds=1,batch_size=2,progress_path=report)
+
+qalt/tests/test_observed_shared_pilot.py:60: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+parameters = [Parameter containing:
+tensor(1., requires_grad=True)]
+loss_function = <function test_failed_training_preserves_report_without_parameter_update.<locals>.<lambda> at 0x14f7444d1750>
+sample_count = 3, record_ids = array([0, 1, 2]), device = 'cpu', seconds = 1
+batch_size = 2, learning_rate = 0.001, batch_seed = 77101, path_seed = 77102
+progress_path = PosixPath('/var/tmp/pytest-of-ywang26/pytest-0/test_failed_training_preserves0/failure.json')
+
+    def train_stage(parameters, loss_function, *, sample_count, record_ids, device,
+                    seconds, batch_size=32, learning_rate=1e-3, batch_seed=SEED,
+                    path_seed=SEED+1, progress_path=None):
+        """Callback loss(indices, generator); deterministic shared index prefixes.
+    
+        Wall cap is checked between updates: one update may overrun and is charged.
+        Optimizer creation and device synchronization are included. Caller performs
+        and separately charges source-cache/model construction and movement.
+        """
+        params = [p for p in parameters if p.requires_grad]
+        if not params or seconds <= 0 or sample_count != len(record_ids):
+            raise ValueError('invalid stage configuration')
+        rng = np.random.Generator(np.random.PCG64(batch_seed))
+        generator = torch.Generator(device=device).manual_seed(path_seed)
+        synchronize(device)
+        start = time.perf_counter()
+        if torch.device(device).type == "cuda":
+            torch.cuda.empty_cache()
+        optimizer = torch.optim.Adam(params, lr=learning_rate)
+        if torch.device(device).type == 'cuda':
+            torch.cuda.reset_peak_memory_stats(device)
+        digest = hashlib.sha256()
+        report = dict(updates=0, examples=0, batch_seed=batch_seed, path_seed=path_seed,
+                      requested_seconds=seconds, losses=[], status='running')
+        try:
+            while time.perf_counter()-start < seconds:
+                index_np = rng.integers(0, sample_count, size=batch_size)
+                digest.update(np.asarray(record_ids[index_np], dtype='<i8').tobytes())
+                indices = torch.as_tensor(index_np, device=device)
+                optimizer.zero_grad(set_to_none=True)
+                loss = loss_function(indices, generator)
+                if loss.ndim != 0 or not bool(torch.isfinite(loss)):
+                    raise FloatingPointError('nonfinite or nonscalar training loss')
+                loss.backward()
+                if any(p.grad is not None and not bool(torch.isfinite(p.grad).all()) for p in params):
+                    raise FloatingPointError('nonfinite training gradient')
+                optimizer.step()
+                if any(not bool(torch.isfinite(p).all()) for p in params):
+                    raise FloatingPointError('nonfinite updated parameter')
+                synchronize(device)
+                report['updates'] += 1
+                report['examples'] += batch_size
+                report['losses'].append(float(loss.detach()))
+                if progress_path and report['updates'] % 10 == 0:
+                    atomic_json(progress_path, {**report, 'elapsed_seconds': time.perf_counter()-start})
+            if not report['updates']:
+>               raise RuntimeError('training stage completed zero updates')
+E               RuntimeError: training stage completed zero updates
+
+qalt/experiments/observed_flow_pilot/run_shared.py:131: RuntimeError
+=========================== short test summary info ============================
+FAILED qalt/tests/test_observed_shared_pilot.py::test_failed_training_preserves_report_without_parameter_update
+1 failed, 43 passed in 150.24s (0:02:30)

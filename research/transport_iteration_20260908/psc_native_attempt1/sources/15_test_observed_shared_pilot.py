@@ -2,7 +2,6 @@
 import importlib.util
 import json
 from pathlib import Path
-from types import SimpleNamespace
 
 import numpy as np
 import pytest
@@ -54,10 +53,7 @@ def test_nonfinite_logits_cannot_be_hidden_by_sigmoid():
         pilot.generate(BrokenAnalysis(),None,torch.zeros(2,4),kind='analysis_only')
 
 
-def test_failed_training_preserves_report_without_parameter_update(tmp_path, monkeypatch):
-    # Exercise the nonfinite-loss branch independently of first-optimizer import
-    # time on a cold cluster filesystem. This changes only the test clock.
-    monkeypatch.setattr(pilot, "time", SimpleNamespace(perf_counter=lambda: 0.))
+def test_failed_training_preserves_report_without_parameter_update(tmp_path):
     p=torch.nn.Parameter(torch.tensor(1.))
     report=tmp_path/'failure.json'
     with pytest.raises(FloatingPointError,match='loss'):
@@ -73,18 +69,3 @@ def test_shared_logit_keeps_near_boundary_input_finite():
     logits,jac=pilot.logit_inputs(x)
     assert logits.dtype==torch.float32 and torch.isfinite(logits).all() and np.isfinite(jac).all()
     with pytest.raises(ValueError):pilot.logit_inputs(x.astype(np.float32))
-
-
-def test_optimizer_startup_exhausting_cap_fails_without_evaluating_loss(tmp_path, monkeypatch):
-    clock = iter([0., 2., 3.])
-    monkeypatch.setattr(pilot, "time", SimpleNamespace(perf_counter=lambda: next(clock)))
-    parameter = torch.nn.Parameter(torch.tensor(1.))
-    def forbidden_loss(index, generator):
-        raise AssertionError("expired stage must not evaluate its loss")
-    report = tmp_path/'expired.json'
-    with pytest.raises(RuntimeError, match='zero updates'):
-        pilot.train_stage([parameter], forbidden_loss, sample_count=3,
-            record_ids=np.arange(3), device='cpu', seconds=1, batch_size=2, progress_path=report)
-    saved = json.loads(report.read_text())
-    assert saved['status']=='failed' and saved['updates']==0 and saved['elapsed_seconds']==3.
-    assert parameter.item()==1.
