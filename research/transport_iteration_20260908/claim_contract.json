@@ -1,0 +1,15 @@
+{
+  "original_goal_status": "unresolved",
+  "scope": "full-dimensional normalized no-VAE generation with fair quality/cost/representation comparison",
+  "current_round": "transport-correctness-and-covariance-diagnosis-20260908",
+  "theory": [
+    {"claim":"energy-score change bounded by twice paired mean displacement", "status":"independently_checked", "assumptions":"finite first moments"},
+    {"claim":"normalized energy dilution of order D^-4 in specified smooth mixture example", "status":"independently_checked", "assumptions":"fixed positive complement variance and fixed smoothing scale; m>9 for remainder proof"},
+    {"claim":"radial transport bijection with the existing GSM endpoint", "status":"derived_and_numerically_checked", "assumptions":"positive finite weights/scales; positive definite shape; exact CDF inverses for mathematical claim"}
+  ],
+  "empirical_claims": {"full_image_quality":false,"video_quality":false,"latent_diffusion_superiority":false,"representation_superiority":false},
+  "new_tests_use_observed_data":false,
+  "covariance_study":"unchanged previously frozen adaptive development at 4553e04",
+  "confirmation":"sealed",
+  "stop_rule":"preserve first failed registered criterion; do not tune on confirmation"
+}

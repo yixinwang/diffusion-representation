@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,hyperref}
+\usepackage[T1]{fontenc}
+\newtheorem{proposition}{Proposition}
+\newcommand{\E}{\mathbb E}
+\newcommand{\R}{\mathbb R}
+\title{Invertible Mixture Transport and Output-Score Checks}
+\author{Research note with independent mathematical checks}
+\date{8 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+A normalized mixture sampler can discard source information, and an improvement in a few latent coordinates can have negligible effect on an image-level score. We give an invertible radial realization of an existing Gaussian scale mixture and a source-only upper bound on energy-score change. A smooth, non-Gaussian example shows that normalized output-score gain can decay as the fourth inverse power of dimension despite a fixed active-coordinate discrepancy. Numerical checks verify inversion and reject a deliberately small synthetic correction. These results support correctness and early rejection. They establish no improvement over latent diffusion in image quality, runtime, or representation.
+\end{abstract}
+
+\section{An invertible realization of the existing mixture}
+At a fixed condition, let the desired three-dimensional density be
+\begin{equation}
+ q(x)=\sum_{k=1}^{K}w_k\mathcal N_3(x;0,s_k^2LL^{\mathsf T}),
+\end{equation}
+where $K$ is the number of mixture components, $w_k>0$ sum to one, $s_k>0$ are scales, and $L$ is an invertible lower-triangular matrix with positive diagonal. The implementation uses $\det L=1$. Let $F$ be the standard three-dimensional Gaussian radius CDF and define $H(r)=\sum_k w_kF(r/s_k)$ for $r\geq0$. Both CDFs are strictly increasing at positive radii.
+
+\begin{proposition}
+For $u\in\R^3$ with $\rho=\|u\|>0$, set $r=H^{-1}(F(\rho))$ and
+\begin{equation}
+ T(u)=L\frac{r}{\rho}u,\qquad T(0)=0.
+\end{equation}
+The exact map is an invertible transport from a standard Gaussian to $q$. Its inverse whitens $x$ by $L^{-1}$ and maps radius $r$ to $F^{-1}(H(r))$.
+\end{proposition}
+For an RGB detail block, the map retains all three source coordinates and represents the same mixture density as the legacy component sampler. It introduces numerical inverse-CDF work. The legacy sampler remains a distributional control, but overlapping components prevent recovering its input uniquely from its output.
+
+\begin{proof}
+A standard Gaussian has independent uniform direction and radius CDF $F$. The radial quantile map changes its radius CDF to $H$ and preserves that direction. Multiplication by $L$ gives the stated density. Strict monotonicity of the radial map and invertibility of $L$ prove bijectivity. At a positive radius, its determinant is
+\begin{equation}
+ |\det DT(u)|=\det L\left(\frac r\rho\right)^2\frac{F'(\rho)}{H'(r)}.
+\end{equation}
+Consequently its log determinant is $\log\phi_3(u)-\log q(T(u))$, where $\phi_3$ is standard Gaussian density. At zero the radial scaling tends to $(\sum_k w_ks_k^{-3})^{-1/3}$, since both radial CDFs have cubic leading terms. The ratio is a smooth function of squared radius by the implicit function theorem applied to the positive cubic-leading CDF expansions, giving the smooth extension at the origin.
+\end{proof}
+The root satisfies $s_{\min}\rho\leq r\leq s_{\max}\rho$, where $s_{\min}$ and $s_{\max}$ are the smallest and largest component scales. Bisection to relative tolerance $\epsilon$ takes order $\log((s_{\max}/s_{\min}-1)/\epsilon)$ iterations for unequal scales. Each forward iteration evaluates $K$ component probabilities. The code uses the smaller tail in logarithmic form and raises on nonconvergence. Its reported brackets rely on floating-point special functions; they are not interval-arithmetic proofs. The density-ratio log determinant approximates the derivative of the exact transport, with error from root inversion.
+
+\section{Rejecting corrections too small for the output target}
+Let $P$ be a target law on $\R^D$ and $Q$ a generated law, both with finite first moments. Define the energy score
+\begin{equation}
+ \operatorname{ES}(Q;P)=\E\|X-Y\|-\tfrac12\E\|X-X'\|,
+\end{equation}
+where $X,X'$ are independent with law $Q$, and $Y$ independently has law $P$.
+
+\begin{proposition}
+Let $(X,Z)$ be any coupling of generated laws $Q,Q'$ with finite first moments. Then
+\begin{equation}
+ |\operatorname{ES}(Q;P)-\operatorname{ES}(Q';P)|\leq2\E\|X-Z\|.
+\end{equation}
+The constant two is sharp uniformly over these laws.
+\end{proposition}
+A small paired output displacement rules out a large improvement against every target with a defined score. This check uses only generated samples. A large displacement gives no evidence of improvement. The result does not apply to FID or establish downstream prediction accuracy.
+
+\begin{proof}
+The reverse triangle inequality bounds the change in the target-distance term by $\E\|X-Z\|$. Apply the same inequality to an independent copy $(X',Z')$. The change in the self-distance term is bounded by $\tfrac12\E(\|X-Z\|+\|X'-Z'\|)$, giving the result. For sharpness, take $P$ as a point mass at zero, $Q$ as a point mass at one, and $Q'$ as masses $1-a,a$ at one and zero, where $0<a<1$. The score change is $2a-a^2$ and the optimal mean displacement is $a$. Their ratio approaches two as $a$ tends to zero.
+\end{proof}
+For normalized image distance, divide distances and score margins by $\sqrt D$. Freeze both generators before drawing $n$ independent paired sources. Suppose each normalized displacement $d_i$ has a known almost-sure bound $b$. For $M$ prespecified comparisons and error probability $0<\alpha<1$, Hoeffding's inequality and a union bound give the simultaneous upper bound
+\begin{equation}
+ U=\min\left\{b,\frac1n\sum_{i=1}^n d_i+b\sqrt{\frac{\log(M/\alpha)}{2n}}\right\}.
+\end{equation}
+Reject a requested positive score margin $\eta$ only when $2U<\eta$. The bound $b$ must follow from the generators or declared preprocessing. An observed maximum is insufficient. Candidate adaptation requires fresh independent diagnostic sources and an error allocation across rounds. For paired finite arrays and the usual unbiased self-distance estimate, the score change is deterministically bounded by twice the sample mean displacement; this finite-array fact alone supplies no population guarantee.
+
+\section{A smooth nonlinear-generated dilution example}
+Let $A$ be uniform on the four planar unit-axis vectors, and let $C$ have the law of $A$ rotated by $\pi/4$. Add independent Gaussian smoothing with variance $\tau^2>0$ in each active coordinate. Append $m$ independent Gaussian coordinates with variance $\sigma^2>0$, keeping $\tau,\sigma$ fixed as $m$ grows. The resulting laws are smooth, positive, full-dimensional, and non-Gaussian. Each active law can be generated by a nonlinear triangular Gaussian quantile transport.
+
+The excess energy score between the rotated and unrotated laws satisfies
+\begin{equation}
+ \Delta_m\sim\frac5{32}\sigma^{-7}2^{-7/2}m^{-7/2}.
+\end{equation}
+Normalization by $\sqrt{m+2}$ gives order $(m+2)^{-4}$. To verify the coefficient, the unsmoothed cross/self squared distances have equal moments through order three and a fourth-moment difference of $-4$. For complement distance $r>0$ and active squared distance $v\geq0$, the fourth Taylor coefficient of $\sqrt{r^2+v}$ is $-5/(128r^7)$. Gaussian smoothing preserves the cancellations. For $m>9$, a fifth-order remainder is integrable and smaller by order $m^{-1}$. The complete moment table, remainder, inverse-chi calculation, and independent check accompany this note.
+
+This example explains how a real active-coordinate improvement can become small in a global score. It does not establish that the previous image experiments have its symmetry or decay rate. It motivates measuring output effects directly before promoting a latent dependence result.
+
+\section{Executed checks and remaining work}
+Fourteen transport and displacement tests passed locally, including extreme-tail inversion, an independent finite-difference Jacobian, and source-only score bounds. Twenty-three existing covariance tests also passed. A nonlinear six-dimensional numerical fixture had maximum inverse error about $2.2\times10^{-12}$. Its deliberately tiny correction had a normalized score-change upper bound of $0.000185$, below the predeclared margin $0.005$.
+
+The radial transport used 44 inverse-CDF iterations and was much slower than the legacy mixture sampler in the local timing check. No efficiency claim follows. The unchanged, previously frozen covariance experiment on PSC uses adaptive CIFAR development data and a held-fixed Student control. It addresses residual cross-band dependence. Full-image generation, video generation, matched latent-model comparisons, and untouched confirmation remain necessary for the original goal.
+\end{document}
