@@ -1,0 +1,258 @@
+{
+  "bins": 4,
+  "cell_count": 36,
+  "cells": [
+    [
+      "local",
+      8,
+      256,
+      8101
+    ],
+    [
+      "local",
+      8,
+      256,
+      8102
+    ],
+    [
+      "local",
+      8,
+      256,
+      8103
+    ],
+    [
+      "local",
+      8,
+      1024,
+      8101
+    ],
+    [
+      "local",
+      8,
+      1024,
+      8102
+    ],
+    [
+      "local",
+      8,
+      1024,
+      8103
+    ],
+    [
+      "local",
+      8,
+      4096,
+      8101
+    ],
+    [
+      "local",
+      8,
+      4096,
+      8102
+    ],
+    [
+      "local",
+      8,
+      4096,
+      8103
+    ],
+    [
+      "local",
+      32,
+      256,
+      8101
+    ],
+    [
+      "local",
+      32,
+      256,
+      8102
+    ],
+    [
+      "local",
+      32,
+      256,
+      8103
+    ],
+    [
+      "local",
+      32,
+      1024,
+      8101
+    ],
+    [
+      "local",
+      32,
+      1024,
+      8102
+    ],
+    [
+      "local",
+      32,
+      1024,
+      8103
+    ],
+    [
+      "local",
+      32,
+      4096,
+      8101
+    ],
+    [
+      "local",
+      32,
+      4096,
+      8102
+    ],
+    [
+      "local",
+      32,
+      4096,
+      8103
+    ],
+    [
+      "distant",
+      8,
+      256,
+      8101
+    ],
+    [
+      "distant",
+      8,
+      256,
+      8102
+    ],
+    [
+      "distant",
+      8,
+      256,
+      8103
+    ],
+    [
+      "distant",
+      8,
+      1024,
+      8101
+    ],
+    [
+      "distant",
+      8,
+      1024,
+      8102
+    ],
+    [
+      "distant",
+      8,
+      1024,
+      8103
+    ],
+    [
+      "distant",
+      8,
+      4096,
+      8101
+    ],
+    [
+      "distant",
+      8,
+      4096,
+      8102
+    ],
+    [
+      "distant",
+      8,
+      4096,
+      8103
+    ],
+    [
+      "distant",
+      32,
+      256,
+      8101
+    ],
+    [
+      "distant",
+      32,
+      256,
+      8102
+    ],
+    [
+      "distant",
+      32,
+      256,
+      8103
+    ],
+    [
+      "distant",
+      32,
+      1024,
+      8101
+    ],
+    [
+      "distant",
+      32,
+      1024,
+      8102
+    ],
+    [
+      "distant",
+      32,
+      1024,
+      8103
+    ],
+    [
+      "distant",
+      32,
+      4096,
+      8101
+    ],
+    [
+      "distant",
+      32,
+      4096,
+      8102
+    ],
+    [
+      "distant",
+      32,
+      4096,
+      8103
+    ]
+  ],
+  "coefficient_lower": 0.175,
+  "coefficient_upper": 3.3,
+  "command": [
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "qalt/experiments/positive_spline_validation/run.py",
+    "--source-commit",
+    "dc0169f50eb0eddfbd5bff6ace6dc2fb384347a2",
+    "--output",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-positive-spline"
+  ],
+  "evaluation_array_count": 4096,
+  "gap_tolerance": 0.0001,
+  "gaussian_source_count": 256,
+  "hostname": "r192.ib.bridges2.psc.edu",
+  "independent_units": "complete arrays; shared-group sites are dependent within an array",
+  "max_iterations": 500,
+  "method_identity": "convex positive-density C1 estimator, distinct from the neural spline pilot",
+  "numpy": "2.2.6",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+  "real_data_accessed": false,
+  "rho": 0.65,
+  "runtime_limit_seconds": 600,
+  "scipy": "1.15.3",
+  "slurm_job_id": "45554441",
+  "source_commit": "dc0169f50eb0eddfbd5bff6ace6dc2fb384347a2",
+  "source_hashes": {
+    "qalt/experiments/positive_spline_validation/PROTOCOL.md": "1df3cb5cfdb1628629a8d7b81aaf5ac1c7f4b7f06fda9a0ada31b05b386ad7eb",
+    "qalt/experiments/positive_spline_validation/run.py": "aa40c84ed07c28de1234ed3e22c13b2997c974ccc5e9edf04115926782e827f8",
+    "qalt/experiments/positive_spline_validation/run.slurm": "0bb633c1c77cd676a96defb1283bd43d6da754b40ae7a316fc4da6fdfd666119",
+    "qalt/src/qalt/positive_density_spline.py": "6ac6dce0ce129ff2fdad18daad55bff792547d2b88836f0f637db63515ca3ac0",
+    "qalt/src/qalt/positive_spline_flow.py": "874f99deb442272309257562f206e13cf1a2f546555029d7fef4e2135ddf5483",
+    "qalt/tests/test_positive_density_spline.py": "971f3a7621c2f2e4c71ba247ec7154b0f6a483507f08facb421a78551aa7eae2",
+    "qalt/tests/test_positive_spline_flow.py": "aed9c6a2259fb02ba8e1b818ba17f2acb7e4d9fdbed9402900a875cbc83533f0"
+  },
+  "status": "frozen_synthetic_development"
+}
