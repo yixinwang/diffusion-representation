@@ -37,3 +37,7 @@ Primary method sources: Durkan et al., Neural Spline Flows, https://arxiv.org/ab
 ## Pre-execution hardware amendment
 
 On 8 September 2026, before any pilot arm ran, PSC estimated a 13 September start for the requested L40S job 45552255. The GPU request is broadened to one available GPU type. All three arms and their four cases remain in the same allocation, with unchanged model, data, seed, update, time, metric, and numerical settings. The actual GPU is recorded. This supports only the specified same-machine development comparison; no result is transferred to L40S performance. The original pending job is canceled and retained in the execution history.
+
+## Separate CPU execution for numerical and learning validation
+
+The first available-GPU replacement failed before fitting with CUDA error803. A diagnostic GPU job is pending. Before any complete-generator result is observed, register a separate CPU execution of the unchanged local one-channel case, seed3100,2,048 fitting arrays,256 evaluation arrays and90 seconds per arm. It uses one host core,2000MiB host memory and a12-minute allocation. All other model, source, objective, solver-grid, metric and numerical settings remain identical. `run_cpu.slurm` runs all three arms on that same CPU. This separate record checks a complete learned generator while accelerator compatibility is unresolved. Its speed and learned-model behavior cannot be reported as the registered GPU comparison or as an image/video result. No new teacher, fitting seed, margin, or post-result selection is introduced.

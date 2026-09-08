@@ -98,6 +98,43 @@ single finite-precision draw as exact integrated discrete likelihood.
 
 ## Next review required before execution
 
+### Separate input-readiness check
+
+`check_data.py` and `run_data_check.slurm` define a bounded input validation
+job for review before submission. It uses the strict default loader with no
+fixture opt-out and preserves the exact 4,000 fitting / 1,000 seen-repair
+hash-selected native-pixel inputs above. This check may validate inputs before
+the prospective generative configurations below are implemented; it does not
+authorize or execute any model fitting, generation, evaluator or quality test.
+The separate Pro5 proposed 20k/20k within-fitting partition is not used here.
+
+For all selected inputs, in chunks of 64, require finite float64 open-unit-cube
+values and 3,072 coordinates. Compute the shared logit in float64, its explicit
+float64 per-image log-Jacobian, and then float32 logits. Verify float64
+logit/sigmoid roundtrip maximum at most 1e-12 and float32-logit/float32-sigmoid
+roundtrip maximum at most 1e-6. Record logit-cast error and finite Jacobian
+cancellation error as numerical diagnostics, and preserve hashes of the
+transformed arrays/Jacobians without saving their contents. A float32 sigmoid
+may round a near-boundary value to an endpoint; count this explicitly and
+never reuse that rounded value as a strict-unit-cube input or silently clip it.
+
+Output only original selected IDs, loader ledger, source/environment integrity,
+aggregate numerical checks and resource measurements. No images, fitted model,
+generated samples, likelihood/quality scores or image-content summaries are
+written. Require exact committed source-file equality and a matching requested
+revision before output creation. Refuse an existing result directory. Preserve
+failure JSON on errors after output creation; a preflight/source failure or
+external hard kill may leave no completion record and never counts as success.
+Bind completed payloads with a hashed completion marker.
+
+Allocate one CPU, 2,000 MB and five minutes on `cis260243p`/`RM-shared`, with all
+BLAS thread counts set to one and a 270-second soft deadline after preflight.
+No GPU, test-data path or test-phase API is present. Review and commit this
+readiness configuration before submission; successful checks supply no
+generative result or statistical confirmation.
+
+### Later generative pilot
+
 Freeze learned spline, full FM, hierarchical stochastic FM, and learned-analysis
 latent FM with a globally dependent stochastic residual decoder,
 shared prior dimension 3,072, minibatch schedule, training/time caps, evaluator

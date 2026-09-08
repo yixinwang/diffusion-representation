@@ -1,0 +1,53 @@
+{
+  "rho": 0.65,
+  "ell": 0.175,
+  "U": 3.3,
+  "A": 135.36162436094054,
+  "B": 2.9368917735310576,
+  "variance_constant": 4.334508064928458,
+  "sharp_excess_coefficient": 12.584871827898326,
+  "headwise_groups": 2,
+  "parameters_per_group": "(b+2)(b+1)",
+  "failure_probability": 0.05,
+  "optimization_gap_assumed_zero": true,
+  "restricted_independent_per_coordinate_floor": 0.01600378787878788,
+  "results": [
+    {
+      "n": 256,
+      "best_bins_through_20000": 8,
+      "per_coordinate_upper_bound": 72.23421545637477,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 4096,
+      "best_bins_through_20000": 13,
+      "per_coordinate_upper_bound": 12.24574833432136,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 40000,
+      "best_bins_through_20000": 18,
+      "per_coordinate_upper_bound": 2.858685123926987,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1000000,
+      "best_bins_through_20000": 31,
+      "per_coordinate_upper_bound": 0.3629635591468763,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 100000000,
+      "best_bins_through_20000": 64,
+      "per_coordinate_upper_bound": 0.01886518759841419,
+      "below_restricted_independent_floor": false
+    },
+    {
+      "n": 1000000000,
+      "best_bins_through_20000": 93,
+      "per_coordinate_upper_bound": 0.004286270696725476,
+      "below_restricted_independent_floor": true
+    }
+  ],
+  "data_or_fits_accessed": false
+}
