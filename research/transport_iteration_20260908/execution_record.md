@@ -8,8 +8,10 @@ The unchanged covariance experiment at source `4553e04f71c545e401409d18d82731589
 
 The result directory is `/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-covariance`. Its separate job logs preserve both attempts.
 
-Local focused verification passed 14 transport/screen tests and 23 covariance tests. A broader local suite stopped during collection because system Python 3.9 could not evaluate a pre-existing Python 3.10 union annotation. No test body ran in that invocation. A Python 3.12 environment is being prepared for the broader suite.
+Local focused verification passed 14 transport/screen tests and 23 covariance tests. A broader local suite stopped during collection because system Python 3.9 could not evaluate a pre-existing Python 3.10 union annotation. No test body ran in that invocation. The broader suite then passed all 129 tests under Python 3.12 in 41.45 seconds.
 
 The source-only numerical runner initially failed on JSON serialization of a NumPy Boolean. Native scalar conversion repaired this output-format defect, and its regression check passed. No result was overwritten. The successful local fixture is recorded in `local_fixture.json`.
 
 ChatGPT launched three separate Pro conversations before displaying a temporary request limit. The saved conversation links identify the work; complete Pro reviews remain pending retrieval.
+
+The GitHub research branch was published at `5b58f34`, including the seven earlier PSC commits. Job `45550810` was verified running on node `r277`.
