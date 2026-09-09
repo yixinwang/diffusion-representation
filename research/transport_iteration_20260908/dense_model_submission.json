@@ -1,0 +1,19 @@
+{
+  "job_id": "45573581",
+  "source_commit": "3d801dcc1508cc3e203df5ef97c3834f2462c50e",
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-dense-model-20260909",
+  "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-dense-model",
+  "log": "/ocean/projects/mth250006p/ywang26/diffusion-results/dense-model-45573581.out",
+  "submission_count": 1,
+  "node_requested": "v024",
+  "gpus": 1,
+  "cpus": 4,
+  "memory": "16G",
+  "time_limit": "00:30:00",
+  "uses_existing_checkpoints_and_saved_gaussian_only": true,
+  "observations_read": false,
+  "fitting_performed": false,
+  "last_observed_state": "PENDING",
+  "assigned_node": null,
+  "perceptual_45571074_state": "PENDING"
+}

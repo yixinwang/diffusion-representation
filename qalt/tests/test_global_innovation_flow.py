@@ -59,3 +59,35 @@ def test_state_roundtrip_preserves_freeze_and_complete_copy():
     assert torch.equal(original.sample_from_gaussian(z),restored.sample_from_gaussian(z))
     original.eval();restored.eval()
     assert torch.equal(original.log_prob(original.decode(z)[0]),restored.log_prob(restored.decode(z)[0]))
+
+
+def test_joint_phase_keeps_root_input_gradient_with_fixed_root_weights():
+    model=nonidentity(tiny())
+    model.freeze_analysis()
+    model.unfreeze_analysis()
+    model.train()
+    for p in model.coarse_decoder.parameters():
+        p.requires_grad_(False)
+    root_before=copy.deepcopy(model.coarse_decoder.state_dict())
+    x=torch.linspace(-.7,.8,32,dtype=torch.float64).reshape(2,1,4,4)
+    mixed,_=model.pre_analysis(x)
+    code,_=model.analysis.encode(mixed)
+    coarse,_=model._split(code)
+    coarse.retain_grad()
+    zc,ld=model.coarse_decoder.encode(coarse,model._zero(coarse))
+    # Isolate the root contribution: no residual or analysis logdet can supply
+    # the gradient checked here. Frozen parameters must not detach its inputs.
+    loss=(.5*zc.square().flatten(1).sum(1)-ld).mean()
+    loss.backward()
+    assert coarse.grad is not None and torch.isfinite(coarse.grad).all()
+    assert coarse.grad.abs().sum()>0
+    grads=[p.grad for p in model._analysis_parameters() if p.grad is not None]
+    assert grads and all(torch.isfinite(g).all() for g in grads)
+    assert sum(float(g.abs().sum()) for g in grads)>0
+    assert all(p.grad is None for p in model.coarse_decoder.parameters())
+    assert all(torch.equal(v,model.coarse_decoder.state_dict()[k]) for k,v in root_before.items())
+    restored=tiny()
+    restored.load_state_dict(copy.deepcopy(model.state_dict()))
+    assert all(p.requires_grad for p in restored._analysis_parameters())
+    model.eval();model.freeze_analysis();model.unfreeze_analysis()
+    assert not model.pre_analysis.training and not model.analysis.training

@@ -68,6 +68,11 @@ class GlobalInnovationFlow(nn.Module):
         self._analysis_frozen.fill_(True)
         self._restore_analysis(self,None)
 
+    def unfreeze_analysis(self):
+        """Enable joint likelihood fitting; callers must rebuild cached codes."""
+        self._analysis_frozen.fill_(False)
+        self._restore_analysis(self,None)
+
     def train(self,mode=True):
         super().train(mode)
         if bool(self._analysis_frozen):
