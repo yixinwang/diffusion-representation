@@ -1,0 +1,65 @@
+{
+  "scope": "publication transport only; no source tests, stress fits, native fits or PSC actions executed",
+  "original_archive_size": 29564,
+  "original_archive_sha256": "80b9e676f913c0dfe2cfd99dee6eff44f6009632d3b98c2dde12ba16cccfe220",
+  "local_archive_matches_original_zip_files": 23,
+  "verification_before_tree": "SHA256 and sizes of local original parts checked against original transport manifest; every GitHub create_blob returned SHA1 checked against Git hash of those exact bytes. Binary download attempts failed as recorded; no independent downloaded-byte SHA256 claimed at this stage.",
+  "parts": [
+    {
+      "path": "pro17_payload.part0000.bin",
+      "size": 8192,
+      "sha256": "8cc75933d8859f956dbde41114da75febb32b75caf84ada3a2dffe2830ff65bd",
+      "git_blob_sha1": "64aafbf1215130047eb22fcc897331ea3c46bf4d",
+      "github_create_blob_returned_sha1": "64aafbf1215130047eb22fcc897331ea3c46bf4d",
+      "git_blob_sha1_matches": true
+    },
+    {
+      "path": "pro17_payload.part0001.bin",
+      "size": 8192,
+      "sha256": "00c54873b3451e4a6f1a35353f16143cb5bb7a504aab403367da49d480483882",
+      "git_blob_sha1": "aa26e20bebb72f36aebf113cec190945ba2509c1",
+      "github_create_blob_returned_sha1": "aa26e20bebb72f36aebf113cec190945ba2509c1",
+      "git_blob_sha1_matches": true
+    },
+    {
+      "path": "pro17_payload.part0002.bin",
+      "size": 8192,
+      "sha256": "5673e7ce5557dc7cf7a609c0464696cc8caf40c0f353a9fca8eb7fb15fbbae4c",
+      "git_blob_sha1": "9b35c466861a5321bcc6353ee566f1e5112d7e14",
+      "github_create_blob_returned_sha1": "9b35c466861a5321bcc6353ee566f1e5112d7e14",
+      "git_blob_sha1_matches": true
+    },
+    {
+      "path": "pro17_payload.part0003.bin",
+      "size": 4988,
+      "sha256": "dfe83ba16efb75bfe039d78b2a49c148a9861d8bf844547c530b85649830c32c",
+      "git_blob_sha1": "3f455701cfb07c656378cce5c68005a08e1078f6",
+      "github_create_blob_returned_sha1": "3f455701cfb07c656378cce5c68005a08e1078f6",
+      "git_blob_sha1_matches": true
+    }
+  ],
+  "original_execution_status_unchanged": true,
+  "original_repository_read_failure_unchanged": true,
+  "prior_fragment_preserved": {
+    "path": "archive.part01.b64",
+    "git_blob_sha1": "1f212353dcd985e891f2ad02857870f83183b38a",
+    "note": "Earlier unverified fragment is not part of the complete original tar.xz."
+  },
+  "failures": [
+    {
+      "operation": "GitHub.fetch",
+      "url": "https://api.github.com/repos/yixinwang/diffusion-representation/git/blobs/64aafbf1215130047eb22fcc897331ea3c46bf4d",
+      "error": "ToolError: INVALID_ARGUMENT: Error code: INVALID_ARGUMENT; Error: HTTPError: 400: GitHub Fetch only accepts UTF-8 text. (Response: None)"
+    },
+    {
+      "operation": "GitHub.fetch_blob",
+      "blob_sha": "64aafbf1215130047eb22fcc897331ea3c46bf4d",
+      "error": "ToolError: UNKNOWN: Error code: UNKNOWN; Error: UnicodeDecodeError: 'utf-8' codec can't decode byte 0xfd in position 0: invalid start byte"
+    },
+    {
+      "operation": "public REST readback after both connector binary reads failed",
+      "url": "https://api.github.com/repos/yixinwang/diffusion-representation/git/blobs/64aafbf1215130047eb22fcc897331ea3c46bf4d",
+      "exception": "ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/yixinwang/diffusion-representation/git/blobs/64aafbf1215130047eb22fcc897331ea3c46bf4d (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -3] Temporary failure in name resolution)\"))"
+    }
+  ]
+}
