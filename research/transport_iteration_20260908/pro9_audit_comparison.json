@@ -1,0 +1,267 @@
+{
+  "status": "audit_reproduction_pass",
+  "original_files": 13,
+  "delivered_manifest_checks": 12,
+  "unchanged_source_and_auditor": true,
+  "check_groups": 18,
+  "published_environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "cuda_available": false
+  },
+  "rerun_environment": {
+    "python": "3.12.14",
+    "torch": "2.14.0",
+    "cuda_available": false
+  },
+  "comparisons": {
+    "scalar_torch.float64.max_inverse_error": {
+      "published": 1.6653345369377348e-15,
+      "rerun": 1.6653345369377348e-15,
+      "difference": 0.0
+    },
+    "scalar_torch.float64.max_logdet_cancellation": {
+      "published": 1.5987211554602254e-14,
+      "rerun": 1.5987211554602254e-14,
+      "difference": 0.0
+    },
+    "scalar_torch.float64.identity_error": {
+      "published": 2.220446049250313e-16,
+      "rerun": 2.220446049250313e-16,
+      "difference": 0.0
+    },
+    "scalar_torch.float64.tail_exact": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "scalar_torch.float32.max_inverse_error": {
+      "published": 1.0728836059570312e-06,
+      "rerun": 1.0728836059570312e-06,
+      "difference": 0.0
+    },
+    "scalar_torch.float32.max_logdet_cancellation": {
+      "published": 2.002716064453125e-05,
+      "rerun": 1.3113021850585938e-05,
+      "difference": -6.9141387939453125e-06
+    },
+    "scalar_torch.float32.identity_error": {
+      "published": 1.1920928955078125e-06,
+      "rerun": 1.1920928955078125e-06,
+      "difference": 0.0
+    },
+    "scalar_torch.float32.tail_exact": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "independent_numpy_forward.value_error": {
+      "published": 6.661338147750939e-16,
+      "rerun": 6.661338147750939e-16,
+      "difference": 0.0
+    },
+    "independent_numpy_forward.logdet_error": {
+      "published": 2.7755575615628914e-17,
+      "rerun": 1.1102230246251565e-16,
+      "difference": 8.326672684688674e-17
+    },
+    "independent_numpy_inverse.value_error": {
+      "published": 0.0,
+      "rerun": 0.0,
+      "difference": 0.0
+    },
+    "independent_numpy_inverse.logdet_error": {
+      "published": 2.7755575615628914e-17,
+      "rerun": 5.551115123125783e-17,
+      "difference": 2.7755575615628914e-17
+    },
+    "independent_normalization.mass": {
+      "published": 1.0,
+      "rerun": 1.0,
+      "difference": 0.0
+    },
+    "independent_normalization.absolute_error": {
+      "published": 0.0,
+      "rerun": 0.0,
+      "difference": 0.0
+    },
+    "gradcheck_inverseFalse_identityFalse.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "gradcheck_inverseFalse_identityTrue.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "gradcheck_inverseTrue_identityFalse.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "gradcheck_inverseTrue_identityTrue.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "rank_mixer.inverse_error": {
+      "published": 2.220446049250313e-16,
+      "rerun": 1.1102230246251565e-16,
+      "difference": -1.1102230246251565e-16
+    },
+    "rank_mixer.logdet_error": {
+      "published": 2.636779683484747e-16,
+      "rerun": 3.0531133177191805e-16,
+      "difference": 4.163336342344337e-17
+    },
+    "rank_mixer.minimum_eigenvalue": {
+      "published": 0.5488116360940266,
+      "rerun": 0.5488116360940269,
+      "difference": 3.3306690738754696e-16
+    },
+    "tiny_dense_jacobian.dimension": {
+      "published": 32,
+      "rerun": 32,
+      "difference": 0
+    },
+    "tiny_dense_jacobian.inverse_error": {
+      "published": 3.3306690738754696e-16,
+      "rerun": 1.6653345369377348e-16,
+      "difference": -1.6653345369377348e-16
+    },
+    "tiny_dense_jacobian.logdet_cancellation": {
+      "published": 0.0,
+      "rerun": 0.0,
+      "difference": 0.0
+    },
+    "tiny_dense_jacobian.dense_logdet_error": {
+      "published": 2.220446049250313e-16,
+      "rerun": 2.220446049250313e-16,
+      "difference": 0.0
+    },
+    "tiny_dense_jacobian.sign": {
+      "published": 1.0,
+      "rerun": 1.0,
+      "difference": 0.0
+    },
+    "future_input_invariance.blocks": {
+      "published": 4,
+      "rerun": 4,
+      "difference": 0
+    },
+    "future_input_invariance.bitwise": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "within_block_dependence.maximum_offdiagonal_jacobian": {
+      "published": 0.0367252324467459,
+      "rerun": 0.03672523244577011,
+      "difference": -9.757888941308579e-13
+    },
+    "exact_copy.bitwise": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "basis_cache.bitwise": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "basis_cache.cache_invalidated_on_training": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "basis_cache.cache_invalidated_on_checkpoint_load": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "fabricated_rgb32_residual_shape.dimension": {
+      "published": 2880,
+      "rerun": 2880,
+      "difference": 0
+    },
+    "fabricated_rgb32_residual_shape.inverse_error": {
+      "published": 7.152557373046875e-07,
+      "rerun": 4.76837158203125e-07,
+      "difference": -2.384185791015625e-07
+    },
+    "fabricated_rgb32_residual_shape.logdet_cancellation": {
+      "published": 0.0,
+      "rerun": 9.5367431640625e-07,
+      "difference": 9.5367431640625e-07
+    },
+    "fabricated_rgb32_residual_shape.gradients_finite": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "fabricated_rgb32_residual_shape.parameters": {
+      "published": 200436,
+      "rerun": 200436,
+      "difference": 0
+    },
+    "fabricated_rgb32_residual_shape.basis_cache_bytes": {
+      "published": 184320,
+      "rerun": 184320,
+      "difference": 0
+    },
+    "scalar_ablation.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    },
+    "scalar_ablation.frames": {
+      "published": 0,
+      "rerun": 0,
+      "difference": 0
+    },
+    "scalar_ablation.parameters": {
+      "published": 6788,
+      "rerun": 6788,
+      "difference": 0
+    },
+    "invalid_input_rejected.passed": {
+      "published": true,
+      "rerun": true,
+      "difference": null
+    }
+  },
+  "cache_bytes_formula": "4 blocks * 720 active coordinates * rank16 * 4 bytes float32",
+  "history": {
+    "attempt1": "retained failing cache-bitwise assertion; original failed source was not snapshotted",
+    "pre_rotation": "retained intermediate result, not final-source proof",
+    "pre_rotation_parameters": 199956,
+    "final_and_rerun": "PASS at identical final source hashes"
+  },
+  "coverage_limit": "does not exercise in-place parameter mutation or dtype/device conversion of a prepared cache; production fixes are distinct source",
+  "no_native_data_jobs_or_fitting": true,
+  "rerun_payload_sha256": {
+    "audit_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "audit.py": "a11fe4e1c7e1a6bb43626dfd92f21beaa7ea116cbc3bb98054b4bf12993dab8b",
+    "audit_results.json": "5e73870745dd86ca3f0ebf25598627d769abf82fd388866b3ed9dd8016ddaa13",
+    "audit_stdout.txt": "5e73870745dd86ca3f0ebf25598627d769abf82fd388866b3ed9dd8016ddaa13",
+    "reference.py": "ca6158776bf49fd9425aba46a865f251694a7d162419c44e9e7d8ca3dc95ab28"
+  },
+  "original_payload_sha256": {
+    "audit_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "THEORY.md": "0dfc7c27a18b96f8d6cb641cda1006b8146df0376461f1dd5dfa9a84b9445128",
+    "audit.py": "a11fe4e1c7e1a6bb43626dfd92f21beaa7ea116cbc3bb98054b4bf12993dab8b",
+    "audit_attempt1.py.txt": "cb949dcea16925587131fa76db340fed9a0e184131dc37fac4a8c5279277153c",
+    "audit_pre_rotation_results.json": "d51c68f5ead0cf1e229255a715ad0afde723280ac7e56030e3007e5e1f6ece00",
+    "integration.py": "4a73cc5ecce0783b32463f936b0e0c21af21a5ffb0fc4f8984372eba4f9c9a9d",
+    "README.md": "dd4f131fff303f7b7783b03cf5846ea099839610d534fc3868e6ec7acc8c509b",
+    "audit_results.json": "741cc3f2484a975c0707e6214a6b0a40d4719b5c0eb773fa08d788bde1122339",
+    "audit_stdout.txt": "741cc3f2484a975c0707e6214a6b0a40d4719b5c0eb773fa08d788bde1122339",
+    "audit_attempt1_stderr.txt": "d05453bc82190291cf99d98cc3b30abf73b05494eaf53e686f45dd991868b7eb",
+    "reference.py": "ca6158776bf49fd9425aba46a865f251694a7d162419c44e9e7d8ca3dc95ab28",
+    "SHA256SUMS": "12501ae7a4fa28c5d39cd70670b6c1738a950d785525a0212c38ed0f893e1e12",
+    "PROTOCOL.md": "a7f2f2b557db064f78e8ae494f2f6afe7ffe2633ad903cca9c80b41f3a4c17ab"
+  },
+  "local_cherry_pick_commit": "c61e1a08a964d05820be38ef62752f26759aafb1",
+  "all_13_files_match_git_blob": true
+}

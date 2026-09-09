@@ -1,0 +1,92 @@
+{
+  "scope": "fabricated-input CPU correctness; no native, GPU, or speed evidence",
+  "torch": "2.14.0",
+  "python": "3.12.14",
+  "cuda_available": false,
+  "checks": {
+    "scalar_torch.float64": {
+      "max_inverse_error": 1.6653345369377348e-15,
+      "max_logdet_cancellation": 1.5987211554602254e-14,
+      "identity_error": 2.220446049250313e-16,
+      "tail_exact": true
+    },
+    "scalar_torch.float32": {
+      "max_inverse_error": 1.0728836059570312e-06,
+      "max_logdet_cancellation": 1.3113021850585938e-05,
+      "identity_error": 1.1920928955078125e-06,
+      "tail_exact": true
+    },
+    "independent_numpy_forward": {
+      "value_error": 6.661338147750939e-16,
+      "logdet_error": 1.1102230246251565e-16
+    },
+    "independent_numpy_inverse": {
+      "value_error": 0.0,
+      "logdet_error": 5.551115123125783e-17
+    },
+    "independent_normalization": {
+      "mass": 1.0,
+      "absolute_error": 0.0
+    },
+    "gradcheck_inverseFalse_identityFalse": {
+      "passed": true
+    },
+    "gradcheck_inverseFalse_identityTrue": {
+      "passed": true
+    },
+    "gradcheck_inverseTrue_identityFalse": {
+      "passed": true
+    },
+    "gradcheck_inverseTrue_identityTrue": {
+      "passed": true
+    },
+    "rank_mixer": {
+      "inverse_error": 1.1102230246251565e-16,
+      "logdet_error": 3.0531133177191805e-16,
+      "minimum_eigenvalue": 0.5488116360940269
+    },
+    "tiny_dense_jacobian": {
+      "dimension": 32,
+      "inverse_error": 1.6653345369377348e-16,
+      "logdet_cancellation": 0.0,
+      "dense_logdet_error": 2.220446049250313e-16,
+      "sign": 1.0
+    },
+    "future_input_invariance": {
+      "blocks": 4,
+      "bitwise": true
+    },
+    "within_block_dependence": {
+      "maximum_offdiagonal_jacobian": 0.03672523244577011
+    },
+    "exact_copy": {
+      "bitwise": true
+    },
+    "basis_cache": {
+      "bitwise": true,
+      "cache_invalidated_on_training": true,
+      "cache_invalidated_on_checkpoint_load": true
+    },
+    "fabricated_rgb32_residual_shape": {
+      "dimension": 2880,
+      "inverse_error": 4.76837158203125e-07,
+      "logdet_cancellation": 9.5367431640625e-07,
+      "gradients_finite": true,
+      "parameters": 200436,
+      "basis_cache_bytes": 184320
+    },
+    "scalar_ablation": {
+      "passed": true,
+      "frames": 0,
+      "parameters": 6788
+    },
+    "invalid_input_rejected": {
+      "passed": true
+    }
+  },
+  "source_sha256": {
+    "reference.py": "ca6158776bf49fd9425aba46a865f251694a7d162419c44e9e7d8ca3dc95ab28",
+    "audit.py": "a11fe4e1c7e1a6bb43626dfd92f21beaa7ea116cbc3bb98054b4bf12993dab8b"
+  },
+  "status": "PASS"
+}

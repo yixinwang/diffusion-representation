@@ -1,0 +1,54 @@
+{
+  "candidate_sha256": "e660a4d814eb25ad16405ccd72ca7c47b7d2bd1de749ca394524a36a88e42bbe",
+  "check_script_sha256": "e2aaf72d5e4203fadd4bdc98438aa5478f09a7dbf5cb17900629223de6fee1ba",
+  "timing_performed": false,
+  "scope": "Rerun of scalar quantile, inverse, logdet and all-calls cached-Heun checks against current module after endpoint addition; endpoint-specific numerical gates are in test_tilted_sampler_cost.py.",
+  "checks": {
+    "minimum_adjacent_difference": 0.0,
+    "dense_boundary_extreme": {
+      "max_reference_error": 2.6645352591003757e-15,
+      "max_roundtrip_error": 1.4210854715202004e-14,
+      "max_density_identity_error": 2.6423307986078726e-13,
+      "finite": true
+    },
+    "random_gaussian": {
+      "max_reference_error": 1.3322676295501878e-15,
+      "max_roundtrip_error": 1.7763568394002505e-15,
+      "max_density_identity_error": 1.3322676295501878e-15,
+      "finite": true
+    },
+    "central_difference_logdet_error": 2.4738870674223534e-10,
+    "heun": {
+      "4": {
+        "field_calls": 4,
+        "cached_time_points": 3,
+        "endpoint_zero_field_called": true,
+        "max_reference_error": 1.7763568394002505e-15
+      },
+      "8": {
+        "field_calls": 8,
+        "cached_time_points": 5,
+        "endpoint_zero_field_called": true,
+        "max_reference_error": 1.7763568394002505e-15
+      },
+      "16": {
+        "field_calls": 16,
+        "cached_time_points": 9,
+        "endpoint_zero_field_called": true,
+        "max_reference_error": 1.7763568394002505e-15
+      },
+      "32": {
+        "field_calls": 32,
+        "cached_time_points": 17,
+        "endpoint_zero_field_called": true,
+        "max_reference_error": 1.7763568394002505e-15
+      },
+      "64": {
+        "field_calls": 64,
+        "cached_time_points": 33,
+        "endpoint_zero_field_called": true,
+        "max_reference_error": 1.7763568394002505e-15
+      }
+    }
+  }
+}
