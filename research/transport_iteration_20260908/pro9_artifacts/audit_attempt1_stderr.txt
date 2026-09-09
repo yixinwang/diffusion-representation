@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/mnt/data/pro9_native_repair/audit.py", line 174, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/data/pro9_native_repair/audit.py", line 131, in main
+    assert torch.equal(y,cached[0]) and torch.equal(ld,cached[1])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
