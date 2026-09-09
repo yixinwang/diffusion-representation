@@ -1,0 +1,106 @@
+{
+  ".gitignore": {
+    "bytes": 47,
+    "sha256": "8b2f57a557df32d27fce68921531c286876dbbac343cbf3a5c4cbe86ebf06407"
+  },
+  "PUBLICATION_INVENTORY.json": {
+    "bytes": 9503,
+    "sha256": "f1026297af0513ce3c1a6e36a1683af553fd93ea7b9e3d6c344c6c7c652d879d"
+  },
+  "README.md": {
+    "bytes": 2820,
+    "sha256": "3abed175b1465b812adf6192ceb9bee1675910c3bd84c662ebf5ebee64fd714d"
+  },
+  "SUBMISSION_CHECKOUT_GUARDS.json": {
+    "bytes": 2605,
+    "sha256": "03eb332c36162fc2b9dda15b34e323470e6ea081ca4d675399755f9c51294a3f"
+  },
+  "audit-cpu-diagnostic.py": {
+    "bytes": 3421,
+    "sha256": "0747641efd6fe23317e2cd37ca6dfc3784a79f13159aca19cfddb6a27b820759"
+  },
+  "cpu-diagnostic-initial-status.json": {
+    "bytes": 272,
+    "sha256": "534102a2e9a93407ac9197aca96b19e28fbc1d14378281a2ca4f318e2f5f4ca8"
+  },
+  "cpu-diagnostic-status-2.json": {
+    "bytes": 2586,
+    "sha256": "d092e38d61fcce17bf4aa3c02fc17c26cf9cf2c51e68a991fa5c31b35e55b1e4"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/actual_batch.pt": {
+    "bytes": 789007,
+    "sha256": "3f8d2398fb02cec9ee3a662336fa346fae5c6ec42537f9d1522deee11ae29141"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/batch_identity.npz": {
+    "bytes": 1564,
+    "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+    "bytes": 2667,
+    "sha256": "8078e9c3b718154bb8097d1be77036c95577a5b92a0a890f6947d15698ea6685"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+    "bytes": 10531,
+    "sha256": "3d1e01b5493e370928c2cb83b106882a4883416a1eb4e66793512bc19f7f99de"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+    "bytes": 629,
+    "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+    "bytes": 1392,
+    "sha256": "9206a5f7b1f7ad2b8b9f30f89b84e487046eaef8751d3231d3c6c2512b207ddd"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/encoded.pt": {
+    "bytes": 370533,
+    "sha256": "f147ef14251c3691fb6f86b7e35909aa6dc8711886be130616c9e55242b0b6b7"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/layers.json": {
+    "bytes": 2095,
+    "sha256": "de372fe5d49d84d504327d0efa8ad5e33612fb0e9456336772adbdbd245a1332"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/module_modes.json": {
+    "bytes": 9184,
+    "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/source_identity.json": {
+    "bytes": 10994,
+    "sha256": "ccd12a69b7a5bcddeafafb3dd274ceab856ed0af5241f95805c4985725fd6ff8"
+  },
+  "cpu-full/20260909-response-diagnostic-cpu/status.json": {
+    "bytes": 4679,
+    "sha256": "d651c21d493510b8b8a726d326759e0ae0df21a4f4edf01a75ef4431b68562bb"
+  },
+  "cpu-full/response-diagnostic-cpu-45612327.out": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cpu-machinecheck.json": {
+    "bytes": 2541,
+    "sha256": "778a2488216e452e3a28bdf7f3b4a5296b2c890ec0032112116f5c6cda47407c"
+  },
+  "cpu-review.md": {
+    "bytes": 1730,
+    "sha256": "d845bd742c48dcd6f252cb6c2f347d01f34c0cb8092063f3e41e98aed0eb82f0"
+  },
+  "cpu-transfer.json": {
+    "bytes": 86,
+    "sha256": "7e858f66777e6519500d320be6a18b186f5028abf687ca5a4e23379027a6cb04"
+  },
+  "launch-cpu-diagnostic.json": {
+    "bytes": 2051,
+    "sha256": "52ee4e0f23f58e31f07026021db4fc9b39cfef9b9706ee754ef6bc211c5f57cd"
+  },
+  "launch-cpu-diagnostic.py": {
+    "bytes": 3434,
+    "sha256": "ccdd5bd4cb0a71e04a9ef5fdb015507707055bf5c376814de5ffedc2c2c9bca1"
+  },
+  "launch-cpu-diagnostic.remote.py": {
+    "bytes": 2733,
+    "sha256": "4298bd04befb6f180c5db53ce641f82be119102a2be324d073b69c162642fa7d"
+  },
+  "launch-gpu-diagnostic.json": {
+    "bytes": 2317,
+    "sha256": "422b611b0ade655f3a3332382fa2ea88d9ac3e3e76b0bfc19f92de983bdeb942"
+  }
+}

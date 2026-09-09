@@ -1,0 +1,163 @@
+{
+  "status": "complete_local_capture_verified_compact_publication",
+  "verified_original_payloads": 18,
+  "verified_diagnostic_sources": 4,
+  "verified_reference_sources": 88,
+  "full_extracted_inventory": {
+    "20260909-response-diagnostic-cpu/actual_batch.pt": {
+      "bytes": 789007,
+      "sha256": "3f8d2398fb02cec9ee3a662336fa346fae5c6ec42537f9d1522deee11ae29141"
+    },
+    "20260909-response-diagnostic-cpu/batch_identity.npz": {
+      "bytes": 1564,
+      "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f"
+    },
+    "20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+      "bytes": 2667,
+      "sha256": "8078e9c3b718154bb8097d1be77036c95577a5b92a0a890f6947d15698ea6685"
+    },
+    "20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+      "bytes": 10531,
+      "sha256": "3d1e01b5493e370928c2cb83b106882a4883416a1eb4e66793512bc19f7f99de"
+    },
+    "20260909-response-diagnostic-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+      "bytes": 629,
+      "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53"
+    },
+    "20260909-response-diagnostic-cpu/diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "bytes": 1392,
+      "sha256": "9206a5f7b1f7ad2b8b9f30f89b84e487046eaef8751d3231d3c6c2512b207ddd"
+    },
+    "20260909-response-diagnostic-cpu/encoded.pt": {
+      "bytes": 370533,
+      "sha256": "f147ef14251c3691fb6f86b7e35909aa6dc8711886be130616c9e55242b0b6b7"
+    },
+    "20260909-response-diagnostic-cpu/layer_0_conditioner.pt": {
+      "bytes": 9614677,
+      "sha256": "51a77d2e5679ee8840d416d50364f5d68780b3babb83962ca14c0c37754ee868"
+    },
+    "20260909-response-diagnostic-cpu/layer_0_kernel_locals.pt": {
+      "bytes": 47477895,
+      "sha256": "fbe23a5084f54e7abf2791d52cdf53cecaa65f2ce1b5bff704f0bf7068efb3b3"
+    },
+    "20260909-response-diagnostic-cpu/layer_1_conditioner.pt": {
+      "bytes": 9614677,
+      "sha256": "02cceb88e6a20e0f8cb2bf0304261a06caf6b1d516da9321346e18ccd9a2099a"
+    },
+    "20260909-response-diagnostic-cpu/layer_1_kernel_locals.pt": {
+      "bytes": 47477895,
+      "sha256": "68e6eb869e1bc8c6f27b5d754351e450b930ecba0753afe401d7dd325b0445e2"
+    },
+    "20260909-response-diagnostic-cpu/layer_2_conditioner.pt": {
+      "bytes": 9614677,
+      "sha256": "e5e3541ebf5cfcb2164238e09b4586d4f56cb714bdafa60934c84f86a2bfc62b"
+    },
+    "20260909-response-diagnostic-cpu/layer_2_kernel_locals.pt": {
+      "bytes": 47477895,
+      "sha256": "b8180a5e67efff31c79b37ba48721a857581489b8e8dfc294648d80c587b987a"
+    },
+    "20260909-response-diagnostic-cpu/layer_3_conditioner.pt": {
+      "bytes": 9614677,
+      "sha256": "b85aa3d7d606b1c361ee6b0caa2a4f4f44fec97938daba18f6c730a409e1851c"
+    },
+    "20260909-response-diagnostic-cpu/layer_3_kernel_locals.pt": {
+      "bytes": 47477895,
+      "sha256": "eb7eb5dc4bde034f6c3a7a5dc88816cd3804a6f381bb35a61a7c129d98e88152"
+    },
+    "20260909-response-diagnostic-cpu/layers.json": {
+      "bytes": 2095,
+      "sha256": "de372fe5d49d84d504327d0efa8ad5e33612fb0e9456336772adbdbd245a1332"
+    },
+    "20260909-response-diagnostic-cpu/module_modes.json": {
+      "bytes": 9184,
+      "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956"
+    },
+    "20260909-response-diagnostic-cpu/source_identity.json": {
+      "bytes": 10994,
+      "sha256": "ccd12a69b7a5bcddeafafb3dd274ceab856ed0af5241f95805c4985725fd6ff8"
+    },
+    "20260909-response-diagnostic-cpu/status.json": {
+      "bytes": 4679,
+      "sha256": "d651c21d493510b8b8a726d326759e0ae0df21a4f4edf01a75ef4431b68562bb"
+    },
+    "response-diagnostic-cpu-45612327.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "omitted": [
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_0_conditioner.pt",
+      "bytes": 9614677,
+      "sha256": "51a77d2e5679ee8840d416d50364f5d68780b3babb83962ca14c0c37754ee868",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_0_conditioner.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_0_conditioner.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_0_kernel_locals.pt",
+      "bytes": 47477895,
+      "sha256": "fbe23a5084f54e7abf2791d52cdf53cecaa65f2ce1b5bff704f0bf7068efb3b3",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_0_kernel_locals.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_0_kernel_locals.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_1_conditioner.pt",
+      "bytes": 9614677,
+      "sha256": "02cceb88e6a20e0f8cb2bf0304261a06caf6b1d516da9321346e18ccd9a2099a",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_1_conditioner.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_1_conditioner.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_1_kernel_locals.pt",
+      "bytes": 47477895,
+      "sha256": "68e6eb869e1bc8c6f27b5d754351e450b930ecba0753afe401d7dd325b0445e2",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_1_kernel_locals.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_1_kernel_locals.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_2_conditioner.pt",
+      "bytes": 9614677,
+      "sha256": "e5e3541ebf5cfcb2164238e09b4586d4f56cb714bdafa60934c84f86a2bfc62b",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_2_conditioner.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_2_conditioner.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_2_kernel_locals.pt",
+      "bytes": 47477895,
+      "sha256": "b8180a5e67efff31c79b37ba48721a857581489b8e8dfc294648d80c587b987a",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_2_kernel_locals.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_2_kernel_locals.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_3_conditioner.pt",
+      "bytes": 9614677,
+      "sha256": "b85aa3d7d606b1c361ee6b0caa2a4f4f44fec97938daba18f6c730a409e1851c",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_3_conditioner.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_3_conditioner.pt"
+    },
+    {
+      "path": "20260909-response-diagnostic-cpu/layer_3_kernel_locals.pt",
+      "bytes": 47477895,
+      "sha256": "eb7eb5dc4bde034f6c3a7a5dc88816cd3804a6f381bb35a61a7c129d98e88152",
+      "reason": "large per-layer conditioner/kernel tensor capture retained locally and on PSC",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-full/20260909-response-diagnostic-cpu/layer_3_kernel_locals.pt",
+      "remote_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-diagnostic-cpu/layer_3_kernel_locals.pt"
+    },
+    {
+      "path": "cpu-diagnostic-full.tar",
+      "bytes": 229601280,
+      "sha256": "0636beffe5acbd8ca9be746a983f9c62b4338c71624807b2b13ab6da588fdf70",
+      "reason": "duplicate full transport archive retained locally; extracted per-layer tensor omissions separately listed",
+      "local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-diagnostic-full.tar"
+    }
+  ],
+  "errors": [],
+  "not_claimed": "compact subset is not standalone full numerical replay; omitted tensors remain available at recorded locations"
+}

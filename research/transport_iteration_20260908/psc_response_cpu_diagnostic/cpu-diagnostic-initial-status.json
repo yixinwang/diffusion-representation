@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|MaxRSS|NodeList\n45612327|RUNNING|0:0|00:00:45||r366\n45612327.batch|RUNNING|0:0|00:00:45||r366\n45612327.extern|RUNNING|0:0|00:00:45||r366\n45612327|RUNNING|r366|0:45\nOUTPUT_EXISTS False\n",
+  "stderr": ""
+}

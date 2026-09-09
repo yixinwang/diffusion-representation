@@ -1,0 +1,106 @@
+{
+  "payload_count": 18,
+  "diagnostic_source_count": 4,
+  "reference_source_count": 88,
+  "decoder_outcome": "returned_valid",
+  "source": "2b9ccd26f0d36634e0b88f4af02954fb250fb6a5",
+  "layers": [
+    {
+      "index": 0,
+      "invalid_counts": {
+        "good_bins": 0,
+        "good_disc": 0,
+        "good_theta": 0,
+        "good_terms": 0,
+        "good_den": 0
+      },
+      "inside_count": 91994,
+      "exact_theta_one_count": 0,
+      "theta_min": 5.44663680557278e-06,
+      "theta_max": 0.9999857544898987,
+      "closest_below_one": {
+        "coord": [
+          14,
+          4,
+          7,
+          3
+        ],
+        "gap": 1.424551010131836e-05,
+        "coupling_inactive": false
+      }
+    },
+    {
+      "index": 1,
+      "invalid_counts": {
+        "good_bins": 0,
+        "good_disc": 0,
+        "good_theta": 0,
+        "good_terms": 0,
+        "good_den": 0
+      },
+      "inside_count": 92003,
+      "exact_theta_one_count": 0,
+      "theta_min": 2.694632530619856e-05,
+      "theta_max": 0.9999911189079285,
+      "closest_below_one": {
+        "coord": [
+          0,
+          6,
+          7,
+          6
+        ],
+        "gap": 8.881092071533203e-06,
+        "coupling_inactive": false
+      }
+    },
+    {
+      "index": 2,
+      "invalid_counts": {
+        "good_bins": 0,
+        "good_disc": 0,
+        "good_theta": 0,
+        "good_terms": 0,
+        "good_den": 0
+      },
+      "inside_count": 91999,
+      "exact_theta_one_count": 0,
+      "theta_min": 1.0334681974200066e-05,
+      "theta_max": 0.9999890327453613,
+      "closest_below_one": {
+        "coord": [
+          17,
+          12,
+          5,
+          6
+        ],
+        "gap": 1.0967254638671875e-05,
+        "coupling_inactive": true
+      }
+    },
+    {
+      "index": 3,
+      "invalid_counts": {
+        "good_bins": 0,
+        "good_disc": 0,
+        "good_theta": 0,
+        "good_terms": 0,
+        "good_den": 0
+      },
+      "inside_count": 92002,
+      "exact_theta_one_count": 0,
+      "theta_min": 1.7622813174966723e-05,
+      "theta_max": 0.9999995827674866,
+      "closest_below_one": {
+        "coord": [
+          13,
+          1,
+          3,
+          7
+        ],
+        "gap": 4.172325134277344e-07,
+        "coupling_inactive": false
+      }
+    }
+  ],
+  "limits": "CPU no_grad capture is valid but does not reproduce GPU training-forward exception. No root cause is established. Preserved original64-row A chunks and all failed model weights. No optimizer update, generation, or quality evaluation."
+}
