@@ -1,0 +1,462 @@
+{
+  "files": {
+    ".gitignore": {
+      "sha256": "2a8b75b9ea67520172db48c4d78eed96b1114f2add5ade9aabe952b20c097a22",
+      "bytes": 14
+    },
+    "REVIEW.md": {
+      "sha256": "09b91c30f4227ea2e4acc28f52c580175b37b01d5b5f40ab089ced3d1681e2bc",
+      "bytes": 1641
+    },
+    "launch-transcript.txt": {
+      "sha256": "b4e289c93ecd66facee3e0d81c18c73ea3a72096cf8efe553e07695974e4b61b",
+      "bytes": 14140
+    },
+    "launch.py": {
+      "sha256": "25fb870460ec645737ecaad0dd18faf5190626818d34b98ec3e40dc43e5620bb",
+      "bytes": 7406
+    },
+    "launch.remote.py": {
+      "sha256": "b50b4b42e185fcbbbfe1eafcbc137f2828b4f17f409c1c03dd3329661c626971",
+      "bytes": 16292
+    },
+    "machinecheck.json": {
+      "sha256": "a1f176a3bff883ed4ef2ff4d2e069448a245ebeecb5e68c2daa890a16494ca6b",
+      "bytes": 630
+    },
+    "transfer.json": {
+      "sha256": "e41022b5b10ad1d3c327dd908af1d3a879c79c0046e507281ea446f98a8be06e",
+      "bytes": 62
+    },
+    "transport-status.json": {
+      "sha256": "66a92fe97190e87a03f2b9359930d5ff077f25ef75da73addf5b24c6e23d427d",
+      "bytes": 82
+    },
+    "updated-terminal-accounting.txt": {
+      "sha256": "a9745b3f8f7fdbc46936de55f66724d2d68dfd2e26e23069edd25cf277e5151c",
+      "bytes": 189
+    },
+    "upstream/accounting.txt": {
+      "sha256": "4bb288e1607311bbe78c9f577f475d63d9ef3b1ea63583cf2adf91c1c9692605",
+      "bytes": 183
+    },
+    "upstream/allocation.stderr": {
+      "sha256": "0f4f2d5f76c6b4348c4d26777e7c74abe2aae1ee8e2f7387471ba1a3168644f4",
+      "bytes": 310
+    },
+    "upstream/allocation.stdout": {
+      "sha256": "822f70a21ed16c9f995350ab2fc37172dff6818fce9027132aa3711b3bd4b78b",
+      "bytes": 987
+    },
+    "upstream/allocation_command.json": {
+      "sha256": "5acf52aa1c3843eeee2167682c1cbb7552e57969a634273f54236b7335a3c6bd",
+      "bytes": 795
+    },
+    "upstream/allocation_job.json": {
+      "sha256": "38bda5352667d4ccfe5e87213a5d0c6a6e648956256b9fce82c51d4a271e12c0",
+      "bytes": 166
+    },
+    "upstream/pytest.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "upstream/pytest.stdout": {
+      "sha256": "16d7c296d8f7435c1ed00701cf7cc5bd455e55bc3fea84ef68b5e4fcdf55f7e5",
+      "bytes": 100
+    },
+    "upstream/source_identity.json": {
+      "sha256": "4a9cb287cc592b96b963579b80713daa45b4a3a6ca8cf83b5fd187e7de09f908",
+      "bytes": 11295
+    },
+    "upstream/sources/qalt/data/observed_manifest_v1.json": {
+      "sha256": "8c0ae7a0c11a61876bf1be39ebe85c800afabe19969bfec770a6181a205b9995",
+      "bytes": 1692
+    },
+    "upstream/sources/qalt/experiments/innovation_response_pilot_v2/PROTOCOL.md": {
+      "sha256": "16fe2014b8edf3fcaa302f9b93601144720210a30c05c9d353a0f79d22681fb1",
+      "bytes": 18003
+    },
+    "upstream/sources/qalt/experiments/innovation_response_pilot_v2/qualification.json": {
+      "sha256": "eaa4b2e9aa856da229f702c9971d5b224aa6bd151d3fe796d26d49f265cd3feb",
+      "bytes": 563
+    },
+    "upstream/sources/qalt/experiments/innovation_response_pilot_v2/qualification_receipt.json": {
+      "sha256": "080e8719d4092c74f8d1cb959162f633c4f69f62bbb7b2ea2421a145bb890332",
+      "bytes": 43193
+    },
+    "upstream/sources/qalt/experiments/innovation_response_pilot_v2/run.py": {
+      "sha256": "06f20e9246e94a946c9da62ab8bb4ff2984b9a879da0df5e0fd857e71290c095",
+      "bytes": 38129
+    },
+    "upstream/sources/qalt/experiments/innovation_response_pilot_v2/run.slurm": {
+      "sha256": "c786ebc9404103a7410d1027352957cfb55cade39f444d750bbe80c0089fa00c",
+      "bytes": 972
+    },
+    "upstream/sources/qalt/experiments/observed_flow_pilot/SHARED_PROTOCOL.md": {
+      "sha256": "17f92360dd39dbc74b5b213987e286da583316e2fcb49fc9f29de454899aa4d9",
+      "bytes": 6126
+    },
+    "upstream/sources/qalt/experiments/observed_flow_pilot/run_shared.py": {
+      "sha256": "7ad966cfa23a2fc2d87a887c13f6ef916be3835173b1e12e3a76d51ed2d74e85",
+      "bytes": 19866
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/PROTOCOL.md": {
+      "sha256": "9aab4e255e327e9e51acd9ad72780b92857c85db48ead20eff43de6d201f274e",
+      "bytes": 6856
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/evaluator.py": {
+      "sha256": "5ea9e5efab484df2c84e383be834bc442d2c3e989bff68d30e1178e175b66ebc",
+      "bytes": 3191
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/metrics.py": {
+      "sha256": "64495574b17e5af659a0440d627af2c7a0011ce1c66c7bbc4e6738bb372f788b",
+      "bytes": 2944
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/run.py": {
+      "sha256": "90b9d846d4485f0186e325b81e3f15344486f1f2f683c9464f620d0f5a3cf5f3",
+      "bytes": 9637
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/run_smoke.slurm": {
+      "sha256": "617514f26cba4c36fac42e8705bb621ec976a2f9d47845f5b1d4ef1caee303f6",
+      "bytes": 1197
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/smoke.py": {
+      "sha256": "a0b6724ceb72705087e32073b2a5920936bcbc586e50f85daac27e738e70429e",
+      "bytes": 4069
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/test_evaluator.py": {
+      "sha256": "c98c8d6ca9079a98873e1650dd24343fdba1f31fcb0787c3ef9b6e1458ac4de0",
+      "bytes": 2008
+    },
+    "upstream/sources/qalt/experiments/perceptual_appendix/test_metrics.py": {
+      "sha256": "8624115bfbc7cd0bca2c1d9af9601a83141ae51780050f2db933057f791b9552",
+      "bytes": 3139
+    },
+    "upstream/sources/qalt/src/qalt/__init__.py": {
+      "sha256": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+      "bytes": 420
+    },
+    "upstream/sources/qalt/src/qalt/cached_global_innovation.py": {
+      "sha256": "740e37dc9d259569bfde9147ca511e96df61aea0463a47f9f5768f8987cc8bc4",
+      "bytes": 22772
+    },
+    "upstream/sources/qalt/src/qalt/conditional_cdf.py": {
+      "sha256": "14e0f5c1e36f0c5262f542886b115a0c827e5661626b16b8839e0c70f5947ada",
+      "bytes": 10837
+    },
+    "upstream/sources/qalt/src/qalt/core.py": {
+      "sha256": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+      "bytes": 3275
+    },
+    "upstream/sources/qalt/src/qalt/covariance_b4_flow.py": {
+      "sha256": "6a8a1e2d110b95d78db17a9a77fbce863e684636a86a962977a32a9d1f0fbe42",
+      "bytes": 8552
+    },
+    "upstream/sources/qalt/src/qalt/cubic_radial_flow.py": {
+      "sha256": "2bd52da7433accd23566125dfe300c8ae52ae692f7a07c898b2e15b08957ba20",
+      "bytes": 5792
+    },
+    "upstream/sources/qalt/src/qalt/data_integrity.py": {
+      "sha256": "8e950adfc29135dd1dedf60bb4a9b1886c8e4f88383c3bca14aa9e795ab1eabf",
+      "bytes": 7332
+    },
+    "upstream/sources/qalt/src/qalt/dense_global_conditional_spline.py": {
+      "sha256": "a06e9c94145a47f84a29a0d37ea69c2252fff041d6da7081a278fa04607068fd",
+      "bytes": 3890
+    },
+    "upstream/sources/qalt/src/qalt/dense_spline.py": {
+      "sha256": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433",
+      "bytes": 7478
+    },
+    "upstream/sources/qalt/src/qalt/flow_matching.py": {
+      "sha256": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+      "bytes": 9687
+    },
+    "upstream/sources/qalt/src/qalt/gaussian_reference_flow_matching.py": {
+      "sha256": "8c0c25e444812323fe8448b667a49f0eca0d11d09e0a99742c7b7fd5651a1923",
+      "bytes": 6078
+    },
+    "upstream/sources/qalt/src/qalt/global_conditional_spline.py": {
+      "sha256": "d10fa69a5b30bb539f427b4561cc00ace380ad78239603f3edacbcda90972dd6",
+      "bytes": 6100
+    },
+    "upstream/sources/qalt/src/qalt/global_full_flow_matching.py": {
+      "sha256": "4f81cbab5c3409fab75a9940186d7530f0443aca2546b03665de6518880d95c7",
+      "bytes": 4400
+    },
+    "upstream/sources/qalt/src/qalt/global_innovation_flow.py": {
+      "sha256": "df8ce22ea2c83473d15794ac6b17803f1d000308eee7bd538d26cb1cbd7ae3ef",
+      "bytes": 7060
+    },
+    "upstream/sources/qalt/src/qalt/innovation_response.py": {
+      "sha256": "d38319fd0b7b164611b1712381be1e14a4cc2ae8f94c33f598622e041249576d",
+      "bytes": 7154
+    },
+    "upstream/sources/qalt/src/qalt/learned_latent_flow_matching.py": {
+      "sha256": "bbdd9f641e7ff6b4306a4bc23a66e7088cc0507a148dd16c88255b8bbcdc39e6",
+      "bytes": 13555
+    },
+    "upstream/sources/qalt/src/qalt/multiscale.py": {
+      "sha256": "29ae0b8ed3c3e7ae36587b95402b1bc54c471dedbcaedaf61580349225529038",
+      "bytes": 8472
+    },
+    "upstream/sources/qalt/src/qalt/multiscale_flow.py": {
+      "sha256": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+      "bytes": 7622
+    },
+    "upstream/sources/qalt/src/qalt/observed_block.py": {
+      "sha256": "5bc79b5e723818c0e788f84dd8dcbafcdfb5b67eead02c061500e69c83fc11c1",
+      "bytes": 52143
+    },
+    "upstream/sources/qalt/src/qalt/observed_block_statistics.py": {
+      "sha256": "61f47c6f2619598e77cf1a97bb9779104aaf42c26360b39e96dd29e9682a9065",
+      "bytes": 17661
+    },
+    "upstream/sources/qalt/src/qalt/observed_flow_data.py": {
+      "sha256": "6b97cef92d50cd24b288706c9121f3f1341416fd3f06ffd1d2bafeaac92273c3",
+      "bytes": 9879
+    },
+    "upstream/sources/qalt/src/qalt/observed_routing.py": {
+      "sha256": "1bf9b5d8a81ad504d6974f19cde5f8daaff9c3d755e823c6dc0d1c12c396355e",
+      "bytes": 10638
+    },
+    "upstream/sources/qalt/src/qalt/output_screen.py": {
+      "sha256": "d397f885f74e33e877a3d7bfed480978e980d488ab8d8d7839cd9fdc0122117e",
+      "bytes": 3216
+    },
+    "upstream/sources/qalt/src/qalt/positive_density_spline.py": {
+      "sha256": "6ac6dce0ce129ff2fdad18daad55bff792547d2b88836f0f637db63515ca3ac0",
+      "bytes": 14439
+    },
+    "upstream/sources/qalt/src/qalt/positive_spline_flow.py": {
+      "sha256": "874f99deb442272309257562f206e13cf1a2f546555029d7fef4e2135ddf5483",
+      "bytes": 9573
+    },
+    "upstream/sources/qalt/src/qalt/positive_spline_optimizer.py": {
+      "sha256": "97705e6ab7fc5b6568a76d5ea59a9ada6f7e2922ee6b8c0ece15a0f8fc470004",
+      "bytes": 15451
+    },
+    "upstream/sources/qalt/src/qalt/quadratic_innovation_flow.py": {
+      "sha256": "3d849593bbd1bf7d9c769fe4085bdee57175ddb29a73692daf0849e72781abea",
+      "bytes": 6695
+    },
+    "upstream/sources/qalt/src/qalt/radial_b4_flow.py": {
+      "sha256": "d16c663203b67056312e180a74ce89ff50251fd61dba1c75a45df9dae651b18f",
+      "bytes": 17857
+    },
+    "upstream/sources/qalt/src/qalt/radial_transport.py": {
+      "sha256": "48b19fe803d4739d6c65c4bda38c91bc5822c8a2a4868269f72b0b1066100800",
+      "bytes": 6407
+    },
+    "upstream/sources/qalt/src/qalt/reflected_dense_spline.py": {
+      "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+      "bytes": 9188
+    },
+    "upstream/sources/qalt/src/qalt/rgb_block.py": {
+      "sha256": "7df1b3627a4b0f858846aa51173c588f7f89150034561f434d98f650b2bb8880",
+      "bytes": 19245
+    },
+    "upstream/sources/qalt/src/qalt/spline.py": {
+      "sha256": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+      "bytes": 7447
+    },
+    "upstream/sources/qalt/tests/test_cached_global_innovation.py": {
+      "sha256": "1828544440cce1e713e26f3c404e0d459761080aa98b11ad0c23be107cc98a52",
+      "bytes": 6888
+    },
+    "upstream/sources/qalt/tests/test_cached_innovation_pilot.py": {
+      "sha256": "c4bd4d498e2d39a32e7595e79d0a5b914caad64d5f3fb9de5686d67318d42af8",
+      "bytes": 5315
+    },
+    "upstream/sources/qalt/tests/test_coarse_heun_bound.py": {
+      "sha256": "de53153f640ca3d7068eac78db0fa78007bbbb562dd9c28ae34255f539ea2101",
+      "bytes": 3565
+    },
+    "upstream/sources/qalt/tests/test_conditional_cdf.py": {
+      "sha256": "af3b616aefbd69812f28b16231022ccbb84145ec3039dd5c2b8f3075bc5dcf30",
+      "bytes": 6934
+    },
+    "upstream/sources/qalt/tests/test_conditional_cdf_validation.py": {
+      "sha256": "018431f7abd69b9a8a3d4feab064ec8aac42262a42ff42a14b62055a5fea4a52",
+      "bytes": 1707
+    },
+    "upstream/sources/qalt/tests/test_covariance_b4_flow.py": {
+      "sha256": "039f665d57c3657cc20af04350f75a937f85dfd0d62745512df1e1a7e315856d",
+      "bytes": 7622
+    },
+    "upstream/sources/qalt/tests/test_cubic_radial_flow.py": {
+      "sha256": "7a33c384f583f932769a3fac22770ab899709e84d870f4d77ce9652eac78ae2a",
+      "bytes": 3409
+    },
+    "upstream/sources/qalt/tests/test_cubic_radial_flow_runner.py": {
+      "sha256": "6fcf89c93d4e9b6c0171597bbe99b1286ef3420768ab0e8d5b7711ba724467c0",
+      "bytes": 4569
+    },
+    "upstream/sources/qalt/tests/test_data_integrity.py": {
+      "sha256": "46035021785e0d18ec9661b57bdc1c1eb494838a6f809a34525fdbe8e6def471",
+      "bytes": 3873
+    },
+    "upstream/sources/qalt/tests/test_dense_global_conditional_spline.py": {
+      "sha256": "c50dddfc34219d01375f0406cd3e97acf15ac9c96b5dff7ac47faafd7e3e0b0c",
+      "bytes": 3880
+    },
+    "upstream/sources/qalt/tests/test_dense_model_benchmark_protocol.py": {
+      "sha256": "e2d35b5502df832be2a813aa08f50c57c96950172119c59676dbf3aa9edf8d4d",
+      "bytes": 3501
+    },
+    "upstream/sources/qalt/tests/test_dense_spline.py": {
+      "sha256": "927ed100b56696654ab22b6f9c71e1675498d5adec8bada4fe97cd53b8fc77db",
+      "bytes": 4436
+    },
+    "upstream/sources/qalt/tests/test_flow_matching.py": {
+      "sha256": "2eec03c27ccafe71f64407c91c979fde442a84623e647ee925ae879a6821509d",
+      "bytes": 5447
+    },
+    "upstream/sources/qalt/tests/test_gaussian_reference_flow_matching.py": {
+      "sha256": "2fb7f88eac7e3e616a3af580a6e77ba9c8052d75fc8d2fa4832c7690c449292a",
+      "bytes": 3743
+    },
+    "upstream/sources/qalt/tests/test_global_conditional_spline.py": {
+      "sha256": "10c4429c86b998e9b478ae77ad583d811cd0654c1375c754ea8656fb7734da6a",
+      "bytes": 4939
+    },
+    "upstream/sources/qalt/tests/test_global_full_flow_matching.py": {
+      "sha256": "6b54ab9514c56ddb64887b361b375b81a762e3c3c329e6ad333e17bb5788d195",
+      "bytes": 2647
+    },
+    "upstream/sources/qalt/tests/test_global_innovation_flow.py": {
+      "sha256": "f950f826068e955a72d9fcfab6e77fef71763e0ba3f70b016e8a1b29e82ab9a8",
+      "bytes": 4578
+    },
+    "upstream/sources/qalt/tests/test_innovation_response.py": {
+      "sha256": "090129e9c94da8b8861743d8d88ef5c1a5a0392d452bc235dfd1d5757f194500",
+      "bytes": 8150
+    },
+    "upstream/sources/qalt/tests/test_innovation_response_pilot.py": {
+      "sha256": "eac9b280207a95a0e337de4a8cd2e77ca35f9f231f02c31327bef60b69a964dc",
+      "bytes": 5824
+    },
+    "upstream/sources/qalt/tests/test_innovation_response_pilot_v2.py": {
+      "sha256": "eaf647236797faa09e0c13833785f4b2740e0083830b35a7290af7db10caf54c",
+      "bytes": 12759
+    },
+    "upstream/sources/qalt/tests/test_learned_latent_flow_matching.py": {
+      "sha256": "84fef67ec01cf763d6aa3e3bfe864f8b48d8931b798b367f11100b29ae21bd4c",
+      "bytes": 11800
+    },
+    "upstream/sources/qalt/tests/test_multiscale.py": {
+      "sha256": "4a70c9e1a3eeb34ba4bb60bc448850bcf80bc4f86631d3114c82197ec8daaf79",
+      "bytes": 2150
+    },
+    "upstream/sources/qalt/tests/test_multiscale_flow.py": {
+      "sha256": "b7a37b1ad1cd037bcc257660ea9a08535d95f55e458faa51690f546b28030635",
+      "bytes": 2693
+    },
+    "upstream/sources/qalt/tests/test_observed_b4_covariance_child_runner.py": {
+      "sha256": "3165b921bdce5148a8d1dd1230581a4e9eb3b8adf88fc18dd5dc5c709ce03050",
+      "bytes": 11905
+    },
+    "upstream/sources/qalt/tests/test_observed_b4_radial_child_runner.py": {
+      "sha256": "18b1704863d9851c4dde54f66027ce6a0474cdc99bc32d656f4a442c8169f85f",
+      "bytes": 7539
+    },
+    "upstream/sources/qalt/tests/test_observed_block.py": {
+      "sha256": "678fe7c5e47934a1e7bc780fea8fbeea22b77135ef4c552ecc1c52b2fdfd4a16",
+      "bytes": 12964
+    },
+    "upstream/sources/qalt/tests/test_observed_block_aggregate.py": {
+      "sha256": "9f46a0a8a86fc0fa2e8977605ffd2cd7a9d771deeac3c5739bde1a7834a44444",
+      "bytes": 9270
+    },
+    "upstream/sources/qalt/tests/test_observed_block_runner.py": {
+      "sha256": "528f3fd30581239a80df64fa96b68ce8a1631259071a1abb0d7d9928239eb2ee",
+      "bytes": 2241
+    },
+    "upstream/sources/qalt/tests/test_observed_block_statistics.py": {
+      "sha256": "184bc96ca47c0bd4cb05b8a145f10969ae074f7c0ba547344418a2c30145203f",
+      "bytes": 7669
+    },
+    "upstream/sources/qalt/tests/test_observed_flow_data.py": {
+      "sha256": "056154ce0ff2dc0ffb7234567a461c745b0c4b8c9afa80023788ed406706315c",
+      "bytes": 6432
+    },
+    "upstream/sources/qalt/tests/test_observed_routing.py": {
+      "sha256": "f676b7eae715f66c5ddd7898adbe9ddc74295ae1cf5667bba58ff9489954959f",
+      "bytes": 1792
+    },
+    "upstream/sources/qalt/tests/test_observed_shared_pilot.py": {
+      "sha256": "1d387705b05d5abf18fd5f769f0f100f8a0bc17c95ea833ea586ff338ccf6e2a",
+      "bytes": 4609
+    },
+    "upstream/sources/qalt/tests/test_output_screen.py": {
+      "sha256": "f8063474508eddb62e68e22c9625b2477b3041cabab0e6e41a31c58e16bb3e3a",
+      "bytes": 2341
+    },
+    "upstream/sources/qalt/tests/test_positive_density_spline.py": {
+      "sha256": "971f3a7621c2f2e4c71ba247ec7154b0f6a483507f08facb421a78551aa7eae2",
+      "bytes": 6477
+    },
+    "upstream/sources/qalt/tests/test_positive_spline_flow.py": {
+      "sha256": "aed9c6a2259fb02ba8e1b818ba17f2acb7e4d9fdbed9402900a875cbc83533f0",
+      "bytes": 4239
+    },
+    "upstream/sources/qalt/tests/test_positive_spline_optimizer.py": {
+      "sha256": "9ffa0a471879998d9d4367023d32fbfebbf11a30b82800282e069d46cfb6ee43",
+      "bytes": 7525
+    },
+    "upstream/sources/qalt/tests/test_qalt_core.py": {
+      "sha256": "632ae1784bb701042f1ce5cb34f74205cd8ff6c123c282b84e64c386d8c18403",
+      "bytes": 1201
+    },
+    "upstream/sources/qalt/tests/test_quadratic_innovation_flow.py": {
+      "sha256": "4affad8175abf1412cc881ac22c3ef594bd402ca55a724006bb2fdd9eebcb26c",
+      "bytes": 5122
+    },
+    "upstream/sources/qalt/tests/test_radial_b4_flow.py": {
+      "sha256": "c7a4211af1662af35426a69ede3a813fa2e519a6f002cf6913a5e50aefaa5d2d",
+      "bytes": 7257
+    },
+    "upstream/sources/qalt/tests/test_radial_transport.py": {
+      "sha256": "39d52ececf3b3beb2a972140cc133acac618aac4206442cd2e227484f52278e9",
+      "bytes": 2696
+    },
+    "upstream/sources/qalt/tests/test_reflected_dense_spline.py": {
+      "sha256": "aa47de4f33fdb6868939a85948e264fa0078b48f7a3aea7bf9acb3445ae81829",
+      "bytes": 7100
+    },
+    "upstream/sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "sha256": "37ebb3e78c95c2ea485ead033d6a52cea8ffb7dff06d3223f7e944cba3119eca",
+      "bytes": 3937
+    },
+    "upstream/sources/qalt/tests/test_rgb_block.py": {
+      "sha256": "3a458db76ca44ad886ea5faad456a6fc84c1ab5f9ee7cd0206dda1b04074df83",
+      "bytes": 5907
+    },
+    "upstream/sources/qalt/tests/test_spline.py": {
+      "sha256": "52ec0f27c2e23de981003be341150e75afb799f6660ad756f841aa966593d600",
+      "bytes": 4937
+    },
+    "upstream/sources/qalt/tests/test_tilted_normal_reference_protocol.py": {
+      "sha256": "be8bfa462dcff647184b1512729379afdfd4952e4a7cedeb84db388cb2a4ea71",
+      "bytes": 3124
+    },
+    "upstream/sources/qalt/tests/test_tilted_sampler_cost.py": {
+      "sha256": "0d33f1d83d5187f8d076f9f39da113313a536147a28b0ca7b217ebfdf95fb5cb",
+      "bytes": 3751
+    },
+    "upstream/status.json": {
+      "sha256": "4d9faa9b1f6d11ee57fd86d82523bb4cec01843cfe5db81bc26996ef90d73000",
+      "bytes": 12915
+    },
+    "upstream/test_status.json": {
+      "sha256": "c70540e0a7281725871c684f84d2b2958c4c5c4b5cf911adf590994a1c85486b",
+      "bytes": 910
+    },
+    "upstream/worker.py": {
+      "sha256": "4ab779e43be35c0165bfa1dbcfa6039583419fc8209ae484d03eae998fa41be1",
+      "bytes": 1866
+    }
+  },
+  "self_excluded": "PUBLICATION_FILES.json",
+  "upstream_omissions": []
+}

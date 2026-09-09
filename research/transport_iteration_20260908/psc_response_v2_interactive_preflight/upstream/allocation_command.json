@@ -1,0 +1,34 @@
+{
+  "command": [
+    "salloc",
+    "-A",
+    "cis260243p",
+    "-p",
+    "RM-shared",
+    "--qos=rminteract",
+    "-N",
+    "1",
+    "-n",
+    "1",
+    "-c",
+    "4",
+    "--mem=8000M",
+    "-t",
+    "01:00:00",
+    "--job-name=response-v2-interactive-preflight",
+    "srun",
+    "--export=ALL",
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "-u",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-v2-interactive-preflight/worker.py"
+  ],
+  "attempts": 1,
+  "environment_overrides": {
+    "PYTHONPATH": "/ocean/projects/mth250006p/ywang26/diffusion-v2-interactive-preflight-20260909/qalt/src",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "SLURM_EXPORT_ENV": "ALL"
+  }
+}

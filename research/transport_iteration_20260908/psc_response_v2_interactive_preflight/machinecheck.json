@@ -1,0 +1,14 @@
+{
+  "payload_count": 104,
+  "source_count": 94,
+  "commit": "3b8c0f7bef604a90ff329fd9608639527b67a972",
+  "status_sha256": "4d9faa9b1f6d11ee57fd86d82523bb4cec01843cfe5db81bc26996ef90d73000",
+  "tests_passed": 34,
+  "pytest_seconds": 42.95,
+  "worker_seconds": 111.14495343598537,
+  "allocation_command_wall_seconds": 123.52432824485004,
+  "released": true,
+  "canonical_data_loaded": false,
+  "training_performed": false,
+  "accounting": "JobID|State|ExitCode|Elapsed|AllocCPUS|ReqMem|NodeList\n45619090|RUNNING|0:0|00:01:57|4|8000M|r196\n45619090.extern|RUNNING|0:0|00:01:57|4||r196\n45619090.0|RUNNING|0:0|00:01:54|4||r196\n"
+}

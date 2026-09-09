@@ -1,0 +1,20 @@
+{
+  "status": "tests_completed",
+  "returncode": 0,
+  "job_id": "45619090",
+  "torch": "2.10.0+cu128",
+  "command": [
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "/ocean/projects/mth250006p/ywang26/diffusion-v2-interactive-preflight-20260909/qalt/tests/test_innovation_response_pilot_v2.py",
+    "/ocean/projects/mth250006p/ywang26/diffusion-v2-interactive-preflight-20260909/qalt/tests/test_innovation_response.py",
+    "/ocean/projects/mth250006p/ywang26/diffusion-v2-interactive-preflight-20260909/qalt/tests/test_dense_global_conditional_spline.py",
+    "/ocean/projects/mth250006p/ywang26/diffusion-v2-interactive-preflight-20260909/qalt/tests/test_reflected_dense_spline.py"
+  ],
+  "runtime_seconds": 111.14495343598537,
+  "canonical_data_loaded": false,
+  "training_performed": false,
+  "source_commit": "3b8c0f7bef604a90ff329fd9608639527b67a972"
+}

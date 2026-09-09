@@ -1,0 +1,22 @@
+{
+  "STATUS.md": {
+    "bytes": 1053,
+    "sha256": "05fc985690c834644b3286ecd1d393c879ad73b36270e507578d40d9137a93d7"
+  },
+  "launch-record.json": {
+    "bytes": 13305,
+    "sha256": "93e842524780c1df716d388fdba1ccf9734eb966f1cce5ecad7e731e4aa14d76"
+  },
+  "launch.py": {
+    "bytes": 3866,
+    "sha256": "1af40e2237a12428e62cb6b87c783d0d482cbb11a79f8da13830780f3bd99311"
+  },
+  "launch.remote.py": {
+    "bytes": 13399,
+    "sha256": "cc2da0b6c0194ee84d3d57eb363de6ecf0d440c1ad73a2a5e9c2ee0400b2bcd4"
+  },
+  "submission.json": {
+    "bytes": 12974,
+    "sha256": "879e1efbfcbb1271329fd8bd2156995151600b4c840d4048fd8379c431b725c7"
+  }
+}
