@@ -1,0 +1,12 @@
+{
+  "scope": "fabricated-only; no model/data loader/experiment outputs",
+  "dense2d_vs_separable_max_ssim_error": 3.469446951953614e-17,
+  "identity_mse_zero": true,
+  "identity_ssim_one": true,
+  "constant_offset_ssim": 0.8000999500249875,
+  "constant_offset_analytic": 0.8000999500249875,
+  "invalid_probes_rejected": 3,
+  "global_psnr_example": 23.010299956639813,
+  "mean_image_psnr_distinct_example": 25.228787452803374,
+  "pass": true
+}

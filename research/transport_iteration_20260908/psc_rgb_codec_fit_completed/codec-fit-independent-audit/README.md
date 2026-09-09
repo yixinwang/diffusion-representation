@@ -1,0 +1,15 @@
+# Prepared independent FIT reconstruction audit
+
+Prepared before any experiment output was opened. No canonical/repair/test pixels or checkpoints were read while preparing this checker. `selfcheck.json` records fabricated identity, constant-offset, invalid-input and dense2D-convolution comparisons; the audit itself uses separable SciPy correlation and discards all padding-affected locations to implement valid11x11 Gaussian sigma1.5 population SSIM independently of PyTorch's grouped convolution. All metric arithmetic is float64 on the exact saved float32 RGB arrays. It performs no clipping, resampling, codec execution, or target reconstruction.
+
+After independent receipt/source authentication, run in a fresh output directory:
+
+    python audit.py /verified/result/root --expected-status-sha FULL_SHA256 --expected-commit FULL_GIT_SHA --repo /verified/repository --output /new/audit/output
+
+The script checks the pinned terminal hash, all payload hashes, copied source and optional exact Git bytes, completed FIT-only status, checkpoint freeze hash/schedule/update metadata, stage/cache input bindings, full target/reconstruction/latent-cache shapes/dtypes/finiteness, evaluation completion, and first16 saved-array consistency. It independently recomputes per-image MSE/SSIM, global PSNR from global mean MSE, summaries, and all three engineering gates. Failed quality floors are valid audited outcomes; they are not changed into pipeline execution failures. Incomplete experiment output is rejected and the checker's traceback is preserved.
+
+Per-image comparison limits are fixed prospectively: MSE absolute2e-12; SSIM absolute2e-10; relative1e-10. Global PSNR absolute2e-10. Infinite PSNR is permitted only when independently recomputed MSE is exactly zero, with the runner's explicit `infinity` string. These compare numerical implementations, not statistical uncertainty. A discrepancy at a gate boundary remains a discrepancy; do not tune tolerances after seeing results.
+
+Root/agent source review found no material blocker to the600-second FIT-only codec qualification after final checkpoint-hash time and GPU-peak labels were corrected. The runner never uses repair arrays for model work; its unchanged loader physically constructs them, as disclosed. Training reconstruction quality, not held-out generalization or FM generation, is the endpoint. The registered untrained field and double encoding during normalization are charged and disclosed.
+
+Limitations: array consistency cannot itself prove that weights were frozen or that every training stage consumed the declared tensor; those are source-reviewed runtime assertions bound by authenticated receipts. This checker does not run the codec, reconstruct raw canonical inputs, recompute encoded latents, inspect optimizer values, or certify a competent generator. The optional Git check must be supplied for full source-byte verification; absence is explicitly reported. The first real-output execution must preserve process/environment details separately alongside its results.

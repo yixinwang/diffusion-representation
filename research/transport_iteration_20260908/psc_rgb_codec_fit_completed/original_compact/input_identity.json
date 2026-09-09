@@ -1,0 +1,5 @@
+{
+  "fit_float64_sha256": "0a7fd8e9749781bb8d97db29ad55e4e98efd0d062b076a9182edc1bfcadb2523",
+  "fit_ids_sha256": "29939f78b7073931718e1707fccec3861ec1eea24f0ad15473dc50ea24c05d9c",
+  "input_transform": "2*float32(FIT[0,1])-1; metrics compare resulting rounded float32 RGB"
+}

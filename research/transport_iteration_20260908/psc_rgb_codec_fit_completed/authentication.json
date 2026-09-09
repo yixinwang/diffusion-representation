@@ -1,0 +1,23 @@
+{
+  "status": "full_payload_source_launcher_authenticated",
+  "job_id": "45636236",
+  "source_commit": "6ae48a91706c97e65c833f94bd51a7b54f74c653",
+  "source_count": 11,
+  "result_status": "completed_FIT_only_qualification",
+  "result_status_sha256": "fb05aeb8cf3f1f95f588c8169d405ef3a1ee0360aeca7cc52e6db39f68577f2d",
+  "result_payload_count": 40,
+  "transfer_files": 2027,
+  "transfer_bytes": 534553188,
+  "transfer_manifest_sha256": "7bbcbecf7cb75c012dc35d8492c3ef32a584d22bb67836cb0c91f32023f6ef0e",
+  "launcher_sha256": "c7f05cda291f771d1aad416604370b35c9ddc870ddb4b53fb47b5683ab5d40b3",
+  "terminal_exit": "0:0",
+  "allocation_relinquished": true,
+  "requested_qos": "gpuinteract",
+  "actual_qos": "gpu",
+  "actual_result_project": 559736,
+  "original_checkout_preserved_at_startup": true,
+  "duplicate_archive_stored": false,
+  "result_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91",
+  "quality_metrics_recomputed": false,
+  "independent_metric_review": "root owns subsequent saved-array audit; no quality conclusion from this authentication"
+}

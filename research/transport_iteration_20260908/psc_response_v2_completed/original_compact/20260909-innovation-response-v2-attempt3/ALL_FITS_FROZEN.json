@@ -1,0 +1,649 @@
+{
+  "before_any_repair_evaluation": true,
+  "checkpoints": {
+    "78201/P_frozen": {
+      "sha256": "d146fe8cfa25f7dcee0399f7d234bfb10c9e7b6cd80829dc5ae90da0edce2f06",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/P_joint": {
+      "sha256": "4eee300e9c168eb87c3999acc4a376b4c2fee49430c101df48a812a5d181eb16",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/I_frozen": {
+      "sha256": "bb4523c5c9bd9728a02656874a8059efdfe296ebaf8cce6ce591f0d3baf5cd65",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/I_joint": {
+      "sha256": "ce875025903b1ec5c93778a3387445749f909ebce057c77859f2feac2c07ca97",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/RQS_frozen": {
+      "sha256": "7b17b3f2efc6797969643d33b264d943b7c626170c349ea9a69e5849df47bc7d",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/RQS_joint": {
+      "sha256": "7595d338672df97b403cd6df236ccbf396fb74953863209cb1351eed0b80d11e",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78201/S42": {
+      "sha256": "0362422372877761195c5f2eb6b790531438193ccaa2863a52991086ed75d7e7",
+      "architecture": {
+        "family": "S42",
+        "response_mode": null,
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": 42,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 215892,
+          "total": 544080,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/P_frozen": {
+      "sha256": "90c773775d8508540de8558824915142dce47009b850a5baaf96a1718842338f",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/P_joint": {
+      "sha256": "897e3bc982b1bea69338914628d84f01fe0058df24ba0e869eb8d417564f98c2",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/I_frozen": {
+      "sha256": "76095ae6410018ad73b1a2c18cb4312271a7c340a329bd41508590a3b31f45af",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/I_joint": {
+      "sha256": "236023d43397ac8f15a3a4ddd011ac534a9d5924ebfc65794b8c1e434f49d155",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/RQS_frozen": {
+      "sha256": "ea747d2ba30a8ec2636177fa59c423344aae5b8797cdec32bf19030249a07aec",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/RQS_joint": {
+      "sha256": "8a0bbdb55266bf615b959efa34529ec9d47ea8202744d9e2227c85db3ba1aa17",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78202/S42": {
+      "sha256": "9413377dcc2ded82d80e5d7aa865f048a8e0cc89a0a3aa6a2223d306facb7ce8",
+      "architecture": {
+        "family": "S42",
+        "response_mode": null,
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": 42,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 215892,
+          "total": 544080,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/P_frozen": {
+      "sha256": "ce8427a4d0f13ac605babab9663b84e25934361f1a61fda60fc7777f4a3c45a9",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/P_joint": {
+      "sha256": "8c06e88ae1f4341a1519d477de7076ad88640f745502c6cea948a80566864900",
+      "architecture": {
+        "family": "P",
+        "response_mode": "prefix",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/I_frozen": {
+      "sha256": "2e1ea6be00c8fadfab2c64d5e1ab5c97825f9443d2bcf7e96c23296275ef5c23",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/I_joint": {
+      "sha256": "b75576437a9d8bfbf77353ace1189efa1f18fe789ec47832e4571eb6c5a509f3",
+      "architecture": {
+        "family": "I",
+        "response_mode": "innovation",
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 210932,
+          "total": 539120,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/RQS_frozen": {
+      "sha256": "9d0608b9a3d785de978aa26bb1ab183a5a04ba62b1f11f1211f67b3ff9d45bb5",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/RQS_joint": {
+      "sha256": "fedb81376afefb9e99846dd17a16cfd7771ce48cb3906f5105654c23437943d7",
+      "architecture": {
+        "family": "RQS",
+        "response_mode": null,
+        "backend": "dense_reflected",
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": null,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 261524,
+          "total": 589712,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    },
+    "78203/S42": {
+      "sha256": "e2f0ee8e2acab3a58d2786e6a1ebb716e8e8f278848fb0b253ad50407c9ad63b",
+      "architecture": {
+        "family": "S42",
+        "response_mode": null,
+        "backend": null,
+        "base_config": {
+          "channels": 3,
+          "size": 32,
+          "levels": 2,
+          "pre_layers": 2,
+          "analysis_coarse_layers": 6,
+          "analysis_detail_layers": 4,
+          "coarse_layers": 4,
+          "residual_layers": 4,
+          "width": 32,
+          "bins": 8,
+          "attention_heads": 4,
+          "innovation_rank": 16
+        },
+        "scalar_width": 42,
+        "parameter_counts": {
+          "analysis": 255952,
+          "coarse": 72236,
+          "residual": 215892,
+          "total": 544080,
+          "coarse_zero_context_input_weights": 1152
+        }
+      }
+    }
+  },
+  "seeds": [
+    78201,
+    78202,
+    78203
+  ],
+  "arms": [
+    "P_frozen",
+    "P_joint",
+    "I_frozen",
+    "I_joint",
+    "RQS_frozen",
+    "RQS_joint",
+    "S42"
+  ]
+}

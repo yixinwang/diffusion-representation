@@ -1,0 +1,329 @@
+{
+  "scope": "compact original40-payload qualification subset; fullcapture retained",
+  "original_status_sha256": "fb05aeb8cf3f1f95f588c8169d405ef3a1ee0360aeca7cc52e6db39f68577f2d",
+  "included_payloads": 28,
+  "omitted_payloads": 12,
+  "omitted_bytes": 501528601,
+  "files": [
+    {
+      "path": "FIT_FROZEN.json",
+      "bytes": 1732,
+      "sha256": "ad47996e3042cd7bf37a3e08e9602c8d13639c5003e0a14001c8c22af3cea64e",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/FIT_FROZEN.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/FIT_FROZEN.json"
+    },
+    {
+      "path": "cache_input_binding.json",
+      "bytes": 685,
+      "sha256": "29061314ca02199f94de000a2552f8729249eee01253424a2becf8220c7c52b5",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/cache_input_binding.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/cache_input_binding.json"
+    },
+    {
+      "path": "checkpoint_060.pt",
+      "bytes": 53901410,
+      "sha256": "00076f20a177e23ada61d4f27e85924d06f99d37103cc92f18c08c3360ed5089",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_060.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_060.pt"
+    },
+    {
+      "path": "checkpoint_150.pt",
+      "bytes": 53901410,
+      "sha256": "ce71facf86d838fd073ab421be5f49e91fba355d2b2f7d0204b4da040d542229",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_150.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_150.pt"
+    },
+    {
+      "path": "checkpoint_300.pt",
+      "bytes": 53901410,
+      "sha256": "b34272d860ac39bafa9b15da66f032a42507063dbfd5fb6ac9c31ca3a95c0437",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_300.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_300.pt"
+    },
+    {
+      "path": "checkpoint_450.pt",
+      "bytes": 53901410,
+      "sha256": "4359662dd7f7178c397207d5c4d085d1170898bdbea14186239839ce76dd0a82",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_450.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_450.pt"
+    },
+    {
+      "path": "checkpoint_600.pt",
+      "bytes": 53901410,
+      "sha256": "42ea445a4bc6f747dde8d28223438deb09fb3c516bff0228e98699b7df72869a",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_600.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/checkpoint_600.pt"
+    },
+    {
+      "path": "data_ledger.json",
+      "bytes": 4094,
+      "sha256": "2b483917bd41e4c0f8629d6986f5ea87befc61ff5db42c386cd6dcadd9bf48d3",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/data_ledger.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/data_ledger.json"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 126,
+      "sha256": "9e35ca75a073ecb5bb393d4eec69c59fe5151bd3c6f9598e3d30d6f03f11ef50",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/environment.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/environment.json"
+    },
+    {
+      "path": "evaluation_progress.json",
+      "bytes": 29,
+      "sha256": "f10f4ce4dec258ff80ccc5c34f04d0511948c9d9055e2fd306ee2e32ffe641f0",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/evaluation_progress.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/evaluation_progress.json"
+    },
+    {
+      "path": "first16_reconstructed.npy",
+      "bytes": 196736,
+      "sha256": "37630beb5b5120aa5aa32e93875c17f804fb8c9989bb3d1fa7a47849c7103128",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/first16_reconstructed.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/first16_reconstructed.npy"
+    },
+    {
+      "path": "first16_true.npy",
+      "bytes": 196736,
+      "sha256": "ede2dcc4ea43b0aaa5e57414ac13b466dac58a588d90cc153c692091999ce166",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/first16_true.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/first16_true.npy"
+    },
+    {
+      "path": "fit_accounting.json",
+      "bytes": 1595,
+      "sha256": "09f2f2a90e97bd29115118c0a4b0345e0c49cafabfb0a4bd2f411715a0830a45",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_accounting.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_accounting.json"
+    },
+    {
+      "path": "fit_frozen.pt",
+      "bytes": 53899126,
+      "sha256": "41b474ac823f63c51ddcab927d9b19b9665f21c5644c5d1272255191e0933619",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_frozen.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_frozen.pt"
+    },
+    {
+      "path": "fit_ids.npy",
+      "bytes": 32128,
+      "sha256": "29939f78b7073931718e1707fccec3861ec1eea24f0ad15473dc50ea24c05d9c",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_ids.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_ids.npy"
+    },
+    {
+      "path": "fit_normalized_cache.npy",
+      "bytes": 16384128,
+      "sha256": "3410b2c6d329194210fdf7d1e14fe998168fa8a8661806867476b68d84e5d830",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_normalized_cache.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_normalized_cache.npy"
+    },
+    {
+      "path": "fit_per_image_metrics.npz",
+      "bytes": 64500,
+      "sha256": "dfd732df328c7b806b731c6fc7bd10069f2f88f9fc4de56cd0b7deb73fbaa219",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_per_image_metrics.npz",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_per_image_metrics.npz"
+    },
+    {
+      "path": "fit_progress.json",
+      "bytes": 1311,
+      "sha256": "b68799a54b60bad84ade51fd94217cc33078e7da64c3c20222e8df628e4c5284",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_progress.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_progress.json"
+    },
+    {
+      "path": "fit_reconstructions.npy",
+      "bytes": 49152128,
+      "sha256": "619a699a2137f169ee2263a40dcb4890db9fdb4830b8aa89bcce17d870d268ed",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_reconstructions.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_reconstructions.npy"
+    },
+    {
+      "path": "fit_rounded_evaluation_targets.npy",
+      "bytes": 49152128,
+      "sha256": "6815478a68361c4d3b2c57c05f88b764395d84f3c7b52d7fb588f9c8bd54d3af",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_rounded_evaluation_targets.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_rounded_evaluation_targets.npy"
+    },
+    {
+      "path": "fit_steps.jsonl",
+      "bytes": 11398378,
+      "sha256": "2fd781e86dcf618347908300377fe5e7d4ad502fd8fceaeef96982d7708ca506",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_steps.jsonl",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/fit_steps.jsonl"
+    },
+    {
+      "path": "initial.pt",
+      "bytes": 26019989,
+      "sha256": "21c92c359a70ec2a41f64456f980126bb2e33063518efacd97826237e8ca8d16",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/initial.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/initial.pt"
+    },
+    {
+      "path": "input_identity.json",
+      "bytes": 276,
+      "sha256": "e1dd78cb18e1059db997bf4bfac84093881c54f5ded8c76dd0165430a5f17748",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/input_identity.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/input_identity.json"
+    },
+    {
+      "path": "latent_mean.npy",
+      "bytes": 192,
+      "sha256": "3bbc9ccc4b4f6b0209f590aa920abcc9e133f2360b653c307ba283d810144269",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/latent_mean.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/latent_mean.npy"
+    },
+    {
+      "path": "latent_std.npy",
+      "bytes": 192,
+      "sha256": "ad7e6eddf82d30fc9ebbdd250165e60f12689b5d1313f71f0dfd80d74484640e",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/latent_std.npy",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/latent_std.npy"
+    },
+    {
+      "path": "normalized_state.pt",
+      "bytes": 26015674,
+      "sha256": "74ece6e8400ca658f091df8436e902d42e4271e3fcaaabcc6781e4478ab1f9e7",
+      "included": false,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/normalized_state.pt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/normalized_state.pt"
+    },
+    {
+      "path": "preflight.txt",
+      "bytes": 100,
+      "sha256": "ac804598a66a57d1807d4a750a7340fe856bb49712f7d1aaf1afa039629ead1d",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/preflight.txt",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/preflight.txt"
+    },
+    {
+      "path": "source/qalt/data/observed_manifest_v1.json",
+      "bytes": 1692,
+      "sha256": "8c0ae7a0c11a61876bf1be39ebe85c800afabe19969bfec770a6181a205b9995",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/data/observed_manifest_v1.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/data/observed_manifest_v1.json"
+    },
+    {
+      "path": "source/qalt/experiments/rgb_codec_fit_qualification/PROTOCOL.md",
+      "bytes": 5565,
+      "sha256": "37e0ff91be689e41b33f08b683cb19f38cba4fd37abd77ec74caa26c35a5c602",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/PROTOCOL.md",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/PROTOCOL.md"
+    },
+    {
+      "path": "source/qalt/experiments/rgb_codec_fit_qualification/run.py",
+      "bytes": 16786,
+      "sha256": "7c1c7039c2b038ab45d77c441533aa8b112b8697edcad51c69b5c9fce58fa0e3",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/run.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/run.py"
+    },
+    {
+      "path": "source/qalt/experiments/rgb_codec_fit_qualification/run.sh",
+      "bytes": 409,
+      "sha256": "b82d314c995438db1c4bf838027a7210de0f46072d576fa52f9bd43b3c7d8fc6",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/run.sh",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/experiments/rgb_codec_fit_qualification/run.sh"
+    },
+    {
+      "path": "source/qalt/src/qalt/__init__.py",
+      "bytes": 420,
+      "sha256": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/__init__.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/__init__.py"
+    },
+    {
+      "path": "source/qalt/src/qalt/core.py",
+      "bytes": 3275,
+      "sha256": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/core.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/core.py"
+    },
+    {
+      "path": "source/qalt/src/qalt/data_integrity.py",
+      "bytes": 7332,
+      "sha256": "8e950adfc29135dd1dedf60bb4a9b1886c8e4f88383c3bca14aa9e795ab1eabf",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/data_integrity.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/data_integrity.py"
+    },
+    {
+      "path": "source/qalt/src/qalt/observed_flow_data.py",
+      "bytes": 9879,
+      "sha256": "6b97cef92d50cd24b288706c9121f3f1341416fd3f06ffd1d2bafeaac92273c3",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/observed_flow_data.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/observed_flow_data.py"
+    },
+    {
+      "path": "source/qalt/src/qalt/rgb_codec_flow_matching.py",
+      "bytes": 16523,
+      "sha256": "48445678a60ab3ec031e64523c6f642f0ae6b3bc826847c7b458b6185fb6a1c4",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/rgb_codec_flow_matching.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/src/qalt/rgb_codec_flow_matching.py"
+    },
+    {
+      "path": "source/qalt/tests/test_rgb_codec_fit_qualification.py",
+      "bytes": 2423,
+      "sha256": "718ba26a90bcead95663ffe3a3a846b40d7c4a5ea36d548f89c64fc1be501da1",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/tests/test_rgb_codec_fit_qualification.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/tests/test_rgb_codec_fit_qualification.py"
+    },
+    {
+      "path": "source/qalt/tests/test_rgb_codec_flow_matching.py",
+      "bytes": 8351,
+      "sha256": "b13e6d73044aed7357187da93a6cc53f56a63b382cb69cf314901dc8e6c49644",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/tests/test_rgb_codec_flow_matching.py",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source/qalt/tests/test_rgb_codec_flow_matching.py"
+    },
+    {
+      "path": "source_identity.json",
+      "bytes": 1346,
+      "sha256": "1df18f32b8bb20378008610044abc1e24a09f64cf37b258febae5d46c70fc475",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source_identity.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/source_identity.json"
+    },
+    {
+      "path": "stage_input_binding.json",
+      "bytes": 488,
+      "sha256": "936495b1b102b2c2cdbf5287d895dfb231cc7af4521a8de56e4638e748c17ddd",
+      "included": true,
+      "retained_local": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-fit-preparation/full/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/stage_input_binding.json",
+      "retained_PSC": "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91/stage_input_binding.json"
+    }
+  ]
+}

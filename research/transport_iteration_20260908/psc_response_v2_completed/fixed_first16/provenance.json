@@ -1,0 +1,225 @@
+{
+  "source_status_sha256": "d25b0dcee8475f61c4bf7a9ac412783ed5c9e5d30821e73e20d2653592c03722",
+  "numpy": "2.2.6",
+  "python": "3.10.9",
+  "selection": "First16 rows in stored order, every21arm; no clipping or filtering. float64saved pixels cast tofloat32 and exact backcast asserted. Not a quality selected gallery.",
+  "origins": {
+    "78201_P_frozen": {
+      "native_file": "seed_78201/P_frozen/generated.npy",
+      "native_file_sha256": "26c494c6bf052493687e93e5e9de573f347dc7531ae84185e9b83a31e19082b1",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "1ab634c21bd447762b416ed3c77136803b6651c94de458ab5ba9938211211a73"
+    },
+    "78201_P_joint": {
+      "native_file": "seed_78201/P_joint/generated.npy",
+      "native_file_sha256": "da4732554d986b0364a3a917d267ec615dbd2bde3515016fca6bf20810a491e9",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "18e0fe636e7e6e5d5d92c86c5a0c5574c0af5e6bbfca8b8054d3f725e184f589"
+    },
+    "78201_I_frozen": {
+      "native_file": "seed_78201/I_frozen/generated.npy",
+      "native_file_sha256": "bf2d62d86b6643f60ae9ffd29b4aedb394f398adb185294639a3dab75efea94f",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "e38f9acc4191a07fb11bb0c7b0e20945e0d290f1872dfa7ce2fe43d1d6afc7f6"
+    },
+    "78201_I_joint": {
+      "native_file": "seed_78201/I_joint/generated.npy",
+      "native_file_sha256": "99002c67a315220245696e52e1813371017fa1046d437c61a4d0219f6f1fd155",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "80320ecc4d9cb2e690115c2aedc04cbf6031f5cd6a85a262fb9b3bd8e66c224c"
+    },
+    "78201_RQS_frozen": {
+      "native_file": "seed_78201/RQS_frozen/generated.npy",
+      "native_file_sha256": "d3f053411ebf4a86fc3c5d5f8cb66908018aa805de0274778a89fc11faaf0b41",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "37f4d6f72267c333c25697a1e465897c989f637ce7c6b31b37c948f7778aa280"
+    },
+    "78201_RQS_joint": {
+      "native_file": "seed_78201/RQS_joint/generated.npy",
+      "native_file_sha256": "0b8960c375848b10f9a13f5e2a0af4380e0cd101771648ff1e4be91f67031b68",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "e26a449427065c20a48133d2834b3b91327421c64fbdf71d345e861f0651f4b4"
+    },
+    "78201_S42": {
+      "native_file": "seed_78201/S42/generated.npy",
+      "native_file_sha256": "1dc0709dcdc0e8fb9656744a9337c1f79c0f96a1d6865ad7f0089938bf831119",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "f1f141c54569f1854fbc6d1c48db0693502dcb88402a9c18b0040f8a1f52eaf5"
+    },
+    "78201_source": {
+      "native_file": "seed_78201/common_gaussian.npy",
+      "native_file_sha256": "e213ca5eb5a0160704508ad54a3cd8354e8ce910cf494d47352c2b9fc957c877",
+      "rows": [
+        0,
+        16
+      ]
+    },
+    "78202_P_frozen": {
+      "native_file": "seed_78202/P_frozen/generated.npy",
+      "native_file_sha256": "4e905a3dd571dc69fc25ec6f300874a97f2707670eb8b01ccecbc9dbe4547016",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "7281101b6571a16e4f044a27e502884abe4a5c7b2160561decf965c8b551961a"
+    },
+    "78202_P_joint": {
+      "native_file": "seed_78202/P_joint/generated.npy",
+      "native_file_sha256": "8034533bc3ecad9dfaa0dae1ab6e4c7117d35203412a15a8e78bfa32bb9740a6",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "30cf6cbd66eeca1dee7742c04de477a661c7abd4c651eeaefc1242d081fa5dcd"
+    },
+    "78202_I_frozen": {
+      "native_file": "seed_78202/I_frozen/generated.npy",
+      "native_file_sha256": "1cb992c3583e967dedae622b84374edc41b012160bbf9309fcb557595e839df0",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "54bb78ff9002921d4c038164ca48bed141ad1a7d4a5ab6527e4fc8fdf2b229b0"
+    },
+    "78202_I_joint": {
+      "native_file": "seed_78202/I_joint/generated.npy",
+      "native_file_sha256": "8997ccb70aac0c7573c51e2875d11ac309fe88adccbe01d5f5b02b26f8ebec96",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "62e870873531b2d9a5e633802d802f23f8d48083e3992f88c2b6aa6897c53c76"
+    },
+    "78202_RQS_frozen": {
+      "native_file": "seed_78202/RQS_frozen/generated.npy",
+      "native_file_sha256": "50ac54590f7ad6b8f9c165640e5ef0825fac4794c946c51ddfa30b10cd124c52",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "bf31b0f6372fb6b0333bb3215b44e8609c49586c0f7ee00a90d7cd7fd4b80f3f"
+    },
+    "78202_RQS_joint": {
+      "native_file": "seed_78202/RQS_joint/generated.npy",
+      "native_file_sha256": "1f477e85240d1a4f16a66b12855153cbf03ccba9b0b11152824712cf4ef30f24",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "90a21b03fc21177629550a39c6e1005f8b5fb82790194f3b47959e9d8448c24e"
+    },
+    "78202_S42": {
+      "native_file": "seed_78202/S42/generated.npy",
+      "native_file_sha256": "ece0bb7ca1886f44e5aa1d88d59cfc06732895a2d74d26e749d8d2543a7e3888",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "3aa4003788e3fd51003a258e6227b5205b50cfa626396150701fc5240370d509"
+    },
+    "78202_source": {
+      "native_file": "seed_78202/common_gaussian.npy",
+      "native_file_sha256": "3a5973cf13a5712b92c6beabb24cba05a8e4034b327237ce35fac4d0ff3c64e5",
+      "rows": [
+        0,
+        16
+      ]
+    },
+    "78203_P_frozen": {
+      "native_file": "seed_78203/P_frozen/generated.npy",
+      "native_file_sha256": "50e9f457cc77047aac58e28ccaab9cab3b17eb9f60a810364f4c873d0eae5ae0",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "1102eba00dd1732ba6438f0476038cb0a1fb1806bccb04091d1eb2278dc4fe11"
+    },
+    "78203_P_joint": {
+      "native_file": "seed_78203/P_joint/generated.npy",
+      "native_file_sha256": "8035caf107e5d55e2d854ce975f7836dc5903e922d1fb01e94b10f457952bff6",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "f8ff96b075e71522c5385bbae8ca8e7695d12c114fb689c65969fbefbf48e43e"
+    },
+    "78203_I_frozen": {
+      "native_file": "seed_78203/I_frozen/generated.npy",
+      "native_file_sha256": "c0396411da7e7eb953db660aec7da8d8359bec0901bb2cbdfd6c0a01a816106c",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "47209326ffc65430f40721c19ed0951373f0ef5132ab6bf7decb1062bc4fc25b"
+    },
+    "78203_I_joint": {
+      "native_file": "seed_78203/I_joint/generated.npy",
+      "native_file_sha256": "0c2b7ad7d8dd7df10dd5dfaf065fbcd6cdf8cc1a9756f8290549ce25aaaf1866",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "6320fb78aff52311f41b44eacdf16c111b8fc90fcb55f3df48759521770f137a"
+    },
+    "78203_RQS_frozen": {
+      "native_file": "seed_78203/RQS_frozen/generated.npy",
+      "native_file_sha256": "017026c79b08816202d58bde310d42284535005642fc33c3d864bcb0b7869417",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "03637baf9e91280bf1cef9b798a460daa8a56bcde23ff96fbd162572f13aa771"
+    },
+    "78203_RQS_joint": {
+      "native_file": "seed_78203/RQS_joint/generated.npy",
+      "native_file_sha256": "8ba6e2a6515a2e052893c781e7cc933de34b70ee0b3b54cfce0fb8ecbee596e8",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "20d229add1e8d805ce7171b59a1e0c9be4459705ad98e70c602dd5109dff8594"
+    },
+    "78203_S42": {
+      "native_file": "seed_78203/S42/generated.npy",
+      "native_file_sha256": "ea668009a00c4e145ef6b2908942412a1e8d7326cf873ca86952597bb00f39fc",
+      "rows": [
+        0,
+        16
+      ],
+      "selected_float32_bytes_sha256": "a1f9dffc44476645f6baec0c548964865579912bb11b137c33824c477ba0ea80"
+    },
+    "78203_source": {
+      "native_file": "seed_78203/common_gaussian.npy",
+      "native_file_sha256": "5ebe6b68bde2f483e464c88d7f496c9d5a1b8bffefb0edd16000bd2994ef00e8",
+      "rows": [
+        0,
+        16
+      ]
+    }
+  },
+  "output": {
+    "sha256": "0228e93bc463f7c1f23fc50552caf8a8e6dbc3d84997073fd0f9b8cab639ec0a",
+    "bytes": 4724818
+  }
+}

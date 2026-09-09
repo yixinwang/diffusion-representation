@@ -1,0 +1,80 @@
+{
+  "status": "compact_remote_audits_authenticated",
+  "job_id": "45638282",
+  "terminal": "COMPLETED0:0",
+  "files": {
+    "config.json": {
+      "bytes": 2303,
+      "sha256": "fb253e94e9849e45810a06f14676a2b1c9a7964845bbae5047de2a934e7a66ce"
+    },
+    "ledger.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ledger_audit.py": {
+      "bytes": 5421,
+      "sha256": "958360ca1b2b1d0874c8ba1b39db67bf3782977a3838a3fe3cd825d74f17b3b4"
+    },
+    "worker-45638282.out": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "metrics.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "upload_verified.json": {
+      "bytes": 349,
+      "sha256": "83505c06d03874f602e71f3219157ca1e48ccf943b975f2a9e206dae87069997"
+    },
+    "audit_status.json": {
+      "bytes": 544,
+      "sha256": "24291e1994c6f309aa3299d9bc9a257bc0df93af4167ac638a5e877fc0da595c"
+    },
+    "metrics.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "authentication.json": {
+      "bytes": 401,
+      "sha256": "ee3f9931d5ef69d7de2208e8b1771147c04d52638f5bd8b1201d5e1e891bfed0"
+    },
+    "metric_audit.py": {
+      "bytes": 8583,
+      "sha256": "ad0d563527b68efb302d0a78653f58e9890ccebf17d57d0c8b75d478746541ee"
+    },
+    "worker-45638282.err": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ledger.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ledger.json": {
+      "bytes": 771,
+      "sha256": "9fc11466f63926eeac378dd6985c77f3a0e17493b73be172cfd49ed202de44c0"
+    },
+    "worker.py": {
+      "bytes": 2983,
+      "sha256": "750cd7af67e5137e0d2fa90400e27a7e4e6cb064444b230fab001dd39358528b"
+    },
+    "metrics/audit.json": {
+      "bytes": 1077,
+      "sha256": "288ee896c41148ae4cd5790f451bad727f1bca4584794cd64586eca6c7e80715"
+    }
+  },
+  "worker_and_checkers_exact": true,
+  "source_and_payload_verification": {
+    "status": "all_payload_and11source_git_verified",
+    "expected_status_sha": "fb05aeb8cf3f1f95f588c8169d405ef3a1ee0360aeca7cc52e6db39f68577f2d",
+    "source_count": 11,
+    "payload_count": 40,
+    "checker_sha256": {
+      "metric_audit.py": "ad0d563527b68efb302d0a78653f58e9890ccebf17d57d0c8b75d478746541ee",
+      "ledger_audit.py": "958360ca1b2b1d0874c8ba1b39db67bf3782977a3838a3fe3cd825d74f17b3b4"
+    }
+  },
+  "generated_cache_omitted": true,
+  "full_fit_stream_independent_and_ongoing": true
+}

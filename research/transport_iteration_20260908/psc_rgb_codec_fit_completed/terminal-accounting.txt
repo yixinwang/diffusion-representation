@@ -1,0 +1,5 @@
+JobID|State|ExitCode|Elapsed|MaxRSS|NodeList|AllocTRES|QOS
+45636236|COMPLETED|0:0|00:12:06||v006|billing=4,cpu=4,gres/gpu:v100-32=1,gres/gpu=1,mem=16000M,node=1|gpu
+45636236.extern|COMPLETED|0:0|00:12:06|0|v006|billing=4,cpu=4,gres/gpu:v100-32=1,gres/gpu=1,mem=16000M,node=1|
+45636236.0|COMPLETED|0:0|00:12:03|932640K|v006|cpu=4,gres/gpu:v100-32=1,gres/gpu=1,mem=16000M,node=1|
+559736 P /ocean/projects/mth260022p/ywang26/diffusion-results/20260909-rgb-fit-qualification-6ae48a91

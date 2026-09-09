@@ -1,0 +1,10 @@
+{
+  "status": "all_payload_and11source_git_verified",
+  "expected_status_sha": "fb05aeb8cf3f1f95f588c8169d405ef3a1ee0360aeca7cc52e6db39f68577f2d",
+  "source_count": 11,
+  "payload_count": 40,
+  "checker_sha256": {
+    "metric_audit.py": "ad0d563527b68efb302d0a78653f58e9890ccebf17d57d0c8b75d478746541ee",
+    "ledger_audit.py": "958360ca1b2b1d0874c8ba1b39db67bf3782977a3838a3fe3cd825d74f17b3b4"
+  }
+}

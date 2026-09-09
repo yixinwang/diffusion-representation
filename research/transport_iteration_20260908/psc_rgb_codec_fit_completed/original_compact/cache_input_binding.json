@@ -1,0 +1,15 @@
+{
+  "fit_ids_file_sha256": "29939f78b7073931718e1707fccec3861ec1eea24f0ad15473dc50ea24c05d9c",
+  "rounded_target_file_sha256": "6815478a68361c4d3b2c57c05f88b764395d84f3c7b52d7fb588f9c8bd54d3af",
+  "input_identity_sha256": "e1dd78cb18e1059db997bf4bfac84093881c54f5ded8c76dd0165430a5f17748",
+  "ordered_rows": 4000,
+  "shared_tensor_roles": [
+    "codec_training",
+    "FIT_normalization",
+    "normalized_cache",
+    "FIT_reconstruction_evaluation"
+  ],
+  "inplace_input_changes": false,
+  "normalized_cache_sha256": "3410b2c6d329194210fdf7d1e14fe998168fa8a8661806867476b68d84e5d830",
+  "normalization_state_sha256": "74ece6e8400ca658f091df8436e902d42e4271e3fcaaabcc6781e4478ab1f9e7"
+}

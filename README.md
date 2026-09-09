@@ -33,6 +33,12 @@ The study compares innovation/history-only responses with frozen or jointly trai
 
 Evidence: [full qualification](research/transport_iteration_20260908/psc_response_full_qualification), [preserved failed preflight](research/transport_iteration_20260908/psc_response_v2_preflight_failure), [interactive verification](research/transport_iteration_20260908/psc_response_v2_interactive_preflight), [fresh submission and scheduler record](research/transport_iteration_20260908/psc_response_v2_attempt2_launch).
 
+### September 9, 2026 — real-image codec reconstruction qualification passed
+
+**Result.** Fresh codec job **45636236** passed its fixed FIT-only floors: **37.8248dB global PSNR, 0.990778 mean SSIM**, and all16 channel standard deviations ≥0.001. Independent CPU job **45638282** recomputed the full4000-image metrics and replayed all18024 fitting draws, frozen weights and cache checks. [Results, exact costs, fixed reconstruction gallery and authenticated artifacts](research/transport_iteration_20260908/psc_rgb_codec_fit_completed) are published.
+
+**Cost and scope.** Fitting took600.47seconds; the whole GPU worker took12:03 and allocation12:06. The shorter672.93-second runner clock excludes imports before main and is not the complete process cost. This is **training reconstruction only**: the latent FM field remains untrained, with no unconditional generation, held-out, VAE or representation-superiority result. It supports proceeding to separately frozen baseline work, not claiming the overall research goal is met.
+
 ### September 9, 2026 — completed native study: all three seeds fail the registered criteria
 
 **Result.** Job **45632257** completed in **1:10:05**, and independent CPU audit **45637892** passed the source, payload and numerical/metric checks. The algorithm still failed the full registered engineering criteria in every seed:
@@ -45,7 +51,7 @@ Evidence: [full qualification](research/transport_iteration_20260908/psc_respons
 
 Lower KID is better. Both spline controls beat the innovation-response joint model in all three seeds; the jointly trained spline also has better complete likelihood throughout. Joint innovation-response improves likelihood over its frozen-analysis version, but its advantage over the matched history-only response is inconsistent. The5% material-quality gate, covariance gate and gradient gate fail in every seed. **No latent-FM/diffusion, representation or efficiency superiority is established.**
 
-**Evidence and next decision.** The [authenticated compact audit and all per-arm results](research/transport_iteration_20260908/psc_response_v2_completed) include402 payload checks,94 frozen source/Git checks and21 numerical admissions. Complete raw banks remain on PSC; full local transfer is pending. Scope limits for feature, covariance and target-reference checks are explicit. [Fresh Review23](https://chatgpt.com/c/6aa1c67d-d050-83ea-b75f-eb2e10ebec5a) is using the negative results to propose one bounded next diagnostic, not to relabel the study a success. Protected test data remain unopened.
+**Evidence and next decision.** The [authenticated compact audit and all per-arm results](research/transport_iteration_20260908/psc_response_v2_completed) include402 payload checks,94 frozen source/Git checks and21 numerical admissions. Complete raw banks remain on PSC; all402 payloads were audited there. The slow full local download was intentionally deferred, with partial bytes preserved and explicitly inventoried. Authenticated compact originals and fixed first16 galleries from all21arms are published. Scope limits for feature, covariance and target-reference checks are explicit. [Fresh Review23](https://chatgpt.com/c/6aa1c67d-d050-83ea-b75f-eb2e10ebec5a) is using the negative results to propose one bounded next diagnostic, not to relabel the study a success. Protected test data remain unopened.
 
 ### September 9, 2026 — next generation-comparison review
 

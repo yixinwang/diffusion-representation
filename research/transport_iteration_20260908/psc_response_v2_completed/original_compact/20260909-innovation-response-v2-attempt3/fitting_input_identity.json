@@ -1,0 +1,11 @@
+{
+  "observations_sha256": "0a7fd8e9749781bb8d97db29ad55e4e98efd0d062b076a9182edc1bfcadb2523",
+  "logits_sha256": "dfdec82891d7f2ee176bcc28fd2262d149fbea975e80263dd520fe39ab82a828",
+  "shape": [
+    4000,
+    3,
+    32,
+    32
+  ],
+  "fit_count": 4000
+}

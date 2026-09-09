@@ -24,8 +24,10 @@ Native terminal status SHA256: `d25b0dcee8475f61c4bf7a9ac412783ed5c9e5d30821e73e
 
 Independent audit SHA256: `2363e64a500302bfc3f1d1da89a9ee40378f6ae9affc55618819a8b53b0ad104`.
 
-This Git folder contains the complete compact CPU audit records, prepared checker and all resulting seed/arm metrics. It is **not** the full2,176,351,767-byte native raw payload. All original banks/checkpoints remain retained at `/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-innovation-response-v2-attempt3`. The slow full local transfer is still incomplete at this publication. The independent audit ran directly against those complete PSC files, not a partial local copy.
+This Git folder contains the complete compact CPU audit records, prepared checker and all resulting seed/arm metrics. It is **not** the full2,176,351,767-byte native raw payload. All original banks/checkpoints remain retained at `/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-innovation-response-v2-attempt3`. The slow full local transfer was deliberately deferred after preserving299,586,550bytes (48 complete files and one explicitly incomplete checkpoint); it is not running. The compact original subset authenticates213files, including94sources and all metric/progress/receipt JSON, with exact omissions. Fixed first16 samples from every arm and seed are included, with provenance and galleries. The independent audit ran directly against those complete PSC files, not a partial local copy.
 
 ## Decision
 
 The present innovation-response candidate has not earned a generation or efficiency claim over the spline controls. [Fresh Review23](https://chatgpt.com/c/6aa1c67d-d050-83ea-b75f-eb2e10ebec5a) is examining one bounded diagnostic/algorithmic decision from these negative results; it is pending, not evidence of a successful replacement. Stronger full/latent-FM baseline work remains separately prospective. Preserve this failure regardless of future outcomes.
+
+[Seed78201 gallery](fixed_first16/seed_78201.png), [seed78202](fixed_first16/seed_78202.png), [seed78203](fixed_first16/seed_78203.png). These are fixed ordered prefixes, not selected good images.

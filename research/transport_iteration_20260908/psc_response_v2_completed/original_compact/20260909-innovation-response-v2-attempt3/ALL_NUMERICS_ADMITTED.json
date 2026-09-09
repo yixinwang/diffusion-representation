@@ -1,0 +1,91 @@
+{
+  "count": 21,
+  "banks": {
+    "78201/P_frozen": {
+      "numerical.json": "ab924e07166d67c1f9b96eb8873b8f3bbee8e1daa966aff863d3a65cd433ba75",
+      "numerical.npz": "6e6cbe032b9b370eab2c2c935cda82481980d93bbf7e9aa4be3c939a495170e4"
+    },
+    "78201/P_joint": {
+      "numerical.json": "be818ca414e8458525c251d319da1d7e0fa143676784d1815674e9ff7061f36a",
+      "numerical.npz": "7283fc877ebdbbd4601bc344a0e8d16c5516b84622b6c9ebdc118cae3a69ab2d"
+    },
+    "78201/I_frozen": {
+      "numerical.json": "9873afc6f64da8a18cf746df11ba19da75f975915ce672761502808926270229",
+      "numerical.npz": "67fa392ba070d655ca92093edf67d5d75f28faf2d77ce9fd180a59b8c5deaff3"
+    },
+    "78201/I_joint": {
+      "numerical.json": "e3fa6e39d86e12e35f95312e03659a8e3793f8b5e37f876fbba6b15627e3c7e6",
+      "numerical.npz": "f911106cd85f022eb3e6a5f2bb214b4a01f17058ea4e70a466932b2cb0b969b1"
+    },
+    "78201/RQS_frozen": {
+      "numerical.json": "9fac4d63dc5751011a7f80c64a076b69591d48bd2640fa56675072663112b8f8",
+      "numerical.npz": "3c6613a3f308c92f06399c9bc804212c773a30b959173107d51c447a725b8db8"
+    },
+    "78201/RQS_joint": {
+      "numerical.json": "e24b57df028a874b0739c6c3c9901ba3f001dfe0d6d515c6801f64e410225862",
+      "numerical.npz": "500a71c1e3f8c91849e17e6b50990b2d12e4e2dddc828b7acb60de6fc067ecf4"
+    },
+    "78201/S42": {
+      "numerical.json": "ff2a868fb26b20aa08d3f5fcdeee05d8b66845a5e39aae3fa56a7c0020f7a961",
+      "numerical.npz": "b243e9d93f06c395f788415d2e380d5ded53bc652cae91b055457094c3dafe0b"
+    },
+    "78202/P_frozen": {
+      "numerical.json": "4cad1ac3e17804c30410ef74b95bc0072c362fb8a95758b839bfc951df9105e0",
+      "numerical.npz": "1244c1275d65e52e18eae47eb34aefea6389f895154235798bc8124e507013e7"
+    },
+    "78202/P_joint": {
+      "numerical.json": "e17c6d849bdceb3f659350f6cdff3844ef15fbd6ffd67640ab6d53aaa2744f1d",
+      "numerical.npz": "4572a248229d5e6628815e1ab1c2c603d18c1b856c536116be23c732f17dcfa5"
+    },
+    "78202/I_frozen": {
+      "numerical.json": "d3bb3d97e519bd36f3ae6f1ef42b0f6613abb823818f82350229372364df8fac",
+      "numerical.npz": "3cdbc69479d89f3b87d6d9620dd54fb25bcdbd65f804eb7df4ce53130bc24952"
+    },
+    "78202/I_joint": {
+      "numerical.json": "0b3d091dfab98c22d2fbbea6d18a3e893f98a6899525b4014f11b2f7289280b4",
+      "numerical.npz": "a768d9f6846d2e29b9ece4697bd41b36f22f45fd6be839e6a427bbbf3abc076e"
+    },
+    "78202/RQS_frozen": {
+      "numerical.json": "e8adb73a183fb293a7e41aefe18065dc30ee2ae22afb11a4ef7bbfee64cc01c6",
+      "numerical.npz": "9a0ff4d394a7c5e5e377efa3121c0395fb19432bf95bca4af075514bf3c08cfb"
+    },
+    "78202/RQS_joint": {
+      "numerical.json": "2bf51043ca10f668320adf763dc47bd95447dc65370fd8414065005026c4dcfd",
+      "numerical.npz": "2f35afc594c7949a331477ac1e94f36f6fe185813fae20d45c13c91aac949baa"
+    },
+    "78202/S42": {
+      "numerical.json": "ac9c55fb299783a8a28c5bc9962021fc3848cb715eb66e463df525fe1636650b",
+      "numerical.npz": "00f9184dc027eb79cff15f922034e48c6410a1490d48f0810a27270a1374d3d2"
+    },
+    "78203/P_frozen": {
+      "numerical.json": "15b9f3e8c3793185b17629ab88ad496f442d53432876db2cf3c2208386788e1a",
+      "numerical.npz": "1194372900135d7f54e4147eaa2194ccda168fdb43f9f8d87379ae6f76590be7"
+    },
+    "78203/P_joint": {
+      "numerical.json": "304e4c19e60d3139804a247388860187e288bba182ff4ecdc043627b8496b901",
+      "numerical.npz": "6c4d7531aa3857f485b6d9ac0d588cf631b9d55af6f16c89cce715050afe2416"
+    },
+    "78203/I_frozen": {
+      "numerical.json": "9eea41a53f5e3d431daf210cbda1ab57b6f68d215c23d69135ad2fcce767c248",
+      "numerical.npz": "fb03c4a132b135adeb6bbea298007504e90d5c935f2eedba7159ea359a3d0585"
+    },
+    "78203/I_joint": {
+      "numerical.json": "fa45cdfb7b6ec9a66a8ec7ddaee1f0350333ac258ba0a0101ae30222c8a6fd42",
+      "numerical.npz": "02caeaf6088599196be9fdaa6726d69a21a0151c2035d168f12289a206c59cf6"
+    },
+    "78203/RQS_frozen": {
+      "numerical.json": "6cddee485e26a5d69a19f31ad7b96f4b53ac2ac4432c614ee2894fae27453b60",
+      "numerical.npz": "9f966ddc3d18a4df1dc6146f221621fea5b3f20e13f5d659192bb59d9758ad27"
+    },
+    "78203/RQS_joint": {
+      "numerical.json": "0b3ed2962a967083bf33761c22dc2218f84718438d44d674718526e95f3a5e29",
+      "numerical.npz": "9b4a5d56a4a40e93b6684680c075c69e41bc16d84297fdb58b0984f290f0c7c0"
+    },
+    "78203/S42": {
+      "numerical.json": "c22c2be71668b3a7285aaeb5fa97c4a112bb1c685ba661a59826cf58e3282d55",
+      "numerical.npz": "2aa7b3b024642fdf51166694056dced9599516d5be6b8207d5e7d2cf82ebe67c"
+    }
+  },
+  "elapsed_seconds": 7.544380050036125,
+  "frozen_fits_sha256": "27c44e1529f73b72ba78f0b87c884d5e05838661cafff901f49044a39e9c4f11"
+}

@@ -1,0 +1,48 @@
+{
+  "checkpoints": [
+    {
+      "nominal_seconds": 60.0,
+      "actual_seconds": 60.00675039400812,
+      "updates": 1304,
+      "path": "checkpoint_060.pt",
+      "sha256": "00076f20a177e23ada61d4f27e85924d06f99d37103cc92f18c08c3360ed5089"
+    },
+    {
+      "nominal_seconds": 150.0,
+      "actual_seconds": 150.0010185840074,
+      "updates": 4186,
+      "path": "checkpoint_150.pt",
+      "sha256": "ce71facf86d838fd073ab421be5f49e91fba355d2b2f7d0204b4da040d542229"
+    },
+    {
+      "nominal_seconds": 300.0,
+      "actual_seconds": 300.0249967359705,
+      "updates": 8496,
+      "path": "checkpoint_300.pt",
+      "sha256": "b34272d860ac39bafa9b15da66f032a42507063dbfd5fb6ac9c31ca3a95c0437"
+    },
+    {
+      "nominal_seconds": 450.0,
+      "actual_seconds": 450.0114187760046,
+      "updates": 13235,
+      "path": "checkpoint_450.pt",
+      "sha256": "4359662dd7f7178c397207d5c4d085d1170898bdbea14186239839ce76dd0a82"
+    },
+    {
+      "nominal_seconds": 600.0,
+      "actual_seconds": 600.0167498660157,
+      "updates": 18024,
+      "path": "checkpoint_600.pt",
+      "sha256": "42ea445a4bc6f747dde8d28223438deb09fb3c516bff0228e98699b7df72869a"
+    }
+  ],
+  "stage_seconds": 600.0,
+  "updates": 18024,
+  "optimizer_constructor_seconds": 22.77604104601778,
+  "elapsed_seconds": 600.4699999789591,
+  "overrun_seconds": 0.46999997895909473,
+  "status": "frozen",
+  "clock_boundary": "through final checkpoint hash; receipt/accounting serialization excluded from stage and charged to standalone wall",
+  "gpu_peak_allocated_bytes": 505057280,
+  "gpu_peak_reserved_bytes": 568328192
+}

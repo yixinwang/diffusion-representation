@@ -1,0 +1,22 @@
+{
+  "status": "PREPARED_NOT_EXECUTED_ON_EXPERIMENT_OUTPUT",
+  "prepared_at_utc": "2026-09-09T20:28:11.084378+00:00",
+  "declared_job": "45636236",
+  "declared_source_prefix": "6ae48a9",
+  "output_or_real_data_accessed": false,
+  "selfcheck_pass": true,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "files": {
+    "audit.py": "ad0d563527b68efb302d0a78653f58e9890ccebf17d57d0c8b75d478746541ee",
+    "selfcheck.py": "bcaa669561f2cae655ddffbba0b7933dedef509af0d3536146f118441a889008",
+    "selfcheck.json": "17847001a1e7022b809a809440da7028f370c9a272f1368b62e9cc40bd8c3a10",
+    "selfcheck.stdout": "17847001a1e7022b809a809440da7028f370c9a272f1368b62e9cc40bd8c3a10",
+    "selfcheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "README.md": "a09dc5f7b64156f63b809f4ce0c2c7979165188ceeb0aa26a477f43e109cb400"
+  },
+  "scope": "Independent saved-target/reconstruction metrics and their hash/shape/completion bindings. Separate parent audit owns fitting ledger, draw seed/LR, field immutability and recomputed cache moments. No result or gate outcome claimed."
+}

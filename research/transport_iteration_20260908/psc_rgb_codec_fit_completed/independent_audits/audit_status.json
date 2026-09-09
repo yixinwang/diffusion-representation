@@ -1,0 +1,23 @@
+{
+  "status": "completed_audits",
+  "scope": "saved_codec_fit_audit_no_models_or_canonical_loader",
+  "source_commit": "6ae48a91706c97e65c833f94bd51a7b54f74c653",
+  "job_id": "45638282",
+  "versions": {
+    "python": "3.10.9",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "torch": "2.10.0+cu128"
+  },
+  "checks": {
+    "metrics": {
+      "exit_code": 0,
+      "elapsed_seconds": 14.971937422989868
+    },
+    "ledger": {
+      "exit_code": 0,
+      "elapsed_seconds": 19.412807583983522
+    }
+  },
+  "elapsed_seconds": 102.66629197099246
+}

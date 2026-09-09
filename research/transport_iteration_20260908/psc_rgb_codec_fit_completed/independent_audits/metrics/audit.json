@@ -1,0 +1,24 @@
+{
+  "status": "VERIFIED_SAVED_FIT_RECONSTRUCTION_METRICS",
+  "gate_pass": true,
+  "gates": {
+    "FIT_global_PSNR_ge26": true,
+    "FIT_mean_SSIM_ge085": true,
+    "latent_std_finite_ge001": true
+  },
+  "mean_MSE": 0.00016501236356251565,
+  "global_PSNR": 37.824835150235494,
+  "mean_SSIM": 0.990778359639128,
+  "max_per_image_MSE_error": 2.168404344971009e-19,
+  "max_per_image_SSIM_error": 3.0309088572266774e-14,
+  "tolerances": {
+    "mse_atol": 2e-12,
+    "ssim_atol": 2e-10,
+    "rtol": 1e-10
+  },
+  "status_sha256": "fb05aeb8cf3f1f95f588c8169d405ef3a1ee0360aeca7cc52e6db39f68577f2d",
+  "source_commit": "6ae48a91706c97e65c833f94bd51a7b54f74c653",
+  "source_git_verified": true,
+  "payload_count": 40,
+  "scope": "Independent separable valid Gaussian population SSIM and global-mean-MSE PSNR on authenticated saved rounded targets/reconstructions. FIT-only, not generalization or generation. Frozen-state and shared-stage-input assertions source-reviewed/hash-bound, not inferred from arrays. Cache finiteness is checked; encoder/cache recomputation is not performed."
+}

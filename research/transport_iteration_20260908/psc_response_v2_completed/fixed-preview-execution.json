@@ -1,0 +1,6 @@
+{
+  "script_sha256": "3727bbcc22c341e3f6821570d7d430638851644901fa19fa05245f87160913c1",
+  "returncode": 0,
+  "stdout": "{\"output\": \"/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-response-v2-first16\", \"sha256\": \"0228e93bc463f7c1f23fc50552caf8a8e6dbc3d84997073fd0f9b8cab639ec0a\", \"bytes\": 4724818}\n",
+  "stderr": ""
+}

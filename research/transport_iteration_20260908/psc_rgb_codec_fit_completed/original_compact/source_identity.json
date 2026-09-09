@@ -1,0 +1,16 @@
+{
+  "commit": "6ae48a91706c97e65c833f94bd51a7b54f74c653",
+  "sha256": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/rgb_codec_flow_matching.py": "48445678a60ab3ec031e64523c6f642f0ae6b3bc826847c7b458b6185fb6a1c4",
+    "qalt/src/qalt/data_integrity.py": "8e950adfc29135dd1dedf60bb4a9b1886c8e4f88383c3bca14aa9e795ab1eabf",
+    "qalt/src/qalt/observed_flow_data.py": "6b97cef92d50cd24b288706c9121f3f1341416fd3f06ffd1d2bafeaac92273c3",
+    "qalt/data/observed_manifest_v1.json": "8c0ae7a0c11a61876bf1be39ebe85c800afabe19969bfec770a6181a205b9995",
+    "qalt/experiments/rgb_codec_fit_qualification/run.py": "7c1c7039c2b038ab45d77c441533aa8b112b8697edcad51c69b5c9fce58fa0e3",
+    "qalt/experiments/rgb_codec_fit_qualification/PROTOCOL.md": "37e0ff91be689e41b33f08b683cb19f38cba4fd37abd77ec74caa26c35a5c602",
+    "qalt/experiments/rgb_codec_fit_qualification/run.sh": "b82d314c995438db1c4bf838027a7210de0f46072d576fa52f9bd43b3c7d8fc6",
+    "qalt/tests/test_rgb_codec_fit_qualification.py": "718ba26a90bcead95663ffe3a3a846b40d7c4a5ea36d548f89c64fc1be501da1",
+    "qalt/tests/test_rgb_codec_flow_matching.py": "b13e6d73044aed7357187da93a6cc53f56a63b382cb69cf314901dc8e6c49644"
+  }
+}
