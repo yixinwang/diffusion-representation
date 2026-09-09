@@ -1,0 +1,135 @@
+{
+  "included_original_payload_files": 17,
+  "omitted_files": 8,
+  "upstream_files": {
+    "actual_batch.pt": {
+      "sha256": "3f8d2398fb02cec9ee3a662336fa346fae5c6ec42537f9d1522deee11ae29141",
+      "bytes": 789007,
+      "included": true
+    },
+    "batch_identity.npz": {
+      "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f",
+      "bytes": 1564,
+      "included": true
+    },
+    "candidate_comparison.json": {
+      "sha256": "5b2c94b975e3d3fb516b02356dce444913cb047ed3b29885b94587b71efd8f7d",
+      "bytes": 389,
+      "included": true
+    },
+    "candidate_encoded.pt": {
+      "sha256": "4edabc88e82a9991ee62c39a0279434864fef68554e2c0afb58a9a1d852ce68b",
+      "bytes": 370741,
+      "included": true
+    },
+    "candidate_gradients.pt": {
+      "sha256": "9d7fc4f0768dcd2c50e13a87744014005533f4d8e263020f88b485f82c0e663c",
+      "bytes": 1062171,
+      "included": true
+    },
+    "candidate_roundtrip.pt": {
+      "sha256": "6dd54f2b4457be3b056d3935e4e4a09def32a0499d1e5b7036a777e8013ca62b",
+      "bytes": 740053,
+      "included": true
+    },
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+      "sha256": "8774c8a6033d422737a31fcb19e88c5234e6a336928d7fd5fc8465ce138866ce",
+      "bytes": 5160,
+      "included": true
+    },
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+      "sha256": "750d8bbed33a3660e8bd00887ddca9a52c9705d7413587d44274f25d48125643",
+      "bytes": 13587,
+      "included": true
+    },
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+      "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53",
+      "bytes": 629,
+      "included": true
+    },
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": {
+      "sha256": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7",
+      "bytes": 674,
+      "included": true
+    },
+    "diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": {
+      "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+      "bytes": 9188,
+      "included": true
+    },
+    "diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "sha256": "94ef7baa74fe5606bcfee3431cecbfd841ccde62523404d583a89caf0b379cd2",
+      "bytes": 2118,
+      "included": true
+    },
+    "encoded.pt": {
+      "sha256": "f147ef14251c3691fb6f86b7e35909aa6dc8711886be130616c9e55242b0b6b7",
+      "bytes": 370533,
+      "included": true
+    },
+    "layer_0_conditioner.pt": {
+      "sha256": "51a77d2e5679ee8840d416d50364f5d68780b3babb83962ca14c0c37754ee868",
+      "bytes": 9614677,
+      "included": false
+    },
+    "layer_0_kernel_locals.pt": {
+      "sha256": "fbe23a5084f54e7abf2791d52cdf53cecaa65f2ce1b5bff704f0bf7068efb3b3",
+      "bytes": 47477895,
+      "included": false
+    },
+    "layer_1_conditioner.pt": {
+      "sha256": "02cceb88e6a20e0f8cb2bf0304261a06caf6b1d516da9321346e18ccd9a2099a",
+      "bytes": 9614677,
+      "included": false
+    },
+    "layer_1_kernel_locals.pt": {
+      "sha256": "68e6eb869e1bc8c6f27b5d754351e450b930ecba0753afe401d7dd325b0445e2",
+      "bytes": 47477895,
+      "included": false
+    },
+    "layer_2_conditioner.pt": {
+      "sha256": "e5e3541ebf5cfcb2164238e09b4586d4f56cb714bdafa60934c84f86a2bfc62b",
+      "bytes": 9614677,
+      "included": false
+    },
+    "layer_2_kernel_locals.pt": {
+      "sha256": "b8180a5e67efff31c79b37ba48721a857581489b8e8dfc294648d80c587b987a",
+      "bytes": 47477895,
+      "included": false
+    },
+    "layer_3_conditioner.pt": {
+      "sha256": "b85aa3d7d606b1c361ee6b0caa2a4f4f44fec97938daba18f6c730a409e1851c",
+      "bytes": 9614677,
+      "included": false
+    },
+    "layer_3_kernel_locals.pt": {
+      "sha256": "eb7eb5dc4bde034f6c3a7a5dc88816cd3804a6f381bb35a61a7c129d98e88152",
+      "bytes": 47477895,
+      "included": false
+    },
+    "layers.json": {
+      "sha256": "de372fe5d49d84d504327d0efa8ad5e33612fb0e9456336772adbdbd245a1332",
+      "bytes": 2095,
+      "included": true
+    },
+    "module_modes.json": {
+      "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956",
+      "bytes": 9184,
+      "included": true
+    },
+    "source_identity.json": {
+      "sha256": "c593f09d50a9e83e5e88d2fc94b28117e4ea9f6b51d982fe05d9ad9a93dbfc33",
+      "bytes": 11243,
+      "included": true
+    },
+    "status.json": {
+      "sha256": "ad1a6f3788d1638f384f4776fc93cddf4365efe24b64187c777135184b4e7d91",
+      "bytes": 5968,
+      "included": true
+    }
+  },
+  "local_full": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/cpu-grad-full/20260909-response-cpu-grad",
+  "remote_full": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-response-cpu-grad",
+  "omission_policy": "Only eight large old-layer conditioner/kernel captures omitted. All candidate arrays/gradients and actual batch retained. Status renamed upstream_status.json. Full original24payload hashes embedded there.",
+  "checker_requirements": "--workspace original work/psc-response-failure containing full failed reference, previous CPU captures, full current CPUgrad and machinecheck.json; sibling diffusion-representation Git repo required; --output NEW path. No model/dataset rerun."
+}

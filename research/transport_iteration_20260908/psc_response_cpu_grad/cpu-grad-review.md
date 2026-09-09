@@ -1,0 +1,9 @@
+# CPU gradient-enabled response diagnostic audit
+
+Job45612747 completed0:0 in27seconds onr041, frozen08cbe585d570a9405be833a27c00d04eaecba327. Scheduler reported MaxRSS0, which is a sampling/unavailable measurement, not zero memory use. All24 output hashes,6 diagnostic-source Git blobs and88 reference-source hashes pass independently. Full231,764,592-byte results remain locally retained in cpu-grad-full/20260909-response-cpu-grad and onPSC at diffusion-results/20260909-response-cpu-grad.
+
+Original dense encode again returned valid. Recomputed all five interior validity masks across four layers exactly match saved masks with no invalid coordinate. CPU logits, coarse/residual/A determinant and encoded z/logdet are byte-exact against previous CPU no_grad run. This rules out an observed CPU difference for this one batch; it does not reproduce or attribute the original GPU failure.
+
+The reflected candidate's actual saved residual roundtrip maximum error is2.5033950805664062e-6; summed logdet cancellation is0.000244140625, passing predeclared1e-3 and1e-2 criteria. All48 saved parameter gradient tensors are finite/nonzero,261524elements total, and shapes match the unchanged failed residual-decoder checkpoint. Gradients were not independently re-differentiated by this audit. State unchanged is checked by the authenticated runner's live before/after tensor guard; a separate candidate before/after model pair was not saved.
+
+This is residual-only numerical qualification on the failed batch. It does not qualify complete3072-coordinate observed/source roundtrips, joint analysis gradients, future training trajectories, image quality, speed, or the original GPU error. No optimizer was created/updated. Selected repair was loaded by the inherited strict canonical API but never evaluated.

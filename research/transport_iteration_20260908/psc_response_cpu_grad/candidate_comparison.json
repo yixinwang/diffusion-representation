@@ -1,0 +1,14 @@
+{
+  "outcome": "returned",
+  "finite": true,
+  "gradients_finite_and_present": true,
+  "gradient_tensor_count": 48,
+  "roundtrip_max_abs": 2.5033950805664062e-06,
+  "logdet_cancellation_max_abs": 0.000244140625,
+  "roundtrip_gate": true,
+  "logdet_gate": true,
+  "backend": "reflected_dense_spline_kernel",
+  "optimizer_created": false,
+  "optimizer_steps": 0,
+  "state_unchanged": true
+}

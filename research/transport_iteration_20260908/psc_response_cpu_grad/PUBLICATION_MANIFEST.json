@@ -1,0 +1,114 @@
+{
+  ".gitignore": {
+    "bytes": 7,
+    "sha256": "e027cf8ebf80d6dcdacced8a4dbd1c440e2436fb1868ec851db4061cb67bb787"
+  },
+  "PUBLICATION_SUBSET.json": {
+    "bytes": 5327,
+    "sha256": "92fb95fbf9eb49c1f9baa6b9de4a3a46c48cf2269178e28b203a5e7388145fcf"
+  },
+  "actual_batch.pt": {
+    "bytes": 789007,
+    "sha256": "3f8d2398fb02cec9ee3a662336fa346fae5c6ec42537f9d1522deee11ae29141"
+  },
+  "batch_identity.npz": {
+    "bytes": 1564,
+    "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f"
+  },
+  "candidate_comparison.json": {
+    "bytes": 389,
+    "sha256": "5b2c94b975e3d3fb516b02356dce444913cb047ed3b29885b94587b71efd8f7d"
+  },
+  "candidate_encoded.pt": {
+    "bytes": 370741,
+    "sha256": "4edabc88e82a9991ee62c39a0279434864fef68554e2c0afb58a9a1d852ce68b"
+  },
+  "candidate_gradients.pt": {
+    "bytes": 1062171,
+    "sha256": "9d7fc4f0768dcd2c50e13a87744014005533f4d8e263020f88b485f82c0e663c"
+  },
+  "candidate_roundtrip.pt": {
+    "bytes": 740053,
+    "sha256": "6dd54f2b4457be3b056d3935e4e4a09def32a0499d1e5b7036a777e8013ca62b"
+  },
+  "check_saved_captures.py": {
+    "bytes": 5759,
+    "sha256": "6c6ae5b27d0295caac406ade8fba3fb843613418af1580c9eec0bf2d3a392fc3"
+  },
+  "combined-grad-status.json": {
+    "bytes": 3055,
+    "sha256": "3798e7038915878e623c4185da802e59f5a4e8c44e02d182327292cd1f298620"
+  },
+  "cpu-grad-machinecheck.json": {
+    "bytes": 3491,
+    "sha256": "03d157291d25678ace08b7e4a56aace91ae9bd77e6cd3fa115c201e251124b63"
+  },
+  "cpu-grad-review.md": {
+    "bytes": 1802,
+    "sha256": "5fb94bed22be20a4b44e8e266eb6328e72f16bae5f6f0f625cf3f460ec60a7d7"
+  },
+  "cpu-grad-transfer.json": {
+    "bytes": 86,
+    "sha256": "7a466b03627d20ab7ce7cd3b80bb3067f3d81ca40f949c0e5e250fd0fc44c05a"
+  },
+  "diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+    "bytes": 5160,
+    "sha256": "8774c8a6033d422737a31fcb19e88c5234e6a336928d7fd5fc8465ce138866ce"
+  },
+  "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+    "bytes": 13587,
+    "sha256": "750d8bbed33a3660e8bd00887ddca9a52c9705d7413587d44274f25d48125643"
+  },
+  "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+    "bytes": 629,
+    "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53"
+  },
+  "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": {
+    "bytes": 674,
+    "sha256": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7"
+  },
+  "diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": {
+    "bytes": 9188,
+    "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7"
+  },
+  "diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+    "bytes": 2118,
+    "sha256": "94ef7baa74fe5606bcfee3431cecbfd841ccde62523404d583a89caf0b379cd2"
+  },
+  "encoded.pt": {
+    "bytes": 370533,
+    "sha256": "f147ef14251c3691fb6f86b7e35909aa6dc8711886be130616c9e55242b0b6b7"
+  },
+  "launch-cpu-grad.json": {
+    "bytes": 1858,
+    "sha256": "90a0826973e48973f0a3945fc554c4f9408c92225bbe8190fdb0ceee81021e20"
+  },
+  "launch-cpu-grad.py": {
+    "bytes": 2667,
+    "sha256": "5799959f9f147008240f2b3ade31027e79b62f8290c1e32058ce09dc3b990181"
+  },
+  "launch-cpu-grad.remote.py": {
+    "bytes": 2159,
+    "sha256": "862bfc0f79fc24e082f2b5dc3d1620d2f2c179020e62cd1c7490a9b42ba19dd9"
+  },
+  "layers.json": {
+    "bytes": 2095,
+    "sha256": "de372fe5d49d84d504327d0efa8ad5e33612fb0e9456336772adbdbd245a1332"
+  },
+  "module_modes.json": {
+    "bytes": 9184,
+    "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956"
+  },
+  "slurm.log": {
+    "bytes": 444,
+    "sha256": "b3e02672fe5c77cfa2acb107a7aae905e616fcdce70484c0d40099369fa98b98"
+  },
+  "source_identity.json": {
+    "bytes": 11243,
+    "sha256": "c593f09d50a9e83e5e88d2fc94b28117e4ea9f6b51d982fe05d9ad9a93dbfc33"
+  },
+  "upstream_status.json": {
+    "bytes": 5968,
+    "sha256": "ad1a6f3788d1638f384f4776fc93cddf4365efe24b64187c777135184b4e7d91"
+  }
+}
