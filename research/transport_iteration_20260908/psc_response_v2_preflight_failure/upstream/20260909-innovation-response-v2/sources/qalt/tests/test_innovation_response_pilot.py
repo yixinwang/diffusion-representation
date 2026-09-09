@@ -1,0 +1,109 @@
+"""Fabricated protocol/fork tests only; no canonical data or full training."""
+import copy
+import importlib.util
+from pathlib import Path
+import sys
+import numpy as np
+import pytest
+import torch
+
+PATH=Path(__file__).parents[1]/'experiments/innovation_response_pilot/run.py'
+spec=importlib.util.spec_from_file_location('response_pilot_tests_runner',PATH)
+run=importlib.util.module_from_spec(spec);sys.modules[spec.name]=run;spec.loader.exec_module(run)
+
+@pytest.fixture(scope='module')
+def template():
+    torch.manual_seed(91);model=run.prepared_model();model.freeze_analysis();run.freeze(model);return model
+
+
+def test_seven_arm_counts_modes_and_initial_state(template):
+    assert run.SEEDS==(78201,78202,78203)
+    assert len(run.ARMS)==7 and len(set(run.ARMS))==7
+    models={k:run.make_family(template,k,9) for k in ('P','I','RQS','S42')}
+    assert run.state_fingerprint(models['P'])==run.state_fingerprint(models['I'])
+    assert run.model_spec(models['P'])['response_mode']=='prefix'
+    assert run.model_spec(models['I'])['response_mode']=='innovation'
+    assert run.model_spec(models['RQS'])['backend']=='dense_eager'
+    for k,m in models.items():assert m.parameter_counts['total']==run.EXPECTED_COUNTS[k]
+    assert models['P'].parameter_counts['total']<=models['S42'].parameter_counts['total']<=1.05*models['P'].parameter_counts['total']
+
+
+@pytest.mark.parametrize('family',['P','I','RQS','S42'])
+def test_checkpoint_mode_and_tensor_roundtrip(template,family,tmp_path):
+    model=run.make_family(template,family,19)
+    if family in ('P','I'):
+        with torch.no_grad():
+            for response in model.residual_decoder.responses:response.output.weight.normal_(0,.02)
+    path=tmp_path/'frozen.pt';run.checkpoint(path,model)
+    record=torch.load(path,weights_only=True);restored=run.restore_model(record)
+    assert run.model_spec(restored)==record['architecture']
+    assert run.state_fingerprint(restored)==run.state_fingerprint(model)
+    source=torch.randn(1,3072,generator=torch.Generator().manual_seed(21))
+    with torch.no_grad():
+        for item in (model,restored):
+            if hasattr(item.residual_decoder,'prepare_inference'):item.residual_decoder.prepare_inference()
+        left,ld=model.decode(source);right,rd=restored.decode(source)
+    assert torch.equal(left,right) and torch.equal(ld,rd)
+    bad=copy.deepcopy(record);bad['architecture']['backend']='compiled'
+    with pytest.raises(ValueError):run.restore_model(bad)
+
+
+@pytest.mark.parametrize('family',['P','I','RQS'])
+def test_family_fork_preserves_adam_rng_without_aliasing(family):
+    torch.manual_seed(44);model=torch.nn.Linear(3,2);optimizer=torch.optim.Adam(model.parameters(),lr=.001)
+    rng=np.random.default_rng(123);x=torch.tensor(rng.normal(size=(4,3)),dtype=torch.float32)
+    model(x).square().mean().backward();optimizer.step();optimizer.zero_grad(set_to_none=True)
+    fork,state,rng_state=run.fork_training_state(model,optimizer,rng)
+    original=run.optimizer_fingerprint(optimizer.state_dict())
+    assert run.optimizer_fingerprint(state)==original
+    restored=torch.optim.Adam(fork.parameters(),lr=.001);restored.load_state_dict(state)
+    assert run.optimizer_fingerprint(restored.state_dict())==original
+    left=np.random.default_rng();left.bit_generator.state=copy.deepcopy(rng_state)
+    right=np.random.default_rng();right.bit_generator.state=copy.deepcopy(rng_state)
+    assert np.array_equal(left.integers(0,4000,32),right.integers(0,4000,32))
+    before=copy.deepcopy(fork.state_dict())
+    with torch.no_grad():model.weight.add_(1)
+    assert all(torch.equal(v,fork.state_dict()[k]) for k,v in before.items())
+    next(iter(optimizer.state.values()))['exp_avg'].add_(1)
+    assert run.optimizer_fingerprint(state)==original
+
+
+def reports():
+    return {k:{'residual_nll':1.,'complete_nll':1.,'covariance_error':1.,'kid':.2,
+        'gradient_means':[1.,1.],'repair_gradient_means':[1.,1.],'energy_mean':.1} for k in run.ARMS}
+
+
+def test_material_gate_and_each_control_are_separate():
+    r=reports();r['I_joint']['kid']=.19
+    assert run.engineering_gates(r)['I_joint_KID_material_5pct_both_RQS']
+    r['RQS_joint']['kid']=.19
+    assert not run.engineering_gates(r)['I_joint_KID_material_5pct_both_RQS']
+    r['P_joint']['kid']=.18
+    assert not run.engineering_gates(r)['I_joint_kid_better_P_joint']
+    r['RQS_joint']['kid']=-.01;r['I_joint']['kid']=-.02
+    assert not run.engineering_gates(r)['I_joint_KID_material_5pct_both_RQS']
+    with pytest.raises(ValueError):run.engineering_gates({k:v for k,v in r.items() if k!='P_joint'})
+
+
+def test_freeze_receipt_rejects_missing_seed_before_repair(tmp_path):
+    with pytest.raises(ValueError):run.write_fit_freeze_receipt(tmp_path,{})
+    assert not (tmp_path/'ALL_FITS_FROZEN.json').exists()
+
+
+def test_shared_root_gradients_live_for_joint_mode(template):
+    model=run.make_family(template,'I',15);run.activate(model,'residual_decoder');model.unfreeze_analysis()
+    assert all(p.requires_grad for p in model._analysis_parameters())
+    assert not any(p.requires_grad for p in model.coarse_decoder.parameters())
+    # Fixed-root parameters do not stop gradients to its input.
+    coarse=torch.randn(1,3,8,8,requires_grad=True)
+    value,ld=model.coarse_decoder.encode(coarse,model._zero(coarse))
+    (.5*value.square().sum()-ld.sum()).backward()
+    assert coarse.grad is not None and torch.isfinite(coarse.grad).all() and coarse.grad.abs().sum()>0
+
+
+def test_protocol_preserves_fit_before_repair_and_explicit_backend():
+    text=PATH.read_text()
+    assert text.index('write_fit_freeze_receipt(args.output,all_models)')<text.index('repair_logits,outer=utility.logit_inputs(data.repair)')
+    assert "backend='dense_eager'" in text
+    assert "out/(prefix_name+'.pt')" in text
+    assert "optimizer.load_state_dict(fork_optimizer)" in text

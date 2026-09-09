@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|MaxRSS|NodeList\n45618049|FAILED|1:0|00:00:50||v004\n45618049.batch|FAILED|1:0|00:00:50|689516K|v004\n45618049.extern|COMPLETED|0:0|00:00:50|72K|v004\nPartitionName=RM-shared\n   AllowGroups=ALL AllowAccounts=ALL AllowQos=rm,rminteract,low,push,unlimited\n   AllocNodes=ALL Default=NO QoS=rmsharedpartition\n   DefaultTime=01:00:00 DisableRootJobs=NO ExclusiveUser=NO GraceTime=0 Hidden=NO\n   MaxNodes=1 MaxTime=UNLIMITED MinNodes=0 LLN=NO MaxCPUsPerNode=UNLIMITED\n   Nodes=r[005-400]\n   PriorityJobFactor=1 PriorityTier=1 RootOnly=NO ReqResv=NO OverSubscribe=YES:4\n   OverTimeLimit=NONE PreemptMode=OFF\n   State=UP TotalCPUs=50688 TotalNodes=396 SelectTypeParameters=NONE\n   JobDefaults=(null)\n   DefMemPerCPU=1900 MaxMemPerNode=UNLIMITED\n   TRES=cpu=50688,mem=99000G,node=396,billing=50688\n\nAccount|User|Partition|QOS|Def QOS\ncis260243p|ywang26||ft,gpu,gpuinteract,low,push,rm,rminteract,unlimited|\n",
+  "stderr": ""
+}

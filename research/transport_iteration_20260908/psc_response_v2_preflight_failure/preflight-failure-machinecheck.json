@@ -1,0 +1,16 @@
+{
+  "payload_count": 97,
+  "source_count": 94,
+  "source_commit": "7d38dc737c66dc513fbe7a0a968ce819ce73fed0",
+  "status_sha256": "fbabea602f76e95002ada9e0cb4441d1145fd4950c33805182f2817b11c67c64",
+  "failure": {
+    "status": "failed",
+    "state": {
+      "phase": "gpu_qualification"
+    },
+    "error": "CalledProcessError(1, ['/ocean/projects/mth250006p/ywang26/pytorch/bin/python', '-m', 'pytest', '-q', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response_pilot_v2.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_dense_global_conditional_spline.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_reflected_dense_spline.py'])",
+    "traceback": "Traceback (most recent call last):\n  File \"/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/experiments/innovation_response_pilot_v2/run.py\", line 558, in main\n    subprocess.run([sys.executable,'-m','pytest','-q',str(ROOT/'qalt/tests/test_innovation_response_pilot_v2.py'),str(ROOT/'qalt/tests/test_innovation_response.py'),str(ROOT/'qalt/tests/test_dense_global_conditional_spline.py'),str(ROOT/'qalt/tests/test_reflected_dense_spline.py')],check=True,cwd=ROOT,stdout=(args.output/'preflight.txt').open('w'),stderr=subprocess.STDOUT)\n  File \"/opt/packages/AI/pytorch_23.02-1.13.1-py3/lib/python3.10/subprocess.py\", line 526, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/ocean/projects/mth250006p/ywang26/pytorch/bin/python', '-m', 'pytest', '-q', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response_pilot_v2.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_dense_global_conditional_spline.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_reflected_dense_spline.py']' returned non-zero exit status 1.\n"
+  },
+  "canonical_data_ledger_present": false,
+  "training_stage_files": []
+}

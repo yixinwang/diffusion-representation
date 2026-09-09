@@ -1,0 +1,21 @@
+{
+  "commit": "7d38dc737c66dc513fbe7a0a968ce819ce73fed0",
+  "files": {
+    "qalt/experiments/innovation_response_pilot_v2/qualification.json": {
+      "sha256": "eaa4b2e9aa856da229f702c9971d5b224aa6bd151d3fe796d26d49f265cd3feb",
+      "bytes": 563
+    },
+    "qalt/experiments/innovation_response_pilot_v2/qualification_receipt.json": {
+      "sha256": "080e8719d4092c74f8d1cb959162f633c4f69f62bbb7b2ea2421a145bb890332",
+      "bytes": 43193
+    },
+    "qalt/experiments/innovation_response_pilot_v2/PROTOCOL.md": {
+      "sha256": "e10b324d49f12302d1a99e7ac0bdbca2dc2355fb464945e0e37ad43c7f9f7cae",
+      "bytes": 17204
+    },
+    "qalt/experiments/innovation_response_pilot_v2/run.slurm": {
+      "sha256": "c786ebc9404103a7410d1027352957cfb55cade39f444d750bbe80c0089fa00c",
+      "bytes": 972
+    }
+  }
+}

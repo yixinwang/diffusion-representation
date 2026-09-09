@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/experiments/innovation_response_pilot_v2/run.py", line 583, in <module>
+    if __name__=='__main__':main()
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/experiments/innovation_response_pilot_v2/run.py", line 558, in main
+    subprocess.run([sys.executable,'-m','pytest','-q',str(ROOT/'qalt/tests/test_innovation_response_pilot_v2.py'),str(ROOT/'qalt/tests/test_innovation_response.py'),str(ROOT/'qalt/tests/test_dense_global_conditional_spline.py'),str(ROOT/'qalt/tests/test_reflected_dense_spline.py')],check=True,cwd=ROOT,stdout=(args.output/'preflight.txt').open('w'),stderr=subprocess.STDOUT)
+  File "/opt/packages/AI/pytorch_23.02-1.13.1-py3/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/ocean/projects/mth250006p/ywang26/pytorch/bin/python', '-m', 'pytest', '-q', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response_pilot_v2.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_innovation_response.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_dense_global_conditional_spline.py', '/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-v2-20260909/qalt/tests/test_reflected_dense_spline.py']' returned non-zero exit status 1.
