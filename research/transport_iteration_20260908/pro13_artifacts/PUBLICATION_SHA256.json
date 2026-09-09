@@ -1,11 +1,23 @@
 {
+  "DELIVERY1_SUBSET_HISTORICAL.md": {
+    "bytes": 3775,
+    "sha256": "6bc0192759a9315619350b9f2308ee9c8a806687094b1b90fb60427c6b93d0ab"
+  },
+  "DELIVERY2_RECEIPT.json": {
+    "bytes": 5269,
+    "sha256": "9623bfea7eaf8b24bb4a1bf18b21786707c7b5d8e51354c7bb48b710e1a86d84"
+  },
+  "DELIVERY2_TREE.json": {
+    "bytes": 18587,
+    "sha256": "ae76632c3b177e0052ea963f50a2b17203d406ea369349bb50a4fc09d9b96035"
+  },
   "DELIVERY_AUDIT.json": {
     "bytes": 4315,
     "sha256": "18f9107f27f97e8179794900888e5dcf3c11953232a42b964e3b3822bf547013"
   },
   "DELIVERY_SUBSET.md": {
-    "bytes": 3775,
-    "sha256": "6bc0192759a9315619350b9f2308ee9c8a806687094b1b90fb60427c6b93d0ab"
+    "bytes": 3343,
+    "sha256": "2702c665de31f9a97f4fc6ea8299e9bf286a535aa7c4b69b9634afc72f8e013f"
   },
   "INVENTORY.json": {
     "bytes": 12090,
@@ -187,13 +199,45 @@
     "bytes": 425,
     "sha256": "a1543a3f17f697e114964dec6a83924b2c893c1a627482f5a9c0218f76a23d60"
   },
+  "standalone_results/centered_zero_mean_0_compiled_state.json": {
+    "bytes": 45971,
+    "sha256": "9e5c91b8f866066281a438949f917c9df4822bbed388541838e264fb45773238"
+  },
+  "standalone_results/centered_zero_mean_0_dense_state.json": {
+    "bytes": 45813,
+    "sha256": "d67d956a65ed3aad4bada2a90dd631fa8ae481959313655ea9fae874bba534b4"
+  },
+  "standalone_results/centered_zero_mean_0_packed_state.json": {
+    "bytes": 46118,
+    "sha256": "440adbf3d57a9270590290646b18614432c31c72677994422dc3fc861411c724"
+  },
   "standalone_results/centered_zero_mean_0_record.json": {
     "bytes": 3991,
     "sha256": "9aee2fd0642e62947c8e11684eb016b4ae4727ed8473e83fa8d35893f9ebfd96"
   },
+  "standalone_results/centered_zero_mean_1_compiled_state.json": {
+    "bytes": 45919,
+    "sha256": "03d5a601cc7a8dc35b014408a3e02db86e3344ecf6c326c4242850598b582ac5"
+  },
+  "standalone_results/centered_zero_mean_1_dense_state.json": {
+    "bytes": 45760,
+    "sha256": "808424b767926b2e752ce28883f1a2fc97e0bf80251199e00817f4d805a2cb11"
+  },
+  "standalone_results/centered_zero_mean_1_packed_state.json": {
+    "bytes": 46065,
+    "sha256": "6bd6fd8f69ac30b4466bee98dfc6c2d3d19019da442543bcc12e3b846c85cf9a"
+  },
   "standalone_results/centered_zero_mean_1_record.json": {
     "bytes": 3971,
     "sha256": "17d67a7a1a88ee6dac5da2d86ea5fdeba57c39d23aaee09dd78e85736cb946a1"
+  },
+  "standalone_results/centered_zero_mean_2_compiled_state.json": {
+    "bytes": 45917,
+    "sha256": "7a7902f16fe820020ef0d508471824e2639daeb6ac05ebaa7738bf33626e4c6e"
+  },
+  "standalone_results/centered_zero_mean_2_dense_state.json": {
+    "bytes": 45760,
+    "sha256": "4590c0718912c26c25f658456047d6980aa6060cddfb437fdad5dbc76a80d2c6"
   },
   "standalone_results/centered_zero_mean_2_record.json": {
     "bytes": 3983,
