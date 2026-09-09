@@ -1,0 +1,18 @@
+{
+  "INDEPENDENT_REVIEW.md": {
+    "bytes": 6540,
+    "sha256": "a66b764ed63caa842df079229c035db0ca10691686734752e016bde015d84191"
+  },
+  "README.md": {
+    "bytes": 935,
+    "sha256": "ef05510fc019da2486b3c4c5d040d55f3a8dfd6701f87f43b882566c70c7771e"
+  },
+  "codec-startup.txt": {
+    "bytes": 289,
+    "sha256": "34104a3fbd0c16dcda10e6622b0e4bed5cf893dfcc8b0a23d7e4de5f3708bab7"
+  },
+  "native-progress-203243.json": {
+    "bytes": 4665,
+    "sha256": "4604f29164e4747fe415c44fb2087572d7e732aea9dc24e0c8260c1964df2b27"
+  }
+}
