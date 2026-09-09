@@ -1,0 +1,146 @@
+[
+  {
+    "case": "full32",
+    "arm": "reference",
+    "inverse": false,
+    "first_use_wall_seconds": 2.0714486399665475
+  },
+  {
+    "case": "full32",
+    "arm": "dense_eager",
+    "inverse": false,
+    "first_use_wall_seconds": 0.37505059799877927
+  },
+  {
+    "case": "full32",
+    "arm": "dense_compiled",
+    "inverse": false,
+    "first_use_wall_seconds": 173.53690397302853
+  },
+  {
+    "case": "full32",
+    "arm": "reference",
+    "inverse": true,
+    "first_use_wall_seconds": 0.01109172502765432
+  },
+  {
+    "case": "full32",
+    "arm": "dense_eager",
+    "inverse": true,
+    "first_use_wall_seconds": 0.008053253986872733
+  },
+  {
+    "case": "full32",
+    "arm": "dense_compiled",
+    "inverse": true,
+    "first_use_wall_seconds": 8.043041124998126
+  },
+  {
+    "case": "small32",
+    "arm": "reference",
+    "inverse": false,
+    "first_use_wall_seconds": 0.0018206819659098983
+  },
+  {
+    "case": "small32",
+    "arm": "dense_eager",
+    "inverse": false,
+    "first_use_wall_seconds": 0.0020880739903077483
+  },
+  {
+    "case": "small32",
+    "arm": "dense_compiled",
+    "inverse": false,
+    "first_use_wall_seconds": 9.4805518410285
+  },
+  {
+    "case": "small32",
+    "arm": "reference",
+    "inverse": true,
+    "first_use_wall_seconds": 0.002564267022535205
+  },
+  {
+    "case": "small32",
+    "arm": "dense_eager",
+    "inverse": true,
+    "first_use_wall_seconds": 0.00263942196033895
+  },
+  {
+    "case": "small32",
+    "arm": "dense_compiled",
+    "inverse": true,
+    "first_use_wall_seconds": 7.393451215990353
+  },
+  {
+    "case": "small64",
+    "arm": "reference",
+    "inverse": false,
+    "first_use_wall_seconds": 0.027149883040692657
+  },
+  {
+    "case": "small64",
+    "arm": "dense_eager",
+    "inverse": false,
+    "first_use_wall_seconds": 0.036463694006670266
+  },
+  {
+    "case": "small64",
+    "arm": "dense_compiled",
+    "inverse": false,
+    "first_use_wall_seconds": 9.147547181986738
+  },
+  {
+    "case": "small64",
+    "arm": "reference",
+    "inverse": true,
+    "first_use_wall_seconds": 0.0024974810075946152
+  },
+  {
+    "case": "small64",
+    "arm": "dense_eager",
+    "inverse": true,
+    "first_use_wall_seconds": 0.002573763020336628
+  },
+  {
+    "case": "small64",
+    "arm": "dense_compiled",
+    "inverse": true,
+    "first_use_wall_seconds": 7.939717837027274
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "reference",
+    "inverse": false,
+    "first_use_wall_seconds": 0.28719585604267195
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "dense_eager",
+    "inverse": false,
+    "first_use_wall_seconds": 1.6984039510134608
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "dense_compiled",
+    "inverse": false,
+    "first_use_wall_seconds": 15.427187547960784
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "reference",
+    "inverse": true,
+    "first_use_wall_seconds": 0.006775223999284208
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "dense_eager",
+    "inverse": true,
+    "first_use_wall_seconds": 0.005840379046276212
+  },
+  {
+    "case": "small32_gradient",
+    "arm": "dense_compiled",
+    "inverse": true,
+    "first_use_wall_seconds": 8.382845201005694
+  }
+]

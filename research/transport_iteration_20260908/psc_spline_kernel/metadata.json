@@ -1,0 +1,52 @@
+{
+  "source_commit": "bb024437a761c096375a042239f77262724dca14",
+  "source_sha256": {
+    "qalt/experiments/spline_kernel_benchmark/run.py": "f423a85b9de298d34fe27052a629ca5a73ed056de7da35f87e17ea017c2e0b4f",
+    "qalt/experiments/spline_kernel_benchmark/PROTOCOL.md": "1cecbc1c30b98d9311e2d9de8a7c9032cd5da125836db86fd6f40a3e197fcb1c",
+    "qalt/experiments/spline_kernel_benchmark/run.slurm": "e82926aaf8e457be985610ea26a0819973431c82eda6beae0bb149a9fbed206d",
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/dense_spline.py": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433"
+  },
+  "python": "3.10.9",
+  "numpy": "2.2.6",
+  "torch": "2.10.0+cu128",
+  "triton": "3.6.0",
+  "cuda_build": "12.8",
+  "device": "Tesla V100-SXM2-32GB",
+  "device_capability": [
+    7,
+    0
+  ],
+  "host": "v024.ib.bridges2.psc.edu",
+  "slurm_job": "45570945",
+  "compiler": "torch.compile backend=inductor fullgraph=True dynamic=False",
+  "compiler_environment": {
+    "CC": null,
+    "CXX": null,
+    "TORCHINDUCTOR_COMPILE_THREADS": "1"
+  },
+  "seed": 20260909,
+  "order_seed": 20260910,
+  "real_data_read": false,
+  "training_performed": false,
+  "task_cache_paths": {
+    "TORCHINDUCTOR_CACHE_DIR": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-spline-kernel/inductor-cache",
+    "TRITON_CACHE_DIR": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-spline-kernel/triton-cache",
+    "TMPDIR": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-spline-kernel/tmp"
+  },
+  "timed_shape": [
+    64,
+    2880
+  ],
+  "bins": 8,
+  "timed_dtype": "float32",
+  "driver": [
+    "Tesla V100-SXM2-32GB, 580.178.04"
+  ],
+  "host_c_compiler": [
+    "cc (GCC) 8.5.0 20210514 (Red Hat 8.5.0-22)",
+    "Copyright (C) 2018 Free Software Foundation, Inc."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "completed_synthetic_kernel_benchmark",
+  "elapsed_seconds": 283.7820673849783,
+  "payload_sha256": {
+    "order.json": "70351905dc20a0ebe7eb6ef8f9edeac7fed0460abca538e4cc4443fc2ce5c300",
+    "fabricated_inputs.npz": "21a7aa42ec40f0ccee717644cd84cc5af8e8fd750203f0bde3a2a8ced88d7013",
+    "summary.json": "e83de5781f4a8d9049531d0b99a68f287118445b94851469e65a3813c6751120",
+    "timings.json": "69f667137b0e0577c9b5fff1120ae92a13eb47646bd68cc978436d3dc27e9492",
+    "numerical_checks.json": "26ce4a2b22eae9803f3a94dc4493d5b8c5d514a7517a6099d665978190e9db2c",
+    "GATES_PASSED.json": "0dccc805869c71ef397679b8134063f06043f3443d238977f26d1175e9bd4164",
+    "metadata.json": "e619eb0366f0ac8742000bde2c162450a96c2d2bd70b245b5904076332860320",
+    "first_use_setup.json": "2c8c8eed9057aae636820c22146196f548692a583d229cc552600c650ccca5b6"
+  }
+}

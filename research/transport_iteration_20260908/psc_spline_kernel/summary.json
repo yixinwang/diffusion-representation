@@ -1,0 +1,49 @@
+{
+  "variants": {
+    "reference_forward": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.008028613985516131,
+      "median_cuda_event_milliseconds": 7.9956159591674805,
+      "max_peak_allocated_bytes": 89634304,
+      "max_peak_incremental_allocated_bytes": 71913472
+    },
+    "dense_eager_forward": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.007438390020979568,
+      "median_cuda_event_milliseconds": 7.406192064285278,
+      "max_peak_allocated_bytes": 84076544,
+      "max_peak_incremental_allocated_bytes": 66355712
+    },
+    "dense_compiled_forward": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.00048458902165293694,
+      "median_cuda_event_milliseconds": 0.44785599410533905,
+      "max_peak_allocated_bytes": 52200960,
+      "max_peak_incremental_allocated_bytes": 34480128
+    },
+    "reference_inverse": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.008473596506519243,
+      "median_cuda_event_milliseconds": 8.439184188842773,
+      "max_peak_allocated_bytes": 96440320,
+      "max_peak_incremental_allocated_bytes": 78719488
+    },
+    "dense_eager_inverse": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.007567341497633606,
+      "median_cuda_event_milliseconds": 7.53441596031189,
+      "max_peak_allocated_bytes": 90527744,
+      "max_peak_incremental_allocated_bytes": 72806912
+    },
+    "dense_compiled_inverse": {
+      "repetitions": 30,
+      "median_wall_seconds": 0.00048457251978106797,
+      "median_cuda_event_milliseconds": 0.4519200026988983,
+      "max_peak_allocated_bytes": 54412800,
+      "max_peak_incremental_allocated_bytes": 36691968
+    }
+  },
+  "compile_first_use_wall_seconds_sum": 239.351245923026,
+  "interpretation": "checked-call synthetic microbenchmark; not full-model speed or training evidence",
+  "break_even": "not promised; first-use includes compilation and execution, workload/call count and amortization unknown"
+}
