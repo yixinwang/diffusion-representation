@@ -1,0 +1,609 @@
+{
+  "status": "audit_pass",
+  "payload_hashes_verified": 83,
+  "source_hashes_and_snapshots_verified": 5,
+  "correct_fit_selections": 35,
+  "raw_timing_samples": 324,
+  "timing_medians_independently_recomputed": [
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "exact",
+      "median_seconds": 0.0006844449671916664
+    },
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "fm_4",
+      "median_seconds": 0.0006368749891407788
+    },
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "fm_8",
+      "median_seconds": 0.0010668730246834457
+    },
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "fm_16",
+      "median_seconds": 0.0018737469799816608
+    },
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "fm_32",
+      "median_seconds": 0.0034677580115385354
+    },
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "arm": "fm_64",
+      "median_seconds": 0.006621018052101135
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "exact",
+      "median_seconds": 0.0314744389615953
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "fm_4",
+      "median_seconds": 0.026325925020501018
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "fm_8",
+      "median_seconds": 0.0490963360061869
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "fm_16",
+      "median_seconds": 0.09298871498322114
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "fm_32",
+      "median_seconds": 0.18089448800310493
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "arm": "fm_64",
+      "median_seconds": 0.357996437989641
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "exact",
+      "median_seconds": 0.0007421029731631279
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "fm_4",
+      "median_seconds": 0.0006998840253800154
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "fm_8",
+      "median_seconds": 0.0011692949919961393
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "fm_16",
+      "median_seconds": 0.0020494069904088974
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "fm_32",
+      "median_seconds": 0.0037853060057386756
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "arm": "fm_64",
+      "median_seconds": 0.0072267549694515765
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "exact",
+      "median_seconds": 0.031604494026396424
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "fm_4",
+      "median_seconds": 0.026449156983289868
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "fm_8",
+      "median_seconds": 0.04930117097683251
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "fm_16",
+      "median_seconds": 0.09319675498409197
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "fm_32",
+      "median_seconds": 0.18156204099068418
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "arm": "fm_64",
+      "median_seconds": 0.3585403590113856
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "exact",
+      "median_seconds": 0.0006840440328232944
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "fm_4",
+      "median_seconds": 0.0006504210177809
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "fm_8",
+      "median_seconds": 0.001070478989277035
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "fm_16",
+      "median_seconds": 0.0018816519877873361
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "fm_32",
+      "median_seconds": 0.0034735100343823433
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "arm": "fm_64",
+      "median_seconds": 0.006683505023829639
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "exact",
+      "median_seconds": 0.03155936801340431
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "fm_4",
+      "median_seconds": 0.026544755965005606
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "fm_8",
+      "median_seconds": 0.049323362996801734
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "fm_16",
+      "median_seconds": 0.0933137449901551
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "fm_32",
+      "median_seconds": 0.18161408900050446
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "arm": "fm_64",
+      "median_seconds": 0.35889958299230784
+    }
+  ],
+  "numerical_reports": [
+    {
+      "full_source_roundtrip_max": 3.9968028886505635e-15,
+      "head_tail_roundtrip_max_on_abs50": 1.4210854715202004e-14,
+      "exact_copy_bitwise": true,
+      "orthogonal_dictionary_error": 7.771561172376096e-16
+    },
+    {
+      "full_source_roundtrip_max": 8.43769498715119e-15,
+      "head_tail_roundtrip_max_on_abs50": 1.4210854715202004e-14,
+      "exact_copy_bitwise": true,
+      "orthogonal_dictionary_error": 7.771561172376096e-16
+    },
+    {
+      "full_source_roundtrip_max": 5.773159728050814e-15,
+      "head_tail_roundtrip_max_on_abs50": 1.4210854715202004e-14,
+      "exact_copy_bitwise": true,
+      "orthogonal_dictionary_error": 7.771561172376096e-16
+    }
+  ],
+  "source_dictionary_regeneration_max_abs": 2.0122792321330962e-16,
+  "frozen_stream_reconstruction": [
+    {
+      "seed": 2026090901,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true,
+        "roundtrip_source": true,
+        "timing_source_batch_1": true,
+        "timing_source_batch_64": false
+      }
+    },
+    {
+      "seed": 2026090902,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true,
+        "roundtrip_source": false,
+        "timing_source_batch_1": true,
+        "timing_source_batch_64": true
+      }
+    },
+    {
+      "seed": 2026090903,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true,
+        "roundtrip_source": true,
+        "timing_source_batch_1": true,
+        "timing_source_batch_64": true
+      }
+    },
+    {
+      "seed": 2026091001,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091002,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091003,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091004,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091005,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091006,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091007,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091008,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091009,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091010,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091011,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091012,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091013,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091014,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091015,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091016,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091017,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091018,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091019,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091020,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091021,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091022,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091023,
+      "hash_matches": {
+        "root_source": false,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091024,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091025,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091026,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091027,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091028,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091029,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": true,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091030,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091031,
+      "hash_matches": {
+        "root_source": false,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    },
+    {
+      "seed": 2026091032,
+      "hash_matches": {
+        "root_source": true,
+        "head_source": false,
+        "root_observations": false,
+        "head_observations": false,
+        "dictionary": true
+      }
+    }
+  ],
+  "reference_sha256": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b",
+  "no_fitting_or_timing_rerun": true
+}

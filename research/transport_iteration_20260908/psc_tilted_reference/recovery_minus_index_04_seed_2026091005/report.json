@@ -1,0 +1,39 @@
+{
+  "seed": 2026091005,
+  "truth_gamma": -0.5,
+  "truth_index": 4,
+  "fitted_gamma": -0.5,
+  "fitted_index": 4,
+  "correct_sign": true,
+  "correct_index": true,
+  "correct_selection": true,
+  "all_dictionary_scores": [
+    31096.375321808788,
+    31209.895362795185,
+    31171.070694599606,
+    31135.439259770334,
+    32202.903044385814,
+    31072.512691371245,
+    31150.231493475487,
+    31163.928185218316,
+    31158.314144629912,
+    31246.22785782716,
+    31185.15406543206,
+    31242.605174762895,
+    31049.7211816518,
+    31196.305110114718,
+    31158.728448819966,
+    31203.79289408858
+  ],
+  "score_gap": 956.6751865586521,
+  "hashes": {
+    "root_source": "f13c3b173e765326520ec90354d14b76eb4beaea29a14e3df793288c815dbe08",
+    "head_source": "81223847652ac8dfa1a73da466021ecf56a026dff0bf1403fdaeec98d3f3000d",
+    "root_observations": "c3eea9fe62a42e8a14d265fdb611eb25accbe9e25c53a867d4ff49fe58fd6272",
+    "head_observations": "b0e1f542c7cc2f09e14acda6fbd9192781408a8c8b9df7552747eca3282a7b89",
+    "dictionary": "6bb82fd0a697d034f2ba722c0bab9e59c8f724e6a9809d068d64776603d78ac8"
+  },
+  "simulation_seconds": 0.1769188159960322,
+  "fit_seconds": 0.19522907497594133,
+  "interpretation": "one declared training seed for this sign/index; not repeated trials of each condition"
+}

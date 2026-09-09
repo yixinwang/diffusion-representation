@@ -1,0 +1,168 @@
+{
+  "seed": 2026090902,
+  "truth_gamma": 0.5,
+  "truth_index": 7,
+  "root_arrays": 32,
+  "head_arrays": 256,
+  "hashes": {
+    "root_source": "6c0afedfeb431ace447101b202bc282ed0bd3a0ac5e7ef79a460590fe4bc30fc",
+    "head_source": "007b0fd6d7cff682d52a718ded06fb0c074e53d30b737ba1cc105878ba7c6403",
+    "root_observations": "b3759a7504ed65e727caf22151b531e7eae307275654cbabf17a4f85d90fe585",
+    "head_observations": "5d7047153c98317f79c857eadec60c2439251b804106bbc19235185d3b0f768b",
+    "dictionary": "6bb82fd0a697d034f2ba722c0bab9e59c8f724e6a9809d068d64776603d78ac8",
+    "roundtrip_source": "4fa67d210c1e238d75d8988e8ff6197910063033583b006e8a226cd8bcfcaf7e",
+    "timing_source_batch_1": "d6666c2fe47ad7972a24163a18a22aecc5e6f46023648a86e83d566470397fd3",
+    "timing_source_batch_64": "e5925b955478e7396b13f2e4c00a981d5729faac8550fc136859b63391ea8f2a"
+  },
+  "reconstructed_interleaving": {
+    "1": [
+      [
+        "exact",
+        "fm_64",
+        "fm_8",
+        "fm_16",
+        "fm_32",
+        "fm_4"
+      ],
+      [
+        "exact",
+        "fm_4",
+        "fm_64",
+        "fm_32",
+        "fm_16",
+        "fm_8"
+      ],
+      [
+        "fm_8",
+        "exact",
+        "fm_64",
+        "fm_16",
+        "fm_4",
+        "fm_32"
+      ],
+      [
+        "fm_4",
+        "fm_8",
+        "fm_64",
+        "fm_32",
+        "exact",
+        "fm_16"
+      ],
+      [
+        "fm_64",
+        "fm_8",
+        "fm_16",
+        "fm_32",
+        "fm_4",
+        "exact"
+      ],
+      [
+        "exact",
+        "fm_8",
+        "fm_4",
+        "fm_16",
+        "fm_64",
+        "fm_32"
+      ],
+      [
+        "fm_64",
+        "fm_4",
+        "fm_16",
+        "fm_8",
+        "fm_32",
+        "exact"
+      ],
+      [
+        "fm_64",
+        "fm_4",
+        "exact",
+        "fm_32",
+        "fm_16",
+        "fm_8"
+      ],
+      [
+        "fm_4",
+        "fm_8",
+        "fm_64",
+        "fm_32",
+        "exact",
+        "fm_16"
+      ]
+    ],
+    "64": [
+      [
+        "fm_64",
+        "fm_8",
+        "fm_4",
+        "fm_32",
+        "exact",
+        "fm_16"
+      ],
+      [
+        "exact",
+        "fm_8",
+        "fm_32",
+        "fm_64",
+        "fm_4",
+        "fm_16"
+      ],
+      [
+        "fm_32",
+        "fm_4",
+        "fm_16",
+        "exact",
+        "fm_64",
+        "fm_8"
+      ],
+      [
+        "fm_64",
+        "fm_32",
+        "fm_16",
+        "exact",
+        "fm_8",
+        "fm_4"
+      ],
+      [
+        "fm_16",
+        "exact",
+        "fm_32",
+        "fm_8",
+        "fm_4",
+        "fm_64"
+      ],
+      [
+        "fm_8",
+        "fm_64",
+        "exact",
+        "fm_16",
+        "fm_4",
+        "fm_32"
+      ],
+      [
+        "fm_4",
+        "fm_32",
+        "fm_8",
+        "fm_64",
+        "fm_16",
+        "exact"
+      ],
+      [
+        "fm_4",
+        "exact",
+        "fm_8",
+        "fm_32",
+        "fm_16",
+        "fm_64"
+      ],
+      [
+        "fm_32",
+        "exact",
+        "fm_16",
+        "fm_8",
+        "fm_64",
+        "fm_4"
+      ]
+    ]
+  },
+  "provenance_reconstruction_seconds": 0.18236273399088532
+}

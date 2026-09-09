@@ -1,0 +1,11 @@
+{
+  "source_commit": "82bb8bf6dac93e9ad7ea63c70ec7ca4ac77bccfa",
+  "source_sha256": {
+    "research/transport_iteration_20260908/pro8_artifacts/positive_class_reference.py": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b",
+    "qalt/experiments/tilted_normal_reference/run.py": "075a0a18424a03164f755d0e2d0b3a2a9f2945ddf6610e9a1203713e29dedf86",
+    "qalt/experiments/tilted_normal_reference/PROTOCOL.md": "2617dbc813d7a55ad60f2c7bdbfcbbf424a50187f65aedd1569482b3d696465f",
+    "qalt/experiments/tilted_normal_reference/run.slurm": "76adb3836f3f22488fc769edad925037efed920a8d0ae6a0687229e3fd775fee",
+    "qalt/tests/test_tilted_normal_reference_protocol.py": "be8bfa462dcff647184b1512729379afdfd4952e4a7cedeb84db388cb2a4ea71"
+  },
+  "reference_sha256": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b"
+}

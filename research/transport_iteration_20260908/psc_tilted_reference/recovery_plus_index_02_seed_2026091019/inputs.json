@@ -1,0 +1,14 @@
+{
+  "seed": 2026091019,
+  "truth_gamma": 0.5,
+  "truth_index": 2,
+  "hashes": {
+    "root_source": "3a9dc690c0c352ff7a5f28d14e80d9de0c877c8b7a0eb31ff08c94ba613986eb",
+    "head_source": "8dc6a0a98d093e8fb89faf81af9b8970a94ba8c6aafbb939ee22710a3260ef63",
+    "root_observations": "91271f4b18147890c84a30bae72c2178eab55f1368a0332c7506f2acd81c3cd3",
+    "head_observations": "6bbc343566ebc70cdc4472035cfa4c62981c4a2166901949e9f79bcb3b501f67",
+    "dictionary": "6bb82fd0a697d034f2ba722c0bab9e59c8f724e6a9809d068d64776603d78ac8"
+  },
+  "root_arrays": 32,
+  "head_arrays": 256
+}
