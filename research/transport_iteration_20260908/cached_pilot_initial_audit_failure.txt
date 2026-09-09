@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-cached-pilot/audit-full.py", line 34, in <module>
+    recreated=torch.randn(2000,3072,generator=torch.Generator().manual_seed(seed+300)).numpy();noise_exact[str(seed)]=bool(np.array_equal(noise,recreated));assert noise_exact[str(seed)]
+                                                                                                                                                                   ~~~~~~~~~~~^^^^^^^^^^^
+AssertionError

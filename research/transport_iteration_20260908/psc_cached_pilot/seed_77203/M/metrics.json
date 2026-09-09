@@ -1,0 +1,31 @@
+{
+  "energy_mean": 0.17145704025141956,
+  "covariance_error": 0.0017990848109106228,
+  "gradient_means": [
+    0.016407453272700764,
+    0.018172919175794333
+  ],
+  "repair_gradient_means": [
+    0.007961658896537074,
+    0.009252130494751811
+  ],
+  "kid": 0.19554890245174983,
+  "prdc": {
+    "precision": 0.597,
+    "recall": 0.005,
+    "density": 0.2812,
+    "coverage": 0.107,
+    "nearest_k": 5,
+    "real_duplicate_rows": 0,
+    "fake_duplicate_rows": 0,
+    "cross_radius_ties_real": 0,
+    "cross_radius_ties_fake": 0
+  },
+  "sigmoid_endpoint_counts": {
+    "zero": 0,
+    "one": 0
+  },
+  "complete_nll": -2.5785235675776055,
+  "residual_nll": 1.3600237159729003,
+  "generation_seconds_including_save": 24.415737484989222
+}

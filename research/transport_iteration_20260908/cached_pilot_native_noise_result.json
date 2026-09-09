@@ -1,0 +1,35 @@
+{
+  "status": "same_environment_registered_source_replay_pass",
+  "torch": "2.10.0+cu128",
+  "results": {
+    "77201": {
+      "generation_source_exact": true,
+      "numerical_sources": {
+        "S": true,
+        "M": true,
+        "J": true,
+        "RQS": true
+      }
+    },
+    "77202": {
+      "generation_source_exact": true,
+      "numerical_sources": {
+        "S": true,
+        "M": true,
+        "J": true,
+        "RQS": true
+      }
+    },
+    "77203": {
+      "generation_source_exact": true,
+      "numerical_sources": {
+        "S": true,
+        "M": true,
+        "J": true,
+        "RQS": true
+      }
+    }
+  },
+  "transport_completed": false,
+  "transport_note": "Complete success JSON received before 300-second SSH process timeout; normal remote/transport exit was not observed. No retry."
+}

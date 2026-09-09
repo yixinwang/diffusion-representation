@@ -1,0 +1,19 @@
+{
+  "scope": "Independent source and mathematical audit only; no compilation, integration, test execution, or historical timing replay",
+  "publication_commit": "a8954f35cf3dc09c3337d41a45187a7b7e462b11",
+  "local_cherry_pick": "90ed6da",
+  "reviewed_sources_sha256": {
+    "certify.cpp": "5a9eeebffdc0a8fee58ba3c697b5687b4ca19f8e9828b82fbcc10c43caadab44",
+    "global_bounds.cpp": "f57b05b62b425f8414b606af1b11b9bf9159aecebba93983087319eb7f80ef45",
+    "risk_bounds.cpp": "4f0a728691a22a4a332f0895bbf6847eda6eac4c84abf8ac23bec6ae0142653e",
+    "mpfr_minimal.h": "2883e8e4411642ff9cedc04a20059012d064fae794af61182b2b97f6249f3b70",
+    "test_certificate.cpp": "e668c81a8d0e0f9bf7cd549f0a4f3059bd4e3f583c37df63217e4edd1386c3b7",
+    "run.py": "36a30513eba670f635866bc3d2b7b80780b0bac5ec7a340a94a83158591dd224",
+    "frontier.py": "0af3b5a0af65cd2f37e5b9f2a5c3ed2ac8da747a649781b11da108a019b4b352",
+    "MATH.md": "4fba912fc3b3686fb0af649d04a5846e0526f843ed6f9033cd34dc9326240c0f"
+  },
+  "blocking_mathematical_defect_found": false,
+  "registered_path_only": true,
+  "receipt_reexecuted": false,
+  "full_delivery_verification": "Separate parent audit; this record hashes only reviewed source files"
+}

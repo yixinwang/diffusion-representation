@@ -1,0 +1,69 @@
+{
+  "allowlist_sha256": "dc776d99a541b7656c5f6ba6d33c7d7db3ec8e0e463ae1ab2ee0622b554921b2",
+  "archive": "/ocean/projects/mth250006p/ywang26/datasets/ucf101-subset/UCF101_subset.tar.gz",
+  "completed_phase_seconds": {
+    "bounded_member_hash": 0.29654203401878476,
+    "guards": 6.800495323957875,
+    "manifest_header_validation": 9.173975603014696
+  },
+  "current_phase_seconds": 0.6385920509928837,
+  "dependencies": {
+    "av": "16.1.0",
+    "av_libraries": {
+      "libavcodec": [
+        62,
+        11,
+        100
+      ],
+      "libavdevice": [
+        62,
+        1,
+        100
+      ],
+      "libavfilter": [
+        11,
+        4,
+        100
+      ],
+      "libavformat": [
+        62,
+        3,
+        100
+      ],
+      "libavutil": [
+        60,
+        8,
+        100
+      ],
+      "libswresample": [
+        6,
+        1,
+        100
+      ],
+      "libswscale": [
+        9,
+        1,
+        100
+      ]
+    },
+    "numpy": "2.2.6",
+    "pillow": "12.1.0"
+  },
+  "elapsed_seconds": 16.90960501198424,
+  "error": "ValueError('nonmonotone timestamps')",
+  "first_pass_frames": 3,
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "member": "UCF101_subset/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c03.avi",
+  "member_sha256": "699175c50544283f3b8537387403ff5b82958e4b18e590611129013131d1601a",
+  "phase": "first_pass",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+  "saved_frames": [],
+  "source_sha256": {
+    "helpers": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "reader": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "runner": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8"
+  },
+  "status": "failed",
+  "traceback": "Traceback (most recent call last):\n  File \"/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py\", line 173, in main\n    timeline,info=first_pass(av,reader,manifest,args.output,status,checkpoint)\n  File \"/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py\", line 83, in first_pass\n    if previous is not None and stamp<=previous:raise ValueError('nonmonotone timestamps')\nValueError: nonmonotone timestamps\n"
+}

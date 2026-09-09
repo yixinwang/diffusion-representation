@@ -1,0 +1,6 @@
+{
+  "timeout": true,
+  "stdout": "b'{\"status\": \"same_environment_registered_source_replay_pass\", \"torch\": \"2.10.0+cu128\", \"results\": {\"77201\": {\"generation_source_exact\": true, \"numerical_sources\": {\"S\": true, \"M\": true, \"J\": true, \"RQS\": true}}, \"77202\": {\"generation_source_exact\": true, \"numerical_sources\": {\"S\": true, \"M\": true, \"J\": true, \"RQS\": true}}, \"77203\": {\"generation_source_exact\": true, \"numerical_sources\": {\"S\": true, \"M\": true, \"J\": true, \"RQS\": true}}}}\\n'",
+  "stderr": "None",
+  "elapsed_seconds": 300.00534200000004
+}

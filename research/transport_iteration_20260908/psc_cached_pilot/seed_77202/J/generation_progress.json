@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "completed_rows": 2000,
+  "planned_rows": 2000,
+  "logits_written_rows": 2000,
+  "endpoint_counts": {
+    "zero": 0,
+    "one": 9
+  }
+}

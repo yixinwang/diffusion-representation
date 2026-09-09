@@ -1,0 +1,34 @@
+{
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909",
+  "command": [
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py",
+    "--output",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-first-clip/decode",
+    "--manifest",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-headers/manifest.json",
+    "--reader-source",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py",
+    "--reader-sha256",
+    "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "--helpers-sha256",
+    "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "--runner-sha256",
+    "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "--numpy-version",
+    "2.2.6"
+  ],
+  "dependency_files_verified": 264,
+  "dependency_root": "/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/dependencies-attempt3",
+  "expected_commit": "7b9703b64573748cbd2b3e6a832834c06baf417f",
+  "finished": 1788925612.2449431,
+  "returncode": 1,
+  "source_sha256": {
+    "research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "research/transport_iteration_20260908/video_decode_prerequisite/helpers.py": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "research/transport_iteration_20260908/video_dependency/extraction-attempt3.json": "170a8a22d7605651ffbec47b6b03fd24e496588873743d3331a0759fddb87100"
+  },
+  "started": 1788925579.0313342,
+  "status": "decode_failed"
+}

@@ -1,0 +1,32 @@
+{
+  "77201": {
+    "max_abs_difference": 2.2724270820617676e-06,
+    "different_values": 2359566,
+    "values": 6144000,
+    "shape": [
+      2000,
+      3072
+    ],
+    "dtype": "float32"
+  },
+  "77202": {
+    "max_abs_difference": 2.339482307434082e-06,
+    "different_values": 2360299,
+    "values": 6144000,
+    "shape": [
+      2000,
+      3072
+    ],
+    "dtype": "float32"
+  },
+  "77203": {
+    "max_abs_difference": 2.6226043701171875e-06,
+    "different_values": 2362483,
+    "values": 6144000,
+    "shape": [
+      2000,
+      3072
+    ],
+    "dtype": "float32"
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "arms": {
+    "S": {
+      "energy_mean": 0.1703187308336325,
+      "covariance_error": 0.0014812092482276717,
+      "gradient_means": [
+        0.017253172300110958,
+        0.01948968644199466
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.20161925813320636,
+      "prdc": {
+        "precision": 0.5855,
+        "recall": 0.001,
+        "density": 0.275,
+        "coverage": 0.112,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 0
+      },
+      "complete_nll": -2.553228928059742,
+      "residual_nll": 1.3030686611599394,
+      "generation_seconds_including_save": 14.27991095901234
+    },
+    "M": {
+      "energy_mean": 0.17020729670818377,
+      "covariance_error": 0.0015199821784310785,
+      "gradient_means": [
+        0.0176259453016479,
+        0.01953482914182741
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.20001488393114375,
+      "prdc": {
+        "precision": 0.5675,
+        "recall": 0.001,
+        "density": 0.25670000000000004,
+        "coverage": 0.112,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 0
+      },
+      "complete_nll": -2.5580767228309367,
+      "residual_nll": 1.2978976800706652,
+      "generation_seconds_including_save": 25.329058337025344
+    },
+    "J": {
+      "energy_mean": 0.17003047937554217,
+      "covariance_error": 0.001373183639243547,
+      "gradient_means": [
+        0.01360477002586059,
+        0.015201429290026427
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.17790580320287486,
+      "prdc": {
+        "precision": 0.7225,
+        "recall": 0.002,
+        "density": 0.4422,
+        "coverage": 0.146,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 2
+      },
+      "complete_nll": -2.6275816682382476,
+      "residual_nll": 1.0480189269595677,
+      "generation_seconds_including_save": 13.646961187012494
+    },
+    "RQS": {
+      "energy_mean": 0.17014090138415625,
+      "covariance_error": 0.0013534087847303367,
+      "gradient_means": [
+        0.01246976412190064,
+        0.014575127711625273
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.1642864398908972,
+      "prdc": {
+        "precision": 0.775,
+        "recall": 0.007,
+        "density": 0.5196,
+        "coverage": 0.165,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 0
+      },
+      "complete_nll": -2.6433819426798872,
+      "residual_nll": 1.2069054455651178,
+      "generation_seconds_including_save": 37.63871739199385
+    },
+    "A_only": {
+      "energy_mean": 0.17199995503241633,
+      "covariance_error": 0.006696580527495416,
+      "gradient_means": [
+        0.01630378434552191,
+        0.018254993992426846
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.22786307589028,
+      "prdc": {
+        "precision": 0.5435,
+        "recall": 0.006,
+        "density": 0.2234,
+        "coverage": 0.075,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 0
+      },
+      "complete_nll": -2.466934026353464,
+      "residual_nll": 1.3711300264146593,
+      "generation_seconds_including_save": 41.098976733046584
+    },
+    "root_only": {
+      "energy_mean": 0.17032137635531933,
+      "covariance_error": 0.0014769798588456506,
+      "gradient_means": [
+        0.015783561193733423,
+        0.017577811588075875
+      ],
+      "repair_gradient_means": [
+        0.007961658896537074,
+        0.009252130494751811
+      ],
+      "kid": 0.20510575443748813,
+      "prdc": {
+        "precision": 0.4775,
+        "recall": 0.001,
+        "density": 0.20659999999999998,
+        "coverage": 0.089,
+        "nearest_k": 5,
+        "real_duplicate_rows": 0,
+        "fake_duplicate_rows": 0,
+        "cross_radius_ties_real": 0,
+        "cross_radius_ties_fake": 0
+      },
+      "sigmoid_endpoint_counts": {
+        "zero": 0,
+        "one": 0
+      },
+      "complete_nll": -2.4894213981334423,
+      "residual_nll": 1.3711300264146593,
+      "generation_seconds_including_save": 24.766217522032093
+    }
+  },
+  "gates": {
+    "M_residual_nll_better_S": true,
+    "M_covariance_error_half_S": false,
+    "J_complete_nll_better_M": true,
+    "J_KID_better_S": true,
+    "J_KID_better_RQS": false,
+    "J_gradient_within_10_percent": false,
+    "J_energy_not_worse_S": true,
+    "J_energy_not_worse_M": true,
+    "J_energy_not_worse_RQS": true
+  },
+  "all_gates_pass": false,
+  "confirmatory": false
+}

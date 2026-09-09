@@ -1,0 +1,8 @@
+{
+  "source_sha256": "c73900b62f9f1ee09cb39dd788fc81d68a76ceaeebc5f75d3da0621267fd86a1",
+  "repair_ids_sha256": "da0870e250bc25661e566a4cdf460f64e2e58765d217f7f4490b4f88d3e8d082",
+  "repair_values_sha256": "587a5fd9b63fa694599d615993b1c69e1da0c29ed6ad555239da7ba0b45d64a9",
+  "source_seed": 77503,
+  "dimension": 3072,
+  "pairs_per_image": 1
+}

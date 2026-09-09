@@ -1,0 +1,100 @@
+JobID|State|Elapsed|MaxRSS|ExitCode
+45578905|RUNNING|00:00:26||0:0
+45578905.batch|RUNNING|00:00:26||0:0
+45578905.extern|RUNNING|00:00:26||0:0
+{
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909",
+  "command": [
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py",
+    "--output",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-first-clip/decode",
+    "--manifest",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-headers/manifest.json",
+    "--reader-source",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-decode-20260909/research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py",
+    "--reader-sha256",
+    "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "--helpers-sha256",
+    "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "--runner-sha256",
+    "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "--numpy-version",
+    "2.2.6"
+  ],
+  "dependency_files_verified": 264,
+  "dependency_root": "/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/dependencies-attempt3",
+  "expected_commit": "7b9703b64573748cbd2b3e6a832834c06baf417f",
+  "source_sha256": {
+    "research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "research/transport_iteration_20260908/video_decode_prerequisite/helpers.py": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "research/transport_iteration_20260908/video_decode_prerequisite/run_decode.py": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "research/transport_iteration_20260908/video_dependency/extraction-attempt3.json": "170a8a22d7605651ffbec47b6b03fd24e496588873743d3331a0759fddb87100"
+  },
+  "started": 1788925579.0313342,
+  "status": "launching_once"
+}
+{
+  "allowlist_sha256": "dc776d99a541b7656c5f6ba6d33c7d7db3ec8e0e463ae1ab2ee0622b554921b2",
+  "archive": "/ocean/projects/mth250006p/ywang26/datasets/ucf101-subset/UCF101_subset.tar.gz",
+  "completed_phase_seconds": {
+    "guards": 6.800495323957875
+  },
+  "current_phase_seconds": 0.0,
+  "dependencies": {
+    "av": "16.1.0",
+    "av_libraries": {
+      "libavcodec": [
+        62,
+        11,
+        100
+      ],
+      "libavdevice": [
+        62,
+        1,
+        100
+      ],
+      "libavfilter": [
+        11,
+        4,
+        100
+      ],
+      "libavformat": [
+        62,
+        3,
+        100
+      ],
+      "libavutil": [
+        60,
+        8,
+        100
+      ],
+      "libswresample": [
+        6,
+        1,
+        100
+      ],
+      "libswscale": [
+        9,
+        1,
+        100
+      ]
+    },
+    "numpy": "2.2.6",
+    "pillow": "12.1.0"
+  },
+  "elapsed_seconds": 6.800495323957875,
+  "first_pass_frames": 0,
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "member": "UCF101_subset/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c03.avi",
+  "phase": "manifest_header_validation",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+  "saved_frames": [],
+  "source_sha256": {
+    "helpers": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "reader": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "runner": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8"
+  },
+  "status": "running"
+}

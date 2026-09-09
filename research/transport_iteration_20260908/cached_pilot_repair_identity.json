@@ -1,0 +1,20 @@
+{
+  "status": "strict_canonical_repair_identity_pass",
+  "source_commit": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+  "repair_values_sha256": "587a5fd9b63fa694599d615993b1c69e1da0c29ed6ad555239da7ba0b45d64a9",
+  "repair_ids_sha256": "da0870e250bc25661e566a4cdf460f64e2e58765d217f7f4490b4f88d3e8d082",
+  "shape": [
+    1000,
+    3,
+    32,
+    32
+  ],
+  "dtype": "float64",
+  "official_test_read": false,
+  "discovery_exported": false,
+  "fit_exported": false,
+  "payload_sha256": {
+    "repair.npy": "c44da373fc999a8af49e845d672395d0fe109174cc0e629e3ba2192d708f5c95",
+    "repair_ids.npy": "e8c91fd2d6d799f95f67a3ed5c77c0f234d39a334c3afef3d32fd17615d30adb"
+  }
+}

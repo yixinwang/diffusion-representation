@@ -1,0 +1,46 @@
+{
+  "job": "45578905",
+  "status": "known_timestamp_prerequisite_failure",
+  "frozen_sources_match": {
+    "decode/run_decode.py": true,
+    "decode/frozen_helpers.py": true,
+    "decode/frozen_reader.py": true
+  },
+  "dependency_files_verified": 264,
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "first_pass_saved_indices": [
+    0,
+    1,
+    2
+  ],
+  "first_pass_saved_pts": [
+    1,
+    2,
+    4
+  ],
+  "time_base": [
+    1,
+    25
+  ],
+  "rejected_next_frame_not_saved": true,
+  "no_selected_arrays": true,
+  "member_sha256": "699175c50544283f3b8537387403ff5b82958e4b18e590611129013131d1601a",
+  "payload_sha256": {
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launcher_status.json": "a0daf053fdf053b3b99caa3b0f8ba2010028b07b325c92052c6f0774b3e38bda",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "decode/run_decode.py": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "decode/stream.json": "79438aaee6d39e2b76e4806fc19ff40893bcaf3ddaf88a95cb54a42715d1c727",
+    "decode/frozen_helpers.py": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "decode/frames.jsonl": "6aa328521cf2d4d4cf020b8f83d15df7681a69e0645c8021fc454511db65c77b",
+    "decode/manifest.json": "6f947f8e96e3ebdcf8d604015736ead0dd2c98f33706cc76205269611aebc545",
+    "decode/frozen_reader.py": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "decode/status.json": "00fde5d220d5364717ecf3bf216f9e1a01e8ea88d8322787933e3c2cde7856ac",
+    "sources/run_decode.py": "ea6978c80e336922125bd6b828b1f3b5cebd171faa69761daabfde6c8a904ee8",
+    "sources/archive_reader.py": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "sources/extraction-attempt3.json": "170a8a22d7605651ffbec47b6b03fd24e496588873743d3331a0759fddb87100",
+    "sources/helpers.py": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a"
+  },
+  "slurm": "FAILED 00:00:36 MaxRSS42788K ExitCode1:0",
+  "retrieval": "scp connection closed; read-only SSH tar retrieval succeeded; no resubmission"
+}
