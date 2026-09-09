@@ -1,0 +1,191 @@
+"""Fabricated-input CPU correctness audit only. No native data/training/timing claim."""
+from __future__ import annotations
+import copy
+import hashlib
+import json
+import math
+import platform
+from pathlib import Path
+
+import numpy as np
+import torch
+from scipy.integrate import quad
+
+from reference import (CachedGlobalInnovationDecoder, integrated_linear,
+                       derivative_heights, rank_mix, OrthonormalFrame, require_valid)
+
+
+def scalar_numpy(value: float, logits: np.ndarray, inverse: bool = False):
+    p = np.exp(logits - logits.max()); p = p / p.sum()
+    h = np.r_[1., .1 + .9 * len(logits) * p, 1.]
+    k = len(logits) + 1; width = 8. / k
+    knots = np.r_[0., np.cumsum(.5 * width * (h[:-1] + h[1:]))] - 4.
+    if value <= -4 or value >= 4:
+        return value, 0.
+    j = min(k-1, np.searchsorted(knots[1:-1], value, side='right')) if inverse else int((value+4)//width)
+    a = (h[j+1]-h[j])/width
+    if inverse:
+        d = value-knots[j]
+        offset = 2*d/(h[j]+math.sqrt(h[j]*h[j]+2*a*d))
+        return -4+j*width+offset, -math.log(h[j]+a*offset)
+    offset=value-(-4+j*width)
+    return knots[j]+h[j]*offset+.5*a*offset**2, math.log(h[j]+a*offset)
+
+
+def main():
+    torch.set_num_threads(1)
+    torch.manual_seed(920260909)
+    out = {"scope": "fabricated-input CPU correctness; no native, GPU, or speed evidence",
+           "torch": torch.__version__, "python": platform.python_version(),
+           "cuda_available": torch.cuda.is_available(), "checks": {}}
+    out['source_sha256'] = {
+        name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
+        for name in ('reference.py', 'audit.py')}
+    checks=out['checks']
+    def record(name, **values):
+        checks[name]=values
+
+    # Scalar values, inverse, density Jacobians, and identity/linear limit.
+    for dtype,tol in ((torch.float64,2e-11),(torch.float32,2e-4)):
+        value=torch.cat((torch.randn(5,61,dtype=dtype)*2,
+                         torch.tensor([-1e4,-20.,-4.,4.,20.,1e4],dtype=dtype).repeat(5,1)),1)
+        raw=2*torch.randn(*value.shape,7,dtype=dtype)
+        f=require_valid(integrated_linear(value,raw))
+        b=require_valid(integrated_linear(f.value,raw,inverse=True))
+        error=(b.value-value).abs().max().item(); ld=(f.logdet+b.logdet).abs().max().item()
+        assert error < tol and ld < 4*tol, (dtype,error,ld)
+        identity=require_valid(integrated_linear(value,torch.zeros_like(raw)))
+        assert torch.allclose(identity.value,value,atol=tol,rtol=0)
+        assert torch.equal(f.value[value.abs()>=4],value[value.abs()>=4])
+        record(f'scalar_{dtype}',max_inverse_error=error,max_logdet_cancellation=ld,
+               identity_error=(identity.value-value).abs().max().item(),tail_exact=True)
+
+    rng=np.random.default_rng(90017)
+    raw_np=rng.normal(0,2,7)
+    values=rng.uniform(-6,6,160)
+    for inverse in (False,True):
+        tx=torch.tensor(values,dtype=torch.float64)
+        tr=torch.tensor(raw_np,dtype=torch.float64).repeat(len(tx),1)
+        result=require_valid(integrated_linear(tx,tr,inverse=inverse))
+        ref=np.array([scalar_numpy(float(x),raw_np,inverse) for x in values])
+        error=np.max(np.abs(result.value.numpy()-ref[:,0]))
+        ld=np.max(np.abs(result.logdet.numpy()-ref[:,1]))
+        assert error<2e-12 and ld<2e-12
+        record('independent_numpy_inverse' if inverse else 'independent_numpy_forward',value_error=float(error),logdet_error=float(ld))
+    # Integrate the actual density on each transformed segment + exact Gaussian tails.
+    knots=[scalar_numpy(float(x),raw_np)[0] for x in np.linspace(-4,4,9)]
+    def density(y):
+        z,ld=scalar_numpy(y,raw_np,True)
+        return math.exp(-.5*z*z-.5*math.log(2*math.pi)+ld)
+    mass=sum(quad(density,knots[i],knots[i+1],epsabs=1e-12,epsrel=1e-12)[0] for i in range(8))+math.erfc(4/math.sqrt(2))
+    assert abs(mass-1)<1e-10
+    record('independent_normalization',mass=mass,absolute_error=abs(mass-1))
+
+    # Finite-difference autograd checks away from knots, including the zero-slope case.
+    for inverse in (False,True):
+        for identity in (False,True):
+            x=torch.tensor([[-2.31,-.39,.43,2.63]],dtype=torch.float64,requires_grad=True)
+            raw=(torch.zeros(1,4,7,dtype=torch.float64) if identity else .4*torch.randn(1,4,7,dtype=torch.float64)).requires_grad_()
+            def fn(v,r):
+                a=integrated_linear(v,r,inverse=inverse)
+                return torch.cat((a.value.flatten(),a.logdet.flatten()))
+            passed=torch.autograd.gradcheck(fn,(x,raw),eps=1e-6,atol=2e-5,rtol=2e-4)
+            assert passed
+            record(f'gradcheck_inverse{inverse}_identity{identity}',passed=bool(passed))
+
+    frame=OrthonormalFrame(11,3).double()
+    with torch.no_grad():
+        frame.rotation.normal_(0, .15)
+    u=frame.matrix(); a=torch.tensor([[.3,-.6,.4]],dtype=torch.float64)
+    z=torch.randn(1,11,dtype=torch.float64)
+    mixed=require_valid(rank_mix(z,u,a)); back=require_valid(rank_mix(mixed.value,u,a,True))
+    matrix=torch.eye(11,dtype=torch.float64)+u@torch.diag(torch.expm1(a[0]))@u.T
+    mixerr=(back.value-z).abs().max().item()
+    deterror=abs(torch.linalg.slogdet(matrix)[1].item()-mixed.logdet.item())
+    assert mixerr<1e-12 and deterror<1e-12
+    record('rank_mixer',inverse_error=mixerr,logdet_error=deterror,minimum_eigenvalue=torch.linalg.eigvalsh(matrix).min().item())
+
+    # Nonidentity triangular decoder, dense Jacobian incl. prefix dependence.
+    model=CachedGlobalInnovationDecoder(2,1,4,blocks=4,width=8,rank=2,channel_embedding=3).double()
+    with torch.no_grad():
+        for cond in model.conditioners:
+            cond.head.weight.normal_(0,.012);cond.head.bias.normal_(0,.025)
+            cond.eigen_head.weight.normal_(0,.06);cond.eigen_head.bias.normal_(0,.2)
+    z=torch.randn(1,2,4,4,dtype=torch.float64)*.6
+    coarse=torch.randn(1,1,4,4,dtype=torch.float64)*.4
+    y,ld=model.decode(z,coarse); back,ild=model.encode(y,coarse)
+    error=(back-z).abs().max().item(); cancellation=(ld+ild).abs().max().item()
+    jac=torch.autograd.functional.jacobian(lambda t:model.decode(t.reshape_as(z),coarse)[0].flatten(),z.flatten())
+    sign,det=torch.linalg.slogdet(jac)
+    assert sign>0 and error<1e-10 and cancellation<1e-10 and abs(det.item()-ld.item())<1e-9
+    record('tiny_dense_jacobian',dimension=z.numel(),inverse_error=error,logdet_cancellation=cancellation,
+           dense_logdet_error=abs(det.item()-ld.item()),sign=sign.item())
+
+    # Caches must ignore current/future residuals, but remain responsive to prefix.
+    for b,cond in enumerate(model.conditioners):
+        base=torch.randn_like(z)
+        changed=torch.where(cond.observed,base,base+100*torch.randn_like(base))
+        first=model.cache_context(base,coarse,b);second=model.cache_context(changed,coarse,b)
+        assert torch.equal(first.raw,second.raw) and torch.equal(first.alpha,second.alpha)
+    record('future_input_invariance',blocks=4,bitwise=True)
+    # Nonzero dense dependence within one immutable-prefix block, with no
+    # current-block coordinate visible to its conditioner.
+    block_jac = jac[model.conditioners[0].active][:, model.conditioners[0].active]
+    offdiag = block_jac - torch.diag(block_jac.diagonal())
+    assert offdiag.abs().max() > 1e-6
+    record('within_block_dependence',maximum_offdiagonal_jacobian=offdiag.abs().max().item())
+    copy_model=copy.deepcopy(model)
+    copied=copy_model.decode(z,coarse)
+    assert torch.equal(y,copied[0]) and torch.equal(ld,copied[1])
+    record('exact_copy',bitwise=True)
+    model.eval();model.prepare_inference()
+    cached=model.decode(z,coarse)
+    assert torch.equal(y,cached[0]) and torch.equal(ld,cached[1])
+    assert all(f.cache_ready for f in model.frames)
+    model.train(); assert not any(f.cache_ready for f in model.frames)
+    model.eval(); model.prepare_inference()
+    model.load_state_dict(copy_model.state_dict())
+    assert not any(f.cache_ready for f in model.frames)
+    model.train()
+    record('basis_cache',bitwise=True,cache_invalidated_on_training=True,
+           cache_invalidated_on_checkpoint_load=True)
+
+    # Native SHAPE, fabricated values. Intentionally no native data or fitting.
+    native=CachedGlobalInnovationDecoder().float()
+    with torch.no_grad():
+        for c in native.conditioners:
+            c.head.bias.normal_(0,.04)
+            c.head.weight.normal_(0,.004)
+            c.eigen_head.bias.normal_(0,.08)
+    source=torch.randn(2,45,8,8);context=torch.randn(2,3,8,8)
+    generated,gld=native.decode(source,context);recovered,rld=native.encode(generated,context)
+    err=(recovered-source).abs().max().item();cancel=(gld+rld).abs().max().item()
+    assert err<1e-3 and cancel<1e-2
+    logp=native.log_prob(generated,context)
+    native.zero_grad(set_to_none=True)
+    (-logp.mean()/2880).backward()
+    assert all(p.grad is not None and torch.isfinite(p.grad).all() for p in native.parameters())
+    record('fabricated_rgb32_residual_shape',dimension=2880,inverse_error=err,logdet_cancellation=cancel,
+           gradients_finite=True,parameters=sum(p.numel() for p in native.parameters()),
+           basis_cache_bytes=native.cache_bytes())
+
+    # Ablation contains no trainable mixer parameters; scalar path remains exact.
+    ablation=CachedGlobalInnovationDecoder(2,1,4,blocks=4,width=8,rank=2,use_mixer=False).double()
+    az,ald=ablation.decode(z,coarse);zb,zld=ablation.encode(az,coarse)
+    assert torch.allclose(zb,z,atol=1e-12,rtol=0) and torch.allclose(ald+zld,torch.zeros_like(ald),atol=1e-12)
+    record('scalar_ablation',passed=True,frames=len(ablation.frames),parameters=sum(p.numel() for p in ablation.parameters()))
+
+    bad=torch.tensor([float('nan')]);rr=torch.zeros(1,7)
+    assert not bool(integrated_linear(bad,rr).valid)
+    try:
+        require_valid(integrated_linear(bad,rr))
+        raise AssertionError('invalid output accepted')
+    except FloatingPointError:
+        pass
+    record('invalid_input_rejected',passed=True)
+    out['status']='PASS'
+    Path(__file__).with_name('audit_results.json').write_text(json.dumps(out,indent=2,allow_nan=False)+'\n')
+    print(json.dumps(out,indent=2,allow_nan=False))
+
+if __name__=='__main__':
+    main()
