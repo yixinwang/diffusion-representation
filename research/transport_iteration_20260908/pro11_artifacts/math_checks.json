@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "count": 20,
+  "checks": [
+    {
+      "name": "feature_zero_mean",
+      "maximum_error_or_violation": 9.048426070912274e-15,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "feature_unit_second_moment",
+      "maximum_error_or_violation": 6.661338147750939e-15,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "feature_zero_third_moment",
+      "maximum_error_or_violation": 1.8197249262996706e-14,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "copula_normalization",
+      "maximum_error_or_violation": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "uniform_marginals",
+      "maximum_error_or_violation": 5.773159728050814e-15,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "raw_covariance_blindness",
+      "maximum_error_or_violation": 8.185726402265558e-18,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "gaussian_chart_covariance_blindness",
+      "maximum_error_or_violation": 2.0383000842727483e-17,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "entropy_series_against_2d_quadrature",
+      "maximum_error_or_violation": 1.6375789613221059e-15,
+      "tolerance": 1e-12,
+      "passed": true
+    },
+    {
+      "name": "Bregman_KL_against_quadrature",
+      "maximum_error_or_violation": 8.215650382226158e-15,
+      "tolerance": 2e-12,
+      "passed": true
+    },
+    {
+      "name": "KL_quadratic_lower_bound",
+      "maximum_error_or_violation": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "KL_quadratic_upper_bound",
+      "maximum_error_or_violation": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "wrong_matching_4d_KL",
+      "maximum_error_or_violation": 4.96037100283786e-11,
+      "tolerance": 2e-10,
+      "passed": true
+    },
+    {
+      "name": "continuous_grid_inverse_CDF",
+      "maximum_error_or_violation": 1.1102230246251565e-16,
+      "tolerance": 2e-14,
+      "passed": true
+    },
+    {
+      "name": "inverse_original_CDF_diagnostic",
+      "maximum_error_or_violation": 1.1102230246251565e-16,
+      "tolerance": 2e-14,
+      "passed": true
+    },
+    {
+      "name": "grid_log_density_uniform_bound",
+      "maximum_error_or_violation": -0.005955177634196555,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "binomial_inverse_count_bound",
+      "maximum_error_or_violation": 0.0,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "add_one_root_KL_bound",
+      "maximum_error_or_violation": -0.04022357398562986,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "root_histogram_quantile_roundtrip",
+      "maximum_error_or_violation": 2.220446049250313e-16,
+      "tolerance": 1e-13,
+      "passed": true
+    },
+    {
+      "name": "full_D_dense_Jacobian_density",
+      "maximum_error_or_violation": 2.671147747435043e-10,
+      "tolerance": 2e-06,
+      "passed": true
+    },
+    {
+      "name": "D3072_joint_bound_numeric",
+      "maximum_error_or_violation": 1.593900567087303e-10,
+      "tolerance": 2e-10,
+      "passed": true
+    }
+  ],
+  "bound_D3072": {
+    "assumptions": {
+      "N": 4000,
+      "n_structure": 2000,
+      "n_context": 2000,
+      "C": 192,
+      "G": 4,
+      "m": 360,
+      "k0": 8,
+      "K": 32,
+      "kappa": 0.45,
+      "a": 0.35,
+      "L": 0.5,
+      "context_density_lower": 0.5
+    },
+    "pieces": {
+      "root_estimation": 0.3359160209947513,
+      "context_approximation": 0.07709703947368422,
+      "context_and_strength_estimation": 0.18583226066655412,
+      "empty_context_cells": 2.0573177048557213e-11,
+      "unknown_matching_estimation": 0.020246855545893557,
+      "continuous_grid_density_approximation": 9.479709153651197e-06
+    },
+    "joint_KL_upper": 0.61910165641061,
+    "matching_error_probability_upper": 4.775210643113885e-06,
+    "conditional_product_KL_lower": 88.19999999999999,
+    "candidate_edges": 1035360,
+    "pooled_function_squared_error_upper": 0.11105274544936443,
+    "masked_feature_MSE_gain_per_coordinate_lower": 0.12242288003788238,
+    "scope": "Expected over independent fitting arrays; continuous real-arithmetic grid density. Not a native-image or floating-point atomic-law KL theorem."
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "openblas_threads": "2",
+    "source_sha256": {
+      "model.py": "866318dfb73bbe2d247a45603cd57c61a784649f3857370f1e1965a2abb20a88",
+      "run_checks.py": "ff553b4fc710b206c027f66dd2ad44da70ab150c87c4cc52645aa7ca293c1708"
+    }
+  },
+  "interpretation": "Analytic and numerical checks; not a matched global-FM experiment."
+}

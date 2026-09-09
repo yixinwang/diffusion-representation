@@ -1,0 +1,270 @@
+{
+  "seed": 1109103,
+  "status": "completed_standalone_synthetic_check",
+  "N_fit": 4000,
+  "N_structure": 2000,
+  "N_context": 2000,
+  "C": 192,
+  "G": 4,
+  "group_size": 720,
+  "D": 3072,
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "openblas_threads": "2",
+    "source_sha256": {
+      "model.py": "866318dfb73bbe2d247a45603cd57c61a784649f3857370f1e1965a2abb20a88",
+      "run_checks.py": "ff553b4fc710b206c027f66dd2ad44da70ab150c87c4cc52645aa7ca293c1708"
+    }
+  },
+  "worlds": {
+    "positive": {
+      "offset": 0.35,
+      "amplitude": 0.075,
+      "structural_pass": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "graph_diagnostics": [
+        {
+          "degree_one_nodes": 720,
+          "zero_degree_nodes": 0,
+          "maximum_degree": 1,
+          "maximum_abs_score": 0.404611005271436,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 720,
+          "zero_degree_nodes": 0,
+          "maximum_degree": 1,
+          "maximum_abs_score": 0.40989373925455974,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 720,
+          "zero_degree_nodes": 0,
+          "maximum_degree": 1,
+          "maximum_abs_score": 0.4145166282438365,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 720,
+          "zero_degree_nodes": 0,
+          "maximum_degree": 1,
+          "maximum_abs_score": 0.41254950095552556,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        }
+      ],
+      "evaluation": {
+        "root_KL": 0.16069609404457097,
+        "conditional_KL": 0.05068331494639983,
+        "joint_KL": 0.2113794089909708,
+        "conditional_product_floor": 95.87488273727723,
+        "product_same_fitted_root_KL": 96.0355788313218,
+        "functional_prediction_excess_sum_one_per_pair": 0.06776062963455957,
+        "masked_feature_gain_per_coordinate": 0.12526544400719822,
+        "correct_edges_per_group": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "total_true_edges": 1440
+      },
+      "constant_context_ablation": {
+        "root_KL": 0.16069609404457097,
+        "conditional_KL": 2.924535682730383,
+        "joint_KL": 3.085231776774954,
+        "conditional_product_floor": 95.87488273727723,
+        "product_same_fitted_root_KL": 96.0355788313218,
+        "functional_prediction_excess_sum_one_per_pair": 4.053137625491289,
+        "masked_feature_gain_per_coordinate": 0.12249782109340882,
+        "correct_edges_per_group": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "total_true_edges": 1440
+      },
+      "quadrature_refinement_max_difference": 9.506284648352903e-16,
+      "Gaussian_source_seed": 11109103,
+      "Gaussian_source": {
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "14eb0b95136d4b6be5005bd7da7ba2049cc72cee7cae5a9a0abdf0f73d55fda1"
+      },
+      "observations": {
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "848a1bb3450604dcecfa0a72216f1511d3a1902d5b036b28c693f433f1c1b742"
+      },
+      "fresh_roundtrip_source_seed": 21109103,
+      "fresh_roundtrip_source": {
+        "shape": [
+          64,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "bd0071e6f999f117d7d2d8953b196194851b7c466f018ba4e4e284553ff92fa7"
+      },
+      "generated": {
+        "shape": [
+          64,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "fd92f337f3e06e0687f21f08318b2eeb2c4999f978ba6f36738b6889bf25a059"
+      },
+      "maximum_uniform_source_roundtrip_error": 1.1102230246251565e-16,
+      "analytic_copy_logdensity_max_error": 0.0,
+      "truth_generator_continuous_grid_logdensity_budget": 2.3143821175906243e-09,
+      "CPU_times_seconds": {
+        "source_and_fixture_generation": 16.49846255500006,
+        "observation_only_fit": 0.3544739330000084
+      },
+      "timing_scope": "one CPU run per law, including no global-FM control; not a comparative speed claim"
+    },
+    "zero_mean_change": {
+      "offset": 0.0,
+      "amplitude": 0.075,
+      "structural_pass": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "graph_diagnostics": [
+        {
+          "degree_one_nodes": 0,
+          "zero_degree_nodes": 720,
+          "maximum_degree": 0,
+          "maximum_abs_score": 0.10645720185828081,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 0,
+          "zero_degree_nodes": 720,
+          "maximum_degree": 0,
+          "maximum_abs_score": 0.10587959307278301,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 0,
+          "zero_degree_nodes": 720,
+          "maximum_degree": 0,
+          "maximum_abs_score": 0.09831691544489274,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        },
+        {
+          "degree_one_nodes": 0,
+          "zero_degree_nodes": 720,
+          "maximum_degree": 0,
+          "maximum_abs_score": 0.1115494205641079,
+          "minimum_context_count": 42,
+          "maximum_context_count": 78
+        }
+      ],
+      "evaluation": {
+        "root_KL": 0.16069609404457097,
+        "conditional_KL": 2.0282204348931367,
+        "joint_KL": 2.1889165289377077,
+        "conditional_product_floor": 2.0282204348931367,
+        "product_same_fitted_root_KL": 2.1889165289377077,
+        "functional_prediction_excess_sum_one_per_pair": 4.049999999999999,
+        "masked_feature_gain_per_coordinate": 4.336808689942018e-19,
+        "correct_edges_per_group": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "total_true_edges": 1440
+      },
+      "constant_context_ablation": {
+        "root_KL": 0.16069609404457097,
+        "conditional_KL": 2.0282204348931367,
+        "joint_KL": 2.1889165289377077,
+        "conditional_product_floor": 2.0282204348931367,
+        "product_same_fitted_root_KL": 2.1889165289377077,
+        "functional_prediction_excess_sum_one_per_pair": 4.049999999999999,
+        "masked_feature_gain_per_coordinate": 4.336808689942018e-19,
+        "correct_edges_per_group": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "total_true_edges": 1440
+      },
+      "quadrature_refinement_max_difference": 4.440892098500626e-16,
+      "Gaussian_source_seed": 11109103,
+      "Gaussian_source": {
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "14eb0b95136d4b6be5005bd7da7ba2049cc72cee7cae5a9a0abdf0f73d55fda1"
+      },
+      "observations": {
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "b51363d59fede0543532ea04d0f584d9d024b0748b031ec7e677726ef74a12a2"
+      },
+      "fresh_roundtrip_source_seed": 21109103,
+      "fresh_roundtrip_source": {
+        "shape": [
+          64,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "bd0071e6f999f117d7d2d8953b196194851b7c466f018ba4e4e284553ff92fa7"
+      },
+      "generated": {
+        "shape": [
+          64,
+          3072
+        ],
+        "dtype": "float64",
+        "sha256": "b2a169461338c2cd386c8599a4e714b9ae6c38aab2b929ea63b15195811be0f9"
+      },
+      "maximum_uniform_source_roundtrip_error": 1.1102230246251565e-16,
+      "analytic_copy_logdensity_max_error": 0.0,
+      "truth_generator_continuous_grid_logdensity_budget": 2.3143821175906243e-09,
+      "CPU_times_seconds": {
+        "source_and_fixture_generation": 13.740330946999848,
+        "observation_only_fit": 0.1930425450000257
+      },
+      "timing_scope": "one CPU run per law, including no global-FM control; not a comparative speed claim"
+    }
+  },
+  "not_run": [
+    "global FM training/tuning",
+    "native image loading",
+    "PSC",
+    "repository edits",
+    "matched-budget falsifier"
+  ],
+  "banks": "Gaussian and observed full training banks regenerated from recorded seeds; hashes retained, bulk banks not packaged."
+}
