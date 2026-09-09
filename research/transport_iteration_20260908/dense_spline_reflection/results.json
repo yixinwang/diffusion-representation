@@ -1,0 +1,47 @@
+{
+  "scope": "fabricated scalar reflection prototype only; not native attribution or interval certificate",
+  "checks": {
+    "saved_one_ulp_failure": {
+      "old_valid": false,
+      "new_valid": true,
+      "value": 1.306220531463623,
+      "logdet": -1.9422826766967773,
+      "decimal80_reference": [
+        1.3062205229177157,
+        -1.9422820720142764
+      ],
+      "value_error": 8.545907315138379e-09,
+      "logdet_error": 6.046825009597967e-07,
+      "output_ulp": 1.1920928955078125e-07
+    },
+    "all_knots_neighbors_monotonic_tails": {
+      "templates": 128,
+      "inputs": 3712,
+      "valid": true,
+      "minimum_increment": 0.0,
+      "tail_entries": 768,
+      "floating_plateaus_allowed": true
+    },
+    "all_input_raw_value_logdet_gradients": {
+      "double_gradcheck": true,
+      "float32_float64_max_absolute_gradient_difference": 2.141788290055402e-06,
+      "max_output_difference": 4.3883767042451893e-07
+    },
+    "branch_midpoint_roundtrip": {
+      "max_error": 1.1102230246251565e-16
+    },
+    "unresolved_extreme_derivative_overflow": {
+      "raw_derivative": 1e+30,
+      "correctly_rejected": true,
+      "not_a_universal_float32_inverse_guarantee": true
+    }
+  },
+  "pass": true,
+  "seconds": 0.6745290837716311,
+  "source_sha256": {
+    "prototype.py": "5b94a74344f906cd5d3edf1a56a6ea230b3b6aa48366f0db73f0c5cb1fb5ad26",
+    "original_dense_spline.py": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433",
+    "checks.py": "f3f58585bac6bbdccf43c8e25da8db5cb8047ac46fbf2c3e0670c3d39c3b1ddd",
+    "boundary_failure_01.json": "4abc7ce5e14ac5cd9ee7c59cf4d9738d65b1bce30c8324cedcd3ba4cef7a7970"
+  }
+}

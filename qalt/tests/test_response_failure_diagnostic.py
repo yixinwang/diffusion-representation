@@ -30,3 +30,15 @@ def test_failed_draw_provenance():
         index=rng.integers(0,len(ids),size=32);h.update(np.asarray(ids[index],dtype='<i8').tobytes())
     assert np.array_equal(m.recover_draw(ids,3,rng.bit_generator.state,h.hexdigest()),index)
     with pytest.raises(ValueError):m.recover_draw(ids,2,rng.bit_generator.state,h.hexdigest())
+
+def test_candidate_backward_does_not_mutate_original(tmp_path):
+    class Toy(torch.nn.Module):
+        def __init__(self):
+            super().__init__();self.shift=torch.nn.Parameter(torch.tensor(.2));self._spline=None
+        def encode(self,x,c):return x-self.shift,x.new_zeros(len(x))
+        def decode(self,z,c):return z+self.shift,z.new_zeros(len(z))
+    decoder=Toy();before=decoder.shift.detach().clone();x=torch.tensor([[.1,.2],[.3,.4]])
+    report=m.compare_candidate(decoder,None,x,x,tmp_path)
+    assert report['state_unchanged'] and report['gradients_finite_and_present']
+    assert report['roundtrip_gate'] and report['logdet_gate']
+    assert decoder.shift.grad is None and torch.equal(before,decoder.shift)

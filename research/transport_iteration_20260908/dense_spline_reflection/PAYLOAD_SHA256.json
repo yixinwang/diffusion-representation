@@ -1,0 +1,23 @@
+{
+  "README.md": "6f6e159b49a5d1a09a91d36c944c13a17c10f872767021faf0b6c7e37fd3be78",
+  "REVIEW.md": "50cb23b10930c384813a348102f3fcbef2e2075ab446e8daea12b6f835da3e5b",
+  "adversarial_boundary_bank.npz": "122eecfc4271ae8db4920f6ca956ff6566ec04cc4998c2016e9aa43d5b593c79",
+  "adversarial_boundary_outputs.npz": "e536dddedae1578168ac27e08ab85efea5f9ff0eea788f1e07ab4d1329c899a2",
+  "attempt1_two_roots/checks.py": "bca104fbbb53009f37356684c1af8401ef4c9ad5698b93f1d986c2c7b602c3f7",
+  "attempt1_two_roots/prototype.py": "73c8275363b8f59d4b6762f11329624631208f1a9092efc1aa80847d400fc7c5",
+  "attempt1_two_roots/results.json": "46ee965ef8b334114f35eac7ddc1364d8fa86b80947d182c23e40b12b42cb504",
+  "attempt1_two_roots/stderr.txt": "de40f0c9ae2940e28def290134843fea60e456a20faf931ab3af08d3f7e6f4d9",
+  "attempt1_two_roots/stdout.txt": "46ee965ef8b334114f35eac7ddc1364d8fa86b80947d182c23e40b12b42cb504",
+  "attempt2_midpoint_selector/checks.py": "c9432497f9f0cc0a4792e538695ea6d458a2ac11e2ce9f812b08e6f102b3b2f5",
+  "attempt2_midpoint_selector/prototype.py": "5b94a74344f906cd5d3edf1a56a6ea230b3b6aa48366f0db73f0c5cb1fb5ad26",
+  "attempt2_midpoint_selector/results.json": "5f759efdd62ec539412deefd614fbf3dacf2375eec29affeec40ad2023804915",
+  "attempt2_midpoint_selector/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "attempt2_midpoint_selector/stdout.txt": "5f759efdd62ec539412deefd614fbf3dacf2375eec29affeec40ad2023804915",
+  "boundary_failure_01.json": "4abc7ce5e14ac5cd9ee7c59cf4d9738d65b1bce30c8324cedcd3ba4cef7a7970",
+  "checks.py": "f3f58585bac6bbdccf43c8e25da8db5cb8047ac46fbf2c3e0670c3d39c3b1ddd",
+  "original_dense_spline.py": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433",
+  "prototype.py": "5b94a74344f906cd5d3edf1a56a6ea230b3b6aa48366f0db73f0c5cb1fb5ad26",
+  "results.json": "dd74555cd9c2fbe92f2805fa52fac06013f6c92e4dc160a920f4d23bf4896f56",
+  "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout.txt": "dd74555cd9c2fbe92f2805fa52fac06013f6c92e4dc160a920f4d23bf4896f56"
+}

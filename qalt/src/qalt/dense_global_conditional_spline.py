@@ -11,10 +11,11 @@ from __future__ import annotations
 import torch
 from .global_conditional_spline import GlobalConditionalSplineDecoder
 from .dense_spline import dense_spline_kernel
+from .reflected_dense_spline import reflected_dense_spline_kernel
 
 
 class DenseGlobalConditionalSplineDecoder(GlobalConditionalSplineDecoder):
-    """Identical flow with explicit backend='dense_eager' or 'compiled'.
+    """Identical exact-real flow; explicit eager, reflected, or compiled backend.
 
     The compiled option uses torch.compile(fullgraph=True,dynamic=False) and the
     default Inductor backend. Compilation is opt-in and can fail; no fallback is
@@ -24,12 +25,15 @@ class DenseGlobalConditionalSplineDecoder(GlobalConditionalSplineDecoder):
     """
     def __init__(self, residual_channels, context_channels, size, layers=4,
                  width=32, bins=8, attention_heads=4, *, backend='dense_eager'):
-        if backend not in ('dense_eager','compiled'):
-            raise ValueError('backend must be dense_eager or compiled')
+        if backend not in ('dense_eager','dense_reflected','compiled'):
+            raise ValueError('backend must be dense_eager, dense_reflected or compiled')
         super().__init__(residual_channels,context_channels,size,layers,width,bins,attention_heads)
         self.backend=backend
-        self._spline = (dense_spline_kernel if backend=='dense_eager' else
-                        torch.compile(dense_spline_kernel,fullgraph=True,dynamic=False))
+        if backend == 'dense_reflected':
+            self._spline = reflected_dense_spline_kernel
+        else:
+            self._spline = (dense_spline_kernel if backend=='dense_eager' else
+                           torch.compile(dense_spline_kernel,fullgraph=True,dynamic=False))
 
     def _transform(self,x,coarse,inverse):
         self._validate(x,coarse)

@@ -1,6 +1,6 @@
 """Read-only failed RQS forward capture; no fitting or quality evaluation."""
 from __future__ import annotations
-import argparse, hashlib, importlib.util, json, os, platform, signal, subprocess, sys, traceback
+import argparse, copy, math, hashlib, importlib.util, json, os, platform, signal, subprocess, sys, traceback
 from pathlib import Path
 import numpy as np
 import torch
@@ -34,6 +34,32 @@ def recover_draw(ids,updates,checkpoint_rng,expected_hash):
     if rng.bit_generator.state!=checkpoint_rng or h.hexdigest()!=expected_hash:raise ValueError('failed draw provenance mismatch')
     return index
 
+def compare_candidate(decoder,kernel,residual,coarse,out):
+    """Same unchanged decoder tensors; backward is a finite-gradient check only."""
+    candidate=copy.deepcopy(decoder);candidate._spline=kernel
+    before={k:v.detach().clone() for k,v in candidate.state_dict().items()}
+    try:
+        with torch.enable_grad():
+            z,ld=candidate.encode(residual,coarse)
+            torch.save({'z':z.detach().cpu(),'ld':ld.detach().cpu()},out/'candidate_encoded.pt')
+            loss=(.5*(z.square()+math.log(2*math.pi)).flatten(1).sum(1)-ld).mean()/residual[0].numel()
+            loss.backward()
+        gradients={name:None if p.grad is None else p.grad.detach().cpu() for name,p in candidate.named_parameters() if p.requires_grad}
+        torch.save(gradients,out/'candidate_gradients.pt')
+        with torch.no_grad():back,ild=candidate.decode(z.detach(),coarse)
+        torch.save({'z':z.detach().cpu(),'ld':ld.detach().cpu(),'recovered_residual':back.cpu(),'inverse_ld':ild.cpu()},out/'candidate_roundtrip.pt')
+        finite=all(bool(torch.isfinite(t).all()) for t in (z,ld,back,ild,loss))
+        grad_finite=bool(gradients) and all(g is not None and bool(torch.isfinite(g).all()) for g in gradients.values())
+        rt=float((back-residual).abs().max());lde=float((ld+ild).abs().max())
+        report={'outcome':'returned','finite':finite,'gradients_finite_and_present':grad_finite,'gradient_tensor_count':len(gradients),'roundtrip_max_abs':rt,'logdet_cancellation_max_abs':lde,'roundtrip_gate':rt<=1e-3,'logdet_gate':lde<=1e-2,'backend':'reflected_dense_spline_kernel','optimizer_created':False,'optimizer_steps':0}
+    except Exception as error:
+        torch.save({name:None if p.grad is None else p.grad.detach().cpu() for name,p in candidate.named_parameters() if p.requires_grad},out/'candidate_partial_gradients.pt')
+        report={'outcome':'candidate_failed','error':repr(error),'traceback':traceback.format_exc(),'backend':'reflected_dense_spline_kernel','optimizer_created':False,'optimizer_steps':0}
+    report['state_unchanged']=all(torch.equal(v,candidate.state_dict()[k]) for k,v in before.items())
+    write(out/'candidate_comparison.json',report)
+    if not report['state_unchanged']:raise ValueError('candidate state mutated')
+    return report
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--expected-commit',required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--device',choices=['cpu','cuda'],required=True);args=ap.parse_args()
     args.output.mkdir(parents=True,exist_ok=False);out=args.output;record={}
@@ -41,7 +67,7 @@ def main():
         head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
         if len(args.expected_commit)!=40 or head!=args.expected_commit:raise ValueError('diagnostic HEAD mismatch')
         hashes={}
-        diagnostic_files=list(Path(__file__).parent.iterdir())+[ROOT/'qalt/tests/test_response_failure_diagnostic.py']
+        diagnostic_files=list(Path(__file__).parent.iterdir())+[ROOT/'qalt/tests/test_response_failure_diagnostic.py',ROOT/'qalt/src/qalt/reflected_dense_spline.py']
         for p in sorted(diagnostic_files):
             if p.suffix not in ['.py','.md','.slurm']:continue
             rel=p.relative_to(ROOT);raw=p.read_bytes()
@@ -108,13 +134,19 @@ def main():
                 return result
             decoder._spline=observed_kernel
             try:
-                z,ld=decoder.encode(r,c);torch.save({'z':z.cpu(),'ld':ld.cpu()},out/'encoded.pt');record['decoder_outcome']='returned_valid'
+                with torch.enable_grad():
+                    z,ld=decoder.encode(r,c)
+                torch.save({'z':z.detach().cpu(),'ld':ld.detach().cpu()},out/'encoded.pt');record['decoder_outcome']='returned_valid'
             except FloatingPointError as error:record['decoder_outcome']='numerical_guard_raised';record['decoder_exception']=str(error)
             finally:
                 decoder._spline=kernel
                 for handle in handles:handle.remove()
+        reflected_path=ROOT/'qalt/src/qalt/reflected_dense_spline.py'
+        spec=importlib.util.spec_from_file_location('authenticated_reflected_kernel',reflected_path);reflected=importlib.util.module_from_spec(spec);spec.loader.exec_module(reflected)
+        record['candidate_comparison']=compare_candidate(decoder,reflected.reflected_dense_spline_kernel,r,c,out)
+        record['attribution']='old backend reproduced numerical guard' if record['decoder_outcome']=='numerical_guard_raised' else 'old backend did not reproduce; candidate validity is not a fix attribution'
         if runner.state_fingerprint(model)!=before or digest(failed)!=status['payload_sha256']['seed_78201/RQS_prefix_failed.pt']:raise ValueError('model/checkpoint mutated')
-        record.update(status='completed_diagnostic',device=args.device,torch=torch.__version__,numpy=np.__version__,python=platform.python_version(),host=platform.node(),gpu=torch.cuda.get_device_name() if args.device=='cuda' else None,successful_updates=progress['updates'],failed_draw=progress['updates']+1,optimizer_steps=sorted(set(int(v['step'].item()) for v in ck['optimizer']['state'].values())),state_unchanged=True,repair_evaluated=False,training_performed=False,layers=captures)
+        record.update(status='completed_diagnostic',device=args.device,torch=torch.__version__,numpy=np.__version__,python=platform.python_version(),host=platform.node(),gpu=torch.cuda.get_device_name() if args.device=='cuda' else None,successful_updates=progress['updates'],failed_draw=progress['updates']+1,optimizer_steps=sorted(set(int(v['step'].item()) for v in ck['optimizer']['state'].values())),state_unchanged=True,decoder_grad_enabled=True,analysis_cache_grad_enabled=False,repair_evaluated=False,training_performed=False,layers=captures)
     except BaseException as error:
         record.update(status='diagnostic_failed',error=repr(error),traceback=traceback.format_exc());raise
     finally:
