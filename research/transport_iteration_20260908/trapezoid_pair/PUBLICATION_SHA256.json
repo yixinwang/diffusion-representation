@@ -1,0 +1,62 @@
+{
+  "README.md": {
+    "bytes": 4827,
+    "sha256": "32b630701b73c28cdddeda672d27b88610f9c13b38768e9926d472b5177070a9"
+  },
+  "independent_check.json": {
+    "bytes": 3297,
+    "sha256": "4a2748d8c3a20460a447536123e46f519f6cbba82ec428c3b745e5e9409f8c7a"
+  },
+  "independent_check.py": {
+    "bytes": 2090,
+    "sha256": "0c0679556cdafd3cef3ecfc6f5d38d6db6123ca54812be80e6ff291840aadb83"
+  },
+  "independent_check_fixed.json": {
+    "bytes": 352,
+    "sha256": "1a3dff3a73502e88587b41358056d56732c6c74249b192e27c11605adb2ee82b"
+  },
+  "independent_check_fixed.py": {
+    "bytes": 2096,
+    "sha256": "b183e3419cc815a9469f64e163e05296d936327894cfb681ab2aefe772837273"
+  },
+  "independent_check_fixed_neighbors.json": {
+    "bytes": 352,
+    "sha256": "31a393b09563e22de00b57f8f099738011c148ef5a0ceb8925846d270c1a1ee9"
+  },
+  "independent_check_fixed_neighbors.py": {
+    "bytes": 2178,
+    "sha256": "dc6442dc99b10d32e5760feb474071fdd36193634527795202965e01d2f64438"
+  },
+  "independent_final_review.md": {
+    "bytes": 2346,
+    "sha256": "6a4f09819a6ee73330045950515b1d968ff8bc69eaa3b9b4a50aa4136beabb1d"
+  },
+  "independent_review.md": {
+    "bytes": 3169,
+    "sha256": "93352057ec6a395259e522cbf361e7e5654a98bff674b0b4c23c77a2f2c615cd"
+  },
+  "learner.py": {
+    "bytes": 10192,
+    "sha256": "5230ba8b9a068df09ddfe98697c3be851a316553dc811bd0b1662aab779c80ff"
+  },
+  "learner_notes.md": {
+    "bytes": 6120,
+    "sha256": "079fb455ab65ec523dd563dc9ae213dfcf1e556e0f3fa8ae1a4c164dff17b109"
+  },
+  "reference.py": {
+    "bytes": 3066,
+    "sha256": "dc423b981eae11b757a4aefc90beb2a91ffec634c55f2c6635ba4b52f0a5baa1"
+  },
+  "reference_attempt1.py.txt": {
+    "bytes": 2770,
+    "sha256": "99784d08f559636da143551488039f6dad76877d74454b3a91d23b5939c86529"
+  },
+  "test_learner.py": {
+    "bytes": 5954,
+    "sha256": "94d360110b30e29c6b574c72ee418ff0204d4a26ee2ca2e730a995ebcb6fe9a2"
+  },
+  "test_reference.py": {
+    "bytes": 2725,
+    "sha256": "0f317bd741399062503e42baed395ea73580970a4a006c6a90e876d0473b7c72"
+  }
+}

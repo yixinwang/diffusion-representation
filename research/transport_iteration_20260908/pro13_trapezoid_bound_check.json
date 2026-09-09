@@ -1,0 +1,26 @@
+{
+  "ordinary_float_bound_not_interval": true,
+  "exact_unscaled_feature_moments": {
+    "1": "0",
+    "2": "2/3",
+    "3": "0",
+    "4": "3/5"
+  },
+  "exact_unscaled_coordinate_moments": {
+    "u_times_feature": "0",
+    "u_squared_times_feature": "11/192"
+  },
+  "B": 0.918484500574053,
+  "delta_structure": 2.367236698632463e-06,
+  "terms": {
+    "root": 0.3359160209947513,
+    "context_approximation": 0.026908725602755455,
+    "sampling": 0.06485993942896952,
+    "empty_bins": 7.180534813732942e-12,
+    "structure_failure": 0.005589591013403495
+  },
+  "total": 0.43327427704706034,
+  "product_floor": 88.19999999999999,
+  "amplitude": 1.224744871391589,
+  "density_min": 0.32499999999999996
+}

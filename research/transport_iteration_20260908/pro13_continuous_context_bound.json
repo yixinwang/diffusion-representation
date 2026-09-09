@@ -1,0 +1,18 @@
+{
+  "ordinary_float_not_interval": true,
+  "variant": "continuous linear interpolation of32 clipped bin estimates with constant endpoint extrapolation",
+  "An": 0.017525702683123975,
+  "H": 0.03505140536624795,
+  "H_over_An": 2.0,
+  "bias_per_pair": 0.0001373291015625,
+  "v_within_training_bin": 2.0345052083333332e-05,
+  "terms": {
+    "root": 0.3359160209947513,
+    "continuous_context_bias": 0.1816338978185993,
+    "sampling": 0.12971987885793898,
+    "empty_bins": 7.1805348137329404e-12,
+    "structure_failure": 0.005589591013403495
+  },
+  "total": 0.6528593886918737,
+  "restricted_product_floor": 88.19999999999999
+}

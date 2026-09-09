@@ -1,0 +1,85 @@
+"""Fabricated-input prototype of a continuous pair density; no fits or data.
+
+The scalar conditional CDF is C1. The two-variable transport is only piecewise
+differentiable because the public feature has corners. Jacobians are a.e.
+These are float64 approximations to an ideal continuous map, not atomic-law KL.
+"""
+import numpy as np
+
+KNOTS = np.array([0., 1/8, 3/8, 5/8, 7/8, 1.])
+A = np.sqrt(1.5)
+HEIGHTS = A * np.array([1., 1., -1., -1., 1., 1.])
+SLOPES = np.diff(HEIGHTS) / np.diff(KNOTS)
+INTEGRALS = A * np.array([0., 1/8, 1/8, -1/8, -1/8, 0.])
+KAPPA = .45
+
+
+def _unit(x):
+    x = np.asarray(x, dtype=np.float64)
+    if not np.isfinite(x).all() or np.any((x < 0) | (x > 1)):
+        raise ValueError('expected finite closed-unit input; no clipping')
+    return x
+
+
+def _segment(x):
+    # Internal boundaries choose the right branch; x=1 uses the last branch.
+    return np.sum(x[..., None] >= KNOTS[1:-1], axis=-1)
+
+
+def psi(x):
+    x = _unit(x)
+    j = _segment(x)
+    return HEIGHTS[j] + SLOPES[j] * (x - KNOTS[j])
+
+
+def integrated_psi(x):
+    x = _unit(x)
+    j = _segment(x)
+    t = x - KNOTS[j]
+    return INTEGRALS[j] + HEIGHTS[j] * t + .5 * SLOPES[j] * t * t
+
+
+def _inputs(u, v, theta):
+    u, v, theta = np.broadcast_arrays(_unit(u), _unit(v), np.asarray(theta, dtype=np.float64))
+    if not np.isfinite(theta).all() or np.any(np.abs(theta) > KAPPA):
+        raise ValueError('theta outside registered interval')
+    return u, v, theta
+
+
+def encode(u, v, theta):
+    """(u,v) -> (u,p); return p and log determinant dp/dv."""
+    u, v, theta = _inputs(u, v, theta)
+    k = theta * psi(u)
+    p = v + k * integrated_psi(v)
+    density = 1 + k * psi(v)
+    if not np.isfinite(p).all() or np.any((p < 0) | (p > 1)) or np.any(density <= 0):
+        raise ArithmeticError('invalid numerical CDF or density; retain inputs')
+    return p, np.log(density)
+
+
+def decode(u, p, theta):
+    """(u,p) -> (u,v); one quadratic root after four knot comparisons."""
+    u, p, theta = _inputs(u, p, theta)
+    k = theta * psi(u)
+    thresholds = KNOTS[1:-1] + k[..., None] * INTEGRALS[1:-1]
+    j = np.sum(p[..., None] >= thresholds, axis=-1)
+    left_cdf = KNOTS[j] + k * INTEGRALS[j]
+    delta = p - left_cdf
+    d0 = 1 + k * HEIGHTS[j]
+    beta = k * SLOPES[j]
+    discriminant = d0 * d0 + 2 * beta * delta
+    if np.any(discriminant <= 0):
+        raise ArithmeticError('invalid numerical discriminant; no repair')
+    t = 2 * delta / (d0 + np.sqrt(discriminant))
+    v = KNOTS[j] + t
+    # Algebraic endpoint identities avoid reconstructing 1 by cancellation.
+    # They preserve the same continuous CDF; this is not clipping or repair.
+    endpoint_density = 1 + k * A
+    v = np.where(j == 0, p / endpoint_density, v)
+    v = np.where(j == 4, 1 - (1 - p) / endpoint_density, v)
+    if not np.isfinite(v).all() or np.any((v < 0) | (v > 1)):
+        raise ArithmeticError('inverse left unit interval; no clipping')
+    density = 1 + k * psi(v)
+    if np.any(density <= 0):
+        raise ArithmeticError('nonpositive numerical density')
+    return v, -np.log(density)
