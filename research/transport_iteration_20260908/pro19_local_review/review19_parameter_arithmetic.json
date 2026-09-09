@@ -1,0 +1,62 @@
+{
+  "assumptions": [
+    "every conv, transposed conv, linear has bias",
+    "GN has trainable scale+bias",
+    "no other trainable embeddings/projections/normalizers",
+    "flow conditioner has two3x3 convolutions and1x1 head, noGN",
+    "I adds6*23scalar parameters per coupling;16couplings",
+    "FM final output hasGN128 then3x3 convolution",
+    "fixed64dimtime features carry no trainable parameters"
+  ],
+  "flow": {
+    "H_per_layer": 156172,
+    "H": 2498752,
+    "I_extra": 2208,
+    "I": 2500960,
+    "G_per_layer": 173974,
+    "G": 2783584
+  },
+  "codec": {
+    "encoder_parts": {
+      "stem": 1792,
+      "res64": 148224,
+      "down64_128": 131200,
+      "res128_at16": 591360,
+      "down128_128": 262272,
+      "res128_at8": 591360,
+      "head": 2064
+    },
+    "encoder": 1728272,
+    "decoder_parts": {
+      "stem": 18560,
+      "res128_at8": 591360,
+      "up128_128": 262272,
+      "res128_at16": 591360,
+      "up128_64": 131136,
+      "res64_at32": 148224,
+      "head": 1731
+    },
+    "decoder": 1744643,
+    "total": 3472915
+  },
+  "fm": {
+    "per_resblock": 361472,
+    "pixel_parts": {
+      "stem": 3584,
+      "time_mlp": 82432,
+      "residual_blocks": 4337664,
+      "output_gn": 256,
+      "output_conv": 3459
+    },
+    "pixel": 4427395,
+    "latent_parts": {
+      "stem": 18560,
+      "time_mlp": 82432,
+      "residual_blocks": 2891776,
+      "output_gn": 256,
+      "output_conv": 18448
+    },
+    "latent": 3011472
+  },
+  "latent_whole_pipeline_parameters": 6484387
+}

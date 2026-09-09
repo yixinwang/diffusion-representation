@@ -1,0 +1,13 @@
+# Independent follow-up and implementation scope
+
+Review19 initially delivered no artifacts and incorrectly claimed source seeds/methods. Its follow-up explicitly corrected those errors using the actual frozen excerpts, then supplied a prospective inline protocol. No original checker package exists. Its new tied-scalar-RQS I is a different architecture from the current anchor-conditioned I; it was not implemented or substituted into the running experiment.
+
+Independent integer arithmetic verified the proposed biased-convolution/affine-GroupNorm parameter counts. A new deterministic RGB codec, unconditional latent FM, and matched pixel FM were implemented as isolated components. The complete latent pipeline has 6,484,387 parameters, including 3,472,915 codec parameters. The pixel field has 4,427,395 parameters. Generation uses 1,024 and 3,072 active Gaussian coordinates respectively, with no artificial latent-decoder noise and no exact FM likelihood claim.
+
+Root independently ran all 10 synthetic component tests: PASS in 1.63 seconds on local Python3.12/Torch2.14. They cover stage/normalization guards, source shape, intended gradients, invalid inputs, cache/image loss agreement with fixed RNG, and replay. These are fabricated numerical tests, not trained-image quality or a competent-baseline result.
+
+The source-review observations were addressed before freezing the readiness runner: batch32 records are flushed before the larger batch125 attempt; partial sample timing/output and failure memory are preserved; prior sample tensors are released; typed V100-32 is enforced; launcher/import sources are included in the frozen source set. The encoder remains resident and is disclosed in sampling memory. Full-default GPU reload is a separately timed qualification outside the warmed sampling timings. Host finite-check overhead remains included in actual timing. Optimizer construction is inside whole-screen elapsed time but outside individual step timings.
+
+This data-free screen does not implement the review's real-data protocol or certify its 3,000-second budget. Root's prospective protocol resolves common dequantized observations, active latent source dimension, and the requirement to charge prerequisite codec work at every learning-curve checkpoint. Real fitting, adequacy and complete cost comparison remain future work.
+
+Fresh review20 was submitted at https://chatgpt.com/c/6aa1b515-9e74-83e9-9bec-c9d9334ecb93 to examine a scoped theorem for the current anchor-conditioned I. The visible model menu had Latest selected and Pro explicitly disabled; submission used the available ordinary composer with Extra High effort. It is not represented as verified Pro execution. That review is pending.

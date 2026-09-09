@@ -1,0 +1,12 @@
+{
+  "self_excluded": true,
+  "sha256": {
+    "ROOT_REVIEW.md": "2829831003e0a921bf7d53ea6522cae32bd85fe09078bfabf1f4b0d3adb53b38",
+    "local_test_receipt.json": "b68aae389b46cbd402862b5184c97814bbc1af32837e5b45af8ebd2d05643586",
+    "review19_count_and_readiness_audit.md": "b77f88e99ff28433429dd1e0b4de752081426b40defcf1236fa82e9524d4d023",
+    "review19_parameter_arithmetic.json": "ac541ae9636fbf8d7bd808cde7fc162a1063b960eaeb58dd307bf8b85c6b77c7",
+    "review19_parameter_arithmetic.py": "89ae74261b92fd1e564666862f76d3c89ff6a1bff0a2d064ed1bc39ef3045eee",
+    "rgb-codec-component-delivery.md": "b1ec483dddb63836015b4e971f434ad43a403a1d837a49e6bc321613c1b1987b",
+    "rgb_codec_readiness_source_review.md": "d89385eea0734036878802265b2977478b403751448a2ec3689462021acf3da2"
+  }
+}

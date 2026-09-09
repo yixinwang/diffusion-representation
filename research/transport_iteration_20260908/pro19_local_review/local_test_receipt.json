@@ -1,0 +1,7 @@
+{
+  "command": "PYTHONPATH=qalt/src ../venv312/bin/python -m pytest -q qalt/tests/test_rgb_codec_flow_matching.py",
+  "observed_exit_code": 0,
+  "observed_summary": "10 passed in 1.63s",
+  "scope": "root independent fabricated component tests; no real data",
+  "gpu_profile_status": "not yet submitted"
+}

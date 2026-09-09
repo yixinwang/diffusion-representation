@@ -33,6 +33,16 @@ The study compares innovation/history-only responses with frozen or jointly trai
 
 Evidence: [full qualification](research/transport_iteration_20260908/psc_response_full_qualification), [preserved failed preflight](research/transport_iteration_20260908/psc_response_v2_preflight_failure), [interactive verification](research/transport_iteration_20260908/psc_response_v2_interactive_preflight), [fresh submission and scheduler record](research/transport_iteration_20260908/psc_response_v2_attempt2_launch).
 
+### September 9, 2026 — conventional codec/FM components and fresh mathematical review
+
+**Implementation.** Added an isolated deterministic RGB codec with a **16×8×8 latent**, unconditional latent flow matching, and a matched pixel flow-matching field. All codec training and cache/decoder work must be charged. The complete latent pipeline has **6,484,387 parameters**; the pixel field has **4,427,395**. Independent arithmetic verified these totals. The models use 1,024 and 3,072 active standard-Gaussian coordinates respectively; no artificial decoder noise or exact FM density is claimed.
+
+**Validation and scope.** Root independently passed **10 synthetic tests in 1.63 seconds**, including source/stage guards, gradients, normalization, cached-loss agreement and checkpoint replay. [Code](qalt/src/qalt/rgb_codec_flow_matching.py), [tests](qalt/tests/test_rgb_codec_flow_matching.py), and [independent audit](research/transport_iteration_20260908/pro19_local_review) are available. These components have not been trained on real images and are not yet qualified baselines. A [one-hour data-free GPU readiness screen](qalt/experiments/rgb_codec_readiness/PROTOCOL.md) is prepared; no result from it is recorded yet.
+
+**Review correction.** Review19 acknowledged its incorrect seeds/methods and supplied a prospective inline protocol. Its proposed tied scalar-spline flow is different from the current innovation-conditioned candidate and was not substituted into the running study. Common observed inputs and complete sequential-codec cost accounting must be fixed before any real-data protocol. [Fresh review20](https://chatgpt.com/c/6aa1b515-9e74-83e9-9bec-c9d9334ecb93) is examining a scoped theorem for the actual current candidate. Pro was explicitly disabled in the visible model menu; this review uses the available ordinary conversation flow, not verified Pro execution.
+
+**Active native experiment.** Job **45632257** passed all **34 preflight tests in 52.51 seconds** and is training on v023 in the verified output project. Its 21-fit protocol remains unchanged; no quality result is available.
+
 ### September 9, 2026 — output-quota failure and review correction
 
 **Experiment result.** Job **45619353** failed after **58 minutes 45 seconds** with `OSError(122, 'Disk quota exceeded')` while fitting the final seed's scalar control. Neither the all-fits freeze nor numerical-admission receipt exists; no quality result is admissible. Completed partial arms will not be selected, evaluated, or reused. The [complete original failure payload and independent authentication](research/transport_iteration_20260908/psc_response_v2_quota_failure) are preserved: all 178 payload hashes and 94 frozen source files passed verification. The quota also prevented fallback checkpoint serialization; partial temporary files remain included.
