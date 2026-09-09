@@ -1,0 +1,69 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 0.0,
+  "diagnostics": {
+    "arm": "histogram_lr",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.0019449650000069596,
+    "graph": {
+      "dense_multiplications": 256000,
+      "finite_type_I_control": "Union bound at delta_graph over all original candidate edges; no null-edge independence assumption.",
+      "log1p_evaluations": 0,
+      "method": "split_histogram_likelihood_ratio",
+      "proposal_arrays": 1000,
+      "screen_survivors": 0,
+      "test_arrays": 1000,
+      "threshold_log_e": 8.630521876723241
+    },
+    "graph_seconds": 0.0015397339999481119,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.00017588499997600593,
+    "root_arrays": 4000,
+    "root_seconds": 0.000228794999998172,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "direct_quadrature_error": 0.0,
+  "eligible": true,
+  "fitted_state_sha256": "328af5889f845cb51aca28237df010854a68fbbfeb8a4d4c5befece070a7d900",
+  "full_log_prob_128_seconds": 0.00012306600001465995,
+  "logdet_cancellation_error": 4.263256414560601e-14,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.0023113461369698336,
+    "graph": [
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 0,
+        "selected": 0,
+        "true": 0
+      },
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 0,
+        "selected": 0,
+        "true": 0
+      }
+    ],
+    "joint_kl": 0.0023113461369698336,
+    "residual_block_kl": [
+      0.0,
+      0.0
+    ],
+    "root_kl": 0.0023113461369698336,
+    "spectral_projection_norm": [
+      0.0,
+      0.0
+    ]
+  },
+  "source_roundtrip_error": 1.1102230246251565e-14,
+  "source_to_output_128_seconds": 0.0001809030000003986
+}

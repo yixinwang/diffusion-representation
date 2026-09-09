@@ -1,0 +1,65 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 0.0,
+  "diagnostics": {
+    "arm": "unconditional",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.034174605999965024,
+    "graph": {
+      "dense_multiplications": 8388608,
+      "discovery_arrays": 65536,
+      "method": "old_unconditional",
+      "threshold": 0.175
+    },
+    "graph_seconds": 0.031106827999906272,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9742369107896083,
+      "parameter_arrays": 4096,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0004751569999825733,
+    "root_arrays": 69632,
+    "root_seconds": 0.0025913900000205103,
+    "total_independent_arrays": 69632,
+    "truth_input": false
+  },
+  "direct_quadrature_error": 6.938893903907228e-18,
+  "eligible": true,
+  "fitted_state_sha256": "2cb01be7b3b947da8c30c94ef1f60eaf59eb95a0a30f14a66d78edf12e72aa40",
+  "full_log_prob_128_seconds": 9.68159999956697e-05,
+  "logdet_cancellation_error": 1.0658141036401503e-13,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.034808009362586656,
+    "graph": [
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      },
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      }
+    ],
+    "joint_kl": 0.01145709648269622,
+    "residual_block_kl": [
+      0.005632235867747089,
+      0.005632235867747089
+    ],
+    "root_kl": 0.0001926247472020413,
+    "spectral_projection_norm": [
+      0.05303300858899107,
+      0.0530330085889911
+    ]
+  },
+  "source_roundtrip_error": 3.064215547965432e-14,
+  "source_to_output_128_seconds": 0.00023876000000200293
+}

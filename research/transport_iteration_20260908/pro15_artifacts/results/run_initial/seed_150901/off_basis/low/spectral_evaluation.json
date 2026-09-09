@@ -1,0 +1,66 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 1.0061396160665481e-14,
+  "diagnostics": {
+    "arm": "spectral",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.002106169000057889,
+    "graph": {
+      "dense_multiplications": 512000,
+      "discovery_arrays": 2000,
+      "method": "phase_invariant_bernstein",
+      "threshold": 0.12957951443259277
+    },
+    "graph_seconds": 0.0015211150000595808,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0002618649999703848,
+    "root_arrays": 4000,
+    "root_seconds": 0.00032231700004103914,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "direct_quadrature_error": 1.0061396160665481e-14,
+  "eligible": true,
+  "exact_copy_bitwise": true,
+  "fitted_state_sha256": "45dda703e057ec22e1b50915324c1c85f7409c585cebf3774588b1242f347c58",
+  "full_log_prob_128_seconds": 0.00010092199988775974,
+  "logdet_cancellation_error": 4.263256414560601e-14,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.05647847023246369,
+    "graph": [
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      },
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      }
+    ],
+    "joint_kl": 0.019942982360172428,
+    "residual_block_kl": [
+      0.008815818111590754,
+      0.008815818111611841
+    ],
+    "root_kl": 0.0023113461369698336,
+    "spectral_projection_norm": [
+      4.020700836258427e-14,
+      3.7552209727987565e-14
+    ]
+  },
+  "source_roundtrip_error": 1.1102230246251565e-14,
+  "source_to_output_128_seconds": 0.00022611200006394938
+}

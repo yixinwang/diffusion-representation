@@ -1,0 +1,90 @@
+{
+  "earlier_210_file_claim_correct": false,
+  "earlier_tree_blob_count": 173,
+  "failed_operations": [
+    {
+      "operation": "GitHub.fetch direct git/trees/35a6c09e283b0edb13b33dc75951777ec3d5aa85",
+      "response": {
+        "documentation_url": "https://docs.github.com/rest/git/trees#get-a-tree",
+        "is_error": true,
+        "message": "Not Found",
+        "status": "404"
+      }
+    },
+    {
+      "operation": "GitHub.fetch_blob 6b8b39341e2120c3cd6e582cb3c20fcf0dc337ed",
+      "response": {
+        "documentation_url": "https://docs.github.com/rest/git/blobs#get-a-blob",
+        "is_error": true,
+        "message": "Not Found",
+        "status": "404"
+      }
+    },
+    {
+      "operation": "GitHub.fetch_blob 26c032e2a16582cf1421cbec23d12a8c73eba2f9",
+      "response": {
+        "documentation_url": "https://docs.github.com/rest/git/blobs#get-a-blob",
+        "is_error": true,
+        "message": "Not Found",
+        "status": "404"
+      }
+    },
+    {
+      "exception": "URLError(gaierror(-3, 'Temporary failure in name resolution'))",
+      "operation": "Local urllib read of GitHub API tree22e87285c2902370ed06122e295c6bca3ca21b77"
+    },
+    {
+      "operation": "container.download GitHub API tree22e87285c2902370ed06122e295c6bca3ca21b77",
+      "response": "ERROR: download failed because url not viewed in conversation before. open the file or url using web.run first."
+    }
+  ],
+  "matched_original_files": 163,
+  "mismatched_prior_files": {
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_harmonic.json": {
+      "original": "005fc8b0910ffa063e436bfd7e3a9384c8bc7fb4",
+      "remote": "97d6205e6eb489905a2ab73480e14a258968df08"
+    },
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_harmonic_evaluation.json": {
+      "original": "eb6b15547ac4b1ab2174d31b90c27d76c0783116",
+      "remote": "bb8cde13dbd5903d1240fd62ed890f9bb835ff47"
+    },
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_harmonic_fit_receipt.json": {
+      "original": "756cb0fb1ebefd4f738d3f0d55beb5c796b89918",
+      "remote": "400a1c3d4edb8124615477833077d5bfb6a0f5e7"
+    },
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_histogram.json": {
+      "original": "916a9e1269f8e16825c5da11ccfb72c6b5952dd0",
+      "remote": "7684ca5282275ea460403ef225faffb9322668f1"
+    },
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_histogram_evaluation.json": {
+      "original": "312a2c7cc42492c6eb0ff9cc2717d6afc76d8a0a",
+      "remote": "f8c29385d1e03a8d710a8f6c1d2c895736cf886b"
+    },
+    "results/run_initial/seed_150902/harmonic/low/oracle_graph_histogram_fit_receipt.json": {
+      "original": "eb9fbb369e83f607332bd4176a41ccfcfba1fde2",
+      "remote": "4d40ae700a3c4a1408e78f00b25148f4a7fb42fa"
+    },
+    "results/run_initial/seed_150902/harmonic/low/product.json": {
+      "original": "8ba457ff785906dfee16743ba1cb8a9a4291b5f8",
+      "remote": "fecfc59238b33e55e6d6c81cc3c7a9ea333a9494"
+    },
+    "results/run_initial/seed_150902/harmonic/low/product_evaluation.json": {
+      "original": "9a43f6bd7572b2fbf7db9ae659d48d9fcea7608e",
+      "remote": "6b809141f1465f7129c2ca9e5e03f8c7fcab44da"
+    },
+    "results/run_initial/seed_150902/harmonic/low/product_fit_receipt.json": {
+      "original": "28689cbdc0dcacee2b5c0a90444d5da4263fa970",
+      "remote": "3632bb8afbda9d522d9a21173bebd86a79bec769"
+    },
+    "results/run_initial/seed_150902/harmonic/low/spectral.json": {
+      "original": "8c3e29019fbd823fd6a8c2a9390c206ac7ca2fe2",
+      "remote": "3ad291d3d9028d3a01603e6aa79c619e3c4f61ea"
+    }
+  },
+  "original_file_changes": false,
+  "readable_earlier_tree": "22e87285c2902370ed06122e295c6bca3ca21b77",
+  "receipt_note": "Access error responses transcribed from observed tools; local shell exceptions were not originally redirected. Mismatch data derived from ZIP bytes and remotely returned Git object identities.",
+  "repository": "yixinwang/diffusion-representation",
+  "research_execution": false,
+  "scope": "New mechanical delivery/access receipts; originals are unchanged."
+}

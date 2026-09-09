@@ -1,0 +1,8 @@
+{
+  "constructed_model_not_fit": true,
+  "dimension": 3072,
+  "exact_copy": true,
+  "logdet_cancellation_error": 5.820766091346741e-11,
+  "source_roundtrip_error": 1.198774413069259e-11,
+  "source_to_output_64_seconds": 0.016015275999961887
+}

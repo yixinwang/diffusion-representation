@@ -1,0 +1,41 @@
+test_01_feature_mean (test_pro15.Checks.test_01_feature_mean) ... ok
+test_02_feature_second (test_pro15.Checks.test_02_feature_second) ... ok
+test_03_feature_third (test_pro15.Checks.test_03_feature_third) ... ok
+test_04_ordinary_covariance_zero (test_pro15.Checks.test_04_ordinary_covariance_zero) ... ok
+test_05_integral_endpoints (test_pro15.Checks.test_05_integral_endpoints) ... ok
+test_06_inverse (test_pro15.Checks.test_06_inverse) ... ok
+test_07_pair_logdet (test_pro15.Checks.test_07_pair_logdet) ... ok
+test_08_endpoints (test_pro15.Checks.test_08_endpoints) ... ok
+test_09_gaussian_roundtrip (test_pro15.Checks.test_09_gaussian_roundtrip) ... ok
+test_10_gaussian_logdet (test_pro15.Checks.test_10_gaussian_logdet) ... ok
+test_11_density (test_pro15.Checks.test_11_density) ... ok
+test_12_exact_copy (test_pro15.Checks.test_12_exact_copy) ... ok
+test_13_state_replay (test_pro15.Checks.test_13_state_replay) ... ok
+test_14_finite_difference_jacobian (test_pro15.Checks.test_14_finite_difference_jacobian) ... ok
+test_15_saturation_rejected (test_pro15.Checks.test_15_saturation_rejected) ... ok
+test_16_nonfinite_rejected (test_pro15.Checks.test_16_nonfinite_rejected) ... ok
+test_17_bad_theta_rejected (test_pro15.Checks.test_17_bad_theta_rejected) ... ok
+test_18_overlapping_edges_rejected (test_pro15.Checks.test_18_overlapping_edges_rejected) ... ok
+test_19_noninteger_edges_rejected (test_pro15.Checks.test_19_noninteger_edges_rejected) ... ok
+test_20_first_root_assumption (test_pro15.Checks.test_20_first_root_assumption) ... ok
+test_21_immutable_state (test_pro15.Checks.test_21_immutable_state) ... ok
+test_22_simplex_projection (test_pro15.Checks.test_22_simplex_projection) ... ok
+test_23_isolation_filter (test_pro15.Checks.test_23_isolation_filter) ... ok
+test_24_null_population_signal (test_pro15.Checks.test_24_null_population_signal) ... ok
+test_25_off_basis_projection (test_pro15.Checks.test_25_off_basis_projection) ... ok
+test_26_unknown_phase_signal (test_pro15.Checks.test_26_unknown_phase_signal) ... ok
+test_27_population_crosscheck (test_pro15.Checks.test_27_population_crosscheck) ... ok
+test_28_deterministic_kl_bound (test_pro15.Checks.test_28_deterministic_kl_bound) ... ok
+test_29_fano_lower_bound (test_pro15.Checks.test_29_fano_lower_bound) ... ok
+test_30_4000_not_excluded_by_fano (test_pro15.Checks.test_30_4000_not_excluded_by_fano) ... ok
+test_31_recovery_threshold (test_pro15.Checks.test_31_recovery_threshold) ... ok
+test_32_contract_no_truth_import (test_pro15.Checks.test_32_contract_no_truth_import) ... ok
+test_33_small_fit_preserved (test_pro15.Checks.test_33_small_fit_preserved) ... ok
+test_34_wrong_budget_rejected (test_pro15.Checks.test_34_wrong_budget_rejected) ... ok
+test_35_histogram_normalized (test_pro15.Checks.test_35_histogram_normalized) ... ok
+test_36_invalid_config (test_pro15.Checks.test_36_invalid_config) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.047s
+
+OK

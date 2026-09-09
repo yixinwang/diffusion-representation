@@ -1,0 +1,43 @@
+{
+  "amplitude": 0.075,
+  "block_size": 720,
+  "blocks": 4,
+  "candidate_edges": 1035360,
+  "delta_graph": 0.01,
+  "fano_2000": {
+    "error_probability_lower": 0.49525242391374735,
+    "log_number_matchings": 8035.507576692914,
+    "necessary_n_for_99pct": 3924,
+    "pair_kl": 0.0014080589669367728,
+    "pair_kl_tail_bound": 4.9513602400301604e-36,
+    "per_array_kl_upper": 2.027604912388953
+  },
+  "fano_4000": {
+    "error_probability_lower": 0.0,
+    "log_number_matchings": 8035.507576692914,
+    "necessary_n_for_99pct": 3924,
+    "pair_kl": 0.0014080589669367728,
+    "pair_kl_tail_bound": 4.9513602400301604e-36,
+    "per_array_kl_upper": 2.027604912388953
+  },
+  "full_dimension": 3072,
+  "graph_dense_accumulator_bytes": 33177600,
+  "graph_dense_additions": 288255283200,
+  "graph_dense_multiplications": 288259430400,
+  "input_bytes_float64": 1806508032,
+  "parameter_bound_4000": {
+    "coefficient_mse_bound": 6.554104164035996e-05,
+    "conditional_noise_coordinate_radius": 0.0033050729099461623,
+    "design_failure_bound": 1.67264855964852e-05,
+    "residual_joint_kl_bound": 0.14519861532633593
+  },
+  "radius_2000": 0.1825671683215671,
+  "radius_4000": 0.12254813569658998,
+  "root_bound_total_arrays": 0.7124481868464139,
+  "root_dimension": 192,
+  "scope": "Sufficient bound is conservative, not a necessary rate. Fano is average error over uniformly random full matchings, even with phase known.",
+  "signal_norm": 0.05303300858899106,
+  "small_required_graph_arrays": 38355,
+  "sufficient_graph_arrays": 69507,
+  "sufficient_radius": 0.026516501849394403
+}

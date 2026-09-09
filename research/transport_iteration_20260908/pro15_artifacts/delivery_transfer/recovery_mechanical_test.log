@@ -1,0 +1,11 @@
+{
+  "status": "all_original_texts_verified",
+  "original_text_files": 266,
+  "original_text_bytes": 1003780,
+  "newly_extracted_files": 103,
+  "packed_original_files": 103,
+  "original_binaries_not_in_delivery": 185,
+  "original_binary_bytes_not_in_delivery": 102031346,
+  "binary_files_currently_missing": 185,
+  "research_source_executed": false
+}

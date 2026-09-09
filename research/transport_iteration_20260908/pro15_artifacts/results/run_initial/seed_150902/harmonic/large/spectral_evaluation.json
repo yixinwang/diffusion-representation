@@ -1,0 +1,66 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 0.0,
+  "diagnostics": {
+    "arm": "spectral",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.033647982000047705,
+    "graph": {
+      "dense_multiplications": 16777216,
+      "discovery_arrays": 65536,
+      "method": "phase_invariant_bernstein",
+      "threshold": 0.020121929446581904
+    },
+    "graph_seconds": 0.029255184000021472,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9742369107896083,
+      "parameter_arrays": 4096,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0022351730000309544,
+    "root_arrays": 69632,
+    "root_seconds": 0.0021562839999660355,
+    "total_independent_arrays": 69632,
+    "truth_input": false
+  },
+  "direct_quadrature_error": 8.673617379884035e-18,
+  "eligible": true,
+  "exact_copy_bitwise": true,
+  "fitted_state_sha256": "c6159756f1dca314cf3775f04436513499195ea68a1b169db5443108e8947d73",
+  "full_log_prob_128_seconds": 0.0003726720000258865,
+  "logdet_cancellation_error": 1.0658141036401503e-13,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.0031190419433248205,
+    "graph": [
+      {
+        "correct": 4,
+        "false": 0,
+        "missed": 0,
+        "selected": 4,
+        "true": 4
+      },
+      {
+        "correct": 4,
+        "false": 0,
+        "missed": 0,
+        "selected": 4,
+        "true": 4
+      }
+    ],
+    "joint_kl": 0.0011476757598498958,
+    "residual_block_kl": [
+      0.00032371737933247375,
+      0.0006313336333153808
+    ],
+    "root_kl": 0.0001926247472020413,
+    "spectral_projection_norm": [
+      0.05303300858899107,
+      0.0530330085889911
+    ]
+  },
+  "source_roundtrip_error": 3.064215547965432e-14,
+  "source_to_output_128_seconds": 0.0005781319999869083
+}

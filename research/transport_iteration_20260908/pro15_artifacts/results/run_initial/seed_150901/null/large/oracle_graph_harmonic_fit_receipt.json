@@ -1,0 +1,22 @@
+{
+  "eligible": false,
+  "fit_and_serialization_wall_seconds": 0.006380057000001216,
+  "fit_diagnostics": {
+    "arm": "oracle_graph_harmonic",
+    "fit_seconds": 0.0038195130000531208,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9594928248518277,
+      "parameter_arrays": 4096,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "privileged_graph": true
+  },
+  "model_path": "seed_150901/null/large/oracle_graph_harmonic.json",
+  "model_sha256": "0dbb17e3fae86af07353f7f497fbf7969bf20b984b9edb06d8695527c4330987",
+  "observation_sha256": "94459f897bb694ec4026df90555acb2d514afd6d63f851a34468084e539c1a38",
+  "row_slice": [
+    0,
+    69632
+  ]
+}

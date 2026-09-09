@@ -1,0 +1,34 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.003100928999970165,
+  "fit_diagnostics": {
+    "arm": "spectral",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.002106169000057889,
+    "graph": {
+      "dense_multiplications": 512000,
+      "discovery_arrays": 2000,
+      "method": "phase_invariant_bernstein",
+      "threshold": 0.12957951443259277
+    },
+    "graph_seconds": 0.0015211150000595808,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0002618649999703848,
+    "root_arrays": 4000,
+    "root_seconds": 0.00032231700004103914,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/off_basis/low/spectral.json",
+  "model_sha256": "45dda703e057ec22e1b50915324c1c85f7409c585cebf3774588b1242f347c58",
+  "observation_sha256": "47fa314a3ba93ff90eae195e187172110960aa8df627e79fd85878bf2f9c3cd0",
+  "row_slice": [
+    0,
+    4000
+  ]
+}

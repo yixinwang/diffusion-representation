@@ -1,0 +1,34 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.003222112000003108,
+  "fit_diagnostics": {
+    "arm": "unconditional",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.0024352850000468607,
+    "graph": {
+      "dense_multiplications": 256000,
+      "discovery_arrays": 2000,
+      "method": "old_unconditional",
+      "threshold": 0.175
+    },
+    "graph_seconds": 0.0009010100000068633,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0012487639999108069,
+    "root_arrays": 4000,
+    "root_seconds": 0.0002844699999968725,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/harmonic/low/unconditional.json",
+  "model_sha256": "fa2bc5e8e3cbd80cc6ca1b7fdf8c5459cd31b6729d4eb5afa957c70412b517dd",
+  "observation_sha256": "9d6be13dc925d5727e746cee84f7c8a855d3fd60ce58a0e9129751a21bb5964b",
+  "row_slice": [
+    0,
+    4000
+  ]
+}

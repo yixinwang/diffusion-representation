@@ -1,0 +1,31 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.0036555860000362372,
+  "fit_diagnostics": {
+    "arm": "product",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.002866705999963415,
+    "graph": {
+      "method": "product"
+    },
+    "graph_seconds": 3.3249999660256435e-06,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9742369107896083,
+      "parameter_arrays": 4096,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0003321410000580727,
+    "root_arrays": 69632,
+    "root_seconds": 0.0025306190000264905,
+    "total_independent_arrays": 69632,
+    "truth_input": false
+  },
+  "model_path": "seed_150902/harmonic/large/product.json",
+  "model_sha256": "ad722cc836911ac0239e7723c988f740abefd666c01bc13a3b04489e117e0ba9",
+  "observation_sha256": "5acd565ad40e0f148fcfbdc2d7a3e01d0662cb1ac5656b75243549dc7894c5f9",
+  "row_slice": [
+    0,
+    69632
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.002894487999924422,
+  "fit_diagnostics": {
+    "arm": "histogram_lr",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.0019449650000069596,
+    "graph": {
+      "dense_multiplications": 256000,
+      "finite_type_I_control": "Union bound at delta_graph over all original candidate edges; no null-edge independence assumption.",
+      "log1p_evaluations": 0,
+      "method": "split_histogram_likelihood_ratio",
+      "proposal_arrays": 1000,
+      "screen_survivors": 0,
+      "test_arrays": 1000,
+      "threshold_log_e": 8.630521876723241
+    },
+    "graph_seconds": 0.0015397339999481119,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.00017588499997600593,
+    "root_arrays": 4000,
+    "root_seconds": 0.000228794999998172,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/null/low/histogram_lr.json",
+  "model_sha256": "328af5889f845cb51aca28237df010854a68fbbfeb8a4d4c5befece070a7d900",
+  "observation_sha256": "94459f897bb694ec4026df90555acb2d514afd6d63f851a34468084e539c1a38",
+  "row_slice": [
+    0,
+    4000
+  ]
+}

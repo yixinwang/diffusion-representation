@@ -1,0 +1,14 @@
+{
+  "status": "saved_payload_audit_pass",
+  "no_fits": true,
+  "no_new_random_draws": true,
+  "frozen_sources_verified": 6,
+  "frozen_models": 72,
+  "exact_copies": 12,
+  "source_to_output_replay_max_error": 0.0,
+  "forward_logdet_replay_max_error": 0.0,
+  "independently_summed_graph_max_error": 1.734723475976807e-16,
+  "direct_quadrature_max_error": 2.0050627824730327e-13,
+  "context_refinement_max_error": 2.0056525884548648e-13,
+  "scope": "Same-platform saved-state replay and independently ordered graph sums, not an independent full training replication."
+}

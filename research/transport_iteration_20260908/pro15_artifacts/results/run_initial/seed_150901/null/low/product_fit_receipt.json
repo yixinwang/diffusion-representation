@@ -1,0 +1,31 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.000900859000012133,
+  "fit_diagnostics": {
+    "arm": "product",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.000429528000040591,
+    "graph": {
+      "method": "product"
+    },
+    "graph_seconds": 3.405000029488292e-06,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.00020371699997667747,
+    "root_arrays": 4000,
+    "root_seconds": 0.00022192500000528526,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/null/low/product.json",
+  "model_sha256": "fd7b3bda4a4c28ce41dfae0b746f10d79f27d91bad0c697b310e97ecf9b48510",
+  "observation_sha256": "94459f897bb694ec4026df90555acb2d514afd6d63f851a34468084e539c1a38",
+  "row_slice": [
+    0,
+    4000
+  ]
+}

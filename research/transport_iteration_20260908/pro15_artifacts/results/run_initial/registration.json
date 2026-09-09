@@ -1,0 +1,12 @@
+{
+  "before_any_fits": true,
+  "protocol_sha256": "b389f39c504ef3b545eb404b478a6a15a2f1cace47ad9ec9f55551c2eebaea60",
+  "source_sha256": {
+    "src/bounds.py": "448e5b4854024db5fd56c1e9ee2dbaff0cd5522a76c9068ab22b6f6bbcd35e8d",
+    "src/discover.py": "bef529346ccf53705db2f81b8c4380085d9ad422e9287c1e1585368a9aacd838",
+    "src/evaluate.py": "fa31a2e86535f19a26ebd061fc76770b26ec8ec9053d3c71bec6296f58a98fdc",
+    "src/fixture.py": "7c9e194d9237d858b2276873dc5872bea17309d1a79524ac064523dc5a2ee26f",
+    "src/model.py": "62c0b9ca715dbab608e0fc2ea11a13e4f770390a11ca2a51d77ae5b09f8092d0",
+    "src/run.py": "3a44d2c290cc9e04f1f2fd5853a73a781a7b79729c2efa6c2cc5acd968e78d17"
+  }
+}

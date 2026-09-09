@@ -1,0 +1,34 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.0019867680000515975,
+  "fit_diagnostics": {
+    "arm": "unconditional",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.001368514999967374,
+    "graph": {
+      "dense_multiplications": 256000,
+      "discovery_arrays": 2000,
+      "method": "old_unconditional",
+      "threshold": 0.175
+    },
+    "graph_seconds": 0.0009782659999473253,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.00017104799997014197,
+    "root_arrays": 4000,
+    "root_seconds": 0.0002187400000366324,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/off_basis/low/unconditional.json",
+  "model_sha256": "bbfd23cd3c3b201e90658afb6ef151e492b7339156cb05cb526a1c8ef290218b",
+  "observation_sha256": "47fa314a3ba93ff90eae195e187172110960aa8df627e79fd85878bf2f9c3cd0",
+  "row_slice": [
+    0,
+    4000
+  ]
+}

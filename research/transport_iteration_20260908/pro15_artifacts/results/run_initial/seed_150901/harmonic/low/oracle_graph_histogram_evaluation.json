@@ -1,0 +1,53 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 1.734723475976807e-18,
+  "diagnostics": {
+    "arm": "oracle_graph_histogram",
+    "fit_seconds": 0.0014973400000144466,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "privileged_graph": true
+  },
+  "direct_quadrature_error": 1.214306433183765e-17,
+  "eligible": false,
+  "fitted_state_sha256": "cd50a65ce01645db4b6a65f5525fa27dc71ba84303e53dd481c1469b8e9ffc43",
+  "full_log_prob_128_seconds": 0.00032950699994671595,
+  "logdet_cancellation_error": 4.263256414560601e-14,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.021090368427467587,
+    "graph": [
+      {
+        "correct": 4,
+        "false": 0,
+        "missed": 0,
+        "selected": 4,
+        "true": 4
+      },
+      {
+        "correct": 4,
+        "false": 0,
+        "missed": 0,
+        "selected": 4,
+        "true": 4
+      }
+    ],
+    "joint_kl": 0.008474953376564317,
+    "residual_block_kl": [
+      0.0023999043805311643,
+      0.0037637028590633186
+    ],
+    "root_kl": 0.0023113461369698336,
+    "spectral_projection_norm": [
+      0.05303300858899108,
+      0.053033008588991064
+    ]
+  },
+  "source_roundtrip_error": 1.1102230246251565e-14,
+  "source_to_output_128_seconds": 0.0005779919999895355
+}

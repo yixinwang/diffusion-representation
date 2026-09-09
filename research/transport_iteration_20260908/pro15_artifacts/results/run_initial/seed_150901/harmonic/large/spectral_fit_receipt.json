@@ -1,0 +1,34 @@
+{
+  "eligible": true,
+  "fit_and_serialization_wall_seconds": 0.03731361400002697,
+  "fit_diagnostics": {
+    "arm": "spectral",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.034184421000077236,
+    "graph": {
+      "dense_multiplications": 16777216,
+      "discovery_arrays": 65536,
+      "method": "phase_invariant_bernstein",
+      "threshold": 0.020121929446581904
+    },
+    "graph_seconds": 0.02993746300001021,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9594928248518277,
+      "parameter_arrays": 4096,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.0019523660000686505,
+    "root_arrays": 69632,
+    "root_seconds": 0.002293580000014117,
+    "total_independent_arrays": 69632,
+    "truth_input": false
+  },
+  "model_path": "seed_150901/harmonic/large/spectral.json",
+  "model_sha256": "fc6ca89621cc64922ab50ed9e4c6b970e94ed9a910600ef3f9f2bf98567d5154",
+  "observation_sha256": "9d6be13dc925d5727e746cee84f7c8a855d3fd60ce58a0e9129751a21bb5964b",
+  "row_slice": [
+    0,
+    69632
+  ]
+}

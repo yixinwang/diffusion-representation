@@ -1,0 +1,16 @@
+{
+  "repository": "yixinwang/diffusion-representation",
+  "base_commit": "ce2b6ba6b1075e62fe048b42e84110632688fabb",
+  "new_branch": "pro15-artifacts-20260909",
+  "allowed_prefix": "research/transport_iteration_20260908/pro15_artifacts/",
+  "published": false,
+  "commit": null,
+  "delivery": "Complete original downloadable archive; no omission or substitute",
+  "reason": "48 exposed GitHub actions were read/search/metadata only; no write action was available.",
+  "constraints": [
+    "No active branch edits",
+    "No PSC or native experiment",
+    "Publish original files unchanged",
+    "No registration-only completion claim"
+  ]
+}

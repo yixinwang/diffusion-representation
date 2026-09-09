@@ -1,0 +1,30 @@
+{
+  "repository": "yixinwang/diffusion-representation",
+  "requested_branch": "agent/observation-transport-audit-20260908",
+  "frozen_commit": "ce2b6ba6b1075e62fe048b42e84110632688fabb",
+  "successful_read_transport": "Connected GitHub fetch/fetch_file actions",
+  "local_clone_success": false,
+  "independent_historical_payload_audit": false,
+  "read_files": {
+    "research/transport_iteration_20260908/README.md": "504999dd58aec7a1c45fd4d7bf2dc6f1a1f9fdf1",
+    "research/transport_iteration_20260908/psc_trapezoid_mechanism/environment.json": "896a7f70520b4679f743de73b8fb1439cf666baf",
+    "research/transport_iteration_20260908/trapezoid_pair/learner.py": "3b9d9a8bb92c4a8ce2c2d67b39faffa2115e76f1",
+    "research/transport_iteration_20260908/trapezoid_mechanism/fixture.py": "29fb9ed9cc0b02bc0e749755ad1c4d2c5d04c9e1",
+    "research/transport_iteration_20260908/trapezoid_pair/reference.py": "cdbe6de953b45d967c72d1228a57396ab9333f04"
+  },
+  "also_read_commit_metadata": [
+    "ce2b6ba6b1075e62fe048b42e84110632688fabb",
+    "effc2c565b050193561978c9bce686b3a3f996eb",
+    "024c1e383e168fc3e2ace7373af66d50b66b53f2"
+  ],
+  "write_action_discovery": {
+    "query_create": "No matching action returned",
+    "full_GitHub_action_count": 48,
+    "write_actions_exposed": 0,
+    "plugin_lookup": "Already enabled GitHub connector; no additional write action exposed",
+    "write_action_invoked": false,
+    "branch_created": false,
+    "publication_commit": null
+  },
+  "no_PSC_no_SSH_no_active_branch_edits": true
+}

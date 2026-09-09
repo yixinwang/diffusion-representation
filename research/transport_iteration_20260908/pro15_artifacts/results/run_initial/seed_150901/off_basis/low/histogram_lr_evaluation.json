@@ -1,0 +1,69 @@
+{
+  "change_of_variables_error": 0.0,
+  "context_refinement_error": 1.0061396160665481e-14,
+  "diagnostics": {
+    "arm": "histogram_lr",
+    "first_root_known_uniform": true,
+    "fit_seconds": 0.0020621910000500066,
+    "graph": {
+      "dense_multiplications": 256000,
+      "finite_type_I_control": "Union bound at delta_graph over all original candidate edges; no null-edge independence assumption.",
+      "log1p_evaluations": 0,
+      "method": "split_histogram_likelihood_ratio",
+      "proposal_arrays": 1000,
+      "screen_survivors": 0,
+      "test_arrays": 1000,
+      "threshold_log_e": 8.630521876723241
+    },
+    "graph_seconds": 0.001650219999987712,
+    "parameter": {
+      "design_gate_pass": true,
+      "design_min_eigenvalue": 0.9566912090447544,
+      "parameter_arrays": 2000,
+      "pooling": "Conditional independence of true disjoint pairs only; arrays remain the graph iid units."
+    },
+    "parameter_seconds": 0.00016693199995643226,
+    "root_arrays": 4000,
+    "root_seconds": 0.0002444479999894611,
+    "total_independent_arrays": 4000,
+    "truth_input": false
+  },
+  "direct_quadrature_error": 1.0061396160665481e-14,
+  "eligible": true,
+  "fitted_state_sha256": "ae8fdcee9e4c84edf358bcf19f167b4b388c167fd1395b9f6135c98b0af2ded3",
+  "full_log_prob_128_seconds": 0.00012245499999608,
+  "logdet_cancellation_error": 4.263256414560601e-14,
+  "population": {
+    "assurance": "Ordinary float64 quadrature/series, independently checked; not interval arithmetic.",
+    "context_quadrature_order": 32,
+    "deterministic_joint_upper": 0.05647847023246369,
+    "graph": [
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      },
+      {
+        "correct": 0,
+        "false": 0,
+        "missed": 4,
+        "selected": 0,
+        "true": 4
+      }
+    ],
+    "joint_kl": 0.019942982360172428,
+    "residual_block_kl": [
+      0.008815818111590754,
+      0.008815818111611841
+    ],
+    "root_kl": 0.0023113461369698336,
+    "spectral_projection_norm": [
+      4.020700836258427e-14,
+      3.7552209727987565e-14
+    ]
+  },
+  "source_roundtrip_error": 1.1102230246251565e-14,
+  "source_to_output_128_seconds": 0.00019037799995658133
+}
