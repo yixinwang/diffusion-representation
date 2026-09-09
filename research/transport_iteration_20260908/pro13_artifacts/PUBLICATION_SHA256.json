@@ -11,6 +11,14 @@
     "bytes": 18587,
     "sha256": "ae76632c3b177e0052ea963f50a2b17203d406ea369349bb50a4fc09d9b96035"
   },
+  "DELIVERY3_FAILURE.json": {
+    "bytes": 1686,
+    "sha256": "2c70ec191e94fba9de1988c3be6cc3f36abb81b1752a9e6e3f70c8c3994163bf"
+  },
+  "DELIVERY3_FAILURE.md": {
+    "bytes": 1881,
+    "sha256": "dda36b4332282eb23a9873efcc401838cba08a535bd919fd64250126a2578f0d"
+  },
   "DELIVERY_AUDIT.json": {
     "bytes": 4315,
     "sha256": "18f9107f27f97e8179794900888e5dcf3c11953232a42b964e3b3822bf547013"

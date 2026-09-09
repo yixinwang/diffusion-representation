@@ -1,0 +1,9 @@
+# Third delivery attempt failed; 60 of 73 originals remain verified
+
+The final Pro13 compact-transfer message reported completion after 7 minutes 34 seconds with a failed blob upload. `GitHub.create_blob` using base64 for `REMAINING13.tar.xz.part00` returned Git blob `1d94a0eb482717e74e18e7bbba13762c36376df2`, differing from expected blob `4a900dce22b7ab320cafad3504cb40b210777c3b`. The mismatched blob was not used. No tree or commit was created. This bounded transfer attempt ends here, without another retry.
+
+Pro13 reported a local remaining-files archive of 84,872 bytes, split into ten 8,192-byte parts and one 2,952-byte part, with SHA256 `f7c8d65921dbfa5d1fbf737ac88d3a1c577079e77cac5c38bac714e4cc0e54c0`. These sizes sum correctly. The archive was described as containing the remaining 13 originals (1,329,422 uncompressed bytes). The accompanying claim that a local 73-file assembly was verified is a delivery-side claim, not independent recovery. Download links were reported available but have not been downloaded for this audit.
+
+The independently verified publication remains 60 original files, with 13 missing exactly as listed in `DELIVERY2_RECEIPT.json` and `DELIVERY_SUBSET.md`. The original SHA256SUMS SHA256 remains `49f71f7c44387fb22b8d06ce6be7e55f6b7323a905ddebbc2d58e3d6e1876998`. All original files and prior receipts remain unchanged. No fitting, state regeneration, new replay or remote operation was performed to prepare this failure receipt. The source of this record is the parent-reported final Pro13 transfer message; reported remote outcomes and archive claims have not been independently re-fetched.
+
+Source: [Verify nonlinear dependence law](https://chatgpt.com/c/6aa0cbec-80dc-83e9-a08a-483a0dc90add). Root read the final response through ordinary CUA; this receipt does not independently authenticate the claimed remote blob or local archive.

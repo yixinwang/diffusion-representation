@@ -1,0 +1,49 @@
+{
+  "status": "failed_compact_transfer_no_retry",
+  "source": "Parent-reported final Pro13 compact-delivery message; not independently downloaded",
+  "reported_elapsed_seconds": 454,
+  "verified_original_count": 60,
+  "expected_original_count": 73,
+  "still_missing_count": 13,
+  "still_missing_original_bytes": 1329422,
+  "original_SHA256SUMS_sha256": "49f71f7c44387fb22b8d06ce6be7e55f6b7323a905ddebbc2d58e3d6e1876998",
+  "reported_attempt": {
+    "operation": "GitHub.create_blob",
+    "encoding": "base64",
+    "part": "REMAINING13.tar.xz.part00",
+    "expected_git_blob": "4a900dce22b7ab320cafad3504cb40b210777c3b",
+    "returned_git_blob": "1d94a0eb482717e74e18e7bbba13762c36376df2",
+    "wrong_blob_used": false,
+    "tree_created": false,
+    "commit_created": false
+  },
+  "unverified_local_archive_claim": {
+    "name": "REMAINING13.tar.xz",
+    "bytes": 84872,
+    "sha256": "f7c8d65921dbfa5d1fbf737ac88d3a1c577079e77cac5c38bac714e4cc0e54c0",
+    "parts": 11,
+    "part_sizes": [
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      8192,
+      2952
+    ],
+    "claimed_local_complete_originals": 73,
+    "independently_recovered": false
+  },
+  "download_links_reported_available": true,
+  "download_performed": false,
+  "remote_operations_performed_for_this_receipt": false,
+  "fitting_performed": false,
+  "further_retry": false,
+  "source_url": "https://chatgpt.com/c/6aa0cbec-80dc-83e9-a08a-483a0dc90add",
+  "source_title": "Verify nonlinear dependence law",
+  "source_observation": "Root read final response through ordinary CUA; subagent records that report without independently fetching remote artifacts"
+}
