@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+    "4",
+    "8",
+    "32",
+    "3",
+    "5e-9",
+    "192"
+  ],
+  "returncode": 0,
+  "timeout": false,
+  "timeout_limit_seconds": 240.0,
+  "elapsed_seconds": 3.4948065001517534
+}

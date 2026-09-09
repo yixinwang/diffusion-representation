@@ -1,0 +1,9 @@
+# Independent MPFR local reproduction — text subset
+
+All five primary certificates, the changed-order N4 certificate, 256 consistency checks and the global bounds completed locally using unchanged authenticated Pro12 source. See REPRODUCTION_REVIEW.md for exact results and limits.
+
+`results/COMPLETE.json` is the **unchanged original manifest of all 58 payloads**, not a claim that all 58 are delivered here. Four platform-specific executables are omitted and explicitly recorded with SHA256, size and original preserved local path in `OMITTED_BINARIES.json`. Every other original result file, including build/process logs, is delivered unchanged. No failure/timeout occurred. All actual dependencies and source authentication are recorded separately.
+
+Run `python verify_published_subset.py` to authenticate every available COMPLETE payload and every explicitly omitted digest/size record, plus the outer text-delivery manifest. This verifier does not rerun integration or attest to omitted executable contents. `original_workspace_checker.py` is the unchanged checker actually executed in the workspace; its workspace-relative layout is preserved as provenance, not advertised as this subset's standalone entry point.
+
+To reproduce computation, first authenticate the adjacent `../pro12_artifacts` original package, then use its unchanged `run.py` with a fresh output directory. The local invocation/compiler/header/library choices are in REPRODUCTION_REVIEW.md and SOURCE_AND_DEPENDENCY_AUTHENTICATION.json. Libraries and vendor headers are not redistributed. Installed runtime MPFR 4.1.0 differs from historical 4.2.2. All conditional endpoints matched exactly; N8/N64 expected-risk lower endpoints differed by approximately one binary64 ULP, with unchanged upper endpoints. No training, sampler timing or floating-generator-law claim is made.

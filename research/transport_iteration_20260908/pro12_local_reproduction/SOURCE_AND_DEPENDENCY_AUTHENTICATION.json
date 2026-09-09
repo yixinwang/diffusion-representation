@@ -1,0 +1,273 @@
+{
+  "authenticated_files": [
+    {
+      "path": "FAILURES.md",
+      "sha256": "ce1c1de3455b7c27e1c81735a1c25309c7f828f4e23d2dc8c8c6ef46249eefa3",
+      "bytes": 3042
+    },
+    {
+      "path": "FRONTIER.md",
+      "sha256": "7f8d96072068d10ad6ed8da7272aa0eb5df34e3a10cffa0667f3f66dffc18402",
+      "bytes": 4044
+    },
+    {
+      "path": "INSPECTION.md",
+      "sha256": "1e0e20f333e5344086552a21eddb57555e03f7a50c63a541ae701c9e470bb16c",
+      "bytes": 5174
+    },
+    {
+      "path": "INVENTORY.json",
+      "sha256": "b79e18649aec84c2e0ac7571093e26682f79bf973b9fefc31dde5f99ff227eb4",
+      "bytes": 7315
+    },
+    {
+      "path": "MATH.md",
+      "sha256": "4fba912fc3b3686fb0af649d04a5846e0526f843ed6f9033cd34dc9326240c0f",
+      "bytes": 15084
+    },
+    {
+      "path": "PROTOCOL.md",
+      "sha256": "fb5fcaf5a4fff8bdf14b71e2422d18c81dba95e1855128637fe7a210212936ba",
+      "bytes": 6783
+    },
+    {
+      "path": "README.md",
+      "sha256": "a7b3a0ed60c08a730fa9654e81161b48fede79417869a10d31f8b52c4b001441",
+      "bytes": 3828
+    },
+    {
+      "path": "SHA256SUMS",
+      "sha256": "5733a1998c406664efcfa1d34cdab5426fc2fdf69185a831dc51d05cba57369d",
+      "bytes": 4132
+    },
+    {
+      "path": "attempts/certify_initial_compile_failed.cpp",
+      "sha256": "6e735542161f85419a363c57e398c1157867252b7c13da04f974dfe10b2e25bd",
+      "bytes": 12799
+    },
+    {
+      "path": "certify.cpp",
+      "sha256": "5a9eeebffdc0a8fee58ba3c697b5687b4ca19f8e9828b82fbcc10c43caadab44",
+      "bytes": 12915
+    },
+    {
+      "path": "frontier.py",
+      "sha256": "0af3b5a0af65cd2f37e5b9f2a5c3ed2ac8da747a649781b11da108a019b4b352",
+      "bytes": 5470
+    },
+    {
+      "path": "global_bounds.cpp",
+      "sha256": "f57b05b62b425f8414b606af1b11b9bf9159aecebba93983087319eb7f80ef45",
+      "bytes": 1585
+    },
+    {
+      "path": "mpfr_minimal.h",
+      "sha256": "2883e8e4411642ff9cedc04a20059012d064fae794af61182b2b97f6249f3b70",
+      "bytes": 1797
+    },
+    {
+      "path": "results/compile_failure_reproduction.json",
+      "sha256": "17d48844cfcf27443d40cc4aa5997fc5f4dfb23ea233419a5eb93f842e75b75e",
+      "bytes": 228
+    },
+    {
+      "path": "results/compile_failure_reproduction.log",
+      "sha256": "c45d9f1f22d6dec24dff4cdf1d9e207db501cfc599d147d0cbc7abf5dbcfbdf6",
+      "bytes": 2820
+    },
+    {
+      "path": "results/environment.json",
+      "sha256": "42a72519b1f055413ba25c4308e59ff543f52e571e66e5188fd6abf8b0df95f7",
+      "bytes": 1125
+    },
+    {
+      "path": "results/frontier.json",
+      "sha256": "646998635e2733db23a95d93952f1122521ec2fa842f90df04ff433df9f013c3",
+      "bytes": 11768
+    },
+    {
+      "path": "results/global_bounds.json",
+      "sha256": "ca88f485ef730a7c5b0e28e02d75dc8e6e2c50e7fb0b08940ce5a460f08bd2f8",
+      "bytes": 639
+    },
+    {
+      "path": "results/global_bounds.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "results/n16_first_attempt.json",
+      "sha256": "aed89e37dc66ad9d0fcd258e5bf4280ff9de2747343406643ad0bb7a7a5df94b",
+      "bytes": 912
+    },
+    {
+      "path": "results/n16_first_attempt.log",
+      "sha256": "7c918a3e3fb5f882952afbaca6f39fe3928672ea505ef91be56f077fb3b7dede",
+      "bytes": 144
+    },
+    {
+      "path": "results/n16_risk.json",
+      "sha256": "92aecc38e2f0421510c2ed1fec9630728205428c198e0b489273c7b50545ff3b",
+      "bytes": 479
+    },
+    {
+      "path": "results/n32_first_attempt.json",
+      "sha256": "d0a66669d529262385e2aa3580c5057a390648efa7f8649b3e36873db17ce5b8",
+      "bytes": 925
+    },
+    {
+      "path": "results/n32_first_attempt.log",
+      "sha256": "b135b2ed9c391ce90d11be2ecdbf8e0adf12d8419e075943c199e49e222bc510",
+      "bytes": 145
+    },
+    {
+      "path": "results/n32_process.json",
+      "sha256": "f3bc8404cc0996a3d6245a4d058a720e612413c8e161b17ab300ed7bd3fba6bb",
+      "bytes": 71
+    },
+    {
+      "path": "results/n32_risk.json",
+      "sha256": "d51975a49cef2fc609766d77dfeccb080a8ba30660e4ef8b6cb12a31f31af689",
+      "bytes": 480
+    },
+    {
+      "path": "results/n4_first_attempt.json",
+      "sha256": "0f37b468ebbbf34fec33537b018ac34baa1c1346709c73da73eed3e8f8a10e90",
+      "bytes": 903
+    },
+    {
+      "path": "results/n4_first_attempt.log",
+      "sha256": "1269862cad2302aff2c9cb33259d08556b2d466fba0af02fa0700184746ff018",
+      "bytes": 95
+    },
+    {
+      "path": "results/n4_order8_precision192.json",
+      "sha256": "5df3c65813b764e28ffd7178acf45556f16d82355c0af484ed5ee9ab3ccb536d",
+      "bytes": 901
+    },
+    {
+      "path": "results/n4_order8_precision192.log",
+      "sha256": "ffc9957a0964e915b6fc7ba382ffca7cc6106fd3c1bc00a2dfce5ff054e9b021",
+      "bytes": 47
+    },
+    {
+      "path": "results/n4_risk.json",
+      "sha256": "194c2197890361bbbac084e6fa879f0e66965f9b7419381d4157cf8381e4be29",
+      "bytes": 473
+    },
+    {
+      "path": "results/n64_first_attempt.json",
+      "sha256": "160b823ee7a3b9ca56206eec49e09d1eb6276444748f2f4e3b332b54dd0033e9",
+      "bytes": 925
+    },
+    {
+      "path": "results/n64_first_attempt.log",
+      "sha256": "1de8c76cf37118d63b92a8056217879dd7c053a1be706ece54c4709879eb86e6",
+      "bytes": 145
+    },
+    {
+      "path": "results/n64_process.json",
+      "sha256": "4c6626919a7a378661eff4d2389de1c5badac62ad2b5ab7c8ee03debed4b9c33",
+      "bytes": 69
+    },
+    {
+      "path": "results/n64_risk.json",
+      "sha256": "c0412f7a361fbfe11fb589eb70870f052aa566b73483f0ef6adf2104bbcc7e0d",
+      "bytes": 481
+    },
+    {
+      "path": "results/n8_first_attempt.json",
+      "sha256": "1d94b92c5be29128b4b2527a5a23ddbe2c10297ac1dddf88f08d6bc098e843d6",
+      "bytes": 903
+    },
+    {
+      "path": "results/n8_first_attempt.log",
+      "sha256": "baa22b1a37ed9f2901d3cb654a7eb3bae0e2e76da8536a810a699bf11598767c",
+      "bytes": 94
+    },
+    {
+      "path": "results/n8_risk.json",
+      "sha256": "31e2bb6ec1436ebec250856a12ec7c1843b55c85e1150f13c8e4b6f727ca0d3b",
+      "bytes": 474
+    },
+    {
+      "path": "results/postprocess_tests.json",
+      "sha256": "2559d52ac133f1ae820855d3820d13510a2821eb07255c289e89935af832f8b7",
+      "bytes": 175
+    },
+    {
+      "path": "results/runner_smoke.json",
+      "sha256": "5646b93ea3d2db5a03e6c2bef8a85e3b73fb3d95ec42e728207eebd025b01c15",
+      "bytes": 5419
+    },
+    {
+      "path": "results/setup_attempt.log",
+      "sha256": "a1e40dc9339da0b3f52db5dd0f6f8f2dc3e6a08e4fefba4f66ccb5badf35755b",
+      "bytes": 1247
+    },
+    {
+      "path": "results/unit_tests.json",
+      "sha256": "808fb4d37aa1d91adb8a75c7b1d1aa09d11a8a2ef076b8953f74c55d23227af0",
+      "bytes": 155
+    },
+    {
+      "path": "results/unit_tests.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "risk_bounds.cpp",
+      "sha256": "4f0a728691a22a4a332f0895bbf6847eda6eac4c84abf8ac23bec6ae0142653e",
+      "bytes": 1409
+    },
+    {
+      "path": "run.py",
+      "sha256": "36a30513eba670f635866bc3d2b7b80780b0bac5ec7a340a94a83158591dd224",
+      "bytes": 5352
+    },
+    {
+      "path": "sources/psc_summary.json",
+      "sha256": "e783b9d666f84a1cba1ed5e615410c8718649c2f8f286aaad115a5e18d9306ea",
+      "bytes": 4137
+    },
+    {
+      "path": "test_certificate.cpp",
+      "sha256": "e668c81a8d0e0f9bf7cd549f0a4f3059bd4e3f583c37df63217e4edd1386c3b7",
+      "bytes": 2866
+    }
+  ],
+  "manifest_entries": 46,
+  "git_original": "a8954f35cf3dc09c3337d41a45187a7b7e462b11",
+  "git_cherry": "90ed6da",
+  "vendor_header_selected": true,
+  "dependencies": {
+    "/usr/bin/clang++": {
+      "resolved": "/usr/bin/clang++",
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+      "bytes": 118640
+    },
+    "/opt/homebrew/include/mpfr.h": {
+      "resolved": "/opt/homebrew/Cellar/mpfr/4.1.0/include/mpfr.h",
+      "sha256": "d800395eec628225e0c5ebd4d4bf21097e67e88e153af4e7a9e89a37c7befc58",
+      "bytes": 52683
+    },
+    "/opt/homebrew/include/gmp.h": {
+      "resolved": "/opt/homebrew/Cellar/gmp/6.3.0/include/gmp.h",
+      "sha256": "920496a9867a23dec3410e19da39ac446743694d539651bd78015240b0704e4b",
+      "bytes": 84266
+    },
+    "/opt/homebrew/lib/libmpfr.dylib": {
+      "resolved": "/opt/homebrew/Cellar/mpfr/4.1.0/lib/libmpfr.6.dylib",
+      "sha256": "e7f7622c32478be48a7ee3780ce73283127db502de2795aa74a77f0dc658e8bf",
+      "bytes": 434720
+    },
+    "/opt/homebrew/lib/libgmp.dylib": {
+      "resolved": "/opt/homebrew/Cellar/gmp/6.3.0/lib/libgmp.10.dylib",
+      "sha256": "8e5e329ef23a12e39885bbdf417f87654e163078916d904c5909d2224305e0cc",
+      "bytes": 436880
+    }
+  },
+  "compiler_version": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin\n",
+  "library_identification": "/opt/homebrew/lib/libmpfr.dylib:\n\t/opt/homebrew/opt/mpfr/lib/libmpfr.6.dylib (compatibility version 8.0.0, current version 8.0.0)\n\t/opt/homebrew/opt/gmp/lib/libgmp.10.dylib (compatibility version 15.0.0, current version 15.1.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1311.0.0)\n",
+  "scope": "independent local certificate rebuild only; no model fitting or floating generator certification"
+}

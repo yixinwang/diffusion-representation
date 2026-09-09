@@ -1,0 +1,373 @@
+{
+  "status": "independently_reproduced_all_five_plus_changed_order",
+  "scope": "ideal-real scalar maps and exact-real catalog-learning expected risk; not floating generator KL or model fitting",
+  "authenticated_original_files": 47,
+  "authenticated_output_payloads": 58,
+  "checks": {
+    "status": "pass",
+    "checks": 256,
+    "precision_bits": 192,
+    "mpfr": "4.1.0",
+    "scope": "algebraic and independent derivative consistency tests; not a proof assistant"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "certificate_binary_linkage": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify:\n\t/opt/homebrew/opt/mpfr/lib/libmpfr.6.dylib (compatibility version 8.0.0, current version 8.0.0)\n\t/opt/homebrew/opt/gmp/lib/libgmp.10.dylib (compatibility version 16.0.0, current version 16.0.0)\n\t/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2100.43.0)\n\t/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)\n",
+  "results": [
+    {
+      "N": 4,
+      "conditional_KL": [
+        "0.22372470287378568",
+        "0.22372470323412066"
+      ],
+      "expected_KL": [
+        "0.22372470285456023",
+        "0.22372471382618164"
+      ],
+      "conditional_receipt_equal": true,
+      "expected_receipt_equal": true,
+      "seconds": "3.5631681249999998",
+      "cells": 274,
+      "mpfr": "4.1.0"
+    },
+    {
+      "N": 8,
+      "conditional_KL": [
+        "0.032062905626935562",
+        "0.032062906091946647"
+      ],
+      "expected_KL": [
+        "0.03206290562418028",
+        "0.032062915221547965"
+      ],
+      "conditional_receipt_equal": true,
+      "expected_receipt_equal": false,
+      "seconds": "9.0075108339999996",
+      "cells": 299,
+      "mpfr": "4.1.0"
+    },
+    {
+      "N": 16,
+      "conditional_KL": [
+        "0.0021465015491993599",
+        "0.0021465020022553211"
+      ],
+      "expected_KL": [
+        "0.0021465015490149033",
+        "0.0021465104787589165"
+      ],
+      "conditional_receipt_equal": true,
+      "expected_receipt_equal": true,
+      "seconds": "19.300292249999998",
+      "cells": 306,
+      "mpfr": "4.1.0"
+    },
+    {
+      "N": 32,
+      "conditional_KL": [
+        "0.00013774772474983807",
+        "0.00013774817896396868"
+      ],
+      "expected_KL": [
+        "0.00013774772473800089",
+        "0.00013775648599630906"
+      ],
+      "conditional_receipt_equal": true,
+      "expected_receipt_equal": true,
+      "seconds": "38.951708041000003",
+      "cells": 307,
+      "mpfr": "4.1.0"
+    },
+    {
+      "N": 64,
+      "conditional_KL": [
+        "0.0000087093770403469173",
+        "0.0000087098339525953205"
+      ],
+      "expected_KL": [
+        "0.0000087093770395984892",
+        "0.0000087180979953948377"
+      ],
+      "conditional_receipt_equal": true,
+      "expected_receipt_equal": false,
+      "seconds": "77.306429042000005",
+      "cells": 307,
+      "mpfr": "4.1.0"
+    }
+  ],
+  "changed_order_N4_interval": [
+    "0.22372470289488791",
+    "0.22372470321301843"
+  ],
+  "changed_order_seconds": "3.427700041",
+  "all_primary_integration_seconds": "148.1291082920000054",
+  "processes": [
+    {
+      "file": "build_certify.process.json",
+      "command": [
+        "/usr/bin/clang++",
+        "-I/opt/homebrew/include",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/pro12_artifacts/certify.cpp",
+        "-L/opt/homebrew/lib",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 2.1939172910060734
+    },
+    {
+      "file": "build_global_bounds.process.json",
+      "command": [
+        "/usr/bin/clang++",
+        "-I/opt/homebrew/include",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/pro12_artifacts/global_bounds.cpp",
+        "-L/opt/homebrew/lib",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/global_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 1.320729250088334
+    },
+    {
+      "file": "build_risk_bounds.process.json",
+      "command": [
+        "/usr/bin/clang++",
+        "-I/opt/homebrew/include",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/pro12_artifacts/risk_bounds.cpp",
+        "-L/opt/homebrew/lib",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 1.3148696669377387
+    },
+    {
+      "file": "build_test_certificate.process.json",
+      "command": [
+        "/usr/bin/clang++",
+        "-I/opt/homebrew/include",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/pro12_artifacts/test_certificate.cpp",
+        "-L/opt/homebrew/lib",
+        "-lmpfr",
+        "-lgmp",
+        "-o",
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/test_certificate"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 1.4207584580872208
+    },
+    {
+      "file": "global_bounds.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/global_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.29470149986445904
+    },
+    {
+      "file": "n16_first_attempt.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "16",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 19.321547250030562
+    },
+    {
+      "file": "n16_risk.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+        "16",
+        "0.0021465015491993599",
+        "0.0021465020022553211"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.02149470802396536
+    },
+    {
+      "file": "n32_first_attempt.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "32",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 38.98306279187091
+    },
+    {
+      "file": "n32_risk.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+        "32",
+        "0.00013774772474983807",
+        "0.00013774817896396868"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.010965584078803658
+    },
+    {
+      "file": "n4_first_attempt.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "4",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 3.803542874986306
+    },
+    {
+      "file": "n4_order8_precision192.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "4",
+        "8",
+        "32",
+        "3",
+        "5e-9",
+        "192"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 3.4948065001517534
+    },
+    {
+      "file": "n4_risk.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+        "4",
+        "0.22372470287378568",
+        "0.22372470323412066"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.23746229195967317
+    },
+    {
+      "file": "n64_first_attempt.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "64",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 77.36648124991916
+    },
+    {
+      "file": "n64_risk.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+        "64",
+        "0.0000087093770403469173",
+        "0.0000087098339525953205"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.02095104195177555
+    },
+    {
+      "file": "n8_first_attempt.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+        "8",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 240.0,
+      "elapsed_seconds": 9.053860625019297
+    },
+    {
+      "file": "n8_risk.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+        "8",
+        "0.032062905626935562",
+        "0.032062906091946647"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.021199666894972324
+    },
+    {
+      "file": "unit_tests.process.json",
+      "command": [
+        "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/test_certificate"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 0.5664182500913739
+    }
+  ],
+  "historical_cost_replay": false,
+  "new_fit_or_sampler_benchmark": false
+}

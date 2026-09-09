@@ -1,0 +1,43 @@
+{
+  "job": "45576312",
+  "source_commit": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+  "input_payload_sha256": {
+    "seed_77201/A_only/generated.npy": "678cc7f1ab20f6403a86235692d5e039ccfea58e8c8b65c77342fc9509afde30",
+    "seed_77201/J/generated.npy": "e593c028fcc7510b12403fc9a8c87501fc437b6ac2a6c643fe78eac3f5f66fc0",
+    "seed_77201/M/generated.npy": "ab64ae71afea646511a70a70658cebbe2434dea4493a06d66a639b0921271218",
+    "seed_77201/RQS/generated.npy": "1bdd92bb1701d5e2736b29ba40d0cc41a70ab09bbbe7291c3c523ce7cdd6fe7c",
+    "seed_77201/S/generated.npy": "1f8f758e5968356ec9add6afbd2f6c84efcbd9429c39d4cd8e2376a33c7de2b3",
+    "seed_77201/evaluation.json": "959f58a41aa33b0471bd9ab88d613d295cd94ad22f2d3bfbb55ea8a9742ca194",
+    "seed_77201/root_only/generated.npy": "60af03bf346a03fb82ed3ecf8580656613730934d9f8bbb9864fe4fe031b772d",
+    "seed_77202/A_only/generated.npy": "b8d98ca784ab16e5e67fb451f4ee58967f19a5cadaf4daea1d383c63536b587b",
+    "seed_77202/J/generated.npy": "77eb25a39e984ebcc50f37e6c30332e76c435db1d433656aef0e2011d5b9cd28",
+    "seed_77202/M/generated.npy": "6a916a6c2cc3266bf1596b35cd18405bcc77d2fb5bd159e7cab93d9820497c82",
+    "seed_77202/RQS/generated.npy": "46401ae33049492d1069b0ee226607f36604993b5f9e3d612fcc35a135d1522a",
+    "seed_77202/S/generated.npy": "eb641214313857b9761d49653cabba4bc3c7c6312c2aabc1fd90c20ad116b8c1",
+    "seed_77202/evaluation.json": "d2ecfa93ec793ddc1e26509092cc86b227943977ba523d06754ac30094181060",
+    "seed_77202/root_only/generated.npy": "96fb8ac22c8b3908e75d42063d835f35b5ebdb651e8285db74a93cd899779cb7",
+    "seed_77203/A_only/generated.npy": "7938809df529a51280edce93b0a6bc93ad777f2d6aa69dc96ae5c3fae6c613b5",
+    "seed_77203/J/generated.npy": "37d42c657ed26cadea14f9e3690332f0b45ac719c0def11d986f7a5862691627",
+    "seed_77203/M/generated.npy": "546372d61a880118ffbb28437ea3dff0c875d1b1e537eaa7f85fbd4c1a922309",
+    "seed_77203/RQS/generated.npy": "10fb9d41d95c2aa897376d941231a6deb111f0e76f633adeb73d514e4931c87c",
+    "seed_77203/S/generated.npy": "18dea08491737e8928fc5b54e132a62e42980e61ee8b731d5d549bc9decbff83",
+    "seed_77203/evaluation.json": "a1117f4218273795441af8593eb0e976d6f21e9e5347e0e39a556e2e442c983c",
+    "seed_77203/root_only/generated.npy": "82a9d5eac11220f04e0c0cdac08ebb5bc6a1828c480929570de9cad3efb64c1e"
+  },
+  "selection": "first eight samples of every saved arm in each of all three seeds; no selection by quality",
+  "quality_arms": [
+    "S",
+    "M",
+    "J",
+    "RQS"
+  ],
+  "diagnostic_arms_in_contact_sheet": [
+    "A_only",
+    "root_only"
+  ],
+  "artifacts": {
+    "plot_cached_pilot.py": "92e771983d8a13fd178c7e50f64cba8986a69bb1a15e5c3f570556e81c23d4f8",
+    "cached-pilot-quality.png": "66bcb8574dce6a9d5ab0a56a11daa7ec6d6a0d07151e7c41a65bdba1d6af42bc",
+    "cached-pilot-all-seeds.png": "fda9651ebe2ce93f9dd9cc31c55933c4374f37d4f8266666c0358a0ca4a6167d"
+  }
+}

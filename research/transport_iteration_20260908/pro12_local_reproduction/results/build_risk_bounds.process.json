@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/usr/bin/clang++",
+    "-I/opt/homebrew/include",
+    "-O2",
+    "-std=c++17",
+    "-fno-fast-math",
+    "-ffp-contract=off",
+    "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/pro12_artifacts/risk_bounds.cpp",
+    "-L/opt/homebrew/lib",
+    "-lmpfr",
+    "-lgmp",
+    "-o",
+    "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds"
+  ],
+  "returncode": 0,
+  "timeout": false,
+  "timeout_limit_seconds": 60,
+  "elapsed_seconds": 1.3148696669377387
+}

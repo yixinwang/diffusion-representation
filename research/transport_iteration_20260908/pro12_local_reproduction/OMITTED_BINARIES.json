@@ -1,0 +1,29 @@
+{
+  "scope": "Explicit subset of original COMPLETE manifest; none of the four executables is claimed delivered",
+  "omitted": {
+    "certify": {
+      "sha256": "320a1895be963512de4e3a0b4589d26e853f8a997727a247c5fcfddbe7687a06",
+      "bytes": 146472,
+      "preserved_local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/certify",
+      "reason": "generated platform-specific executable; rebuilt from authenticated original source using published command; omitted from text-only publication"
+    },
+    "global_bounds": {
+      "sha256": "808775a3a085e806a873d4a33c24ec409892f2284ad847ffccacdba6c26989cd",
+      "bytes": 146752,
+      "preserved_local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/global_bounds",
+      "reason": "generated platform-specific executable; rebuilt from authenticated original source using published command; omitted from text-only publication"
+    },
+    "risk_bounds": {
+      "sha256": "d666682f93260b65f9e89eafae34376c619101bef9c814348bd67da9496fad96",
+      "bytes": 146616,
+      "preserved_local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/risk_bounds",
+      "reason": "generated platform-specific executable; rebuilt from authenticated original source using published command; omitted from text-only publication"
+    },
+    "test_certificate": {
+      "sha256": "0db0b6f0b6e91464d90e404a7fb2ce7bcd42970bbe9698df1e4af7226a74b56d",
+      "bytes": 147136,
+      "preserved_local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro12-local-reproduction/test_certificate",
+      "reason": "generated platform-specific executable; rebuilt from authenticated original source using published command; omitted from text-only publication"
+    }
+  }
+}
