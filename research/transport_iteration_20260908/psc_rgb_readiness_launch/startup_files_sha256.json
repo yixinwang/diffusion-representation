@@ -1,0 +1,22 @@
+{
+  "build.py": {
+    "bytes": 5323,
+    "sha256": "f6a8e3ed75ed71b2055503c988169455550935ce4780ed33347948ee6dea9d0f"
+  },
+  "config.json": {
+    "bytes": 1398,
+    "sha256": "34217e73865ef20ed912dd98f1f5be09560310f4575ab83d604ec34c6c556732"
+  },
+  "prepare.remote.py": {
+    "bytes": 4192,
+    "sha256": "100044abcb35dbc1a983fa5e3db7ee5b3c978471a2c3047b2e60e708c04ee5c9"
+  },
+  "submit-once.sh": {
+    "bytes": 1052,
+    "sha256": "d7023072a1172d1fe08828e25bbceaa67373c812051c8d3e732209b037b2a771"
+  },
+  "README.md": {
+    "bytes": 1710,
+    "sha256": "0ab4bca83875e66882e6afdabdd12522b3d18ac88c2c58a704d532fd9bd044db"
+  }
+}

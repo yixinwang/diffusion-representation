@@ -1,0 +1,17 @@
+{
+  "self_excluded": true,
+  "sha256": {
+    "README.md": "bb2cecac36cbb2f57d65c990523632eb1fdfd1c7408e1d28c96d230d3905ba01",
+    "allocation.stderr": "da6df64c369860a3e491da98aede3c9b77e99944290f786c10a8a4e78c6ddd0d",
+    "allocation.stdout": "2d778c6f2b54522197189a1e66711191091c824b2fa7cc6b24a40a06a0ac0824",
+    "config.json": "34217e73865ef20ed912dd98f1f5be09560310f4575ab83d604ec34c6c556732",
+    "preallocation-attempt1.stderr": "3e9e25ccb83d5adf43c350dcd462147a2a989d90fb322227e6522571cd016c89",
+    "preparation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "preparation.stdout": "3daf78c87711567753b59854ab4416954b88173d9a2c0affc1f5af234dbfbdba",
+    "prepare.remote.py": "100044abcb35dbc1a983fa5e3db7ee5b3c978471a2c3047b2e60e708c04ee5c9",
+    "snapshot.json": "43fd6c2b7206ba3937e44ed775bfb590e3132ae9c2d6d26b71d656177528eb60",
+    "startup_files_sha256.json": "5b9743b0f91da06bd7ecea7f46b99764e1510e9b0251ade243d7333673849353",
+    "submit-once.sh": "d7023072a1172d1fe08828e25bbceaa67373c812051c8d3e732209b037b2a771",
+    "upload_and_execute.remote.py": "8df381720081505c6f79be9a2914f07caecfbb5284f2ac92652ed1d753c3c037"
+  }
+}
