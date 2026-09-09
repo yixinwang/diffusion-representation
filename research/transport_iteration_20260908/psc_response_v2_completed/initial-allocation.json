@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "salloc: Pending job allocation 45637892\nsalloc: job 45637892 queued and waiting for resources\nsalloc: job 45637892 has been allocated resources\nsalloc: Granted job allocation 45637892\nsalloc: Waiting for resource configuration\nsalloc: Nodes r033 are ready for job\n45637892|RUNNING|r033|0:41\n",
+  "stderr": ""
+}

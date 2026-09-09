@@ -1,0 +1,58 @@
+{
+  "job_id": "45637892",
+  "source_commit": "3b8c0f7bef604a90ff329fd9608639527b67a972",
+  "checker_sha256": "1c2ba06811a02d1798bc9fa9abe0f425bcdc2ef4d3202d60c21056c7c86b5303",
+  "training": false,
+  "canonical_data_reads": false,
+  "admission_verified_before_checker": true,
+  "source_count": 94,
+  "input_identity": {
+    "status.json": "d25b0dcee8475f61c4bf7a9ac412783ed5c9e5d30821e73e20d2653592c03722",
+    "source_identity.json": "1d780c8c472770c3fe5b25a1828fdad70fff5c7b9f8085307582d403e18619f1",
+    "ALL_FITS_FROZEN.json": "27c44e1529f73b72ba78f0b87c884d5e05838661cafff901f49044a39e9c4f11",
+    "ALL_NUMERICS_ADMITTED.json": "95e53eba3f052f4e85e1d30ebc031d272e7100a2ea03e3394e40061f09140fb4"
+  },
+  "versions": {
+    "python": "3.10.9",
+    "numpy": "2.2.6"
+  },
+  "threads": {
+    "OMP_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "NUMEXPR_NUM_THREADS": "4"
+  },
+  "checker_exit": 0,
+  "status": "passed",
+  "wall_seconds": 54.43510446295841,
+  "files": {
+    "audit.py": {
+      "sha256": "1c2ba06811a02d1798bc9fa9abe0f425bcdc2ef4d3202d60c21056c7c86b5303",
+      "bytes": 6797
+    },
+    "checker.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "audit.json": {
+      "sha256": "2363e64a500302bfc3f1d1da89a9ee40378f6ae9affc55618819a8b53b0ad104",
+      "bytes": 28175
+    },
+    "command.json": {
+      "sha256": "450bfa221f4ca026b52d7fec7695fff729a5bf3becd294e8080d0601bb5d4434",
+      "bytes": 362
+    },
+    "input-terminal-accounting.txt": {
+      "sha256": "a92649e56fe0ee69243bbeb8183b44631cc84bc7f89eb2cc9ab8de84552d34ed",
+      "bytes": 162
+    },
+    "checker.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "worker.py": {
+      "sha256": "48863c78d4c07a631cdb584ce4bcf77380bb1517b98699abacf95d4e7f603d4e",
+      "bytes": 13944
+    }
+  }
+}

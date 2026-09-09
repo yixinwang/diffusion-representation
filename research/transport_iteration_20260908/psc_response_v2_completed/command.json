@@ -1,0 +1,1 @@
+["salloc", "-A", "cis260243p", "-p", "RM-shared", "--qos=rminteract", "-N", "1", "-n", "1", "-c", "4", "--mem=8000M", "-t", "01:00:00", "-J", "response-saved-bank-audit", "srun", "--export=ALL", "/ocean/projects/mth250006p/ywang26/pytorch/bin/python", "-u", "/ocean/projects/mth260022p/ywang26/diffusion-results/20260909-response-v2-independent-audit/worker.py"]

@@ -1,0 +1,7 @@
+salloc: Pending job allocation 45637892
+salloc: job 45637892 queued and waiting for resources
+salloc: job 45637892 has been allocated resources
+salloc: Granted job allocation 45637892
+salloc: Waiting for resource configuration
+salloc: Nodes r033 are ready for job
+salloc: Relinquishing job allocation 45637892

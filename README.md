@@ -33,6 +33,20 @@ The study compares innovation/history-only responses with frozen or jointly trai
 
 Evidence: [full qualification](research/transport_iteration_20260908/psc_response_full_qualification), [preserved failed preflight](research/transport_iteration_20260908/psc_response_v2_preflight_failure), [interactive verification](research/transport_iteration_20260908/psc_response_v2_interactive_preflight), [fresh submission and scheduler record](research/transport_iteration_20260908/psc_response_v2_attempt2_launch).
 
+### September 9, 2026 — completed native study: all three seeds fail the registered criteria
+
+**Result.** Job **45632257** completed in **1:10:05**, and independent CPU audit **45637892** passed the source, payload and numerical/metric checks. The algorithm still failed the full registered engineering criteria in every seed:
+
+| Seed | I joint KID | RQS frozen KID | RQS joint KID | Gates passed |
+|---|---:|---:|---:|---:|
+| 78201 | 0.201820 | 0.169696 | 0.175045 | 11/19 |
+| 78202 | 0.176780 | 0.152790 | 0.154525 | 11/19 |
+| 78203 | 0.201085 | 0.163628 | 0.169129 | 10/19 |
+
+Lower KID is better. Both spline controls beat the innovation-response joint model in all three seeds; the jointly trained spline also has better complete likelihood throughout. Joint innovation-response improves likelihood over its frozen-analysis version, but its advantage over the matched history-only response is inconsistent. The5% material-quality gate, covariance gate and gradient gate fail in every seed. **No latent-FM/diffusion, representation or efficiency superiority is established.**
+
+**Evidence and next decision.** The [authenticated compact audit and all per-arm results](research/transport_iteration_20260908/psc_response_v2_completed) include402 payload checks,94 frozen source/Git checks and21 numerical admissions. Complete raw banks remain on PSC; full local transfer is pending. Scope limits for feature, covariance and target-reference checks are explicit. [Fresh Review23](https://chatgpt.com/c/6aa1c67d-d050-83ea-b75f-eb2e10ebec5a) is using the negative results to propose one bounded next diagnostic, not to relabel the study a success. Protected test data remain unopened.
+
 ### September 9, 2026 — next generation-comparison review
 
 [Fresh Review22](https://chatgpt.com/c/6aa1c0d6-6cd4-83e9-8ac5-006795ceca3a) completed. The [independent audit and progress receipts](research/transport_iteration_20260908/pro22_frontier_review) verify the raw time embedding's exact-arithmetic injectivity and clarify that GroupNorm supplies global spatial dependence. Proposed training/solver frontiers still require measured full-pipeline costs and a frozen full-generation protocol. Failure to beat a known feasible frozen model in complete FIT likelihood would demonstrate an empirical optimization gap, not an architectural impossibility. Neither a reconstruction floor nor a low FM loss certifies a competent generator. Six seeds is only the minimum for unanimous significance under the specified two-sided exact sign test, not a universal significance rule. Actual Pro remained disabled; the available conversation displayed Extra High.

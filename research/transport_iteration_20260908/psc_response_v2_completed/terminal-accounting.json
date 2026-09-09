@@ -1,0 +1,6 @@
+{
+  "command": "sacct -j45637892 --format=JobID,State,ExitCode,Elapsed,MaxRSS,NodeList,AllocCPUS,ReqMem,Start,End -P; squeue -j45637892 -h -o \"%i|%T|%R\"",
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|MaxRSS|NodeList|AllocCPUS|ReqMem|Start|End\n45637892|COMPLETED|0:0|00:01:00||r033|4|8000M|2026-09-09T16:45:04|2026-09-09T16:46:04\n45637892.extern|COMPLETED|0:0|00:01:00|0|r033|4||2026-09-09T16:45:04|2026-09-09T16:46:04\n45637892.0|COMPLETED|0:0|00:00:55|38000K|r033|4||2026-09-09T16:45:09|2026-09-09T16:46:04\n",
+  "stderr": ""
+}

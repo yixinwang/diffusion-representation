@@ -1,0 +1,8 @@
+{
+  "time_utc": "2026-09-09T19:22:00.391797+00:00",
+  "scope": "Audit prepared before accessing study quality outputs; protocol gates fixed in study source3b8c0f7",
+  "sha256": {
+    "audit.py": "1c2ba06811a02d1798bc9fa9abe0f425bcdc2ef4d3202d60c21056c7c86b5303",
+    "fabricated_checks.json": "18791f3d9519c1dea7217060e08e6b0d9eed205a5b040119f7ef18cd5160bcea"
+  }
+}
