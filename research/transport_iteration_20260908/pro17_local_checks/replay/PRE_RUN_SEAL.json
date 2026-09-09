@@ -1,0 +1,8 @@
+{
+  "protocol_sha256": "76edf9013a25d070e9bb3f5d17e5826348b81a85c09927a6b212dd4d37b57c90",
+  "source_sha256": {
+    "copula.py": "48a52f66c0ba2666e9f7430095833bd5a345b1194f0972de7476705571c79248",
+    "test_copula.py": "3d23d94bc4d1975ac913277f6ffcebef100baaf8bf8abfc8f199ea5b527528c5",
+    "run_stress.py": "a1762a3389c173bc76cf6ec3a2651bb634a8694464d6f72c7ebd1639b7c4d278"
+  }
+}

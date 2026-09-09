@@ -1,0 +1,17 @@
+{
+  "scope": "one fixed synthetic study; no native fits",
+  "started_unix": 1788976346.2275784,
+  "unit_tests": {
+    "returncode": 0,
+    "log": "tests.log"
+  },
+  "stress": {
+    "returncode": 0,
+    "log": "stress.log"
+  },
+  "repository_source_read": {
+    "returncode": 0,
+    "log": "repository_read.log"
+  },
+  "finished_unix": 1788976351.8695223
+}

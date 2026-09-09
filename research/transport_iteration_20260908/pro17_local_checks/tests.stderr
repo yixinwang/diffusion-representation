@@ -1,0 +1,25 @@
+test_01_normalization (test_copula.CopulaTests.test_01_normalization) ... ok
+test_02_positivity (test_copula.CopulaTests.test_02_positivity) ... ok
+test_03_inverse_roundtrip (test_copula.CopulaTests.test_03_inverse_roundtrip) ... ok
+test_04_inverse_no_repair_invalid (test_copula.CopulaTests.test_04_inverse_no_repair_invalid) ... ok
+test_05_jacobian (test_copula.CopulaTests.test_05_jacobian) ... ok
+test_06_full_dimensional_gaussian_roundtrip (test_copula.CopulaTests.test_06_full_dimensional_gaussian_roundtrip) ... ok
+test_07_all_pair_marginals_independent (test_copula.CopulaTests.test_07_all_pair_marginals_independent) ... ok
+test_08_moment_identity (test_copula.CopulaTests.test_08_moment_identity) ... ok
+test_09_second_moment (test_copula.CopulaTests.test_09_second_moment) ... ok
+test_10_kl_series_quadrature (test_copula.CopulaTests.test_10_kl_series_quadrature) ... ok
+test_11_kl_bounds (test_copula.CopulaTests.test_11_kl_bounds) ... ok
+test_12_copy_is_same_map (test_copula.CopulaTests.test_12_copy_is_same_map) ... ok
+test_13_shared_failure_population_projection (test_copula.CopulaTests.test_13_shared_failure_population_projection) ... ok
+test_14_lipschitz_bin_approximation (test_copula.CopulaTests.test_14_lipschitz_bin_approximation) ... ok
+test_15_rank16_does_not_span17_responses (test_copula.CopulaTests.test_15_rank16_does_not_span17_responses) ... ok
+test_16_fit_only_observations (test_copula.CopulaTests.test_16_fit_only_observations) ... ok
+test_17_full_log_density_formula (test_copula.CopulaTests.test_17_full_log_density_formula) ... ok
+test_18_non_gaussian_joint_witness (test_copula.CopulaTests.test_18_non_gaussian_joint_witness) ... ok
+test_19_empty_cell_fails_without_adaptation (test_copula.CopulaTests.test_19_empty_cell_fails_without_adaptation) ... ok
+test_20_oracle_bin_projection_improves_product (test_copula.CopulaTests.test_20_oracle_bin_projection_improves_product) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.052s
+
+OK

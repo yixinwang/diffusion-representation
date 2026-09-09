@@ -1,0 +1,152 @@
+{
+  "publication": "0c47afe50df6e849b968a900073ac57698933281",
+  "cherry_pick": "21fbaec5de266d8000603c6adb5ab96cdfb38bc0",
+  "all23_payloads_archive_and_original_inventory_verified": true,
+  "transport": {
+    "archive_name": "pro17-artifacts-20260909.tar.xz",
+    "archive_size": 29564,
+    "archive_sha256": "80b9e676f913c0dfe2cfd99dee6eff44f6009632d3b98c2dde12ba16cccfe220",
+    "zip_name": "pro17-artifacts-20260909.zip",
+    "zip_size": 44125,
+    "zip_sha256": "71b3f2fe103b0e6a517ed0908e72693d17f7b998b5f566494cd3283308c33f19",
+    "parts": [
+      {
+        "path": "pro17_payload.part0000.bin",
+        "size": 8192,
+        "sha256": "8cc75933d8859f956dbde41114da75febb32b75caf84ada3a2dffe2830ff65bd"
+      },
+      {
+        "path": "pro17_payload.part0001.bin",
+        "size": 8192,
+        "sha256": "00c54873b3451e4a6f1a35353f16143cb5bb7a504aab403367da49d480483882"
+      },
+      {
+        "path": "pro17_payload.part0002.bin",
+        "size": 8192,
+        "sha256": "5673e7ce5557dc7cf7a609c0464696cc8caf40c0f353a9fca8eb7fb15fbbae4c"
+      },
+      {
+        "path": "pro17_payload.part0003.bin",
+        "size": 4988,
+        "sha256": "dfe83ba16efb75bfe039d78b2a49c148a9861d8bf844547c530b85649830c32c"
+      }
+    ],
+    "payload_files": [
+      {
+        "path": "pro17_artifacts/COVERAGE_AND_REVIEW.md",
+        "size": 1326,
+        "sha256": "d792f9f3a8cfc68013b5df1bc5b827e9076a2a6ff0262e040f99c60d4a2567e9"
+      },
+      {
+        "path": "pro17_artifacts/EXECUTION_STATUS.json",
+        "size": 356,
+        "sha256": "8fdd1779c09a4e98ca44a33a1a0f0fc3c4ac24c81ced074bd51e630e805a547c"
+      },
+      {
+        "path": "pro17_artifacts/FINITE_SAMPLE_CERTIFICATE.json",
+        "size": 442,
+        "sha256": "47c41dea6d7778f71550b2a31ccb21a8b5eb80413aefd09e43bd12c9574af6c3"
+      },
+      {
+        "path": "pro17_artifacts/FROZEN_PROTOCOL.json",
+        "size": 1339,
+        "sha256": "76edf9013a25d070e9bb3f5d17e5826348b81a85c09927a6b212dd4d37b57c90"
+      },
+      {
+        "path": "pro17_artifacts/INVENTORY.json",
+        "size": 3325,
+        "sha256": "ef91b786531b965a0fb8425d80549876c9b2bd4418fd2c0032a493af00c7a59b"
+      },
+      {
+        "path": "pro17_artifacts/NEGATIVES.md",
+        "size": 2734,
+        "sha256": "6b6e893bb1648512f6530680c7089e3b0e6855fb68263465f7c42e99a0e7ecd8"
+      },
+      {
+        "path": "pro17_artifacts/PRE_RUN_SEAL.json",
+        "size": 381,
+        "sha256": "5d80c20b96d95236ee3656dc3ce810919d2be9f12750d5be973541f3668ec408"
+      },
+      {
+        "path": "pro17_artifacts/PROSPECTIVE_NATIVE_PROTOCOL.md",
+        "size": 8340,
+        "sha256": "74b1faa7e476fb5b0bc20ea69624b41fd88f021e00decbbf0d5094a710937757"
+      },
+      {
+        "path": "pro17_artifacts/README.md",
+        "size": 2604,
+        "sha256": "72992bd5279afc2f805a1c1fc0891d550631bb84f29e9bd933f514ed93d7254b"
+      },
+      {
+        "path": "pro17_artifacts/REPO_AUDIT.json",
+        "size": 1027,
+        "sha256": "b9a9c733b72c804f78d5c6a2232d180a63af62f4dc937abbb9c1133576863155"
+      },
+      {
+        "path": "pro17_artifacts/RESULTS.md",
+        "size": 952,
+        "sha256": "db41ff4f55783fdea964d705d1413439b627d291b0e0ce841dac3d1d77e1b4e7"
+      },
+      {
+        "path": "pro17_artifacts/SHA256SUMS",
+        "size": 1746,
+        "sha256": "82a4e7f81b927058957a288d78b804c535ee8b3cb42a5729cf9097c716ba99bc"
+      },
+      {
+        "path": "pro17_artifacts/THEOREM.md",
+        "size": 15803,
+        "sha256": "561775f802c7e7900786b94445299615115365733618f950395701a3332cc6a3"
+      },
+      {
+        "path": "pro17_artifacts/copula.py",
+        "size": 8517,
+        "sha256": "48a52f66c0ba2666e9f7430095833bd5a345b1194f0972de7476705571c79248"
+      },
+      {
+        "path": "pro17_artifacts/inspect_frozen_repo.py",
+        "size": 4581,
+        "sha256": "ea6a4a3ad5cd45421966f3ef6b27eb8cdeec1bbdddc38ed48921ec62400e6fd0"
+      },
+      {
+        "path": "pro17_artifacts/publish_isolated.py",
+        "size": 5547,
+        "sha256": "2c952ec9fc8721b69365aab1428b8b62158d4a3c94d71befb46aa8175f589abd"
+      },
+      {
+        "path": "pro17_artifacts/repository_read.log",
+        "size": 1027,
+        "sha256": "b9a9c733b72c804f78d5c6a2232d180a63af62f4dc937abbb9c1133576863155"
+      },
+      {
+        "path": "pro17_artifacts/requirements.txt",
+        "size": 12,
+        "sha256": "1978c5330a34a48fac00c1107de3949b8c8da3bd11517f59ca9b4510363c6c8a"
+      },
+      {
+        "path": "pro17_artifacts/results.json",
+        "size": 44971,
+        "sha256": "ae87155a0b8131b1adda10be1d4b76b2efed64667ada5c94b37d1d34f7c13930"
+      },
+      {
+        "path": "pro17_artifacts/run_stress.py",
+        "size": 7233,
+        "sha256": "a1762a3389c173bc76cf6ec3a2651bb634a8694464d6f72c7ebd1639b7c4d278"
+      },
+      {
+        "path": "pro17_artifacts/stress.log",
+        "size": 952,
+        "sha256": "db41ff4f55783fdea964d705d1413439b627d291b0e0ce841dac3d1d77e1b4e7"
+      },
+      {
+        "path": "pro17_artifacts/test_copula.py",
+        "size": 6045,
+        "sha256": "3d23d94bc4d1975ac913277f6ffcebef100baaf8bf8abfc8f199ea5b527528c5"
+      },
+      {
+        "path": "pro17_artifacts/tests.log",
+        "size": 2019,
+        "sha256": "27bb372e5d0372fc634e0328b40756d857b14fc13094292b2bee61266c6ffb9d"
+      }
+    ]
+  }
+}

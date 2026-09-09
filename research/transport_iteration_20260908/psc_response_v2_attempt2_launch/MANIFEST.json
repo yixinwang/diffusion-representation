@@ -18,5 +18,9 @@
   "submission.json": {
     "bytes": 12974,
     "sha256": "879e1efbfcbb1271329fd8bd2156995151600b4c840d4048fd8379c431b725c7"
+  },
+  "initial-startup-check.json": {
+    "bytes": 287,
+    "sha256": "130cb19a043691ea1b4d8a0441483bd921c11e22cda1834925067c1eeddad2e3"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "theoretical_only": true,
+  "A_B_exact_sinusoidal": 0.01819211521691813,
+  "expected_KL_upper_shared": 0.11778130910045143,
+  "product_KL_lower_first_series_term": 0.21407407407407406,
+  "expected_gain_lower": 0.09629276497362263,
+  "conservative_gain_lower_using_pi_squared_lt_10": 0.0925937680844907,
+  "greater_than_0_09_nats": true,
+  "claim": "Expectation under the fixed synthetic shared law; not a per-seed or native guarantee."
+}

@@ -1,0 +1,64 @@
+{
+  "n": 4096,
+  "sites": 32,
+  "AB": 0.01819211521691813,
+  "expected_KL_upper": 0.11778130910045143,
+  "product_floor": 0.21407407407407406,
+  "expected_gain_lower": 0.09629276497362263,
+  "conservative_gain_lower": 0.0925937680844907,
+  "constant_agreement": true,
+  "local_vs_original": [
+    {
+      "scenario": "shared_nonlinear",
+      "training_hash_equal": false,
+      "maximum_parameter_difference": 5.551115123125783e-16,
+      "maximum_risk_difference": 3.122502256758253e-17,
+      "risks": {
+        "population_product_projection": 0.21869331304321585,
+        "learned_shared_copula": 0.012421571088579799,
+        "exact_compiled_triangular_copy": 0.012421571088579799,
+        "learned_untied_triangular": 0.03897313080398201,
+        "oracle_shared_bin_diagnostic": 0.011261353928884249,
+        "oracle_untied_bin_diagnostic": 0.011261353928884249
+      },
+      "sample_copy_difference": 0.0,
+      "logprob_copy_difference": 0.0
+    },
+    {
+      "scenario": "alternating_sign_failure",
+      "training_hash_equal": false,
+      "maximum_parameter_difference": 4.440892098500626e-16,
+      "maximum_risk_difference": 3.122502256758253e-17,
+      "risks": {
+        "population_product_projection": 0.21869331304321585,
+        "learned_shared_copula": 0.22066433633714405,
+        "exact_compiled_triangular_copy": 0.22066433633714405,
+        "learned_untied_triangular": 0.036703345456635124,
+        "oracle_shared_bin_diagnostic": 0.21869331304321585,
+        "oracle_untied_bin_diagnostic": 0.011261353928884249
+      },
+      "sample_copy_difference": 0.0,
+      "logprob_copy_difference": 0.0
+    }
+  ],
+  "initial_rng_exact": true,
+  "final_rng_exact": true,
+  "versions": {
+    "original": [
+      "3.13.5",
+      "2.3.5",
+      "1.17.0"
+    ],
+    "local": [
+      "3.12.14",
+      "2.5.3",
+      "1.18.1"
+    ]
+  },
+  "additional_limitations": {
+    "decode_accepts_nan_anchor_and_returns_nonfinite": true,
+    "constructor_accepts_nan_theta_and_logprob_returns_nan": true,
+    "piecewise_context_map_jump_example": 0.06027462418971313
+  },
+  "alternating_sign_identity_max_roundoff": 1.3877787807814457e-17
+}
