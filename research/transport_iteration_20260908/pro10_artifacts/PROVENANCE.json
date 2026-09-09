@@ -1,0 +1,34 @@
+{
+  "read_commit": "e7ee7938a9b146aa5b167a1176e53f99f9ccd4bd",
+  "repository": "yixinwang/diffusion-representation",
+  "access": "GitHub connector read-only",
+  "inspected_files": {
+    "research/transport_iteration_20260908/pro8_artifacts/README.md": "40e6770f6537cb41e811335390391a7a88346e22",
+    "research/transport_iteration_20260908/pro8_artifacts/positive_class_reference.py": "f54fb3c8e06953a22337e3f45296946378bc52e3",
+    "research/transport_iteration_20260908/pro8_artifacts/interval_tilt_check.py": "9c0069ab510d702662e6e39a52668b9d3934ab49",
+    "research/transport_iteration_20260908/check_pro8_rational_constants.py": "dfb78c212295707d56c7fea4f480aafc6e68395d",
+    "qalt/experiments/tilted_normal_reference/PROTOCOL.md": "8455285d5a19f63c4d2f5131f2498a1e5bebd427"
+  },
+  "hash_type_inspected_files": "Git blob SHA from connector, not independently downloaded original file SHA256",
+  "original_reference_SHA256_in_frozen_protocol": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b",
+  "native_and_PSC_scope": "No native data or PSC access. Did not independently rehash the 83 PSC payloads or recompute their 324 timings.",
+  "primary_sources": [
+    {
+      "title": "Shaw and Buckley, The alchemy of probability distributions",
+      "url": "https://arxiv.org/abs/0901.0434",
+      "specificity": "Section 2.2 equations 3-4 and section 2.5 equation 11: this scalar family uses lambda=-e"
+    },
+    {
+      "title": "SciPy ndtri_exp reference",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ndtri_exp.html"
+    },
+    {
+      "title": "Flow Matching for Generative Modeling",
+      "url": "https://arxiv.org/abs/2210.02747"
+    },
+    {
+      "title": "Neural Spline Flows",
+      "url": "https://arxiv.org/abs/1906.04032"
+    }
+  ]
+}

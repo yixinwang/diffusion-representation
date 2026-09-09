@@ -1,0 +1,41 @@
+{
+  "p_root_upper": 8.71373224681498e-38,
+  "p_summary_conditional_upper": 8.593339504996332e-11,
+  "p_fail_upper": 8.593339504996332e-11,
+  "expected_exact_KL_upper": 8.249605924796479e-09,
+  "extra_FM_expected_risk_upper_over_correct_catalog_KL": 1.4849290664633661e-06,
+  "future_copula_rho": 0.01,
+  "future_product_KL_floor": 0.072003600240018,
+  "local_focused_ratios": [
+    {
+      "seed": 2026090901,
+      "batch": 1,
+      "exact_over_cached4": 1.127408210988102
+    },
+    {
+      "seed": 2026090901,
+      "batch": 64,
+      "exact_over_cached4": 1.149603036085937
+    },
+    {
+      "seed": 2026090902,
+      "batch": 1,
+      "exact_over_cached4": 1.131353138227554
+    },
+    {
+      "seed": 2026090902,
+      "batch": 64,
+      "exact_over_cached4": 1.3839027951091303
+    },
+    {
+      "seed": 2026090903,
+      "batch": 1,
+      "exact_over_cached4": 1.1076780715181056
+    },
+    {
+      "seed": 2026090903,
+      "batch": 64,
+      "exact_over_cached4": 1.351872552053984
+    }
+  ]
+}
