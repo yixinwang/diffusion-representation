@@ -1,0 +1,5 @@
+# Full canonical verification
+
+Exactly one read-only PSC CPU job, 45571737, ran the independent checker from frozen commit 22ac114 against the complete native payload and strict canonical loader. It verified all saved energies, repair descriptors, generated descriptors and paired contrasts, with the 1,000 existing repair images as the statistical units. All 285 payload hashes and 22 original source files match, and the actual seven Gaussian banks match exactly. The job completed with exit zero in 2 minutes 43 seconds; peak resident memory was 251,420 KiB.
+
+The earlier local report remains as a faithful record of its narrower hash-only stage. The canonical audit now resolves its data-recomputation limitation. Raw determinant arrays were not saved, so determinant cancellation bounds remain checked reported quantities rather than independently recomputed arrays. Test and excluded discovery allocations remain unopened. Reused development data and one fit do not support confirmatory superiority.

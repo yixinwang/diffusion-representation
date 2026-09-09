@@ -1,0 +1,50 @@
+{
+  "derivative_numerical_max": 0.26395485514247297,
+  "location": [
+    0.5580204384462305,
+    -1.499083672248286,
+    0.5999999999998739
+  ],
+  "rho": 0.9038288789764752,
+  "wrong_summary_bound": 8.593339504996332e-11,
+  "wrong_root_bound": 8.71373224681498e-38,
+  "expected_KL_bound": 8.249605924796479e-09,
+  "median_numerical_checks": [
+    {
+      "calls": 4,
+      "n": 2,
+      "minimizing_e": 0.4,
+      "minimum_median_gap": 0.0032868782199290403,
+      "KL_lower_at_numerical_min": 0.06222855417202884
+    },
+    {
+      "calls": 8,
+      "n": 4,
+      "minimizing_e": 0.4,
+      "minimum_median_gap": 0.0015614169272492595,
+      "KL_lower_at_numerical_min": 0.014043011447234993
+    },
+    {
+      "calls": 16,
+      "n": 8,
+      "minimizing_e": 0.4,
+      "minimum_median_gap": 0.0004052023395622051,
+      "KL_lower_at_numerical_min": 0.0009457282712833031
+    },
+    {
+      "calls": 32,
+      "n": 16,
+      "minimizing_e": 0.4,
+      "minimum_median_gap": 0.00010264716183755462,
+      "KL_lower_at_numerical_min": 6.0689893439837556e-05
+    },
+    {
+      "calls": 64,
+      "n": 32,
+      "minimizing_e": 0.4,
+      "minimum_median_gap": 2.5802691131199262e-05,
+      "KL_lower_at_numerical_min": 3.834886288965517e-06
+    }
+  ],
+  "interval_certified": false
+}

@@ -19,5 +19,6 @@
   "raw_banks_retained_remotely": true,
   "full_canonical_audit_job": 45571737,
   "perceptual_evaluation_job": 45571074,
-  "claim": "Mixed development results; no quality-cost dominance or confirmatory inference."
+  "claim": "Mixed development results; no quality-cost dominance or confirmatory inference.",
+  "full_canonical_audit_status": "verified_completed_development_only"
 }

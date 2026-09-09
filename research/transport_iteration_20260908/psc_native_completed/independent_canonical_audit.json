@@ -1,0 +1,14 @@
+{
+  "study_status": "completed_development_only",
+  "full_numerical_audit": true,
+  "confirmatory_claim": false,
+  "errors": [],
+  "checks": {
+    "payload_files": 285,
+    "source_commit": "341dbaf5022a7fe54bb0e89dac6e5d5c2df82277",
+    "jacobian_limitation": "reported determinant bounds checked; raw determinant arrays absent",
+    "identical_source_banks": 7,
+    "generated_metrics_and_boundaries": 7
+  },
+  "audit_status": "verified_completed_development_only"
+}

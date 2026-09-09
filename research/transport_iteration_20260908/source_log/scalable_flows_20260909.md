@@ -1,0 +1,11 @@
+# Additional primary-source check, 9 September 2026 UTC
+
+These are architecture and comparison references, not reproduced results.
+
+- [TarFlow, 2412.06329](https://arxiv.org/abs/2412.06329) and its [official code](https://github.com/apple/ml-tarflow) use autoregressive Transformer blocks over image patches. The released image recipe includes noise augmentation, denoising and guidance. Exact density of a base flow must be distinguished from a modified sampling distribution. Our small short-budget pilot has not reproduced this baseline.
+- [STARFlow, 2506.06276](https://arxiv.org/abs/2506.06276) combines a deep/shallow architecture with pretrained-autoencoder latent modeling and guidance. Its universality statement does not prove finite-budget superiority. It is relevant evidence that full-dimensional invertibility alone is not a new route to scalable image generation.
+- [STARFlow-V, 2511.20462v2](https://arxiv.org/abs/2511.20462v2) uses a global/local construction in spatiotemporal latent space, with causal denoising and video-aware Jacobi inference. Any global-summary video proposal must compare this prior work and include the latent autoencoder and denoiser in information and compute accounting. We have not run it.
+- [SRC-Flow, 2605.18267v3](https://arxiv.org/abs/2605.18267v3) compresses features from a representation autoencoder before likelihood-based flow modeling. Its stated exactness is in the compact representation space, not automatically a normalized full-pixel density. It directly bears on the semantic representation objective and is not equivalent to retaining all pixel coordinates.
+- [Flowing Backwards, 2511.22345v2](https://arxiv.org/abs/2511.22345v2) aligns reverse-generation features with a pretrained vision model. Its reported training and representation improvements motivate explicitly measuring semantics; invertibility alone does not certify them. Pretrained alignment information must be available to matched baselines if we adopt it.
+
+This check read the primary abstracts and the official TarFlow repository. No benchmark numbers are accepted as reproduced, and no model weights or datasets were acquired. The concrete native-image comparisons remain the saved short diagnostic, not a state-of-the-art benchmark.
