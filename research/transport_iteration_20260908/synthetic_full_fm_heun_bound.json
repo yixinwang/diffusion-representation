@@ -1,0 +1,94 @@
+{
+  "prefix": "velocity",
+  "channels": 1,
+  "width": 24,
+  "spatial_size": 8,
+  "dimension": 64,
+  "steps": 16,
+  "actual_velocity_calls": 32,
+  "convolution_offset_frobenius_sums": [
+    14.729367055539939,
+    48.125773360787235,
+    1.613465300858231
+  ],
+  "per_offset_frobenius": [
+    [
+      [
+        2.8016017210502535,
+        1.1579041985188752,
+        1.3669698908710604
+      ],
+      [
+        1.3655509410734892,
+        2.675252120175722,
+        1.475972299334213
+      ],
+      [
+        1.5598549887794908,
+        0.8553307930388588,
+        1.4709301026979757
+      ]
+    ],
+    [
+      [
+        5.523821777701228,
+        4.682944166230935,
+        5.307963139086458
+      ],
+      [
+        5.347790331756648,
+        6.648777395501681,
+        4.757231787174603
+      ],
+      [
+        5.704718192874222,
+        4.5118978965482315,
+        5.640628673913231
+      ]
+    ],
+    [
+      [
+        1.613465300858231
+      ]
+    ]
+  ],
+  "padded_fourier_operator_upper_estimates": [
+    8.404658032510827,
+    26.788455033630875,
+    1.6134653008582307
+  ],
+  "periodic_embedding_sizes": [
+    10,
+    10,
+    8
+  ],
+  "selected_convolution_upper_estimates": [
+    8.404658032510827,
+    26.788455033630875,
+    1.6134653008582307
+  ],
+  "silu_derivative_bound": 1.3678794411714423,
+  "uniform_state_lipschitz_upper_estimate": 679.7089514791161,
+  "heun_residual_lipschitz_upper_estimate": 944.8338772815843,
+  "strict_sufficient_L_threshold": 11.712812921102035,
+  "ordinary_float_test_passes": false,
+  "validated_interval_certificate": false,
+  "checkpoint_state_validated": "unconditional three-convolution SiLU field; finite biases and weights",
+  "interpretation": "Failure is inconclusive about invertibility; passing requires rounding-controlled verification for a numerical certificate.",
+  "last_layer_scale_strict_upper_for_bound": 0.01723210043889191,
+  "sufficient_steps_strictly_greater_than": 928.4996949001571,
+  "source_commit": "2b58285826a74e32882a6de0af2a1d951a85ba58",
+  "source_sha256": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2"
+  },
+  "checkpoint": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/diffusion-representation/research/transport_iteration_20260908/psc_complete_cpu/full_fm.pt",
+  "checkpoint_sha256": "f56b9865df1b57d926e9839968d8da64b2aa146f0995ddaf6add572c00408c6e",
+  "calculator_sha256": "7e052714eefc843df568e50efaf4e6cc093088e5333e575d45370995c168c913",
+  "data_accessed": false,
+  "trained_weights_modified": false,
+  "checkpoint_source_link": "source commit is caller-declared; source files checked, checkpoint provenance must also be checked against the run manifest"
+}
