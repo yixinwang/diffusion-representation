@@ -1,0 +1,3 @@
+N=64 cells=100 split=22 todo=114 seconds=24.9278
+N=64 cells=200 split=88 todo=80 seconds=50.4808
+N=64 cells=300 split=115 todo=7 seconds=75.3271
