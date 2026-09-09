@@ -110,3 +110,19 @@ def test_complete_composition_root_input_gradient_and_source_jacobian():
     (root_z.square().sum()/2-root_ld.sum()).backward()
     assert coarse.grad is not None and coarse.grad.abs().sum()>0
     assert model.parameter_counts['total']==sum(p.numel() for p in model.parameters())
+
+
+@pytest.mark.parametrize('dtype,tolerance',[(torch.float32,2e-5),(torch.float64,5e-14)])
+def test_extreme_scalar_nextafter_boundary_rounding_qualification(dtype,tolerance):
+    generator=torch.Generator().manual_seed(992)
+    raw=30*torch.randn(4096,7,dtype=dtype,generator=generator)
+    for sign in (-1,1):
+        endpoint=torch.tensor(4.*sign,dtype=dtype)
+        source=torch.nextafter(endpoint,torch.tensor(0.,dtype=dtype)).expand(4096)
+        result=integrated_linear(source,raw)
+        inverse=integrated_linear(result.value,raw,inverse=True)
+        assert bool(result.valid & inverse.valid)
+        assert torch.isfinite(result.value).all() and torch.isfinite(inverse.value).all()
+        assert float((inverse.value-source).abs().max())<=tolerance
+        # Do not require a strictly interior floating output: terminal integrated
+        # areas can differ from four by rounding. No clamp repairs the values.

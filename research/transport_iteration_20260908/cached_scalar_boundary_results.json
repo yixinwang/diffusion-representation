@@ -1,0 +1,47 @@
+{
+  "scope": "Finite-precision boundary rounding qualification, not an algebraic normalization defect or exact floating C1 guarantee. No clipping.",
+  "seed": 992,
+  "logit_scale": 30,
+  "rows": 4096,
+  "torch": "2.14.0",
+  "checks": {
+    "torch.float32": {
+      "roundtrip_tolerance": 2e-05,
+      "cases": {
+        "-1": {
+          "valid": true,
+          "max_roundtrip": 0.0,
+          "at_or_beyond_tail_count": 0,
+          "strictly_beyond_tail_count": 0,
+          "maximum_endpoint_overshoot": 0.0
+        },
+        "1": {
+          "valid": true,
+          "max_roundtrip": 1.1920928955078125e-06,
+          "at_or_beyond_tail_count": 1651,
+          "strictly_beyond_tail_count": 126,
+          "maximum_endpoint_overshoot": 9.5367431640625e-07
+        }
+      }
+    },
+    "torch.float64": {
+      "roundtrip_tolerance": 5e-14,
+      "cases": {
+        "-1": {
+          "valid": true,
+          "max_roundtrip": 0.0,
+          "at_or_beyond_tail_count": 0,
+          "strictly_beyond_tail_count": 0,
+          "maximum_endpoint_overshoot": 0.0
+        },
+        "1": {
+          "valid": true,
+          "max_roundtrip": 2.220446049250313e-15,
+          "at_or_beyond_tail_count": 621,
+          "strictly_beyond_tail_count": 126,
+          "maximum_endpoint_overshoot": 1.7763568394002505e-15
+        }
+      }
+    }
+  }
+}
