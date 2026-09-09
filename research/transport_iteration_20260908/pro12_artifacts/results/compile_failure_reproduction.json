@@ -1,0 +1,7 @@
+{
+  "status": "expected_compile_failure_reproduced",
+  "returncode": 1,
+  "seconds": 0.44564239800001815,
+  "original_stderr_saved": false,
+  "scope": "reproduces unchanged initial source diagnostic; not original-time stderr"
+}

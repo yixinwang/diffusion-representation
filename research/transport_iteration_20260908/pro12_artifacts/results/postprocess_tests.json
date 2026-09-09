@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "checks": 8,
+  "includes_target_straddles": true,
+  "all_requested_grids_present": true,
+  "no_eligible_comparator_produces_null_not_infinity": true
+}
