@@ -1,0 +1,22 @@
+{
+  "status": "full_payload_authenticated",
+  "job_id": "45633712",
+  "source_commit": "84c0cad383be64d6632a5fa61e5d1bc4b605ca5f",
+  "source_count": 7,
+  "result_payload_count": 45,
+  "transfer_files": 53,
+  "transfer_bytes": 52665894,
+  "archive_sha256": "9225e618385eb9744505b5389ca135cef1332cf2a8617553d3f6379ae31e1698",
+  "result_status_sha256": "7ef0ba590b09d6b03c16631569160bc2f6e05ab719bd19522ebf7b33c6fbbfc6",
+  "launcher_sha256": "d7023072a1172d1fe08828e25bbceaa67373c812051c8d3e732209b037b2a771",
+  "terminal_completed_exit": "0:0",
+  "allocation_relinquished": true,
+  "requested_qos": "gpuinteract",
+  "recorded_qos": "gpu",
+  "actual_output_project_id": 559736,
+  "preallocation_python36_failure_preserved": true,
+  "original_checkout_unchanged_at_preparation": true,
+  "result_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-rgb-readiness-preparation/full/diffusion-results/20260909-rgb-readiness-84c0cad3",
+  "numeric_metric_recomputation": "delegated to root independent audit; not performed here",
+  "retrieval_note": "scp connection closed before transfer; successful read-only ssh cat exact archive hash verified, no resubmission"
+}

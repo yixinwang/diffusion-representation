@@ -1,0 +1,16 @@
+{
+  "source_commit": "84c0cad383be64d6632a5fa61e5d1bc4b605ca5f",
+  "script_sha256": "d7023072a1172d1fe08828e25bbceaa67373c812051c8d3e732209b037b2a771",
+  "storage_checks": {
+    "/ocean/projects/mth260022p/ywang26/rgb-readiness-launch-20260909-84c0cad3": {
+      "lfs_project": "559736 P /ocean/projects/mth260022p/ywang26/rgb-readiness-launch-20260909-84c0cad3",
+      "project_id": 559736,
+      "write_read_remove": true
+    },
+    "/ocean/projects/mth260022p/ywang26/diffusion-results": {
+      "lfs_project": "559736 P /ocean/projects/mth260022p/ywang26/diffusion-results",
+      "project_id": 559736,
+      "write_read_remove": true
+    }
+  }
+}

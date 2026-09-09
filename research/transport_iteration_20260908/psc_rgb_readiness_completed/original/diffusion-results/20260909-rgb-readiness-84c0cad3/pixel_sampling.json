@@ -1,0 +1,47 @@
+{
+  "steps": 32,
+  "field_calls": 64,
+  "includes_decoder": false,
+  "encoder_retained_on_gpu": false,
+  "memory_scope": "whole resident model plus shared synthetic inputs; not deployment-minimal memory",
+  "batches": {
+    "1": {
+      "warmup_seconds": 0.6148295960156247,
+      "timed_seconds": [
+        0.6073861350305378,
+        0.6090739389765076,
+        0.6065054250066169
+      ],
+      "memory": {
+        "allocated_peak": 42286592,
+        "reserved_peak": 7329546240,
+        "resident_allocated": 37740544,
+        "resident_reserved": 7329546240
+      }
+    },
+    "32": {
+      "warmup_seconds": 1.8705004020011984,
+      "timed_seconds": [
+        1.8688809860032052,
+        1.8690897839842364,
+        1.8694842939730734
+      ],
+      "memory": {
+        "allocated_peak": 184730624,
+        "reserved_peak": 7329546240,
+        "resident_allocated": 38121472,
+        "resident_reserved": 7329546240
+      }
+    }
+  },
+  "progress": {
+    "batch": 32,
+    "completed_iterations": 4,
+    "seconds": [
+      1.8705004020011984,
+      1.8688809860032052,
+      1.8690897839842364,
+      1.8694842939730734
+    ]
+  }
+}

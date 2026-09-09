@@ -1,0 +1,159 @@
+{
+  "source_payload_verified": true,
+  "payload_count": 45,
+  "scope": "Synthetic component timing/numerical evidence only, not real-data quality or a trained baseline",
+  "training": {
+    "codec_train": {
+      "batch32_p50_seconds": 0.02751975046703592,
+      "batch32_p90_seconds": 0.028853323002113032,
+      "batch125_seconds": 0.6500285429647192,
+      "batch32_memory": {
+        "allocated_peak": 457441280,
+        "reserved_peak": 522190848,
+        "resident_allocated": 69580288,
+        "resident_reserved": 522190848
+      },
+      "batch125_memory": {
+        "allocated_peak": 2066784256,
+        "reserved_peak": 2199912448,
+        "resident_allocated": 69580288,
+        "resident_reserved": 2199912448
+      }
+    },
+    "latent_train": {
+      "batch32_p50_seconds": 0.02226553700165823,
+      "batch32_p90_seconds": 0.0226959906227421,
+      "batch125_seconds": 0.03289438603678718,
+      "batch32_memory": {
+        "allocated_peak": 137720320,
+        "reserved_peak": 2227175424,
+        "resident_allocated": 83156480,
+        "resident_reserved": 2227175424
+      },
+      "batch125_memory": {
+        "allocated_peak": 336143360,
+        "reserved_peak": 2227175424,
+        "resident_allocated": 83156480,
+        "resident_reserved": 2227175424
+      }
+    },
+    "pixel_train": {
+      "batch32_p50_seconds": 0.09490234500844963,
+      "batch32_p90_seconds": 0.09565151089336724,
+      "batch125_seconds": 0.7876016359659843,
+      "batch32_memory": {
+        "allocated_peak": 1550885888,
+        "reserved_peak": 1696595968,
+        "resident_allocated": 90858496,
+        "resident_reserved": 1696595968
+      },
+      "batch125_memory": {
+        "allocated_peak": 5845572096,
+        "reserved_peak": 7329546240,
+        "resident_allocated": 90858496,
+        "resident_reserved": 7329546240
+      }
+    }
+  },
+  "sampling": {
+    "latent": {
+      "steps": 32,
+      "field_calls": 64,
+      "includes_decoder": true,
+      "encoder_retained_on_gpu": true,
+      "memory_scope": "whole resident model plus shared synthetic inputs; not deployment-minimal memory",
+      "batches": {
+        "1": {
+          "warmup_seconds": 1.0715028429985978,
+          "timed_seconds": [
+            0.4030899770441465,
+            0.40251964097842574,
+            0.4042748339707032
+          ],
+          "memory": {
+            "allocated_peak": 49819136,
+            "reserved_peak": 2227175424,
+            "resident_allocated": 47021568,
+            "resident_reserved": 2227175424
+          }
+        },
+        "32": {
+          "warmup_seconds": 0.4104145000455901,
+          "timed_seconds": [
+            0.41222377796657383,
+            0.41137317300308496,
+            0.4114374589989893
+          ],
+          "memory": {
+            "allocated_peak": 81227264,
+            "reserved_peak": 2227175424,
+            "resident_allocated": 47148544,
+            "resident_reserved": 2227175424
+          }
+        }
+      },
+      "progress": {
+        "batch": 32,
+        "completed_iterations": 4,
+        "seconds": [
+          0.4104145000455901,
+          0.41222377796657383,
+          0.41137317300308496,
+          0.4114374589989893
+        ]
+      }
+    },
+    "pixel": {
+      "steps": 32,
+      "field_calls": 64,
+      "includes_decoder": false,
+      "encoder_retained_on_gpu": false,
+      "memory_scope": "whole resident model plus shared synthetic inputs; not deployment-minimal memory",
+      "batches": {
+        "1": {
+          "warmup_seconds": 0.6148295960156247,
+          "timed_seconds": [
+            0.6073861350305378,
+            0.6090739389765076,
+            0.6065054250066169
+          ],
+          "memory": {
+            "allocated_peak": 42286592,
+            "reserved_peak": 7329546240,
+            "resident_allocated": 37740544,
+            "resident_reserved": 7329546240
+          }
+        },
+        "32": {
+          "warmup_seconds": 1.8705004020011984,
+          "timed_seconds": [
+            1.8688809860032052,
+            1.8690897839842364,
+            1.8694842939730734
+          ],
+          "memory": {
+            "allocated_peak": 184730624,
+            "reserved_peak": 7329546240,
+            "resident_allocated": 38121472,
+            "resident_reserved": 7329546240
+          }
+        }
+      },
+      "progress": {
+        "batch": 32,
+        "completed_iterations": 4,
+        "seconds": [
+          1.8705004020011984,
+          1.8688809860032052,
+          1.8690897839842364,
+          1.8694842939730734
+        ]
+      }
+    }
+  },
+  "saved_cache_normalization": {
+    "mean_error": 3.008779003721429e-08,
+    "population_variance_error": 8.806968154750905e-08
+  },
+  "status": "PASS independent saved-output audit"
+}

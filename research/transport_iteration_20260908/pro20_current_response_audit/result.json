@@ -1,0 +1,24 @@
+{
+  "scope": "Restricted mathematical witness, no fitting/data/quality experiment; one actual response block embedded in3072coordinates with othercoordinates unchanged",
+  "source_commit": "3b8c0f7bef604a90ff329fd9608639527b67a972",
+  "source_sha256": {
+    "qalt/src/qalt/innovation_response.py": "d38319fd0b7b164611b1712381be1e14a4cc2ae8f94c33f598622e041249576d",
+    "qalt/src/qalt/cached_global_innovation.py": "740e37dc9d259569bfde9147ca511e96df61aea0463a47f9f5768f8987cc8bc4"
+  },
+  "normalization_k": 0.39429449039784126,
+  "quad_reported_abs_error_k": 3.69301943318844e-13,
+  "fourth_moment": 0.25299188324395055,
+  "quad_reported_abs_error_fourth": 4.725702438490082e-13,
+  "permutation_score_T_exact_formula": 0.09752373808585724,
+  "mutual_information_upper_bound": 0.046528247484343026,
+  "mutual_information_exact_value_computed": false,
+  "strict_permutation_vs_MI_gap_at_least": 0.05099549060151421,
+  "zero_anchor_follower_covariance": "exact by even/odd symmetry",
+  "forward_max_error": 2.220446049250313e-16,
+  "inverse_max_error": 4.440892098500626e-16,
+  "all_scales_one": true,
+  "all_logdets_zero": true,
+  "saved_bank_sha256": "6b66f79eaa0dc7beed596f8d0171fbc5c6fc940a93c6c296e157609000e0ade0",
+  "torch": "2.14.0",
+  "numpy": "2.5.3"
+}

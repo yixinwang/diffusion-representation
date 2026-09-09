@@ -1,0 +1,198 @@
+{
+  "scope": "DATA_FREE_COMPONENT_READINESS_ONLY",
+  "real_data_accessed": false,
+  "seed": 2026090920,
+  "environment": {
+    "python": "3.10.9",
+    "torch": "2.10.0+cu128",
+    "numpy": "2.2.6",
+    "gpu": "Tesla V100-SXM2-32GB",
+    "host": "v021.ib.bridges2.psc.edu",
+    "job_id": "45633712",
+    "threads": 4,
+    "tf32": false,
+    "amp": false
+  },
+  "latent_initialization_seconds": 0.06476468098117039,
+  "counts": {
+    "codec_encoder": 1728272,
+    "codec_decoder": 1744643,
+    "latent_field": 3011472,
+    "latent_pipeline_total": 6484387,
+    "pixel_total": 4427395
+  },
+  "synthetic_normalization_seconds": 0.6053458789829165,
+  "synthetic_cache": {
+    "count": 256,
+    "seconds_including_encode_transfer_write": 0.10434918204555288,
+    "bytes": 1048704,
+    "sha256": "cc49343bb7cf2b4ba47db4c05add9005a2d8410728d684ab29e6341707fbfd26"
+  },
+  "latent_checkpoint": {
+    "seconds": 0.29449299798579887,
+    "bytes": 26018125,
+    "sha256": "c9cb8662bc4b1637c71ab5551c70e150d15e29258b3dde375b7ce91e3a92baa8"
+  },
+  "latent_sampling": {
+    "steps": 32,
+    "field_calls": 64,
+    "includes_decoder": true,
+    "encoder_retained_on_gpu": true,
+    "memory_scope": "whole resident model plus shared synthetic inputs; not deployment-minimal memory",
+    "batches": {
+      "1": {
+        "warmup_seconds": 1.0715028429985978,
+        "timed_seconds": [
+          0.4030899770441465,
+          0.40251964097842574,
+          0.4042748339707032
+        ],
+        "memory": {
+          "allocated_peak": 49819136,
+          "reserved_peak": 2227175424,
+          "resident_allocated": 47021568,
+          "resident_reserved": 2227175424
+        }
+      },
+      "32": {
+        "warmup_seconds": 0.4104145000455901,
+        "timed_seconds": [
+          0.41222377796657383,
+          0.41137317300308496,
+          0.4114374589989893
+        ],
+        "memory": {
+          "allocated_peak": 81227264,
+          "reserved_peak": 2227175424,
+          "resident_allocated": 47148544,
+          "resident_reserved": 2227175424
+        }
+      }
+    },
+    "progress": {
+      "batch": 32,
+      "completed_iterations": 4,
+      "seconds": [
+        0.4104145000455901,
+        0.41222377796657383,
+        0.41137317300308496,
+        0.4114374589989893
+      ]
+    }
+  },
+  "latent_reload": {
+    "exact": true,
+    "batch": 1,
+    "seconds_sampling_only": 0.40332176099764183,
+    "scope": "separate numerical qualification, excluded from warmed sampling timings"
+  },
+  "pixel_initialization_seconds": 0.0367999030277133,
+  "pixel_checkpoint": {
+    "seconds": 0.10178941302001476,
+    "bytes": 17758133,
+    "sha256": "24d5114929f1da9acd0540cef636c2e032dd68dc79b1a9e30ca187affd81b8c0"
+  },
+  "pixel_sampling": {
+    "steps": 32,
+    "field_calls": 64,
+    "includes_decoder": false,
+    "encoder_retained_on_gpu": false,
+    "memory_scope": "whole resident model plus shared synthetic inputs; not deployment-minimal memory",
+    "batches": {
+      "1": {
+        "warmup_seconds": 0.6148295960156247,
+        "timed_seconds": [
+          0.6073861350305378,
+          0.6090739389765076,
+          0.6065054250066169
+        ],
+        "memory": {
+          "allocated_peak": 42286592,
+          "reserved_peak": 7329546240,
+          "resident_allocated": 37740544,
+          "resident_reserved": 7329546240
+        }
+      },
+      "32": {
+        "warmup_seconds": 1.8705004020011984,
+        "timed_seconds": [
+          1.8688809860032052,
+          1.8690897839842364,
+          1.8694842939730734
+        ],
+        "memory": {
+          "allocated_peak": 184730624,
+          "reserved_peak": 7329546240,
+          "resident_allocated": 38121472,
+          "resident_reserved": 7329546240
+        }
+      }
+    },
+    "progress": {
+      "batch": 32,
+      "completed_iterations": 4,
+      "seconds": [
+        1.8705004020011984,
+        1.8688809860032052,
+        1.8690897839842364,
+        1.8694842939730734
+      ]
+    }
+  },
+  "pixel_reload": {
+    "exact": true,
+    "batch": 1,
+    "seconds_sampling_only": 0.6096044790465385,
+    "scope": "separate numerical qualification, excluded from warmed sampling timings"
+  },
+  "status": "completed_data_free_readiness",
+  "elapsed_seconds": 102.13057804200798,
+  "cpu_peak_rss_native_units": 1364596,
+  "payload_sha256": {
+    "codec_train.json": "b86eeb3d81c068fca7b49896299c5698c770b6544d6b514bdce0aafcbc30ae51",
+    "environment.json": "522eef57a98510ea09e47888f934dcb9e970ae3c5e8a82a4f94ffa2187461941",
+    "latent_reloaded_synthetic_output.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_sampling.json": "744acd875e8625835da2f0b3eb1cc6c6b24209320627028ae22089a79e063ae8",
+    "latent_source_b1.npy": "fc587d740ef729e30dfda857cc74bd277579b471a5219ff8e69241ff690c55ef",
+    "latent_source_b32.npy": "ae084eb7b1ec40d8c8fa4584efe80c17851f925cd28c709911215dd4a059bb30",
+    "latent_synthetic_checkpoint.pt": "c9cb8662bc4b1637c71ab5551c70e150d15e29258b3dde375b7ce91e3a92baa8",
+    "latent_synthetic_output_b1.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_synthetic_output_b1_iteration0.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_synthetic_output_b1_iteration1.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_synthetic_output_b1_iteration2.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_synthetic_output_b1_iteration3.npy": "5fcf1b5582094fb4a357765bab2d7d2cfe8b7fa35d35272af6602654e3e99929",
+    "latent_synthetic_output_b32.npy": "75e424b0a5c73891ec7c4a26d8e90b7ee0155c6fd8d8e4154af3c922056a8d0d",
+    "latent_synthetic_output_b32_iteration0.npy": "75e424b0a5c73891ec7c4a26d8e90b7ee0155c6fd8d8e4154af3c922056a8d0d",
+    "latent_synthetic_output_b32_iteration1.npy": "75e424b0a5c73891ec7c4a26d8e90b7ee0155c6fd8d8e4154af3c922056a8d0d",
+    "latent_synthetic_output_b32_iteration2.npy": "75e424b0a5c73891ec7c4a26d8e90b7ee0155c6fd8d8e4154af3c922056a8d0d",
+    "latent_synthetic_output_b32_iteration3.npy": "75e424b0a5c73891ec7c4a26d8e90b7ee0155c6fd8d8e4154af3c922056a8d0d",
+    "latent_train.json": "faa0cb482944193b5a3398842ea74ae3a33475518b88bb6ac865e60326105339",
+    "pixel_reloaded_synthetic_output.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_sampling.json": "d4ec6f8dd85f438635f8ecf77823b8656ab20ef83e81ae4ef370808cf28ed876",
+    "pixel_source_b1.npy": "a1d515ce690f97d16a55022479c5b175b0c1681b42e2f112f7676ccb67103839",
+    "pixel_source_b32.npy": "9b0d642859d9831e58ad2a359299545e6d7d28f2b236c18284d1ceac2e8d8620",
+    "pixel_synthetic_checkpoint.pt": "24d5114929f1da9acd0540cef636c2e032dd68dc79b1a9e30ca187affd81b8c0",
+    "pixel_synthetic_output_b1.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_synthetic_output_b1_iteration0.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_synthetic_output_b1_iteration1.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_synthetic_output_b1_iteration2.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_synthetic_output_b1_iteration3.npy": "08e751ac14c306d0dd2b88b2722d894b2c52896028616a2679fbe513dfcad7f0",
+    "pixel_synthetic_output_b32.npy": "9b7c53fa36adfbdf543594ad36f429402e1cb40e7893cdde7cecb53805452d30",
+    "pixel_synthetic_output_b32_iteration0.npy": "9b7c53fa36adfbdf543594ad36f429402e1cb40e7893cdde7cecb53805452d30",
+    "pixel_synthetic_output_b32_iteration1.npy": "9b7c53fa36adfbdf543594ad36f429402e1cb40e7893cdde7cecb53805452d30",
+    "pixel_synthetic_output_b32_iteration2.npy": "9b7c53fa36adfbdf543594ad36f429402e1cb40e7893cdde7cecb53805452d30",
+    "pixel_synthetic_output_b32_iteration3.npy": "9b7c53fa36adfbdf543594ad36f429402e1cb40e7893cdde7cecb53805452d30",
+    "pixel_train.json": "03458a957258de185a5ca43edc385d96be6181ce45eb9f6dc9dd12c30845b375",
+    "preflight.txt": "80580b02325485c7d01c726507a963f4fb7a669a5d1a053a7b4e4c6258c1ff9d",
+    "source/qalt/experiments/rgb_codec_readiness/PROTOCOL.md": "7af58f59a218428ddfa172545e2552b23b347f849dbb8ef0b347b0d20035af5f",
+    "source/qalt/experiments/rgb_codec_readiness/run.py": "67063c491c9aa66df8aa72c401dbde362845fa0dceaefe94a3f6cd1e69666b1b",
+    "source/qalt/experiments/rgb_codec_readiness/run.sh": "0749017c4fb60c9daf29e41e10995d8586f6950277d9ba737811d8b3856d3941",
+    "source/qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "source/qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "source/qalt/src/qalt/rgb_codec_flow_matching.py": "48445678a60ab3ec031e64523c6f642f0ae6b3bc826847c7b458b6185fb6a1c4",
+    "source/qalt/tests/test_rgb_codec_flow_matching.py": "b13e6d73044aed7357187da93a6cc53f56a63b382cb69cf314901dc8e6c49644",
+    "source_identity.json": "dedde8902d04897cdac2b7b305e36481d3bb63f1622765d91a8743190af39628",
+    "synthetic_inputs.npy": "e02225340b76900bcd2b438249b0fddd3dd9a9a191cc47f9fce4ed5a23b57f1a",
+    "synthetic_normalized_cache.npy": "cc49343bb7cf2b4ba47db4c05add9005a2d8410728d684ab29e6341707fbfd26"
+  }
+}

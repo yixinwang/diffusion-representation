@@ -1,0 +1,12 @@
+{
+  "commit": "84c0cad383be64d6632a5fa61e5d1bc4b605ca5f",
+  "sha256": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/rgb_codec_flow_matching.py": "48445678a60ab3ec031e64523c6f642f0ae6b3bc826847c7b458b6185fb6a1c4",
+    "qalt/tests/test_rgb_codec_flow_matching.py": "b13e6d73044aed7357187da93a6cc53f56a63b382cb69cf314901dc8e6c49644",
+    "qalt/experiments/rgb_codec_readiness/run.py": "67063c491c9aa66df8aa72c401dbde362845fa0dceaefe94a3f6cd1e69666b1b",
+    "qalt/experiments/rgb_codec_readiness/PROTOCOL.md": "7af58f59a218428ddfa172545e2552b23b347f849dbb8ef0b347b0d20035af5f",
+    "qalt/experiments/rgb_codec_readiness/run.sh": "0749017c4fb60c9daf29e41e10995d8586f6950277d9ba737811d8b3856d3941"
+  }
+}

@@ -1,0 +1,29 @@
+JOBID|STATE|REASON|QOS|ACCOUNT|TRES_PER_NODE
+45633712|RUNNING|None|gpu|cis260243p|gres:gpu:v100-32:1
+JobId=45633712 JobName=rgb-codec-readiness
+   UserId=ywang26(89893) GroupId=mth250006p(27032) MCS_label=N/A
+   Priority=312858 Nice=0 Account=cis260243p QOS=gpu
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=0:0
+   RunTime=00:01:09 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2026-09-09T15:48:11 EligibleTime=2026-09-09T15:48:11
+   AccrueTime=2026-09-09T15:48:11
+   StartTime=2026-09-09T15:49:46 EndTime=2026-09-09T16:49:46 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-09-09T15:49:46 Scheduler=Backfill
+   Partition=GPU-shared AllocNode:Sid=br011:2381909
+   ReqNodeList=(null) ExcNodeList=v005
+   NodeList=v021
+   BatchHost=v021
+   NumNodes=1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=4,mem=16000M,node=1,billing=4,gres/gpu=1,gres/gpu:v100-32=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=16000M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/ocean/projects/mth260022p/ywang26/diffusion-rgb-readiness-20260909-84c0cad3
+   Power=
+   MemPerTres=gres:gpu:63000
+   TresPerNode=gres:gpu:v100-32:1
+   
+

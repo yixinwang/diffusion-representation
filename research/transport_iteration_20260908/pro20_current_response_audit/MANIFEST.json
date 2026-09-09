@@ -1,0 +1,29 @@
+{
+  "self_excluded": true,
+  "files": {
+    "README.md": {
+      "bytes": 2964,
+      "sha256": "8b8f40b1b8cddabedbb7ecf7ce0d0cae22e32feb0049af0a9fcca66f4ff80fa9"
+    },
+    "THEORY_AND_CORRECTION.md": {
+      "bytes": 8959,
+      "sha256": "bbb5319493faa9d5c231ffc55d89b9af0b6aa1b5165565150e6366e10bdd607a"
+    },
+    "check.py": {
+      "bytes": 3311,
+      "sha256": "44108211620031f1e253a3b1b1cd69ea7192fa112fa28e7feae19e1446b3e979"
+    },
+    "numerical_witness.npz": {
+      "bytes": 3607552,
+      "sha256": "6b66f79eaa0dc7beed596f8d0171fbc5c6fc940a93c6c296e157609000e0ade0"
+    },
+    "original_workspace_check.py": {
+      "bytes": 3159,
+      "sha256": "0687d951ed1ac5d0d5530a251f549e22838a35f4500aa498f08af5a89da7d989"
+    },
+    "result.json": {
+      "bytes": 1261,
+      "sha256": "aed4cbbf15b566edfde6370d96c127971d09780fa40c45774a03b0de332e960d"
+    }
+  }
+}

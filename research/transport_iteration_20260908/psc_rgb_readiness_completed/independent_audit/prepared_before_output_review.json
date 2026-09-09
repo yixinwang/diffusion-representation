@@ -1,0 +1,5 @@
+{
+  "time_utc": "2026-09-09T19:53:46.586146+00:00",
+  "audit_sha256": "381cc6c32c87e98f5b9b948a0045ebe07bbf6e1a4d66cf2d32cb51e89d211227",
+  "scope": "Prepared before accessing readiness outputs"
+}
