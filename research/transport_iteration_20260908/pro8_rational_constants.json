@@ -1,0 +1,15 @@
+{
+  "scope": "Exact rational constant checks; not the Heun interval propagation or arbitrary floating implementation.",
+  "arctan_terms": 64,
+  "checks": {
+    "pi_bracket_order": true,
+    "normal_constant_lower": true,
+    "normal_constant_upper": true,
+    "exponential_taylor_remainder_below_1e_minus22": true,
+    "integrated_taylor_remainder_below_1e_minus22": true,
+    "exp_negative_point18_less_than_point84": true,
+    "positive_derivative_lemma_margin": true,
+    "global_field_derivative_upper_less_than_point544435": true
+  },
+  "all_passed": true
+}
