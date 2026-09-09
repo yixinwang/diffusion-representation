@@ -1,0 +1,42 @@
+{
+  "schema": "pro16-complete-delivery-v1",
+  "base_commit": "929c48767ba1fe1e64318c9ab165da28afcda795",
+  "branch": "pro16-artifacts-20260909",
+  "archive_bytes": 40952,
+  "archive_sha256": "8c3b10d6ff93a39f090a15682b2c0de62feefaef8384d985b21c28be0d5df853",
+  "manifest_sha256": "8f21080a6781d8c4ceee3b8d77348181022efb5bb5c25426e55a66d113ede889",
+  "payload_files": 26,
+  "omitted_payload_files": [],
+  "parts": [
+    {
+      "path": "PACKAGE.tar.xz.part00",
+      "bytes": 8192,
+      "git_blob_sha1": "f8a4c5da3adfc1945e036e8341c30116d2e8bcc3",
+      "sha256": "f914656621325df7416c7b1a52ff8fe48e4cbddab6122f64c893e6e07fd8d126"
+    },
+    {
+      "path": "PACKAGE.tar.xz.part01",
+      "bytes": 8192,
+      "git_blob_sha1": "4d59bd00e2a07b1ff431ec4e9975106f4d3e4443",
+      "sha256": "0830ab61d87592122e7999735d990d4e13caaf0c418a816e6f35ab92085e7ca9"
+    },
+    {
+      "path": "PACKAGE.tar.xz.part02",
+      "bytes": 8192,
+      "git_blob_sha1": "9a695717a64dfcb245430d3921d4065c32b73e44",
+      "sha256": "40b0dc9e7ad9d00487100d985b728c58a07ed2922cc0f6c3cdc80abe6ef19538"
+    },
+    {
+      "path": "PACKAGE.tar.xz.part03",
+      "bytes": 8192,
+      "git_blob_sha1": "23bb40dd99c4c54b465e24213d1f6e68e793bc26",
+      "sha256": "d6b13398318e526ada1cbab6b4d11d03d5a6a15e838b2dfac2da8cdf502bc7ba"
+    },
+    {
+      "path": "PACKAGE.tar.xz.part04",
+      "bytes": 8184,
+      "git_blob_sha1": "f0f5d95cc38641889979f0c811b4ea3e3d257001",
+      "sha256": "9b70d42b6ff55e72a9b4422a0979127dda35de34d73e916faa5bb538d7d6a812"
+    }
+  ]
+}
