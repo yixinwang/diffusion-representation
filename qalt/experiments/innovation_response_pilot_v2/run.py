@@ -83,6 +83,28 @@ def validate_qualification():
         if type(receipt.get(key)) is not bool or receipt[key] is not True:raise ValueError('unqualified diagnostic evidence: '+key)
     for key in ('training_performed','repair_evaluated'):
         if type(receipt.get(key)) is not bool or receipt[key] is not False:raise ValueError('diagnostic scope violation: '+key)
+    for scope in ('conditional_decoder','full_model_cpu','full_model_cuda'):
+        evidence=receipt.get(scope)
+        if not isinstance(evidence,dict):raise ValueError('missing numerical scope: '+scope)
+        expected_dimension=2880 if scope=='conditional_decoder' else DIMENSION
+        if type(evidence.get('source_dimension')) is not int or evidence['source_dimension']!=expected_dimension:
+            raise ValueError('qualification source dimension mismatch: '+scope)
+        flags=('finite','roundtrip_gate','logdet_gate') if scope=='conditional_decoder' else (
+            'finite','roundtrip_gate','logdet_gate','exact_reload','joint_gradients_finite_and_present',
+            'analysis_gradients_finite_and_present','residual_input_gradients_finite_and_present',
+            'coarse_input_gradients_finite_and_present','fixed_root_input_gradients_finite_and_present',
+            'root_parameters_frozen','state_unchanged','invalid_inputs_rejected')
+        for key in flags:
+            if type(evidence.get(key)) is not bool or evidence[key] is not True:
+                raise ValueError('missing numerical evidence: '+scope+'/'+key)
+        metrics={'source_roundtrip_max_abs':1e-3,'source_logdet_cancellation_max_abs':1e-2}
+        if scope!='conditional_decoder':metrics.update(observed_roundtrip_max_abs=1e-3,observed_logdet_cancellation_max_abs=1e-2)
+        for key,limit in metrics.items():
+            value=evidence.get(key)
+            if type(value) not in (float,int) or not math.isfinite(value) or not 0<=value<=limit:
+                raise ValueError('qualification numerical threshold failed: '+scope+'/'+key)
+        for key in ('source_bank_sha256','numerical_bank_sha256','checkpoint_sha256'):
+            if not hex_value(evidence.get(key),64):raise ValueError('missing numerical provenance: '+scope+'/'+key)
     return q
 
 
@@ -430,7 +452,30 @@ def engineering_gates(reports):
     return gates
 
 
+def admit_all_numerics(out,all_models,live,state):
+    """All frozen checkpoints pass before any repair transform or extraction."""
+    if not (out/'ALL_FITS_FROZEN.json').is_file():raise ValueError('fits must freeze before numerical admission')
+    if set(all_models)!=set(SEEDS) or any(set(pair[0])!=set(ARMS) for pair in all_models.values()):
+        raise ValueError('complete 21-model inventory required')
+    admitted={};started=time.perf_counter()
+    for seed in SEEDS:
+        for name in ARMS:
+            state.update(seed=seed,arm=name,phase='numerical_admission')
+            armout=out/f'seed_{seed}'/name;armout.mkdir()
+            model=all_models[seed][0][name].cuda();live['model']=model
+            if model_spec(model)['family']!=name.split('_')[0]:raise ValueError('numerical architecture mismatch')
+            try:
+                if hasattr(model.residual_decoder,'prepare_inference'):model.residual_decoder.prepare_inference()
+                numerical_gate(model,armout,seed)
+                admitted[f'{seed}/{name}']={k:digest(armout/k) for k in ('numerical.json','numerical.npz')}
+                utility.atomic_json(out/'numerical_admission_progress.json',{'admitted':admitted,'elapsed_seconds':time.perf_counter()-started})
+            finally:model.cpu()
+    utility.atomic_json(out/'ALL_NUMERICS_ADMITTED.json',{'count':len(admitted),'banks':admitted,'elapsed_seconds':time.perf_counter()-started,
+        'frozen_fits_sha256':digest(out/'ALL_FITS_FROZEN.json')})
+
+
 def evaluate_seed(seed,models,template,data,repair_logits,outer,out,extractor,live,state):
+    if not (out.parent/'ALL_NUMERICS_ADMITTED.json').is_file():raise ValueError('all numerical admission required before quality')
     source=torch.randn(2000,DIMENSION,generator=torch.Generator().manual_seed(seed+300))
     np.save(out/'common_gaussian.npy',source.numpy());reports={}
     utility.atomic_json(out/'pair_identity.json',{'source_sha256':digest(out/'common_gaussian.npy'),
@@ -441,10 +486,9 @@ def evaluate_seed(seed,models,template,data,repair_logits,outer,out,extractor,li
     real_features=evaluator.extract(extractor,data.repair,'cuda');np.save(out/'repair_features.npy',real_features)
     for name in ARMS:
         state.update(seed=seed,arm=name,phase='evaluation_setup',chunk_start=None,completed_rows=0)
-        armout=out/name;armout.mkdir();model=models[name].cuda();live['model']=model
+        armout=out/name;model=models[name].cuda();live['model']=model
         if model_spec(model)['family']!=name.split('_')[0]:raise ValueError('evaluation architecture mismatch')
         if hasattr(model.residual_decoder,'prepare_inference'):model.residual_decoder.prepare_inference()
-        numerical_gate(model,armout,seed)
         generated=np.lib.format.open_memmap(armout/'generated.npy',mode='w+',dtype=np.float64,shape=(2000,3,32,32))
         saved_logits=np.lib.format.open_memmap(armout/'logits.npy',mode='w+',dtype=np.float32,shape=(2000,3,32,32))
         start=time.perf_counter();completed=0;endpoint_counts={'zero':0,'one':0}
@@ -526,6 +570,7 @@ def main():
             state['seed']=seed;models,template,reports=fit_seed(seed,fit_logits,data.fit_ids,args.output/f'seed_{seed}',common_setup,state,live)
             all_models[seed]=(models,template)
         write_fit_freeze_receipt(args.output,all_models)
+        admit_all_numerics(args.output,all_models,live,state)
         repair_logits,outer=utility.logit_inputs(data.repair)
         extractor=evaluator.make_extractor(args.inception_source,args.weights,'cuda');gates={}
         for seed,(models,template) in all_models.items():

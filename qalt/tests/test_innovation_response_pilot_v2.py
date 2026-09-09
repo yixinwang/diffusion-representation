@@ -134,10 +134,27 @@ def test_strict_qualification_and_frozen_receipt(tmp_path,monkeypatch):
     qpath=tmp_path/'qualification.json';receiptpath=tmp_path/'receipt.json'
     monkeypatch.setattr(run,'QUALIFICATION',qpath);monkeypatch.setattr(run,'QUALIFICATION_RECEIPT',receiptpath)
     receipt={'kernel_sha256':run.digest(run.KERNEL_PATH),'diagnostic_source_commit':'a'*40,'diagnostic_job_id':'123','original_failure_job_id':'45582364','device':'cuda','original_failure_reproduced':True,'candidate_valid':True,'candidate_gradients_finite':True,'grad_enabled':True,'state_unchanged':True,'training_performed':False,'repair_evaluated':False}
+    for scope in ('conditional_decoder','full_model_cpu','full_model_cuda'):
+        evidence={'source_dimension':2880 if scope=='conditional_decoder' else 3072,
+            'source_roundtrip_max_abs':1e-5,'source_logdet_cancellation_max_abs':1e-4,
+            'observed_roundtrip_max_abs':1e-5,'observed_logdet_cancellation_max_abs':1e-4}
+        for key in ('finite','roundtrip_gate','logdet_gate','exact_reload','joint_gradients_finite_and_present',
+            'analysis_gradients_finite_and_present','residual_input_gradients_finite_and_present',
+            'coarse_input_gradients_finite_and_present','fixed_root_input_gradients_finite_and_present',
+            'root_parameters_frozen','state_unchanged','invalid_inputs_rejected'):evidence[key]=True
+        for key in ('source_bank_sha256','numerical_bank_sha256','checkpoint_sha256'):evidence[key]='b'*64
+        receipt[scope]=evidence
     receiptpath.write_text(json.dumps(receipt));q={k:receipt[k] for k in ('kernel_sha256','diagnostic_source_commit','diagnostic_job_id','original_failure_job_id')};q.update(schema=1,qualified=True,backend='dense_reflected',independent_review_verified=True,diagnostic_receipt_sha256=run.digest(receiptpath))
     qpath.write_text(json.dumps(q));assert run.validate_qualification()==q
     for field,value in [('schema',True),('qualified',1),('qualified','true'),('independent_review_verified',1),('kernel_sha256','0'*64),('diagnostic_source_commit','a'*7),('diagnostic_receipt_sha256','0'*64)]:
         bad=dict(q);bad[field]=value;qpath.write_text(json.dumps(bad))
+        with pytest.raises(ValueError):run.validate_qualification()
+    for field,value in [('source_roundtrip_max_abs',.00101),('source_logdet_cancellation_max_abs',.01001),
+        ('observed_roundtrip_max_abs',float('nan')),('observed_logdet_cancellation_max_abs',float('inf')),
+        ('source_roundtrip_max_abs',True),('source_dimension',2880),('exact_reload',False),
+        ('joint_gradients_finite_and_present',1),('numerical_bank_sha256','bad')]:
+        bad=copy.deepcopy(receipt);bad['full_model_cuda'][field]=value;receiptpath.write_text(json.dumps(bad))
+        q['diagnostic_receipt_sha256']=run.digest(receiptpath);qpath.write_text(json.dumps(q))
         with pytest.raises(ValueError):run.validate_qualification()
     qpath.write_text(json.dumps(q));receipt['candidate_gradients_finite']=1;receiptpath.write_text(json.dumps(receipt));q['diagnostic_receipt_sha256']=run.digest(receiptpath);qpath.write_text(json.dumps(q))
     with pytest.raises(ValueError):run.validate_qualification()
@@ -149,3 +166,39 @@ def test_reflected_checkpoint_rejects_old_backend(template,tmp_path):
     with pytest.raises(ValueError):run.restore_model(record)
     names={p.name for p in run.sources()}
     assert {'qualification.json','qualification_receipt.json','reflected_dense_spline.py'}<=names
+
+
+def test_all_numerics_admission_preserves_partial_and_blocks_quality(tmp_path,monkeypatch):
+    class FakeModel:
+        residual_decoder=object()
+        def cuda(self):return self
+        def cpu(self):return self
+    inventory={seed:({arm:FakeModel() for arm in run.ARMS},None) for seed in run.SEEDS}
+    monkeypatch.setattr(run,'model_spec',lambda model:{'family':'P'})
+    monkeypatch.setattr(run,'ARMS',('P_frozen','P_joint'))
+    inventory={seed:({arm:FakeModel() for arm in run.ARMS},None) for seed in run.SEEDS}
+    with pytest.raises(ValueError,match='freeze'):run.admit_all_numerics(tmp_path,inventory,{}, {})
+    (tmp_path/'ALL_FITS_FROZEN.json').write_text('{}')
+    for seed in run.SEEDS:(tmp_path/f'seed_{seed}').mkdir()
+    calls=[]
+    def gate(model,out,seed):
+        calls.append((seed,out.name))
+        (out/'numerical.npz').write_bytes(b'fabricated retained numerical bank')
+        (out/'numerical.json').write_text('{}')
+        if len(calls)==2:raise FloatingPointError('fabricated failed gate')
+    monkeypatch.setattr(run,'numerical_gate',gate)
+    with pytest.raises(FloatingPointError):run.admit_all_numerics(tmp_path,inventory,{}, {})
+    assert not (tmp_path/'ALL_NUMERICS_ADMITTED.json').exists()
+    assert (tmp_path/'numerical_admission_progress.json').exists()
+    assert len(list(tmp_path.rglob('numerical.npz')))==2
+    with pytest.raises(ValueError,match='admission'):
+        run.evaluate_seed(run.SEEDS[0],{},None,None,None,None,tmp_path/f'seed_{run.SEEDS[0]}',None,{}, {})
+
+
+def test_all_numerics_precede_any_repair_or_extractor():
+    import ast
+    tree=ast.parse(PATH.read_text());main=next(x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name=='main')
+    text=ast.unparse(main)
+    assert text.index('write_fit_freeze_receipt(')<text.index('admit_all_numerics(')<text.index('utility.logit_inputs(data.repair)')<text.index('evaluator.make_extractor(')
+    evaluate=next(x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name=='evaluate_seed')
+    assert 'numerical_gate(' not in ast.unparse(evaluate)
