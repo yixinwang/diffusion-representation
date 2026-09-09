@@ -1,0 +1,980 @@
+{
+  "pipeline_1_reference": {
+    "maximum_absolute_error": 0.0,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "pipeline_1_dense_eager": {
+    "maximum_absolute_error": 0.0,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "pipeline_1_dense_compiled": {
+    "maximum_absolute_error": 1.3113021850585938e-06,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "pipeline_64_reference": {
+    "maximum_absolute_error": 0.0,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "pipeline_64_dense_eager": {
+    "maximum_absolute_error": 0.0,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "pipeline_64_dense_compiled": {
+    "maximum_absolute_error": 3.725290298461914e-06,
+    "passed": true,
+    "atol": 0.0001,
+    "rtol": 0.0
+  },
+  "backward_reference": {
+    "encoded": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0
+    },
+    "logdet": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "nll": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "loss": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "gradient::layers.0.conditioner.input.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.input.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.weight": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.bias": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    }
+  },
+  "backward_dense_eager": {
+    "encoded": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0
+    },
+    "logdet": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "nll": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "loss": {
+      "maximum_absolute_error": 0.0,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "gradient::layers.0.conditioner.input.weight": {
+      "maximum_absolute_error": 6.9267116487026215e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.input.bias": {
+      "maximum_absolute_error": 2.9103830456733704e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.weight": {
+      "maximum_absolute_error": 1.4551915228366852e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.bias": {
+      "maximum_absolute_error": 1.4551915228366852e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 1.4551915228366852e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 1.7462298274040222e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 2.3283064365386963e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 3.2014213502407074e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.weight": {
+      "maximum_absolute_error": 5.558831617236137e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.bias": {
+      "maximum_absolute_error": 2.0372681319713593e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.weight": {
+      "maximum_absolute_error": 8.731149137020111e-11,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.bias": {
+      "maximum_absolute_error": 1.1641532182693481e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.weight": {
+      "maximum_absolute_error": 6.170012056827545e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.bias": {
+      "maximum_absolute_error": 2.9103830456733704e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.weight": {
+      "maximum_absolute_error": 1.1641532182693481e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.bias": {
+      "maximum_absolute_error": 1.7462298274040222e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 1.7462298274040222e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 2.3283064365386963e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 4.802132025361061e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.weight": {
+      "maximum_absolute_error": 4.598405212163925e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.bias": {
+      "maximum_absolute_error": 2.9103830456733704e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.weight": {
+      "maximum_absolute_error": 2.9103830456733704e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.bias": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.weight": {
+      "maximum_absolute_error": 8.556526154279709e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.bias": {
+      "maximum_absolute_error": 5.238689482212067e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.weight": {
+      "maximum_absolute_error": 8.731149137020111e-11,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.bias": {
+      "maximum_absolute_error": 2.3283064365386963e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 2.0372681319713593e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 2.9103830456733704e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 3.4924596548080444e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.weight": {
+      "maximum_absolute_error": 8.614733815193176e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.bias": {
+      "maximum_absolute_error": 3.2014213502407074e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.weight": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.bias": {
+      "maximum_absolute_error": 5.820766091346741e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.weight": {
+      "maximum_absolute_error": 5.878973752260208e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.bias": {
+      "maximum_absolute_error": 3.055902197957039e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.weight": {
+      "maximum_absolute_error": 1.0186340659856796e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.bias": {
+      "maximum_absolute_error": 1.7462298274040222e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 2.0372681319713593e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 1.7462298274040222e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 5.820766091346741e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.weight": {
+      "maximum_absolute_error": 8.672941476106644e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.bias": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.weight": {
+      "maximum_absolute_error": 4.656612873077393e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.bias": {
+      "maximum_absolute_error": 5.820766091346741e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    }
+  },
+  "backward_dense_compiled": {
+    "encoded": {
+      "maximum_absolute_error": 6.9141387939453125e-06,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0
+    },
+    "logdet": {
+      "maximum_absolute_error": 0.00018310546875,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "nll": {
+      "maximum_absolute_error": 0.00048828125,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "loss": {
+      "maximum_absolute_error": 1.1920928955078125e-07,
+      "passed": true,
+      "atol": 0.01,
+      "rtol": 0
+    },
+    "gradient::layers.0.conditioner.input.weight": {
+      "maximum_absolute_error": 1.30385160446167e-08,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.input.bias": {
+      "maximum_absolute_error": 3.2014213502407074e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.weight": {
+      "maximum_absolute_error": 1.1932570487260818e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.norm.bias": {
+      "maximum_absolute_error": 1.7462298274040222e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 1.3387762010097504e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 1.862645149230957e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 1.7535057850182056e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 2.648448571562767e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.weight": {
+      "maximum_absolute_error": 8.498318493366241e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.local.bias": {
+      "maximum_absolute_error": 2.2992026060819626e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.weight": {
+      "maximum_absolute_error": 1.8044374883174896e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.0.conditioner.output.bias": {
+      "maximum_absolute_error": 2.9685907065868378e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.weight": {
+      "maximum_absolute_error": 1.1408701539039612e-08,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.input.bias": {
+      "maximum_absolute_error": 2.6047928258776665e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.weight": {
+      "maximum_absolute_error": 1.7171259969472885e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.norm.bias": {
+      "maximum_absolute_error": 2.3865140974521637e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 2.6193447411060333e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 3.14321368932724e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 3.994500730186701e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 4.627509042620659e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.weight": {
+      "maximum_absolute_error": 1.1175870895385742e-08,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.local.bias": {
+      "maximum_absolute_error": 3.346940502524376e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.weight": {
+      "maximum_absolute_error": 2.2118911147117615e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.1.conditioner.output.bias": {
+      "maximum_absolute_error": 4.16184775531292e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.weight": {
+      "maximum_absolute_error": 1.0360963642597198e-08,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.input.bias": {
+      "maximum_absolute_error": 3.827153705060482e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.weight": {
+      "maximum_absolute_error": 9.022187441587448e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.norm.bias": {
+      "maximum_absolute_error": 1.6552803572267294e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 1.7462298274040222e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 2.0954757928848267e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 5.704350769519806e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 5.878973752260208e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.weight": {
+      "maximum_absolute_error": 7.043126970529556e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.local.bias": {
+      "maximum_absolute_error": 2.5902409106492996e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.weight": {
+      "maximum_absolute_error": 5.180481821298599e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.2.conditioner.output.bias": {
+      "maximum_absolute_error": 6.05359673500061e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.weight": {
+      "maximum_absolute_error": 1.3271346688270569e-08,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.input.bias": {
+      "maximum_absolute_error": 1.5425030142068863e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.weight": {
+      "maximum_absolute_error": 6.693881005048752e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.norm.bias": {
+      "maximum_absolute_error": 6.83940015733242e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_weight": {
+      "maximum_absolute_error": 7.785274647176266e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.in_proj_bias": {
+      "maximum_absolute_error": 8.003553375601768e-10,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.weight": {
+      "maximum_absolute_error": 2.08092387765646e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.attention.out_proj.bias": {
+      "maximum_absolute_error": 1.949956640601158e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.weight": {
+      "maximum_absolute_error": 6.28642737865448e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.local.bias": {
+      "maximum_absolute_error": 1.862645149230957e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.weight": {
+      "maximum_absolute_error": 9.837094694375992e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    },
+    "gradient::layers.3.conditioner.output.bias": {
+      "maximum_absolute_error": 7.683411240577698e-09,
+      "passed": true,
+      "atol": 0.0001,
+      "rtol": 0.001
+    }
+  }
+}

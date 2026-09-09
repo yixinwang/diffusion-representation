@@ -1,0 +1,812 @@
+[
+  {
+    "case": "pipeline_1",
+    "repeat": 0,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 1,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 2,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 3,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 4,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 5,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 6,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 7,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 8,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 9,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 10,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 11,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 12,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 13,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 14,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 15,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 16,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 17,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 18,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 19,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 20,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 21,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 22,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 23,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 24,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 25,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 26,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 27,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 28,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_1",
+    "repeat": 29,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 0,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 1,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 2,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 3,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 4,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 5,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 6,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 7,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 8,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 9,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 10,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 11,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 12,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 13,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 14,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 15,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 16,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 17,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 18,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 19,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 20,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 21,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 22,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 23,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 24,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 25,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 26,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 27,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 28,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "pipeline_64",
+    "repeat": 29,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 0,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 1,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 2,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 3,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 4,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 5,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 6,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 7,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 8,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 9,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 10,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 11,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 12,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 13,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 14,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 15,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 16,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 17,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 18,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 19,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 20,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 21,
+    "order": [
+      "dense_compiled",
+      "reference",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 22,
+    "order": [
+      "dense_eager",
+      "reference",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 23,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 24,
+    "order": [
+      "reference",
+      "dense_eager",
+      "dense_compiled"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 25,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 26,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 27,
+    "order": [
+      "dense_compiled",
+      "dense_eager",
+      "reference"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 28,
+    "order": [
+      "reference",
+      "dense_compiled",
+      "dense_eager"
+    ]
+  },
+  {
+    "case": "encode_nll_backward_32",
+    "repeat": 29,
+    "order": [
+      "dense_eager",
+      "dense_compiled",
+      "reference"
+    ]
+  }
+]

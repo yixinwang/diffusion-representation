@@ -1,0 +1,8 @@
+{
+  "conditional_noise_roundtrip": 6.198883056640625e-06,
+  "conditional_logdet_cancellation": 0.00018310546875,
+  "analysis_code_roundtrip": 0.00010323524475097656,
+  "analysis_logdet_cancellation": 0.00146484375,
+  "coarse_Heun_inverse_verified": false,
+  "full_source_inverse_claim": false
+}

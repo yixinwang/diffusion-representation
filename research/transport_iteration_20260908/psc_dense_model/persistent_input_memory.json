@@ -1,0 +1,6 @@
+{
+  "common_source_bytes": 786432,
+  "generated_residual_bytes": 368640,
+  "generated_coarse_bytes": 24576,
+  "scope": "these fixed GPU buffers remain in steady-case baselines; peaks are not pure generator storage"
+}

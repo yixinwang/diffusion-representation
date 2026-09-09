@@ -1,0 +1,25 @@
+{
+  "status": "compact_publication_subset_not_complete_raw_payload",
+  "upstream_source_commit": "22ac114f90f5250fddced652c6a3bccc8942dd9d",
+  "full_raw_results_local_path": "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-perceptual/20260909-native-perceptual",
+  "full_raw_results_psc_path": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-native-perceptual",
+  "upstream_complete_filename": "upstream_COMPLETE.json",
+  "excluded_feature_bytes": 122881024,
+  "excluded_feature_sha256": {
+    "analysis_only_features.npy": "2b6af92db7d7dbf445d43b7a1b7a1c3065183788e6f1a3429b8cfca0285e93a2",
+    "residual_fm_nfe_8_features.npy": "be00198ebd32a8564fccc962ead12c0ffbeedac6122e93533ced933dfd4a5b8c",
+    "residual_fm_nfe_64_features.npy": "726f33a652019b50be0f75c13869cc61d9c77a7575441493886dc56bce393dd7",
+    "coupling_features.npy": "eb668eec9c94518aa720a1304a5473496876a8625589608f5f620c1c536387c5",
+    "residual_fm_nfe_4_features.npy": "a2d1574e4b6c7ac009a0fbfbe93fd8a8d5ff3542506b9001160f0c1c5db8fa9f",
+    "residual_fm_nfe_32_features.npy": "5015a096d97a9ec10bf28b40d6c7929fbbc3dab0c00f29ba61fccaa08093519a",
+    "residual_fm_nfe_16_features.npy": "8877a626a57ae200e2c0b51e81caccf0b6df9d7c408cb9df201db124d1a61269",
+    "repair_features.npy": "ebccb07db03c819613f5deea7f260d7c3eff2ea9371d77adad3d5a6caadcd1c8"
+  },
+  "copied_payload_sha256": {
+    "metrics.json": "760ac17a3960566e22bd3529bf9adbe2a97add538c224f0c206bc5a29e87d9b6",
+    "upstream_COMPLETE.json": "ef73a7d4a6a368cef1d30142a9a29f1786b01f4d7cc2de1723fc4cde85d83b62",
+    "provenance.json": "7e9021deda0eec30f5f15fda522dcc58b45be6214c712d951cd1fe0c99a3f4c5",
+    "repair_ids.npy": "e8c91fd2d6d799f95f67a3ed5c77c0f234d39a334c3afef3d32fd17615d30adb"
+  },
+  "reason": "Raw features retained outside Git; original complete manifest hashes them. Recomputing metrics needs --results pointing to full raw location."
+}

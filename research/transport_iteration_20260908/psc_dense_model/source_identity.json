@@ -1,0 +1,21 @@
+{
+  "commit": "3d801dcc1508cc3e203df5ef97c3834f2462c50e",
+  "sha256": {
+    "qalt/src/qalt/__init__.py": "a54aca828ea497a35a82724573d32fbba7d029370e9b66f0c170666b076cbdaf",
+    "qalt/src/qalt/core.py": "4f7893896da3d4330837ca41537c361ca2f65d2e5a17428524620601aec25fd6",
+    "qalt/src/qalt/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "qalt/src/qalt/dense_spline.py": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433",
+    "qalt/src/qalt/multiscale_flow.py": "80ca5f8fa1ece17e834a44b4bbcddf952f6d92e34001a38d92551bd197655980",
+    "qalt/src/qalt/flow_matching.py": "da7344b1f056b06c225278d10bce1171e2da745510af5bd9f91b1f16e0223cf2",
+    "qalt/src/qalt/learned_latent_flow_matching.py": "bbdd9f641e7ff6b4306a4bc23a66e7088cc0507a148dd16c88255b8bbcdc39e6",
+    "qalt/src/qalt/global_conditional_spline.py": "d10fa69a5b30bb539f427b4561cc00ace380ad78239603f3edacbcda90972dd6",
+    "qalt/src/qalt/dense_global_conditional_spline.py": "e54967240c614136ace0d39a58f154bfcc901a29642394640a0c1092a5c71b51",
+    "qalt/experiments/observed_flow_pilot/run_shared.py": "7ad966cfa23a2fc2d87a887c13f6ef916be3835173b1e12e3a76d51ed2d74e85",
+    "qalt/experiments/dense_model_benchmark/run.py": "fcad0a944103c634178b26ffb7b315afbe7944fcbe49976a31420f1cddbb89a8",
+    "qalt/experiments/dense_model_benchmark/PROTOCOL.md": "c3d0b537d0c26b74db4b14f60662ff9d2c15768ff6b7ed5607b5ef65bbaf6c90",
+    "qalt/experiments/dense_model_benchmark/run.slurm": "8f530f2e22d01ea079d724aefabc1ec1d7996c7becb13344dd9238dbdcdc7f22",
+    "qalt/tests/test_dense_model_benchmark_protocol.py": "e2d35b5502df832be2a813aa08f50c57c96950172119c59676dbf3aa9edf8d4d",
+    "qalt/tests/test_dense_global_conditional_spline.py": "c50dddfc34219d01375f0406cd3e97acf15ac9c96b5dff7ac47faafd7e3e0b0c",
+    "qalt/tests/test_dense_spline.py": "927ed100b56696654ab22b6f9c71e1675498d5adec8bada4fe97cd53b8fc77db"
+  }
+}
