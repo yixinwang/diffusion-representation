@@ -1,0 +1,15 @@
+{
+  "classification": "modified validation, not unchanged reproduction",
+  "change": "only Gaussianized covariance quadrature replaced by algebraically paired half-domain integral",
+  "original_sha256": "08eb0eb7fc5d7feb53073f56302c57c0296a704a5630b06603e35e900414602a",
+  "modified_sha256": "8f702b032827c75ad8c109ca02b2f024f39f1d7acdb1285249f67d8aa04fd57b",
+  "returncode": 0,
+  "elapsed_seconds": 0.7725766249932349,
+  "files": {
+    "stdout.txt": "65c21b2aae18846ba979c8973e7a34eee00d1b70781f551f69f6cd0652ea0cb4",
+    "math_checks.json": "65c21b2aae18846ba979c8973e7a34eee00d1b70781f551f69f6cd0652ea0cb4",
+    "check_math.py": "8f702b032827c75ad8c109ca02b2f024f39f1d7acdb1285249f67d8aa04fd57b",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pro13.py": "6a40860c196072db596511432f3cea210d20b1420118bb16920b7bc725b4e343"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "rep": 1,
+  "law": "positive",
+  "fixture_seed": 1309101,
+  "array_seed": 1319101,
+  "hashes": {
+    "gaussian_source_sha256": "c0f09127fd419fa5e8b6c73662bb8758bfe3cab2c56c88fb8c3df7ad1ada5dbb",
+    "observed_sha256": "9e6ce43be08ebaa3e941ab46e0b340c310b6618e50103ff6ced3d6f6e79106fc",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.008874277000018083,
+    "graph_seconds": 0.29957176800002117,
+    "regression_seconds": 0.10713272300000654,
+    "total_fit_seconds": 0.4155787680000458
+  },
+  "dense": {
+    "root_seconds": 0.008776629999999841,
+    "graph_seconds": 0.2962726590000102,
+    "regression_seconds": 0.11711486599995169,
+    "total_fit_seconds": 0.42216415499996174
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.1576207820243567,
+    "conditional_KL": 0.04668802090532154,
+    "joint_KL": 0.20430880292967402,
+    "ideal_product_conditional_KL": 121.92155533857633,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      3.716505736965731e-05,
+      5.78358518388599e-05,
+      4.012424077905674e-05,
+      4.6033069057531135e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5096518253758756e-05,
+    "true_theta_mean": [
+      0.4028391569003982,
+      -0.4033057650355345,
+      0.3880910577314048,
+      -0.4026759566269772
+    ],
+    "true_theta_second_moment": [
+      0.16286865539955553,
+      0.16330289730800848,
+      0.15129772193587193,
+      0.16285021564658297
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.1576207820243567,
+    "conditional_KL": 0.04668802090532154,
+    "joint_KL": 0.20430880292967402,
+    "ideal_product_conditional_KL": 121.92155533857633,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      3.716505736965731e-05,
+      5.78358518388599e-05,
+      4.012424077905674e-05,
+      4.6033069057531135e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5096518253758756e-05,
+    "true_theta_mean": [
+      0.4028391569003982,
+      -0.4033057650355345,
+      0.3880910577314048,
+      -0.4026759566269772
+    ],
+    "true_theta_second_moment": [
+      0.16286865539955553,
+      0.16330289730800848,
+      0.15129772193587193,
+      0.16285021564658297
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.013936632000024929,
+    0.013511639000000741,
+    0.012709857000004376,
+    0.01388297099998681,
+    0.013749749999988126,
+    0.017252624999969157,
+    0.015500367000015558
+  ],
+  "decode_gaussian_sha256": "8d50991fc2d74bff9d2a0ec544b2b04c9ed71074d0fe4e2b7354c5f1e3792ca4",
+  "decode_output_sha256": "10177c6fe61cb0d3e89b137b6b0c148f2cfa72ee1ec10aed6243a398744e9bad",
+  "speed_ratio_dense_over_packed_graph": 0.9889872499600472,
+  "speed_ratio_dense_over_packed_fit": 1.015846302811878
+}

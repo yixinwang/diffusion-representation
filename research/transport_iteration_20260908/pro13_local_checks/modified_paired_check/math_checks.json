@@ -1,0 +1,92 @@
+{
+  "scope": "standalone fabricated/deterministic; not PSC or interval certification",
+  "versions": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "exact_moments": {
+    "E_psi": "0",
+    "E_psi_squared": "1",
+    "E_psi_cubed": "0",
+    "E_psi_fourth": "27/20",
+    "squared_L1_psi": "27/32"
+  },
+  "quadrature_moments": [
+    0.0,
+    0.9999999999999999,
+    0.0,
+    1.3499999999999996
+  ],
+  "covariance_factor_integrals": {
+    "ordinary": 0.0,
+    "gaussianized": 4.8151969231301034e-18
+  },
+  "C1_claim_counterexample": {
+    "psi_left_derivative_at_1_8": 0.0,
+    "psi_right_derivative_at_1_8": -9.797958971132712,
+    "density_C1": false,
+    "conditional_CDF_C1_in_response": true,
+    "joint_transport_globally_C1": false
+  },
+  "inverse_checks": {
+    "float64": {
+      "min_discriminant": 0.10562500000000004,
+      "segment_roundoff_clamps": 0,
+      "max_segment_excursion": 0.0,
+      "max_cdf_residual": 1.1102230246251565e-16,
+      "float64_recomputed_residual": 1.1102230246251565e-16,
+      "unit_interval_error_bound_from_residual": 3.4160708450004814e-16,
+      "cases": 100057
+    },
+    "float32": {
+      "min_discriminant": 0.10562491416931152,
+      "segment_roundoff_clamps": 0,
+      "max_segment_excursion": 0.0,
+      "max_cdf_residual": 1.1920928955078125e-07,
+      "float64_recomputed_residual": 1.0384864979062769e-07,
+      "unit_interval_error_bound_from_residual": 3.1953430704808517e-07,
+      "cases": 100057
+    }
+  },
+  "log_tail_checks": {
+    "cases": 425,
+    "max_abs_gaussian_roundtrip_error": 1.2224745660205372e-09,
+    "largest_absolute_source": 1000.0,
+    "naive_ndtr_9": 1.0,
+    "naive_ndtri_ndtr_9_is_infinite": true
+  },
+  "packed_integer_parity_max_error": 0,
+  "KL_checks": {
+    "quadrature_series_max_error": 7.771561172376096e-16,
+    "minimum_ratio": 0.5003804645869993,
+    "maximum_ratio": 0.7822987102350405,
+    "cases": 323
+  },
+  "bounds": {
+    "signal": 0.2953125,
+    "tau": 0.159,
+    "delta_null": 2.1682938350123623e-05,
+    "delta_miss": 1.2265755750561697e-05,
+    "delta_graph": 3.394869410068532e-05,
+    "B_kappa": 0.918484500574053,
+    "bias": 2.0345052083333332e-05,
+    "theta_risk": 0.00010984023505283588,
+    "root_KL": 0.33562251023339346,
+    "conditional_KL": 0.14527663694703438,
+    "bad_graph_KL": 0.08016068506017908,
+    "joint_KL": 0.5610598322406068,
+    "dense_graph_delta": 2.367236698632463e-06,
+    "dense_joint_KL": 0.4864887381938313,
+    "fixed_chart_product_floor": 88.19999999999999,
+    "masked_psi_over_A_excess_MSE": 0.00010072526559011236,
+    "bad_graph_envelope": 2361.230297178379,
+    "full_gram_FMAs": 4147200000,
+    "unordered_pairs": 1035360,
+    "uint64_xor_popcount_words": 33131520,
+    "python_bits_per_digit": 30,
+    "python_digit_upper_iterations": 69369120,
+    "packed_all_groups_bytes": 720000
+  }
+}

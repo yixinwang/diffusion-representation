@@ -1,0 +1,33 @@
+{
+  "scope": "fabricated numerical checks, not interval certification",
+  "full_state_roundtrips": [
+    {
+      "state": "centered_zero_mean_0_packed_state.json",
+      "gaussian_roundtrip_max_error": 1.3855583347321954e-12
+    },
+    {
+      "state": "centered_zero_mean_1_packed_state.json",
+      "gaussian_roundtrip_max_error": 5.346834086594754e-13
+    },
+    {
+      "state": "centered_zero_mean_2_packed_state.json",
+      "gaussian_roundtrip_max_error": 3.5216274341109965e-13
+    },
+    {
+      "state": "positive_0_packed_state.json",
+      "gaussian_roundtrip_max_error": 1.27631238910908e-12
+    },
+    {
+      "state": "positive_1_packed_state.json",
+      "gaussian_roundtrip_max_error": 4.574118861455645e-13
+    },
+    {
+      "state": "positive_2_packed_state.json",
+      "gaussian_roundtrip_max_error": 1.638689184346731e-12
+    }
+  ],
+  "small_map_jacobian_logdet_finite_difference": -8.814116190266459,
+  "small_map_logdet_density_formula": -8.814116190199677,
+  "small_map_logdet_abs_difference": 6.678213537725242e-11,
+  "finite_difference_step": 1e-05
+}

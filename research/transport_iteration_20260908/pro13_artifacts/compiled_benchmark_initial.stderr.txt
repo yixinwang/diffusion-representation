@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/mnt/data/pro13_artifacts/benchmark_compiled.py", line 62, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/mnt/data/pro13_artifacts/benchmark_compiled.py", line 36, in main
+    assert s.strip_timing(fit)==s.strip_timing(oldstate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

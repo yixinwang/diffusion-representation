@@ -1,0 +1,140 @@
+{
+  "rep": 0,
+  "law": "positive",
+  "fixture_seed": 1309100,
+  "array_seed": 1319100,
+  "hashes": {
+    "gaussian_source_sha256": "d264aae01021f137c2f77ec24faf5eb8a68447f587d0fd732004a6bc5c38f6c5",
+    "observed_sha256": "db93821a77c71d9ace3d432b10a552091c5d979387e751bde1a3abcb190be80d",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.008399249999968106,
+    "graph_seconds": 0.2810636159999831,
+    "regression_seconds": 0.11280688800002281,
+    "total_fit_seconds": 0.402269753999974
+  },
+  "dense": {
+    "root_seconds": 0.008187559999953464,
+    "graph_seconds": 0.19878230500000882,
+    "regression_seconds": 0.12039134499997317,
+    "total_fit_seconds": 0.32736120999993545
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.1597484091424068,
+    "conditional_KL": 0.03386675930920546,
+    "joint_KL": 0.19361516845161475,
+    "ideal_product_conditional_KL": 120.94738336316398,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      2.9521290510389864e-05,
+      2.413423267442897e-05,
+      4.4906442375636644e-05,
+      3.4128853498266395e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.105756825489349e-05,
+    "true_theta_mean": [
+      0.3998570109751733,
+      -0.40117116918687434,
+      0.3935575360922276,
+      -0.3961817414620843
+    ],
+    "true_theta_second_moment": [
+      0.16084362390060372,
+      0.1617202948332518,
+      0.15537264228909267,
+      0.1575412185689448
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.1597484091424068,
+    "conditional_KL": 0.03386675930920546,
+    "joint_KL": 0.19361516845161475,
+    "ideal_product_conditional_KL": 120.94738336316398,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      2.9521290510389864e-05,
+      2.413423267442897e-05,
+      4.4906442375636644e-05,
+      3.4128853498266395e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.105756825489349e-05,
+    "true_theta_mean": [
+      0.3998570109751733,
+      -0.40117116918687434,
+      0.3935575360922276,
+      -0.3961817414620843
+    ],
+    "true_theta_second_moment": [
+      0.16084362390060372,
+      0.1617202948332518,
+      0.15537264228909267,
+      0.1575412185689448
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.014743441000007351,
+    0.014124334999962684,
+    0.01353605700001026,
+    0.014266700999996829,
+    0.013618661000009524,
+    0.016121725999994396,
+    0.013726765000001251
+  ],
+  "decode_gaussian_sha256": "e57c7092b52ea7b77e20690825fc79afc8eb218628608d7c6095ae9ef08e45be",
+  "decode_output_sha256": "be43834104490d43c4603cd97c73c53e51346bc42edb67bf836abd4150de3859",
+  "speed_ratio_dense_over_packed_graph": 0.7072502226685249,
+  "speed_ratio_dense_over_packed_fit": 0.8137852939347675
+}

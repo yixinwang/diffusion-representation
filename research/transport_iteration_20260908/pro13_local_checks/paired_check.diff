@@ -1,0 +1,11 @@
+--- original/check_math.py
++++ modified_paired_check/check_math.py
+@@ -20,7 +20,7 @@
+     assert np.allclose(integrals,[0,1,0,1.35],atol=1e-12)
+     report['quadrature_moments']=integrals
+     cov_u=quad(lambda u: (u-.5)*float(p.psi(u)),0,1,points=p.KNOTS[1:-1],epsabs=2e-13)[0]
+-    cov_z=quad(lambda u: ndtri(u)*float(p.psi(u)),0,1,points=p.KNOTS[1:-1],epsabs=2e-13)[0]
++    cov_z=quad(lambda u: ndtri(u)*(float(p.psi(u))-float(p.psi(1-u))),0,.5,points=p.KNOTS[(p.KNOTS>0)&(p.KNOTS<.5)],epsabs=2e-13)[0]
+     report['covariance_factor_integrals']={'ordinary':cov_u,'gaussianized':cov_z}
+     assert abs(cov_u)<1e-12 and abs(cov_z)<1e-12
+     report['C1_claim_counterexample']={'psi_left_derivative_at_1_8':0.,'psi_right_derivative_at_1_8':-8*p.A,

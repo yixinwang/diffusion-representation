@@ -1,0 +1,140 @@
+{
+  "rep": 2,
+  "law": "positive",
+  "fixture_seed": 1309102,
+  "array_seed": 1319102,
+  "hashes": {
+    "gaussian_source_sha256": "87bb9869ae5effb796207b2220b7ef485cf70fcecb483ad64fa01fab423cb40e",
+    "observed_sha256": "0348770b61fc48e83c9501f22ac56a93e89371826a0ab108009f1eb37309f5ad",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.008678062000001319,
+    "graph_seconds": 0.2933241249999696,
+    "regression_seconds": 0.11613230999995494,
+    "total_fit_seconds": 0.4181344969999259
+  },
+  "dense": {
+    "root_seconds": 0.009267463000014686,
+    "graph_seconds": 0.19553591699997241,
+    "regression_seconds": 0.10634333900003412,
+    "total_fit_seconds": 0.3111467190000212
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": true,
+      "threshold_edges": 360,
+      "zero_degree": 0,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.17473416494683294,
+    "conditional_KL": 0.0468970877020638,
+    "joint_KL": 0.2216312526488906,
+    "ideal_product_conditional_KL": 120.49164946808838,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      3.851439040269074e-05,
+      4.3654478459231184e-05,
+      5.296785808738841e-05,
+      4.666082001760638e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5149795580576392e-05,
+    "true_theta_mean": [
+      0.3987820809436505,
+      -0.3995568936111106,
+      0.3966587654787427,
+      -0.3928503304563715
+    ],
+    "true_theta_second_moment": [
+      0.15995263428486478,
+      0.16053911083385905,
+      0.1578750731672282,
+      0.15484283692181428
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.17473416494683294,
+    "conditional_KL": 0.0468970877020638,
+    "joint_KL": 0.2216312526488906,
+    "ideal_product_conditional_KL": 120.49164946808838,
+    "correct_pairs": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "theta_L2_risk_by_group": [
+      3.851439040269074e-05,
+      4.3654478459231184e-05,
+      5.296785808738841e-05,
+      4.666082001760638e-05
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5149795580576392e-05,
+    "true_theta_mean": [
+      0.3987820809436505,
+      -0.3995568936111106,
+      0.3966587654787427,
+      -0.3928503304563715
+    ],
+    "true_theta_second_moment": [
+      0.15995263428486478,
+      0.16053911083385905,
+      0.1578750731672282,
+      0.15484283692181428
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.012689806000025783,
+    0.013395823999985623,
+    0.013375632999952813,
+    0.01389869499996621,
+    0.015319422999994003,
+    0.013718251999989661,
+    0.012961797999992086
+  ],
+  "decode_gaussian_sha256": "68574e661b5b50d5c14b70e580201e8e37f9fcf33079be9c91fc74778e58fd6d",
+  "decode_output_sha256": "34f63b24648cb418f5cb56e120e6ff86698d52b954976b2a7d3248e707547440",
+  "speed_ratio_dense_over_packed_graph": 0.6666206436309753,
+  "speed_ratio_dense_over_packed_fit": 0.7441307073022401
+}

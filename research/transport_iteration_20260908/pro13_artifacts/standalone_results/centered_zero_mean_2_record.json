@@ -1,0 +1,140 @@
+{
+  "rep": 2,
+  "law": "centered_zero_mean",
+  "fixture_seed": 1309102,
+  "array_seed": 1319102,
+  "hashes": {
+    "gaussian_source_sha256": "87bb9869ae5effb796207b2220b7ef485cf70fcecb483ad64fa01fab423cb40e",
+    "observed_sha256": "3f1367895014a0acde4ba26b5a629ffc5cff5402d4dcf5818e579874a1392ffc",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.00851485399999774,
+    "graph_seconds": 0.2754955339999583,
+    "regression_seconds": 6.9705999976577e-05,
+    "total_fit_seconds": 0.2840800939999326
+  },
+  "dense": {
+    "root_seconds": 0.00822075999997196,
+    "graph_seconds": 0.1777085310000075,
+    "regression_seconds": 6.415699999706703e-05,
+    "total_fit_seconds": 0.18599344799997652
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.17473416494683294,
+    "conditional_KL": 2.274597310938887,
+    "joint_KL": 2.44933147588572,
+    "ideal_product_conditional_KL": 2.274597310938887,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.0036629436540801443,
+      0.003535949418348252,
+      0.002775460870429047,
+      0.0026439389747645796
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010515244098018353,
+    "true_theta_mean": [
+      2.6954282447526345e-17,
+      -6.455238091025023e-18,
+      -7.679200699807487e-18,
+      2.5656627972332757e-18
+    ],
+    "true_theta_second_moment": [
+      0.0036629436540801434,
+      0.0035359494183482497,
+      0.0027754608704290444,
+      0.0026439389747645817
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.17473416494683294,
+    "conditional_KL": 2.274597310938887,
+    "joint_KL": 2.44933147588572,
+    "ideal_product_conditional_KL": 2.274597310938887,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.0036629436540801443,
+      0.003535949418348252,
+      0.002775460870429047,
+      0.0026439389747645796
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010515244098018353,
+    "true_theta_mean": [
+      2.6954282447526345e-17,
+      -6.455238091025023e-18,
+      -7.679200699807487e-18,
+      2.5656627972332757e-18
+    ],
+    "true_theta_second_moment": [
+      0.0036629436540801434,
+      0.0035359494183482497,
+      0.0027754608704290444,
+      0.0026439389747645817
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.005609511000045586,
+    0.005135074000008899,
+    0.005099911000002066,
+    0.005755230999966443,
+    0.0052060609999671215,
+    0.005259692999970866,
+    0.0049954630000002
+  ],
+  "decode_gaussian_sha256": "68574e661b5b50d5c14b70e580201e8e37f9fcf33079be9c91fc74778e58fd6d",
+  "decode_output_sha256": "3470964c063eda241cc61c9f98163063620aa5346a391065db91baaec50254dd",
+  "speed_ratio_dense_over_packed_graph": 0.6450504965355787,
+  "speed_ratio_dense_over_packed_fit": 0.6547218616451903
+}

@@ -1,0 +1,140 @@
+{
+  "rep": 1,
+  "law": "centered_zero_mean",
+  "fixture_seed": 1309101,
+  "array_seed": 1319101,
+  "hashes": {
+    "gaussian_source_sha256": "c0f09127fd419fa5e8b6c73662bb8758bfe3cab2c56c88fb8c3df7ad1ada5dbb",
+    "observed_sha256": "5c0132b303788d61672b880292612e5ab40d28fffd33e16c7f299e36d0cfd9ca",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.00879579900004046,
+    "graph_seconds": 0.2841524629999981,
+    "regression_seconds": 6.786300002659118e-05,
+    "total_fit_seconds": 0.29301612500006513
+  },
+  "dense": {
+    "root_seconds": 0.009579513999995015,
+    "graph_seconds": 0.1851598490000015,
+    "regression_seconds": 6.209400004308918e-05,
+    "total_fit_seconds": 0.1948014570000396
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.1576207820243567,
+    "conditional_KL": 2.173452338858995,
+    "joint_KL": 2.3310731208833513,
+    "ideal_product_conditional_KL": 2.173452338858995,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.002332243726010978,
+      0.00256214833791383,
+      0.003531006261457277,
+      0.003630449675836304
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010046540001015325,
+    "true_theta_mean": [
+      2.112140181449642e-17,
+      9.502015602298741e-18,
+      -4.523155938337964e-17,
+      -2.291732342091235e-17
+    ],
+    "true_theta_second_moment": [
+      0.0023322437260109756,
+      0.00256214833791383,
+      0.003531006261457279,
+      0.003630449675836305
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.1576207820243567,
+    "conditional_KL": 2.173452338858995,
+    "joint_KL": 2.3310731208833513,
+    "ideal_product_conditional_KL": 2.173452338858995,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.002332243726010978,
+      0.00256214833791383,
+      0.003531006261457277,
+      0.003630449675836304
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010046540001015325,
+    "true_theta_mean": [
+      2.112140181449642e-17,
+      9.502015602298741e-18,
+      -4.523155938337964e-17,
+      -2.291732342091235e-17
+    ],
+    "true_theta_second_moment": [
+      0.0023322437260109756,
+      0.00256214833791383,
+      0.003531006261457279,
+      0.003630449675836305
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.006602573000009215,
+    0.005216686999972353,
+    0.0053561579999836795,
+    0.005078258000025926,
+    0.005022153999959755,
+    0.005121754000015244,
+    0.005063015000018822
+  ],
+  "decode_gaussian_sha256": "8d50991fc2d74bff9d2a0ec544b2b04c9ed71074d0fe4e2b7354c5f1e3792ca4",
+  "decode_output_sha256": "73720573a8d36a892f41f0911c24ebee9f5f8776a5793e5f038e59fae9f9801f",
+  "speed_ratio_dense_over_packed_graph": 0.6516214818099351,
+  "speed_ratio_dense_over_packed_fit": 0.664814801574474
+}

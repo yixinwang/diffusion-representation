@@ -1,0 +1,873 @@
+{
+  "scope": "new fabricated development arrays only; no PSC, native, or FM fits; not Pro11 replication",
+  "versions": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/pyvenv/lib/python3.13/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "/opt/pyvenv/lib/python3.13/site-packages/scipy.libs/libscipy_openblas-6cdc3b4a.so",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "SkylakeX"
+      }
+    ]
+  },
+  "timing_qualification": "Each graph fit timed once per fixture, one BLAS thread. Not an optimized cross-hardware frontier. Full decode seven raw batch64 repetitions after one parity call. Source generation and evaluator cost excluded from training, as specified.",
+  "records": [
+    {
+      "rep": 0,
+      "law": "positive",
+      "fixture_seed": 1309100,
+      "array_seed": 1319100,
+      "hashes": {
+        "gaussian_source_sha256": "d264aae01021f137c2f77ec24faf5eb8a68447f587d0fd732004a6bc5c38f6c5",
+        "observed_sha256": "db93821a77c71d9ace3d432b10a552091c5d979387e751bde1a3abcb190be80d",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.008399249999968106,
+        "graph_seconds": 0.2810636159999831,
+        "regression_seconds": 0.11280688800002281,
+        "total_fit_seconds": 0.402269753999974
+      },
+      "dense": {
+        "root_seconds": 0.008187559999953464,
+        "graph_seconds": 0.19878230500000882,
+        "regression_seconds": 0.12039134499997317,
+        "total_fit_seconds": 0.32736120999993545
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.1597484091424068,
+        "conditional_KL": 0.03386675930920546,
+        "joint_KL": 0.19361516845161475,
+        "ideal_product_conditional_KL": 120.94738336316398,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          2.9521290510389864e-05,
+          2.413423267442897e-05,
+          4.4906442375636644e-05,
+          3.4128853498266395e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.105756825489349e-05,
+        "true_theta_mean": [
+          0.3998570109751733,
+          -0.40117116918687434,
+          0.3935575360922276,
+          -0.3961817414620843
+        ],
+        "true_theta_second_moment": [
+          0.16084362390060372,
+          0.1617202948332518,
+          0.15537264228909267,
+          0.1575412185689448
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.1597484091424068,
+        "conditional_KL": 0.03386675930920546,
+        "joint_KL": 0.19361516845161475,
+        "ideal_product_conditional_KL": 120.94738336316398,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          2.9521290510389864e-05,
+          2.413423267442897e-05,
+          4.4906442375636644e-05,
+          3.4128853498266395e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.105756825489349e-05,
+        "true_theta_mean": [
+          0.3998570109751733,
+          -0.40117116918687434,
+          0.3935575360922276,
+          -0.3961817414620843
+        ],
+        "true_theta_second_moment": [
+          0.16084362390060372,
+          0.1617202948332518,
+          0.15537264228909267,
+          0.1575412185689448
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.014743441000007351,
+        0.014124334999962684,
+        0.01353605700001026,
+        0.014266700999996829,
+        0.013618661000009524,
+        0.016121725999994396,
+        0.013726765000001251
+      ],
+      "decode_gaussian_sha256": "e57c7092b52ea7b77e20690825fc79afc8eb218628608d7c6095ae9ef08e45be",
+      "decode_output_sha256": "be43834104490d43c4603cd97c73c53e51346bc42edb67bf836abd4150de3859",
+      "speed_ratio_dense_over_packed_graph": 0.7072502226685249,
+      "speed_ratio_dense_over_packed_fit": 0.8137852939347675
+    },
+    {
+      "rep": 0,
+      "law": "centered_zero_mean",
+      "fixture_seed": 1309100,
+      "array_seed": 1319100,
+      "hashes": {
+        "gaussian_source_sha256": "d264aae01021f137c2f77ec24faf5eb8a68447f587d0fd732004a6bc5c38f6c5",
+        "observed_sha256": "ec862e3a2bc05eb7eb6fd30ddcca99c9d09b304b1b25d3fa9287e26505814603",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.008169902999952683,
+        "graph_seconds": 0.2897659410000415,
+        "regression_seconds": 6.800300002396398e-05,
+        "total_fit_seconds": 0.29800384700001814
+      },
+      "dense": {
+        "root_seconds": 0.007719922999967821,
+        "graph_seconds": 0.2005805029999692,
+        "regression_seconds": 6.218400000079782e-05,
+        "total_fit_seconds": 0.20836260999993783
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.1597484091424068,
+        "conditional_KL": 2.2350395815692594,
+        "joint_KL": 2.394787990711666,
+        "ideal_product_conditional_KL": 2.2350395815692594,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.0037916075919505643,
+          0.003094997429691154,
+          0.002507741033829143,
+          0.0030047226125794356
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.001033255722337525,
+        "true_theta_mean": [
+          -3.1211850543508233e-17,
+          2.421328383021143e-17,
+          1.1584022586649811e-17,
+          3.4728350837426314e-18
+        ],
+        "true_theta_second_moment": [
+          0.0037916075919505634,
+          0.0030949974296911533,
+          0.0025077410338291447,
+          0.0030047226125794312
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.1597484091424068,
+        "conditional_KL": 2.2350395815692594,
+        "joint_KL": 2.394787990711666,
+        "ideal_product_conditional_KL": 2.2350395815692594,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.0037916075919505643,
+          0.003094997429691154,
+          0.002507741033829143,
+          0.0030047226125794356
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.001033255722337525,
+        "true_theta_mean": [
+          -3.1211850543508233e-17,
+          2.421328383021143e-17,
+          1.1584022586649811e-17,
+          3.4728350837426314e-18
+        ],
+        "true_theta_second_moment": [
+          0.0037916075919505634,
+          0.0030949974296911533,
+          0.0025077410338291447,
+          0.0030047226125794312
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.005749153000010665,
+        0.005444260999979633,
+        0.005680168000026242,
+        0.005412183000032655,
+        0.005643111999972916,
+        0.006794372000001658,
+        0.006542001000013897
+      ],
+      "decode_gaussian_sha256": "e57c7092b52ea7b77e20690825fc79afc8eb218628608d7c6095ae9ef08e45be",
+      "decode_output_sha256": "cb333a381cbbadca6f4d422c73e774c81138e271722d372c980199556c248367",
+      "speed_ratio_dense_over_packed_graph": 0.6922155941023466,
+      "speed_ratio_dense_over_packed_fit": 0.6991943630845985
+    },
+    {
+      "rep": 1,
+      "law": "positive",
+      "fixture_seed": 1309101,
+      "array_seed": 1319101,
+      "hashes": {
+        "gaussian_source_sha256": "c0f09127fd419fa5e8b6c73662bb8758bfe3cab2c56c88fb8c3df7ad1ada5dbb",
+        "observed_sha256": "9e6ce43be08ebaa3e941ab46e0b340c310b6618e50103ff6ced3d6f6e79106fc",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.008874277000018083,
+        "graph_seconds": 0.29957176800002117,
+        "regression_seconds": 0.10713272300000654,
+        "total_fit_seconds": 0.4155787680000458
+      },
+      "dense": {
+        "root_seconds": 0.008776629999999841,
+        "graph_seconds": 0.2962726590000102,
+        "regression_seconds": 0.11711486599995169,
+        "total_fit_seconds": 0.42216415499996174
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.1576207820243567,
+        "conditional_KL": 0.04668802090532154,
+        "joint_KL": 0.20430880292967402,
+        "ideal_product_conditional_KL": 121.92155533857633,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          3.716505736965731e-05,
+          5.78358518388599e-05,
+          4.012424077905674e-05,
+          4.6033069057531135e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5096518253758756e-05,
+        "true_theta_mean": [
+          0.4028391569003982,
+          -0.4033057650355345,
+          0.3880910577314048,
+          -0.4026759566269772
+        ],
+        "true_theta_second_moment": [
+          0.16286865539955553,
+          0.16330289730800848,
+          0.15129772193587193,
+          0.16285021564658297
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.1576207820243567,
+        "conditional_KL": 0.04668802090532154,
+        "joint_KL": 0.20430880292967402,
+        "ideal_product_conditional_KL": 121.92155533857633,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          3.716505736965731e-05,
+          5.78358518388599e-05,
+          4.012424077905674e-05,
+          4.6033069057531135e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5096518253758756e-05,
+        "true_theta_mean": [
+          0.4028391569003982,
+          -0.4033057650355345,
+          0.3880910577314048,
+          -0.4026759566269772
+        ],
+        "true_theta_second_moment": [
+          0.16286865539955553,
+          0.16330289730800848,
+          0.15129772193587193,
+          0.16285021564658297
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.013936632000024929,
+        0.013511639000000741,
+        0.012709857000004376,
+        0.01388297099998681,
+        0.013749749999988126,
+        0.017252624999969157,
+        0.015500367000015558
+      ],
+      "decode_gaussian_sha256": "8d50991fc2d74bff9d2a0ec544b2b04c9ed71074d0fe4e2b7354c5f1e3792ca4",
+      "decode_output_sha256": "10177c6fe61cb0d3e89b137b6b0c148f2cfa72ee1ec10aed6243a398744e9bad",
+      "speed_ratio_dense_over_packed_graph": 0.9889872499600472,
+      "speed_ratio_dense_over_packed_fit": 1.015846302811878
+    },
+    {
+      "rep": 1,
+      "law": "centered_zero_mean",
+      "fixture_seed": 1309101,
+      "array_seed": 1319101,
+      "hashes": {
+        "gaussian_source_sha256": "c0f09127fd419fa5e8b6c73662bb8758bfe3cab2c56c88fb8c3df7ad1ada5dbb",
+        "observed_sha256": "5c0132b303788d61672b880292612e5ab40d28fffd33e16c7f299e36d0cfd9ca",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.00879579900004046,
+        "graph_seconds": 0.2841524629999981,
+        "regression_seconds": 6.786300002659118e-05,
+        "total_fit_seconds": 0.29301612500006513
+      },
+      "dense": {
+        "root_seconds": 0.009579513999995015,
+        "graph_seconds": 0.1851598490000015,
+        "regression_seconds": 6.209400004308918e-05,
+        "total_fit_seconds": 0.1948014570000396
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.1576207820243567,
+        "conditional_KL": 2.173452338858995,
+        "joint_KL": 2.3310731208833513,
+        "ideal_product_conditional_KL": 2.173452338858995,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.002332243726010978,
+          0.00256214833791383,
+          0.003531006261457277,
+          0.003630449675836304
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010046540001015325,
+        "true_theta_mean": [
+          2.112140181449642e-17,
+          9.502015602298741e-18,
+          -4.523155938337964e-17,
+          -2.291732342091235e-17
+        ],
+        "true_theta_second_moment": [
+          0.0023322437260109756,
+          0.00256214833791383,
+          0.003531006261457279,
+          0.003630449675836305
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.1576207820243567,
+        "conditional_KL": 2.173452338858995,
+        "joint_KL": 2.3310731208833513,
+        "ideal_product_conditional_KL": 2.173452338858995,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.002332243726010978,
+          0.00256214833791383,
+          0.003531006261457277,
+          0.003630449675836304
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010046540001015325,
+        "true_theta_mean": [
+          2.112140181449642e-17,
+          9.502015602298741e-18,
+          -4.523155938337964e-17,
+          -2.291732342091235e-17
+        ],
+        "true_theta_second_moment": [
+          0.0023322437260109756,
+          0.00256214833791383,
+          0.003531006261457279,
+          0.003630449675836305
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.006602573000009215,
+        0.005216686999972353,
+        0.0053561579999836795,
+        0.005078258000025926,
+        0.005022153999959755,
+        0.005121754000015244,
+        0.005063015000018822
+      ],
+      "decode_gaussian_sha256": "8d50991fc2d74bff9d2a0ec544b2b04c9ed71074d0fe4e2b7354c5f1e3792ca4",
+      "decode_output_sha256": "73720573a8d36a892f41f0911c24ebee9f5f8776a5793e5f038e59fae9f9801f",
+      "speed_ratio_dense_over_packed_graph": 0.6516214818099351,
+      "speed_ratio_dense_over_packed_fit": 0.664814801574474
+    },
+    {
+      "rep": 2,
+      "law": "positive",
+      "fixture_seed": 1309102,
+      "array_seed": 1319102,
+      "hashes": {
+        "gaussian_source_sha256": "87bb9869ae5effb796207b2220b7ef485cf70fcecb483ad64fa01fab423cb40e",
+        "observed_sha256": "0348770b61fc48e83c9501f22ac56a93e89371826a0ab108009f1eb37309f5ad",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.008678062000001319,
+        "graph_seconds": 0.2933241249999696,
+        "regression_seconds": 0.11613230999995494,
+        "total_fit_seconds": 0.4181344969999259
+      },
+      "dense": {
+        "root_seconds": 0.009267463000014686,
+        "graph_seconds": 0.19553591699997241,
+        "regression_seconds": 0.10634333900003412,
+        "total_fit_seconds": 0.3111467190000212
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": true,
+          "threshold_edges": 360,
+          "zero_degree": 0,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.17473416494683294,
+        "conditional_KL": 0.0468970877020638,
+        "joint_KL": 0.2216312526488906,
+        "ideal_product_conditional_KL": 120.49164946808838,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          3.851439040269074e-05,
+          4.3654478459231184e-05,
+          5.296785808738841e-05,
+          4.666082001760638e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5149795580576392e-05,
+        "true_theta_mean": [
+          0.3987820809436505,
+          -0.3995568936111106,
+          0.3966587654787427,
+          -0.3928503304563715
+        ],
+        "true_theta_second_moment": [
+          0.15995263428486478,
+          0.16053911083385905,
+          0.1578750731672282,
+          0.15484283692181428
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.17473416494683294,
+        "conditional_KL": 0.0468970877020638,
+        "joint_KL": 0.2216312526488906,
+        "ideal_product_conditional_KL": 120.49164946808838,
+        "correct_pairs": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "theta_L2_risk_by_group": [
+          3.851439040269074e-05,
+          4.3654478459231184e-05,
+          5.296785808738841e-05,
+          4.666082001760638e-05
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 1.5149795580576392e-05,
+        "true_theta_mean": [
+          0.3987820809436505,
+          -0.3995568936111106,
+          0.3966587654787427,
+          -0.3928503304563715
+        ],
+        "true_theta_second_moment": [
+          0.15995263428486478,
+          0.16053911083385905,
+          0.1578750731672282,
+          0.15484283692181428
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.012689806000025783,
+        0.013395823999985623,
+        0.013375632999952813,
+        0.01389869499996621,
+        0.015319422999994003,
+        0.013718251999989661,
+        0.012961797999992086
+      ],
+      "decode_gaussian_sha256": "68574e661b5b50d5c14b70e580201e8e37f9fcf33079be9c91fc74778e58fd6d",
+      "decode_output_sha256": "34f63b24648cb418f5cb56e120e6ff86698d52b954976b2a7d3248e707547440",
+      "speed_ratio_dense_over_packed_graph": 0.6666206436309753,
+      "speed_ratio_dense_over_packed_fit": 0.7441307073022401
+    },
+    {
+      "rep": 2,
+      "law": "centered_zero_mean",
+      "fixture_seed": 1309102,
+      "array_seed": 1319102,
+      "hashes": {
+        "gaussian_source_sha256": "87bb9869ae5effb796207b2220b7ef485cf70fcecb483ad64fa01fab423cb40e",
+        "observed_sha256": "3f1367895014a0acde4ba26b5a629ffc5cff5402d4dcf5818e579874a1392ffc",
+        "shape": [
+          4000,
+          3072
+        ],
+        "dtype": "float64"
+      },
+      "packed": {
+        "root_seconds": 0.00851485399999774,
+        "graph_seconds": 0.2754955339999583,
+        "regression_seconds": 6.9705999976577e-05,
+        "total_fit_seconds": 0.2840800939999326
+      },
+      "dense": {
+        "root_seconds": 0.00822075999997196,
+        "graph_seconds": 0.1777085310000075,
+        "regression_seconds": 6.415699999706703e-05,
+        "total_fit_seconds": 0.18599344799997652
+      },
+      "packed_graph_diagnostics": [
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        },
+        {
+          "accepted": false,
+          "threshold_edges": 0,
+          "zero_degree": 720,
+          "multiple_degree": 0,
+          "packed_payload_bytes": 180000,
+          "python_integer_bytes": 210240
+        }
+      ],
+      "fitted_parameter_parity": true,
+      "packed_quality": {
+        "root_KL": 0.17473416494683294,
+        "conditional_KL": 2.274597310938887,
+        "joint_KL": 2.44933147588572,
+        "ideal_product_conditional_KL": 2.274597310938887,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.0036629436540801443,
+          0.003535949418348252,
+          0.002775460870429047,
+          0.0026439389747645796
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010515244098018353,
+        "true_theta_mean": [
+          2.6954282447526345e-17,
+          -6.455238091025023e-18,
+          -7.679200699807487e-18,
+          2.5656627972332757e-18
+        ],
+        "true_theta_second_moment": [
+          0.0036629436540801434,
+          0.0035359494183482497,
+          0.0027754608704290444,
+          0.0026439389747645817
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "dense_quality": {
+        "root_KL": 0.17473416494683294,
+        "conditional_KL": 2.274597310938887,
+        "joint_KL": 2.44933147588572,
+        "ideal_product_conditional_KL": 2.274597310938887,
+        "correct_pairs": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "theta_L2_risk_by_group": [
+          0.0036629436540801443,
+          0.003535949418348252,
+          0.002775460870429047,
+          0.0026439389747645796
+        ],
+        "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.0010515244098018353,
+        "true_theta_mean": [
+          2.6954282447526345e-17,
+          -6.455238091025023e-18,
+          -7.679200699807487e-18,
+          2.5656627972332757e-18
+        ],
+        "true_theta_second_moment": [
+          0.0036629436540801434,
+          0.0035359494183482497,
+          0.0027754608704290444,
+          0.0026439389747645817
+        ],
+        "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+      },
+      "exact_copy_bitwise_equal": true,
+      "decode_batch64_raw_seconds": [
+        0.005609511000045586,
+        0.005135074000008899,
+        0.005099911000002066,
+        0.005755230999966443,
+        0.0052060609999671215,
+        0.005259692999970866,
+        0.0049954630000002
+      ],
+      "decode_gaussian_sha256": "68574e661b5b50d5c14b70e580201e8e37f9fcf33079be9c91fc74778e58fd6d",
+      "decode_output_sha256": "3470964c063eda241cc61c9f98163063620aa5346a391065db91baaec50254dd",
+      "speed_ratio_dense_over_packed_graph": 0.6450504965355787,
+      "speed_ratio_dense_over_packed_fit": 0.6547218616451903
+    }
+  ]
+}

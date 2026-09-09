@@ -1,0 +1,8 @@
+{
+  "scope": "fabricated numerical checks, not interval certification",
+  "full_state_roundtrips": [],
+  "small_map_jacobian_logdet_finite_difference": -8.814116190266459,
+  "small_map_logdet_density_formula": -8.814116190199677,
+  "small_map_logdet_abs_difference": 6.678213537725242e-11,
+  "finite_difference_step": 1e-05
+}

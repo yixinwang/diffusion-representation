@@ -1,0 +1,52 @@
+{
+  "qualification": "80-digit independent arithmetic, NOT interval certification",
+  "float64": {
+    "cases": 2304,
+    "independent_mp_residual": "0.00000000000000014728426838386639031334971655173673536030436899728772707565608519878553772435781",
+    "residual_over_actual_min_density": "0.00000000000000044787084412447186973590089477735390465277594168199325564505882907734474021030644"
+  },
+  "float32": {
+    "cases": 2304,
+    "independent_mp_residual": "0.000000084938477518970241539333965366191071939084095397830252759602733155177517429564823",
+    "residual_over_actual_min_density": "0.000000261349151998644250434495701238756146407861616388645787703214823553558995943444"
+  },
+  "root_normalization": [
+    {
+      "state": "centered_zero_mean_0_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    },
+    {
+      "state": "centered_zero_mean_1_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    },
+    {
+      "state": "centered_zero_mean_2_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    },
+    {
+      "state": "positive_0_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    },
+    {
+      "state": "positive_1_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    },
+    {
+      "state": "positive_2_packed_state.json",
+      "exact_integer_counts_recoverable": true,
+      "maximum_floating_probability_sum_error": 1.1102230246251565e-16
+    }
+  ],
+  "gaussian_roundtrip_by_abs_source_cap": {
+    "8": 3.552713678800501e-15,
+    "12": 3.552713678800501e-15,
+    "40": 7.105427357601002e-15,
+    "100": 2.7000623958883807e-13,
+    "1000": 1.2223608791828156e-09
+  }
+}

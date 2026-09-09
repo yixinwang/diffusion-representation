@@ -1,0 +1,23 @@
+{
+  "command": [
+    "cc",
+    "-O3",
+    "-march=native",
+    "-std=c11",
+    "-fPIC",
+    "-shared",
+    "/mnt/data/pro13_artifacts/packed_graph.c",
+    "-o",
+    "/tmp/pro13-graph-9yfu2bht/packed_graph.so"
+  ],
+  "seconds": 0.056407014000001254,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "source_sha256": "2bd9cd7d78e9e89234a2549bbffb3cf577010f79d97526d472e42dfc7992b711",
+  "compiler_version": "cc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "shared_object_sha256": "095f4808e1c6cb38d8fe4172c6d01ac8ca434897613519dfc13368e910fae3cf",
+  "shared_object_bytes": 15320,
+  "delivery": "source/compiler record supplied; architecture-specific runtime shared object is not a payload",
+  "first_load_seconds": 0.05834380200008127
+}

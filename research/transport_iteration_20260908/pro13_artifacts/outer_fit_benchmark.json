@@ -1,0 +1,83 @@
+{
+  "scope": "outer-call positive-law fabricated fits, local one-thread, no serialization or input-generation time",
+  "compilation_load_seconds": 0.06685736400004316,
+  "compilation_in_warm_rows": false,
+  "build_record": {
+    "command": [
+      "cc",
+      "-O3",
+      "-march=native",
+      "-std=c11",
+      "-fPIC",
+      "-shared",
+      "/mnt/data/pro13_artifacts/packed_graph.c",
+      "-o",
+      "/tmp/pro13-graph-lzw1228f/packed_graph.so"
+    ],
+    "seconds": 0.06460111199999119,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "source_sha256": "2bd9cd7d78e9e89234a2549bbffb3cf577010f79d97526d472e42dfc7992b711",
+    "compiler_version": "cc (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "shared_object_sha256": "095f4808e1c6cb38d8fe4172c6d01ac8ca434897613519dfc13368e910fae3cf",
+    "shared_object_bytes": 15320,
+    "delivery": "source/compiler record supplied; architecture-specific runtime shared object is not a payload"
+  },
+  "rows": [
+    {
+      "rep": 0,
+      "raw_seconds": {
+        "packed_c": [
+          0.1820192089999182,
+          0.16541002700000718,
+          0.1668002000001252
+        ],
+        "dense": [
+          0.33535423099988293,
+          0.3281626509999569,
+          0.4023290420000194
+        ]
+      },
+      "fitted_parameters_verified": true,
+      "fitted_parameter_sha256": "ead3dec9c8d1bf9b190312bbdc01a854b4180f56da1eb8f0f653006905985bdd",
+      "dense_over_compiled_ratio": 2.0105145617309286
+    },
+    {
+      "rep": 1,
+      "raw_seconds": {
+        "packed_c": [
+          0.17830692699999418,
+          0.16296318600006998,
+          0.17137301999991905
+        ],
+        "dense": [
+          0.3101300190000984,
+          0.31258136800011016,
+          0.3123344839998481
+        ]
+      },
+      "fitted_parameters_verified": true,
+      "fitted_parameter_sha256": "ecf4524764e801508e56f7d22177c26e8452c263f1ff7e6c0100c800f38ea1bb",
+      "dense_over_compiled_ratio": 1.8225417513211568
+    },
+    {
+      "rep": 2,
+      "raw_seconds": {
+        "packed_c": [
+          0.17872387499983233,
+          0.17313935700008187,
+          0.17459486699999616
+        ],
+        "dense": [
+          0.32147034399986296,
+          0.3258230150001964,
+          0.39495777299998736
+        ]
+      },
+      "fitted_parameters_verified": true,
+      "fitted_parameter_sha256": "cadbfd95d50d7bc5897fa3178fb8863e021ad581d85af81ac1dd86c78c3cb7f3",
+      "dense_over_compiled_ratio": 1.8661660597399095
+    }
+  ]
+}

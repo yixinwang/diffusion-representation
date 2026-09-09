@@ -1,0 +1,25 @@
+{
+  "ordinary_original": {
+    "value": 0.0,
+    "reported_absolute_error": 2.545552069631119e-15,
+    "warnings": []
+  },
+  "gaussianized_original": {
+    "value": -2.2762716439005403e-12,
+    "reported_absolute_error": 6.848622806616631e-09,
+    "warnings": [
+      "The maximum number of subdivisions (50) has been achieved.\n  If increasing the limit yields no improvement it is advised to analyze \n  the integrand in order to determine the difficulties.  If the position of a \n  local difficulty can be determined (singularity, discontinuity) one will \n  probably gain from splitting up the interval and calling the integrator \n  on the subranges.  Perhaps a special-purpose integrator should be used."
+    ]
+  },
+  "gaussianized_paired": {
+    "value": 4.8151969231301034e-18,
+    "reported_absolute_error": 3.3777931463518116e-17,
+    "warnings": []
+  },
+  "paired_node_checks": {
+    "nodes": 2004,
+    "psi_symmetry_max_error": 6.661338147750939e-16,
+    "ndtri_antisymmetry_max_error": 2.7977620220553945e-14
+  },
+  "source_sha256": "6a40860c196072db596511432f3cea210d20b1420118bb16920b7bc725b4e343"
+}

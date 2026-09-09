@@ -1,0 +1,204 @@
+{
+  "scope": "fabricated-only local kernel/full-fit timing, not PSC/FM; original Python losses retained",
+  "parity_sizes": [
+    1,
+    7,
+    30,
+    63,
+    64,
+    65,
+    137,
+    2000
+  ],
+  "compilation_first_load_seconds": 0.05834380200008127,
+  "compile_included_in_warm_timings": false,
+  "cold_fit_rule": "Add compilation_first_load_seconds to first compiled-fit total; one-time common imports not timed.",
+  "rows": [
+    {
+      "law": "positive",
+      "rep": 0,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.03279507700005979,
+          0.033130443999993986,
+          0.036501391000001604
+        ],
+        "dense": [
+          0.19124437699997543,
+          0.18687877599995772,
+          0.2655703469999935
+        ],
+        "packed_python": [
+          0.2789757410000675,
+          0.2751794900000277,
+          0.2754761190000181
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.008322054000018397,
+        "graph_seconds": 0.03180015200007347,
+        "regression_seconds": 0.1066835589999755,
+        "total_fit_seconds": 0.14680576500006737
+      },
+      "dense_to_compiled_graph_ratio": 5.772466466190738,
+      "python_to_compiled_graph_ratio": 8.31489366698702
+    },
+    {
+      "law": "centered_zero_mean",
+      "rep": 0,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.03244565599993621,
+          0.03423837699995147,
+          0.11550548699995034
+        ],
+        "dense": [
+          0.1957858570000326,
+          0.18521788900000047,
+          0.202117721000036
+        ],
+        "packed_python": [
+          0.2711970750000319,
+          0.27753971399999955,
+          0.2726579130001028
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.0077432570000155465,
+        "graph_seconds": 0.032270240999991984,
+        "regression_seconds": 5.720600006497989e-05,
+        "total_fit_seconds": 0.04007070400007251
+      },
+      "dense_to_compiled_graph_ratio": 5.718315941211527,
+      "python_to_compiled_graph_ratio": 7.963517458800376
+    },
+    {
+      "law": "positive",
+      "rep": 1,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.036351344000081554,
+          0.03278382899998178,
+          0.03577394199999162
+        ],
+        "dense": [
+          0.19411397600003966,
+          0.21197429200003626,
+          0.20471808399997826
+        ],
+        "packed_python": [
+          0.28022633000000496,
+          0.27954815400005373,
+          0.28249539600005846
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.008838083999989976,
+        "graph_seconds": 0.0374090629999273,
+        "regression_seconds": 0.11465092499997809,
+        "total_fit_seconds": 0.16089807199989536
+      },
+      "dense_to_compiled_graph_ratio": 5.722547545921168,
+      "python_to_compiled_graph_ratio": 7.8332527625854205
+    },
+    {
+      "law": "centered_zero_mean",
+      "rep": 1,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.035820823999983986,
+          0.03210324499991657,
+          0.03754514100000961
+        ],
+        "dense": [
+          0.20563416699997106,
+          0.21594258200002514,
+          0.20531216500000937
+        ],
+        "packed_python": [
+          0.2818718269999181,
+          0.28846151699997336,
+          0.3732906989999947
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.007827451999901314,
+        "graph_seconds": 0.03576480900005663,
+        "regression_seconds": 5.8238000065102824e-05,
+        "total_fit_seconds": 0.043650499000023046
+      },
+      "dense_to_compiled_graph_ratio": 5.7406319575469,
+      "python_to_compiled_graph_ratio": 8.052900095210047
+    },
+    {
+      "law": "positive",
+      "rep": 2,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.04143655799998669,
+          0.03278078599998935,
+          0.03409301900001083
+        ],
+        "dense": [
+          0.1931448199999295,
+          0.1924731739999288,
+          0.20833410099999128
+        ],
+        "packed_python": [
+          0.28513519099999485,
+          0.2953072519999296,
+          0.38436572499995236
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.009422166000035759,
+        "graph_seconds": 0.033413381999935154,
+        "regression_seconds": 0.12571954600002755,
+        "total_fit_seconds": 0.16855509399999846
+      },
+      "dense_to_compiled_graph_ratio": 5.665230761754134,
+      "python_to_compiled_graph_ratio": 8.661809973468053
+    },
+    {
+      "law": "centered_zero_mean",
+      "rep": 2,
+      "observed_hash_verified": true,
+      "fitted_parameter_exact_parity": true,
+      "raw_graph_seconds": {
+        "packed_c": [
+          0.03181420299995352,
+          0.03142111800002567,
+          0.03286763599999176
+        ],
+        "dense": [
+          0.1965921519999938,
+          0.19768303199998627,
+          0.21190530599994872
+        ],
+        "packed_python": [
+          0.293902704000061,
+          0.30943822799997633,
+          0.312254476000021
+        ]
+      },
+      "compiled_fit_timings": {
+        "root_seconds": 0.008261548999939805,
+        "graph_seconds": 0.03354094199994506,
+        "regression_seconds": 5.826800008890132e-05,
+        "total_fit_seconds": 0.04186075899997377
+      },
+      "dense_to_compiled_graph_ratio": 6.213672302281942,
+      "python_to_compiled_graph_ratio": 9.726417726083799
+    }
+  ]
+}

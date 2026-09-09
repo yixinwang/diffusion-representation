@@ -1,0 +1,140 @@
+{
+  "rep": 0,
+  "law": "centered_zero_mean",
+  "fixture_seed": 1309100,
+  "array_seed": 1319100,
+  "hashes": {
+    "gaussian_source_sha256": "d264aae01021f137c2f77ec24faf5eb8a68447f587d0fd732004a6bc5c38f6c5",
+    "observed_sha256": "ec862e3a2bc05eb7eb6fd30ddcca99c9d09b304b1b25d3fa9287e26505814603",
+    "shape": [
+      4000,
+      3072
+    ],
+    "dtype": "float64"
+  },
+  "packed": {
+    "root_seconds": 0.008169902999952683,
+    "graph_seconds": 0.2897659410000415,
+    "regression_seconds": 6.800300002396398e-05,
+    "total_fit_seconds": 0.29800384700001814
+  },
+  "dense": {
+    "root_seconds": 0.007719922999967821,
+    "graph_seconds": 0.2005805029999692,
+    "regression_seconds": 6.218400000079782e-05,
+    "total_fit_seconds": 0.20836260999993783
+  },
+  "packed_graph_diagnostics": [
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    },
+    {
+      "accepted": false,
+      "threshold_edges": 0,
+      "zero_degree": 720,
+      "multiple_degree": 0,
+      "packed_payload_bytes": 180000,
+      "python_integer_bytes": 210240
+    }
+  ],
+  "fitted_parameter_parity": true,
+  "packed_quality": {
+    "root_KL": 0.1597484091424068,
+    "conditional_KL": 2.2350395815692594,
+    "joint_KL": 2.394787990711666,
+    "ideal_product_conditional_KL": 2.2350395815692594,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.0037916075919505643,
+      0.003094997429691154,
+      0.002507741033829143,
+      0.0030047226125794356
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.001033255722337525,
+    "true_theta_mean": [
+      -3.1211850543508233e-17,
+      2.421328383021143e-17,
+      1.1584022586649811e-17,
+      3.4728350837426314e-18
+    ],
+    "true_theta_second_moment": [
+      0.0037916075919505634,
+      0.0030949974296911533,
+      0.0025077410338291447,
+      0.0030047226125794312
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "dense_quality": {
+    "root_KL": 0.1597484091424068,
+    "conditional_KL": 2.2350395815692594,
+    "joint_KL": 2.394787990711666,
+    "ideal_product_conditional_KL": 2.2350395815692594,
+    "correct_pairs": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "theta_L2_risk_by_group": [
+      0.0037916075919505643,
+      0.003094997429691154,
+      0.002507741033829143,
+      0.0030047226125794356
+    ],
+    "random_half_mask_hidden_coordinate_psi_over_A_excess_MSE": 0.001033255722337525,
+    "true_theta_mean": [
+      -3.1211850543508233e-17,
+      2.421328383021143e-17,
+      1.1584022586649811e-17,
+      3.4728350837426314e-18
+    ],
+    "true_theta_second_moment": [
+      0.0037916075919505634,
+      0.0030949974296911533,
+      0.0025077410338291447,
+      0.0030047226125794312
+    ],
+    "qualification": "deterministic quadrature/96-term entropy series, not an interval certificate"
+  },
+  "exact_copy_bitwise_equal": true,
+  "decode_batch64_raw_seconds": [
+    0.005749153000010665,
+    0.005444260999979633,
+    0.005680168000026242,
+    0.005412183000032655,
+    0.005643111999972916,
+    0.006794372000001658,
+    0.006542001000013897
+  ],
+  "decode_gaussian_sha256": "e57c7092b52ea7b77e20690825fc79afc8eb218628608d7c6095ae9ef08e45be",
+  "decode_output_sha256": "cb333a381cbbadca6f4d422c73e774c81138e271722d372c980199556c248367",
+  "speed_ratio_dense_over_packed_graph": 0.6922155941023466,
+  "speed_ratio_dense_over_packed_fit": 0.6991943630845985
+}

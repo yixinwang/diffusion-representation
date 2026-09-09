@@ -1,0 +1,119 @@
+{
+  "status": "partial_original_delivery_verified",
+  "original_tree": "d1fee570d03799f14f4f0d00f16af029d1fe7129",
+  "recovered_original_files": 52,
+  "original_expected_files_including_inventory_and_sums": 73,
+  "original_sha256_entries": 72,
+  "present_sha256_entries": 51,
+  "missing_count": 21,
+  "missing_bytes": 1696745,
+  "missing": [
+    {
+      "path": "standalone_results/centered_zero_mean_0_compiled_state.json",
+      "bytes": 45971,
+      "sha256": "9e5c91b8f866066281a438949f917c9df4822bbed388541838e264fb45773238"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_0_dense_state.json",
+      "bytes": 45813,
+      "sha256": "d67d956a65ed3aad4bada2a90dd631fa8ae481959313655ea9fae874bba534b4"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_0_packed_state.json",
+      "bytes": 46118,
+      "sha256": "440adbf3d57a9270590290646b18614432c31c72677994422dc3fc861411c724"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_1_compiled_state.json",
+      "bytes": 45919,
+      "sha256": "03d5a601cc7a8dc35b014408a3e02db86e3344ecf6c326c4242850598b582ac5"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_1_dense_state.json",
+      "bytes": 45760,
+      "sha256": "808424b767926b2e752ce28883f1a2fc97e0bf80251199e00817f4d805a2cb11"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_1_packed_state.json",
+      "bytes": 46065,
+      "sha256": "6bd6fd8f69ac30b4466bee98dfc6c2d3d19019da442543bcc12e3b846c85cf9a"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_2_compiled_state.json",
+      "bytes": 45917,
+      "sha256": "7a7902f16fe820020ef0d508471824e2639daeb6ac05ebaa7738bf33626e4c6e"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_2_dense_state.json",
+      "bytes": 45760,
+      "sha256": "4590c0718912c26c25f658456047d6980aa6060cddfb437fdad5dbc76a80d2c6"
+    },
+    {
+      "path": "standalone_results/centered_zero_mean_2_packed_state.json",
+      "bytes": 46062,
+      "sha256": "fac2693224872ce97bfdd6f2706292152b905a24383db6126d5a59fe282cb099"
+    },
+    {
+      "path": "standalone_results/fixture_0.json",
+      "bytes": 103739,
+      "sha256": "f74ef6ea07aef81f4fdd8880a635db5cca5236027b374129f39cd8c2660422d2"
+    },
+    {
+      "path": "standalone_results/fixture_1.json",
+      "bytes": 103770,
+      "sha256": "608d1bc20ef942c3c1ede101fd63ba67c277e70e474b7acc1b6def8415ce072f"
+    },
+    {
+      "path": "standalone_results/fixture_2.json",
+      "bytes": 103728,
+      "sha256": "a5cbf4542dfb85a8e402a7e2864c59e319aaa1499b17a8ec5c9853866d650be7"
+    },
+    {
+      "path": "standalone_results/positive_0_compiled_state.json",
+      "bytes": 108055,
+      "sha256": "63dda6009f4d4a0d17919a2c3d87048b9b8aff866279ae95d4827047bf995231"
+    },
+    {
+      "path": "standalone_results/positive_0_dense_state.json",
+      "bytes": 107901,
+      "sha256": "25a2b677855ca8df4296a0cac99259c017a15567ebbf0588954b9ec997002212"
+    },
+    {
+      "path": "standalone_results/positive_0_packed_state.json",
+      "bytes": 108203,
+      "sha256": "3a270895bd62ec7d30ca2c2f71e48c9ce4fbf9ed6bddd471a142b7ec254b3ba0"
+    },
+    {
+      "path": "standalone_results/positive_1_compiled_state.json",
+      "bytes": 108002,
+      "sha256": "ad3b1c3896559511f679e0a573d2b163ef84edde1409a397826a814a344f2c82"
+    },
+    {
+      "path": "standalone_results/positive_1_dense_state.json",
+      "bytes": 107847,
+      "sha256": "98d2c16a82a1bfc951965d4a5d7728978477d2d6e881ffc26d90470f6b676a5a"
+    },
+    {
+      "path": "standalone_results/positive_1_packed_state.json",
+      "bytes": 108152,
+      "sha256": "5c140622790f5d29dacb4e35a197d6b3f8154a56ec7ab8ed8d70e2d0d0666611"
+    },
+    {
+      "path": "standalone_results/positive_2_compiled_state.json",
+      "bytes": 107991,
+      "sha256": "abd0dbdf662c7576c4990e32027bec89a939bcd2eb3810ef16d096b29649c3a9"
+    },
+    {
+      "path": "standalone_results/positive_2_dense_state.json",
+      "bytes": 107834,
+      "sha256": "4bc0732822ad6c9ee2ddaa9e8f010f6ffa38de3b3ce536b2bf6166f3ff475613"
+    },
+    {
+      "path": "standalone_results/positive_2_packed_state.json",
+      "bytes": 108138,
+      "sha256": "ae081189123702328de198ab81a440209c494edcef6231209ea25924488cdafc"
+    }
+  ],
+  "errors": [],
+  "execution": "none; source review only"
+}

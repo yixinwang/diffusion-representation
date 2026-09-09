@@ -1,0 +1,90 @@
+{
+  "PAIRED_QUADRATURE_REVIEW.md": {
+    "bytes": 2853,
+    "sha256": "ba6dc24bd9e7b5deda49ec26b2c669b0615c8dc6dcddf2ba299b99af121564f0"
+  },
+  "REVIEW.md": {
+    "bytes": 2098,
+    "sha256": "6951feca4449f6dadea7876cb4bb24bf915c505e989ae2aac89711287f484835"
+  },
+  "check_bijection/bijection_checks.json": {
+    "bytes": 326,
+    "sha256": "13d38811e93db7d9ec61297f4feaf916cce9787af66eccc8d8f802a2ec81ed6a"
+  },
+  "check_bijection/check_bijection.py": {
+    "bytes": 1768,
+    "sha256": "4acc14e54878dc83026269c69c01e63e5b173c67830dd28130cc71eb9b595697"
+  },
+  "check_bijection/pro13.py": {
+    "bytes": 14237,
+    "sha256": "6a40860c196072db596511432f3cea210d20b1420118bb16920b7bc725b4e343"
+  },
+  "check_bijection/stderr.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "check_bijection/stdout.txt": {
+    "bytes": 326,
+    "sha256": "13d38811e93db7d9ec61297f4feaf916cce9787af66eccc8d8f802a2ec81ed6a"
+  },
+  "check_math/check_math.py": {
+    "bytes": 5014,
+    "sha256": "08eb0eb7fc5d7feb53073f56302c57c0296a704a5630b06603e35e900414602a"
+  },
+  "check_math/pro13.py": {
+    "bytes": 14237,
+    "sha256": "6a40860c196072db596511432f3cea210d20b1420118bb16920b7bc725b4e343"
+  },
+  "check_math/stderr.txt": {
+    "bytes": 1228,
+    "sha256": "2729106e1a1621f2ced2d7deb3f5d3ad8d703bbd1b7138791ac2a2df1b1f173b"
+  },
+  "check_math/stdout.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "covariance_diagnosis.json": {
+    "bytes": 1116,
+    "sha256": "9b4f6221cd3cd6b267218a3136dbab91bfab1f559bef321344a37b0879a6f889"
+  },
+  "covariance_diagnosis.py": {
+    "bytes": 1316,
+    "sha256": "c2356a4a734f38545720f34436c09c925bb0093bf11ec59b12a9662e5e2c6a47"
+  },
+  "modified_paired_check/check_math.py": {
+    "bytes": 5055,
+    "sha256": "8f702b032827c75ad8c109ca02b2f024f39f1d7acdb1285249f67d8aa04fd57b"
+  },
+  "modified_paired_check/math_checks.json": {
+    "bytes": 2955,
+    "sha256": "65c21b2aae18846ba979c8973e7a34eee00d1b70781f551f69f6cd0652ea0cb4"
+  },
+  "modified_paired_check/pro13.py": {
+    "bytes": 14237,
+    "sha256": "6a40860c196072db596511432f3cea210d20b1420118bb16920b7bc725b4e343"
+  },
+  "modified_paired_check/stderr.txt": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "modified_paired_check/stdout.txt": {
+    "bytes": 2955,
+    "sha256": "65c21b2aae18846ba979c8973e7a34eee00d1b70781f551f69f6cd0652ea0cb4"
+  },
+  "modified_receipt.json": {
+    "bytes": 875,
+    "sha256": "3371c1cada9063fe280dd9ddd5346feffb16ad94b5ead687cfa52a5359321d17"
+  },
+  "paired_check.diff": {
+    "bytes": 749,
+    "sha256": "9d1c5f0afd7f4c1739be59e4842584178289daddbcf78ccc22a7a29f050f3c71"
+  },
+  "receipt.json": {
+    "bytes": 7265,
+    "sha256": "161bf8a2e67092cfcf4d01c97d4a7a3a26377dd96bc5c4ffec8404b79381d469"
+  },
+  "run_original_checks.py": {
+    "bytes": 1857,
+    "sha256": "974fd05f37b8ad3e1b5cff781166acdf06de613bd08c3cb68e0ddbb82c071b0e"
+  }
+}

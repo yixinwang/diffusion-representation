@@ -1,0 +1,15 @@
+/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro13-local-checks/check_math/check_math.py:23: IntegrationWarning: The maximum number of subdivisions (50) has been achieved.
+  If increasing the limit yields no improvement it is advised to analyze 
+  the integrand in order to determine the difficulties.  If the position of a 
+  local difficulty can be determined (singularity, discontinuity) one will 
+  probably gain from splitting up the interval and calling the integrator 
+  on the subranges.  Perhaps a special-purpose integrator should be used.
+  cov_z=quad(lambda u: ndtri(u)*float(p.psi(u)),0,1,points=p.KNOTS[1:-1],epsabs=2e-13)[0]
+Traceback (most recent call last):
+  File "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro13-local-checks/check_math/check_math.py", line 83, in <module>
+    if __name__=='__main__': main()
+                             ^^^^^^
+  File "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro13-local-checks/check_math/check_math.py", line 25, in main
+    assert abs(cov_u)<1e-12 and abs(cov_z)<1e-12
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
