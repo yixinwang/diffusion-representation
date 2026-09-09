@@ -33,6 +33,12 @@ The study compares innovation/history-only responses with frozen or jointly trai
 
 Evidence: [full qualification](research/transport_iteration_20260908/psc_response_full_qualification), [preserved failed preflight](research/transport_iteration_20260908/psc_response_v2_preflight_failure), [interactive verification](research/transport_iteration_20260908/psc_response_v2_interactive_preflight), [fresh submission and scheduler record](research/transport_iteration_20260908/psc_response_v2_attempt2_launch).
 
+### September 9, 2026 — next generation-comparison review
+
+[Fresh Review22](https://chatgpt.com/c/6aa1c0d6-6cd4-83e9-8ac5-006795ceca3a) was accepted through the ordinary available composer and is pending. It is auditing full pipeline cost matching, the current FM architecture, unequal source dimensions, solver frontiers and a prospective diagnostic if the native candidate fails again. No new algorithm or result is asserted. Actual Pro was disabled in the preceding visible menu; the accepted conversation displays Extra High.
+
+Codec job **45636236** has received V100 node **v006**; its GPU preflight and FIT result are not yet reported here. Native job **45632257** was still fitting the final seed at **20:22:33 UTC**. Neither study has an admitted quality outcome. The requested generation, efficiency and representation improvements remain unestablished.
+
 ### September 9, 2026 — current-response theorem and diagnostic correction
 
 **Math.** The [independent current-response audit](research/transport_iteration_20260908/pro20_current_response_audit) establishes the conditional risk-gap identity only against an anchor-blind control in the **same fixed invertible chart**. A finite-sample gain additionally requires controlled approximation, estimation and optimization error; no usable bound for the 4,000-image neural study has been established. Jointly refitted splines and capable latent/pixel models do not inherit this restricted comparison. Exact copies tie.
