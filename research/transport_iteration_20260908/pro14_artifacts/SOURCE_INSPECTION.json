@@ -1,0 +1,51 @@
+{
+  "repository": "yixinwang/diffusion-representation",
+  "frozen_execution_commit": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+  "supplied_context_commit_resolved": "adcb87c43d1720a167933d4d8bd83759865edb5f",
+  "later_active_branch_head_not_verified": true,
+  "retrieval": "GitHub connector; no local source-byte snapshot",
+  "files": [
+    {
+      "path": "qalt/src/qalt/cached_global_innovation.py",
+      "git_blob_sha1": "96c781915a93d9fbd6ba1c6faf6c8542c8f3027b",
+      "coverage": "full file across connector fetches; scalar, frame, conditioner, cache, composition",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/src/qalt/cached_global_innovation.py"
+    },
+    {
+      "path": "qalt/src/qalt/global_innovation_flow.py",
+      "git_blob_sha1": "a5719ba204eb297072b832651ddaa49d63a50b80",
+      "coverage": "complete file; analysis/root/residual and full-density composition",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/src/qalt/global_innovation_flow.py"
+    },
+    {
+      "path": "qalt/src/qalt/global_conditional_spline.py",
+      "git_blob_sha1": "c59c86f13b9d444b246173cf0f8d7ff768a4ca41",
+      "coverage": "complete file; actual strong RQS comparator",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/src/qalt/global_conditional_spline.py"
+    },
+    {
+      "path": "qalt/experiments/cached_innovation_pilot/run.py",
+      "git_blob_sha1": "e8e40adb7247f9f046532fb3529db8dfd4dac812",
+      "coverage": "complete file across two ranges; fit/fork/evaluate/gates/source guard",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/experiments/cached_innovation_pilot/run.py"
+    },
+    {
+      "path": "qalt/experiments/cached_innovation_pilot/PROTOCOL.md",
+      "git_blob_sha1": "941c24f935f34e3512be28e80cf7c3520629cd6c",
+      "coverage": "complete protocol",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/experiments/cached_innovation_pilot/PROTOCOL.md"
+    },
+    {
+      "path": "qalt/experiments/observed_flow_pilot/run_shared.py",
+      "git_blob_sha1": "26d92d36e50c6f4f7521f7e7b8fb7200cab51f02",
+      "coverage": "selected lines1-230; especially logit_inputs/descriptors and shared FM interfaces",
+      "url": "https://github.com/yixinwang/diffusion-representation/blob/1f6be303c8b93ba45ac63c43e7c5971fa38a0082/qalt/experiments/observed_flow_pilot/run_shared.py"
+    }
+  ],
+  "native_arrays_read": false,
+  "native_metrics_independently_recomputed": false,
+  "native_fits_run": false,
+  "native_source_rerun": false,
+  "repository_writes": false,
+  "publication_status": "review only; no commit created"
+}

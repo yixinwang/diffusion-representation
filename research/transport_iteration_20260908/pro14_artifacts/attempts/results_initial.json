@@ -1,0 +1,38 @@
+{
+  "scope": "fabricated algebra only; no fits, native data, qalt execution or GPU timings",
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "checks": {
+    "small_prefix": {
+      "round_trip_max": 6.661338147750939e-16,
+      "ld_cancellation_max": 2.7755575615628914e-17,
+      "dense_jacobian_error": 3.1502578323738817e-15,
+      "directional_gradient_error": 5.4867554943882624e-11,
+      "all_parameter_gradients_finite": true
+    },
+    "small_innovation": {
+      "round_trip_max": 5.551115123125783e-16,
+      "ld_cancellation_max": 3.469446951953614e-16,
+      "dense_jacobian_error": 3.191891195797325e-16,
+      "directional_gradient_error": 2.0720231086457375e-11,
+      "all_parameter_gradients_finite": true
+    },
+    "full_3072_torch.float64": {
+      "batch": 4,
+      "round_trip_max": 7.105427357601002e-15,
+      "ld_cancellation_max": 4.440892098500626e-15,
+      "same_source_exact_copy": true,
+      "all_3072_coordinates_retained": true
+    }
+  },
+  "all_checks_pass": false,
+  "failure": {
+    "error": "RuntimeError('expected m1 and m2 to have the same dtype, but got: double != float')",
+    "traceback": "Traceback (most recent call last):\n  File \"/mnt/data/pro14_review/checks.py\", line 61, in <module>\n    y,ld=f(z);back,ild=f(y,True)\n         ~^^^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/mnt/data/pro14_review/mechanism.py\", line 212, in forward\n    value,inc=layer(current,self.context(prefix),inverse)\n              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n    return forward_call(*args, **kwargs)\n  File \"/mnt/data/pro14_review/mechanism.py\", line 169, in forward\n    v, b = self.base(v,h)\n           ~~~~~~~~~^^^^^\n  File \"/mnt/data/pro14_review/mechanism.py\", line 160, in base\n    v, b = spd(v,self.frame,alpha)\n           ~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/data/pro14_review/mechanism.py\", line 134, in spd\n    y = x + ((x@u)*torch.expm1(a))@u.T\n              ~^~\nRuntimeError: expected m1 and m2 to have the same dtype, but got: double != float\n"
+  },
+  "wall_seconds": 0.4816393959999914
+}

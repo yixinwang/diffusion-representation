@@ -1,0 +1,11 @@
+small_prefix {"round_trip_max": 6.661338147750939e-16, "ld_cancellation_max": 2.7755575615628914e-17, "dense_jacobian_error": 3.1502578323738817e-15, "directional_gradient_error": 5.4867554943882624e-11, "all_parameter_gradients_finite": true}
+small_innovation {"round_trip_max": 5.551115123125783e-16, "ld_cancellation_max": 3.469446951953614e-16, "dense_jacobian_error": 3.191891195797325e-16, "directional_gradient_error": 2.0720231086457375e-11, "all_parameter_gradients_finite": true}
+full_3072_torch.float64 {"batch": 4, "round_trip_max": 7.105427357601002e-15, "ld_cancellation_max": 4.440892098500626e-15, "same_source_exact_copy": true, "all_3072_coordinates_retained": true}
+full_3072_torch.float32 {"batch": 4, "round_trip_max": 3.814697265625e-06, "ld_cancellation_max": 6.556510925292969e-06, "same_source_exact_copy": true, "all_3072_coordinates_retained": true}
+zero_head_nesting {"output_equal": true, "logdet_equal": true}
+zero_covariance_nonlinear_energy {"conditional_scale_formula": "log(2)*tanh(tanh(tanh(u)^2))", "cov_U_V_exact": 0.0, "E_V_squared": 1.6156620985801577, "cov_U_squared_V_squared": 0.5364014664119683, "best_independent_Gaussian_KL_gap_nats": 0.022602151421440703, "density_integral_numeric": 1.0000000000000027, "quadrature_error_estimate": 1.7366982308362252e-10, "comparison_scope": "Gaussian witness only; no RQS, FM or image-quality win"}
+retained_approximation_failure {"fixed_base": "identity", "independent_anchors": true, "follower_correlation": 0.6, "unremoved_conditional_TC_nats": 0.22314355131420974, "qualification": "Not a floor for the trainable full model: its base map can change."}
+deliberately_wrong_missing_logdet_rejected {"max_error": 0.4433053595276673}
+nonfinite_rejection {"rejected_cases": ["input", "context", "frame", "head_parameter", "hidden_overflow"]}
+reused_frame_gradient {"directional_gradient_error": 1.3025963641055682e-10, "all_finite": true}
+shape_only_counts {"extra_parameters_per_block": 2624, "extra_parameters_total": 10496, "candidate_total": 539120, "candidate_residual": 210932, "scalar_width": 42, "scalar_total": 544080, "strong_RQS_total": 589712, "additional_noise_coordinates": 0, "new_attention_passes": 0, "new_QR_factorizations": 0}

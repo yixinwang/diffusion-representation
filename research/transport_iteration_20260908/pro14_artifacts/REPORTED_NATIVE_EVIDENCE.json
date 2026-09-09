@@ -1,0 +1,101 @@
+{
+  "provenance": "user-supplied provisional source-matching reports; no independent native recompute here",
+  "job": "45576312",
+  "source_commit": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+  "seeds": [
+    77201,
+    77202,
+    77203
+  ],
+  "kid": {
+    "S": [
+      0.201619,
+      0.184875,
+      0.194472
+    ],
+    "M": [
+      0.200015,
+      0.197126,
+      0.195549
+    ],
+    "J": [
+      0.177906,
+      0.183249,
+      0.200088
+    ],
+    "RQS": [
+      0.164286,
+      0.170042,
+      0.172492
+    ]
+  },
+  "complete_nll_per_D": {
+    "S": [
+      -2.553229,
+      -2.564321,
+      -2.571073
+    ],
+    "M": [
+      -2.558077,
+      -2.570327,
+      -2.578524
+    ],
+    "J": [
+      -2.627582,
+      -2.623304,
+      -2.628942
+    ],
+    "RQS": [
+      -2.643382,
+      -2.647196,
+      -2.651998
+    ]
+  },
+  "J_gradient_horizontal": [
+    0.013605,
+    0.014323,
+    0.016082
+  ],
+  "J_gradient_vertical": [
+    0.015201,
+    0.016525,
+    0.018305
+  ],
+  "repair_gradient_reference": [
+    0.007962,
+    0.009252
+  ],
+  "M_covariance_error_over_S": [
+    1.026,
+    1.031,
+    0.99
+  ],
+  "J_energy": [
+    0.17003,
+    0.169503,
+    0.171437
+  ],
+  "RQS_energy": [
+    0.170141,
+    0.169348,
+    0.171237
+  ],
+  "J_joint_updates": [
+    453,
+    454,
+    458
+  ],
+  "S_updates": [
+    6627,
+    6849,
+    6732
+  ],
+  "RQS_updates": [
+    2975,
+    3007,
+    2997
+  ],
+  "all_seeds_pass_overall": false,
+  "independent_full_raw_features_pixels_recompute": "reported underway; not claimed complete",
+  "not_included": "unprovided per-array data, unseen likelihood components, missing arm energy values and unreported timings are not fabricated"
+}
