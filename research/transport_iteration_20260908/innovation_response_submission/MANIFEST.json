@@ -1,0 +1,14 @@
+{
+  "launch-template.py": {
+    "sha256": "0e8d26d1fa06e0b9960715573f22d5b882b5b48cd08af108136a871d4629eebf",
+    "bytes": 5352
+  },
+  "launch-record.remote.py": {
+    "sha256": "8563407f2532f6ee6feedf5bf375810a7f2274c7eda82745c5da18a69d3991fd",
+    "bytes": 12298
+  },
+  "launch-record.json": {
+    "sha256": "455ac948d6d5f83984167117325e3dfa645c9cd95013409c90b6034a5c046b13",
+    "bytes": 12552
+  }
+}
