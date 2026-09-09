@@ -1,0 +1,12 @@
+{
+  "scope": "analytical consequences of saved finite-learning and interval bounds; no refitting or retiming",
+  "candidate_expected_joint_KL_upper": 8.249605924796479e-09,
+  "candidate_on_correct_selection_joint_KL": 0,
+  "expected_FM_joint_KL_lower": {
+    "4": 0.06218816356528011,
+    "8": 0.01402338703338972,
+    "16": 0.0009405773734639886,
+    "32": 5.938622857691487e-05,
+    "64": 3.512229463832716e-06
+  }
+}
