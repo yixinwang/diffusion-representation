@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "nfe": 4,
+      "parameter_cells": 65536,
+      "cdf_defect_lower": 0.0032858113420364816,
+      "cdf_defect_upper": 0.0039246966821562266,
+      "positive_everywhere": true,
+      "joint_KL_lower_D3072_residual2880": 0.06218816357062415,
+      "arithmetic_scope": "outward binary64 interval audit, explicit Taylor remainders; not proof-assistant verified"
+    },
+    {
+      "nfe": 8,
+      "parameter_cells": 65536,
+      "cdf_defect_lower": 0.001560325544435248,
+      "cdf_defect_upper": 0.002312991163907319,
+      "positive_everywhere": true,
+      "joint_KL_lower_D3072_residual2880": 0.014023387034594798,
+      "arithmetic_scope": "outward binary64 interval audit, explicit Taylor remainders; not proof-assistant verified"
+    },
+    {
+      "nfe": 16,
+      "parameter_cells": 65536,
+      "cdf_defect_lower": 0.00040409736810215197,
+      "cdf_defect_upper": 0.0006192107404640047,
+      "positive_everywhere": true,
+      "joint_KL_lower_D3072_residual2880": 0.0009405773735448156,
+      "arithmetic_scope": "outward binary64 interval audit, explicit Taylor remainders; not proof-assistant verified"
+    },
+    {
+      "nfe": 32,
+      "parameter_cells": 65536,
+      "cdf_defect_lower": 0.0001015387075396501,
+      "cdf_defect_upper": 0.00015959653256730769,
+      "positive_everywhere": true,
+      "joint_KL_lower_D3072_residual2880": 5.938622858201813e-05,
+      "arithmetic_scope": "outward binary64 interval audit, explicit Taylor remainders; not proof-assistant verified"
+    },
+    {
+      "nfe": 64,
+      "parameter_cells": 65536,
+      "cdf_defect_lower": 2.4693360640981595e-05,
+      "cdf_defect_upper": 4.129707611089107e-05,
+      "positive_everywhere": true,
+      "joint_KL_lower_D3072_residual2880": 3.5122294641345336e-06,
+      "arithmetic_scope": "outward binary64 interval audit, explicit Taylor remainders; not proof-assistant verified"
+    }
+  ],
+  "seconds": 9.1566173289998
+}
