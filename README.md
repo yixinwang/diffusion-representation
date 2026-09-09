@@ -1,5 +1,76 @@
 # Diffusion representation
 
+## Research status and iteration summaries
+
+**The requested significant improvement in real image/video generation quality, efficiency, and representation quality has not been established.** Restricted nonlinear, non-Gaussian constructions have proved and measured gains against specified baselines. Equally informed exact-copy flows can tie them. The completed native image comparisons retain negative and mixed results.
+
+This README is the entry point for each research iteration. **For every iteration, update and push a dated Markdown summary here** with the algorithm change, mathematical assumptions, experimental results, failures, source revision, PSC job IDs, evidence links, and next decision. Record pending work as pending. Preserve earlier results rather than replacing failures with later successes. A Pro conversation is a source of proposals until its proofs and artifacts are independently checked.
+
+### Current algorithm and comparison
+
+The current candidate is a normalized, full-dimensional flow without a VAE. A learned invertible multiscale analysis separates a coarse state from residual blocks. A coarse generator and conditional residual transformations retain all **3,072 Gaussian source coordinates** for CIFAR-10.
+
+The innovation-response variant adds a triangular transformation to each cached residual block. It keeps 16 Gaussian anchor coordinates and conditions the remaining coordinates' shifts and bounded scales on those anchors and a history summary. A matched history-only response tests whether access to the new innovations helps. The mathematical argument is a **fixed-chart conditional-KL decomposition**, not a guarantee that training finds a good chart or improves semantic representations over every VAE.
+
+- [Algorithm implementation](qalt/src/qalt/innovation_response.py)
+- [Response theory and assumptions](research/transport_iteration_20260908/innovation_response_math.md)
+- [Frozen seven-arm comparison protocol](qalt/experiments/innovation_response_pilot_v2/PROTOCOL.md)
+- [Numerical qualification evidence](research/transport_iteration_20260908/psc_response_full_qualification)
+
+The study compares innovation/history-only responses with frozen or jointly trained analysis, two strong spline controls, and a scalar control: **seven arms × three seeds = 21 fresh fits**. It uses the same 4,000 fitting images, 1,000 reused development images, and full Gaussian sources. Protected test data remain unopened. All fits and numerical checks must finish before development quality scoring. These short fitting stages are an engineering screen, not an adequately trained state-of-the-art latent-diffusion comparison.
+
+### September 9, 2026 — numerical repair, interactive validation, and fresh study
+
+**Algorithm change.** The reflected spline inverse uses direct distance from the nearer appropriate bin endpoint to avoid an out-of-range rounded root. It preserves the same real-valued rational-quadratic spline family; floating outputs, gradients, and training trajectories can differ. The production validity checks and numerical tolerances were retained.
+
+**Actual failure and validation.** The saved failed GPU batch produced one active inverse coordinate with computed root `1.0000001192092896`, while high-precision inversion gave `0.9999999514812143`. Jobs **45612641, 45614937, and 45614938** reproduced the rejection and checked the candidate. Independent audits verified full 3,072-coordinate CPU/GPU roundtrips, determinant cancellation, exact checkpoint reloads, and all **152 expected joint parameter gradients**. These are bounded checkpoint/input checks, not universal floating-point guarantees. Extreme synthetic roundtrip failures remain documented.
+
+**Preflight failure and correction.** Job **45618049** stopped before canonical data access: 33 tests passed and one test incorrectly required a fabricated legacy-kernel failure on every Torch platform. The corrected test uses independent Decimal80 inversion of each platform's realized knots, with unchanged accuracy tolerances and an additional interior case that detects endpoint snapping. No production algorithm or fitting budget changed.
+
+**Interactive result.** Allocation **45619090** requested one hour, passed all **34 preflight tests** on PSC, and released after **1 minute 57 seconds**. The test process took 42.95 seconds. No training data was accessed.
+
+**Next experiment.** Fresh study **45619353** was submitted at source [`3b8c0f7`](https://github.com/yixinwang/diffusion-representation/commit/3b8c0f7bef604a90ff329fd9608639527b67a972), with all 21 fits from scratch and the unchanged 90-minute allocation envelope. Its last published scheduler check was pending priority at **18:21:35 UTC on September 9**; no quality result from it is recorded here. A [fresh Pro review](https://chatgpt.com/c/6aa19f09-c720-83ea-b1c5-51c6cec1aa1e) is examining stronger latent-FM/diffusion controls and complete cost accounting.
+
+Evidence: [full qualification](research/transport_iteration_20260908/psc_response_full_qualification), [preserved failed preflight](research/transport_iteration_20260908/psc_response_v2_preflight_failure), [interactive verification](research/transport_iteration_20260908/psc_response_v2_interactive_preflight), [fresh submission and scheduler record](research/transport_iteration_20260908/psc_response_v2_attempt2_launch).
+
+### September 9, 2026 — higher-order conditional dependence (Pro17)
+
+**Algorithm and theory.** A conditional triple copula captures non-Gaussian dependence despite independent univariate and bivariate marginals. A shared, binned response estimator has a checked expected-KL improvement of at least **0.09629 nats per 113-dimensional synthetic observation** over a specified conditional-product baseline. The theorem requires balanced context sampling, valid sharing, and conditional independence of groups within an observation; it does not treat image patches as independent images.
+
+**Reproduced results.** All 20 original tests and the stress runner passed independently. Shared nonlinear data gave KL **0.01242** versus the product oracle's **0.21869**. In the prespecified alternating-sign failure, the shared model gave **0.22066**, worse than the same product oracle; an untied model remained capable. An equally cheap tied triangular copy matched the candidate exactly.
+
+**Decision and limits.** This demonstrates a benefit from a correct dependence/sharing assumption, not a distinct architecture or speed advantage. The binned context map is discontinuous, and additional probes found incomplete NaN validation. It was not promoted into the native implementation. Original failed repository reads and cross-platform reproduction differences are preserved.
+
+Evidence: [original package](research/transport_iteration_20260908/pro17_artifacts), [independent proof and replay](research/transport_iteration_20260908/pro17_local_checks/INDEPENDENT_REVIEW.md).
+
+### Earlier iterations — algorithms, results, and decisions
+
+The rows below summarize earlier work; linked artifacts retain protocols, per-seed results, failures, hashes, and scope qualifications.
+
+| Iteration / experiment | Algorithm or question | Result and decision | Evidence |
+|---|---|---|---|
+| Initial transport and covariance work, September 8 | Radial inverse-CDF transport and an observation-score screen; covariance repair of residual density | Radial inversion was slow. Covariance repair failed its stronger block/Student and moment comparisons. No joint quality/efficiency claim. | [Historical iteration log](research/transport_iteration_20260908/README.md) |
+| Native full-flow/FM pilot, job 45568073 | Shared invertible analysis and coarse generator; global spline residual versus parameter-matched FM | Quality was mixed. The spline was slower than all measured FM settings at batch 64 and used more memory. Later KID: spline 0.15093 versus four-step FM 0.14090. No native win. | [Native evidence](research/transport_iteration_20260908/psc_native_completed) |
+| Dense implementation, job 45573581 | Vectorized/compiled spline operations on a frozen complete generator | Measured full-generation speedup was 1.08–1.32×, with unchanged peak memory and 51.91 seconds of first use. This is a checkpoint implementation result, not training-to-quality superiority. | [Independent cost review](research/transport_iteration_20260908/dense_model_review.md) |
+| Exact tilted sampler and solver certificates, Pro8–12 | Exact conditional transport versus specified finite-stage Heun samplers on a restricted nonlinear law | Independent interval checks support scoped error bounds. The exact sampler was faster at the matched certified target; four-stage Heun remained faster at looser quality, and an exact-copy decoder ties. No image/video conclusion. | [Cost audit](research/transport_iteration_20260908/tilted_cost_review.md), [interval reproduction](research/transport_iteration_20260908/pro12_local_reproduction/README.md) |
+| Cached innovation, job 45576312 | Cache conditional transformations and add a low-rank mixer; compare frozen/joint analysis across three seeds | Overall criteria failed in all three seeds. The strong spline had better complete likelihood and KID in every seed. Retain the failures and test a different response mechanism. | [Complete-study audit and explicit artifact subset](research/transport_iteration_20260908/psc_cached_pilot) |
+| Nonlinear pair discovery, job 45579788 | Learn unknown residual pairs and a context-dependent copula in full dimension | Positive-signal cases recovered all 1,440 pairs: KL 0.1855–0.1904 versus approximately 94.67 for the fixed-chart product baseline. Zero-mean discovery failed in all three seeds; all methods fell back to KL approximately 2.193. | [Synthetic evidence](research/transport_iteration_20260908/psc_trapezoid_mechanism), [zero-mean bounds](research/transport_iteration_20260908/zero_mean_discovery) |
+| Innovation-response study, job 45582364 | Innovation-conditioned shifts/scales versus a matched history-only response and strong spline controls | Failed during the spline prefix after 820 updates, before quality evaluation. Partial candidate fits were not evaluated or reused. The numerical diagnosis above followed this failure. | [Complete failure evidence](research/transport_iteration_20260908/psc_innovation_response_failure/README.md) |
+| Video input feasibility, job 45580328 | Audited decoding and dequantization of one fixed UCF101 training clip | Timestamp policy failed; a separately frozen sequence-index policy passed. Eight observed frames were verified. No video model was trained and no validation/test video payload was opened. | [Input audit](research/transport_iteration_20260908/psc_video_index_input/README.md) |
+
+### Completed native three-seed quality result
+
+Lower KID is better. The following is the completed cached-innovation experiment, **not** the pending innovation-response rerun.
+
+| Seed | Joint candidate KID | Strong spline KID | Passed criteria |
+|---|---:|---:|---:|
+| 77201 | 0.177906 | 0.164286 | 6/9 |
+| 77202 | 0.183249 | 0.170042 | 6/9 |
+| 77203 | 0.200088 | 0.172492 | 5/9 |
+
+All 18 saved quality banks were independently recomputed. Reused development data make this exploratory evidence; fresh seeds do not make it confirmatory. No successful-seed selection, protected-test tuning, or claim of superiority over latent diffusion follows.
+
+## Archived research notes
 
 ## 12/26/2925
 

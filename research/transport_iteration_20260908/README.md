@@ -1,5 +1,7 @@
 # September 8 transport and observation-score iteration
 
+> Historical iteration record. For the latest algorithm, results, and experiment status, see the [repository README](../../README.md#research-status-and-iteration-summaries). Statements below describe their original recording time.
+
 The requested joint quality, speed, and representation advantage remains unestablished. This iteration repairs a sampler's invertibility, supplies a way to reject output corrections too small for an energy-score target, and evaluates the previously frozen covariance experiment on PSC.
 
 ## Current result and active native-image study

@@ -1,5 +1,7 @@
 # Quotient generative modeling research program
 
+The [repository README](../README.md#research-status-and-iteration-summaries) contains the dated algorithm and results summaries and is updated and pushed after every research iteration.
+
 ## One-sentence spine
 
 The program asks when a reversible quotient--fiber representation can preserve the endpoint law of a full-dimensional generator while reserving repeated neural transport for a lower-dimensional active state, and it tests that mechanism against optimized same-information baselines before moving from controlled nonlinear data to images and videos.
