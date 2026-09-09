@@ -1,0 +1,125 @@
+{
+  "library": "python-flint",
+  "version": "0.8.0",
+  "precision_bits": 96,
+  "scope": "fixed exact e=1/2 only",
+  "calls": 64,
+  "cutoff": 10,
+  "max_seconds": 45,
+  "formal_proof_assistant_verified": false,
+  "status": "finite_enclosure",
+  "compact_joint_ball": "[8.48795e-6 +/- 5.76e-12]",
+  "imaginary_ball": "0",
+  "joint_tail_upper_ball": "[9.139490052177842169318001704e-10 +/- 2.59e-38]",
+  "full_joint_upper_ball": "[8.488863824605310579752200262e-6 +/- 3.37e-34]",
+  "upper_less_than_one": true,
+  "upper_less_than_0p00002": true,
+  "conditional_certificate_scope": "Arb enclosure under correct analytic callbacks and analytic tail proof; independent code review still required",
+  "elapsed_seconds": 0.2522410829551518,
+  "counts": {
+    "integrand": 652,
+    "outer": 0
+  },
+  "completed_segments": [
+    {
+      "lo": -10,
+      "hi": -9,
+      "ball": "[+/- 1.65e-17]"
+    },
+    {
+      "lo": -9,
+      "hi": -8,
+      "ball": "[+/- 1.72e-19]"
+    },
+    {
+      "lo": -8,
+      "hi": -7,
+      "ball": "[+/- 2.56e-17]"
+    },
+    {
+      "lo": -7,
+      "hi": -6,
+      "ball": "[1.21785e-16 +/- 4.47e-22]"
+    },
+    {
+      "lo": -6,
+      "hi": -5,
+      "ball": "[2.04383e-14 +/- 2.06e-20]"
+    },
+    {
+      "lo": -5,
+      "hi": -4,
+      "ball": "[1.162080e-12 +/- 3.50e-19]"
+    },
+    {
+      "lo": -4,
+      "hi": -3,
+      "ball": "[2.21793e-11 +/- 4.85e-17]"
+    },
+    {
+      "lo": -3,
+      "hi": -2,
+      "ball": "[2.09341e-10 +/- 5.67e-16]"
+    },
+    {
+      "lo": -2,
+      "hi": -1,
+      "ball": "[1.0813305e-9 +/- 2.00e-17]"
+    },
+    {
+      "lo": -1,
+      "hi": 0,
+      "ball": "[4.34157e-10 +/- 5.11e-16]"
+    },
+    {
+      "lo": 0,
+      "hi": 1,
+      "ball": "[5.61100e-10 +/- 5.79e-16]"
+    },
+    {
+      "lo": 1,
+      "hi": 2,
+      "ball": "[5.33194e-10 +/- 5.76e-16]"
+    },
+    {
+      "lo": 2,
+      "hi": 3,
+      "ball": "[9.8124e-11 +/- 4.83e-16]"
+    },
+    {
+      "lo": 3,
+      "hi": 4,
+      "ball": "[6.453559e-12 +/- 5.45e-19]"
+    },
+    {
+      "lo": 4,
+      "hi": 5,
+      "ball": "[1.413920e-13 +/- 4.46e-20]"
+    },
+    {
+      "lo": 5,
+      "hi": 6,
+      "ball": "[9.0810e-16 +/- 7.17e-21]"
+    },
+    {
+      "lo": 6,
+      "hi": 7,
+      "ball": "[1.361e-18 +/- 2.38e-22]"
+    },
+    {
+      "lo": 7,
+      "hi": 8,
+      "ball": "[+/- 2.13e-17]"
+    },
+    {
+      "lo": 8,
+      "hi": 9,
+      "ball": "[+/- 1.53e-19]"
+    },
+    {
+      "lo": 9,
+      "hi": 10,
+      "ball": "[+/- 1.52e-17]"
+    }
+  ]
+}

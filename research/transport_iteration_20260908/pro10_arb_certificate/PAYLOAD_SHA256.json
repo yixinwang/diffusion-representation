@@ -1,0 +1,74 @@
+{
+  "README.md": {
+    "bytes": 6184,
+    "sha256": "3e12e053cafc71800a76969c28a9353e9ccf9ad680f0ad7b4cdec5aaf45021a0"
+  },
+  "pro10_arb_average16.json": {
+    "bytes": 904,
+    "sha256": "cd7c7cf2609e2da5bd98b6298b5fe29c80e2b973db3a80d3f92ffd71219bb758"
+  },
+  "pro10_arb_average32.json": {
+    "bytes": 905,
+    "sha256": "d1eedfc583b8210aa328ee7c527c7f9f1e4aa74eef55fa40f64fafb823046fcd"
+  },
+  "pro10_arb_average4.json": {
+    "bytes": 902,
+    "sha256": "204eb43b2df5c5145a2315dbdd34d1842f9bb2c58a62934effab826d2c9cc4e0"
+  },
+  "pro10_arb_average64.json": {
+    "bytes": 901,
+    "sha256": "3e88e43944cf97caf69a469ee2d1470fd1c00c781768960e79924c1d2e7210d1"
+  },
+  "pro10_arb_average64_attempt.json": {
+    "bytes": 814,
+    "sha256": "690ebba4de759065fdd804e0afcf6b68ec248ce737ec4c57c692f8b5333dbac5"
+  },
+  "pro10_arb_average8.json": {
+    "bytes": 903,
+    "sha256": "12eeed1d7c60ca8f59f6500e5545dbe6e1ea81197a123f03538e32ed4db44c61"
+  },
+  "pro10_arb_compact.py": {
+    "bytes": 3446,
+    "sha256": "78ddfa87cabb675d4a4a2b9e02f62c58e8533cea4ecd985319c3d243e97cf870"
+  },
+  "pro10_arb_dependencies.json": {
+    "bytes": 5605,
+    "sha256": "e4c46b478da4059f73aa582bb48b627d8a5e0583f99154874c0bc372713d520f"
+  },
+  "pro10_arb_feasibility_review.md": {
+    "bytes": 6566,
+    "sha256": "2b000fc082314ecd5451d5ceefb6628620b52aa91583dd81a77ec882665be09f"
+  },
+  "pro10_arb_fixed64.json": {
+    "bytes": 2489,
+    "sha256": "b22ff064678b2bd5a7b267de5aac50927911313489428ac8ec44b45b5038f4b7"
+  },
+  "pro10_arb_independent64.json": {
+    "bytes": 900,
+    "sha256": "075b40655ffc28c6d4595810f6ca76fd909a7a9ce657dfe64102f5c8b5008733"
+  },
+  "pro10_arb_independent_review.json": {
+    "bytes": 741,
+    "sha256": "53b1c3b66d561a0c35b8eb89b56d86e2930171ac1b24b71532e8b9b4cbfdbbc5"
+  },
+  "pro10_arb_independent_review.md": {
+    "bytes": 5844,
+    "sha256": "05d8b321e0567d7d6a41ad601a2ef6db61316013b706fd5f3e850e6deb20a1d2"
+  },
+  "pro10_frontier_from_balls.json": {
+    "bytes": 6076,
+    "sha256": "bbeeb901b30f7b49e22d9f313076638c2bc22937fefbae3c8b58cd73675915f2"
+  },
+  "pro10_frontier_from_balls.py": {
+    "bytes": 2102,
+    "sha256": "1bc2c46ff1dffd98e026b623818fd18ea43e6cf62dc751b184131ec216698899"
+  },
+  "pro10_frontier_from_balls_original.py.txt": {
+    "bytes": 1793,
+    "sha256": "3ef8e09687c82928190a0d9bc1586e1c36a92d02fd1a75f94a16caac922e3e41"
+  },
+  "pro10_frontier_reviewed.json": {
+    "bytes": 6090,
+    "sha256": "07f58c7bf09fab85346239826b950f43f037a29a365016b64a769d7213c1cf40"
+  }
+}

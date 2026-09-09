@@ -1,0 +1,17 @@
+{
+  "verdict": "qualified_sound_for_stated_restricted_oracle_average",
+  "source_sha256": "78ddfa87cabb675d4a4a2b9e02f62c58e8533cea4ecd985319c3d243e97cf870",
+  "original_all_five_source_hashes_match": true,
+  "rerun_equal_fields": {
+    "source_sha256": true,
+    "status": true,
+    "compact_joint_ball": true,
+    "imaginary_ball": true,
+    "joint_tail_upper_ball": true,
+    "full_joint_upper_ball": true,
+    "counts": true
+  },
+  "reparsed_upper_below_0p000008711": true,
+  "new_report_sha256": "075b40655ffc28c6d4595810f6ca76fd909a7a9ce657dfe64102f5c8b5008733",
+  "notes": "Trusted Arb computation plus separately established analytic assumptions. Upper-bound ball is not a two-sided true-KL ball. No runtime or native-data claim."
+}

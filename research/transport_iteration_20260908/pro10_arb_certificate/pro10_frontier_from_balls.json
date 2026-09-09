@@ -1,0 +1,179 @@
+{
+  "purpose": "classification of preserved trusted-computation enclosures; pending independent callback audit",
+  "source_sha256": "3ef8e09687c82928190a0d9bc1586e1c36a92d02fd1a75f94a16caac922e3e41",
+  "failure_allowance_ball": "[1.48492906646334801502161128709559074e-6 +/- 5.13e-42]",
+  "exact_expected_upper_ball": "[8.2496059247963778612311738282893392953e-9 +/- 2.91e-47]",
+  "heun": {
+    "4": {
+      "input_sha256": "204eb43b2df5c5145a2315dbdd34d1842f9bb2c58a62934effab826d2c9cc4e0",
+      "conditional_lower": "[0.22372470275499999881056734096773652709 +/- 6.44e-40]",
+      "conditional_upper": "[0.22372470415858599657948483513390000010 +/- 2.20e-39]",
+      "expected_lower": "[0.22372470273577457554628654397719219074 +/- 7.96e-40]",
+      "expected_upper": "[0.22372618908765245992749985674518709569 +/- 5.16e-40]",
+      "full_interval_width_less_than_2e_minus8": true,
+      "targets": {
+        "1e-1": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-2": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-3": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-4": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-5": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-6": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        }
+      }
+    },
+    "8": {
+      "input_sha256": "12eeed1d7c60ca8f59f6500e5545dbe6e1ea81197a123f03538e32ed4db44c61",
+      "conditional_lower": "[0.032062905691999999062302917351985342975 +/- 1.99e-40]",
+      "conditional_upper": "[0.032062906940375943929965530632100000007 +/- 1.75e-40]",
+      "expected_lower": "[0.032062905689244724721022597561024714012 +/- 3.28e-40]",
+      "expected_upper": "[0.032064391869442407277980552243387095598 +/- 1.23e-40]",
+      "full_interval_width_less_than_2e_minus8": true,
+      "targets": {
+        "1e-1": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-2": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-3": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-4": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-5": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-6": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        }
+      }
+    },
+    "16": {
+      "input_sha256": "cd7c7cf2609e2da5bd98b6298b5fe29c80e2b973db3a80d3f92ffd71219bb758",
+      "conditional_lower": "[0.0021465015999999989962359059347818401875 +/- 5.35e-42]",
+      "conditional_upper": "[0.0021465028651297381069984075104430000021 +/- 3.37e-41]",
+      "expected_lower": "[0.0021465015998155428262677299298580998221 +/- 3.94e-41]",
+      "expected_upper": "[0.0021479877941962014550134291217300955928 +/- 1.92e-41]",
+      "full_interval_width_less_than_2e_minus8": true,
+      "targets": {
+        "1e-1": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-2": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-3": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-4": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-5": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-6": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        }
+      }
+    },
+    "32": {
+      "input_sha256": "d1eedfc583b8210aa328ee7c527c7f9f1e4aa74eef55fa40f64fafb823046fcd",
+      "conditional_lower": "[0.00013774777399999938516839126378954460961 +/- 2.14e-42]",
+      "conditional_upper": "[0.00013774904292255427320767910643050000013 +/- 3.14e-42]",
+      "expected_lower": "[0.00013774777398816225128799639523195093346 +/- 4.87e-42]",
+      "expected_upper": "[0.00013923397198901762122270071771759559087 +/- 1.07e-42]",
+      "full_interval_width_less_than_2e_minus8": true,
+      "targets": {
+        "1e-1": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-2": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-3": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-4": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-5": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        },
+        "1e-6": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        }
+      }
+    },
+    "64": {
+      "input_sha256": "3e88e43944cf97caf69a469ee2d1470fd1c00c781768960e79924c1d2e7210d1",
+      "conditional_lower": "[8.7094279999979487905115149715129518881e-6 +/- 4.01e-44]",
+      "conditional_upper": "[8.7106968643676613290190358826360000017e-6 +/- 2.96e-44]",
+      "expected_lower": "[8.7094279992495180735284884509583925643e-6 +/- 4.25e-44]",
+      "expected_upper": "[1.0195625930831009344040647169731590742e-5 +/- 4.86e-43]",
+      "full_interval_width_less_than_2e_minus8": true,
+      "targets": {
+        "1e-1": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-2": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-3": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-4": {
+          "conditional": "eligible",
+          "expected": "eligible"
+        },
+        "1e-5": {
+          "conditional": "eligible",
+          "expected": "unresolved"
+        },
+        "1e-6": {
+          "conditional": "excluded",
+          "expected": "excluded"
+        }
+      }
+    }
+  },
+  "exact_eligible_all_targets": true
+}

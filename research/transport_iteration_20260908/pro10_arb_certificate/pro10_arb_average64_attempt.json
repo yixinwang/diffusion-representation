@@ -1,0 +1,24 @@
+{
+  "library": "python-flint",
+  "version": "0.8.0",
+  "precision_bits": 96,
+  "scope": "uniform e average",
+  "calls": 64,
+  "cutoff": 10,
+  "max_seconds": 45,
+  "formal_proof_assistant_verified": false,
+  "status": "finite_enclosure",
+  "compact_joint_ball": "[8.710e-6 +/- 5.72e-10]",
+  "imaginary_ball": "0",
+  "joint_tail_upper_ball": "[9.139490052177842169318001704e-10 +/- 2.59e-38]",
+  "full_joint_upper_ball": "[8.710696864367661329019035882e-6 +/- 6.36e-34]",
+  "upper_less_than_one": true,
+  "upper_less_than_0p00002": true,
+  "conditional_certificate_scope": "Arb enclosure under correct analytic callbacks and analytic tail proof; independent code review still required",
+  "elapsed_seconds": 14.812276708893478,
+  "counts": {
+    "integrand": 31515,
+    "outer": 32
+  },
+  "completed_segments": []
+}
