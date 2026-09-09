@@ -1,0 +1,55 @@
+{
+  "status": "fabricated_lossless_smoke_pass",
+  "av_version": "16.1.0",
+  "av_origin": "/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/dependencies-attempt3/av/__init__.py",
+  "python": "3.10.9",
+  "library_versions": {
+    "libavutil": [
+      60,
+      8,
+      100
+    ],
+    "libavcodec": [
+      62,
+      11,
+      100
+    ],
+    "libavformat": [
+      62,
+      3,
+      100
+    ],
+    "libavdevice": [
+      62,
+      1,
+      100
+    ],
+    "libavfilter": [
+      11,
+      4,
+      100
+    ],
+    "libswscale": [
+      9,
+      1,
+      100
+    ],
+    "libswresample": [
+      6,
+      1,
+      100
+    ]
+  },
+  "codec": "ffv1",
+  "container": "matroska",
+  "frames": 8,
+  "shape": [
+    16,
+    16,
+    3
+  ],
+  "bytes": 2389,
+  "fabricated_container_sha256": "d80eea9c697fae5750efa127d1a5e10e715d51db1867bc5307e2df716e008cba",
+  "exact_rgb_roundtrip": true,
+  "native_archive_opened": false
+}

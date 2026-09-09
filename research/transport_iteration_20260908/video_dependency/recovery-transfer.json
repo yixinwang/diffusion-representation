@@ -1,0 +1,11 @@
+{
+  "returncode": 0,
+  "stdout": "attempt2 text bundle created\n",
+  "stderr": "",
+  "elapsed_seconds": 5.4378882079999995,
+  "source_sha256": {
+    "wheel-manifest-attempt2.json": "970b8dfc04a60d5ce4ba63f49fed674ffc40cbf701e664ed6239b8d9f77bf652",
+    "smoke-attempt2.py": "af8ff0b435c67556bcf649a2ac224a575576d2620ea4d7f3a0a03da6c7be1269",
+    "install-smoke-attempt2.py": "5f812ed879571b532a3ac8c04ca0a0c9c68785394f1f69e309dbcafebffd87e6"
+  }
+}

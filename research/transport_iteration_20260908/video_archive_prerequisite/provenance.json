@@ -1,0 +1,22 @@
+{
+  "scope": "fabricated-only prerequisite; archive SHA is existing provenance, not reverified",
+  "references": {
+    "qalt/src/qalt/data_integrity.py": {
+      "bytes": 7332,
+      "sha256": "8e950adfc29135dd1dedf60bb4a9b1886c8e4f88383c3bca14aa9e795ab1eabf"
+    },
+    "qalt/data/observed_manifest_v1.json": {
+      "bytes": 1692,
+      "sha256": "8c0ae7a0c11a61876bf1be39ebe85c800afabe19969bfec770a6181a205b9995"
+    },
+    "research/transport_iteration_20260908/native_video_readiness_plan.md": {
+      "bytes": 11462,
+      "sha256": "e7839e4d88c86bae7df7ed6c0710a794e85779af7af5d95a43b0bcd0a2326e81"
+    }
+  },
+  "archive_sha256_recorded": "e9fcc76af48d320be88c5265f2e0576ecd615956976f6ce4742fdf2b042b71eb",
+  "tests": "17 passed",
+  "real_archive_opened": false,
+  "remote_access": false,
+  "decoder_used": false
+}

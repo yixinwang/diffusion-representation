@@ -1,0 +1,26 @@
+{
+  "README.md": {
+    "bytes": 5882,
+    "sha256": "01fcaa903ed3c33b18edce47817a64160ef0b55108c5177caf3826b6c53b10b3"
+  },
+  "archive_reader.py": {
+    "bytes": 8676,
+    "sha256": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51"
+  },
+  "provenance.json": {
+    "bytes": 822,
+    "sha256": "1692993103b3907022f7adc5032ef7a2a3fc5d5e1b82eae1917b15347722e456"
+  },
+  "run_header_audit.py": {
+    "bytes": 5296,
+    "sha256": "84eca6ae6e2abf3aeb906693992ae57e307e82914757b0fa23e428ab9e13a2c2"
+  },
+  "test_archive_reader.py": {
+    "bytes": 4703,
+    "sha256": "ea08d721f5ba8b8ae5ccb57f4f2e5e5e379c47e45eceb78735dd70189a62d693"
+  },
+  "test_header_wrapper.py": {
+    "bytes": 2240,
+    "sha256": "3d73acabdd99fbe40248f62a6d40dbf5846e587247fc38da1ee263869ff4bc0c"
+  }
+}

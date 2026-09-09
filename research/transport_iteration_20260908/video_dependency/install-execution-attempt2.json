@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "{\"status\": \"failed\", \"project_environment_mutated\": false, \"error\": \"TimeoutExpired(['/ocean/projects/mth250006p/ywang26/pytorch/bin/python', '-m', 'pip', 'install', '--no-index', '--no-deps', '--no-cache-dir', '--disable-pip-version-check', '--target', '/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/dependencies-attempt2', '/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/av-16.1.0-cp310-cp310-manylinux_2_28_x86_64.whl'], 55)\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 90.010314
+}

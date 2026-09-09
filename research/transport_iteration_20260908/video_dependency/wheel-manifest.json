@@ -1,0 +1,13 @@
+{
+  "version": "16.1.0",
+  "pypi": "https://pypi.org/pypi/av/16.1.0/json",
+  "filename": "av-16.1.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+  "url": "https://files.pythonhosted.org/packages/3a/b8/6c5795bf1f05f45c5261f8bce6154e0e5e86b158a6676650ddd77c28805e/av-16.1.0-cp310-cp310-manylinux_2_28_x86_64.whl",
+  "size": 40293006,
+  "digests": {
+    "blake2b_256": "3ab86c5795bf1f05f45c5261f8bce6154e0e5e86b158a6676650ddd77c28805e",
+    "md5": "8e5a323b93d80ffd5a35d0d8a24f6fe1",
+    "sha256": "eb990672d97c18f99c02f31c8d5750236f770ffe354b5a52c5f4d16c5e65f619"
+  },
+  "requires_python": ">=3.10"
+}
