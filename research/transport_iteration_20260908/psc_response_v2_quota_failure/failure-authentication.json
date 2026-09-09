@@ -1,0 +1,237 @@
+{
+  "payload_count": 178,
+  "frozen_source_count": 94,
+  "full_inventory_exact": true,
+  "status_sha256": "939694e587913d78d6d1929f439e1c488ded5ffdc3ed8761c82257de261e7ef0",
+  "failure_sha256": "fd70c75c232755e5713c2debbd5e8c25c0fd3e33fa42cf2e117dd69d0a69871b",
+  "all_fits_frozen_present": false,
+  "all_numerics_admitted_present": false,
+  "numerical_files": [],
+  "quality_files": [],
+  "final_checkpoints": [
+    "78201/P_frozen",
+    "78201/P_joint",
+    "78201/I_frozen",
+    "78201/I_joint",
+    "78201/RQS_frozen",
+    "78201/RQS_joint",
+    "78201/S42",
+    "78202/P_frozen",
+    "78202/P_joint",
+    "78202/I_frozen",
+    "78202/I_joint",
+    "78202/RQS_frozen",
+    "78202/RQS_joint",
+    "78202/S42",
+    "78203/P_frozen",
+    "78203/P_joint",
+    "78203/I_frozen",
+    "78203/I_joint",
+    "78203/RQS_frozen",
+    "78203/RQS_joint"
+  ],
+  "stages": {
+    "seed_78203/RQS_prefix_progress.json": {
+      "updates": 1714,
+      "status": "completed",
+      "elapsed_seconds": 89.92628145398339
+    },
+    "seed_78203/P_frozen_progress.json": {
+      "updates": 1775,
+      "status": "completed",
+      "elapsed_seconds": 89.8553802749957
+    },
+    "seed_78203/I_prefix_progress.json": {
+      "updates": 1780,
+      "status": "completed",
+      "elapsed_seconds": 90.00330025103176
+    },
+    "seed_78203/RQS_joint_progress.json": {
+      "updates": 379,
+      "status": "completed",
+      "elapsed_seconds": 90.0283335079439
+    },
+    "seed_78203/analysis_progress.json": {
+      "updates": 585,
+      "status": "completed",
+      "elapsed_seconds": 86.84780376998242
+    },
+    "seed_78203/I_joint_progress.json": {
+      "updates": 373,
+      "status": "completed",
+      "elapsed_seconds": 89.78008406900335
+    },
+    "seed_78203/RQS_frozen_progress.json": {
+      "updates": 1777,
+      "status": "completed",
+      "elapsed_seconds": 89.88292440399528
+    },
+    "seed_78203/S42_progress.json": {
+      "updates": 1580,
+      "status": "running"
+    },
+    "seed_78203/P_prefix_progress.json": {
+      "updates": 1718,
+      "status": "completed",
+      "elapsed_seconds": 89.94716126797721
+    },
+    "seed_78203/root_progress.json": {
+      "updates": 1953,
+      "status": "completed",
+      "elapsed_seconds": 84.87751841702266
+    },
+    "seed_78203/P_joint_progress.json": {
+      "updates": 381,
+      "status": "completed",
+      "elapsed_seconds": 89.9840796169592
+    },
+    "seed_78203/I_frozen_progress.json": {
+      "updates": 1737,
+      "status": "completed",
+      "elapsed_seconds": 89.8339463720331
+    },
+    "seed_78202/RQS_prefix_progress.json": {
+      "updates": 1748,
+      "status": "completed",
+      "elapsed_seconds": 89.98142569401534
+    },
+    "seed_78202/P_frozen_progress.json": {
+      "updates": 1808,
+      "status": "completed",
+      "elapsed_seconds": 89.87095239700284
+    },
+    "seed_78202/I_prefix_progress.json": {
+      "updates": 1701,
+      "status": "completed",
+      "elapsed_seconds": 89.98938879900379
+    },
+    "seed_78202/RQS_joint_progress.json": {
+      "updates": 378,
+      "status": "completed",
+      "elapsed_seconds": 89.92914509598631
+    },
+    "seed_78202/analysis_progress.json": {
+      "updates": 590,
+      "status": "completed",
+      "elapsed_seconds": 86.84329129598336
+    },
+    "seed_78202/I_joint_progress.json": {
+      "updates": 376,
+      "status": "completed",
+      "elapsed_seconds": 89.84208754700376
+    },
+    "seed_78202/RQS_frozen_progress.json": {
+      "updates": 1740,
+      "status": "completed",
+      "elapsed_seconds": 89.87307477096329
+    },
+    "seed_78202/S42_progress.json": {
+      "updates": 6040,
+      "status": "completed",
+      "elapsed_seconds": 179.94050666003022
+    },
+    "seed_78202/P_prefix_progress.json": {
+      "updates": 1805,
+      "status": "completed",
+      "elapsed_seconds": 89.88069925800664
+    },
+    "seed_78202/root_progress.json": {
+      "updates": 1990,
+      "status": "completed",
+      "elapsed_seconds": 85.45654413703596
+    },
+    "seed_78202/P_joint_progress.json": {
+      "updates": 383,
+      "status": "completed",
+      "elapsed_seconds": 90.00813041301444
+    },
+    "seed_78202/I_frozen_progress.json": {
+      "updates": 1744,
+      "status": "completed",
+      "elapsed_seconds": 89.86045669199666
+    },
+    "seed_78201/RQS_prefix_progress.json": {
+      "updates": 1761,
+      "status": "completed",
+      "elapsed_seconds": 89.99222673202166
+    },
+    "seed_78201/P_frozen_progress.json": {
+      "updates": 1748,
+      "status": "completed",
+      "elapsed_seconds": 89.86826984997606
+    },
+    "seed_78201/I_prefix_progress.json": {
+      "updates": 1791,
+      "status": "completed",
+      "elapsed_seconds": 89.97904062800808
+    },
+    "seed_78201/RQS_joint_progress.json": {
+      "updates": 384,
+      "status": "completed",
+      "elapsed_seconds": 89.89657419902505
+    },
+    "seed_78201/analysis_progress.json": {
+      "updates": 433,
+      "status": "completed",
+      "elapsed_seconds": 84.98956386197824
+    },
+    "seed_78201/I_joint_progress.json": {
+      "updates": 383,
+      "status": "completed",
+      "elapsed_seconds": 89.96185961796436
+    },
+    "seed_78201/RQS_frozen_progress.json": {
+      "updates": 1743,
+      "status": "completed",
+      "elapsed_seconds": 89.87727930798428
+    },
+    "seed_78201/S42_progress.json": {
+      "updates": 6067,
+      "status": "completed",
+      "elapsed_seconds": 179.94102605100488
+    },
+    "seed_78201/P_prefix_progress.json": {
+      "updates": 1708,
+      "status": "completed",
+      "elapsed_seconds": 89.94867819495266
+    },
+    "seed_78201/root_progress.json": {
+      "updates": 1943,
+      "status": "completed",
+      "elapsed_seconds": 85.39387813204667
+    },
+    "seed_78201/P_joint_progress.json": {
+      "updates": 376,
+      "status": "completed",
+      "elapsed_seconds": 89.98385778599186
+    },
+    "seed_78201/I_frozen_progress.json": {
+      "updates": 1788,
+      "status": "completed",
+      "elapsed_seconds": 89.86231961700832
+    }
+  },
+  "temporary_incomplete_artifacts": {
+    "failed_model.tmp": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed_78203/S42_progress.json.tmp": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed_78203/S42_failed.tmp": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "failure_state": {
+    "phase": "S42",
+    "seed": 78203
+  },
+  "error": "OSError(122, 'Disk quota exceeded')",
+  "preflight": "34 passed in 50.40s",
+  "canonical_input_ledger_loaded": true,
+  "repair_was_loaded_by_common_loader_but_not_evaluated": true,
+  "passed_authentication": true
+}
