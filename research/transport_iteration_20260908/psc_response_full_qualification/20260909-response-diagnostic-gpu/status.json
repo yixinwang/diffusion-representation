@@ -1,0 +1,182 @@
+{
+  "decoder_outcome": "numerical_guard_raised",
+  "decoder_exception": "dense conditional spline batch failed aggregated numerical validation",
+  "candidate_comparison": {
+    "outcome": "returned",
+    "finite": true,
+    "gradients_finite_and_present": true,
+    "gradient_tensor_count": 48,
+    "roundtrip_max_abs": 4.0531158447265625e-06,
+    "logdet_cancellation_max_abs": 0.000244140625,
+    "roundtrip_gate": true,
+    "logdet_gate": true,
+    "backend": "reflected_dense_spline_kernel",
+    "optimizer_created": false,
+    "optimizer_steps": 0,
+    "state_unchanged": true
+  },
+  "attribution": "old backend reproduced numerical guard",
+  "status": "completed_diagnostic",
+  "device": "cuda",
+  "torch": "2.10.0+cu128",
+  "numpy": "2.2.6",
+  "python": "3.10.9",
+  "host": "v007.ib.bridges2.psc.edu",
+  "gpu": "Tesla V100-SXM2-32GB",
+  "successful_updates": 820,
+  "failed_draw": 821,
+  "optimizer_steps": [
+    820
+  ],
+  "state_unchanged": true,
+  "decoder_grad_enabled": true,
+  "analysis_cache_grad_enabled": false,
+  "repair_evaluated": false,
+  "training_performed": false,
+  "layers": [
+    {
+      "layer_in_encode_order": 0,
+      "valid": true,
+      "scalar_count": 92160,
+      "inside_count": 91994,
+      "invalid_masks": {
+        "good_bins": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_disc": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_den": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_theta": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_terms": {
+          "count": 0,
+          "coordinates": []
+        }
+      }
+    },
+    {
+      "layer_in_encode_order": 1,
+      "valid": true,
+      "scalar_count": 92160,
+      "inside_count": 92003,
+      "invalid_masks": {
+        "good_bins": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_disc": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_den": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_theta": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_terms": {
+          "count": 0,
+          "coordinates": []
+        }
+      }
+    },
+    {
+      "layer_in_encode_order": 2,
+      "valid": false,
+      "scalar_count": 92160,
+      "inside_count": 91999,
+      "invalid_masks": {
+        "good_bins": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_disc": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_den": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_theta": {
+          "count": 1,
+          "coordinates": [
+            [
+              1,
+              22,
+              5,
+              1
+            ]
+          ]
+        },
+        "good_terms": {
+          "count": 0,
+          "coordinates": []
+        }
+      }
+    },
+    {
+      "layer_in_encode_order": 3,
+      "valid": true,
+      "scalar_count": 92160,
+      "inside_count": 92002,
+      "invalid_masks": {
+        "good_bins": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_disc": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_den": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_theta": {
+          "count": 0,
+          "coordinates": []
+        },
+        "good_terms": {
+          "count": 0,
+          "coordinates": []
+        }
+      }
+    }
+  ],
+  "payload_sha256": {
+    "layer_0_conditioner.pt": "bed70a0e2fa7edb169e18f6956c58b26caa4f72fde2031932c8d859d8518aea7",
+    "candidate_roundtrip.pt": "b1d3080ba7d9c74f091c9b1103675a91d6fb24f1456ea00ec45baaea1f8690c5",
+    "layer_1_kernel_locals.pt": "9c817bf65a44c9d7399400912eabb2854e72b0898f06e6946d72ba807e66efd9",
+    "source_identity.json": "c593f09d50a9e83e5e88d2fc94b28117e4ea9f6b51d982fe05d9ad9a93dbfc33",
+    "candidate_encoded.pt": "69f94bee4f29ee12529bd6496074ddbab635c5a375192a97312be568877356c1",
+    "layer_1_conditioner.pt": "bc5de0a8f7e8a84d1eb312bc02dd0c665a6eccad4aded345b580393eddb8fa69",
+    "actual_batch.pt": "00e1491d305932137844e675143d734c570459ed28f6484e83aeff064aca91a7",
+    "layer_0_kernel_locals.pt": "71da9c54b474dbc7334038be5cabaed3e8d63e4c805187ff7deb6f524d173e37",
+    "layer_3_kernel_locals.pt": "588366db39db7eb91686ae08f5b20183a715345d19c18475b501843ff210ad14",
+    "batch_identity.npz": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f",
+    "candidate_gradients.pt": "28283b50d5e7b8b688c6b310760ad0100cf87362031b129707d33b53086f916d",
+    "layer_3_conditioner.pt": "4e1f525c3aad34b65ec23b6361c02b3b1eeb3a20903292a2c1af8e944a0aaabe",
+    "candidate_comparison.json": "cdf8a92e24694c22be0c1d624d9a5dee1552f11c9d115930c344a7c9a9f35e14",
+    "layer_2_conditioner.pt": "c0e5d7caf9e01dfb9b4ac06ef352d3404258d1c575d529ad5b5b995ffef57012",
+    "module_modes.json": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956",
+    "layers.json": "6cbfbffe976aa45c3b816d36d4573066a0318bddd2e2981c20abd3b1caa5163b",
+    "layer_2_kernel_locals.pt": "fafbe63887efb9cbebad73fce43712b87f50c9221ea4e1fee26853039cbfe395",
+    "diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": "94ef7baa74fe5606bcfee3431cecbfd841ccde62523404d583a89caf0b379cd2",
+    "diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53",
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7",
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": "8774c8a6033d422737a31fcb19e88c5234e6a336928d7fd5fc8465ce138866ce",
+    "diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": "750d8bbed33a3660e8bd00887ddca9a52c9705d7413587d44274f25d48125643"
+  }
+}

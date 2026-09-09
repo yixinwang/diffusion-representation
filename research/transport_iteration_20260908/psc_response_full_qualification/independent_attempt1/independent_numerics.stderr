@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/independent_numerics.py", line 37, in <module>
+    if (p/'full_model').exists():d[name]['full']=full(p)
+                                                 ^^^^^^^
+  File "/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/psc-response-failure/independent_numerics.py", line 31, in full
+    assert all(checks.values()),checks
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'source_shape': True, 'observed_shape': True, 'finite_bank': True, 'finite_joint_forward': True, 'exact_reload': True, 'source_seed_exact': False, 'names_exact': True, 'all_parameter_gradients_present_finite': True, 'all_input_gradients_present_finite': True, 'reported_metrics_exact': True, 'numeric_gates': True, 'hashes_exact': True}

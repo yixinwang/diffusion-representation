@@ -1,0 +1,422 @@
+{
+  "files": {
+    ".gitignore": {
+      "sha256": "2a8b75b9ea67520172db48c4d78eed96b1114f2add5ade9aabe952b20c097a22",
+      "bytes": 14
+    },
+    "20260909-response-diagnostic-gpu/actual_batch.pt": {
+      "sha256": "00e1491d305932137844e675143d734c570459ed28f6484e83aeff064aca91a7",
+      "bytes": 789007
+    },
+    "20260909-response-diagnostic-gpu/batch_identity.npz": {
+      "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f",
+      "bytes": 1564
+    },
+    "20260909-response-diagnostic-gpu/candidate_comparison.json": {
+      "sha256": "cdf8a92e24694c22be0c1d624d9a5dee1552f11c9d115930c344a7c9a9f35e14",
+      "bytes": 389
+    },
+    "20260909-response-diagnostic-gpu/candidate_encoded.pt": {
+      "sha256": "69f94bee4f29ee12529bd6496074ddbab635c5a375192a97312be568877356c1",
+      "bytes": 370741
+    },
+    "20260909-response-diagnostic-gpu/candidate_gradients.pt": {
+      "sha256": "28283b50d5e7b8b688c6b310760ad0100cf87362031b129707d33b53086f916d",
+      "bytes": 1062171
+    },
+    "20260909-response-diagnostic-gpu/candidate_roundtrip.pt": {
+      "sha256": "b1d3080ba7d9c74f091c9b1103675a91d6fb24f1456ea00ec45baaea1f8690c5",
+      "bytes": 740053
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+      "sha256": "8774c8a6033d422737a31fcb19e88c5234e6a336928d7fd5fc8465ce138866ce",
+      "bytes": 5160
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+      "sha256": "750d8bbed33a3660e8bd00887ddca9a52c9705d7413587d44274f25d48125643",
+      "bytes": 13587
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+      "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53",
+      "bytes": 629
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": {
+      "sha256": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7",
+      "bytes": 674
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": {
+      "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+      "bytes": 9188
+    },
+    "20260909-response-diagnostic-gpu/diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "sha256": "94ef7baa74fe5606bcfee3431cecbfd841ccde62523404d583a89caf0b379cd2",
+      "bytes": 2118
+    },
+    "20260909-response-diagnostic-gpu/layers.json": {
+      "sha256": "6cbfbffe976aa45c3b816d36d4573066a0318bddd2e2981c20abd3b1caa5163b",
+      "bytes": 2189
+    },
+    "20260909-response-diagnostic-gpu/module_modes.json": {
+      "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956",
+      "bytes": 9184
+    },
+    "20260909-response-diagnostic-gpu/source_identity.json": {
+      "sha256": "c593f09d50a9e83e5e88d2fc94b28117e4ea9f6b51d982fe05d9ad9a93dbfc33",
+      "bytes": 11243
+    },
+    "20260909-response-diagnostic-gpu/status.json": {
+      "sha256": "f2aab2b60cc6cccd4ac15db8db333494cdb463bae1321174cd1d6b660cc1b2c6",
+      "bytes": 6077
+    },
+    "20260909-response-full-cpu/actual_batch.pt": {
+      "sha256": "3f8d2398fb02cec9ee3a662336fa346fae5c6ec42537f9d1522deee11ae29141",
+      "bytes": 789007
+    },
+    "20260909-response-full-cpu/batch_identity.npz": {
+      "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f",
+      "bytes": 1564
+    },
+    "20260909-response-full-cpu/candidate_comparison.json": {
+      "sha256": "5b2c94b975e3d3fb516b02356dce444913cb047ed3b29885b94587b71efd8f7d",
+      "bytes": 389
+    },
+    "20260909-response-full-cpu/candidate_encoded.pt": {
+      "sha256": "4edabc88e82a9991ee62c39a0279434864fef68554e2c0afb58a9a1d852ce68b",
+      "bytes": 370741
+    },
+    "20260909-response-full-cpu/candidate_gradients.pt": {
+      "sha256": "9d7fc4f0768dcd2c50e13a87744014005533f4d8e263020f88b485f82c0e663c",
+      "bytes": 1062171
+    },
+    "20260909-response-full-cpu/candidate_roundtrip.pt": {
+      "sha256": "6dd54f2b4457be3b056d3935e4e4a09def32a0499d1e5b7036a777e8013ca62b",
+      "bytes": 740053
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/INDEPENDENT_REVIEW.md": {
+      "sha256": "5d6386497ad1dbae552db4e07ab355c3f998dfad7fd5d059782005c7a0112b9c",
+      "bytes": 5084
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+      "sha256": "5bcb6e66a9fa178a95f43af7e013c5d9c12f8f01d7522ab46a54ddc64f5fc77a",
+      "bytes": 7370
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/full_model.py": {
+      "sha256": "2fd5b4855e9677ada2c23dc317c5c97b3e5aa6ab2cbf3542a91912152e4e954a",
+      "bytes": 10099
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+      "sha256": "a023ae054c444fd4900845e4ce3851d9f87b4364b0720d40b747fd0d6c5e86a8",
+      "bytes": 14105
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+      "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53",
+      "bytes": 629
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_full_cpu.slurm": {
+      "sha256": "d073ebe0d49355610b1a61c164f0a20f814f76eb45961a41b7b86a569113e8fc",
+      "bytes": 642
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_full_gpu.slurm": {
+      "sha256": "be2bb6385a6d2f24b3f8331de71c7a0b5c6414b7b19218b92d068223a0795315",
+      "bytes": 687
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": {
+      "sha256": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7",
+      "bytes": 674
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": {
+      "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+      "bytes": 9188
+    },
+    "20260909-response-full-cpu/diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "sha256": "37ebb3e78c95c2ea485ead033d6a52cea8ffb7dff06d3223f7e944cba3119eca",
+      "bytes": 3937
+    },
+    "20260909-response-full-cpu/encoded.pt": {
+      "sha256": "f147ef14251c3691fb6f86b7e35909aa6dc8711886be130616c9e55242b0b6b7",
+      "bytes": 370533
+    },
+    "20260909-response-full-cpu/full_model/invalid_input_bank.pt": {
+      "sha256": "8817985f2e762c084236b918f4b9fa65b7848860eda8c5be8cdda45145740d59",
+      "bytes": 1969177
+    },
+    "20260909-response-full-cpu/full_model/joint_forward.pt": {
+      "sha256": "eea72e4a24c1a93416c8c8160c3efdab8503d39b324aafccd1676eb91de0bdb5",
+      "bytes": 1576801
+    },
+    "20260909-response-full-cpu/full_model/joint_input_gradients.pt": {
+      "sha256": "caf86ebd3982a01137fa47cf4d35f66f9fa03ac60db5121f5d13053994d9628d",
+      "bytes": 813609
+    },
+    "20260909-response-full-cpu/full_model/joint_parameter_gradients.pt": {
+      "sha256": "caf891c08bffef45282e93a2afd24e4e29bfd41f68fda3b6aa6468abcb54c51b",
+      "bytes": 2122027
+    },
+    "20260909-response-full-cpu/full_model/numerical_bank.pt": {
+      "sha256": "70206c3ad245d685d167f37d46de809e8f16132dbd6ca88923fbceed3167f185",
+      "bytes": 1577853
+    },
+    "20260909-response-full-cpu/full_model/partial_numerical_bank.pt": {
+      "sha256": "5bc5530c598cab399adb2bdf839addece9bc927c6de795cbd118b54f313aa340",
+      "bytes": 1578061
+    },
+    "20260909-response-full-cpu/full_model/source_bank.pt": {
+      "sha256": "ee0e772a82713f2726e33f0ecb03d823ece2006fc67098f3e0c68bf0256cd8a9",
+      "bytes": 99909
+    },
+    "20260909-response-full-cpu/full_model/status.json": {
+      "sha256": "aaeb48cfce66b3936fa705a6219d8045c4a2ea53e13c166714153d88ff218f08",
+      "bytes": 18837
+    },
+    "20260909-response-full-cpu/layers.json": {
+      "sha256": "de372fe5d49d84d504327d0efa8ad5e33612fb0e9456336772adbdbd245a1332",
+      "bytes": 2095
+    },
+    "20260909-response-full-cpu/module_modes.json": {
+      "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956",
+      "bytes": 9184
+    },
+    "20260909-response-full-cpu/source_identity.json": {
+      "sha256": "0905dd4ed0b7564bf15feec8ca1310d29fb5820bfc7e925664676c4923e1c5ba",
+      "bytes": 11797
+    },
+    "20260909-response-full-cpu/status.json": {
+      "sha256": "2ffda436a39b34e0bd15c35a57f5c647f16f9aed775b2370b0147bd68cfd8744",
+      "bytes": 26964
+    },
+    "20260909-response-full-gpu/actual_batch.pt": {
+      "sha256": "00e1491d305932137844e675143d734c570459ed28f6484e83aeff064aca91a7",
+      "bytes": 789007
+    },
+    "20260909-response-full-gpu/batch_identity.npz": {
+      "sha256": "01ae6e17a500b956b900ab826098b5d799b0bf88d7e42c8dc19dff343d9da85f",
+      "bytes": 1564
+    },
+    "20260909-response-full-gpu/candidate_comparison.json": {
+      "sha256": "cdf8a92e24694c22be0c1d624d9a5dee1552f11c9d115930c344a7c9a9f35e14",
+      "bytes": 389
+    },
+    "20260909-response-full-gpu/candidate_encoded.pt": {
+      "sha256": "69f94bee4f29ee12529bd6496074ddbab635c5a375192a97312be568877356c1",
+      "bytes": 370741
+    },
+    "20260909-response-full-gpu/candidate_gradients.pt": {
+      "sha256": "28283b50d5e7b8b688c6b310760ad0100cf87362031b129707d33b53086f916d",
+      "bytes": 1062171
+    },
+    "20260909-response-full-gpu/candidate_roundtrip.pt": {
+      "sha256": "b1d3080ba7d9c74f091c9b1103675a91d6fb24f1456ea00ec45baaea1f8690c5",
+      "bytes": 740053
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/INDEPENDENT_REVIEW.md": {
+      "sha256": "5d6386497ad1dbae552db4e07ab355c3f998dfad7fd5d059782005c7a0112b9c",
+      "bytes": 5084
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/PROTOCOL.md": {
+      "sha256": "5bcb6e66a9fa178a95f43af7e013c5d9c12f8f01d7522ab46a54ddc64f5fc77a",
+      "bytes": 7370
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/full_model.py": {
+      "sha256": "2fd5b4855e9677ada2c23dc317c5c97b3e5aa6ab2cbf3542a91912152e4e954a",
+      "bytes": 10099
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.py": {
+      "sha256": "a023ae054c444fd4900845e4ce3851d9f87b4364b0720d40b747fd0d6c5e86a8",
+      "bytes": 14105
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run.slurm": {
+      "sha256": "8d30054fa1a416d7a37d179087e5dcc2aabed1f5abd59f2fa559ecd9f2750d53",
+      "bytes": 629
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_full_cpu.slurm": {
+      "sha256": "d073ebe0d49355610b1a61c164f0a20f814f76eb45961a41b7b86a569113e8fc",
+      "bytes": 642
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_full_gpu.slurm": {
+      "sha256": "be2bb6385a6d2f24b3f8331de71c7a0b5c6414b7b19218b92d068223a0795315",
+      "bytes": 687
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/experiments/response_failure_diagnostic/run_gpu.slurm": {
+      "sha256": "0e3dfbea08c9df272816d9f5098b4af711af96b446b7415356371785320144a7",
+      "bytes": 674
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/src/qalt/reflected_dense_spline.py": {
+      "sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+      "bytes": 9188
+    },
+    "20260909-response-full-gpu/diagnostic_sources/qalt/tests/test_response_failure_diagnostic.py": {
+      "sha256": "37ebb3e78c95c2ea485ead033d6a52cea8ffb7dff06d3223f7e944cba3119eca",
+      "bytes": 3937
+    },
+    "20260909-response-full-gpu/full_model/invalid_input_bank.pt": {
+      "sha256": "e09d50fe45efdde637c39170ecbf70ddee4291a46ba9e7dfffaf67c6a78bc397",
+      "bytes": 1956825
+    },
+    "20260909-response-full-gpu/full_model/joint_forward.pt": {
+      "sha256": "1168b1449445b3d7031bb630ed71f5c1ad692436e871da94a2212f051134e8a6",
+      "bytes": 1208161
+    },
+    "20260909-response-full-gpu/full_model/joint_input_gradients.pt": {
+      "sha256": "a04302d1e1fe9c615631e2a431a5a2dbd1488d25136e54ff7e02147adb5fe5d2",
+      "bytes": 813609
+    },
+    "20260909-response-full-gpu/full_model/joint_parameter_gradients.pt": {
+      "sha256": "e7c5af4ed0df469d3d84969147bd2fcea0a6194ad8487aadf92b0644bdd75e72",
+      "bytes": 2122027
+    },
+    "20260909-response-full-gpu/full_model/numerical_bank.pt": {
+      "sha256": "bc3ba87fb0ab146040f359b2e4f432131ea5f0be109e0a6fb8ab67b98919bb48",
+      "bytes": 1577853
+    },
+    "20260909-response-full-gpu/full_model/partial_numerical_bank.pt": {
+      "sha256": "cb860d39bbe52aac09efa6f751bd9250d9efe460679257f7c2abba5c1d076b25",
+      "bytes": 1578061
+    },
+    "20260909-response-full-gpu/full_model/source_bank.pt": {
+      "sha256": "ee0e772a82713f2726e33f0ecb03d823ece2006fc67098f3e0c68bf0256cd8a9",
+      "bytes": 99909
+    },
+    "20260909-response-full-gpu/full_model/status.json": {
+      "sha256": "b5a1cca848a2af7e596cb03c2e04121784ead9981fd78c853b91620b304053a5",
+      "bytes": 18837
+    },
+    "20260909-response-full-gpu/layers.json": {
+      "sha256": "6cbfbffe976aa45c3b816d36d4573066a0318bddd2e2981c20abd3b1caa5163b",
+      "bytes": 2189
+    },
+    "20260909-response-full-gpu/module_modes.json": {
+      "sha256": "52acca64e06ae053c2fafae028ba0a7c6dcbbbf6a616e42e11b2468b78ed3956",
+      "bytes": 9184
+    },
+    "20260909-response-full-gpu/source_identity.json": {
+      "sha256": "0905dd4ed0b7564bf15feec8ca1310d29fb5820bfc7e925664676c4923e1c5ba",
+      "bytes": 11797
+    },
+    "20260909-response-full-gpu/status.json": {
+      "sha256": "5dc2721a7e70d752b2df54b208bbc60b3b6acd163e2f66be5268d7b5eacd34fd",
+      "bytes": 27073
+    },
+    "INDEPENDENT_NUMERICAL_REVIEW.md": {
+      "sha256": "d8e8509903054100a40b8e491d3d8bf64efab501c4df28da69c6ec1c5ec70728",
+      "bytes": 5469
+    },
+    "PUBLICATION_SUBSET.json": {
+      "sha256": "c3a3e12e13b4773e1c3feebab9aa9427f1e18fe64e2a5b3361ece6266aa6b672",
+      "bytes": 21458
+    },
+    "actual_failed_gpu_scalar.json": {
+      "sha256": "42c6179eea200fdb908512d2a3281c311b1900009a05df9788171edc1491db6c",
+      "bytes": 3002
+    },
+    "authenticate-completed.py": {
+      "sha256": "1a04f5f6c3686e10b56b79b7a794925a8d621e38535fb059944053aec49a6f7f",
+      "bytes": 2165
+    },
+    "check_failed_scalar.json": {
+      "sha256": "a4fef93ca9de01c4e960ce02ca7b6430128e764f9abc09eebaa7cb36ae625c44",
+      "bytes": 549
+    },
+    "check_failed_scalar.py": {
+      "sha256": "7bf9c85b93f1aa6357f84d6861001ada8cf9eacde84515b10716ad5137b069e4",
+      "bytes": 1349
+    },
+    "completed-all-summaries.json": {
+      "sha256": "9a5aa958b11b5054780ed0081cad6dbbcce3a9abe6a7281606556b6b4d510a8d",
+      "bytes": 23055
+    },
+    "completed-authentication.json": {
+      "sha256": "bfe117c0d231c2ff718c0e673be2b574336cd15bdae6de1d590405f2111e09c7",
+      "bytes": 1557
+    },
+    "completed-gpu-and-full-transfer.json": {
+      "sha256": "2c575551f83ea3aea0d32108d0f6d6ed4f4e3046c2dba7619fc6f246b542799d",
+      "bytes": 87
+    },
+    "gpu-basic-scalar-check.json": {
+      "sha256": "685b4f8332afd5ff94b71325e91ed579757c27b0190b228918c8ffc2ee4b2529",
+      "bytes": 616
+    },
+    "independent_attempt1/independent_numerics.py": {
+      "sha256": "d0cd293af1f292226f0f8adb0948da923491506ea458af570a9726e2c41fc865",
+      "bytes": 6115
+    },
+    "independent_attempt1/independent_numerics.stderr": {
+      "sha256": "866b9a974c80ab48e0e9d8d338ce52c5e88eb8ff405ed51816255b0857b84ab8",
+      "bytes": 900
+    },
+    "independent_attempt1/independent_numerics.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "independent_numerics.py": {
+      "sha256": "88a40e1b773606500521b72f4620994d9740bf0fddb2658f9d0ecebcf0858960",
+      "bytes": 6559
+    },
+    "independent_numerics_with_cpu_coordinate.json": {
+      "sha256": "2116d991a84dd582098320b608b778e1fbc803a34ffa3b4b8a310226d1212bf0",
+      "bytes": 10871
+    },
+    "independent_numerics_with_cpu_coordinate.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "independent_numerics_with_cpu_coordinate.stdout": {
+      "sha256": "63339fbca153a9c560a222b0f4ec7ac4fef87dd67c31b125b095ffce1ed240c1",
+      "bytes": 576
+    },
+    "interactive-readiness-1.json": {
+      "sha256": "868be40b186282f0119256448e9897edff9f6ab37f2adfc814f2a88267f05854",
+      "bytes": 3831
+    },
+    "launch-full-diagnostics.json": {
+      "sha256": "d054d34a6b23fd4e1032f5f12f3c8ac20b5af4ca3a8c10ed661f4d200897a74c",
+      "bytes": 3729
+    },
+    "launch-full-diagnostics.py": {
+      "sha256": "fc6bdd4aa28dbbf0e44cb35e5a57b9f4f8a55fa637bf66e2cb7fd8b944ae21cb",
+      "bytes": 3762
+    },
+    "launch-full-diagnostics.remote.py": {
+      "sha256": "1a303952d57bd4a4755e83d9f10b884e5501b30e657803892d7ad1df8e030d2c",
+      "bytes": 3744
+    },
+    "launch-gpu-diagnostic.json": {
+      "sha256": "422b611b0ade655f3a3332382fa2ea88d9ac3e3e76b0bfc19f92de983bdeb942",
+      "bytes": 2317
+    },
+    "launch-gpu-diagnostic.py": {
+      "sha256": "ea516e38541d4f415f4e0c046856e5c0d4677fc394334357b062fb3b6fa9a18c",
+      "bytes": 3500
+    },
+    "launch-gpu-diagnostic.remote.py": {
+      "sha256": "715971d91f7101e2c60327df1ecf1700cbe53a1f29d33b66cabd52e9d1cc2b38",
+      "bytes": 2982
+    },
+    "post-audit-v007-resources.json": {
+      "sha256": "9774a5c806c380cf3a27bb6db0e81dd2c8c17d1c32a527777eca0ea95c265867",
+      "bytes": 2133
+    },
+    "response-diagnostic-gpu-45612641.out": {
+      "sha256": "b3e02672fe5c77cfa2acb107a7aae905e616fcdce70484c0d40099369fa98b98",
+      "bytes": 444
+    },
+    "response-full-cpu-45614937.out": {
+      "sha256": "d9fce1bb262ebf2b96d69c7891c482bb49822aad33ab5a06b43b7d7af63e0588",
+      "bytes": 434
+    },
+    "response-full-gpu-45614938.out": {
+      "sha256": "d9fce1bb262ebf2b96d69c7891c482bb49822aad33ab5a06b43b7d7af63e0588",
+      "bytes": 434
+    },
+    "retarget-gpu-v007.json": {
+      "sha256": "25f819007596fd9deaaea7ffa6adc66e8921a2cd6f7846580c17012a52f2bab5",
+      "bytes": 3397
+    },
+    "retarget-gpu-v007.remote.py": {
+      "sha256": "74d5e4509079d622e7e165ab3c9f49c83646463d7d42ed857d5bf6ceb50487d8",
+      "bytes": 559
+    }
+  },
+  "self_excluded": "PUBLICATION_FILES.json cannot include its own hash",
+  "scope": "All files in this publication, including retained failure records and logs; raw original omissions listed in PUBLICATION_SUBSET.json."
+}

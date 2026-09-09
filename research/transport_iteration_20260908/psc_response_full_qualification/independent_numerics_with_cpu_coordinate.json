@@ -1,0 +1,271 @@
+{
+  "20260909-response-diagnostic-gpu": {
+    "scalar": {
+      "locals_sha256": "fafbe63887efb9cbebad73fce43712b87f50c9221ea4e1fee26853039cbfe395",
+      "invalid_theta_count": 1,
+      "rows": [
+        {
+          "coordinate": [
+            1,
+            22,
+            5,
+            1
+          ],
+          "captured_good_theta": false,
+          "captured": {
+            "x": -0.08074430376291275,
+            "xl": -0.7294244766235352,
+            "yl": -0.82723069190979,
+            "width": 0.7595829963684082,
+            "height": 0.7464864253997803,
+            "dl": 1.0542545318603516,
+            "dr": 1.0108226537704468,
+            "delta": 0.9827582240104675,
+            "curvature": 0.09956085681915283,
+            "eta": 0.9999999403953552,
+            "a": 0.028064541518688202,
+            "b": 0.9546936750411987,
+            "c": -0.9827581644058228,
+            "disc": 1.0217622518539429,
+            "root": 1.0108225345611572,
+            "den": 1.965516209602356,
+            "theta": 1.0000001192092896,
+            "mapped": 0.030158638954162598,
+            "ld": -0.010764507576823235,
+            "denominator": 0.9827582240104675,
+            "numerator": 1.0108226537704468,
+            "xr": 0.030158519744873047,
+            "yr": -0.08074426651000977
+          },
+          "oracle": {
+            "theta": "0.9999999514812142599345394862542185290518763054416074999779922825037177",
+            "one_minus_theta": "0.00000004851878574006546051374578147094812369455839250002200771749628234581527",
+            "value": "0.03015848289082839427928159454489050019121452874782968748685959068746785",
+            "inverse_logdet": "-0.01076449547981288787959755265382962822583885457635893893261180667314952",
+            "eta": "0.9999999500956725841754256080582793115662101871260568938077432991663023"
+          },
+          "independent_cpu_reflected_fixed_captured_knots": {
+            "orientation_left": false,
+            "eta_left": 0.9999999403953552,
+            "eta_right": 4.9904326004934774e-08,
+            "short": 4.851878543377097e-08,
+            "theta": 0.9999999403953552,
+            "complement": 4.851878543377097e-08,
+            "value": 0.030158482491970062,
+            "ld": -0.010764507576823235,
+            "value_abs_error": 3.9885833202342224e-10,
+            "ld_abs_error": 1.2097010346678507e-08
+          },
+          "captured_old_value_error": 1.5606333420337696e-07,
+          "captured_old_ld_error": 1.2097010346678507e-08
+        }
+      ]
+    }
+  },
+  "20260909-response-full-cpu": {
+    "scalar": {
+      "locals_sha256": "b8180a5e67efff31c79b37ba48721a857581489b8e8dfc294648d80c587b987a",
+      "invalid_theta_count": 0,
+      "rows": [
+        {
+          "coordinate": [
+            1,
+            22,
+            5,
+            1
+          ],
+          "captured_good_theta": true,
+          "captured": {
+            "x": -0.08073683083057404,
+            "xl": 0.03015875816345215,
+            "yl": -0.08074426651000977,
+            "width": 0.7117824554443359,
+            "height": 0.7892975807189941,
+            "dl": 1.0108226537704468,
+            "dr": 0.9940891265869141,
+            "delta": 1.1089028120040894,
+            "curvature": -0.21289372444152832,
+            "eta": 9.420628884981852e-06,
+            "a": 0.098078154027462,
+            "b": 1.0108246803283691,
+            "c": -1.044656164594926e-05,
+            "disc": 1.0217704772949219,
+            "root": 1.010826587677002,
+            "den": 2.021651268005371,
+            "theta": 1.0334681974200066e-05,
+            "mapped": 0.03016611374914646,
+            "ld": -0.01077038049697876,
+            "denominator": 1.1089006662368774,
+            "numerator": 1.0108246803283691,
+            "xr": 0.7419412136077881,
+            "yr": 0.7085533142089844
+          },
+          "oracle": {
+            "theta": "0.00001033468195055664005191647351036432192184463330493979745918284715858358",
+            "one_minus_theta": "0.9999896653180494433599480835264896356780781553666950602025408171528414",
+            "value": "0.03016611420874715190196596934827446793993086253817005944953159407752951",
+            "inverse_logdet": "-0.01077048172224927872680013803688776648805694881858674700892603497807537",
+            "eta": "0.000009420628692357834972635999896089899152830613848920754653148687500641887"
+          },
+          "independent_cpu_reflected_fixed_captured_knots": {
+            "orientation_left": true,
+            "eta_left": 9.420628884981852e-06,
+            "eta_right": 0.9999905824661255,
+            "short": 1.0334681974200066e-05,
+            "theta": 1.0334681974200066e-05,
+            "complement": 0.9999896883964539,
+            "value": 0.03016611374914646,
+            "ld": -0.01077038049697876,
+            "value_abs_error": 4.5960069041514956e-10,
+            "ld_abs_error": 1.0122527051896117e-07
+          },
+          "captured_old_value_error": 4.5960069041514956e-10,
+          "captured_old_ld_error": 1.0122527051896117e-07
+        }
+      ]
+    },
+    "full": {
+      "checks": {
+        "source_shape": true,
+        "observed_shape": true,
+        "finite_bank": true,
+        "finite_joint_forward": true,
+        "exact_reload": true,
+        "names_exact": true,
+        "all_parameter_gradients_present_finite": true,
+        "all_input_gradients_present_finite": true,
+        "reported_metrics_exact": true,
+        "numeric_gates": true,
+        "hashes_exact": true
+      },
+      "metrics": {
+        "source_roundtrip_max_abs": 6.151199340820312e-05,
+        "source_logdet_cancellation_max_abs": 0.00146484375,
+        "observed_roundtrip_max_abs": 1.0967254638671875e-05,
+        "observed_logdet_cancellation_max_abs": 0.0009765625
+      },
+      "local_cross_version_gaussian_regeneration_matches": false,
+      "source_values_sha256": "678cb83aa6442b431128c0390043e0e1ba671706131d5e66bbf74851d6266a12",
+      "parameter_gradient_count": 152,
+      "parameter_gradient_elements": 517476,
+      "analysis_count": 104,
+      "residual_count": 48,
+      "joint_scalar_loss_recomputed": -0.6051074862480164,
+      "input_gradients_nonzero": {
+        "logits": true,
+        "coarse": true,
+        "residual": true,
+        "fixed_root_input": true
+      },
+      "status_sha256": "aaeb48cfce66b3936fa705a6219d8045c4a2ea53e13c166714153d88ff218f08",
+      "unrecomputed_state_assertions": [
+        "root_requires_grad_false_and_grad_none",
+        "model_state_unchanged"
+      ],
+      "scope": "Saved arrays independently checked; model state equality and frozen flags are source-reviewed diagnostic assertions, not reconstructable from gradient arrays alone."
+    }
+  },
+  "20260909-response-full-gpu": {
+    "scalar": {
+      "locals_sha256": "fafbe63887efb9cbebad73fce43712b87f50c9221ea4e1fee26853039cbfe395",
+      "invalid_theta_count": 1,
+      "rows": [
+        {
+          "coordinate": [
+            1,
+            22,
+            5,
+            1
+          ],
+          "captured_good_theta": false,
+          "captured": {
+            "x": -0.08074430376291275,
+            "xl": -0.7294244766235352,
+            "yl": -0.82723069190979,
+            "width": 0.7595829963684082,
+            "height": 0.7464864253997803,
+            "dl": 1.0542545318603516,
+            "dr": 1.0108226537704468,
+            "delta": 0.9827582240104675,
+            "curvature": 0.09956085681915283,
+            "eta": 0.9999999403953552,
+            "a": 0.028064541518688202,
+            "b": 0.9546936750411987,
+            "c": -0.9827581644058228,
+            "disc": 1.0217622518539429,
+            "root": 1.0108225345611572,
+            "den": 1.965516209602356,
+            "theta": 1.0000001192092896,
+            "mapped": 0.030158638954162598,
+            "ld": -0.010764507576823235,
+            "denominator": 0.9827582240104675,
+            "numerator": 1.0108226537704468,
+            "xr": 0.030158519744873047,
+            "yr": -0.08074426651000977
+          },
+          "oracle": {
+            "theta": "0.9999999514812142599345394862542185290518763054416074999779922825037177",
+            "one_minus_theta": "0.00000004851878574006546051374578147094812369455839250002200771749628234581527",
+            "value": "0.03015848289082839427928159454489050019121452874782968748685959068746785",
+            "inverse_logdet": "-0.01076449547981288787959755265382962822583885457635893893261180667314952",
+            "eta": "0.9999999500956725841754256080582793115662101871260568938077432991663023"
+          },
+          "independent_cpu_reflected_fixed_captured_knots": {
+            "orientation_left": false,
+            "eta_left": 0.9999999403953552,
+            "eta_right": 4.9904326004934774e-08,
+            "short": 4.851878543377097e-08,
+            "theta": 0.9999999403953552,
+            "complement": 4.851878543377097e-08,
+            "value": 0.030158482491970062,
+            "ld": -0.010764507576823235,
+            "value_abs_error": 3.9885833202342224e-10,
+            "ld_abs_error": 1.2097010346678507e-08
+          },
+          "captured_old_value_error": 1.5606333420337696e-07,
+          "captured_old_ld_error": 1.2097010346678507e-08
+        }
+      ]
+    },
+    "full": {
+      "checks": {
+        "source_shape": true,
+        "observed_shape": true,
+        "finite_bank": true,
+        "finite_joint_forward": true,
+        "exact_reload": true,
+        "names_exact": true,
+        "all_parameter_gradients_present_finite": true,
+        "all_input_gradients_present_finite": true,
+        "reported_metrics_exact": true,
+        "numeric_gates": true,
+        "hashes_exact": true
+      },
+      "metrics": {
+        "source_roundtrip_max_abs": 6.526708602905273e-05,
+        "source_logdet_cancellation_max_abs": 0.00146484375,
+        "observed_roundtrip_max_abs": 1.3828277587890625e-05,
+        "observed_logdet_cancellation_max_abs": 0.001953125
+      },
+      "local_cross_version_gaussian_regeneration_matches": false,
+      "source_values_sha256": "678cb83aa6442b431128c0390043e0e1ba671706131d5e66bbf74851d6266a12",
+      "parameter_gradient_count": 152,
+      "parameter_gradient_elements": 517476,
+      "analysis_count": 104,
+      "residual_count": 48,
+      "joint_scalar_loss_recomputed": -0.6051072478294373,
+      "input_gradients_nonzero": {
+        "logits": true,
+        "coarse": true,
+        "residual": true,
+        "fixed_root_input": true
+      },
+      "status_sha256": "b5a1cca848a2af7e596cb03c2e04121784ead9981fd78c853b91620b304053a5",
+      "unrecomputed_state_assertions": [
+        "root_requires_grad_false_and_grad_none",
+        "model_state_unchanged"
+      ],
+      "scope": "Saved arrays independently checked; model state equality and frozen flags are source-reviewed diagnostic assertions, not reconstructable from gradient arrays alone."
+    }
+  }
+}

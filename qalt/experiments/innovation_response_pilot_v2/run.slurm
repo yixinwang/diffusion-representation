@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #SBATCH --account=cis260243p
 #SBATCH --partition=GPU-shared
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:v100-32:1
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
 #SBATCH --time=01:30:00
-#SBATCH --nodelist=v024
+#SBATCH --exclude=v005
 #SBATCH --signal=B:USR1@120
 set -euo pipefail
 : "${RESULT_ROOT:?new output directory required}"

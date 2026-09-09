@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "qualified": false,
+  "qualified": true,
   "backend": "dense_reflected",
-  "independent_review_verified": false,
+  "independent_review_verified": true,
   "kernel_sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
-  "diagnostic_source_commit": null,
-  "diagnostic_job_id": null,
+  "diagnostic_source_commit": "249ea6d6d166cb11b185ad03c0f62a564c86c335",
+  "diagnostic_job_id": "45614938",
   "original_failure_job_id": "45582364",
-  "diagnostic_receipt_sha256": null,
-  "status": "pending independently verified gradient-enabled GPU qualification; no launch"
+  "diagnostic_receipt_sha256": "080e8719d4092c74f8d1cb959162f633c4f69f62bbb7b2ea2421a145bb890332",
+  "status": "independently verified CPU/CUDA full-model and original GPU failure evidence; bounded study admission"
 }
