@@ -1,0 +1,20 @@
+{
+  "preserved_status_payload_count": 114,
+  "verified_frozen_source_count": 88,
+  "frozen_commit": "168efc227e361a86a2a6aa6952786e5d0e13e30f",
+  "errors": [],
+  "omitted": [
+    {
+      "path": "full-payload.tar",
+      "bytes": 44800000,
+      "sha256": "3591915c87e6080339238b40b11a7e3ff697a8ecee1bed8d53dab160268c4314",
+      "reason": "duplicate transport archive; every extracted file retained byte-for-byte"
+    }
+  ],
+  "all_original_extracted_files_preserved": true,
+  "ignored_paths_initial": [
+    "research/transport_iteration_20260908/psc_innovation_response_failure/full/innovation-response-45582364.out"
+  ],
+  "all_files_git_trackable": true,
+  "slurm_log_unignore": "local .gitignore exception retains exact original .out path"
+}

@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/experiments/innovation_response_pilot/run.py", line 502, in <module>
+    if __name__=='__main__':main()
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/experiments/innovation_response_pilot/run.py", line 490, in main
+    state['seed']=seed;models,template,reports=fit_seed(seed,fit_logits,data.fit_ids,args.output/f'seed_{seed}',common_setup,state,live)
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/experiments/innovation_response_pilot/run.py", line 277, in fit_seed
+    reports[prefix_name]=train_until(model,optimizer,rng,residual_loss,ids,begin+90,out,prefix_name,state)
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/experiments/innovation_response_pilot/run.py", line 105, in train_until
+    loss=loss_function(torch.as_tensor(index,device=next(model.parameters()).device))
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/experiments/innovation_response_pilot/run.py", line 275, in <lambda>
+    residual_loss=lambda i:-model.residual_decoder.log_prob(residual[i],coarse[i]).mean()/model.residual_dimension
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/src/qalt/global_conditional_spline.py", line 115, in log_prob
+    z, ld = self.encode(residual, coarse)
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/src/qalt/global_conditional_spline.py", line 109, in encode
+    return self._transform(residual, coarse, True)
+  File "/ocean/projects/mth250006p/ywang26/diffusion-innovation-response-20260909/qalt/src/qalt/dense_global_conditional_spline.py", line 64, in _transform
+    raise FloatingPointError('dense conditional spline batch failed aggregated numerical validation')
+FloatingPointError: dense conditional spline batch failed aggregated numerical validation
