@@ -1,0 +1,18 @@
+{
+  "launch-full-diagnostics.json": {
+    "bytes": 3729,
+    "sha256": "d054d34a6b23fd4e1032f5f12f3c8ac20b5af4ca3a8c10ed661f4d200897a74c"
+  },
+  "STATUS.md": {
+    "bytes": 1254,
+    "sha256": "d525e9505884a7faadf452334237fd6ff00881e900bdd33061867cd645082c62"
+  },
+  "retarget-gpu-v007.json": {
+    "bytes": 3397,
+    "sha256": "25f819007596fd9deaaea7ffa6adc66e8921a2cd6f7846580c17012a52f2bab5"
+  },
+  "gpu-after-retarget-status.json": {
+    "bytes": 179,
+    "sha256": "99d4f90df738189df799f46f92ff03b22cfc9176fadbdc0302c95222f5d89566"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|MaxRSS|NodeList\n45612641|PENDING|0:0|00:00:00||None assigned\n45612641|PENDING|(Priority)|0:00\n",
+  "stderr": ""
+}
