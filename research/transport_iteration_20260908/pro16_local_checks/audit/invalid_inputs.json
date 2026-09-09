@@ -1,0 +1,62 @@
+[
+  {
+    "argument": 0,
+    "value": "nan",
+    "rejected": true
+  },
+  {
+    "argument": 0,
+    "value": "inf",
+    "rejected": true
+  },
+  {
+    "argument": 0,
+    "value": "-inf",
+    "rejected": true
+  },
+  {
+    "argument": 1,
+    "value": "nan",
+    "rejected": true
+  },
+  {
+    "argument": 1,
+    "value": "inf",
+    "rejected": true
+  },
+  {
+    "argument": 1,
+    "value": "-inf",
+    "rejected": true
+  },
+  {
+    "argument": 2,
+    "value": "nan",
+    "rejected": true
+  },
+  {
+    "argument": 2,
+    "value": "inf",
+    "rejected": true
+  },
+  {
+    "argument": 2,
+    "value": "-inf",
+    "rejected": true
+  },
+  {
+    "argument": 3,
+    "value": "nan",
+    "rejected": true
+  },
+  {
+    "argument": 3,
+    "value": "inf",
+    "rejected": true
+  },
+  {
+    "argument": 3,
+    "value": "-inf",
+    "rejected": true
+  }
+]

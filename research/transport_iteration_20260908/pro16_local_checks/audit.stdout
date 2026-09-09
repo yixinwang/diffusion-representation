@@ -1,0 +1,6 @@
+frozen_knot_neighbor_fuzz True
+independent_100_digit_bisection True
+autograd_and_implicit_derivatives True
+endpoint_identities True
+invalids_remain_invalid True
+{"all_pass": true, "elapsed_seconds": 3.143674457911402}

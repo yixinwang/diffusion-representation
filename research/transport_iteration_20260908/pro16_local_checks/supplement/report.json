@@ -1,0 +1,31 @@
+{
+  "plan_sha256": "46be594a83e816942a8f5f085f1721e95ababf9deb293649e9bfbd9637a9d4a7",
+  "script_sha256": "cf47e4e7989cc4497c841d48ca167ebafdbdf7042c724c0234b39ebc2417557e",
+  "tests": {
+    "original_failure_replay_and_knot_isolation": {
+      "pass": false,
+      "error": "AssertionError()",
+      "traceback": "Traceback (most recent call last):\n  File \"/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro16-local-audit/pro16_artifacts/run_supplement.py\", line 43, in test\n    try: report['tests'][name]={'pass':True,'data':fn()}\n                                                   ^^^^\n  File \"/Users/yixinw/Documents/Codex/2026-09-08/every-iteration-launch-fresh-chatgpt-pro-4/work/pro16-local-audit/pro16_artifacts/run_supplement.py\", line 72, in witnesses\n    assert all(not r['original_replayed_valid'] for r in rows)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+    },
+    "extreme_logits_high_precision": {
+      "pass": true,
+      "data": {
+        "cases": 32,
+        "original_invalid": 1,
+        "max_value_error": 1.165584278276659e-07,
+        "max_ld_error": 3.10038633067288e-07,
+        "max_rounded_inverse_forward_residual": 0.005999999999999783
+      }
+    },
+    "finite_range_boundary_remains_failure": {
+      "pass": true,
+      "data": {
+        "finite_real_parameters_rejected": true,
+        "reason": "scaled discriminant underflow; no fallback/clamp"
+      }
+    }
+  },
+  "native_failed_batch_accessed": false,
+  "elapsed_seconds": 0.8378665000200272,
+  "all_pass": false
+}

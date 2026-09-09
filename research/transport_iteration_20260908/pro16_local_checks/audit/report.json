@@ -1,0 +1,71 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.14.0",
+    "mpmath": "1.3.0",
+    "cuda_available": false,
+    "device": "cpu",
+    "threads": 1
+  },
+  "plan_sha256": "022a660dc2e6cc1e002d70076b3862a70c95d069956be4c4278bcf122490597e",
+  "source_sha256": {
+    "original/dense_global_conditional_spline.py": "e54967240c614136ace0d39a58f154bfcc901a29642394640a0c1092a5c71b51",
+    "original/dense_spline.py": "7589d7e291022ae6b12102b099995b3fd5a2b03c7cb33a31e0e6dd716d62e433",
+    "original/spline.py": "fc2d21cb9b0f6d30cf47c04ecdd0c8b8e1908dc8575e270a56797caf52f21440",
+    "run_audit.py": "44c7d516162e6f789b09e7becdd8f06c2ff87800567cb80806e1a0a6f1c41864",
+    "run_supplement.py": "cf47e4e7989cc4497c841d48ca167ebafdbdf7042c724c0234b39ebc2417557e",
+    "stable_spline.py": "aeee562b20c865caabe43482d24b724eb11ed090027ed82b0ed516f9504f1671"
+  },
+  "tests": {
+    "frozen_knot_neighbor_fuzz": {
+      "pass": true,
+      "data": {
+        "coordinates": 44800,
+        "banks": 20,
+        "original_invalid_banks": 8,
+        "witnesses": 9
+      },
+      "seconds": 0.6038714579772204
+    },
+    "independent_100_digit_bisection": {
+      "pass": true,
+      "data": {
+        "cases": 96,
+        "max_value_error": 1.4485027676008123e-16,
+        "max_logdet_error": 1.0227407886991619e-13
+      },
+      "seconds": 1.648762834025547
+    },
+    "autograd_and_implicit_derivatives": {
+      "pass": true,
+      "data": {
+        "False": true,
+        "gradgrad_False": true,
+        "True": true,
+        "gradgrad_True": true
+      },
+      "seconds": 0.8772186669521034
+    },
+    "endpoint_identities": {
+      "pass": true,
+      "data": {
+        "endpoint_identities": true,
+        "tails_exact": true
+      },
+      "seconds": 0.005114207975566387
+    },
+    "invalids_remain_invalid": {
+      "pass": true,
+      "data": {
+        "nonfinite_cases_rejected": 12,
+        "zero_derivative_rejected": true
+      },
+      "seconds": 0.005065292119979858
+    }
+  },
+  "elapsed_seconds": 3.143674457911402,
+  "all_pass": true,
+  "native_failed_batch_accessed": false,
+  "native_root_cause_identified": false,
+  "native_quality_evaluated": false
+}

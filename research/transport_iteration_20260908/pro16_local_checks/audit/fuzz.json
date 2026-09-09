@@ -1,0 +1,342 @@
+[
+  {
+    "dtype": "torch.float32",
+    "scale": 0,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 0,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 1,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 1,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 17,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 8,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 8,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 9,
+      "good_terms": 1,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "FloatingPointError('spline evaluation exceeded numerical range')",
+    "reference_vs_old_max_abs": null
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 40,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 40,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 8,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 100,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float32",
+    "scale": 100,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 5,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 0,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 0,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 1,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 1,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 19,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 8,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 8,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 16,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 40,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 40,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 18,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 100,
+    "inverse": false,
+    "coordinates": 2240,
+    "original_valid": true,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 0,
+      "good_terms": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  },
+  {
+    "dtype": "torch.float64",
+    "scale": 100,
+    "inverse": true,
+    "coordinates": 2240,
+    "original_valid": false,
+    "original_failure_counts": {
+      "good_bins": 0,
+      "good_theta": 12,
+      "good_terms": 0,
+      "good_disc": 0,
+      "good_den": 0
+    },
+    "candidate_valid": true,
+    "candidate_gradients_finite": true,
+    "reference_status": "returned_finite",
+    "reference_vs_old_max_abs": 0.0
+  }
+]

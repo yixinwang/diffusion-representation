@@ -1,0 +1,29 @@
+{
+  "arguments": [
+    0.5,
+    0.0,
+    1.0,
+    0.0,
+    1.0,
+    1e+308,
+    1e+308
+  ],
+  "value": 1e-308,
+  "ld": -706.9989840648298,
+  "valid": false,
+  "details": {
+    "admitted": true,
+    "ratios_ok": true,
+    "disc_ok": false,
+    "root_den_ok": true,
+    "coord_ok": true,
+    "terms_ok": true,
+    "output_ok": true,
+    "reflected": false,
+    "near": 0.5,
+    "t": 1e-308,
+    "c": 1.0,
+    "Q": 2.9999999999999997e-308,
+    "A": 1.0
+  }
+}
