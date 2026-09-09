@@ -1,0 +1,16 @@
+{
+  "repository": "yixinwang/diffusion-representation",
+  "requested_pin": "35892f6",
+  "active_branch": "agent/observation-transport-audit-20260908",
+  "status": "source_read_failed",
+  "reads": [],
+  "user_supplied_not_yet_independently_verified": [
+    "45576312 failed overall gates all three; RQS better complete NLL/KID all three",
+    "45582364 RQS_prefix failure at draw821 after820 updates before quality",
+    "qualification false; all21 fit rerun pending; I quality unknown"
+  ],
+  "spline_audit_performed": false,
+  "native_fits_performed": false,
+  "note": "Automated exact-source archive. Read this receipt before claiming independent repository verification.",
+  "exception": "ConnectionError: HTTPSConnectionPool(host='api.github.com', port=443): Max retries exceeded with url: /repos/yixinwang/diffusion-representation/commits/35892f6 (Caused by NameResolutionError(\"HTTPSConnection(host='api.github.com', port=443): Failed to resolve 'api.github.com' ([Errno -3] Temporary failure in name resolution)\"))"
+}

@@ -1,0 +1,11 @@
+{
+  "repository": "yixinwang/diffusion-representation",
+  "target_branch": "pro17-artifacts-20260909",
+  "allowed_prefix": "research/transport_iteration_20260908/pro17_artifacts/",
+  "status": "not_published",
+  "commit": null,
+  "active_branch_write_attempted": false,
+  "operations": [],
+  "failed_operation": "Resolve GitHub REST credential for isolated publication",
+  "reason": "Neither GH_TOKEN nor GITHUB_TOKEN is available. No REST write attempted; no claim that GitHub itself rejected publication."
+}
