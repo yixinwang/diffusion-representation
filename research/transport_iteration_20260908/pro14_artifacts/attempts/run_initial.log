@@ -1,0 +1,33 @@
+/mnt/data/pro14_review/checks.py:35: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  rt=float((back-z).abs().max());le=float((ld+ild).abs().max())
+small_prefix {"round_trip_max": 6.661338147750939e-16, "ld_cancellation_max": 2.7755575615628914e-17, "dense_jacobian_error": 3.1502578323738817e-15, "directional_gradient_error": 5.4867554943882624e-11, "all_parameter_gradients_finite": true}
+small_innovation {"round_trip_max": 5.551115123125783e-16, "ld_cancellation_max": 3.469446951953614e-16, "dense_jacobian_error": 3.191891195797325e-16, "directional_gradient_error": 2.0720231086457375e-11, "all_parameter_gradients_finite": true}
+full_3072_torch.float64 {"batch": 4, "round_trip_max": 7.105427357601002e-15, "ld_cancellation_max": 4.440892098500626e-15, "same_source_exact_copy": true, "all_3072_coordinates_retained": true}
+Traceback (most recent call last):
+  File "/mnt/data/pro14_review/checks.py", line 61, in <module>
+    y,ld=f(z);back,ild=f(y,True)
+         ~^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data/pro14_review/mechanism.py", line 212, in forward
+    value,inc=layer(current,self.context(prefix),inverse)
+              ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/opt/pyvenv/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/mnt/data/pro14_review/mechanism.py", line 169, in forward
+    v, b = self.base(v,h)
+           ~~~~~~~~~^^^^^
+  File "/mnt/data/pro14_review/mechanism.py", line 160, in base
+    v, b = spd(v,self.frame,alpha)
+           ~~~^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/pro14_review/mechanism.py", line 134, in spd
+    y = x + ((x@u)*torch.expm1(a))@u.T
+              ~^~
+RuntimeError: expected m1 and m2 to have the same dtype, but got: double != float
