@@ -1,0 +1,48 @@
+{
+  "source_commit": "effc2c565b050193561978c9bce686b3a3f996eb",
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-trapezoid-mechanism-20260909",
+  "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-trapezoid-mechanism",
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--job-name=trapezoid-mechanism",
+    "--chdir",
+    "/ocean/projects/mth250006p/ywang26/diffusion-trapezoid-mechanism-20260909",
+    "--output",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/trapezoid-mechanism-%j.out",
+    "research/transport_iteration_20260908/trapezoid_mechanism/run.slurm"
+  ],
+  "environment": {
+    "SOURCE_COMMIT": "effc2c565b050193561978c9bce686b3a3f996eb",
+    "OUTPUT_DIR": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-trapezoid-mechanism"
+  },
+  "source_sha256": {
+    "research/transport_iteration_20260908/trapezoid_mechanism/INDEPENDENT_REVIEW.md": "901d06f64d2bd5548d14055681517d1a4c3e5d3fd1c56db0bf09c178c6258fc0",
+    "research/transport_iteration_20260908/trapezoid_mechanism/PROTOCOL.md": "4d5230bcd102439547fa348a7a858e4717bced8a657e23c626a4aee534d7c8ed",
+    "research/transport_iteration_20260908/trapezoid_mechanism/evaluate.py": "4f35c11dcaeef2dc5f40e6f4d0bb40213ce0da5316c0effe93e16b1abd61c5f0",
+    "research/transport_iteration_20260908/trapezoid_mechanism/fixture.py": "e685bca75829a7b8da8e6f8b9c608758355ef10ef5f65053c11a160dd6563f6a",
+    "research/transport_iteration_20260908/trapezoid_mechanism/run.py": "a4ddb124d881559cb4c63f41378ba6e6124df106968d4d58772b817d3384e006",
+    "research/transport_iteration_20260908/trapezoid_mechanism/run.slurm": "f2ad6f2237c0de7ea82337b9d76742c7fa83dfb088378ec7b0a307d8d621361c",
+    "research/transport_iteration_20260908/trapezoid_mechanism/test_evaluate.py": "1c81c93460741db8282101dabae9294c80855dbde3bd517591b9ee0709a5da0c",
+    "research/transport_iteration_20260908/trapezoid_pair/PUBLICATION_SHA256.json": "abc0fa04a4bab4de8650212c0f38e610005b70d0c96439a894c62526cae3435b",
+    "research/transport_iteration_20260908/trapezoid_pair/README.md": "32b630701b73c28cdddeda672d27b88610f9c13b38768e9926d472b5177070a9",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check.json": "4a2748d8c3a20460a447536123e46f519f6cbba82ec428c3b745e5e9409f8c7a",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check.py": "0c0679556cdafd3cef3ecfc6f5d38d6db6123ca54812be80e6ff291840aadb83",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check_fixed.json": "1a3dff3a73502e88587b41358056d56732c6c74249b192e27c11605adb2ee82b",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check_fixed.py": "b183e3419cc815a9469f64e163e05296d936327894cfb681ab2aefe772837273",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check_fixed_neighbors.json": "31a393b09563e22de00b57f8f099738011c148ef5a0ceb8925846d270c1a1ee9",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_check_fixed_neighbors.py": "dc6442dc99b10d32e5760feb474071fdd36193634527795202965e01d2f64438",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_final_review.md": "6a4f09819a6ee73330045950515b1d968ff8bc69eaa3b9b4a50aa4136beabb1d",
+    "research/transport_iteration_20260908/trapezoid_pair/independent_review.md": "93352057ec6a395259e522cbf361e7e5654a98bff674b0b4c23c77a2f2c615cd",
+    "research/transport_iteration_20260908/trapezoid_pair/learner.py": "5230ba8b9a068df09ddfe98697c3be851a316553dc811bd0b1662aab779c80ff",
+    "research/transport_iteration_20260908/trapezoid_pair/learner_notes.md": "079fb455ab65ec523dd563dc9ae213dfcf1e556e0f3fa8ae1a4c164dff17b109",
+    "research/transport_iteration_20260908/trapezoid_pair/reference.py": "dc423b981eae11b757a4aefc90beb2a91ffec634c55f2c6635ba4b52f0a5baa1",
+    "research/transport_iteration_20260908/trapezoid_pair/test_learner.py": "94d360110b30e29c6b574c72ee418ff0204d4a26ee2ca2e730a995ebcb6fe9a2",
+    "research/transport_iteration_20260908/trapezoid_pair/test_reference.py": "0f317bd741399062503e42baed395ea73580970a4a006c6a90e876d0473b7c72"
+  },
+  "submission_returncode": 0,
+  "submission_stdout": "45579430\n",
+  "submission_stderr": "",
+  "submission_attempts": 1,
+  "job_id": "45579430"
+}

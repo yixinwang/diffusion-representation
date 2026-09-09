@@ -1,0 +1,43 @@
+{
+  "logdet_cancellation": 1.9099388737231493e-11,
+  "order32": {
+    "assurance": "ordinary numerical population evaluation, not interval certificate",
+    "context_quadrature_order": 32,
+    "correct_pairs_per_block": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "joint_kl": 0.20918486486323945,
+    "residual_block_kl": [
+      0.01196050992891521,
+      0.008957494316363775,
+      0.010155952554372015,
+      0.01332305758395193
+    ],
+    "root_kl": 0.1647878504796365,
+    "series_terms": 128
+  },
+  "order64": {
+    "assurance": "ordinary numerical population evaluation, not interval certificate",
+    "context_quadrature_order": 64,
+    "correct_pairs_per_block": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "joint_kl": 0.20918486486323964,
+    "residual_block_kl": [
+      0.011960509928915189,
+      0.008957494316363813,
+      0.010155952554372107,
+      0.013323057583952028
+    ],
+    "root_kl": 0.1647878504796365,
+    "series_terms": 128
+  },
+  "quadrature_difference": 1.942890293094024e-16,
+  "roundtrip": 4.0962788716569776e-12
+}

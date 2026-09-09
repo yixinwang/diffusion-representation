@@ -1,0 +1,25 @@
+13109101_positive/continuous verified
+13109101_positive/binned verified
+13109101_positive/constant verified
+13109101_positive/product verified
+13109101_zero_mean/continuous verified
+13109101_zero_mean/binned verified
+13109101_zero_mean/constant verified
+13109101_zero_mean/product verified
+13109102_positive/continuous verified
+13109102_positive/binned verified
+13109102_positive/constant verified
+13109102_positive/product verified
+13109102_zero_mean/continuous verified
+13109102_zero_mean/binned verified
+13109102_zero_mean/constant verified
+13109102_zero_mean/product verified
+13109103_positive/continuous verified
+13109103_positive/binned verified
+13109103_positive/constant verified
+13109103_positive/product verified
+13109103_zero_mean/continuous verified
+13109103_zero_mean/binned verified
+13109103_zero_mean/constant verified
+13109103_zero_mean/product verified
+{"status": "independent_saved_state_and_population_audit_pass", "source_files": 22, "locally_verified_inventory_payloads": 176, "inventory_payloads": 188, "population_models": 24, "exact_copy_controls": 6, "max_population_vs_series_discrepancy": 3.836930773104541e-13, "max_direct_quadrature_refinement_difference": 2.2737367544323206e-13, "max_source_roundtrip": 4.0962788716569776e-12, "max_logdet_cancellation": 1.9099388737231493e-11, "max_gaussian_change_of_variables_logp_error": 4.547473508864641e-13, "limitations": ["Ordinary numerical quadrature, not certified intervals.", "No refitting or independent reproduction of fitted coefficients; full fit arrays retained and hash-checked remotely.", "No neural, native-data or unrestricted latent superiority claim."]}

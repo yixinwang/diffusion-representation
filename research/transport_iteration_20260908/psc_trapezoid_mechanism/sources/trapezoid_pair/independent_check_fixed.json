@@ -1,0 +1,9 @@
+{
+  "reference_sha256": "dc423b981eae11b757a4aefc90beb2a91ffec634c55f2c6635ba4b52f0a5baa1",
+  "case_count": 1869210,
+  "errors": [],
+  "max_cdf_roundtrip_error": 1.1102230246251565e-16,
+  "max_logdet_cancellation": 0.0,
+  "max_independent_inverse_difference": 3.3306690738754696e-16,
+  "scope": "ordinary float64 boundary checks, not interval proof"
+}

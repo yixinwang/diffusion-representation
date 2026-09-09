@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "{\"status\": \"all_remote_artifact_hashes_verified\", \"count\": 188, \"bytes\": 1314835151, \"inventory_sha256\": \"a061415fcf35f6c8129fafb5936385ffe15bc6f7f0942428e95dcad968ff0d1b\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 54.591285166000006
+}

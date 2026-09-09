@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "{\"returncode\": 0, \"fields\": {\"JobId\": \"45579430\", \"JobName\": \"trapezoid-mechanism\", \"JobState\": \"FAILED\", \"Reason\": \"NonZeroExitCode\", \"ExitCode\": \"1:0\", \"Command\": \"/ocean/projects/mth250006p/ywang26/diffusion-trapezoid-mechanism-20260909/research/transport_iteration_20260908/trapezoid_mechanism/run.slurm\", \"WorkDir\": \"/ocean/projects/mth250006p/ywang26/diffusion-trapezoid-mechanism-20260909\", \"StdOut\": \"/ocean/projects/mth250006p/ywang26/diffusion-results/trapezoid-mechanism-45579430.out\", \"StdErr\": \"/ocean/projects/mth250006p/ywang26/diffusion-results/trapezoid-mechanism-45579430.out\", \"Account\": \"cis260243p\", \"Partition\": \"RM-shared\", \"NumCPUs\": \"4\", \"MinMemoryNode\": \"8000M\"}, \"stderr\": \"\", \"login_SBATCH_EXPORT\": \"NONE\", \"login_SLURM_EXPORT_ENV\": \"ALL\"}\n",
+  "stderr": "",
+  "elapsed_seconds": 39.575317041999995
+}

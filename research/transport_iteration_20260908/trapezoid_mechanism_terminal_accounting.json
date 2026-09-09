@@ -1,0 +1,6 @@
+{
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|NodeList|MaxRSS\n45579788|COMPLETED|0:0|00:02:42|r284|\n45579788.batch|COMPLETED|0:0|00:02:42|r284|220956K\n45579788.extern|COMPLETED|0:0|00:02:42|r284|0\n\n\nstatus.json {\n  \"cells\": [\n    \"13109101_positive\",\n    \"13109101_zero_mean\",\n    \"13109102_positive\",\n    \"13109102_zero_mean\",\n    \"13109103_positive\",\n    \"13109103_zero_mean\"\n  ],\n  \"current_arm\": \"product\",\n  \"current_cell\": \"13109103_zero_mean\",\n  \"elapsed_seconds\": 154.33268602698809,\n  \"evaluation_and_final_hashing_seconds\": 12.192782944999635,\n  \"peak_rss_native_units\": 616732,\n  \"phase\": \"complete\",\n  \"state\": \"complete\"\n}\n\npreflight.txt ...................                                                      [100%]\n19 passed in 26.54s\n\n",
+  "stderr": "",
+  "elapsed_seconds": 44.869863125
+}

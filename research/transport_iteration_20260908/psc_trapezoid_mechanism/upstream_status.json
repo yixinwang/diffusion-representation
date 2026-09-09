@@ -1,0 +1,17 @@
+{
+  "cells": [
+    "13109101_positive",
+    "13109101_zero_mean",
+    "13109102_positive",
+    "13109102_zero_mean",
+    "13109103_positive",
+    "13109103_zero_mean"
+  ],
+  "current_arm": "product",
+  "current_cell": "13109103_zero_mean",
+  "elapsed_seconds": 154.33268602698809,
+  "evaluation_and_final_hashing_seconds": 12.192782944999635,
+  "peak_rss_native_units": 616732,
+  "phase": "complete",
+  "state": "complete"
+}

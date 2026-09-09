@@ -1,0 +1,25 @@
+{
+  "max_logdet_cancellation": 5.4569682106375694e-12,
+  "max_source_roundtrip": 1.4281908988778014e-12,
+  "one_batch64_seconds_diagnostic_only": 0.029863301024306566,
+  "population": {
+    "assurance": "ordinary numerical population evaluation, not interval certificate",
+    "context_quadrature_order": 64,
+    "correct_pairs_per_block": [
+      360,
+      360,
+      360,
+      360
+    ],
+    "joint_kl": 0.21496876457974456,
+    "residual_block_kl": [
+      0.012306719719798624,
+      0.013383047278566054,
+      0.011148295787629398,
+      0.012700177802305123
+    ],
+    "root_kl": 0.16543052399144537,
+    "series_terms": 128
+  },
+  "quadrature_32_64_difference": 1.1102230246251565e-15
+}

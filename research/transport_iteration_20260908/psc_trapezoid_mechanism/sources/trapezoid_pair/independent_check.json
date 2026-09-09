@@ -1,0 +1,113 @@
+{
+  "reference_sha256": "99784d08f559636da143551488039f6dad76877d74454b3a91d23b5939c86529",
+  "case_count": 1869210,
+  "errors": [
+    {
+      "theta": -0.45,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.873046875,
+          "theta": -0.45,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        },
+        {
+          "u": 0.8749999999999999,
+          "theta": -0.45,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": -0.42890625,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.12500000000000003,
+          "theta": -0.42890625,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": -0.41484375,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.873046875,
+          "theta": -0.41484375,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": 0.3796875,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.6250000000000001,
+          "theta": 0.3796875,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": 0.41484375,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.373046875,
+          "theta": 0.41484375,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        },
+        {
+          "u": 0.6250000000000001,
+          "theta": 0.41484375,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": 0.42890625,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.37499999999999994,
+          "theta": 0.42890625,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": 0.44296874999999997,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.626953125,
+          "theta": 0.44296874999999997,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    },
+    {
+      "theta": 0.45,
+      "error": "ArithmeticError('inverse left unit interval; no clipping')",
+      "examples": [
+        {
+          "u": 0.373046875,
+          "theta": 0.45,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        },
+        {
+          "u": 0.6250000000000001,
+          "theta": 0.45,
+          "error": "ArithmeticError('inverse left unit interval; no clipping')"
+        }
+      ]
+    }
+  ],
+  "max_cdf_roundtrip_error": 1.1102230246251565e-16,
+  "max_logdet_cancellation": 0.0,
+  "max_independent_inverse_difference": 3.3306690738754696e-16,
+  "scope": "ordinary float64 boundary checks, not interval proof"
+}

@@ -1,0 +1,996 @@
+{
+  "status": "independent_saved_state_and_population_audit_pass",
+  "source_files": 22,
+  "locally_verified_inventory_payloads": 176,
+  "inventory_payloads": 188,
+  "omitted_local_payloads": {
+    "13109101_positive/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "7468b211c4709da00b3efab8b8f6a91b1f0868e31632beae6f48bbfca865dc6c"
+    },
+    "13109101_positive/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "faa62f1e1db268a6716a1866d1edaf751e7a326daeb3405c54252c93b7b17ccf"
+    },
+    "13109101_zero_mean/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "7468b211c4709da00b3efab8b8f6a91b1f0868e31632beae6f48bbfca865dc6c"
+    },
+    "13109101_zero_mean/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "e7e167be9ab0a4880efa73d28d136b411e3eba65d35857b1ab285e9291762cfd"
+    },
+    "13109102_positive/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "670418df2ada4f8104816b9df1b1e0f989c7c45c1272fbc29ff26ea808f4f86a"
+    },
+    "13109102_positive/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "0c9220ba8e5798667729fbc6f0c7fe9608046411c4eca2f391e0821829fa0f2f"
+    },
+    "13109102_zero_mean/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "670418df2ada4f8104816b9df1b1e0f989c7c45c1272fbc29ff26ea808f4f86a"
+    },
+    "13109102_zero_mean/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "351e141500e6500cd615e95560bf5a96d9f755bf9fbab0eb85dd47534a9fc6d1"
+    },
+    "13109103_positive/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "1a37a43e1126be10bf91c6fbbe4b4ddbb624bb2cfc18c02025648b7724ffe664"
+    },
+    "13109103_positive/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "4f9769f47ad2dc1dca97a3e15ff11f5af2af96211d968bd0d35b5d03df5d02c7"
+    },
+    "13109103_zero_mean/fit_gaussian.npy": {
+      "bytes": 98304128,
+      "sha256": "1a37a43e1126be10bf91c6fbbe4b4ddbb624bb2cfc18c02025648b7724ffe664"
+    },
+    "13109103_zero_mean/fit_observed.npy": {
+      "bytes": 98304128,
+      "sha256": "8f930f588b7471709ba027d68f7a390fcb1c436a186385e819463b5570e06891"
+    }
+  },
+  "population_models": 24,
+  "exact_copy_controls": 6,
+  "max_population_vs_series_discrepancy": 3.836930773104541e-13,
+  "max_direct_quadrature_refinement_difference": 2.2737367544323206e-13,
+  "max_source_roundtrip": 4.0962788716569776e-12,
+  "max_logdet_cancellation": 1.9099388737231493e-11,
+  "max_gaussian_change_of_variables_logp_error": 4.547473508864641e-13,
+  "registered_numerical_sources": {
+    "13109101_positive": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    },
+    "13109101_zero_mean": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    },
+    "13109102_positive": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    },
+    "13109102_zero_mean": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    },
+    "13109103_positive": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    },
+    "13109103_zero_mean": {
+      "byte_exact_local_replay": true,
+      "max_local_replay_error": 0.0
+    }
+  },
+  "results": {
+    "13109101_positive": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.004062251184378608,
+            0.006922502497113872,
+            0.0037062757535081797,
+            0.005348446764464465
+          ],
+          "joint_kl": 0.18549171970493006,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 5.342948306008566e-16,
+        "direct_quadrature_refinement_difference": 1.2490009027033011e-15,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.263256414560601e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.008268289779721551,
+            0.011306690649975986,
+            0.007917950900434961,
+            0.009763181392057476
+          ],
+          "joint_kl": 0.20270835622765493,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 2.8275992658421956e-15,
+        "direct_quadrature_refinement_difference": 1.1102230246251565e-16,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 2.8483881919783016e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.263256414560601e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.6622967234004822,
+            0.6607295854562154,
+            0.6606246228813951,
+            0.6604549295780535
+          ],
+          "joint_kl": 2.809558104821611,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 1.942890293094024e-14,
+        "direct_quadrature_refinement_difference": 7.993605777301127e-15,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.547473508864641e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            23.626695388856376,
+            23.626695388856383,
+            23.626695388856383,
+            23.626695388856383
+          ],
+          "joint_kl": 94.672233798931,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 3.694822225952521e-13,
+        "direct_quadrature_refinement_difference": 2.1316282072803006e-13,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.456990332357691e-13
+      }
+    },
+    "13109101_zero_mean": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.5069012280972401,
+            0.5069012280972401,
+            0.50690122809724,
+            0.50690122809724
+          ],
+          "joint_kl": 2.193057155894425,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.456990332357691e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.5069012280972399,
+            0.50690122809724,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.193057155894425,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.456990332357691e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.5069012280972399,
+            0.50690122809724,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.193057155894425,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.456990332357691e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.16545224350546495,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.5069012280972399,
+            0.50690122809724,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.193057155894425,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 2.539302101922658e-12,
+        "max_ld_cancellation": 1.1823431123048067e-11,
+        "gaussian_change_of_variables_logp_error": 4.456990332357691e-13
+      }
+    },
+    "13109102_positive": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.006234539096410867,
+            0.0059118418077760745,
+            0.0062637773625938645,
+            0.006573790572695221
+          ],
+          "joint_kl": 0.1904144728309214,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 2.0539125955565396e-15,
+        "direct_quadrature_refinement_difference": 2.498001805406602e-16,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.547473508864641e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.012306719719802862,
+            0.01338304727856543,
+            0.011148295787629766,
+            0.012700177802302728
+          ],
+          "joint_kl": 0.21496876457974615,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 4.23792945181134e-15,
+        "direct_quadrature_refinement_difference": 1.3877787807814457e-16,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.405364961712621e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.6604443845259258,
+            0.6610296086213121,
+            0.6605750607240782,
+            0.6604761338645166
+          ],
+          "joint_kl": 2.807955711727278,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 5.10702591327572e-14,
+        "direct_quadrature_refinement_difference": 4.884981308350689e-15,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.547473508864641e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            23.626695388856383,
+            23.62669538885639,
+            23.626695388856376,
+            23.626695388856383
+          ],
+          "joint_kl": 94.67221207941698,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 3.836930773104541e-13,
+        "direct_quadrature_refinement_difference": 2.2737367544323206e-13,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.46753745109163e-13
+      }
+    },
+    "13109102_zero_mean": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.5069012280972399,
+            0.50690122809724,
+            0.50690122809724
+          ],
+          "joint_kl": 2.1930354363804057,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.46753745109163e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.5069012280972399,
+            0.5069012280972399,
+            0.5069012280972403,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.1930354363804057,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.46753745109163e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.5069012280972399,
+            0.5069012280972399,
+            0.5069012280972403,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.1930354363804057,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.46753745109163e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.16543052399144537,
+          "residual_block_kl": [
+            0.5069012280972399,
+            0.5069012280972399,
+            0.5069012280972403,
+            0.5069012280972401
+          ],
+          "joint_kl": 2.1930354363804057,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 1.4281908988778014e-12,
+        "max_ld_cancellation": 5.4569682106375694e-12,
+        "gaussian_change_of_variables_logp_error": 4.46753745109163e-13
+      }
+    },
+    "13109103_positive": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.006907731931244553,
+            0.0053832307661860115,
+            0.005140245779941797,
+            0.007196650850759528
+          ],
+          "joint_kl": 0.1894157098077684,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 4.718447854656915e-15,
+        "direct_quadrature_refinement_difference": 2.525757381022231e-15,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.547473508864641e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.011960509928916643,
+            0.00895749431636627,
+            0.010155952554371126,
+            0.013323057583954035
+          ],
+          "joint_kl": 0.20918486486324459,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 4.9404924595819466e-15,
+        "direct_quadrature_refinement_difference": 9.43689570931383e-16,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.405364961712621e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.6605044885550833,
+            0.6613910061223907,
+            0.6626898046654732,
+            0.6624533284806301
+          ],
+          "joint_kl": 2.811826478303214,
+          "correct_pairs_per_block": [
+            360,
+            360,
+            360,
+            360
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 1.6653345369377348e-14,
+        "direct_quadrature_refinement_difference": 6.217248937900877e-15,
+        "pair_counts": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "graph_failures": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.547473508864641e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            23.626695388856387,
+            23.626695388856376,
+            23.626695388856383,
+            23.626695388856376
+          ],
+          "joint_kl": 94.67156940590516,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 3.836930773104541e-13,
+        "direct_quadrature_refinement_difference": 1.9895196601282805e-13,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.531930386519889e-13
+      }
+    },
+    "13109103_zero_mean": {
+      "continuous": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.5069012280972401,
+            0.5069012280972403,
+            0.50690122809724,
+            0.50690122809724
+          ],
+          "joint_kl": 2.192392762868597,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 8.43769498715119e-15,
+        "direct_quadrature_refinement_difference": 4.884981308350689e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.531930386519889e-13
+      },
+      "binned": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.50690122809724,
+            0.50690122809724,
+            0.5069012280972399
+          ],
+          "joint_kl": 2.1923927628685966,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.531930386519889e-13
+      },
+      "constant": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.50690122809724,
+            0.50690122809724,
+            0.5069012280972399
+          ],
+          "joint_kl": 2.1923927628685966,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.531930386519889e-13
+      },
+      "product": {
+        "independent_population": {
+          "root_kl": 0.1647878504796365,
+          "residual_block_kl": [
+            0.50690122809724,
+            0.50690122809724,
+            0.50690122809724,
+            0.5069012280972399
+          ],
+          "joint_kl": 2.1923927628685966,
+          "correct_pairs_per_block": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "context_order": 80,
+          "direct_psi_mixture_order": 48
+        },
+        "vs_series_max_abs_discrepancy": 7.993605777301127e-15,
+        "direct_quadrature_refinement_difference": 4.440892098500626e-15,
+        "pair_counts": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "graph_failures": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "max_source_roundtrip": 4.0962788716569776e-12,
+        "max_ld_cancellation": 1.9099388737231493e-11,
+        "gaussian_change_of_variables_logp_error": 4.531930386519889e-13
+      }
+    }
+  },
+  "limitations": [
+    "Ordinary numerical quadrature, not certified intervals.",
+    "No refitting or independent reproduction of fitted coefficients; full fit arrays retained and hash-checked remotely.",
+    "No neural, native-data or unrestricted latent superiority claim."
+  ]
+}

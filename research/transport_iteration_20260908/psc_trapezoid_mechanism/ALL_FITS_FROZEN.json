@@ -1,0 +1,12 @@
+{
+  "before_any_population_evaluation": true,
+  "cells": [
+    "13109101_positive",
+    "13109101_zero_mean",
+    "13109102_positive",
+    "13109102_zero_mean",
+    "13109103_positive",
+    "13109103_zero_mean"
+  ],
+  "wall_since_start_including_source_data_and_fits": 142.13986793596996
+}

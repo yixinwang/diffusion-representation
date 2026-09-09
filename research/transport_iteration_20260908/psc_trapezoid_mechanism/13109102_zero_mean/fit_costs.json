@@ -1,0 +1,35 @@
+{
+  "binned": {
+    "cpu_seconds": 1.8193331449999945,
+    "graph_failures": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "wall_seconds_including_validation_fit_serialization": 0.48601361899636686
+  },
+  "constant": {
+    "cpu_seconds": 1.7511320289999972,
+    "graph_failures": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "wall_seconds_including_validation_fit_serialization": 0.4670205569709651
+  },
+  "continuous": {
+    "cpu_seconds": 1.4893261510000002,
+    "graph_failures": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "wall_seconds_including_validation_fit_serialization": 0.4866548429708928
+  },
+  "product": {
+    "wall_seconds_including_fit_serialization": 0.017474503023549914
+  }
+}

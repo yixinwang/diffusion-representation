@@ -1,0 +1,620 @@
+{
+  "13109101_positive": {
+    "binned": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.8483881919783016e-12,
+      "one_batch64_seconds_diagnostic_only": 0.03256300697103143,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.20270835622765604,
+        "residual_block_kl": [
+          0.008268289779724379,
+          0.011306690649973802,
+          0.007917950900435863,
+          0.009763181392057063
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.3877787807814457e-16
+    },
+    "constant": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.030222153989598155,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 2.8095581048216065,
+        "residual_block_kl": [
+          0.662296723400484,
+          0.6607295854562265,
+          0.6606246228813757,
+          0.6604549295780557
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.03143901802832261,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.18549171970493059,
+        "residual_block_kl": [
+          0.004062251184378921,
+          0.006922502497114395,
+          0.0037062757535083805,
+          0.00534844676446393
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 8.049116928532385e-16
+    },
+    "product": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010049478965811431,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 94.67223379893063,
+        "residual_block_kl": [
+          23.626695388856287,
+          23.62669538885629,
+          23.62669538885629,
+          23.626695388856284
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 2.842170943040401e-14
+    }
+  },
+  "13109101_zero_mean": {
+    "binned": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009961033007130027,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.193057155894417,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "constant": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010788064973894507,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.193057155894417,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009779282030649483,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.193057155894417,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.5069012280972381,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "product": {
+      "max_logdet_cancellation": 1.1823431123048067e-11,
+      "max_source_roundtrip": 2.539302101922658e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009657674003392458,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.193057155894417,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16545224350546495,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    }
+  },
+  "13109102_positive": {
+    "binned": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.029863301024306566,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.21496876457974456,
+        "residual_block_kl": [
+          0.012306719719798624,
+          0.013383047278566054,
+          0.011148295787629398,
+          0.012700177802305123
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.1102230246251565e-15
+    },
+    "constant": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.030485027993563563,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 2.807955711727227,
+        "residual_block_kl": [
+          0.6604443845259206,
+          0.6610296086213181,
+          0.6605750607240549,
+          0.6604761338644882
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.7763568394002505e-15
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.0308098680106923,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.19041447283091933,
+        "residual_block_kl": [
+          0.006234539096410438,
+          0.0059118418077760155,
+          0.006263777362592225,
+          0.006573790572695292
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.0824674490095276e-15
+    },
+    "product": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.01032837200909853,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 94.6722120794166,
+        "residual_block_kl": [
+          23.626695388856287,
+          23.626695388856284,
+          23.62669538885629,
+          23.626695388856287
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.4210854715202004e-14
+    }
+  },
+  "13109102_zero_mean": {
+    "binned": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009542647982016206,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1930354363803977,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "constant": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010653071047272533,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1930354363803977,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009853199997451156,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1930354363803977,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.5069012280972381,
+          0.506901228097238
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "product": {
+      "max_logdet_cancellation": 5.4569682106375694e-12,
+      "max_source_roundtrip": 1.4281908988778014e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010186897008679807,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1930354363803977,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.16543052399144537,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    }
+  },
+  "13109103_positive": {
+    "binned": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.02954783895984292,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.20918486486323964,
+        "residual_block_kl": [
+          0.011960509928915189,
+          0.008957494316363813,
+          0.010155952554372107,
+          0.013323057583952028
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 1.942890293094024e-16
+    },
+    "constant": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.032219532993622124,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 2.811826478303217,
+        "residual_block_kl": [
+          0.6605044885550666,
+          0.6613910061223964,
+          0.662689804665479,
+          0.6624533284806385
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.030822450993582606,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "joint_kl": 0.18941570980776368,
+        "residual_block_kl": [
+          0.0069077319312428765,
+          0.0053832307661850435,
+          0.005140245779940614,
+          0.007196650850758618
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 6.38378239159465e-16
+    },
+    "product": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009997661982197315,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 94.67156940590478,
+        "residual_block_kl": [
+          23.626695388856287,
+          23.626695388856284,
+          23.626695388856284,
+          23.626695388856284
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 2.842170943040401e-14
+    }
+  },
+  "13109103_zero_mean": {
+    "binned": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010616683051921427,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1923927628685886,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "constant": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.009547477005980909,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1923927628685886,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "continuous": {
+      "exact_copy_equal": true,
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010037696978542954,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1923927628685886,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.5069012280972381,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    },
+    "product": {
+      "max_logdet_cancellation": 1.9099388737231493e-11,
+      "max_source_roundtrip": 4.0962788716569776e-12,
+      "one_batch64_seconds_diagnostic_only": 0.010756656003650278,
+      "population": {
+        "assurance": "ordinary numerical population evaluation, not interval certificate",
+        "context_quadrature_order": 64,
+        "correct_pairs_per_block": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "joint_kl": 2.1923927628685886,
+        "residual_block_kl": [
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238,
+          0.506901228097238
+        ],
+        "root_kl": 0.1647878504796365,
+        "series_terms": 128
+      },
+      "quadrature_32_64_difference": 0.0
+    }
+  }
+}
