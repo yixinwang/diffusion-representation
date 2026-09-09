@@ -1,0 +1,102 @@
+{
+  "status": "audit_pass",
+  "payload_hashes": 129,
+  "source_hashes_and_snapshots": 10,
+  "outputs_verified": 102,
+  "gates_independently_checked": 78,
+  "max_reference_parity_error": 4.440892098500626e-16,
+  "max_exact_roundtrip_error": 6.661338147750939e-15,
+  "max_frozen_reference_replay_error": 4.440892098500626e-16,
+  "saved_gaussian_regeneration_exact": {
+    "2026090901_1": true,
+    "2026090901_64": true,
+    "2026090902_1": true,
+    "2026090902_64": true,
+    "2026090903_1": true,
+    "2026090903_64": true
+  },
+  "primary_timings": 3060,
+  "secondary_timings": 900,
+  "all_orders_and_primary_medians_exact": true,
+  "secondary_medians_seconds": {
+    "2026090901_1": {
+      "4": 0.0007081275,
+      "8": 0.001137493,
+      "16": 0.001924293,
+      "32": 0.003508899,
+      "64": 0.0066217155
+    },
+    "2026090901_64": {
+      "4": 0.0330987215,
+      "8": 0.058703992,
+      "16": 0.1085122595,
+      "32": 0.2097137915,
+      "64": 0.4125689925
+    },
+    "2026090902_1": {
+      "4": 0.0007093805,
+      "8": 0.001132158,
+      "16": 0.001937413,
+      "32": 0.0035359305,
+      "64": 0.006581972
+    },
+    "2026090902_64": {
+      "4": 0.029246489,
+      "8": 0.052605393,
+      "16": 0.097604101,
+      "32": 0.1880072395,
+      "64": 0.3691454525
+    },
+    "2026090903_1": {
+      "4": 0.000667126,
+      "8": 0.001046548,
+      "16": 0.0017692225,
+      "32": 0.003204985,
+      "64": 0.0060430525
+    },
+    "2026090903_64": {
+      "4": 0.0281298725,
+      "8": 0.050799058,
+      "16": 0.0941657285,
+      "32": 0.181822993,
+      "64": 0.3567140585
+    }
+  },
+  "secondary_arm_family": "cached_fm_N all-call Heun, schedule amortized; N actual field calls",
+  "secondary_reconstructed_outputs": 30,
+  "secondary_max_output_error": 3.3306690738754696e-16,
+  "endpoint_call_accounting": {
+    "4": {
+      "mathematical_stages": 4,
+      "endpoint_field_calls": 2,
+      "regular_field_calls": 4
+    },
+    "8": {
+      "mathematical_stages": 8,
+      "endpoint_field_calls": 6,
+      "regular_field_calls": 8
+    },
+    "16": {
+      "mathematical_stages": 16,
+      "endpoint_field_calls": 14,
+      "regular_field_calls": 16
+    },
+    "32": {
+      "mathematical_stages": 32,
+      "endpoint_field_calls": 30,
+      "regular_field_calls": 32
+    },
+    "64": {
+      "mathematical_stages": 64,
+      "endpoint_field_calls": 62,
+      "regular_field_calls": 64
+    }
+  },
+  "one_archived_fitted_model": {
+    "gamma": 0.5,
+    "index": 7
+  },
+  "no_fit_or_timing_rerun": true,
+  "memory_scope": "separate tracemalloc diagnostics, not intrinsic complexity/allocator RSS or production memory",
+  "source_commit": "9391d3ab89ad0667036d39a85f2e59409da34dc6"
+}

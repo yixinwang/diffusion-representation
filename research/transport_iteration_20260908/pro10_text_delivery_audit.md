@@ -1,0 +1,11 @@
+# Independent Pro10 delivery and adaptation audit
+
+Verified the text-only delivery at `22663881a72ab1ca0f0f92f55f8f7e7f9d51e52c` and its cherry-pick `aa1c654`: all 17 delivered files match both Git blobs byte-for-byte. They comprise 16 original text files plus the new `DELIVERY_SUBSET.md`, totaling 118,466 bytes. The adjacent JSON records each file's measured byte size and SHA256.
+
+The unchanged original `SHA256SUMS` contains 16 entries. All 15 entries whose payloads are present pass. Exactly one original entry is missing: `local_focused_sources.npz`, expected SHA256 `89994a3aadb4fcd2eb2404feffbef2849fce3fa62cda2ee43b58d87f422ab718`. Its declared 4,629,183-byte size comes from the delivery note; absent bytes cannot be independently measured. No placeholder or regenerated source bank was substituted. The manifest itself is exactly 1,367 bytes with SHA256 `39852427a3a43b3a01c0eadf1f8ef78580b5872f681f5456042e08f3b4e9604f`. The new delivery note is correctly outside that original manifest.
+
+This is a verified text subset, not a full-package hash pass. The original source-bank bytes and full ZIP were not recovered or verified here. Original local timings remain local timings, and missing banks limit independent reproduction of their actual inputs. No original artifact was modified.
+
+Separately, the independent scratch forward-KL checker and derivation were adapted into adjacent research files. `pro10_forward_kl_check.py` resolves the neighboring pinned Pro8 reference, computes only when requested, and accepts an optional new `--output` path with no overwrite. Its one rerun produced exactly the same result dictionary as the scratch JSON. Both the original result and adapted rerun are retained; `pro10_forward_kl_adaptation_audit.json` records distinct original/adapted script and derivation hashes and both result hashes. The changes are portability/provenance changes, not a new scientific method.
+
+The forward-KL calculation remains ordinary floating quadrature. Convergence and parity checks do not constitute a validated interval certificate or certified eligibility upper bound. This audit ran no fitting, runtime benchmark, native data operation, PSC job, model edit, or commit.

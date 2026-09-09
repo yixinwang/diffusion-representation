@@ -1,0 +1,30 @@
+{
+  "job_id": "45576312",
+  "submission_count": 1,
+  "source_commit": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-cached-pilot-20260909",
+  "job_working_directory": "/ocean/projects/mth250006p/ywang26/diffusion-cached-pilot-20260909",
+  "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-cached-pilot",
+  "log": "/ocean/projects/mth250006p/ywang26/diffusion-results/cached-pilot-45576312.out",
+  "exported_environment": {
+    "RESULT_ROOT": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-cached-pilot",
+    "SOURCE_COMMIT": "1f6be303c8b93ba45ac63c43e7c5971fa38a0082",
+    "INCEPTION_SOURCE": "/ocean/projects/mth250006p/ywang26/diffusion-evaluator-20260909/inception.py",
+    "INCEPTION_WEIGHTS": "/ocean/projects/mth250006p/ywang26/diffusion-evaluator-20260909/pt_inception-2015-12-05-6726825d.pth"
+  },
+  "account": "cis260243p",
+  "partition": "GPU-shared",
+  "node_requested": "v024",
+  "gpus": 1,
+  "cpus": 4,
+  "memory": "16G",
+  "time_limit": "01:30:00",
+  "old_dirty_checkout_touched": false,
+  "scope": "frozen3seedstage1nativepilot; no extra submissions",
+  "last_observed_state": "PENDING",
+  "pending_reason": "Priority",
+  "assigned_node": null,
+  "tilted_cost_45576004_state": "COMPLETED",
+  "tilted_cost_elapsed": "00:07:00",
+  "tilted_cost_exit_code": "0:0"
+}

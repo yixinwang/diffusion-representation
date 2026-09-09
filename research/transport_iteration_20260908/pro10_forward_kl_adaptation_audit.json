@@ -1,0 +1,38 @@
+{
+  "original_vs_adapted_files": {
+    "original_scratch_script": {
+      "sha256": "1d016c11fb1dedb6c1c1c878b011c40c345db20e35c60b9d83e17b52f3d685fa",
+      "bytes": 3787
+    },
+    "adapted_portable_script": {
+      "sha256": "f163176ff4ac8b8d94bdf15034ff15f29c25f9726aa72552d178ad29da8cde2c",
+      "bytes": 4261
+    },
+    "original_scratch_json": {
+      "sha256": "a7023b20598a88770d58cd3e106fe76a995edc33137a157c560f1987f03c8226",
+      "bytes": 6840
+    },
+    "adapted_rerun_json": {
+      "sha256": "a7023b20598a88770d58cd3e106fe76a995edc33137a157c560f1987f03c8226",
+      "bytes": 6840
+    },
+    "original_scratch_derivation": {
+      "sha256": "ee0fb76233d0071517f315a4d55edf103a912e400b18c485f8745e3f3dc66f4f",
+      "bytes": 7238
+    },
+    "adapted_derivation": {
+      "sha256": "1967ecfb57022fcd61cc9c9fe1f827e7d1dd1ac817459c0da2d8029b53816e0c",
+      "bytes": 7510
+    }
+  },
+  "result_dict_exactly_equal": true,
+  "ordinary_float_quadrature": true,
+  "interval_certificate": false,
+  "timings_or_fitting_performed": false,
+  "adaptations": [
+    "relative adjacent Pro8 source path",
+    "compute() function avoiding evaluation on import",
+    "optional --output with exclusive creation; stdout otherwise",
+    "derivation provenance wording"
+  ]
+}

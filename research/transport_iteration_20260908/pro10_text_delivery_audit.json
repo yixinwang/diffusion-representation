@@ -1,0 +1,137 @@
+{
+  "status": "verified_text_subset_only",
+  "complete_original_package_verified": false,
+  "delivery_commit": "22663881a72ab1ca0f0f92f55f8f7e7f9d51e52c",
+  "cherry_pick": "aa1c654",
+  "original_text_count": 16,
+  "additional_delivery_notes": 1,
+  "present_original_manifest_entries": 15,
+  "missing_original_manifest_entries": [
+    "local_focused_sources.npz"
+  ],
+  "missing_npz_expected_sha256": "89994a3aadb4fcd2eb2404feffbef2849fce3fa62cda2ee43b58d87f422ab718",
+  "missing_npz_expected_bytes": 4629183,
+  "missing_npz_byte_size_basis": "DELIVERY_SUBSET.md declaration; absent payload cannot be measured",
+  "files": {
+    "DELIVERY_SUBSET.md": {
+      "bytes": 3710,
+      "sha256": "fee33365d20008d28abfa68b046d635463b41085955be0c443cd485183bfe3b3",
+      "original_manifest_entry": false,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "MATH_AUDIT.md": {
+      "bytes": 7952,
+      "sha256": "235362d5e584d16a7f637398ac09bc2d2ce156e7f848c3761e1bddf3d7ed72fc",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "PROPOSED_PSC_PROTOCOL.md": {
+      "bytes": 7071,
+      "sha256": "60be9104b62d7111824b897107b1f291083e4fd452653ee6e231bd2a4778b049",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "PROVENANCE.json": {
+      "bytes": 1804,
+      "sha256": "baa5fb992a21d3b5ab84af25b587a9d90bc4cb726ae51e685f30460f803371b6",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "README.md": {
+      "bytes": 3329,
+      "sha256": "d76ab26344c2d4536dc9f8c159820c90b185c720009243d20fab0c956837b95e",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "RUN_NOTES.md": {
+      "bytes": 2009,
+      "sha256": "2ada72a2b7a858b63aa8805bdbaa5eafcc45db256e3019b8370eee71e70f4c1c",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "SHA256SUMS": {
+      "bytes": 1367,
+      "sha256": "39852427a3a43b3a01c0eadf1f8ef78580b5872f681f5456042e08f3b4e9604f",
+      "original_manifest_entry": false,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "audit_numbers.json": {
+      "bytes": 1005,
+      "sha256": "015eb9544ce18e6a65d356f6cd8a22de6f146d0a27d582e9f7ec8fe991674c82",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "local_focused_live.jsonl": {
+      "bytes": 22295,
+      "sha256": "a0c0e1838a4e03c076e9e9bb9bb77e7dcaf26053208a94c6ce1feaf9ade8c5e3",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "local_focused_timing.json": {
+      "bytes": 16900,
+      "sha256": "36d14e786560b7e205798788c6509bc50d93e095e7cfb3f9223122d2764cc3eb",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "local_numerical.json": {
+      "bytes": 16611,
+      "sha256": "56e5c321f289a080be6185c3ee0f6c4208aeac65e9ec85aab0e69be724103d4c",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "local_quality.json": {
+      "bytes": 945,
+      "sha256": "493a6a90b7351929d0807aecb0a36820dda5c268126f3b91919f90d9dfeedd38",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "local_timing_live.jsonl": {
+      "bytes": 13355,
+      "sha256": "655e8089b40e405177e12c010334ba875e28bb374a1309d35bd517dd8e5e1c88",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "pro10_kernels.py": {
+      "bytes": 6457,
+      "sha256": "f7758f5de245485c81d20691ab2cd6f613f601adda51eeb598d67862c4d32d82",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "quality_quadrature.py": {
+      "bytes": 2091,
+      "sha256": "aacb6a3fdb9e9385b545f825a53e36805253a44c3c7b2678b6df75c468333485",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "run_focused_local.py": {
+      "bytes": 1846,
+      "sha256": "f91467730268300b4a50e2449cb7d4891a1405b9bfd171c85309ee8f86112eff",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    },
+    "run_local.py": {
+      "bytes": 9719,
+      "sha256": "f3130463cfa41a897ea3d077816cf6d26fd0d1889cbaeacba1bf8908a085c9bd",
+      "original_manifest_entry": true,
+      "delivery_git_bytes_match": true,
+      "cherry_pick_git_bytes_match": true
+    }
+  },
+  "total_delivered_text_bytes": 118466
+}

@@ -1,0 +1,106 @@
+{
+  "scope": "fixed fitted mathematical-class CPU sampler implementation comparison; not native quality",
+  "mode": "timing",
+  "seeds": [
+    2026090901,
+    2026090902,
+    2026090903
+  ],
+  "batches": [
+    1,
+    64
+  ],
+  "primary_arms": [
+    "original_exact",
+    "central_exact",
+    "original_fm_4",
+    "original_fm_8",
+    "original_fm_16",
+    "original_fm_32",
+    "original_fm_64",
+    "cached_fm_4",
+    "cached_fm_8",
+    "cached_fm_16",
+    "cached_fm_32",
+    "cached_fm_64",
+    "endpoint_fm_4",
+    "endpoint_fm_8",
+    "endpoint_fm_16",
+    "endpoint_fm_32",
+    "endpoint_fm_64"
+  ],
+  "warmups": 5,
+  "repetitions": 30,
+  "gamma": 0.5,
+  "summary_index": 7,
+  "archived_training_performed_here": false,
+  "source_sha256": {
+    "reference": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b",
+    "parameters": "92a0203e85f838a06f8f265359a12d1fb21839e2fa55ae99942446232396cdd3",
+    "candidate": "e660a4d814eb25ad16405ccd72ca7c47b7d2bd1de749ca394524a36a88e42bbe"
+  },
+  "source_identity": {
+    "source_commit": "9391d3ab89ad0667036d39a85f2e59409da34dc6",
+    "sha256": {
+      "research/transport_iteration_20260908/pro8_artifacts/positive_class_reference.py": "38cb7d9b79111b99e3af961aa28cdf2ca6f5a2b427245434e2cea407c7b6c73b",
+      "research/transport_iteration_20260908/pro8_artifacts/positive_class_results.json": "92a0203e85f838a06f8f265359a12d1fb21839e2fa55ae99942446232396cdd3",
+      "qalt/experiments/tilted_sampler_cost/run.py": "478393116a4138eb16e8ce9d41a6bb85aa204516c69024b421c534384611ea9b",
+      "qalt/experiments/tilted_sampler_cost/candidate.py": "e660a4d814eb25ad16405ccd72ca7c47b7d2bd1de749ca394524a36a88e42bbe",
+      "qalt/experiments/tilted_sampler_cost/PROTOCOL.md": "cbfbc142c9b95fd53c647c220168a51c794deb78d5ee73a5f259d483d259ecab",
+      "qalt/experiments/tilted_sampler_cost/run.slurm": "43dbade75fb4352ca098e1e5ce5ad31b8e32ace685f3bb26ac618a06ffbe1a8d",
+      "qalt/tests/test_tilted_sampler_cost.py": "0d33f1d83d5187f8d076f9f39da113313a536147a28b0ca7b217ebfdf95fb5cb",
+      "research/transport_iteration_20260908/central_tilt_correctness.py": "e2aaf72d5e4203fadd4bdc98438aa5478f09a7dbf5cb17900629223de6fee1ba",
+      "research/transport_iteration_20260908/central_tilt_correctness.json": "f806c3cfb5609d49c596b5ea89d556580ba572945d9733e019750b0c0c523f95",
+      "research/transport_iteration_20260908/central_tilt_review.md": "62cb91942d41a48cbc9241d5c0d2f0e74bf337abf5b49369ba86abf0d5a8b5f1"
+    }
+  },
+  "runner_sha256": "478393116a4138eb16e8ce9d41a6bb85aa204516c69024b421c534384611ea9b",
+  "protocol_sha256": "cbfbc142c9b95fd53c647c220168a51c794deb78d5ee73a5f259d483d259ecab",
+  "python": "3.10.9",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "host": "r026.ib.bridges2.psc.edu",
+  "slurm_job": "45576004",
+  "threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "primary_cached_time_cost": "constructed inside every call",
+  "endpoint_fm_call_accounting": {
+    "4": {
+      "equivalent_mathematical_stages": 4,
+      "nontrivial_field_kernel_calls": 2,
+      "analytic_endpoint_stages": 2,
+      "final_predictor_allocated": false
+    },
+    "8": {
+      "equivalent_mathematical_stages": 8,
+      "nontrivial_field_kernel_calls": 6,
+      "analytic_endpoint_stages": 2,
+      "final_predictor_allocated": false
+    },
+    "16": {
+      "equivalent_mathematical_stages": 16,
+      "nontrivial_field_kernel_calls": 14,
+      "analytic_endpoint_stages": 2,
+      "final_predictor_allocated": false
+    },
+    "32": {
+      "equivalent_mathematical_stages": 32,
+      "nontrivial_field_kernel_calls": 30,
+      "analytic_endpoint_stages": 2,
+      "final_predictor_allocated": false
+    },
+    "64": {
+      "equivalent_mathematical_stages": 64,
+      "nontrivial_field_kernel_calls": 62,
+      "analytic_endpoint_stages": 2,
+      "final_predictor_allocated": false
+    }
+  },
+  "cached_fm_root": "same central/tail exact root as central_exact; both root and time arithmetic optimized",
+  "dictionary_and_source_setup_seconds": 0.7407152120140381,
+  "guard_import_parameters_setup_seconds": 48.27684343798319
+}

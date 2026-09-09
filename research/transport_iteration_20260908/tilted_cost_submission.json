@@ -1,0 +1,23 @@
+{
+  "job_id": "45576004",
+  "source_commit": "9391d3ab89ad0667036d39a85f2e59409da34dc6",
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-tilted-cost-20260909",
+  "output": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-tilted-cost",
+  "log": "/ocean/projects/mth250006p/ywang26/diffusion-results/tilted-cost-45576004.out",
+  "submission_count": 1,
+  "account": "cis260243p",
+  "partition": "RM-shared",
+  "tasks": 1,
+  "cpus": 2,
+  "memory": "4000M",
+  "time_limit": "00:20:00",
+  "numerical_threads": 1,
+  "mode": "timing",
+  "real_data_read": false,
+  "fitting_performed": false,
+  "last_observed_state": "COMPLETED",
+  "node": "r026",
+  "last_observed_elapsed": "00:07:00",
+  "exit_code": "0:0",
+  "batch_maxrss_kib": 117780
+}

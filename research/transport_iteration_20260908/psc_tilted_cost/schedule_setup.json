@@ -1,0 +1,32 @@
+[
+  {
+    "seed": 2026090901,
+    "batch": 1,
+    "all_schedules_setup_nanoseconds": 253716
+  },
+  {
+    "seed": 2026090901,
+    "batch": 64,
+    "all_schedules_setup_nanoseconds": 188313
+  },
+  {
+    "seed": 2026090902,
+    "batch": 1,
+    "all_schedules_setup_nanoseconds": 207850
+  },
+  {
+    "seed": 2026090902,
+    "batch": 64,
+    "all_schedules_setup_nanoseconds": 358232
+  },
+  {
+    "seed": 2026090903,
+    "batch": 1,
+    "all_schedules_setup_nanoseconds": 123291
+  },
+  {
+    "seed": 2026090903,
+    "batch": 64,
+    "all_schedules_setup_nanoseconds": 190627
+  }
+]
