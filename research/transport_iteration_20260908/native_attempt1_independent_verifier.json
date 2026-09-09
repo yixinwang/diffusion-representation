@@ -1,0 +1,15 @@
+{
+  "study_status": "failed",
+  "full_numerical_audit": false,
+  "confirmatory_claim": false,
+  "errors": [],
+  "checks": {
+    "payload_files": 25,
+    "source_commit": "8b007b6f6169f6b402a5984bee4663a74182714e"
+  },
+  "audit_status": "preserved_failed_run",
+  "failure_phase": {
+    "phase": "guarded_test_preflight"
+  },
+  "limitation": "Hashes do not turn a failed or incomplete study into a successful experiment."
+}
