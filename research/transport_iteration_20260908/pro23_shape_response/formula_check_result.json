@@ -1,0 +1,232 @@
+{
+  "scope": "fabricated scalar floating checks against80-digit evaluation, not interval certificate or production qualification",
+  "rows": [
+    {
+      "z": -100000000.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 1.131959884853339e-80,
+      "ld_abs_error": 0.0,
+      "identity_exact": true
+    },
+    {
+      "z": -100000000.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 4.6516719048320343e-17,
+      "ld_abs_error": 1.5901862204954039e-24,
+      "identity_exact": null
+    },
+    {
+      "z": -100000000.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 3.0501877251797908e-16,
+      "ld_abs_error": 1.4386139857575264e-15,
+      "identity_exact": null
+    },
+    {
+      "z": -100000000.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 5.919401206624062e-10,
+      "ld_abs_error": 3.846776134462599e-09,
+      "identity_exact": null
+    },
+    {
+      "z": -20.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 1.6867516709168838e-81,
+      "ld_abs_error": 0.0,
+      "identity_exact": true
+    },
+    {
+      "z": -20.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 6.398661787774863e-17,
+      "ld_abs_error": 1.6587030538029123e-24,
+      "identity_exact": null
+    },
+    {
+      "z": -20.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 1.3299808776894786e-17,
+      "ld_abs_error": 2.792325478918413e-16,
+      "identity_exact": null
+    },
+    {
+      "z": -20.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 1.6198321637935967e-15,
+      "ld_abs_error": 5.234774145441243e-16,
+      "identity_exact": null
+    },
+    {
+      "z": -1.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 0.0,
+      "ld_abs_error": 5.271098971615262e-82,
+      "identity_exact": true
+    },
+    {
+      "z": -1.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 5.540716647156139e-17,
+      "ld_abs_error": 6.220183458365309e-26,
+      "identity_exact": null
+    },
+    {
+      "z": -1.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 8.405632392085257e-17,
+      "ld_abs_error": 6.20692054297702e-17,
+      "identity_exact": null
+    },
+    {
+      "z": -1.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 8.230618908627689e-17,
+      "ld_abs_error": 5.101001536934605e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 0.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 0.0,
+      "ld_abs_error": 0.0,
+      "identity_exact": true
+    },
+    {
+      "z": 0.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 5.691720506194851e-26,
+      "ld_abs_error": 7.560564070423754e-26,
+      "identity_exact": null
+    },
+    {
+      "z": 0.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 1.4560056586566792e-17,
+      "ld_abs_error": 7.349858193003379e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 0.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 3.86245746103104e-17,
+      "ld_abs_error": 5.064131275422356e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 1.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 0.0,
+      "ld_abs_error": 5.271098971615262e-82,
+      "identity_exact": true
+    },
+    {
+      "z": 1.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 1.6410523918338408e-17,
+      "ld_abs_error": 2.376025342694211e-25,
+      "identity_exact": null
+    },
+    {
+      "z": 1.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 7.760690620357138e-17,
+      "ld_abs_error": 2.092007121235042e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 1.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 1.4813195356997656e-16,
+      "ld_abs_error": 1.2819611355581661e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 20.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 1.6867516709168838e-81,
+      "ld_abs_error": 0.0,
+      "identity_exact": true
+    },
+    {
+      "z": 20.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 6.765771998745958e-17,
+      "ld_abs_error": 1.3151998301609824e-24,
+      "identity_exact": null
+    },
+    {
+      "z": 20.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 3.0066059985495237e-16,
+      "ld_abs_error": 5.173668211744869e-16,
+      "identity_exact": null
+    },
+    {
+      "z": 20.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 1.3165535156986968e-14,
+      "ld_abs_error": 1.52343653681477e-15,
+      "identity_exact": null
+    },
+    {
+      "z": 100000000.0,
+      "kappa": 0.0,
+      "tau": 0.0,
+      "relative_value_error": 1.131959884853339e-80,
+      "ld_abs_error": 0.0,
+      "identity_exact": true
+    },
+    {
+      "z": 100000000.0,
+      "kappa": 1e-09,
+      "tau": -1e-09,
+      "relative_value_error": 2.3513259855360674e-17,
+      "ld_abs_error": 5.488378607633803e-25,
+      "identity_exact": null
+    },
+    {
+      "z": 100000000.0,
+      "kappa": -0.6931471805599453,
+      "tau": 0.9,
+      "relative_value_error": 1.5473256196450525e-15,
+      "ld_abs_error": 2.2860670908871667e-17,
+      "identity_exact": null
+    },
+    {
+      "z": 100000000.0,
+      "kappa": 0.6931471805599453,
+      "tau": -0.9,
+      "relative_value_error": 1.566715962418339e-08,
+      "ld_abs_error": 4.048049023625379e-09,
+      "identity_exact": null
+    }
+  ],
+  "identity_all": true,
+  "max_relative_value_error": 1.566715962418339e-08,
+  "max_ld_abs_error": 4.048049023625379e-09
+}

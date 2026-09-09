@@ -1,0 +1,9 @@
+# Iteration 23: conditional shape response, source qualification only
+
+Fresh conversation: https://chatgpt.com/c/6aa1c67d-d050-83ea-b75f-eb2e10ebec5a . Submitted through ordinary ChatGPT Latest / Extra High; Pro was unavailable. The conversation proposed one FIT-only shape diagnostic after the negative native experiment. This document summarizes the recommendation; it is not an authenticated transcript.
+
+The proposed response adds bounded skewness and tail parameters to the existing conditional location-scale map, using the established Jones–Pewsey sinh-arcsinh family. It retains Gaussian source dimension and an exact real inverse and normalized density under the composition assumptions in [the independent mathematical audit](independent_math.md). The narrowly scoped population approximation gap is against conditional Gaussian followers in the same fixed coordinates. It proves no improvement over RQS, latent flow matching, diffusion, or an exact stochastic copy; no finite-budget learning guarantee is available.
+
+The separate implementation in `qalt/src/qalt/innovation_shape_response.py` preserves the old location-scale map at zero shape, with 543,344 parameters versus 539,120. Float64 scalar arithmetic and two output projections must be charged. Independent local execution of the shape, original response and prepared FM fitter suites passed 24 tests in 4.09 seconds. These are fabricated numerical and implementation checks, not real-data validation. The initial extreme cancellation failures are retained, together with the measured tolerance revision; no universal floating-point claim is made.
+
+A prospective 3-seed, 3200/800 FIT-only diagnostic is being prepared. No SAS training job has launched at this publication. The official test remains sealed. All results, including failures, will be reported before deciding on a larger generation comparison.

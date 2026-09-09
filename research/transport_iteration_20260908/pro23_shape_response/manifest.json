@@ -1,0 +1,22 @@
+{
+  "README.md": {
+    "bytes": 1881,
+    "sha256": "b6885ca96306944d073fc612c567bd5f579499ca43bd1ae450890f449035a7d6"
+  },
+  "formula_check.py": {
+    "bytes": 1117,
+    "sha256": "fd4f8b5dbddecca5871a624fcd25bd22d14b37128d1674634c9794977d5eb0cc"
+  },
+  "formula_check_result.json": {
+    "bytes": 5917,
+    "sha256": "70b007170080b7e322935e774459314d07d750ef52d3a0a71d2f268777808a26"
+  },
+  "independent_math.md": {
+    "bytes": 12603,
+    "sha256": "6b1d7b0525c276447a4da36d7b7ca8fbf0704a86b7bfd2ec6d35a22058697142"
+  },
+  "initial_numerical_test_failures.md": {
+    "bytes": 800,
+    "sha256": "4e96a2168ccf9cb78fe5f48a6ccdc0c79af386ae6fe455fa3124fba64537ba6c"
+  }
+}

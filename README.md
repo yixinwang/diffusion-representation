@@ -1,3 +1,7 @@
+## Iteration 23 — shape response prepared, not yet trained
+
+The [fresh ChatGPT review and independent math audit](research/transport_iteration_20260908/pro23_shape_response/README.md) motivate a bounded FIT-only skewness/tail diagnostic after the negative native results. The isolated response implementation passes local numerical checks, but no SAS image-quality result or superiority claim exists. A separate full-generation baseline fitter is also prepared and locally tested; no baseline fitting jobs have launched. The goal of better generation and lower total cost than competent latent flow/diffusion remains unmet.
+
 # Diffusion representation
 
 ## Research status and iteration summaries
