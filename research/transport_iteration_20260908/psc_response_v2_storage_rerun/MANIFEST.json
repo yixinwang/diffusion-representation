@@ -1,0 +1,49 @@
+{
+  "self_excluded": true,
+  "files": {
+    "README.md": {
+      "sha256": "d1fd4cc0f588db94f30a34ee6f91a975838c69f7f847f67fa796f1901d17a37a",
+      "bytes": 1671
+    },
+    "launch-record.json": {
+      "sha256": "b9fb34826307ad25e82401bbdc3d236d94d4c2bf4d81f17fdc0d0b3c6823ec16",
+      "bytes": 14064
+    },
+    "launch.py": {
+      "sha256": "cb2a569ab927fe8778aa7e42c6630faca91ccf35548fc15a3d903a03c098f555",
+      "bytes": 4430
+    },
+    "launch.remote.py": {
+      "sha256": "ab4be9d79585f54f834d3a4167e8c832a02dc4036be865d4bd807e0ccf29648d",
+      "bytes": 13963
+    },
+    "snapshot-193052.json": {
+      "sha256": "c9bdd300450908cb4ae311e63e1e9054a91d568aeeb6340eef83061c3dd004f8",
+      "bytes": 401
+    },
+    "storage-readiness/new-storage-lustre-quota.json": {
+      "sha256": "79583b023c896dc012cfcab4d2690c57cb361dafd154a03f11b58ae568ebbcc0",
+      "bytes": 901
+    },
+    "storage-readiness/new-storage-probe.json": {
+      "sha256": "f509daa2c1818f8db4519da8219f72c321351937c9cd6ae1fe14079b3c2d2eb3",
+      "bytes": 945
+    },
+    "storage-readiness/new-storage-project-quota.json": {
+      "sha256": "9b404e4e83fdc1af8c56cdcaf8d14130e68ce10b85d537d01073911bbcd2e2fb",
+      "bytes": 405
+    },
+    "storage-readiness/new-storage-quota-discovery.json": {
+      "sha256": "edf9457557066c5de7b20f59f28078aefb4f341ed0be6b8a6cf0a36690bbc662",
+      "bytes": 2660
+    },
+    "storage-readiness/old-project-quota-terminal.json": {
+      "sha256": "b1bf50f576bb090fe287389c02bf847a86d00e2d75b2948d9edddd0ab49c0bd5",
+      "bytes": 707
+    },
+    "submission.json": {
+      "sha256": "667775f0cac06bccf5bcf567cb7f6264728b74557991596205b7775a18319280",
+      "bytes": 12958
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "command": "lfs quota -p 559736 /ocean; lfs project -d /ocean/projects/mth250006p/ywang26",
+  "returncode": 0,
+  "stdout": "Disk quotas for prj 559736 (pid 559736):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /ocean 16044124  1048576000 1048576000       -   68275  6070000 6070000       -\n557084 P /ocean/projects/mth250006p/ywang26\n",
+  "stderr": ""
+}

@@ -1,0 +1,6 @@
+{
+  "command": "lfs quota -g 28058 /ocean; lfs quota -u 89893 /ocean; lfs project -d /ocean/projects/mth260022p/ywang26; squeue -j45619353 -h -o \"%i|%T|%R\"",
+  "returncode": 1,
+  "stdout": "Disk quotas for grp 28058 (gid 28058):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /ocean     120       0       0       -      30       0       0       -\ngid 28058 is using default block quota setting\ngid 28058 is using default file quota setting\nDisk quotas for usr 89893 (uid 89893):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /ocean 535156664       0       0       - 2925996       0       0       -\nuid 89893 is using default block quota setting\nuid 89893 is using default file quota setting\n559736 P /ocean/projects/mth260022p/ywang26\n",
+  "stderr": "slurm_load_jobs error: Invalid job id specified\n"
+}

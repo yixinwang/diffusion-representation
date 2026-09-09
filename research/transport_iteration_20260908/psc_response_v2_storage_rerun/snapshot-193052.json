@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "JobID|State|ExitCode|Elapsed|MaxRSS|NodeList\n45632257|RUNNING|0:0|00:01:05||v023\n45632257.batch|RUNNING|0:0|00:01:05||v023\n45632257.extern|RUNNING|0:0|00:01:05||v023\n{\"checked_utc\": \"2026-09-09T19:30:52.269373+00:00\", \"all_fits_frozen\": false, \"all_numerics_admitted\": false, \"stages\": [], \"bytes\": 605686, \"numerical_count\": 0}\n",
+  "stderr": ""
+}

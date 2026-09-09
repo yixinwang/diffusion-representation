@@ -1,0 +1,6 @@
+{
+  "command": "lfs quota -p 557084 /ocean; sacct -j45619353 --format=JobID,State,ExitCode,Elapsed,MaxRSS,NodeList,Start,End -P",
+  "returncode": 0,
+  "stdout": "Disk quotas for prj 557084 (pid 557084):\n     Filesystem  kbytes   quota   limit   grace   files   quota   limit   grace\n         /ocean 3073667600* 3073376256 3073376256       - 4028727  17791170 17791170       -\nJobID|State|ExitCode|Elapsed|MaxRSS|NodeList|Start|End\n45619353|FAILED|1:0|00:58:45||v024|2026-09-09T14:21:54|2026-09-09T15:20:39\n45619353.batch|FAILED|1:0|00:58:45|1457456K|v024|2026-09-09T14:21:54|2026-09-09T15:20:39\n45619353.extern|COMPLETED|0:0|00:58:45|0|v024|2026-09-09T14:21:54|2026-09-09T15:20:39\n",
+  "stderr": ""
+}

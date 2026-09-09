@@ -1,0 +1,5 @@
+{
+  "returncode": 0,
+  "stdout": "{\"checked_utc\": \"2026-09-09T19:26:15.653574+00:00\", \"path\": \"/ocean/projects/mth260022p/ywang26\", \"exists\": true, \"uid\": 89893, \"gid\": 27032, \"directory_stat\": {\"mode\": \"0o40700\", \"uid\": 89893, \"gid\": 28058}, \"writable\": true, \"probe\": {\"path\": \"/ocean/projects/mth260022p/ywang26/.codex-response-v2-write-probe-6c3e8c1088b945bbbcfea5ab753a3b30\", \"bytes\": 72, \"sha256\": \"baf377466008359111080cd65ca74c2210f8decbb8ffef9b30c3339cc72d6181\", \"readback_equal\": true, \"removed\": true}, \"filesystem\": {\"error\": \"TypeError(\\\"__init__() got an unexpected keyword argument 'capture_output'\\\",)\"}, \"quota_command_discovery\": {\"error\": \"TypeError(\\\"__init__() got an unexpected keyword argument 'capture_output'\\\",)\"}, \"project_balance\": {\"error\": \"TypeError(\\\"__init__() got an unexpected keyword argument 'capture_output'\\\",)\"}}\n",
+  "stderr": ""
+}
