@@ -1,0 +1,27 @@
+{
+  "archive": "/ocean/projects/mth250006p/ywang26/datasets/ucf101-subset/UCF101_subset.tar.gz",
+  "archive_sha256_recomputed": false,
+  "archive_sha256_recorded": "e9fcc76af48d320be88c5265f2e0576ecd615956976f6ce4742fdf2b042b71eb",
+  "elapsed_seconds": 13.744187959935516,
+  "environment": {
+    "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]"
+  },
+  "manifest_file_sha256": "6f947f8e96e3ebdcf8d604015736ead0dd2c98f33706cc76205269611aebc545",
+  "manifest_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "members": 469,
+  "payload_accessed": false,
+  "phase": "complete",
+  "runner_sha256": "84eca6ae6e2abf3aeb906693992ae57e307e82914757b0fa23e428ab9e13a2c2",
+  "scope": "header/footer metadata only; no member reader, extraction, or decoder",
+  "source": {
+    "bytes": 8676,
+    "git_blob": "da141e12a6eaab324f59ec3cdb2cb1a21c9deed0",
+    "git_commit": "92702635134856f6a0b3a9f82186394b97a7d59e",
+    "git_relative_path": "research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py",
+    "path": "/ocean/projects/mth250006p/ywang26/diffusion-video-headers-20260909/research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py",
+    "sha256": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51"
+  },
+  "status": "complete",
+  "upstream_revision": "b9984b8d2a95e4a1879e1b071e9433858d0bc24a"
+}

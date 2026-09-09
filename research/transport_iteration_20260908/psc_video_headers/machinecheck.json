@@ -1,0 +1,24 @@
+{
+  "status": "independent_metadata_audit_pass",
+  "entries": 469,
+  "regular_files": 405,
+  "directories": 64,
+  "clip_counts": {
+    "train": 300,
+    "val": 30,
+    "test": 75
+  },
+  "group_counts": {
+    "train": 195,
+    "val": 25,
+    "test": 30
+  },
+  "classes": 10,
+  "split_group_overlap": false,
+  "source_commit": "92702635134856f6a0b3a9f82186394b97a7d59e",
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "manifest_file_sha256": "6f947f8e96e3ebdcf8d604015736ead0dd2c98f33706cc76205269611aebc545",
+  "payload_read": false,
+  "whole_archive_hash_recomputed": false,
+  "limitation": "Header block digest is recorded from frozen reader, not independently recomputed from raw headers; only metadata downloaded."
+}
