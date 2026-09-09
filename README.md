@@ -43,6 +43,8 @@ Evidence: [full qualification](research/transport_iteration_20260908/psc_respons
 
 **Review18 result and limits.** Its proposed broad ImageNet frontier is too large and unprofiled for the next bounded experiment. Independent read-only inspection found a missing full-dimensional prior check for pixel flow matching and acceptance of incomplete method sets. Its 34 reported checker tests do not establish native generation performance or complete protocol coverage. The original 20,408-byte archive was recovered and hash-authenticated locally, but no code was executed or package published here. Its attempted Git tree creation was blocked by automatic safety review: “we couldn't determine the safety status of the request.” That blocked publication has not been retried. The next review is restricted to proposals and local artifacts, with no Git writes.
 
+**Baseline implementation audit.** The existing learned-analysis FM retains a full-dimensional stochastic residual decoder; it is not a conventional compressed latent generator. A capable unconditional RGB codec baseline is still missing. The [source inventory and minimum implementation requirements](research/transport_iteration_20260908/next_real_image_component_audit.md) distinguish reusable components from this missing comparison.
+
 **Decision.** Finish and audit the existing three-seed experiment before using it to motivate a new frozen study. Preserve all negative results. No real-image/video quality, speed, or representation superiority is claimed.
 
 ### September 9, 2026 — higher-order conditional dependence (Pro17)
