@@ -1,0 +1,4 @@
+# Observed execution environment: Python 3.13.5, Linux x86_64.
+# These are recorded versions, not a claim of cross-platform byte equivalence.
+numpy==2.3.5
+scipy==1.17.0
