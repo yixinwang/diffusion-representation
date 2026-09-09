@@ -1,0 +1,30 @@
+{
+  "diagnostic_metadata.py": {
+    "bytes": 8871,
+    "sha256": "aa43d3787943cb9fcefd7afca20198f30cc46f4d11cb126715a0071a7939e7b0"
+  },
+  "frames.jsonl": {
+    "bytes": 60904,
+    "sha256": "9344c98746b1b76c45357731936e0a2c111e575a6f8da874d0789228fef9a5d0"
+  },
+  "frozen_helpers.py": {
+    "bytes": 4850,
+    "sha256": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a"
+  },
+  "frozen_reader.py": {
+    "bytes": 8676,
+    "sha256": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51"
+  },
+  "manifest.json": {
+    "bytes": 156101,
+    "sha256": "6f947f8e96e3ebdcf8d604015736ead0dd2c98f33706cc76205269611aebc545"
+  },
+  "stream.json": {
+    "bytes": 218,
+    "sha256": "79438aaee6d39e2b76e4806fc19ff40893bcaf3ddaf88a95cb54a42715d1c727"
+  },
+  "timestamp_flags.json": {
+    "bytes": 6923,
+    "sha256": "71afdf4798d6af38ae27b8d4d42aa1df9832c21da57d05c26c4b51277d6b1bf2"
+  }
+}

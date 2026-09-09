@@ -1,0 +1,77 @@
+JobID|State|Elapsed|MaxRSS|ExitCode
+45579152|COMPLETED|00:07:03||0:0
+45579152.batch|COMPLETED|00:07:03|43144K|0:0
+45579152.extern|COMPLETED|00:07:06|0|0:0
+{
+  "allowlist_sha256": "dc776d99a541b7656c5f6ba6d33c7d7db3ec8e0e463ae1ab2ee0622b554921b2",
+  "archive": "/ocean/projects/mth250006p/ywang26/datasets/ucf101-subset/UCF101_subset.tar.gz",
+  "completed_phase_seconds": {
+    "bounded_member_hash": 0.293191573000513,
+    "guards": 14.786411097971722,
+    "manifest_header_validation": 9.279252603999339,
+    "metadata_diagnostic": 367.745344260009
+  },
+  "current_phase_seconds": 0.0,
+  "dependencies": {
+    "av": "16.1.0",
+    "av_libraries": {
+      "libavcodec": [
+        62,
+        11,
+        100
+      ],
+      "libavdevice": [
+        62,
+        1,
+        100
+      ],
+      "libavfilter": [
+        11,
+        4,
+        100
+      ],
+      "libavformat": [
+        62,
+        3,
+        100
+      ],
+      "libavutil": [
+        60,
+        8,
+        100
+      ],
+      "libswresample": [
+        6,
+        1,
+        100
+      ],
+      "libswscale": [
+        9,
+        1,
+        100
+      ]
+    },
+    "numpy": "2.2.6",
+    "pillow": "12.1.0"
+  },
+  "diagnostic_frames": 216,
+  "elapsed_seconds": 392.1041995349806,
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "member": "UCF101_subset/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c03.avi",
+  "member_sha256": "699175c50544283f3b8537387403ff5b82958e4b18e590611129013131d1601a",
+  "phase": "complete",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+  "rgb_arrays_saved": false,
+  "saved_frames": [],
+  "scientific_status": "diagnostic only; original prerequisite remains failed",
+  "scope": "same-clip timestamp diagnosis; no RGB, selection, replacement or timestamp repair",
+  "selection_policy_changed": false,
+  "source_sha256": {
+    "helpers": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "reader": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "runner": "aa43d3787943cb9fcefd7afca20198f30cc46f4d11cb126715a0071a7939e7b0"
+  },
+  "status": "complete",
+  "timestamp_flagged_frames": 74
+}

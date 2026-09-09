@@ -1,0 +1,10 @@
+{
+  "aspect_policy": "coded raster dimensions; no display-aspect resampling",
+  "codec": "mpeg4",
+  "color_primaries": 2,
+  "color_trc": 2,
+  "height": 240,
+  "index": 0,
+  "sample_aspect_ratio": "1",
+  "width": 320
+}

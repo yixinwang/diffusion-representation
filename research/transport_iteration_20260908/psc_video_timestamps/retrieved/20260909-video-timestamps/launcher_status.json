@@ -1,0 +1,34 @@
+{
+  "checkout": "/ocean/projects/mth250006p/ywang26/diffusion-video-diagnostic-20260909",
+  "command": [
+    "/ocean/projects/mth250006p/ywang26/pytorch/bin/python",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-diagnostic-20260909/research/transport_iteration_20260908/video_decode_prerequisite/diagnostic_metadata.py",
+    "--output",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-timestamps/decode",
+    "--manifest",
+    "/ocean/projects/mth250006p/ywang26/diffusion-results/20260909-video-headers/manifest.json",
+    "--reader-source",
+    "/ocean/projects/mth250006p/ywang26/diffusion-video-diagnostic-20260909/research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py",
+    "--reader-sha256",
+    "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "--helpers-sha256",
+    "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "--runner-sha256",
+    "aa43d3787943cb9fcefd7afca20198f30cc46f4d11cb126715a0071a7939e7b0",
+    "--numpy-version",
+    "2.2.6"
+  ],
+  "dependency_files_verified": 264,
+  "dependency_root": "/ocean/projects/mth250006p/ywang26/diffusion-video-deps-20260909/dependencies-attempt3",
+  "expected_commit": "effc2c565b050193561978c9bce686b3a3f996eb",
+  "finished": 1788926604.601546,
+  "returncode": 0,
+  "source_sha256": {
+    "research/transport_iteration_20260908/video_archive_prerequisite/archive_reader.py": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "research/transport_iteration_20260908/video_decode_prerequisite/diagnostic_metadata.py": "aa43d3787943cb9fcefd7afca20198f30cc46f4d11cb126715a0071a7939e7b0",
+    "research/transport_iteration_20260908/video_decode_prerequisite/helpers.py": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "research/transport_iteration_20260908/video_dependency/extraction-attempt3.json": "170a8a22d7605651ffbec47b6b03fd24e496588873743d3331a0759fddb87100"
+  },
+  "started": 1788926186.9629624,
+  "status": "complete"
+}
