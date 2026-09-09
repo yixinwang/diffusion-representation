@@ -1,0 +1,81 @@
+JobID|State|Elapsed|MaxRSS|ExitCode
+45580328|RUNNING|00:01:01||0:0
+45580328.batch|RUNNING|00:01:01||0:0
+45580328.extern|RUNNING|00:01:01||0:0
+{
+  "allowlist_sha256": "dc776d99a541b7656c5f6ba6d33c7d7db3ec8e0e463ae1ab2ee0622b554921b2",
+  "archive": "/ocean/projects/mth250006p/ywang26/datasets/ucf101-subset/UCF101_subset.tar.gz",
+  "authenticated_ledger_sha256": "9344c98746b1b76c45357731936e0a2c111e575a6f8da874d0789228fef9a5d0",
+  "completed_phase_seconds": {
+    "bounded_member_hash": 0.41463823296362534,
+    "guards": 13.501266593986657,
+    "manifest_header_validation": 11.880151069024578
+  },
+  "cost_reuse": "prior diagnostic7:03 scheduler time recorded separately; current cost includes one new decode, member hash, all guards and output",
+  "current_frame": 31,
+  "current_phase_seconds": 12.96896830003243,
+  "dependencies": {
+    "av": "16.1.0",
+    "av_libraries": {
+      "libavcodec": [
+        62,
+        11,
+        100
+      ],
+      "libavdevice": [
+        62,
+        1,
+        100
+      ],
+      "libavfilter": [
+        11,
+        4,
+        100
+      ],
+      "libavformat": [
+        62,
+        3,
+        100
+      ],
+      "libavutil": [
+        60,
+        8,
+        100
+      ],
+      "libswresample": [
+        6,
+        1,
+        100
+      ],
+      "libswscale": [
+        9,
+        1,
+        100
+      ]
+    },
+    "numpy": "2.2.6",
+    "pillow": "12.1.0"
+  },
+  "elapsed_seconds": 38.76502419600729,
+  "manifest_logical_sha256": "180eabace318325e1b7ee6f2d5465b0e89f86789bcf6e0d4f3a92d3cc88a6f96",
+  "matched_frames": 35,
+  "member": "UCF101_subset/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c03.avi",
+  "member_sha256": "699175c50544283f3b8537387403ff5b82958e4b18e590611129013131d1601a",
+  "original_physical_timestamp_policy": "failed; unchanged",
+  "phase": "index_decode",
+  "platform": "Linux-4.18.0-553.22.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "3.10.9 (main, Jan 11 2023, 15:21:40) [GCC 11.2.0]",
+  "reused_diagnostic_job": "45579152",
+  "reused_metadata_frames": 216,
+  "saved_frames": [
+    0,
+    31
+  ],
+  "scope": "normalized decoder-output index endpoint; not physical time or presentation order",
+  "source_sha256": {
+    "helpers": "52fed3c0de0e1d6dda740c4cd62dae3016925b1b18ff826bc0d78706febb900a",
+    "reader": "cd50355a6e9abfa872aa7eea0489a27df2e592ec94142645dad23eed96d7cf51",
+    "runner": "002ea42342bafc19c277e7a6ef460d088d42552725dda2270f8240c6612ef7f2"
+  },
+  "status": "running"
+}

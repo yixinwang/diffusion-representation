@@ -1,0 +1,13 @@
+# Single-clip normalized-index input check: artifact audit passes
+
+Exactly one frozen job45580328 ran at01a3067a245e686363c8f16724a825f2dfa86577 with explicit `--export=ALL`. It completed in1:33 scheduler time, exit0:0, MaxRSS50484K. The all264 dependency-byte guards, package versions, immutable source checks, original archive/member hash and authenticated216-row ledger passed. No other clip, protected payload or model fitting was used.
+
+All216 returned metadata rows matched the authenticated diagnostic ledger without sorting, timestamp modification or imputation. The selected indices were exactly0,31,61,92,123,154,184,215. This is the separately declared normalized decoder-output-index endpoint. The failed physical-timestamp prerequisite remains failed; the result does not establish8Hz timing, calibrated physical motion or true presentation order.
+
+The independent local auditor imported no production scoring/preprocessing helpers. It checked every saved artifact's bytes/SHA and exact file enumeration, original member/manifest/ledger identity, and all three frozen source snapshots. It checked all eight original RGB arrays are uint8 with240×320×3 shape, and all processed arrays are uint8 with64×64×3 shape.
+
+Starting from the saved original RGB arrays, independent integer geometry and Pillow resize/crop reproduced all eight processed arrays exactly. The audit used local Pillow12.3.0 versus the frozen PSC12.1.0; exact equality for these eight arrays is evidence for these outputs, not general version equivalence. The original YUV-to-RGB decode was not independently rerun; source, dependency, member and full-frame metadata provenance were verified instead.
+
+Independent SHA-keyed PCG64 generation reproduced every saved uint32 noise array exactly, and the float64 unit-cube arrays exactly. All unit values were strictly interior. Independent log(p/(1-p)) differed from saved log(p)-log1p(-p) by at most3.56e-15. Float32 logits exactly matched casts of the saved float64 logits and were finite. Independently recomputed cube-to-logit and full outer Jacobians differed by at most7.28e-12 per frame, below the frozen audit tolerance1e-9. Original timestamps and selection records match the full ledger.
+
+`audit.py` and `audit.json` preserve checks and all retrieved-file hashes. The complete output is under `retrieved/20260909-video-index`, with its raw transfer archive and preparation/monitoring logs retained. This establishes a reproducible input artifact for one clip under the declared index rule. It establishes no image/video model quality, latent-model advantage, broad dataset readiness or physical-timing validity. Prior metadata-diagnostic7:03 cost is explicitly reused and remains additional to this1:33 input attempt.

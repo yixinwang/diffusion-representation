@@ -1,0 +1,94 @@
+{
+  "scope": "fabricated algebra only; no fits, native data, qalt execution or GPU timings",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "torch": "2.14.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1"
+  },
+  "checks": {
+    "small_prefix": {
+      "round_trip_max": 8.881784197001252e-16,
+      "ld_cancellation_max": 9.71445146547012e-17,
+      "dense_jacobian_error": 2.831068712794149e-15,
+      "directional_gradient_error": 1.2276815675171804e-10,
+      "all_parameter_gradients_finite": true
+    },
+    "small_innovation": {
+      "round_trip_max": 1.1657341758564144e-15,
+      "ld_cancellation_max": 1.6653345369377348e-16,
+      "dense_jacobian_error": 1.0269562977782698e-15,
+      "directional_gradient_error": 2.0720147819730528e-11,
+      "all_parameter_gradients_finite": true
+    },
+    "full_3072_torch.float64": {
+      "batch": 4,
+      "round_trip_max": 7.105427357601002e-15,
+      "ld_cancellation_max": 4.884981308350689e-15,
+      "same_source_exact_copy": true,
+      "all_3072_coordinates_retained": true
+    },
+    "full_3072_torch.float32": {
+      "batch": 4,
+      "round_trip_max": 3.814697265625e-06,
+      "ld_cancellation_max": 2.384185791015625e-06,
+      "same_source_exact_copy": true,
+      "all_3072_coordinates_retained": true
+    },
+    "zero_head_nesting": {
+      "output_equal": true,
+      "logdet_equal": true
+    },
+    "zero_covariance_nonlinear_energy": {
+      "conditional_scale_formula": "log(2)*tanh(tanh(tanh(u)^2))",
+      "cov_U_V_exact": 0.0,
+      "E_V_squared": 1.6156620985801577,
+      "cov_U_squared_V_squared": 0.5364014664119683,
+      "best_independent_Gaussian_KL_gap_nats": 0.022602151421440675,
+      "density_integral_numeric": 1.0000000000000027,
+      "quadrature_error_estimate": 1.736696457623572e-10,
+      "comparison_scope": "Gaussian witness only; no RQS, FM or image-quality win"
+    },
+    "retained_approximation_failure": {
+      "fixed_base": "identity",
+      "independent_anchors": true,
+      "follower_correlation": 0.6,
+      "unremoved_conditional_TC_nats": 0.22314355131420974,
+      "qualification": "Not a floor for the trainable full model: its base map can change."
+    },
+    "deliberately_wrong_missing_logdet_rejected": {
+      "max_error": 0.4433053595276673
+    },
+    "nonfinite_rejection": {
+      "rejected_cases": [
+        "input",
+        "context",
+        "frame",
+        "head_parameter",
+        "hidden_overflow"
+      ]
+    },
+    "reused_frame_gradient": {
+      "directional_gradient_error": 4.7376103040619455e-11,
+      "all_finite": true
+    },
+    "shape_only_counts": {
+      "extra_parameters_per_block": 2624,
+      "extra_parameters_total": 10496,
+      "candidate_total": 539120,
+      "candidate_residual": 210932,
+      "scalar_width": 42,
+      "scalar_total": 544080,
+      "strong_RQS_total": 589712,
+      "additional_noise_coordinates": 0,
+      "new_attention_passes": 0,
+      "new_QR_factorizations": 0
+    }
+  },
+  "all_checks_pass": true,
+  "source_sha256": {
+    "checks.py": "437737f80c49505f75797df1a309e70457d45145c909d233cff9072761f5d39e",
+    "mechanism.py": "f39c3948737d8f28f64e5d0195733bdef5d8454c2bf5c489122b68f9188eed9a"
+  },
+  "wall_seconds": 0.12398866610601544
+}

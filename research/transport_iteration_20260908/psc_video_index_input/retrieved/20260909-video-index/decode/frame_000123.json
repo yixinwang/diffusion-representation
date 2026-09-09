@@ -1,0 +1,63 @@
+{
+  "color_policy": {
+    "assumption_used": true,
+    "matrix": "BT.601",
+    "range": "limited",
+    "source_colorspace": 2,
+    "source_range": 0
+  },
+  "dequantization": {
+    "cube_to_logit_logdet_float64": 32617.528998877395,
+    "key": {
+      "algorithm": "SHA256-big-endian-seed-PCG64-uint32-midpoint-v1",
+      "frame_index": 123,
+      "record": "UCF101_subset/train/ApplyEyeMakeup/v_ApplyEyeMakeup_g02_c03.avi",
+      "role": "first-train-clip-feasibility-v1",
+      "schema": 1
+    },
+    "numpy_version": "2.2.6",
+    "outer_logdet_float64": -35521.61143888746,
+    "seed_sha256": "4b7010564c8d11f47e27579df531bb036ad03d1fecbcf7458d57c8365164619b"
+  },
+  "exposed_metadata": {
+    "color_primaries": null,
+    "color_range": 0,
+    "color_trc": null,
+    "colorspace": 2,
+    "dts": 124,
+    "format": "yuv420p",
+    "height": 240,
+    "index": 123,
+    "interlaced": false,
+    "pts": 124,
+    "rotation": 0,
+    "time_base": [
+      1,
+      25
+    ],
+    "width": 320
+  },
+  "geometry": {
+    "crop_left": 10,
+    "crop_top": 0,
+    "mode": "RGB",
+    "pillow_version": "12.1.0",
+    "reducing_gap": null,
+    "resample": "BILINEAR",
+    "resized_height": 64,
+    "resized_width": 85,
+    "target": 64
+  },
+  "selection": {
+    "index": 123,
+    "k": 4,
+    "normalized_position": [
+      4,
+      7
+    ],
+    "requested_index": [
+      860,
+      7
+    ]
+  }
+}

@@ -248,7 +248,7 @@ class PrefixConditioner(nn.Module):
         nn.init.zeros_(self.eigen_head.weight)
         nn.init.zeros_(self.eigen_head.bias)
 
-    def forward(self, residual: Tensor, coarse: Tensor) -> tuple[Tensor, Tensor]:
+    def forward(self, residual: Tensor, coarse: Tensor, *, return_summary: bool = False):
         mask = self.observed.expand(residual.shape[0], -1, -1, -1)
         visible = torch.where(mask, residual, torch.zeros_like(residual))
         inp = torch.cat((visible, mask.to(residual.dtype), coarse,
@@ -262,7 +262,11 @@ class PrefixConditioner(nn.Module):
         local = tokens[:, self.spatial]
         embedding = self.embedding(self.channel)[None].expand(residual.shape[0], -1, -1)
         context = torch.cat((local, embedding, summary[:, None].expand(-1, len(self.active), -1)), -1)
-        return self.head(context), math.log(2.0) * torch.tanh(self.eigen_head(summary))
+        raw = self.head(context)
+        alpha = math.log(2.0) * torch.tanh(self.eigen_head(summary))
+        if return_summary:
+            return raw, alpha, summary
+        return raw, alpha
 
 
 class CachedGlobalInnovationDecoder(nn.Module):
