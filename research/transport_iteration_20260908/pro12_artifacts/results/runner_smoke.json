@@ -1,0 +1,208 @@
+{
+  "status": "completed_all_requested_checks",
+  "grid": [
+    4
+  ],
+  "full_fixed_grid": false,
+  "command": "python3 run.py --output /mnt/data/pro12_runner_smoke --n 4 --timeout 90 --repeat-order8",
+  "source_hashes": {
+    "certify.cpp": "5a9eeebffdc0a8fee58ba3c697b5687b4ca19f8e9828b82fbcc10c43caadab44",
+    "mpfr_minimal.h": "2883e8e4411642ff9cedc04a20059012d064fae794af61182b2b97f6249f3b70",
+    "test_certificate.cpp": "e668c81a8d0e0f9bf7cd549f0a4f3059bd4e3f583c37df63217e4edd1386c3b7",
+    "global_bounds.cpp": "f57b05b62b425f8414b606af1b11b9bf9159aecebba93983087319eb7f80ef45",
+    "risk_bounds.cpp": "4f0a728691a22a4a332f0895bbf6847eda6eac4c84abf8ac23bec6ae0142653e",
+    "frontier.py": "0af3b5a0af65cd2f37e5b9f2a5c3ed2ac8da747a649781b11da108a019b4b352",
+    "run.py": "36a30513eba670f635866bc3d2b7b80780b0bac5ec7a340a94a83158591dd224",
+    "sources/psc_summary.json": "e783b9d666f84a1cba1ed5e615410c8718649c2f8f286aaad115a5e18d9306ea"
+  },
+  "unit_tests": {
+    "status": "pass",
+    "checks": 256,
+    "precision_bits": 192,
+    "mpfr": "4.2.2",
+    "scope": "algebraic and independent derivative consistency tests; not a proof assistant"
+  },
+  "global_bounds": {
+    "status": "pass",
+    "precision_bits": 192,
+    "positive_q_derivative_bound": [
+      0.3896609906064759,
+      0.3896609906064761
+    ],
+    "negative_q_first_term_bound": [
+      0.5444341301680724,
+      0.5444341301680727
+    ],
+    "negative_near_second_term_bound": [
+      0.493141257253578,
+      0.49314125725357816
+    ],
+    "negative_far_second_term_bound": [
+      0.39521136278915425,
+      0.3952113627891544
+    ],
+    "field_upper": [
+      1.6925687506432685,
+      1.6925687506432692
+    ],
+    "step_perturbation_upper": [
+      0.3449999999999999,
+      0.3450000000000001
+    ],
+    "logJ_absolute_upper": [
+      1.0534351145038165,
+      1.0534351145038172
+    ],
+    "ell_constant_upper": [
+      3.4612907318741546,
+      3.461290731874156
+    ],
+    "tail_upper": [
+      7.14408108933428e-18,
+      7.144081089334284e-18
+    ]
+  },
+  "conditional": [
+    0.22372470287378568,
+    0.22372470323412066
+  ],
+  "risk": [
+    0.22372470285456023,
+    0.22372471382618164
+  ],
+  "processes": [
+    {
+      "command": [
+        "g++",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/mnt/data/pro12_certified_frontier/certify.cpp",
+        "-l:libmpfr.so.6",
+        "-lgmp",
+        "-o",
+        "/mnt/data/pro12_runner_smoke/certify"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 1.8693284260000382
+    },
+    {
+      "command": [
+        "g++",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/mnt/data/pro12_certified_frontier/global_bounds.cpp",
+        "-l:libmpfr.so.6",
+        "-lgmp",
+        "-o",
+        "/mnt/data/pro12_runner_smoke/global_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 2.4238004139999703
+    },
+    {
+      "command": [
+        "g++",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/mnt/data/pro12_certified_frontier/risk_bounds.cpp",
+        "-l:libmpfr.so.6",
+        "-lgmp",
+        "-o",
+        "/mnt/data/pro12_runner_smoke/risk_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 2.3218842060000497
+    },
+    {
+      "command": [
+        "g++",
+        "-O2",
+        "-std=c++17",
+        "-fno-fast-math",
+        "-ffp-contract=off",
+        "/mnt/data/pro12_certified_frontier/test_certificate.cpp",
+        "-l:libmpfr.so.6",
+        "-lgmp",
+        "-o",
+        "/mnt/data/pro12_runner_smoke/test_certificate"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 2.4252724089999447
+    },
+    {
+      "command": [
+        "/mnt/data/pro12_runner_smoke/global_bounds"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.03209466199996314
+    },
+    {
+      "command": [
+        "/mnt/data/pro12_runner_smoke/certify",
+        "4",
+        "6",
+        "48",
+        "4",
+        "5e-9",
+        "128"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 90.0,
+      "elapsed_seconds": 3.530690073999949
+    },
+    {
+      "command": [
+        "/mnt/data/pro12_runner_smoke/certify",
+        "4",
+        "8",
+        "32",
+        "3",
+        "5e-9",
+        "192"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 90.0,
+      "elapsed_seconds": 3.725931495000168
+    },
+    {
+      "command": [
+        "/mnt/data/pro12_runner_smoke/risk_bounds",
+        "4",
+        "0.22372470287378568",
+        "0.22372470323412066"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 30,
+      "elapsed_seconds": 0.004327434000060748
+    },
+    {
+      "command": [
+        "/mnt/data/pro12_runner_smoke/test_certificate"
+      ],
+      "returncode": 0,
+      "timeout": false,
+      "timeout_limit_seconds": 60,
+      "elapsed_seconds": 0.2648863580000125
+    }
+  ],
+  "complete_sha256": "f6d16d9e062b22ad58a455d8169a8850cdeb31beb5c9ae0c15b660eb456281f3"
+}

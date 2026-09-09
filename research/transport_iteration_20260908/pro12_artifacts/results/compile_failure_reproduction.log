@@ -1,0 +1,36 @@
+attempts/certify_initial_compile_failed.cpp: In function ‘int main(int, char**)’:
+attempts/certify_initial_compile_failed.cpp:169:20: error: no matching function for call to ‘I::I(std::string&)’
+  169 |   I allowance=I(tol)*dz*de/I(69120);
+      |                    ^
+attempts/certify_initial_compile_failed.cpp:31:5: note: candidate: ‘I::I(const Real&, const Real&)’
+   31 |     I(const Real&a,const Real&b):l(a),u(b){}
+      |     ^
+attempts/certify_initial_compile_failed.cpp:31:5: note:   candidate expects 2 arguments, 1 provided
+attempts/certify_initial_compile_failed.cpp:30:14: note: candidate: ‘I::I(const char*)’
+   30 |     explicit I(const char*a){mpfr_set_str(l.x,a,10,MPFR_RNDD);mpfr_set_str(u.x,a,10,MPFR_RNDU);}
+      |              ^
+attempts/certify_initial_compile_failed.cpp:30:27: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const char*’
+   30 |     explicit I(const char*a){mpfr_set_str(l.x,a,10,MPFR_RNDD);mpfr_set_str(u.x,a,10,MPFR_RNDU);}
+      |                ~~~~~~~~~~~^
+attempts/certify_initial_compile_failed.cpp:29:14: note: candidate: ‘I::I(double)’
+   29 |     explicit I(double a){mpfr_set_d(l.x,a,MPFR_RNDD);mpfr_set_d(u.x,a,MPFR_RNDU);}
+      |              ^
+attempts/certify_initial_compile_failed.cpp:29:23: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘double’
+   29 |     explicit I(double a){mpfr_set_d(l.x,a,MPFR_RNDD);mpfr_set_d(u.x,a,MPFR_RNDU);}
+      |                ~~~~~~~^
+attempts/certify_initial_compile_failed.cpp:28:5: note: candidate: ‘I::I(int)’
+   28 |     I(int a){mpfr_set_si(l.x,a,MPFR_RNDN);mpfr_set_si(u.x,a,MPFR_RNDN);}
+      |     ^
+attempts/certify_initial_compile_failed.cpp:28:11: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘int’
+   28 |     I(int a){mpfr_set_si(l.x,a,MPFR_RNDN);mpfr_set_si(u.x,a,MPFR_RNDN);}
+      |       ~~~~^
+attempts/certify_initial_compile_failed.cpp:27:5: note: candidate: ‘I::I()’
+   27 |     I(){}
+      |     ^
+attempts/certify_initial_compile_failed.cpp:27:5: note:   candidate expects 0 arguments, 1 provided
+attempts/certify_initial_compile_failed.cpp:25:8: note: candidate: ‘I::I(const I&)’
+   25 | struct I {
+      |        ^
+attempts/certify_initial_compile_failed.cpp:25:8: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘const I&’
+attempts/certify_initial_compile_failed.cpp:25:8: note: candidate: ‘I::I(I&&)’
+attempts/certify_initial_compile_failed.cpp:25:8: note:   no known conversion for argument 1 from ‘std::string’ {aka ‘std::__cxx11::basic_string<char>’} to ‘I&&’

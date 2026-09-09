@@ -1,0 +1,12 @@
+{
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "python": "3.13.5",
+  "compiler": "g++ (Debian 14.2.0-19) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "linked_libraries": "\tlinux-vdso.so.1 (0x00007f70dcf20000)\n\tlibmpfr.so.6 => /lib/x86_64-linux-gnu/libmpfr.so.6 (0x00007f70dce29000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007f70dcbc3000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f70dcad3000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007f70dcaa6000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f70dc8b0000)\n\tlibgmp.so.10 => /lib/x86_64-linux-gnu/libgmp.so.10 (0x00007f70dc826000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007f70dcf22000)\n",
+  "compiler_flags": "-O2 -std=c++17 -fno-fast-math -ffp-contract=off",
+  "mpfr_version": "4.2.2",
+  "main_precision_bits": 128,
+  "risk_and_tests_precision_bits": 192,
+  "library_binaries_delivered": false
+}
