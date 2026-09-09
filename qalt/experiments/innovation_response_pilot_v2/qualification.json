@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "qualified": false,
+  "backend": "dense_reflected",
+  "independent_review_verified": false,
+  "kernel_sha256": "d6d387ae1651d57d1fab352639389407995ca10eeed328fcfc69dd486abb40d7",
+  "diagnostic_source_commit": null,
+  "diagnostic_job_id": null,
+  "original_failure_job_id": "45582364",
+  "diagnostic_receipt_sha256": null,
+  "status": "pending independently verified gradient-enabled GPU qualification; no launch"
+}
