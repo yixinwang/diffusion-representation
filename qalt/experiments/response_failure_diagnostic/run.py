@@ -61,7 +61,7 @@ def compare_candidate(decoder,kernel,residual,coarse,out):
     return report
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--expected-commit',required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--device',choices=['cpu','cuda'],required=True);args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--expected-commit',required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--device',choices=['cpu','cuda'],required=True);ap.add_argument('--full-model',action='store_true');args=ap.parse_args()
     args.output.mkdir(parents=True,exist_ok=False);out=args.output;record={}
     try:
         head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
@@ -144,6 +144,10 @@ def main():
         reflected_path=ROOT/'qalt/src/qalt/reflected_dense_spline.py'
         spec=importlib.util.spec_from_file_location('authenticated_reflected_kernel',reflected_path);reflected=importlib.util.module_from_spec(spec);spec.loader.exec_module(reflected)
         record['candidate_comparison']=compare_candidate(decoder,reflected.reflected_dense_spline_kernel,r,c,out)
+        if args.full_model:
+            helper_path=Path(__file__).parent/'full_model.py'
+            helper_spec=importlib.util.spec_from_file_location('authenticated_full_model_diagnostic',helper_path);helper=importlib.util.module_from_spec(helper_spec);helper_spec.loader.exec_module(helper)
+            record['full_model_qualification']=helper.qualify(runner,ck,reflected.reflected_dense_spline_kernel,logits[index],out/'full_model',args.device,digest(failed))
         record['attribution']='old backend reproduced numerical guard' if record['decoder_outcome']=='numerical_guard_raised' else 'old backend did not reproduce; candidate validity is not a fix attribution'
         if runner.state_fingerprint(model)!=before or digest(failed)!=status['payload_sha256']['seed_78201/RQS_prefix_failed.pt']:raise ValueError('model/checkpoint mutated')
         record.update(status='completed_diagnostic',device=args.device,torch=torch.__version__,numpy=np.__version__,python=platform.python_version(),host=platform.node(),gpu=torch.cuda.get_device_name() if args.device=='cuda' else None,successful_updates=progress['updates'],failed_draw=progress['updates']+1,optimizer_steps=sorted(set(int(v['step'].item()) for v in ck['optimizer']['state'].values())),state_unchanged=True,decoder_grad_enabled=True,analysis_cache_grad_enabled=False,repair_evaluated=False,training_performed=False,layers=captures)
