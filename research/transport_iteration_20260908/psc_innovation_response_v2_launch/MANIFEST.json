@@ -1,0 +1,42 @@
+{
+  "STATUS.md": {
+    "bytes": 1137,
+    "sha256": "a35eb3d9f93b9ea45bb5ac9da253ac26f0aee1a292e8fcbec01ddbc957aea6cb"
+  },
+  "frozen-PROTOCOL.md": {
+    "bytes": 17204,
+    "sha256": "e10b324d49f12302d1a99e7ac0bdbca2dc2355fb464945e0e37ad43c7f9f7cae"
+  },
+  "frozen-admission-files.json": {
+    "bytes": 808,
+    "sha256": "8a6e8925698ff12b41b1cf84f144c46d1bfc0dbf11ea35ddd9d5016fea290a50"
+  },
+  "frozen-qualification.json": {
+    "bytes": 563,
+    "sha256": "eaa4b2e9aa856da229f702c9971d5b224aa6bd151d3fe796d26d49f265cd3feb"
+  },
+  "frozen-qualification_receipt.json": {
+    "bytes": 43193,
+    "sha256": "080e8719d4092c74f8d1cb959162f633c4f69f62bbb7b2ea2421a145bb890332"
+  },
+  "frozen-run.slurm": {
+    "bytes": 972,
+    "sha256": "c786ebc9404103a7410d1027352957cfb55cade39f444d750bbe80c0089fa00c"
+  },
+  "launch-record.json": {
+    "bytes": 13553,
+    "sha256": "87db55251b49fc474f34433266f61d608505a405ac994d23b540711a892a2174"
+  },
+  "launch-record.remote.py": {
+    "bytes": 13639,
+    "sha256": "7c41614917a75e5020bacfeeeee963fa8bf7b728bbde04d8d4bd7423fd82e7c0"
+  },
+  "launch.py": {
+    "bytes": 5960,
+    "sha256": "ea46bc895f1512fe0fbce6637e51a632eb567cb473ea120c4b89de3b133300e0"
+  },
+  "submission.json": {
+    "bytes": 12765,
+    "sha256": "a28b662b4f18a331def577279c3c78a9f6e56660adf42c0aaec628ca5d334696"
+  }
+}
