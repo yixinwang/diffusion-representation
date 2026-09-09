@@ -1,0 +1,49 @@
+{
+  "captured_utc": "2026-09-09T20:24:56.730180+00:00",
+  "files": {
+    "README.md": {
+      "bytes": 1391,
+      "sha256": "7685c83e435ffb35d697fac3755fb6b112a2964b9c92a4cecfcb97fbe7d77c66"
+    },
+    "allocation.stderr": {
+      "bytes": 94,
+      "sha256": "e7ef2c3fb7d49a060eb4d073af482e17dd699ffe0c8e13bf940f3b496fc050a5"
+    },
+    "allocation.stdout": {
+      "bytes": 597,
+      "sha256": "c21e703e77e8c77ffb1172f1c2eb8aecdcc508e771475def8d9c6c4647149fba"
+    },
+    "build.py": {
+      "bytes": 5345,
+      "sha256": "cfee602c4a30e27feb0555a185e82bbbc2eb8cb9fdea9e8cffc4aaf7f5fef64f"
+    },
+    "config.json": {
+      "bytes": 1897,
+      "sha256": "4682ce62405187c0e0f462307cc791485546e8d8f99d02ab6d71a2abaf9e2ba8"
+    },
+    "make_launch.py": {
+      "bytes": 1765,
+      "sha256": "b546a102938444b5855083faa932df309e6a420bf11f65e3d3eb1d4b0de4e771"
+    },
+    "preparation.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preparation.stdout": {
+      "bytes": 2101,
+      "sha256": "17c7f5d022c1ef56a776b8da1ba49d3ded43730d85480a17d322ccb3174c3bb0"
+    },
+    "prepare.remote.py": {
+      "bytes": 4675,
+      "sha256": "43983cef17cc6cc3d9ba7de425be6863af5bf04c6e0a0d7ac23c35c3d988acfb"
+    },
+    "submit-once.sh": {
+      "bytes": 1092,
+      "sha256": "c7f05cda291f771d1aad416604370b35c9ddc870ddb4b53fb47b5683ab5d40b3"
+    },
+    "upload_and_execute.remote.py": {
+      "bytes": 4923,
+      "sha256": "e7ce7539b80a14a096e67232a045fbc0089025c88223e839362c982d899c1036"
+    }
+  }
+}
