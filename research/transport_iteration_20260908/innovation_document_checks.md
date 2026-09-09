@@ -1,0 +1,9 @@
+# Innovation note checks
+
+The three-page `innovation_flow_note.tex` is the canonical source for the exact coarse/residual model. Its PDF compiled with no warnings, undefined references or overflowing boxes. All three pages were rendered and inspected. A four-page draft with an isolated final paragraph was condensed without removing assumptions or adverse results. The density proposition remains together on page 1; its proof starts page 2. The final page 1 was inspected again after specifying continuous Gaussian noise and real arithmetic.
+
+The complete-density argument agrees with the implemented triangular composition. Three nonidentity fabricated tests check inverse maps, dense Jacobians, full likelihood and state restoration. An independent mathematical reviewer verified the total-variation-squared energy bound and the conditional coarse/residual bound, including their constants and discrete limiting cases. No bound is asserted for the learned neural estimator's population error.
+
+The strict Blei manuscript writing check passed. The local citation scan reports zero bibliography entries, zero citation keys and no findings. Three paper-title hyperlinks were checked manually against authoritative arXiv records: Wavelet Flow (2010.13821), PixelFlow (2504.07963), and PixelDiT (2511.20645). Their role and limited relation to the current composition are recorded in `source_log/pixel_models_20260909.md`. No unresolved bibliography entry or claimed reproduction of their empirical results is included.
+
+The note defines model, score, total variation and conditional error quantities before use. Each proposition has an adjacent interpretation and limit. Main evidence preserves adverse synthetic GPU cost and mixed quality. Native validation is explicitly pending. Semantic review: mathematical claims and code match; no practical superiority, improved representation or novelty is inferred from exact normalization.

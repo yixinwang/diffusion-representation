@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,microtype,hyperref}
+\usepackage[T1]{fontenc}
+\newtheorem{proposition}{Proposition}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\title{Full-Dimensional Innovation Flows}
+\author{}
+\date{8 September 2026}
+\hypersetup{hidelinks}
+\begin{document}
+\maketitle
+\begin{abstract}
+An invertible learned analysis, a coarse coupling flow and a conditional residual coupling flow give a complete normalized generator retaining every Gaussian coordinate. We prove its density formula and a population energy-score bound. These results leave learning, representation and efficiency unresolved. Earlier synthetic experiments have mixed quality and adverse GPU cost results. Native-image validation is pending; real-video superiority is untested.
+\end{abstract}
+
+\section{One complete generator}
+Let $x\in(0,1)^D$ be a dequantized image with $D$ scalar coordinates and let $y=\operatorname{logit}(x)$ be its coordinatewise logit. The invertible learned analysis $A:\R^D\to\R^D$ gives $A(y)=(c,r)$, where $c\in\R^d$ is the coarse code and $r\in\R^{D-d}$ retains every residual coordinate. Learned couplings, Haar transforms and lossless packing form $A$.
+
+
+Let $T_C:\R^d\to\R^d$ be the coarse coupling flow and, for every fixed $c$, let $T_R(\,\cdot\,;c):\R^{D-d}\to\R^{D-d}$ be a conditional residual coupling flow. For independent standard Gaussian source blocks $z_c\in\R^d$ and $z_r\in\R^{D-d}$, generate
+\begin{equation}\label{eq:generator}
+ c=T_C(z_c),\qquad r=T_R(z_r;c),\qquad y=A^{-1}(c,r),\qquad x=\operatorname{sigmoid}(y).
+\end{equation}
+Global attention conditions residual layers on the generated coarse code.
+
+Let $u$ be a coupling layer input and $J$ its fixed-coordinate set. Leave $u_J$ fixed and transform the remaining coordinates by
+\begin{equation}
+ v_{J^c}=e^{s(u_J,c)}\odot u_{J^c}+b(u_J,c),\qquad
+ u'_{J^c}=\operatorname{RQS}\{v_{J^c};h(u_J,c)\}.
+\end{equation}
+Here $s,b,h$ are conditioner outputs and RQS is a monotone rational-quadratic spline with positive derivatives and linear real-line tails. Log scales $s$ are bounded. Coarse layers use a constant-zero channel in place of $c$. Masks alternate; fixed coordinates recover each inverse conditioner.
+
+\begin{proposition}[Complete inverse and density]\label{prop:density}
+For a continuous Gaussian source and real arithmetic, the map from $(z_c,z_r)$ to $y$ in \eqref{eq:generator} is a bijection of $\R^D$. If $z=(z_c,z_r)$ is its inverse image and $\phi_D$ is the standard Gaussian density, then
+\begin{align}
+ q_Y(y)&=\phi_D(z)\,|\det DA(y)|\,|\det DT_C^{-1}(c)|
+           \,|\det D_rT_R^{-1}(r;c)|,\label{eq:density}\\
+ q_X(x)&=q_Y(\operatorname{logit}x)\prod_{i=1}^D\{x_i(1-x_i)\}^{-1}.
+\end{align}
+Both densities integrate to one on their respective domains.
+\end{proposition}
+The complete model now has a density without a coarse ODE discretization assumption. Finite-precision inverse and determinant checks remain separate numerical obligations.
+\begin{proof}
+Each scalar affine/spline map is a real-line bijection. Reversing coupling order inverts each decoder. The Jacobian of $(z_c,z_r)\mapsto(c,r)$ is block triangular because $c$ depends only on $z_c$; its diagonal blocks are the coarse Jacobian and the residual Jacobian with $c$ held fixed. Compose their inverses with $A$ to obtain \eqref{eq:density}. Change of variables gives normalization. The final sigmoid is a coordinatewise bijection onto the open cube, with inverse Jacobian shown above.
+\end{proof}
+
+\section{What a distributional error bound would imply}
+Let $P$ be the target pixel law and $Q$ the generated pixel law. Write $P_C,P_{R\mid C}$ and $Q_C,Q_{R\mid C}$ for their coarse and conditional residual laws under the same invertible analysis and chart. Whenever the relative entropies exist, their chain rule gives
+\begin{equation}\label{eq:kl}
+ \mathrm{KL}(P\|Q)=\mathrm{KL}(P_C\|Q_C)
+       +\E_{C\sim P_C}\mathrm{KL}(P_{R\mid C}\|Q_{R\mid C}).
+\end{equation}
+This includes error in the actual generated coarse law. A conditional residual bound alone cannot establish complete quality.
+
+For pixel arrays define $\rho(x,x')=\|x-x'\|_2/\sqrt D$, which is bounded by one. For independent $X\sim P$ and $Y,Y'\sim Q$, define the population energy score
+\begin{equation}
+ S(Q;P)=\E\rho(X,Y)-\tfrac12\E\rho(Y,Y').
+\end{equation}
+Define total variation by $\delta=\mathrm{TV}(P,Q)=\sup_B|P(B)-Q(B)|$, where the supremum is over measurable sets.
+\begin{proposition}[Bounded-distance score transfer]\label{prop:score}
+For these laws,
+\begin{equation}\label{eq:score}
+ 0\le S(Q;P)-S(P;P)\le\delta^2
+    \le\min\{1,\tfrac12\mathrm{KL}(P\|Q)\}.
+\end{equation}
+If $\mathrm{TV}(P_C,Q_C)\le e_C$ and the expected conditional KL term in \eqref{eq:kl} is bounded by $\varepsilon_R$, then the score excess is bounded by
+\begin{equation}
+ \min\{1,(e_C+\sqrt{\varepsilon_R/2})^2\}.
+\end{equation}
+\end{proposition}
+This bound concerns a population pixel-distance score. It does not measure semantic fidelity, prove lower downstream prediction error, compare two fitted algorithms or convert a training loss into a population KL bound.
+\begin{proof}
+Euclidean distance averages absolute distances of one-dimensional projections. For each projection, energy distance equals twice the integral of the squared difference of cumulative distribution functions. Averaging this identity gives nonnegativity. If $\delta>0$, the Jordan decomposition gives $P-Q=\delta(P_+-P_-)$ for probability measures $P_+,P_-$. Expanding the score excess cancels its linear terms, leaving $\delta^2$ times half the energy distance between $P_+$ and $P_-$. Their cross-distance expectation is bounded by one and their within-law distances are nonnegative, so this factor is bounded by one. The case $\delta=0$ is immediate. Pinsker's inequality and $\delta\le1$ finish \eqref{eq:score}. For the final claim, insert the intermediate joint law $P_CQ_{R\mid C}$. Its distance from $P_CP_{R\mid C}$ is bounded by $\sqrt{\varepsilon_R/2}$ by conditional Pinsker and Jensen. Its distance from $Q_CQ_{R\mid C}$ is bounded by $e_C$. Total variation is preserved by the invertible synthesis and bounded by the sum.
+\end{proof}
+
+No nonvacuous $e_C$ or $\varepsilon_R$ bound has been established for the current learned attention/coupling estimator. Earlier finite-sample results concern fixed low-dimensional contexts and a convex positive-density sieve. Their smallest checked sufficient bound at 40,000 arrays remains 2.8587 nats per coordinate, above a restricted comparator lower bound of 0.01600. They cannot be assigned to the present jointly parameterized neural flow. A stochastic latent decoder copying every map, weight and source draw ties \eqref{eq:generator} exactly.
+
+\section{Implementation, comparisons and evidence}
+Native defaults use $D=3072$, $d=192$, four coarse and four residual coupling layers, and width 32. Analysis, coarse and residual components have 255,952, 72,236 and 261,524 parameters, respectively; the total is 589,712. No unused flow-matching (FM) modules are constructed. Three fabricated tests verify a nonidentity inverse, a dense 16-dimensional Jacobian, the complete density identity, finite gradients, full-source preservation and saved freezing state. These tests contain no image-training result.
+
+The complete previous QALT suite passed 223 tests. Earlier synthetic GPU experiments compared full spline generation against full and hierarchical FM on four $8\times8$ tensor cases. Independent recomputation reproduced 120 saved metrics within $7.92\times10^{-9}$. Rankings varied: multichannel energy scores favored the spline, while image energy scores favored a hierarchical FM. Spline training allocated more GPU memory, and several FM configurations sampled faster. First-call effects weaken the timing comparison. These synthetic tensors provide no real-video evidence.
+
+A native CIFAR study uses 4,000 fitting and 1,000 reused development images with strict record hashes and an unopened official test batch. Its first attempt failed a software test's clock assumption before data access or training. Retry 45568073 uses the same frozen scientific design. It compares a shared learned analysis/coarse FM with conditional coupling and global residual FM, preserving every Gaussian pair and every fixed solver step count. It has not tested the exact coarse replacement in Proposition~\ref{prop:density}. This short study supplies a numerical and implementation diagnostic; it is not a competitive training budget.
+
+Two stronger controls are implemented for the next study. One uses a Gaussian-reference FM path: for source $Z$, target $R$, and $t\in[0,1]$, set
+\begin{equation}
+ s_t^2=(1-t)^2+t^2,\qquad
+ H_t=\frac{(1-t)Z+tR}{s_t},\qquad
+ \dot H_t=\frac{(1-t)R-tZ}{s_t^3}.
+\end{equation}
+Weight squared velocity regression by $s_t^2$. Independent standard Gaussian endpoints give zero conditional population velocity, making the zero-field numerical sampler exact. This removes an avoidable Gaussian reference error; it proves no general non-Gaussian improvement. The second control packs all pixels losslessly onto a coarse token grid and fits a globally attending full-dimensional FM with the complete standalone budget. It receives no learned analysis or free decoder.
+
+A separately frozen perceptual appendix uses all generated banks, identical repair images and fixed Inception features to report kernel Inception distance (KID) and neighborhood precision, recall, density and coverage. External weights enter evaluation only. Scores from this reused development set remain descriptive. Native-video studies, representation probes, several independent fits, full cost accounting and untouched confirmation are still required.
+
+\paragraph{Relation to prior work.}
+\href{https://arxiv.org/abs/2010.13821}{Wavelet Flow} already uses conditional wavelet-scale normalizing flows; \href{https://arxiv.org/abs/2504.07963}{PixelFlow} and \href{https://arxiv.org/abs/2511.20645}{PixelDiT} already investigate VAE-free pixel generation with reduced computation. The proposed exact coarse replacement is a standard flow composition. Its role is to remove a mathematical qualification and test an explicit transport against strong iterative controls. Neither novelty nor practical superiority follows from this replacement.
+\end{document}
