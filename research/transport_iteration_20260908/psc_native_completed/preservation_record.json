@@ -1,0 +1,23 @@
+{
+  "job_id": 45568073,
+  "source_commit": "341dbaf5022a7fe54bb0e89dac6e5d5c2df82277",
+  "scientific_protocol_commit": "8b007b6f6169f6b402a5984bee4663a74182714e",
+  "remote_full_payload": "/ocean/projects/mth250006p/ywang26/diffusion-results/20260908-native-shared-retry",
+  "status_sha256": "5ace9f058b21482fa02d62b453d004e93b4114093e7a7b21528582dadeccb434",
+  "preserved_top_level_records": [
+    "data_ledger.json",
+    "evaluations.json",
+    "generation_memory.json",
+    "latencies.json",
+    "metadata.json",
+    "numerical_gate.json",
+    "paired_energy.json",
+    "source_identity.json",
+    "status.json",
+    "timings.json"
+  ],
+  "raw_banks_retained_remotely": true,
+  "full_canonical_audit_job": 45571737,
+  "perceptual_evaluation_job": 45571074,
+  "claim": "Mixed development results; no quality-cost dominance or confirmatory inference."
+}

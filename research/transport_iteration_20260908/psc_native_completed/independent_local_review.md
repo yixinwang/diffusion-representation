@@ -1,0 +1,15 @@
+# Independent completed native pilot audit
+
+The portable verifier accepted all285 payload hashes,22 source Git blobs/snapshots at341dbaf5022a7fe54bb0e89dac6e5d5c2df82277, all seven actual common Gaussian banks, independently recomputed generated descriptors/boundary counts, saved inversion arrays, and the exact-copy arrays. Local status is explicitly incomplete_hash_only: canonical repair values were unavailable, so the reported energy scores/repair descriptors/paired contrasts below have not been independently recomputed locally. Full canonical verification remains separate. Raw determinant arrays were not saved; their reported bounds were checked, not recomputed.
+
+All saved source inversion errors pass: analysis4.49e-5, residual8.64e-6, joint candidate7.00e-5, below1e-3. Reported determinant cancellations are at most9.77e-4, below1e-2. Exact-copy arrays tie exactly.
+
+Reported energy is mixed and does not show simultaneous dominance. Analysis-only has the lowest score .1734187; coupling .1743271; residual FM4 .1741833; FM8 .1744663; FM16 .1746127; FM32 .1746490; FM64 .1746580. Lower is better. Coupling is worse than FM4 and analysis-only on this metric, while better than higher-NFE FM. Reused repair and one training seed prohibit confirmatory significance interpretation. Analysis-only received less training and is an informative mechanism control, not a budget-matched strong full-flow baseline.
+
+Coupling full-pipeline median latency is56.00ms at batch1 and120.76ms at batch64. FM4 is48.75/87.62ms; FM32 is62.55/101.70ms; FM64 is80.25/119.11ms. Coupling is faster than FM32/64 at batch1, slower than every FM grid point at batch64, and1.38times FM4 batch64 cost. Only three repetitions per configuration, fixed arm order, no concurrent-hardware isolation claim. Four coupling layers alone are not a compute comparison against four velocity calls.
+
+Peak allocated memory is128,423,936bytes for coupling versus128,022,528–128,049,664bytes for FM, so no measured memory improvement. Peaks include shared analysis/coarse and combined evaluation/latency workspace. Reserved-memory differences partly reflect the allocator and cannot establish intrinsic algorithm complexity.
+
+Generated spatial dependencies remain poor: coupling's opposite-quadrant covariance is much lower than the reported repair covariance, despite matching the upper-left mean. Its lower-right mean .48268 differs from repair .44577. Directional gradient energies .01230/.01387 exceed repair .00796/.00925; FM4 is closer on both (.01120/.01365). Increasing FM NFE worsens these particular moments. These measurements do not establish perceptual quality or support coverage.
+
+Endpoint counts across all6,144,000 generated scalar values are analysis0, coupling4, FM4/8/16/32/64 respectively5/14/24/29/29. They are retained float32 sigmoid rounding outcomes, not clipped inputs; they also limit claims of numerically exact open-cube image inversion. No test/discovery data were accessed by this audit. No jobs or commits were performed.

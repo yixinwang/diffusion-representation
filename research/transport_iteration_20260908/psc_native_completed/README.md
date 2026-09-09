@@ -1,0 +1,7 @@
+# Completed native pilot: mixed outcome
+
+PSC job 45568073 completed the frozen 4,000-fitting-image, 1,000-reused-repair-image pilot. The current candidate does not show the requested quality and efficiency advantage. Its reported energy is worse than four-call residual flow matching and analysis-only generation, although better than higher-call residual flow matching. It is slower than every measured FM arm at batch 64 and has no measured allocated-memory gain.
+
+The independent local audit checks all 285 payload hashes, 22 source files, actual Gaussian-bank equality, generated descriptors, saved inverse arrays and exact-copy equality. Canonical repair energy recomputation is pending in separate PSC job 45571737; pinned perceptual evaluation is pending in job 45571074. These are development data and one training seed, not confirmation evidence.
+
+The full raw banks and checkpoints remain at the PSC path in preservation_record.json. This directory preserves selected original small records, the complete terminal hash inventory, local independent checks and a first-eight-source image grid. The subset is deliberately not presented as the complete raw payload. The grid uses the first eight saved sources in every arm without choosing attractive samples, changing pixel values, or opening protected data. Image plotting uses the existing float values with display quantization only; metrics use the saved floating-point banks.

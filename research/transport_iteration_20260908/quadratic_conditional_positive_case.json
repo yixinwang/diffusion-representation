@@ -1,0 +1,41 @@
+{
+  "status": "scalar_checks_passed",
+  "fitting_performed": false,
+  "observed_data_used": false,
+  "moment_quadrature": {
+    "-0.65": {
+      "quadrature_mean": -0.6500000000000083,
+      "quadrature_variance": 5.577500000000066
+    },
+    "0.0": {
+      "quadrature_mean": 1.8865117801247777e-17,
+      "quadrature_variance": 6.000000000000076
+    },
+    "0.65": {
+      "quadrature_mean": 0.6500000000000083,
+      "quadrature_variance": 5.577500000000066
+    }
+  },
+  "cdf_inverse_max_error": 3.3306690738754696e-16,
+  "independence_kl_quadrature": 0.036457862509257005,
+  "bounds": [
+    {
+      "n": 256,
+      "theta": 0.65,
+      "expected_kl_upper": 0.003143883026695527,
+      "probability": 0.95,
+      "parameter_error_upper": 0.4341358224149856,
+      "high_probability_kl_upper": 0.0271968127422707,
+      "independence_kl_lower": 0.035208333333333335
+    },
+    {
+      "n": 4000,
+      "theta": 0.65,
+      "expected_kl_upper": 0.00020120851370851372,
+      "probability": 0.95,
+      "parameter_error_upper": 0.10349148934161134,
+      "high_probability_kl_upper": 0.0015455250167597195,
+      "independence_kl_lower": 0.035208333333333335
+    }
+  ]
+}

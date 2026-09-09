@@ -1,0 +1,38 @@
+{
+  "analysis_only": {
+    "first_minus_second": 0.0009083950970354951,
+    "descriptive_paired_se": 0.0008423392889624502,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  },
+  "residual_fm_nfe_4": {
+    "first_minus_second": 0.00014382705624442374,
+    "descriptive_paired_se": 8.159609705730755e-05,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  },
+  "residual_fm_nfe_8": {
+    "first_minus_second": -0.0001392149907783842,
+    "descriptive_paired_se": 0.00010203862897809861,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  },
+  "residual_fm_nfe_16": {
+    "first_minus_second": -0.000285589585877595,
+    "descriptive_paired_se": 0.00011707001787846931,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  },
+  "residual_fm_nfe_32": {
+    "first_minus_second": -0.00032192839917562097,
+    "descriptive_paired_se": 0.00012142630192980748,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  },
+  "residual_fm_nfe_64": {
+    "first_minus_second": -0.0003308663731228524,
+    "descriptive_paired_se": 0.0001225217698944992,
+    "images": 1000,
+    "uncertainty": "exploratory reused repair; no confirmation claim"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "analysis_only": {
+    "peak_allocated_bytes": 126405120,
+    "peak_reserved_bytes": 155189248
+  },
+  "coupling": {
+    "peak_allocated_bytes": 128423936,
+    "peak_reserved_bytes": 163577856
+  },
+  "residual_fm_nfe_4": {
+    "peak_allocated_bytes": 128049664,
+    "peak_reserved_bytes": 159383552
+  },
+  "residual_fm_nfe_8": {
+    "peak_allocated_bytes": 128036352,
+    "peak_reserved_bytes": 159383552
+  },
+  "residual_fm_nfe_16": {
+    "peak_allocated_bytes": 128036352,
+    "peak_reserved_bytes": 159383552
+  },
+  "residual_fm_nfe_32": {
+    "peak_allocated_bytes": 128022528,
+    "peak_reserved_bytes": 159383552
+  },
+  "residual_fm_nfe_64": {
+    "peak_allocated_bytes": 128022528,
+    "peak_reserved_bytes": 159383552
+  }
+}

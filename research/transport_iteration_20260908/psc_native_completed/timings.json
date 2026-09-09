@@ -1,0 +1,19 @@
+{
+  "canonical_load_seconds": 2.342780766019132,
+  "logit_and_jacobian_save_seconds": 0.4205626350012608,
+  "model_construction_seconds": 0.08646963501814753,
+  "all_fitting_external_seconds": 545.8655521970359,
+  "numerical_gate_seconds": 1.846511548035778,
+  "analysis_only_movement_seconds": 0.0007425340008921921,
+  "coupling_movement_seconds": 0.00564595201285556,
+  "residual_fm_nfe_4_movement_seconds": 0.005852791015058756,
+  "residual_fm_nfe_8_movement_seconds": 0.00561832805396989,
+  "residual_fm_nfe_16_movement_seconds": 0.005303432990331203,
+  "residual_fm_nfe_32_movement_seconds": 0.0054138730047270656,
+  "residual_fm_nfe_64_movement_seconds": 0.005447898991405964,
+  "study_external_seconds_before_final_hashing": 730.9850359720294,
+  "process_peak_rss_platform_units": 1662724,
+  "process_peak_rss_unit": "KiB on Linux; bytes on macOS",
+  "cost_accounting": "external fitting includes cache, device transfers and checkpoints; stage clocks and full study wall separately reported",
+  "unpartitioned_wall_including_preflight_evaluation_latency_and_io_seconds": 180.42315919091925
+}

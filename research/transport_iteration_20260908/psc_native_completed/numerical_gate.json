@@ -1,0 +1,12 @@
+{
+  "source_limit": 0.001,
+  "logdet_limit": 0.01,
+  "analysis_source_error": 4.4912099838256836e-05,
+  "analysis_logdet_error": 0.0009765625,
+  "residual_source_error": 8.64267349243164e-06,
+  "residual_logdet_error": 0.0003662109375,
+  "candidate_code_error": 6.99758529663086e-05,
+  "candidate_analysis_logdet_error": 0.0009765625,
+  "finite": true,
+  "exact_copy_equal": true
+}
