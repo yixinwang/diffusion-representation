@@ -1,0 +1,33 @@
+{
+  "status": "fabricated_extractor_smoke_passed",
+  "source_commit": "22ac114f90f5250fddced652c6a3bccc8942dd9d",
+  "source_sha256": {
+    "qalt/experiments/perceptual_appendix/smoke.py": "a0b6724ceb72705087e32073b2a5920936bcbc586e50f85daac27e738e70429e",
+    "qalt/experiments/perceptual_appendix/evaluator.py": "5ea9e5efab484df2c84e383be834bc442d2c3e989bff68d30e1178e175b66ebc",
+    "qalt/experiments/perceptual_appendix/run_smoke.slurm": "617514f26cba4c36fac42e8705bb621ec976a2f9d47845f5b1d4ef1caee303f6"
+  },
+  "inception_source_sha256": "c6183fff54dd240fe66d53d207f4bd28c06fde98c21b5525f10ca0cc5cef7780",
+  "weights_sha256": "6726825d0af5f729cebd5821db510b11b1cfad8faad88a03f1befd49fb9129b2",
+  "python": "3.10.9",
+  "numpy": "2.2.6",
+  "torch": "2.10.0+cu128",
+  "torchvision": "0.25.0+cu128",
+  "device": "cpu",
+  "input": "numpy.linspace(0,1,6144,float64).reshape(2,3,32,32)",
+  "input_sha256": "a39ef65a63060bc8b1958516ccd9eed7426cfb366558be8b401e3e99f37d9f19",
+  "feature_shape": [
+    2,
+    2048
+  ],
+  "feature_dtype": "float32",
+  "feature_sha256": "3c917b3c4d0a5f7ab887c25e43e0f5e9adae89c67b19d0591a902d3118e101db",
+  "feature_min": 0.0,
+  "feature_max": 5.068574905395508,
+  "feature_all_finite": true,
+  "forward_count": 1,
+  "elapsed_seconds": 309.12962912296643,
+  "real_data_read": false,
+  "generated_banks_read": false,
+  "training_performed": false,
+  "interpretation": "dependency/numerical compatibility only; no generation quality evidence"
+}

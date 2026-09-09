@@ -1,0 +1,6 @@
+{
+  "status": "fabricated_extractor_smoke_passed",
+  "payload_sha256": {
+    "smoke.json": "f85e5bc9bfac21eb23202c6e7977e9b70b33f92314bb480b40cdece600a35f95"
+  }
+}

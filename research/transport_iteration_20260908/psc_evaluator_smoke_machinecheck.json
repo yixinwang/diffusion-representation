@@ -1,0 +1,17 @@
+{
+  "status": "audit_pass",
+  "job_id": "45569096",
+  "sacct_state": "COMPLETED",
+  "exit_code": "0:0",
+  "slurm_elapsed_seconds": 382,
+  "batch_maxrss_kib": 464960,
+  "verified_payload_hashes": 1,
+  "verified_source_git_blob_hashes": 3,
+  "fabricated_input_hash_recomputed": true,
+  "published_feature_values_recomputed": false,
+  "local_preservation_sha256": {
+    "evaluator-smoke-45569096.out": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20260909-evaluator-smoke/COMPLETE.json": "63cd197da53c4887d74763ee8b77004ac5de1c271f649c409c7c6244ee723e57",
+    "20260909-evaluator-smoke/smoke.json": "f85e5bc9bfac21eb23202c6e7977e9b70b33f92314bb480b40cdece600a35f95"
+  }
+}
